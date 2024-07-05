@@ -1,0 +1,58 @@
+<style type="text/css">
+	#Centrifuge {
+		width:100%;
+		height:600px;
+		border: 1px dashed black;
+	}
+	pre {
+		width:100%;
+	}
+</style>
+<script type="text/javascript">
+	var dv = new Dataview(cookie, "Centrifuge");
+	dv.launch();
+	var viz = dv.getVisualization("Relationship Graph");
+	viz.setVisualizationAttached("false", function(){});
+	viz.clearFilters();
+	function refreshViz() {
+		viz.reloadViz();
+	}
+	
+	function onGraphLoadSuccess() {
+		$('#status').html('<img src="resources/Ok-icon.png" /> Dataview Launched');
+	}
+</script>
+<h2>Refresh Visualization</h2>
+<div id='overview'>
+	<h2>Overview</h2>
+	<p>The Visualization API provides the ability to perform basic actions on visualizations within a Dataview.</p>
+	<p>This sample allows you to exert some control over the visualization by being able to tell the Relationship Graph when you would like it to refresh.</p>
+</div>
+<div id='code'>
+	<h2>Sample Code</h2>
+	<pre class="prettyprint">
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;script type=&quot;text/javascript&quot; src=&quot;/Centrifuge/javascript/jquery.js&quot;&gt;&lt;/script&gt;
+		&lt;script type=&quot;text/javascript&quot; src=&quot;/Centrifuge/javascript/centrifuge-widget.js&quot;&gt;&lt;/script&gt;
+		&lt;script type=&quot;text/javascript&quot;&gt;
+			var dv = new Dataview(&quot;&lt;dvUuid&gt;&quot;, &quot;Centrifuge&quot;); // replace dvUuid with the uuid of the dataview to be opened
+			dv.launch();  //embed the flash content into the html page
+			var viz = dv.getVisualization(&quot;Relationship Graph&quot;);  //get the visualization object by name
+			function refreshViz() {
+				viz.reloadViz();
+			}
+		&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;button onClick=&quot;refreshViz()&quot;&gt;Refresh Relationship Graph&lt;/button&gt;
+		&lt;div id='Centrifuge'&gt;&lt;/div&gt;  &lt;!-- container div for flash content --&gt;
+	&lt;body&gt;
+&lt;/html&gt;
+	</pre>
+</div>
+<div id='sample'>
+	<h2>Sample</h2>
+	<button onClick="refreshViz()">Refresh Relationship Graph</button> <span id="status"><img src="resources/ajax-loader.gif" /> Launching Dataview...</span>
+	<div id='Centrifuge'></div>
+</div>

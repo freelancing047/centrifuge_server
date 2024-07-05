@@ -1,0 +1,58 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:gxtcontainer="urn:import:com.sencha.gxt.widget.core.client.container"
+    xmlns:g="urn:import:com.google.gwt.user.client.ui"
+    xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+    xmlns:gwt="urn:import:csi.client.gwt.widget.ui" 
+    xmlns:gwtc="urn:import:com.google.gwt.canvas.client"
+    xmlns:grid="urn:import:csi.client.gwt.widget.gxt.grid"
+    xmlns:base="urn:import:com.github.gwtbootstrap.client.ui.base"
+    xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client.toolbar"
+    xmlns:gxtbutton="urn:import:com.sencha.gxt.widget.core.client.button" >
+
+   <ui:style gss="true">
+    .noselect{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+
+    .larger{
+        font-size: 18px;
+        font-weight: bold;
+    }
+        
+    .remove-background{
+        background:none;
+        background-color:none;
+        background-image:none;
+    }
+    </ui:style>
+
+    <ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+
+        <g:LayoutPanel ui:field="layoutPanel" addStyleNames="{style.noselect}" height="340px">
+        <g:layer height="290px">
+            <g:FlowPanel>
+<!--             <boot:ControlLabel -->
+<!--                             title="Themes"> -->
+<!--                             <base:InlineLabel -->
+<!--                                 text="Themes" addStyleNames="{style.larger}" /> -->
+<!--                 </boot:ControlLabel> -->
+	            <grid:GridContainer height="260px" ui:field="gridContainer"></grid:GridContainer>
+<!-- 		         <boot:ControlLabel for="addButton" -->
+<!-- 	                        title="New Theme"> -->
+<!--                     <boot:Button ui:field="addButton"></boot:Button> -->
+<!-- 	                        <base:InlineLabel -->
+<!-- 	                            text="New Theme" /> -->
+<!--                 </boot:ControlLabel> -->
+                <g:AbsolutePanel ui:field="joiningPanel"></g:AbsolutePanel>
+                <gxtbutton:ButtonBar ui:field="toolBar"></gxtbutton:ButtonBar>
+                <gxtbutton:ButtonBar ui:field="subBar"></gxtbutton:ButtonBar>
+	        </g:FlowPanel>
+        </g:layer>
+        </g:LayoutPanel>
+</ui:UiBinder>

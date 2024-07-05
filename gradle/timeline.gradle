@@ -1,0 +1,23 @@
+apply from: 'gradle/properties.gradle'
+
+def timelineDeployLocation = "${buildRuntime}/webapps/Centrifuge/admin1"
+
+configurations {
+    timelineJar
+}
+
+dependencies {
+    timelineJar 'csi:timeline:1.0.3@jar'
+}
+
+task deployTimelineWindows(group: deployGroup){
+    dependsOn 'deployWebapp'
+    
+    doLast{
+        copy {
+            from fileTree(configurations.timelineJar.getSingleFile())
+            into "${timelineDeployLocation}"
+        }
+
+    }
+}

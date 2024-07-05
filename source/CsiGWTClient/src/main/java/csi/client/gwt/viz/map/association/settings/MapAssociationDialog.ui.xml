@@ -1,0 +1,29 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:csiboot="urn:import:csi.client.gwt.widget.boot" xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui" xmlns:tabs="urn:import:csi.client.gwt.viz.map.association.settings">
+    <ui:style>
+        .modalFooterControlGroup {
+        margin-bottom: 0px;
+        }
+    </ui:style>
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+    <csiboot:SizeProvidingModal title="{i18n.get.mapSettingsView_editAssociation}" hideOthers="false" ui:field="settingsModal" bodyHeight="410px" bodyWidth="800px" addStyleNames="edit-node-modal">
+        <csiboot:CsiTabPanel tabPosition="left">
+            <boot:Tab heading="{i18n.get.mapSettingsView_generalTab}">
+                <tabs:AppearanceTab ui:field="appearanceTab" />
+            </boot:Tab>
+        </csiboot:CsiTabPanel>
+        <boot:ModalFooter ui:field="settingsFooter">
+            <boot:Form type="INLINE">
+                <boot:Fieldset>
+                    <boot:ControlGroup addStyleNames="{style.modalFooterControlGroup}">
+                        <boot:Controls>
+                            <boot:Button type="LINK" ui:field="buttonDelete" text="{i18n.get.delete}" />
+                            <boot:Button type="SUCCESS" ui:field="buttonSave" text="{i18n.get.save}" />
+                            <boot:Button ui:field="buttonCancel" text="{i18n.get.cancel}" />
+                        </boot:Controls>
+                    </boot:ControlGroup>
+                </boot:Fieldset>
+            </boot:Form>
+        </boot:ModalFooter>
+    </csiboot:SizeProvidingModal>
+</ui:UiBinder>

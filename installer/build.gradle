@@ -1,0 +1,25 @@
+apply plugin: 'java'
+
+repositories {
+  mavenCentral()
+}
+
+sourceSets {
+  main {
+    java {
+      srcDir 'src/java'
+    }
+  }
+}
+
+def COMMONS_LANG_VERSION = '2.6'//2.6
+def COMMONS_IO_VERSION = '2.5'//2.4
+def LOG4J_VERSION = '2.8.2'
+
+dependencies{
+  compile "commons-lang:commons-lang:$COMMONS_LANG_VERSION"
+  compile "commons-io:commons-io:$COMMONS_IO_VERSION"
+  compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: "$LOG4J_VERSION"
+  compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: "$LOG4J_VERSION"
+  compile group: 'org.apache.logging.log4j', name: 'log4j-1.2-api', version: "$LOG4J_VERSION"
+}

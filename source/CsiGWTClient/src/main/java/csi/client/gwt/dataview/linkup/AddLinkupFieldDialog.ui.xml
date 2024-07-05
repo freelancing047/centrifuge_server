@@ -1,0 +1,41 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:gwt="urn:import:com.google.gwt.user.client.ui"
+    xmlns:csigwt="urn:import:csi.client.gwt.widget.ui"
+    xmlns:csiboot="urn:import:csi.client.gwt.widget.boot"
+    xmlns:csibox="urn:import:csi.client.gwt.widget.input_boxes"
+    xmlns:csicombo="urn:import:csi.client.gwt.widget.combo_boxes">
+
+   <ui:style gss="true">
+        .margin-fix input {
+            margin-bottom: 0px !important;
+        }
+    </ui:style>
+    
+    <csiboot:ValidatingDialog bodyWidth="450px" bodyHeight="160px" ui:field="dialog">
+        <csigwt:FullSizeLayoutPanel ui:field="topPanel">
+            <csigwt:layer top="20px" height="60px" left="20px" width="410px">
+                <gwt:VerticalPanel height="60px">
+                    <gwt:Label ui:field="instructionOne"></gwt:Label>
+                    <gwt:Label ui:field="instructionTwo"></gwt:Label>
+                </gwt:VerticalPanel>
+            </csigwt:layer>
+            <csigwt:layer top="80px" height="80px" left="20px" width="410px">
+                <gwt:HorizontalPanel height="80px" width="410px">
+                    <gwt:cell horizontalAlignment="ALIGN_LEFT">
+                        <gwt:VerticalPanel height="80px" addStyleNames="{style.margin-fix}">
+                            <gwt:Label ui:field="templateFieldLabel"></gwt:Label>
+                            <csicombo:FilteredComboBox ui:field="templateFields" width="160px" editable="true"/>
+                        </gwt:VerticalPanel>
+                    </gwt:cell>
+                    <gwt:cell horizontalAlignment="ALIGN_RIGHT">
+                        <gwt:VerticalPanel height="80px" addStyleNames="{style.margin-fix}">
+                            <gwt:Label ui:field="fieldNameLabel"></gwt:Label>
+                            <csibox:FilteredTextBox ui:field="fieldName" width="160px" enabled="false"/>
+                        </gwt:VerticalPanel>
+                    </gwt:cell>
+                </gwt:HorizontalPanel>
+            </csigwt:layer>
+        </csigwt:FullSizeLayoutPanel>
+    </csiboot:ValidatingDialog>
+</ui:UiBinder> 

@@ -1,0 +1,89 @@
+<centrifuge.ws.rest.Result>
+  <holder>
+    <event>
+      <id>09/20/1985
+OSAK TANYA 4/30/1976::1985-09-20::1985-10-03</id>
+      <start>496036800000</start>
+      <end>0</end>
+      <properties>
+        <property name="End Date">10/03/1985</property>
+        <property name="URL Filename">http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=2350 E 15TH ST,BROOKLYN,NY</property>
+        <property name="URL Caption">Map Address:2350 E 15TH ST,BROOKLYN,NY</property>
+        <property name="Type">NY</property>
+        <property name="ID">09/20/1985
+OSAK TANYA 4/30/1976::1985-09-20::1985-10-03</property>
+        <property name="Label">09/20/1985
+OSAK TANYA 4/30/1976</property>
+        <property name="Start Date">09/20/1985</property>
+      </properties>
+    </event>
+    <event>
+      <id>10/08/1985
+MOXLEY JIM 11/16/1948::1985-10-08::Sun Dec 02 11:47:04 EST 292269055</id>
+      <start>497592000000</start>
+      <end>0</end>
+      <properties>
+        <property name="End Date"></property>
+        <property name="URL Filename">http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=598 WINSLOW DR,BEL AIR,MD</property>
+        <property name="URL Caption">Map Address:598 WINSLOW DR,BEL AIR,MD</property>
+        <property name="Type">MD</property>
+        <property name="ID">10/08/1985
+MOXLEY JIM 11/16/1948::1985-10-08::Sun Dec 02 11:47:04 EST 292269055</property>
+        <property name="Label">10/08/1985
+MOXLEY JIM 11/16/1948</property>
+        <property name="Start Date">10/08/1985</property>
+      </properties>
+    </event>
+    <event>
+      <id>06/06/1986
+GRANT PAUL 2/15/1967::1986-06-06::Sun Dec 02 11:47:04 EST 292269055</id>
+      <start>518414400000</start>
+      <end>0</end>
+      <properties>
+        <property name="End Date"></property>
+        <property name="URL Filename">http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=DAYS INN,NEW YORK,NY</property>
+        <property name="URL Caption">Map Address:DAYS INN,NEW YORK,NY</property>
+        <property name="Type">NY</property>
+        <property name="ID">06/06/1986
+GRANT PAUL 2/15/1967::1986-06-06::Sun Dec 02 11:47:04 EST 292269055</property>
+        <property name="Label">06/06/1986
+GRANT PAUL 2/15/1967</property>
+        <property name="Start Date">06/06/1986</property>
+      </properties>
+    </event>
+    <event>
+      <id>03/08/1987
+CATHCART JIM 7/10/1953::1987-03-08::1987-03-08</id>
+      <start>542178000000</start>
+      <end>0</end>
+      <properties>
+        <property name="End Date">03/08/1987</property>
+        <property name="URL Filename">http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=1320 ORCHARD WAY,APT,433,FREDERICK,MD</property>
+        <property name="URL Caption">Map Address:1320 ORCHARD WAY,APT,433,FREDERICK,MD</property>
+        <property name="Type">MD</property>
+        <property name="ID">03/08/1987
+CATHCART JIM 7/10/1953::1987-03-08::1987-03-08</property>
+        <property name="Label">03/08/1987
+CATHCART JIM 7/10/1953</property>
+        <property name="Start Date">03/08/1987</property>
+      </properties>
+    </event>
+    <event>
+      <id>04/18/1987
+JORDAN CINDY 10/29/1945::1987-04-18::1987-04-29</id>
+      <start>545716800000</start>
+      <end>0</end>
+      <properties>
+        <property name="End Date">04/29/1987</property>
+        <property name="URL Filename">http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=1872 W BALTIMORE ST,BALTIMORE,MD</property>
+        <property name="URL Caption">Map Address:1872 W BALTIMORE ST,BALTIMORE,MD</property>
+        <property name="Type">MD</property>
+        <property name="ID">04/18/1987
+JORDAN CINDY 10/29/1945::1987-04-18::1987-04-29</property>
+        <property name="Label">04/18/1987
+JORDAN CINDY 10/29/1945</property>
+        <property name="Start Date">04/18/1987</property>
+      </properties>
+    </event>
+   </holder>
+</centrifuge.ws.rest.Result>

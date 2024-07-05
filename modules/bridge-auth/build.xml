@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ====================================================================== -->
+<!-- Ant build file (http://ant.apache.org/) for Ant 1.6.2 or above.        -->
+<!-- ====================================================================== -->
+
+<project name="auth"
+         default="package"
+         basedir="."
+         xmlns:aspectj="antlib:org.aspectj">
+
+    <taskdef resource="org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties" />
+
+    <!-- ====================================================================== -->
+    <!-- Import maven-build.xml into the current project                        -->
+    <!-- ====================================================================== -->
+
+    <import file="maven-build.xml" />
+
+    <!-- ====================================================================== -->
+    <!-- Help target                                                            -->
+    <!-- ====================================================================== -->
+
+    <path id="compile.classpath">
+        <pathelement location="target/classes" />
+        <fileset dir="target/aspect-targets">
+        </fileset>
+        <path refid="build.classpath" />
+        <fileset dir="../../lib">
+            <include name="**/*.jar" />
+        </fileset>
+        <pathelement location="src/resources/webapps/Centrifuge/WEB-INF/lib/aspectjrt.jar" />
+    </path>
+
+    <target name="help">
+        <echo message="Please run: $ant -projecthelp" />
+    </target>
+
+    <target name="build.aspects"
+            description="Compiles and weaves aspects into the server jar">
+        <mkdir dir="target/aspect-classes" />
+        <mkdir dir="target/aspect-targets" />
+        <copy todir="target/aspect-targets">
+            <fileset dir="F:/Source/Java/CleanServer/build/jars/">
+                <include name="centrifuge-services.jar" />
+            </fileset>
+        </copy>
+        <aspectj:iajc source="1.6" destdir="target/classes">
+            <sourceRoots>
+                <pathelement location="src/main/aspects" />
+            </sourceRoots>
+            <inpath>
+                <fileset dir="target/aspect-targets">
+                </fileset>
+            </inpath>
+            <classpath refid="compile.classpath" />
+        </aspectj:iajc>
+
+    </target>
+
+
+    <target name="package:resources">
+        <delete file="bridge-resources.zip" failonerror="false" />
+        <delete file="bridge-resources.tar" failonerror="false" />
+
+        <jar destfile="target/${maven.build.finalName}.jar">
+            <fileset dir="target/classes">
+                <include name="csi/security/**" />
+            </fileset>
+        </jar>
+
+        <jar destfile="target/centrifuge-services.jar">
+            <fileset dir="target/classes">
+                <exclude name="csi/security/**" />
+                <exclude name="**/jaas/spi/**/*.class" />
+            </fileset>
+        </jar>
+
+        <copy todir="src/resources/webapps/Centrifuge/WEB-INF/lib"
+              file="target/centrifuge-bridgeIC-1.0.0.jar" />
+        <copy todir="src/resources/webapps/Centrifuge/WEB-INF/lib"
+              file="../bridge-apis/target/bridge-api-1.0.0.jar" />
+        <copy todir="src/resources/webapps/Centrifuge/WEB-INF/lib"
+              file="target/centrifuge-services.jar" />
+
+        <tar destfile="bridge-resources.tar">
+            <fileset dir="src/resources">
+            </fileset>
+        </tar>
+
+        <copy todir="F:/temp/Bridge-IC/GA/centrifuge-server" overwrite="true">
+            <fileset dir="src/resources">
+            </fileset>
+        </copy>
+    </target>
+
+
+</project>

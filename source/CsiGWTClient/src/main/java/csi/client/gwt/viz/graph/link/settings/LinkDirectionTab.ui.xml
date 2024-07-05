@@ -1,0 +1,87 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+        xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:g="urn:import:com.google.gwt.user.client.ui"
+        xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes"
+        xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+        xmlns:local="urn:import:csi.client.gwt.viz.graph.link.settings">
+   <ui:style gss="true">
+        .nopadding {
+        				margin: 0px;
+        				display: inline;
+        }
+        
+        .leftMargin {
+        				padding-left: 35px;
+        }
+    </ui:style>
+    <ui:with
+        field="i18n"
+        type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+    <boot:Tab heading="{i18n.get.LinkSettings_direction}">
+        <g:LayoutPanel
+            height="100%"
+            width="100%">
+            <g:layer
+                top="0px"
+                bottom="0px">
+                <boot:FluidContainer>
+                    <boot:FluidRow>
+                        <boot:Column size="4">
+                            <boot:Heading
+                                addStyleNames="{style.nopadding}"
+                                size="3"
+                                text="{i18n.get.LinkSettings_direction}" />
+                        </boot:Column>
+                        <boot:Column size="6">
+                        </boot:Column>
+                    </boot:FluidRow>
+                    <boot:FluidRow>
+                        <boot:Column
+                            size="4"
+                            ui:field="column1">
+                            <boot:FluidRow>
+                                <combo:LinkDirectionComboBox
+                                    ui:field="modeListBox" />
+                            </boot:FluidRow>
+                            <boot:FluidRow>
+                                <combo:FieldDefComboBox
+                                    ui:field="valueFDCB"
+                                    />
+                            </boot:FluidRow>
+                            <boot:FluidRow>
+                                <boot:TextBox
+                                    ui:field="searchTextBox"
+                                    placeholder="{i18n.get.find}..."
+                                    searchQuery="true"
+                                    size="10"/>
+                            </boot:FluidRow>
+                        </boot:Column>
+                        <boot:Column
+                            size="4"
+                            ui:field="column2">
+                            <boot:FluidRow>
+                                <boot:Column
+                                    size="12"
+                                    ui:field="c2"
+                                    addStyleNames="{style.leftMargin}">
+                                </boot:Column>
+                            </boot:FluidRow>
+                        </boot:Column>
+                        <boot:Column
+                            size="4"
+                            ui:field="column3">
+                            <boot:FluidRow>
+                                <boot:Column
+                                    size="12"
+                                    ui:field="c3"
+                                    addStyleNames="{style.leftMargin}">
+                                </boot:Column>
+                            </boot:FluidRow>
+                        </boot:Column>
+                    </boot:FluidRow>
+                </boot:FluidContainer>
+            </g:layer>
+        </g:LayoutPanel>
+    </boot:Tab>
+</ui:UiBinder>

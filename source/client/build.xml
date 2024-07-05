@@ -1,0 +1,39 @@
+<project name="client-modules" >
+
+    <property file="${basedir}/build.properties" />
+    
+    
+    <path id="module-dep-order">
+        <pathelement location="${basedir}/Arc90CollapsiblePanel" />
+        <pathelement location="${basedir}/Farata" />
+        <pathelement location="${basedir}/FlexLib" />
+        <pathelement location="${basedir}/Sandy" />
+        <pathelement location="${basedir}/Stamen" />
+        <pathelement location="${basedir}/YahooAstra" />
+        <pathelement location="${basedir}/Adobe_Libs" />
+    </path>
+
+    
+    <target name="init">
+        <mkdir dir="${basedir}/lib" />
+    </target>
+    
+    <target name="compile" depends="init">
+        <subant antfile="build.xml" target="compile" verbose="true" inheritall="false" inheritrefs="false">
+            <property name="FLEX_HOME" value="${FLEX_HOME}" />
+            <buildpath refid="module-dep-order" />
+        </subant>
+    </target>
+
+    <target name="build" depends="init">
+        <subant antfile="build.xml" target="build" verbose="true" inheritall="false" inheritrefs="false">
+            <buildpath refid="module-dep-order" />
+        </subant>
+    </target>
+
+    <target name="clean">
+        <subant target="clean" verbose="true" inheritall="false">
+            <buildpath refid="module-dep-order" />
+        </subant>
+    </target>
+</project>

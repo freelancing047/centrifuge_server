@@ -1,0 +1,21 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:gwt="urn:import:com.google.gwt.user.client.ui"
+	xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui">
+	<ui:style>
+		.dialogTitle {
+			font-weight: bold;
+		}
+		.headerButton {
+			font-weight: bold;
+			float: right;
+			color: #C0C0C0;
+			cursor: pointer;
+		}
+	</ui:style>
+	<gwt:HTMLPanel>
+		<gwt:InlineLabel ui:field="dialogTitle" addStyleNames="{style.dialogTitle}"></gwt:InlineLabel>
+		<gwt:InlineLabel ui:field="closeButton" addStyleNames="{style.headerButton}">&nbsp; X &nbsp;</gwt:InlineLabel>
+		<gwt:InlineLabel ui:field="helpButton" addStyleNames="{style.headerButton}">&nbsp; ? &nbsp;</gwt:InlineLabel>
+	</gwt:HTMLPanel>
+</ui:UiBinder> 

@@ -1,0 +1,15 @@
+@sprite .fullScreen {
+  gwt-image: "fullScreenIcon";
+}
+
+@sprite .fullScreenOver {
+  gwt-image: "fullScreenOverIcon"; 
+}
+
+@sprite .restoreFullScreen {
+  gwt-image: "restoreFullScreenIcon";
+}
+
+@sprite .restoreFullScreenOver {
+  gwt-image: "restoreFullScreenOverIcon"; 
+}

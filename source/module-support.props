@@ -1,0 +1,16 @@
+javac.debug=true
+javac.optimize=false
+javac.deprecation=true
+javac.source=1.6
+javac.target=1.6
+
+
+build=${modules.dir}/../build
+build.jars=${build}/jars
+build.webapps=${build}/webapps
+
+lib=${modules.dir}/../lib
+
+output=${basedir}/target
+output.classes=${output}/classes
+

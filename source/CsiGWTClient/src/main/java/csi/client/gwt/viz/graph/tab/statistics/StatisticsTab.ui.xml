@@ -1,0 +1,46 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+        xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:g="urn:import:com.google.gwt.user.client.ui"
+        xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+        xmlns:grid="urn:import:csi.client.gwt.widget.gxt.grid"
+        xmlns:base="urn:import:com.github.gwtbootstrap.client.ui.base"
+        xmlns:gt="urn:import:csi.client.gwt.viz.graph.tab">
+   <ui:style gss="true">
+        .right {
+            float: right;
+        }
+
+        .button {
+            padding: 4px 7px;
+            border-bottom: 1px solid #CCC;
+        }
+    </ui:style>
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <gt:GraphTab
+            tabname="{i18n.get.statisticsTab_Heading}"
+            icon="TABLE"
+            ui:field="nodesTab">
+        <g:LayoutPanel
+                height="100%"
+                width="100%">
+            <g:layer
+                    top="45px"
+                    bottom="0px">
+                <grid:GridContainer ui:field="gridContainer"/>
+            </g:layer>
+            <g:layer
+                    top="5px"
+                    height="40px">
+                <boot:FluidRow ui:field="controlLayer">
+                    <base:InlineLabel ui:field="lastLoadedLabel" text="{i18n.get.statisticsTab_notYetLoaded}"/>
+                    <boot:Button
+                            ui:field="refreshButton"
+                            text="{i18n.get.statisticsTab_loadButton}"
+                            addStyleNames="{style.right}">
+                    </boot:Button>
+                </boot:FluidRow>
+            </g:layer>
+        </g:LayoutPanel>
+    </gt:GraphTab>
+</ui:UiBinder>

@@ -1,0 +1,31 @@
+# Driver class name (required)
+driver.class=oracle.jdbc.driver.OracleDriver
+
+# Connection info
+connection.url=jdbc:oracle:thin:/@mitch:1521:XE
+conneciton.autoCommit=false
+
+#
+# Connection properties.  You can add any number
+# properties.  The format is connection.prop.<jdbc property name>=xxxx
+#
+connection.prop.user=ctfg
+connection.prop.password=ctfg
+
+# Test configuration
+test.numThreads=5
+test.iterations=5
+test.sleepTime=200
+test.preSql=
+test.sql=select * from brad_nora.address
+test.postSql=
+test.readResult=true
+
+# This should be set to false when 
+# you are running the complete test to avoid
+# the threads synchronizing on the output console
+test.logging=true
+
+# If you oracle you can set this to true
+# to simulate what is actually being done in centrifuge
+misc.initOraPki=false

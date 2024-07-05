@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<schema>
+<table name = "I94 Materialized LAT LONG.txt">
+<column name = "ID" type = "Integer"/>
+<column name = "First Name" type = "Varchar"/>
+<column name = "Last Name" type = "Varchar"/>
+<column name = "Name" type = "Varchar"/>
+<column name = "DOB" type = "Date"/>
+<column name = "CTZ" type = "Varchar"/>
+<column name = "Street" type = "Varchar"/>
+<column name = "City" type = "Varchar"/>
+<column name = "Address" type = "Varchar"/>
+<column name = "State" type = "Varchar"/>
+<column name = "Zipcode" type = "Varchar"/>
+<column name = "ADM Date" type = "Varchar"/>
+<column name = "Flight" type = "Varchar"/>
+<column name = "Airline" type = "Varchar"/>
+<column name = "FLT No" type = "Varchar"/>
+<column name = "Port of Entry" type = "Varchar"/>
+<column name = "VISA Class" type = "Varchar"/>
+<column name = "DPT Date" type = "Varchar"/>
+<column name = "Port Of Departure" type = "Varchar"/>
+<column name = "Orig_ln" type = "Varchar"/>
+<column name = "Orig_fn" type = "Varchar"/>
+<column name = "Photo" type = "Varchar"/>
+<column name = "Type" type = "Varchar"/>
+<column name = "Location" type = "Varchar"/>
+<column name = "Unit" type = "Varchar"/>
+<column name = "Latitude" type = "Float"/>
+<column name = "Longitude" type = "Float"/>
+</table>
+<table name = "Centrifuge Webinar Registrants 030608.csv" separator=",">
+<column name = "First Name" type = "Varchar"/>
+<column name = "Last Name" type = "Varchar"/>
+<column name = "Job Title" type = "Varchar"/>
+<column name = "Agency" type = "Varchar"/>
+<column name = "Address1" type = "Varchar"/>
+<column name = "Address2" type = "Varchar"/>
+<column name = "City" type = "Varchar"/>
+<column name = "State" type = "Varchar"/>
+<column name = "Zip" type = "Varchar"/>
+<column name = "Phone" type = "Varchar"/>
+<column name = "Ext" type = "Varchar"/>
+<column name = "E-mail" type = "Varchar"/>
+<column name = "Date Submitted" type = "Varchar"/>
+<column name = "Attendee" type = "Varchar"/>
+<column name = "RefName1" type = "Varchar"/>
+<column name = "RefEmail1" type = "Varchar"/>
+<column name = "RefName2" type = "Varchar"/>
+<column name = "RefEmail2" type = "Varchar"/>
+<column name = "RefName3" type = "Varchar"/>
+<column name = "RefEmail3" type = "Varchar"/>
+<column name = "Status" type = "Varchar"/>
+<column name = "Region" type = "Varchar"/>
+<column name = "Sales Rep" type = "Varchar"/>
+<column name = "Rep 1" type = "Varchar"/>
+<column name = "Rep 2" type = "Varchar"/>
+<column name = "Ref" type = "Varchar"/>
+<column name = "Comments" type = "Varchar"/>
+<column name = "Survey Answers" type = "Varchar"/>
+<column name = "What is your primary responsibility?" type = "Varchar"/>
+<column name = "Do you have a current/future project for this type of solution?" type = "Varchar"/>
+<column name = "What is your timeframe for implementing this type of solution?" type = "Varchar"/>
+<column name = "Do you have a budget for this type of solution?" type = "Varchar"/>
+</table>
+<table name = "BIOWAR.txt" separator="\t" charset="UTF-16">
+<column name = "Title" type = "Varchar"/>
+<column name = "Author" type = "Varchar"/>
+<column name = "Organization" type = "Varchar"/>
+<column name = "Journal" type = "Varchar"/>
+<column name = "Year" type = "Integer"/>
+<column name = "Whatever" type = "Varchar"/>
+<column name = "ISSN" type = "Varchar"/>
+<column name = "Keywords" type = "Varchar"/>
+<column name = "ClassNum" type = "Varchar"/>
+<column name = "Abstract" type = "Varchar"/>
+</table>
+<table name = "DC Sniper by Date.txt" separator=",">
+<column name = "Plate" type = "Varchar"/>
+<column name = "State" type = "Varchar"/>
+<column name = "Latitude" type = "Varchar"/>
+<column name = "Longitude" type = "Varchar"/>
+<column name = "ColorType" type = "Varchar"/>
+<column name = "Time" type = "Varchar"/>
+<column name = "Location" type = "Varchar"/>
+<column name = "IncidentDate" type = "Varchar"/>
+</table>
+<table name = "Classy_Big_sample200.txt" separator=",">
+<column name = "Phone1" type = "Integer"/>
+<column name = "Class"	type = "Varchar" />
+<column name = "RawDate" type = "Varchar"/>
+<column name = "Time" type = "Varchar"/>
+<column name = "Phone2" type = "Integer"/>
+<column name = "AltClass" type = "Varchar"/>
+<column name = "Duration" type = "Varchar"/>
+<column name = "Direction" type = "Varchar"/>
+<column name = "Type" type = "Varchar"/>
+</table>
+</schema>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<componentPackage>
+    <component id = "CairngormMessageCodes"     class = "com.adobe.cairngorm.CairngormMessageCodes"/>
+    <component id = "ICommand"                  class = "com.adobe.cairngorm.commands.ICommand"/>
+    <component id = "CairngormEvent"            class = "com.adobe.cairngorm.control.CairngormEvent" />
+    <component id = "CairngormEventDispatcher"  class = "com.adobe.cairngorm.control.CairngormEventDispatcher" />
+    <component id = "FrontController"           class = "com.adobe.cairngorm.control.FrontController"/>
+    <component id = "IModelLocator"             class = "com.adobe.cairngorm.model.IModelLocator"/>
+</componentPackage>

@@ -1,0 +1,38 @@
+/**
+ * Copies tomcat to the appropriate place with some customization.
+ */
+
+apply from: 'gradle/properties.gradle'
+
+def notfoundpage = "/source/web/WEB-INF"
+def apacheTomcatExploded = "${buildOutput}/apache-tomcat-8.0.30"
+
+configurations {
+    tomcat
+}
+
+dependencies {
+    tomcat 'csi:apache-tomcat:8.0.30@zip'
+}
+
+
+task deployTomcat(group: deployGroup) {
+
+    doLast {
+        copy {
+            from zipTree(configurations.tomcat.getSingleFile())
+            into buildOutput
+        }
+        copy {
+            from apacheTomcatExploded
+            into buildRuntime
+            exclude "webapps", "LICENSE", "NOTICE", "RELEASE-NOTES", "RUNNING.txt"
+        }
+        delete apacheTomcatExploded
+
+        copy {
+            from 'server/resources/tomcat_8.0.30'
+            into buildRuntime
+        }
+    }
+}

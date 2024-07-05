@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="igrinkevich" id="chart-2-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="chartsettings">
+            <column name="defaultview" type="VARCHAR(255)" defaultValue="CHART"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="jdanberg" id="chart-2-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="chartstorages">
+            <column name="visualizations_uuid" type="VARCHAR(255)">
+            </column>
+            <column name="drillkey"  type="BIGINT"  />
+            <column name="chartinfo" type="oid">
+                <constraints nullable="false"/>
+            </column>
+            
+        </createTable>
+    </changeSet>
+
+    <changeSet author="igrinkevich" id="chart-2-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="chartsettings">
+            <column name="isshowbreadcrumbs" type="Boolean" defaultValue="true" value="true"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="igrinkevich" id="chart-2-4" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="chartsettings">
+            <column name="currentview" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

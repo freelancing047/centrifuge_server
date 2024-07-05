@@ -1,0 +1,33 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+        xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:csiGWT="urn:import:csi.client.gwt.widget.boot"
+        xmlns:csiboot="urn:import:csi.client.gwt.widget.boot"
+        xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui">
+    <ui:with
+            field="i18n"
+            type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <csiGWT:Dialog
+            ui:field="dialog"
+            width="625px"
+            height="295px">
+                <csiboot:CsiHeading size="4" text="{i18n.get.fieldList_DeleteErrorPopup_Title}" />
+                <boot:Paragraph text="{i18n.get.fieldList_DeleteErrorPopup_Description}" />
+
+                <csiboot:CsiTabPanel tabPosition="left" ui:field="tabPanel">
+                    <boot:Tab heading="{i18n.get.fieldList_DeleteErrorPopup_Visualizations}" ui:field="visualizationTab">
+
+                    </boot:Tab>
+                    <boot:Tab heading="{i18n.get.fieldList_DeleteErrorPopup_Fields}" ui:field="fieldTab">
+
+                    </boot:Tab>
+                    <boot:Tab heading="{i18n.get.fieldList_DeleteErrorPopup_Filters}" ui:field="filterTab">
+
+                    </boot:Tab>
+                    <boot:Tab heading="{i18n.get.fieldList_DeleteErrorPopup_Linkups}" ui:field="linkupTab">
+
+                    </boot:Tab>
+                </csiboot:CsiTabPanel>
+    </csiGWT:Dialog>
+
+</ui:UiBinder>

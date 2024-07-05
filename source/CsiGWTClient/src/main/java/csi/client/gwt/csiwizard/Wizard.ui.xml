@@ -1,0 +1,22 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    xmlns:csigwt="urn:import:csi.client.gwt.widget.ui"
+    xmlns:csiboot="urn:import:csi.client.gwt.widget.boot">	
+	<ui:style>
+		.important {
+			font-weight: bold;
+		}
+		.noborder{
+		    border-style: none;
+		}
+	</ui:style>
+ 
+    <csiboot:Dialog ui:field="dialog" bodyHeight="350px" bodyWidth="800px">
+		<csigwt:FullSizeLayoutPanel ui:field="controlPanel">
+            <csigwt:layer top="20px" bottom="20px" left="512px" right="20px">
+	 			<csiboot:DialogInfoTextArea ui:field="instructionTextArea" height="100%" width="97%" addStyleNames="{style.noborder}">
+				</csiboot:DialogInfoTextArea>
+            </csigwt:layer>
+        </csigwt:FullSizeLayoutPanel>
+    </csiboot:Dialog>
+</ui:UiBinder>

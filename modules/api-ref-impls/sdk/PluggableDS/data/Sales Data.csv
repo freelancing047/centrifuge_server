@@ -1,0 +1,360 @@
+TXN_ID,TXN Date,Product Name,QTY,Promotion,Regular Unit Price ($),Revenue ($),Cost ($),Profit ($),Margin (%),Product Group,Customer ID,State,Region
+7,11/2/2008,How to Become a Rainmaker,1,MAIL COUPON,21,18,16,2,9,Books,1,MA,East
+14,8/3/2008,How to Become a Rainmaker,1,MAIL COUPON,21,18,16,2,9,Books,1,MA,East
+14,8/3/2008,Desktop Computer Speakers,1,MAIL COUPON,39,33,19,14,36,Computer Accessories,1,MA,East
+15,9/3/2008,Sportscraft Wizard,1,GIFT CARD,39,27,47,-20,-51,Computer Games,1,MA,East
+330,8/15/2008,Sportscraft Wizard,1,GIFT CARD,39,27,47,-20,-51,Computer Games,1,MA,East
+2947,10/9/2008,Sportscraft Wizard,1,GIFT CARD,39,27,47,-20,-51,Computer Games,1,MA,East
+3092,8/15/2008,Sportscraft Wizard,1,GIFT CARD,39,27,47,-20,-51,Computer Games,1,MA,East
+3225,10/20/2008,Sportscraft Wizard,1,GIFT CARD,39,27,47,-20,-51,Computer Games,1,MA,East
+3705,11/11/2008,Sportscraft Wizard,1,GIFT CARD,39,27,47,-20,-51,Computer Games,1,MA,East
+3995,10/23/2008,Sportscraft Wizard,1,GIFT CARD,39,27,47,-20,-51,Computer Games,1,MA,East
+4165,8/4/2008,Sportscraft Wizard,1,GIFT CARD,39,27,47,-20,-51,Computer Games,1,MA,East
+4672,8/26/2008,Sportscraft Wizard,1,GIFT CARD,39,27,47,-20,-51,Computer Games,1,MA,East
+5185,7/21/2008,Sportscraft Wizard,1,GIFT CARD,39,27,47,-20,-51,Computer Games,1,MA,East
+5200,10/21/2008,Sportscraft Wizard,1,GIFT CARD,39,27,47,-20,-51,Computer Games,1,MA,East
+5574,10/10/2008,Sportscraft Wizard,1,GIFT CARD,39,27,47,-20,-51,Computer Games,1,MA,East
+15,9/3/2008,Robot Wars 3,1,ONE DAY SALE,29,22,14,8,27,DVD,1,MA,East
+7,11/2/2008,Robowars Laser Gun Holder,1,MAIL COUPON,10,8,7,1,15,Novelty,1,MA,East
+7,11/2/2008,Robowars Replica Laser Gun,1,MAIL COUPON,39,33,19,14,36,Novelty,1,MA,East
+15,9/3/2008,Reading Light,1,MAIL COUPON,9,8,6,2,18,Novelty,1,MA,East
+1433,12/2/2008,Ultimate Battlezone,1,GIFT CARD,49,34,47,-13,-26,Computer Games,3,RI,East
+4351,10/12/2008,Ultimate Battlezone,1,GIFT CARD,49,34,47,-13,-26,Computer Games,3,VT,East
+4495,10/18/2008,Ultimate Battlezone,1,GIFT CARD,49,34,47,-13,-26,Computer Games,3,VT,East
+86,12/5/2008,Competing on the Edge,1,GIFT CARD,21,15,16,-1,-6,Books,3,MA,East
+86,12/5/2008,Customer Relationship Management,1,GIFT CARD,21,15,16,-1,-6,Books,3,MA,East
+68,10/4/2008,Value Squad 2 GB USB Storage,1,MAIL COUPON,29,25,8,17,57,Computer Accessories,3,MA,East
+72,4/5/2008,Value Squad 2 GB USB Storage,1,MAIL COUPON,29,25,8,17,57,Computer Accessories,3,MA,East
+72,4/5/2008,Value Squad 2 GB USB Storage,1,MAIL COUPON,29,25,8,17,57,Computer Accessories,3,MA,East
+72,4/5/2008,Desktop Computer Speakers,1,MAIL COUPON,39,33,19,14,36,Computer Accessories,3,MA,East
+14,8/3/2008,Ultimate Battlezone,1,GIFT CARD,49,34,47,-13,-26,Computer Games,3,MA,East
+72,8/5/2008,Ultimate Battlezone,1,GIFT CARD,49,34,47,-13,-26,Computer Games,3,MA,East
+120,10/6/2008,Ultimate Battlezone,1,GIFT CARD,49,34,47,-13,-26,Computer Games,3,MA,East
+194,9/10/2008,Ultimate Battlezone,1,GIFT CARD,49,34,47,-13,-26,Computer Games,3,MA,East
+68,10/4/2008,Tai Chi Master,1,ONE DAY SALE,19,14,14,0,0,DVD,3,MA,East
+68,10/4/2008,Reading Light,1,MAIL COUPON,9,8,6,2,18,Novelty,3,MI,Central
+68,10/4/2008,Computer LED Lights,1,MAIL COUPON,39,33,12,21,54,Novelty,3,MI,Central
+86,12/5/2008,Reading Light,1,MAIL COUPON,9,8,6,2,18,Novelty,3,MI,Central
+569,10/24/2008,Ultimate Battlezone,1,GIFT CARD,49,34,47,-13,-26,Computer Games,3,NY,East
+5262,7/24/2008,Ultimate Battlezone,1,GIFT CARD,49,34,47,-13,-26,Computer Games,3,PA,East
+3156,9/17/2008,Ultimate Battlezone,1,GIFT CARD,49,34,47,-13,-26,Computer Games,3,VA,East
+5310,10/27/2008,Ultimate Battlezone,1,GIFT CARD,49,34,47,-13,-26,Computer Games,3,DC,East
+5438,9/4/2008,Ultimate Battlezone,1,GIFT CARD,49,34,47,-13,-26,Computer Games,3,MD,East
+113,12/6/2008,The Art and Science of Robowars,1,GIFT CARD,21,15,16,-1,-6,Books,4,MA,East
+128,9/7/2008,Robot Wars 3,1,ONE DAY SALE,29,22,14,8,27,DVD,5,MI,Central
+145,5/8/2008,Robot Wars 3,1,ONE DAY SALE,29,22,14,8,27,DVD,7,MI,Central
+172,9/9/2008,Robot Wars 3,1,ONE DAY SALE,29,22,14,8,27,DVD,8,MI,Central
+213,6/11/2008,How to Win at Robowars,1,MAIL COUPON,21,18,16,2,9,Books,9,MA,East
+213,6/11/2008,Robowars Laser Gun Holder,1,MAIL COUPON,10,8,7,1,15,Novelty,9,MI,Central
+249,7/12/2008,Robowars: The Novel,1,MAIL COUPON,21,18,16,2,9,Books,10,MA,East
+249,7/12/2008,Ultimate Battlezone,1,MAIL COUPON,60,51,47,4,7,Computer Games,10,MA,East
+249,7/12/2008,Wind on The Water,1,ONE DAY SALE,15,11,14,-3,-18,DVD,10,MI,Central
+249,7/12/2008,Homestyle,1,MAIL COUPON,5,4,2,2,45,Magazines,10,MI,Central
+436,11/19/2008,Value Squad 2 GB USB Storage,1,MAIL COUPON,29,25,8,17,57,Computer Accessories,18,NY,East
+462,10/20/2008,Value Squad 2 GB USB Storage,1,MAIL COUPON,29,25,8,17,57,Computer Accessories,18,NY,East
+436,11/19/2008,Sportscraft Wizard,1,ONE DAY SALE,60,45,40,5,-3,Computer Games,18,NY,East
+436,11/19/2008,Reading Light,1,MAIL COUPON,9,8,6,2,18,Novelty,18,NY,East
+107,10/22/2008,Customer Relationship Management,1,GIFT CARD,21,15,16,-1,-6,Books,20,NY,East
+107,10/22/2008,Getting Ahead by Stepping Back,1,GIFT CARD,21,15,16,-1,-6,Books,20,NY,East
+553,5/24/2008,Robowars: The Novel,1,MAIL COUPON,21,18,16,2,9,Books,22,NY,East
+629,5/27/2008,How to Become a Rainmaker,1,MAIL COUPON,21,18,16,2,9,Books,25,NY,East
+629,5/27/2008,Ultimate Battlezone,1,MAIL COUPON,60,51,47,4,7,Computer Games,25,NY,East
+662,2/28/2008,Sportscraft Wizard,1,MAIL COUPON,60,51,47,4,7,Computer Games,26,NY,East
+662,2/28/2008,How to Win at Robowars,1,MAIL COUPON,21,18,16,2,9,Books,27,NY,East
+662,2/28/2008,Sportscraft Wizard,1,MAIL COUPON,60,51,47,4,7,Computer Games,27,NY,East
+662,2/28/2008,Tai Chi Master,1,ONE DAY SALE,19,14,14,0,0,DVD,27,NY,East
+662,2/28/2008,Robowars Laser Gun Holder,1,MAIL COUPON,10,8,7,1,15,Novelty,27,NY,East
+726,7/3/2008,How to Become a Rainmaker,1,MAIL COUPON,21,18,16,2,9,Books,29,DC,East
+726,7/3/2008,Robowars Laser Gun Holder,1,MAIL COUPON,10,8,7,1,15,Novelty,29,DE,East
+752,12/4/2008,Getting Ahead by Stepping Back,1,GIFT CARD,21,15,16,-1,-6,Books,30,DC,East
+764,2/5/2008,Robot Wars 3,1,ONE DAY SALE,29,22,14,8,27,DVD,30,NJ,East
+772,12/5/2008,Tai Chi Master,1,ONE DAY SALE,19,14,14,0,0,DVD,30,NJ,East
+789,8/6/2008,Helda and Gelda: 2,1,MAIL COUPON,60,51,47,4,7,Computer Games,31,DC,East
+789,8/6/2008,Robot Wars 3,1,ONE DAY SALE,29,22,14,8,27,DVD,31,NJ,East
+789,8/6/2008,Reading Light,1,MAIL COUPON,9,8,6,2,18,Novelty,31,MO,Central
+832,12/7/2008,Customer Relationship Management,1,GIFT CARD,21,15,16,-1,-6,Books,32,DC,East
+819,8/7/2008,Helda and Gelda: 2,1,MAIL COUPON,60,51,47,4,7,Computer Games,32,NJ,East
+819,8/7/2008,Robot Wars 3,1,ONE DAY SALE,29,22,14,8,27,DVD,32,NJ,East
+819,8/7/2008,Reading Light,1,MAIL COUPON,9,8,6,2,18,Novelty,32,MO,Central
+873,7/9/2008,Connecting Online,1,MAIL COUPON,21,18,16,2,9,Books,34,DC,East
+897,3/10/2008,Helda and Gelda: 2,1,MAIL COUPON,60,51,47,4,7,Computer Games,35,NJ,East
+932,8/11/2008,Wind on The Water,1,ONE DAY SALE,15,11,14,-3,-18,DVD,36,NJ,East
+932,8/11/2008,Robot Wars 3,1,ONE DAY SALE,29,22,14,8,27,DVD,36,DE,East
+972,6/12/2008,Connecting Online,1,MAIL COUPON,21,18,16,2,9,Books,38,DC,East
+993,6/13/2008,Wind on The Water,1,ONE DAY SALE,15,11,14,-3,-18,DVD,38,DE,East
+1020,7/14/2008,Value Squad 2 GB USB Storage,1,MAIL COUPON,29,25,8,17,57,Computer Accessories,39,DC,East
+1041,12/15/2008,Customer Relationship Management,1,GIFT CARD,21,15,16,-1,-6,Books,40,DC,East
+1031,10/14/2008,Tai Chi Master,1,ONE DAY SALE,19,14,14,0,0,DVD,40,DE,East
+1031,10/14/2008,Computer LED Lights,1,MAIL COUPON,39,33,12,21,54,Novelty,40,MO,Central
+1052,4/15/2008,Desktop Computer Speakers,1,MAIL COUPON,39,33,19,14,36,Computer Accessories,41,AR,South
+1081,7/16/2008,Value Squad 2 GB USB Storage,1,MAIL COUPON,29,25,8,17,57,Computer Accessories,42,AR,South
+1081,7/16/2008,Helda and Gelda: 2,1,MAIL COUPON,60,51,47,4,7,Computer Games,42,AR,South
+1081,7/16/2008,Tai Chi Master,1,ONE DAY SALE,19,14,14,0,0,DVD,42,AR,South
+1145,6/19/2008,How to Win at Robowars,1,MAIL COUPON,21,18,16,2,9,Books,44,AR,South
+1204,9/21/2008,Connecting Online,1,MAIL COUPON,21,18,16,2,9,Books,46,AL,South
+1226,12/21/2008,Customer Relationship Management,1,GIFT CARD,21,15,16,-1,-6,Books,47,AL,South
+1252,8/22/2008,Robowars: The Novel,1,MAIL COUPON,21,18,16,2,9,Books,48,AL,South
+1285,4/24/2008,Value Squad 2 GB USB Storage,1,MAIL COUPON,29,25,8,17,57,Computer Accessories,49,AL,South
+1366,5/27/2008,Wind on The Water,1,ONE DAY SALE,15,11,14,-3,-18,DVD,52,AL,South
+1368,7/27/2008,Tai Chi Master,1,ONE DAY SALE,19,14,14,0,0,DVD,52,AL,South
+1466,6/4/2008,Connecting Online,1,MAIL COUPON,21,18,16,2,9,Books,56,GA,South
+1535,4/7/2008,Tai Chi Master,1,ONE DAY SALE,19,14,14,0,0,DVD,59,GA,South
+1571,10/8/2008,The Art and Science of Robowars,1,MAIL COUPON,21,18,16,2,9,Books,60,GA,South
+1581,10/8/2008,Customer Relationship Management,1,MAIL COUPON,21,18,16,2,9,Books,61,GA,South
+1581,10/8/2008,Tai Chi Master,1,ONE DAY SALE,19,14,14,0,0,DVD,61,GA,South
+1581,10/8/2008,Hollywood Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,61,GA,South
+1605,11/9/2008,The Art and Science of Robowars,1,MAIL COUPON,21,18,16,2,9,Books,62,GA,South
+1606,12/9/2008,Value Squad 2 GB USB Storage,1,MAIL COUPON,29,25,8,17,57,Computer Accessories,62,GA,South
+1608,3/10/2008,Whats Happening Complete Season 1,1,ONE DAY SALE,39,29,14,15,39,DVD,62,GA,South
+1611,6/10/2008,Hollywood Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,62,GA,South
+1643,12/11/2008,Connecting Online,1,GIFT CARD,21,15,16,-1,-6,Books,63,LA,South
+1660,10/11/2008,The Art and Science of Robowars,1,MAIL COUPON,21,18,16,2,9,Books,64,LA,South
+1655,5/11/2008,Sportscraft Wizard,1,MAIL COUPON,60,51,47,4,7,Computer Games,64,NC,South
+1683,7/12/2008,Tai Chi Master,1,ONE DAY SALE,19,14,14,0,0,DVD,65,NC,South
+1693,8/13/2008,Hollywood Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,65,NC,South
+1724,6/14/2008,Helda and Gelda: 2,1,MAIL COUPON,60,51,47,4,7,Computer Games,66,NC,South
+1747,1/15/2008,Watchlist Season 2,1,ONE DAY SALE,39,29,14,15,39,DVD,67,NC,South
+1743,7/15/2008,Hollywood Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,67,SC,South
+1770,11/16/2008,Tai Chi Master,1,ONE DAY SALE,19,14,14,0,0,DVD,68,NC,South
+1771,12/16/2008,Hollywood Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,68,SC,South
+1787,11/16/2008,Hollywood Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,69,SC,South
+1821,2/18/2008,Desktop Computer Speakers,1,MAIL COUPON,39,33,19,14,36,Computer Accessories,70,LA,South
+1855,12/19/2008,Value Squad 2 GB USB Storage,1,MAIL COUPON,29,25,8,17,57,Computer Accessories,71,LA,South
+1867,5/20/2008,Hollywood Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,72,SC,South
+1883,8/20/2008,How to Win at Robowars,1,MAIL COUPON,21,18,16,2,9,Books,73,LA,South
+1899,7/21/2008,Whats Happening Complete Season 1,1,ONE DAY SALE,39,29,14,15,39,DVD,73,NC,South
+1920,9/22/2008,Robot Wars 3,1,ONE DAY SALE,29,22,14,8,27,DVD,74,NC,South
+1929,7/22/2008,Hollywood Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,74,SC,South
+1938,3/23/2008,Watchlist Season 2,1,ONE DAY SALE,39,29,14,15,39,DVD,75,NC,South
+1958,8/23/2008,Value Squad 2 GB USB Storage,1,MAIL COUPON,29,25,8,17,57,Computer Accessories,76,MS,South
+1972,12/24/2008,Ultimate Battlezone,1,ONE DAY SALE,60,45,40,5,-3,Computer Games,76,NC,South
+1961,11/23/2008,Hollywood Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,76,SC,South
+1990,5/25/2008,Wind on The Water,1,ONE DAY SALE,15,11,14,-3,-18,DVD,77,NC,South
+2001,6/25/2008,Game Player Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,77,SC,South
+2032,5/26/2008,Helda and Gelda: 2,1,MAIL COUPON,60,51,47,4,7,Computer Games,78,NC,South
+2022,4/26/2008,Watchlist Season 2,1,ONE DAY SALE,39,29,14,15,39,DVD,78,NC,South
+2013,6/25/2008,Game Player Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,78,SC,South
+2086,10/28/2008,Value Squad 2 GB USB Storage,1,MAIL COUPON,29,25,8,17,57,Computer Accessories,80,MS,South
+2088,12/28/2008,Hollywood Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,80,SC,South
+2101,6/2/2008,Hollywood Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,81,SC,South
+2114,3/2/2008,Ultimate Battlezone,1,MAIL COUPON,60,51,47,4,7,Computer Games,82,CA,West
+2115,4/2/2008,Whats Happening Complete Season 1,1,ONE DAY SALE,39,29,14,15,39,DVD,82,IA,West
+2121,11/2/2008,Hollywood Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,82,CA,West
+2160,5/4/2008,Desktop Computer Speakers,1,MAIL COUPON,39,33,19,14,36,Computer Accessories,83,ND,West
+2110,4/4/2008,Tai Chi Master,1,ONE DAY SALE,19,14,14,0,0,DVD,83,IA,West
+2175,5/5/2008,Robot Wars 3,1,ONE DAY SALE,29,22,14,8,27,DVD,84,ID,West
+2224,12/6/2008,Desktop Computer Speakers,1,MAIL COUPON,39,33,19,14,36,Computer Accessories,86,ND,West
+2233,10/7/2008,Robot Wars 3,1,ONE DAY SALE,29,22,14,8,27,DVD,86,ID,West
+2279,3/9/2008,Wind on The Water,1,ONE DAY SALE,15,11,14,-3,-18,DVD,88,CA,West
+2311,9/10/2008,How to Win at Robowars,1,MAIL COUPON,21,18,16,2,9,Books,89,AZ,West
+2341,10/11/2008,Robowars: The Novel,1,MAIL COUPON,21,18,16,2,9,Books,90,AZ,West
+2330,8/10/2008,Robot Wars 3,1,ONE DAY SALE,29,22,14,8,27,DVD,90,CA,West
+2352,7/11/2008,Computer LED Lights,1,MAIL COUPON,39,33,12,21,54,Novelty,91,CA,West
+2388,12/13/2008,How I Raised Myself from Failure,1,GIFT CARD,21,15,16,-1,-6,Books,92,AZ,West
+2415,12/14/2008,Connecting Online,1,GIFT CARD,21,15,16,-1,-6,Books,93,AZ,West
+2466,10/16/2008,Desktop Computer Speakers,1,MAIL COUPON,39,33,19,14,36,Computer Accessories,96,ND,West
+2100,11/18/2008,Desktop Computer Speakers,1,MAIL COUPON,39,33,19,14,36,Computer Accessories,97,SD,West
+2100,11/18/2008,Whats Happening Complete Season 1,1,ONE DAY SALE,39,29,14,15,39,DVD,97,IA,West
+2539,12/19/2008,The Art and Science of Robowars,1,GIFT CARD,21,15,16,-1,-6,Books,99,NE,West
+2540,2/19/2008,Found Season 5,1,ONE DAY SALE,19,14,14,0,0,DVD,99,CA,West
+2560,7/20/2008,How to Become a Rainmaker,1,MAIL COUPON,21,18,16,2,9,Books,100,NE,West
+2563,10/20/2008,Tai Chi Master,1,ONE DAY SALE,19,14,14,0,0,DVD,100,CA,West
+2593,11/21/2008,Customer Relationship Management,1,MAIL COUPON,21,18,16,2,9,Books,101,NE,West
+11103,3/17/2008,Micro FM Radio,1,MAIL COUPON,17,14,6,8,49,Novelty,101,CA,West
+11108,11/17/2008,Robowars Laser Gun Holder,1,MAIL COUPON,10,8,7,1,15,Novelty,101,CA,West
+2632,7/23/2008,The Art and Science of Robowars,1,MAIL COUPON,21,18,16,2,9,Books,102,NE,West
+2624,7/23/2008,Whats Happening Complete Season 1,1,ONE DAY SALE,39,29,14,15,39,DVD,102,CA,West
+2673,2/24/2008,Sportscraft Wizard,1,MAIL COUPON,60,51,47,4,7,Computer Games,104,CA,West
+2689,11/25/2008,Tai Chi Master,1,ONE DAY SALE,19,14,14,0,0,DVD,104,CA,West
+2696,1/25/2008,Watchlist Season 2,1,ONE DAY SALE,39,29,14,15,39,DVD,105,CA,West
+11196,11/22/2008,Micro FM Radio,1,MAIL COUPON,17,14,6,8,49,Novelty,106,CA,West
+2751,1/27/2008,Ultimate Battlezone,1,MAIL COUPON,60,51,47,4,7,Computer Games,107,CA,West
+2756,9/28/2008,Watchlist Season 2,1,ONE DAY SALE,39,29,14,15,39,DVD,107,CA,West
+2762,5/28/2008,Found Season 5,1,ONE DAY SALE,19,14,14,0,0,DVD,107,CA,West
+2809,8/3/2008,Computer LED Lights,1,MAIL COUPON,39,33,12,21,54,Novelty,109,CA,West
+3827,7/17/2008,Robowars: The Novel,1,MAIL COUPON,21,18,16,2,9,Books,110,KY,Central
+2912,6/7/2008,The Art and Science of Robowars,1,MAIL COUPON,21,18,16,2,9,Books,114,UT,West
+2936,9/9/2008,The Art and Science of Robowars,1,MAIL COUPON,21,18,16,2,9,Books,115,PA,East
+2938,12/9/2008,Robowars Webcam,1,MAIL COUPON,79,67,29,38,48,Computer Accessories,115,PA,East
+2936,9/9/2008,Keychain Speaker,1,MAIL COUPON,14,12,6,6,42,Novelty,115,PA,East
+2956,12/9/2008,Getting Ahead by Stepping Back,1,GIFT CARD,21,15,16,-1,-6,Books,116,PA,East
+2962,6/10/2008,Sportscraft Wizard,1,MAIL COUPON,60,51,47,4,7,Computer Games,116,PA,East
+2972,8/10/2008,Wind on The Water,1,ONE DAY SALE,15,11,14,-3,-18,DVD,116,PA,East
+2971,6/10/2008,Keychain Speaker,1,MAIL COUPON,14,12,6,6,42,Novelty,116,PA,East
+2985,3/11/2008,Found Season 5,1,ONE DAY SALE,19,14,14,0,0,DVD,117,PA,East
+3003,4/11/2008,Whats Happening Complete Season 1,1,ONE DAY SALE,39,29,14,15,39,DVD,118,PA,East
+3054,12/13/2008,The Art and Science of Robowars,1,GIFT CARD,21,15,16,-1,-6,Books,119,PA,East
+3040,7/13/2008,Value Squad 2 GB USB Storage,1,MAIL COUPON,29,25,8,17,57,Computer Accessories,119,PA,East
+3029,4/12/2008,Watchlist Season 2,1,ONE DAY SALE,39,29,14,15,39,DVD,119,PA,East
+3043,10/13/2008,Homestyle,1,MAIL COUPON,5,4,2,2,45,Magazines,119,PA,East
+3031,6/12/2008,Keychain Speaker,1,MAIL COUPON,14,12,6,6,42,Novelty,119,PA,East
+3056,5/13/2008,How to Win at Robowars,1,MAIL COUPON,21,18,16,2,9,Books,120,PA,East
+3071,2/14/2008,Whats Happening Complete Season 1,1,ONE DAY SALE,39,29,14,15,39,DVD,120,PA,East
+3086,12/14/2008,How I Raised Myself from Failure,1,GIFT CARD,21,15,16,-1,-6,Books,121,VA,East
+3085,11/14/2008,Robowars Webcam,1,MAIL COUPON,79,67,29,38,48,Computer Accessories,121,VA,East
+3145,7/17/2008,Watchlist Season 2,1,ONE DAY SALE,39,29,14,15,39,DVD,123,VA,East
+3110,2/17/2008,Keychain Speaker,1,MAIL COUPON,14,12,6,6,42,Novelty,123,VA,East
+3205,5/19/2008,The Art and Science of Robowars,1,MAIL COUPON,21,18,16,2,9,Books,125,VA,East
+3206,6/19/2008,Keychain Speaker,1,MAIL COUPON,14,12,6,6,42,Novelty,125,VA,East
+3249,12/21/2008,Customer Relationship Management,1,GIFT CARD,21,15,16,-1,-6,Books,127,WA,West
+3329,7/24/2008,Robowars Webcam,1,MAIL COUPON,79,67,29,38,48,Computer Accessories,130,WA,West
+3335,1/24/2008,Watchlist Season 2,1,ONE DAY SALE,39,29,14,15,39,DVD,130,WA,West
+3324,11/23/2008,Homestyle,1,MAIL COUPON,5,4,2,2,45,Magazines,130,WA,West
+3360,12/25/2008,Robowars: The Novel,1,GIFT CARD,21,15,16,-1,-6,Books,131,WA,West
+3349,10/24/2008,Keychain Speaker,1,MAIL COUPON,14,12,6,6,42,Novelty,131,WA,West
+3391,6/26/2008,Wind on The Water,1,ONE DAY SALE,15,11,14,-3,-18,DVD,132,WA,West
+3408,10/27/2008,Robowars: The Novel,1,MAIL COUPON,21,18,16,2,9,Books,133,WA,West
+3405,7/27/2008,Computer LED Lights,1,MAIL COUPON,39,33,12,21,54,Novelty,133,WA,West
+3445,9/28/2008,Found Season 5,1,ONE DAY SALE,19,14,14,0,0,DVD,134,NV,West
+3461,6/2/2008,Customer Relationship Management,1,MAIL COUPON,21,18,16,2,9,Books,135,NV,West
+3475,5/2/2008,The Art and Science of Robowars,1,MAIL COUPON,21,18,16,2,9,Books,136,NV,West
+3494,8/3/2008,Keychain Speaker,1,MAIL COUPON,14,12,6,6,42,Novelty,136,IN,Central
+3499,5/3/2008,Robowars: The Novel,1,MAIL COUPON,21,18,16,2,9,Books,137,NV,West
+3109,5/4/2008,Keychain Speaker,1,MAIL COUPON,14,12,6,6,42,Novelty,137,IN,Central
+3544,8/5/2008,How to Win at Robowars,1,MAIL COUPON,21,18,16,2,9,Books,138,NV,West
+3523,6/4/2008,Sportscraft Wizard,1,MAIL COUPON,60,51,47,4,7,Computer Games,138,NV,West
+3536,10/5/2008,Keychain Speaker,1,MAIL COUPON,14,12,6,6,42,Novelty,138,IN,Central
+3575,5/6/2008,Watchlist Season 2,1,ONE DAY SALE,39,29,14,15,39,DVD,140,NV,West
+3583,7/7/2008,Homestyle,1,MAIL COUPON,5,4,2,2,45,Magazines,140,IN,Central
+3621,7/8/2008,Customer Relationship Management,1,MAIL COUPON,21,18,16,2,9,Books,141,IL,Central
+3641,4/9/2008,Micro FM Radio,1,MAIL COUPON,17,14,6,8,49,Novelty,142,IN,Central
+3645,8/9/2008,Computer LED Lights,1,MAIL COUPON,39,33,12,21,54,Novelty,142,IN,Central
+3674,12/10/2008,Robowars: The Novel,1,GIFT CARD,21,15,16,-1,-6,Books,143,IL,Central
+3662,8/10/2008,Micro FM Radio,1,MAIL COUPON,17,14,6,8,49,Novelty,143,IN,Central
+3673,10/10/2008,Keychain Speaker,1,MAIL COUPON,14,12,6,6,42,Novelty,143,IN,Central
+3692,12/11/2008,Robowars Webcam,1,MAIL COUPON,79,67,29,38,48,Computer Accessories,144,NV,West
+3748,10/13/2008,Wind on The Water,1,ONE DAY SALE,15,11,14,-3,-18,DVD,146,NV,West
+3746,6/13/2008,Keychain Speaker,1,MAIL COUPON,14,12,6,6,42,Novelty,146,IN,Central
+3772,11/14/2008,Robowars: The Novel,1,MAIL COUPON,21,18,16,2,9,Books,147,IL,Central
+3775,7/14/2008,How to Become a Rainmaker,1,MAIL COUPON,21,18,16,2,9,Books,148,NV,West
+3791,10/15/2008,Keychain Speaker,1,MAIL COUPON,14,12,6,6,42,Novelty,148,IN,Central
+3816,11/16/2008,Robowars: The Novel,1,MAIL COUPON,21,18,16,2,9,Books,149,UT,West
+3866,12/18/2008,Getting Ahead by Stepping Back,1,GIFT CARD,21,15,16,-1,-6,Books,151,UT,West
+3843,11/17/2008,Computer Magazine,1,MAIL COUPON,5,4,2,2,45,Magazines,151,UT,West
+3873,1/18/2008,Robowars Webcam,1,MAIL COUPON,79,67,29,38,48,Computer Accessories,152,UT,West
+3885,2/19/2008,Helda and Gelda: 2,1,MAIL COUPON,60,51,47,4,7,Computer Games,152,UT,West
+3870,9/18/2008,Found Season 5,1,ONE DAY SALE,19,14,14,0,0,DVD,152,UT,West
+3892,11/19/2008,Computer Magazine,1,MAIL COUPON,5,4,2,2,45,Magazines,152,UT,West
+3868,6/18/2008,Keychain Speaker,1,MAIL COUPON,14,12,6,6,42,Novelty,152,UT,West
+3907,12/20/2008,How I Raised Myself from Failure,1,GIFT CARD,21,15,16,-1,-6,Books,153,UT,West
+3942,12/21/2008,Effective Public Relations,1,GIFT CARD,21,15,16,-1,-6,Books,154,UT,West
+3931,11/21/2008,Found Season 5,1,ONE DAY SALE,19,14,14,0,0,DVD,154,UT,West
+3935,3/21/2008,Keychain Speaker,1,MAIL COUPON,14,12,6,6,42,Novelty,154,UT,West
+3949,10/21/2008,Robowars Webcam,1,MAIL COUPON,79,67,29,38,48,Computer Accessories,155,MS,South
+3975,12/22/2008,Customer Relationship Management,1,GIFT CARD,21,15,16,-1,-6,Books,156,LA,South
+3988,10/23/2008,Robot Wars Trilogy Extended Edition,1,ONE DAY SALE,29,22,14,8,27,DVD,156,NC,South
+3976,1/22/2008,Micro FM Radio,1,MAIL COUPON,17,14,6,8,49,Novelty,156,LA,South
+4004,9/24/2008,Connecting Online,1,MAIL COUPON,21,18,16,2,9,Books,157,LA,South
+4001,6/24/2008,Found Season 5,1,ONE DAY SALE,19,14,14,0,0,DVD,157,NC,South
+4001,6/24/2008,Computer Magazine,1,MAIL COUPON,5,4,2,2,45,Magazines,157,SC,South
+4035,7/25/2008,Robowars: The Novel,1,MAIL COUPON,21,18,16,2,9,Books,158,KY,Central
+4032,4/25/2008,Found Season 5,1,ONE DAY SALE,19,14,14,0,0,DVD,158,OK,South
+4060,11/26/2008,Robowars Webcam,1,MAIL COUPON,79,67,29,38,48,Computer Accessories,159,OK,South
+4088,12/27/2008,The Art and Science of Robowars,1,GIFT CARD,21,15,16,-1,-6,Books,160,KY,Central
+4082,4/27/2008,Found Season 5,1,ONE DAY SALE,19,14,14,0,0,DVD,160,OK,South
+4082,4/27/2008,Micro FM Radio,1,MAIL COUPON,17,14,6,8,49,Novelty,160,OK,South
+4094,12/27/2008,How to Become a Rainmaker,1,GIFT CARD,21,15,16,-1,-6,Books,161,KY,Central
+4101,8/28/2008,Robot Wars Trilogy Extended Edition,1,ONE DAY SALE,29,22,14,8,27,DVD,161,OK,South
+4142,12/3/2008,Robot Wars Trilogy Extended Edition,1,ONE DAY SALE,29,22,14,8,27,DVD,163,OK,South
+4168,12/4/2008,Effective Public Relations,1,GIFT CARD,21,15,16,-1,-6,Books,164,KY,Central
+4183,12/5/2008,Wind on The Water,1,ONE DAY SALE,15,11,14,-3,-18,DVD,165,OK,South
+4208,6/6/2008,How to Become a Rainmaker,1,MAIL COUPON,21,18,16,2,9,Books,166,KY,Central
+4217,9/6/2008,Competing on the Edge,1,MAIL COUPON,21,18,16,2,9,Books,167,KY,Central
+4270,12/9/2008,Connecting Online,1,GIFT CARD,21,15,16,-1,-6,Books,169,KY,Central
+4297,11/10/2008,Competing on the Edge,1,MAIL COUPON,21,18,16,2,9,Books,170,MT,West
+4318,9/11/2008,Found Season 5,1,ONE DAY SALE,19,14,14,0,0,DVD,171,CA,West
+4345,10/12/2008,How to Win at Robowars,1,MAIL COUPON,21,18,16,2,9,Books,172,MT,West
+4333,7/11/2008,Computer Magazine,1,MAIL COUPON,5,4,2,2,45,Magazines,172,CA,West
+4369,3/13/2008,Wind on The Water,1,ONE DAY SALE,15,11,14,-3,-18,DVD,173,CA,West
+4381,10/13/2008,Robowars Webcam,1,MAIL COUPON,79,67,29,38,48,Computer Accessories,174,CA,West
+4378,7/13/2008,Ultimate Battlezone,1,MAIL COUPON,60,51,47,4,7,Computer Games,174,CA,West
+4397,8/14/2008,Game Player Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,174,CA,West
+4412,10/15/2008,Competing on the Edge,1,MAIL COUPON,21,18,16,2,9,Books,175,SD,West
+4403,10/14/2008,Computer Magazine,1,MAIL COUPON,5,4,2,2,45,Magazines,175,CA,West
+4411,9/15/2008,Micro FM Radio,1,MAIL COUPON,17,14,6,8,49,Novelty,175,CA,West
+4429,11/15/2008,Robot Wars Trilogy Extended Edition,1,ONE DAY SALE,29,22,14,8,27,DVD,176,CA,West
+4472,5/17/2008,Computer Magazine,1,MAIL COUPON,5,4,2,2,45,Magazines,177,CA,West
+4489,3/18/2008,Computer Magazine,1,MAIL COUPON,5,4,2,2,45,Magazines,178,CA,West
+4108,11/18/2008,How to Become a Rainmaker,1,MAIL COUPON,21,18,16,2,9,Books,179,MT,West
+4543,11/20/2008,Customer Relationship Management,1,MAIL COUPON,21,18,16,2,9,Books,180,UT,West
+4539,2/20/2008,Computer Magazine,1,MAIL COUPON,5,4,2,2,45,Magazines,180,UT,West
+4510,1/20/2008,Computer Magazine,1,MAIL COUPON,5,4,2,2,45,Magazines,181,UT,West
+4587,12/22/2008,Customer Relationship Management,1,GIFT CARD,21,15,16,-1,-6,Books,182,UT,West
+4613,11/23/2008,Customer Relationship Management,1,MAIL COUPON,21,18,16,2,9,Books,183,UT,West
+4677,2/26/2008,Robowars Webcam,1,MAIL COUPON,79,67,29,38,48,Computer Accessories,186,UT,West
+4733,5/28/2008,Robowars: The Novel,1,MAIL COUPON,21,18,16,2,9,Books,188,UT,West
+4769,1/2/2008,Homestyle,1,MAIL COUPON,5,4,2,2,45,Magazines,190,IL,Central
+4789,10/3/2008,Micro FM Radio,1,MAIL COUPON,17,14,6,8,49,Novelty,191,PA,East
+4819,8/5/2008,Game Player Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,192,PA,East
+4836,12/5/2008,Competing on the Edge,1,GIFT CARD,21,15,16,-1,-6,Books,193,PA,East
+4891,11/8/2008,Homestyle,1,MAIL COUPON,5,4,2,2,45,Magazines,195,PA,East
+4905,7/8/2008,Robowars Replica Laser Gun,1,MAIL COUPON,39,33,19,14,36,Novelty,196,PA,East
+4955,12/10/2008,How I Raised Myself from Failure,1,GIFT CARD,21,15,16,-1,-6,Books,198,PA,East
+4984,3/12/2008,Robot Wars Trilogy Extended Edition,1,ONE DAY SALE,29,22,14,8,27,DVD,199,PA,East
+1037,9/14/2008,Robowars: The Novel,1,MAIL COUPON,21,18,16,2,9,Books,201,PA,East
+1031,2/13/2008,Value Squad 2 GB USB Storage,1,MAIL COUPON,29,25,8,17,57,Computer Accessories,201,PA,East
+1079,9/16/2008,Computer LED Lights,1,MAIL COUPON,39,33,12,21,54,Novelty,204,PA,East
+5122,8/18/2008,How to Become a Rainmaker,1,MAIL COUPON,21,18,16,2,9,Books,205,PA,East
+5120,5/18/2008,Game Player Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,205,PA,East
+5116,12/18/2008,Reading Light,1,MAIL COUPON,9,8,6,2,18,Novelty,205,PA,East
+5128,10/18/2008,Competing on the Edge,1,MAIL COUPON,21,18,16,2,9,Books,206,PA,East
+5125,6/18/2008,Sportscraft Wizard,1,MAIL COUPON,60,51,47,4,7,Computer Games,206,PA,East
+5153,10/19/2008,Little Toms Big Adventure,1,ONE DAY SALE,21,16,14,2,8,DVD,207,PA,East
+5152,9/19/2008,Game Player Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,207,PA,East
+5193,6/21/2008,Little Toms Big Adventure,1,ONE DAY SALE,21,16,14,2,8,DVD,208,PA,East
+5192,5/21/2008,Game Player Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,208,PA,East
+5207,10/22/2008,Robowars: The Novel,1,MAIL COUPON,21,18,16,2,9,Books,209,PA,East
+5206,8/22/2008,Robot Wars Trilogy Extended Edition,1,ONE DAY SALE,29,22,14,8,27,DVD,209,PA,East
+5215,9/22/2008,Hollywood Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,209,PA,East
+5231,8/23/2008,Wind on The Water,1,ONE DAY SALE,15,11,14,-3,-18,DVD,210,PA,East
+5245,9/23/2008,Desktop Theatre Computer Speakers,1,MAIL COUPON,79,67,27,40,51,Computer Accessories,211,PA,East
+5264,9/24/2008,Game Player Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,211,PA,East
+5305,7/26/2008,The Art and Science of Robowars,1,MAIL COUPON,21,18,16,2,9,Books,213,WA,West
+5306,9/26/2008,Game Player Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,213,WA,West
+5324,11/26/2008,Getting Ahead by Stepping Back,1,MAIL COUPON,21,18,16,2,9,Books,214,WA,West
+5333,10/27/2008,Robowars Replica Laser Gun,1,MAIL COUPON,39,33,19,14,36,Novelty,214,WA,West
+5347,7/27/2008,Competing on the Edge,1,MAIL COUPON,21,18,16,2,9,Books,215,WA,West
+5351,12/27/2008,Robowars Replica Laser Gun,1,MAIL COUPON,39,33,19,14,36,Novelty,215,WA,West
+5369,12/28/2008,Reading Light,1,MAIL COUPON,9,8,6,2,18,Novelty,215,WA,West
+5373,11/1/2008,The Art and Science of Robowars,1,MAIL COUPON,21,18,16,2,9,Books,216,WA,West
+5376,3/2/2008,Wind on The Water,1,ONE DAY SALE,15,11,14,-3,-18,DVD,216,WA,West
+5395,10/2/2008,Computer Magazine,1,MAIL COUPON,5,4,2,2,45,Magazines,217,WA,West
+5461,11/5/2008,Robowars Webcam,1,MAIL COUPON,79,67,29,38,48,Computer Accessories,219,TX,South
+5444,10/4/2008,Hollywood Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,219,TX,South
+5449,6/5/2008,Robowars Replica Laser Gun,1,MAIL COUPON,39,33,19,14,36,Novelty,219,TX,South
+5494,12/6/2008,Competing on the Edge,1,GIFT CARD,21,15,16,-1,-6,Books,221,TX,South
+5522,4/8/2008,Wind on The Water,1,ONE DAY SALE,15,11,14,-3,-18,DVD,222,TX,South
+5522,4/8/2008,Game Player Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,222,TX,South
+5522,4/8/2008,Robowars Replica Laser Gun,1,MAIL COUPON,39,33,19,14,36,Novelty,222,TX,South
+5553,1/9/2008,Computer Magazine,1,MAIL COUPON,5,4,2,2,45,Magazines,223,TX,South
+5540,11/8/2008,Robowars Replica Laser Gun,1,MAIL COUPON,39,33,19,14,36,Novelty,223,TX,South
+5566,10/9/2008,Competing on the Edge,1,MAIL COUPON,21,18,16,2,9,Books,224,TX,South
+5570,2/9/2008,Hollywood Weekly,1,MAIL COUPON,5,4,2,2,45,Magazines,224,TX,South
+5574,10/10/2008,Reading Light,1,MAIL COUPON,9,8,6,2,18,Novelty,224,TX,South
+5608,12/11/2008,Computer Magazine,1,MAIL COUPON,5,4,2,2,45,Magazines,225,TX,South
+5792,8/20/2008,Micro FM Radio,1,MAIL COUPON,17,14,6,8,49,Novelty,234,TX,South
+5853,2/22/2008,Micro FM Radio,1,MAIL COUPON,17,14,6,8,49,Novelty,237,TX,South
+5915,10/25/2008,Getting Ahead by Stepping Back,1,MAIL COUPON,21,18,16,2,9,Books,239,TX,South
+5969,4/28/2008,Robowars Laser Gun Holder,1,MAIL COUPON,10,8,7,1,15,Novelty,242,TX,South
+6022,9/3/2008,Micro FM Radio,1,MAIL COUPON,17,14,6,8,49,Novelty,245,TX,South
+6217,9/12/2008,Desktop Theatre Computer Speakers,1,MAIL COUPON,79,67,27,40,51,Computer Accessories,253,FL,East
+6251,12/13/2008,Desktop Theatre Computer Speakers,1,MAIL COUPON,79,67,27,40,51,Computer Accessories,254,FL,East
+6261,9/14/2008,Effective Public Relations,1,MAIL COUPON,21,18,16,2,9,Books,255,FL,East
+6310,12/17/2008,Desktop Theatre Computer Speakers,1,MAIL COUPON,79,67,27,40,51,Computer Accessories,259,FL,East
+6408,10/20/2008,Robowars Laser Gun Holder,1,MAIL COUPON,10,8,7,1,15,Novelty,262,FL,East
+6569,12/28/2008,Getting Ahead by Stepping Back,1,GIFT CARD,21,15,16,-1,-6,Books,269,FL,East
+6769,9/10/2008,Robowars Laser Gun Holder,1,MAIL COUPON,10,8,7,1,15,Novelty,278,FL,East
+6776,2/10/2008,Desktop Theatre Computer Speakers,1,MAIL COUPON,79,67,27,40,51,Computer Accessories,279,FL,East
+6784,3/11/2008,Robowars Laser Gun Holder,1,MAIL COUPON,10,8,7,1,15,Novelty,279,FL,East
+7127,12/1/2008,Desktop Theatre Computer Speakers,1,MAIL COUPON,79,67,27,40,51,Computer Accessories,297,OR,West
+7346,11/11/2008,Desktop Theatre Computer Speakers,1,MAIL COUPON,79,67,27,40,51,Computer Accessories,307,OR,West
+7105,6/19/2008,Robowars Laser Gun Holder,1,MAIL COUPON,10,8,7,1,15,Novelty,314,OR,West
+7606,12/23/2008,Effective Public Relations,1,GIFT CARD,21,15,16,-1,-6,Books,319,OR,West
+7721,6/2/2008,Getting Ahead by Stepping Back,1,MAIL COUPON,21,18,16,2,9,Books,324,OR,West
+7747,11/4/2008,Robowars Laser Gun Holder,1,MAIL COUPON,10,8,7,1,15,Novelty,326,OR,West
+7774,9/5/2008,Getting Ahead by Stepping Back,1,MAIL COUPON,21,18,16,2,9,Books,327,OR,West
+7980,12/16/2008,Effective Public Relations,1,GIFT CARD,21,15,16,-1,-6,Books,338,WA,West
+8030,4/19/2008,Robowars Laser Gun Holder,1,MAIL COUPON,10,8,7,1,15,Novelty,341,WA,West
+8198,10/26/2008,Getting Ahead by Stepping Back,1,MAIL COUPON,21,18,16,2,9,Books,348,WA,West
+8382,12/8/2008,Robowars Laser Gun Holder,1,MAIL COUPON,10,8,7,1,15,Novelty,357,WA,West
+8551,7/16/2008,Desktop Theatre Computer Speakers,1,MAIL COUPON,79,67,27,40,51,Computer Accessories,363,WA,West

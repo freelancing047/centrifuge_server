@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app id="web-app_1" 
+  xmlns="http://java.sun.com/xml/ns/j2ee" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">
+
+    <display-name>Centrifuge Server</display-name>
+
+    <listener>
+        <listener-class>centrifuge.Bootstrap</listener-class>
+    </listener>
+    <listener>
+        <listener-class>centrifuge.SessionHandler</listener-class>
+    </listener>
+    
+    <listener>
+        <listener-class>csi.bridge.logging.ApplicationListener</listener-class>
+    </listener>
+    
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/applicationContext.xml</param-value>
+    </context-param>
+   
+    <filter>
+        <filter-name>JPATransactionFilter</filter-name>
+        <filter-class>csi.container.filter.JPATransactionFilter</filter-class>
+    </filter>
+    
+    <filter>
+        <filter-name>CentrifugeApplicationFilter</filter-name>
+        <filter-class>csi.container.filter.ApplicationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CentrifugeApplicationFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <filter-mapping>
+        <filter-name>JPATransactionFilter</filter-name>
+        <url-pattern>/services/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>JPATransactionFilter</filter-name>
+        <url-pattern>/views/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>FlexFaultFilter</filter-name>
+        <filter-class>centrifuge.utils.web.FaultFilter</filter-class>
+    </filter>
+
+    <!--
+    <filter-mapping>
+        <filter-name>FlexFaultFilter</filter-name>
+        <url-pattern>/services/*</url-pattern>
+    </filter-mapping>
+    -->
+    <filter>
+        <filter-name>NoCachingFilter</filter-name>
+        <filter-class>csi.container.filter.NoCachingFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>NoCachingFilter</filter-name>
+        <url-pattern>/actions/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>NoCachingFilter</filter-name>
+        <url-pattern>/services/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>NoCachingFilter</filter-name>
+        <url-pattern>/views/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>NoCachingFilter</filter-name>
+        <url-pattern>/UserManagement/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>jsp</servlet-name>
+        <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
+        <init-param>
+            <param-name>fork</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>xpoweredBy</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <description></description>
+        <display-name>ImportDataView</display-name>
+        <servlet-name>ImportDataView</servlet-name>
+        <servlet-class>centrifuge.utils.web.ImportDataView</servlet-class>
+    </servlet>
+    <servlet>
+        <description></description>
+        <display-name>CheckUniqueNames</display-name>
+        <servlet-name>CheckUniqueNames</servlet-name>
+        <servlet-class>centrifuge.services.web.views.CheckUniqueNames</servlet-class>
+    </servlet>
+    <servlet>
+        <description></description>
+        <display-name>StoreDataView</display-name>
+        <servlet-name>StoreDataView</servlet-name>
+        <servlet-class>centrifuge.services.web.views.Store</servlet-class>
+    </servlet>
+    <!--
+    <servlet>
+        <description></description>
+        <display-name>ParseQueryParams</display-name>
+        <servlet-name>ParseQueryParams</servlet-name>
+        <servlet-class>centrifuge.services.web.queries.ParseParams</servlet-class>
+    </servlet>
+    -->
+    
+    
+    
+    <servlet>
+        <servlet-name>GroupActions</servlet-name>
+        <servlet-class>centrifuge.ws.actions.GroupActions</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>GroupActions</servlet-name>
+        <url-pattern>/actions/groups/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <description></description>
+        <display-name>TestConnection</display-name>
+        <servlet-name>TestConnection</servlet-name>
+        <servlet-class>centrifuge.services.web.connections.Test</servlet-class>
+    </servlet>
+    <servlet>
+        <description></description>
+        <display-name>TestQuery</display-name>
+        <servlet-name>TestQuery</servlet-name>
+        <servlet-class>centrifuge.ws.rest.services.TestActions</servlet-class>
+    </servlet>
+    <servlet>
+        <description></description>
+        <display-name>SaveDataView</display-name>
+        <servlet-name>SaveDataView</servlet-name>
+        <servlet-class>centrifuge.services.web.views.Save</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>TabularGetMetaData</servlet-name>
+        <servlet-class>centrifuge.services.web.tables.GetMetaData</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CreateRelGraph</servlet-name>
+        <servlet-class>centrifuge.services.web.graphs.CreateRelGraph</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TimelineActions</servlet-name>
+        <servlet-class>centrifuge.ws.rest.services.TimelineActions</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PlaceRelGraph</servlet-name>
+        <servlet-class>centrifuge.services.web.graphs.PlaceRelGraph</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ChangesInRelGraph</servlet-name>
+        <servlet-class>centrifuge.services.web.graphs.ChangesInRelGraph</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>GraphActions</servlet-name>
+        <servlet-class>centrifuge.ws.rest.services.RelationshipGraphActions</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>TableActions</servlet-name>
+        <servlet-class>centrifuge.ws.rest.services.TableActions</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>PublishingActions</servlet-name>
+        <servlet-class>centrifuge.ws.actions.PublishingActions</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>PrintActions</servlet-name>
+        <servlet-class>centrifuge.ws.rest.services.PrintActions</servlet-class>
+    </servlet>
+    
+   <servlet>
+        <servlet-name>UserActions</servlet-name>
+        <servlet-class>centrifuge.ws.rest.services.UserActions</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>KMLServlet</servlet-name>
+        <servlet-class>centrifuge.ws.rest.services.assets.KMLServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <display-name>ScriptingServlet</display-name>
+        <servlet-name>ScriptingServlet</servlet-name>
+        <servlet-class>csi.server.ws.views.ScriptingServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+            <servlet-name>ScriptingServlet</servlet-name>
+            <url-pattern>/services/integration</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>KMLServlet</servlet-name>
+        <url-pattern>/services/kml</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+            <servlet-name>MainFeed</servlet-name>
+            <servlet-class>centrifuge.ws.rest.services.assets.MainFeed</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>MainFeed</servlet-name>
+            <url-pattern>/feeds/main.xml</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FeedInstance</servlet-name>
+        <servlet-class>centrifuge.ws.rest.services.assets.FeedInstance</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FeedInstance</servlet-name>
+        <url-pattern>/feeds/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>PrintActions</servlet-name>
+        <url-pattern>/services/print/actions/*</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>PublishingActions</servlet-name>
+        <url-pattern>/actions/publishing/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UserActions</servlet-name>
+        <url-pattern>/services/user/actions/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ImportDataView</servlet-name>
+        <url-pattern>/services/views/ImportDataView</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckUniqueNames</servlet-name>
+        <url-pattern>/services/views/checknames</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StoreDataView</servlet-name>
+        <url-pattern>/services/views/store</url-pattern>
+    </servlet-mapping>
+    <!--
+    <servlet-mapping>
+        <servlet-name>ParseQueryParams</servlet-name>
+        <url-pattern>/services/queries/parseParams</url-pattern>
+    </servlet-mapping>
+    -->
+
+    <servlet-mapping>
+        <servlet-name>TestConnection</servlet-name>
+        <url-pattern>/services/connections/test</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestQuery</servlet-name>
+        <url-pattern>/services/queries/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SaveDataView</servlet-name>
+        <url-pattern>/services/views/save</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>TabularGetMetaData</servlet-name>
+        <url-pattern>/services/tables/metadata</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateRelGraph</servlet-name>
+        <url-pattern>/services/graphs/createRelGraph</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TimelineActions</servlet-name>
+        <url-pattern>/services/timelines/actions/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PlaceRelGraph</servlet-name>
+        <url-pattern>/services/graphs/placeRelGraph</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChangesInRelGraph</servlet-name>
+        <url-pattern>/services/graphs/changesInRelGraph</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>GraphActions</servlet-name>
+        <url-pattern>/services/graphs/actions/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>TableActions</servlet-name>
+        <url-pattern>/services/tables/actions/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>UserInfo</display-name>
+        <servlet-name>UserInfo</servlet-name>
+        <servlet-class>centrifuge.services.web.users.Info</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserInfo</servlet-name>
+        <url-pattern>/services/users/info</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>SystemInfo</display-name>
+        <servlet-name>SystemInfo</servlet-name>
+        <servlet-class>centrifuge.services.web.system.SysInfo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SystemInfo</servlet-name>
+        <url-pattern>/services/system/info</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>Logout</display-name>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>centrifuge.services.web.system.Logout</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/services/system/logout</url-pattern>
+    </servlet-mapping>
+
+     <servlet>
+        <display-name>TaskStatus</display-name>
+        <servlet-name>TaskStatus</servlet-name>
+        <servlet-class>centrifuge.services.web.system.TaskStatusServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TaskStatus</servlet-name>
+        <url-pattern>/services/system/taskstatus</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>DataViewService</display-name>
+        <servlet-name>DataViewService</servlet-name>
+        <servlet-class>centrifuge.ws.rest.services.DataViewService</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DataViewService</servlet-name>
+        <url-pattern>/services/crud/DataView/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>DataViewActions</display-name>
+        <servlet-name>DataViewActions</servlet-name>
+        <servlet-class>centrifuge.ws.rest.services.DataViewActions</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DataViewActions</servlet-name>
+        <url-pattern>/services/dataviews/actions/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>DataViewDef</display-name>
+        <servlet-name>DataViewDef</servlet-name>
+        <servlet-class>centrifuge.ws.actions.DataViewDefActions</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DataViewDef</servlet-name>
+        <url-pattern>/actions/dataviewdef/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>ImportActions</display-name>
+        <servlet-name>ImportActions</servlet-name>
+        <servlet-class>centrifuge.ws.actions.ImportActions</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ImportActions</servlet-name>
+        <url-pattern>/actions/import/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>DataView</display-name>
+        <servlet-name>DataView</servlet-name>
+        <servlet-class>centrifuge.ws.actions.DataViewActions</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DataView</servlet-name>
+        <url-pattern>/actions/dataview/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>TestActions</display-name>
+        <servlet-name>TestActions</servlet-name>
+        <servlet-class>centrifuge.ws.actions.TestActions</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestActions</servlet-name>
+        <url-pattern>/actions/test/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DataViewSessionActions</servlet-name>
+        <servlet-class>centrifuge.ws.rest.services.DataViewSessionActions</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ChartingActions</servlet-name>
+        <servlet-class>centrifuge.ws.rest.services.ChartingActions</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ChartingActions</servlet-name>
+        <url-pattern>/services/charting/actions/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DataViewSessionActions</servlet-name>
+        <url-pattern>/services/dvsessions/actions/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ResourceService</servlet-name>
+        <servlet-class>centrifuge.ws.rest.services.ResourceActions</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResourceService</servlet-name>
+        <url-pattern>/services/resources/actions/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>AppFileManager</display-name>
+        <servlet-name>AppFileManager</servlet-name>
+        <servlet-class>csi.server.ws.filemanager.AppFileManager</servlet-class>
+        <load-on-startup>2</load-on-startup>
+        <init-param>
+            <param-name>AuthorizedRoles</param-name>
+            <param-value>Authenticated</param-value>
+        </init-param>
+        <init-param>
+            <param-name>FolderVisibility</param-name>
+            <param-value>resources/icons, resources/OptionSets</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AppFileManager</servlet-name>
+        <url-pattern>/services/getappfileinfo/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>FileManager</display-name>
+        <servlet-name>FileManager</servlet-name>
+        <servlet-class>csi.server.ws.filemanager.FileManager</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FileManager</servlet-name>
+        <url-pattern>/api/filemanager/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FileManager</servlet-name>
+        <url-pattern>/services/uploadfile/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FileManager</servlet-name>
+        <url-pattern>/services/managefile/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FileManager</servlet-name>
+        <url-pattern>/services/getfileinfo/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>FileProcessor</display-name>
+        <servlet-name>FileProcessor</servlet-name>
+        <servlet-class>csi.server.ws.filemanager.FileProcessor</servlet-class>
+        <load-on-startup>4</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FileProcessor</servlet-name>
+        <url-pattern>/services/processfile/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>FileRetriever</display-name>
+        <servlet-name>FileRetriever</servlet-name>
+        <servlet-class>csi.server.ws.filemanager.FileRetriever</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FileRetriever</servlet-name>
+        <url-pattern>/services/getfile/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>LogRetriever</display-name>
+        <servlet-name>LogRetriever</servlet-name>
+        <servlet-class>csi.server.ws.filemanager.LogRetriever</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogRetriever</servlet-name>
+        <url-pattern>/services/getlog/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>Ping</display-name>
+        <servlet-name>Ping</servlet-name>
+        <servlet-class>csi.server.ws.system.Ping</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Ping</servlet-name>
+        <url-pattern>/ping</url-pattern>
+    </servlet-mapping>
+
+
+
+    <security-role>
+        <role-name>Administrator</role-name>
+    </security-role>
+
+    <security-role>
+        <role-name>Authenticated</role-name>
+    </security-role>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>StandardProtection</web-resource-name>
+            <url-pattern>/flex/*</url-pattern>
+            <url-pattern>/services/*</url-pattern>
+            <url-pattern>/views/*</url-pattern>
+            <url-pattern>/feeds/*</url-pattern>
+            <url-pattern>/actions/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Authenticated</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Test</web-resource-name>
+            <url-pattern>/echo.jsp</url-pattern>
+        </web-resource-collection>
+    </security-constraint>
+
+    <login-config>
+        <!-- <auth-method>FORM</auth-method> -->
+        <realm-name>Centrifuge</realm-name>
+        <form-login-config>
+            <form-login-page>/admin/login.jsp</form-login-page>
+            <form-error-page>/admin/failed.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+
+</web-app>

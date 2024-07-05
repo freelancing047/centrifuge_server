@@ -1,0 +1,297 @@
+////////////////////////////////////////////////////////////////////////////////
+//                                                                            
+//  IIIIIII SSSSSS                                                            
+//    II    SS                          InstallShield (R)                     
+//    II    SSSSSS      (c) 1996-2002, InstallShield Software Corporation     
+//    II        SS                     All rights reserved.             
+//  IIIIIII SSSSSS                  
+//                                                                            
+//                                                                            
+//  This template script provides the code necessary to build an entry-point 
+//  function to be called in an InstallScript custom action. 
+//                                                                            
+//                                                                            
+//    File Name:  Setup.rul                                                   
+//                                                                            
+//  Description:  InstallShield script                                        
+//
+////////////////////////////////////////////////////////////////////////////////
+
+// Include Ifx.h for built-in InstallScript function prototypes, for Windows 
+// Installer API function prototypes and constants, and to declare code for 
+// the OnBegin and OnEnd events.
+#include "ifx.h"
+#include "iswi.h"
+#include "isrt.h"
+
+// The keyword export identifies FindRelatedApplications() as an entry-point function.
+// The argument it accepts must be a handle to the Installer database.
+export prototype FindRelatedApplications(HWND);
+export prototype IsUsingSamePath(HWND);    
+export prototype BackupDataDirectory(HWND);      
+export prototype EraseDataDirectory(HWND);
+export prototype UpdateExportJar(HWND);           
+export prototype MoveEmptyDataDirectory(HWND);   
+export prototype SaveLicenseFile(HWND);   
+export prototype StartLocalService(HWND);
+                              
+/*
+	This should detect an existing installation of Server 1.0.5 
+	(the built-in FindRelatedApplications wasn't doing it, for some reason)
+*/
+function FindRelatedApplications(hMSI)
+	NUMBER buffer;
+	INT retCode;
+	STRING productCode;
+	STRING productName;
+	STRING versionString;
+
+begin                  
+		//The 1.0.5 product code
+	productCode = "{008258B9-F8BB-4921-9A06-5EDCC4251611}";                               
+	retCode = 0;
+
+	buffer = 2048;
+	retCode = MsiGetProductInfo(productCode, "ProductName", productName, buffer);
+
+	buffer = 2048;
+	retCode = MsiGetProductInfo(productCode, "VersionString", versionString, buffer);   
+		
+	if (retCode == ERROR_SUCCESS) then
+		//MessageBox("ProductName: " + productName+ ", VersionString: "+versionString, INFORMATION);
+		if (productName == "Centrifuge Server" && versionString == "1.0.0 Beta") then
+			MsiSetProperty(hMSI, "RELATED_PRODUCTS_FOUND", productCode);
+		endif; 
+	endif;
+
+	return ERROR_SUCCESS;
+end;           
+                      
+/*
+	Find out if we're installing into the same path as the 1.0.5 install (if any) or 
+	into an existing Centrifuge Server (1.0.5 or otherwise).
+*/
+function IsUsingSamePath(hMSI)
+	NUMBER buffer;
+	INT retCode;
+	STRING productCode;
+	STRING installLocation;
+
+begin        
+		//The 1.0.5 product code
+	productCode = "{008258B9-F8BB-4921-9A06-5EDCC4251611}"; 
+	buffer = 2048;                                       
+	
+		//Get the 1.0.5 install location,  if any.
+	retCode = MsiGetProductInfo(productCode, "InstallLocation", installLocation, buffer); 
+	
+		//Assume, for now, that the path we're using is valid.  If it's not, the installer won't 
+		//let the user continue until they provide a "valid" path.
+	MsiSetProperty(hMSI, "NEW_PATH_IS_VALID", "YES");
+			                                              
+		//If we've found an existing 1.0.5 install AND the path is the same as the new install path, ask if they'd like to upgrade it.
+	if (retCode == ERROR_SUCCESS && installLocation == INSTALLDIR) then 
+		retCode = AskYesNo("The chosen directory contains an older version of Centrifuge Server.  Would you like to upgrade it?", YES);
+			//If they choose not to upgrade, they have to choose a new path.
+		if (retCode == NO) then
+			MsiSetProperty(hMSI, "NEW_PATH_IS_VALID", "NO");
+		endif;
+	else                                          
+			//If we find a startup.bat in the path we're installing into, then as them if they want to 
+			//overwrite what is (apparently) an existing Centrifuge Server install.
+		if (Is(FILE_EXISTS, INSTALLDIR+"\\bin\\startup.bat")) then
+			MessageBox("The chosen directory already contains an installation of Centrifuge Server.  Please choose another path.", SEVERE);
+			//The path is invalid and they have to provide a new one.
+			MsiSetProperty(hMSI, "NEW_PATH_IS_VALID", "NO");
+		else              
+				//If we found a previous install, it's not in the directory the user's chosen...  
+				//So we're not overwriting or upgrading.
+			MsiSetProperty(hMSI, "RELATED_PRODUCTS_FOUND", "");
+		endif;
+	endif; 
+	
+	return ERROR_SUCCESS;
+end;                                  
+                                                 
+                               
+/*
+	If a data directory exists in the path we're installing into, copy it into old_data.
+*/                  
+function BackupDataDirectory(hMSI)
+     STRING startPath, backupPath;
+     NUMBER retCode;
+     STRING strRetCode;
+     
+begin       
+	startPath = INSTALLDIR+"\\data";
+	backupPath = INSTALLDIR+"\\old_data";        
+                                          
+    //MessageBox("Backing up data directory, possibly...", INFORMATION);                                     
+	if (Is(PATH_EXISTS, startPath)) then 
+		//MessageBox("The path exists, copying...", INFORMATION);
+	    // Copy all files in the source directory, including files 
+	    // in subdirectories, to the target directory. 
+	    retCode = XCopyFile(startPath ^ "*.*", backupPath ^ "*.*", INCLUDE_SUBDIR);
+	    NumToStr(strRetCode, retCode);
+	else
+		return 0;
+    endif;
+
+    // Report the results of the copy operation. 
+    switch (retCode)
+    	case 0:
+    		return 0; 
+        case COPY_ERR_CREATEDIR: 
+            MessageBox ("Could not create database backup directory.", SEVERE); 
+        case COPY_ERR_MEMORY: 
+            MessageBox ("Insufficient memory to back up existing database.", SEVERE); 
+        case COPY_ERR_NODISKSPACE: 
+            MessageBox ("Insufficient disk space to back up existing database.", SEVERE); 
+        case COPY_ERR_OPENINPUT: 
+            MessageBox ("Unable to open existing database in "+ startPath +".", SEVERE); 
+        case COPY_ERR_TARGETREADONLY: 
+            MessageBox ("Unable to create database backup because a file already exists in "+backupPath+" and cannot be overwritten.", SEVERE); 
+        default: 
+            MessageBox ("Unable to create database backup -- "+strRetCode, SEVERE); 
+    endswitch; 
+end;               
+
+/*
+	Put down the export jars we require for the automatic export/import steps.
+*/     
+function UpdateExportJar(hMSI)
+	STRING supportDir;
+	STRING targetDir;
+	STRING toolsJar;
+	STRING bootstrapJar;
+	STRING exportDataFile;
+	STRING assetsJar;
+	STRING exportCmd;
+	NUMBER retCode;
+	NUMBER buffer;
+	
+begin
+	toolsJar = "tools.jar";
+	bootstrapJar = "bootstrap.jar";
+	exportCmd = "export.cmd";
+	exportDataFile = "export-data.xml"; 
+	assetsJar = "assets.jar";
+	
+	targetDir = INSTALLDIR+"\\utils";
+		//If there are already files with those names, rename them.
+	RenameFile(targetDir+"\\"+toolsJar, targetDir+"\\old_"+toolsJar);
+	RenameFile(targetDir+"\\"+bootstrapJar, targetDir+"\\old_"+bootstrapJar);
+	RenameFile(targetDir+"\\"+exportCmd, targetDir+"\\old_"+exportCmd);          
+	
+		//If we've already got any export files, move them out of the way for now.
+	RenameFile(targetDir+"\\"+exportDataFile, targetDir+"\\old_"+exportDataFile);
+	RenameFile(targetDir+"\\"+assetsJar, targetDir+"\\old_"+assetsJar);
+
+	buffer = 2048;                                      
+		//The support files (the jars, etc.) are stored in the support directory.
+	retCode = MsiGetProperty(hMSI, "SUPPORTDIR", supportDir, buffer);
+                     
+	CopyFile(supportDir+"\\"+toolsJar, targetDir+"\\"+toolsJar);
+	CopyFile(supportDir+"\\"+bootstrapJar, targetDir+"\\"+bootstrapJar);
+	CopyFile(supportDir+"\\"+exportCmd, targetDir+"\\"+exportCmd);
+end;
+                    
+/*
+	Cleans out any data directory that might exist in the intall path.
+	This keeps us from mixing new, pristine DBs with existing, grungy ones.
+*/
+function EraseDataDirectory(hMSI)
+     STRING dataPath;
+     NUMBER retCode;
+     STRING strRetCode;
+begin
+	dataPath = INSTALLDIR+"\\data";   
+	retCode = DeleteDir(dataPath, ALLCONTENTS);
+end;               
+/*
+    Saves provided license string to new license file.
+                  
+*/  
+
+/*
+	We've put down a populated DB and an empty DB.  Move the populated database from the default location (data), 
+	and put the empty database into the default location, so we start up and run with that.
+*/
+function MoveEmptyDataDirectory(hMSI)
+     STRING emptyData, dataPath, populatedData;
+     NUMBER retCode;                
+     STRING strRetCode;
+     NUMBER count;
+     STRING strCount;
+     
+begin          
+	dataPath = INSTALLDIR+"\data";
+	emptyData = INSTALLDIR+"\empty_database";
+	populatedData = INSTALLDIR+"\default_database";
+	count = 1;
+                      
+    if (Is(PATH_EXISTS, dataPath)) then                                                          
+		while (Is(PATH_EXISTS, populatedData))
+			NumToStr(strCount, count);
+			populatedData = populatedData+"_"+strCount;
+				//There's no ++ operator in InstallScript.  Who the hell designed this POS?
+			count = count + 1;
+		endwhile;
+		                  
+	    // Rename the data directory to default_database
+	    retCode = RenameFile(dataPath, populatedData);
+	    
+	    // Report any rename problems.
+	    if (retCode < 0) then
+	        NumToStr(strRetCode, retCode);     
+	        MessageBox ("Unable to move default database -- "+strRetCode, SEVERE); 
+	    endif;
+    endif;
+                                       
+	if (Is(PATH_EXISTS, emptyData)) then
+	        // Rename the empty_database directory to data
+	    retCode = RenameFile(emptyData, dataPath);
+	    
+	    // Report any rename problems.
+	    if (retCode < 0) then
+	        NumToStr(strRetCode, retCode);     
+	        MessageBox ("Unable to move empty database -- "+strRetCode, SEVERE); 
+	    endif;          
+    endif;
+end; 
+
+function SaveLicenseFile(hMSI)
+	STRING licenseValue;
+	STRING licensePath;
+	NUMBER fileHandle;
+	NUMBER retCode;  
+	NUMBER bufferSize;                  
+begin
+	licensePath = INSTALLDIR;
+	OpenFileMode( FILE_MODE_APPEND );
+	
+	retCode = CreateFile( fileHandle, licensePath, "license.txt" );
+	  
+	/* if( CreateFile( fileHandle, INSTALLDIR, "license2.txt" ) < 0 ) then
+		 MessageBox( "Failed creating license file", SEVERE );
+		 abort;                                       
+	 else     */
+		bufferSize = 2048;
+		retCode = MsiGetProperty(hMSI, "LICENSEKEY", licenseValue, bufferSize);
+		if( WriteLine( fileHandle, licenseValue ) < 0 ) then
+			MessageBox( "Failed writing license file", SEVERE );
+		endif;	
+	// endif;	
+	
+	CloseFile( fileHandle );
+end;   
+
+function StartLocalService(hMSI)
+	STRING serviceName;     
+	STRING serviceArguments;  
+	NUMBER retCode;
+begin                               
+	serviceName = "Tomcat6";
+	serviceArguments = "";
+	retCode = ServiceStartService( serviceName, serviceArguments  );
+end;

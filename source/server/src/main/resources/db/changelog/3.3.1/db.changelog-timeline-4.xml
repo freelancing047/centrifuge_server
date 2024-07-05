@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="jdanberg" id="timeline-4-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="timelinecachedstate">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="scrollposition" type="INT4" />
+            <column name="startposition" type="BIGINT" />
+            <column name="endposition" type="BIGINT" />
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="timeline-4-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="timelinecachedstate_uuid_pkey" tableName="timelinecachedstate"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-4-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="timelinecachedstate" constraintName="modelobject_timelinecachedstate_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelobject"/>
+    </changeSet>    
+    
+    <changeSet author="jdanberg" id="timeline-4-4">
+        <addColumn tableName="timelineviewdef">
+            <column name="state_uuid" type="varchar(255)" />
+        </addColumn>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="timeline-4-5" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="state_uuid" baseTableName="timelineviewdef" constraintName="timelineviewdef_state_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="timelinecachedstate"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="timeline-4-6" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="timelinetrackstate">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="trackname" type="VARCHAR(255)" />
+            <column name="collapse" type="BOOLEAN" />
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="timeline-4-7" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="timelinetrackstate_uuid_pkey" tableName="timelinetrackstate"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-4-8" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="timelinetrackstate" constraintName="modelobject_timelinetrackstate_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelobject"/>
+    </changeSet>  
+    
+    <changeSet author="jdanberg" id="timeline-4-9" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="timelinecachedstate_timelinetrackstate">
+            <column name="trackstates_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="timelinecachedstate_uuid" type="VARCHAR(255)">
+            </column>
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="timeline-4-10" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="trackstates_uuid" baseTableName="timelinecachedstate_timelinetrackstate" constraintName="timelinetrackstate_timelinecachedstate_timelinetrackstate_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="timelinetrackstate"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-4-11" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="timelinecachedstate_uuid" baseTableName="timelinecachedstate_timelinetrackstate" constraintName="timelinecachedstate_timelinecachedstate_timelinetrackstate_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="timelinecachedstate"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="timeline-4-12">
+        <addColumn tableName="timelinesettings">
+            <column name="showsummary" type="BOOLEAN" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-4-13">
+        <addColumn tableName="timelinesettings">
+            <column name="groupnamespace" type="BOOLEAN" />
+        </addColumn>
+    </changeSet>
+    
+    
+</databaseChangeLog>

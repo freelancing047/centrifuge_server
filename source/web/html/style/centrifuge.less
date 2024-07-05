@@ -1,0 +1,113 @@
+@brand-color: #005E8C;
+@imgroot: "../../images";
+
+@label-font: Helvetica;
+@control-surface-color: #555;
+@label-color: #eee;
+@bold-label-color: @label-color + #111;
+
+@dialog-color: rgba(20, 20, 20, 0.5);
+
+@spacing: 8px;
+
+@import "style/reset.css";
+@import "elements.less";
+
+.text-shadow(@x, @y, @size, @color) {
+  text-shadow: @x @y @size @color;
+}
+
+.embossed {
+  .text-shadow(0, -1px, 0, @darkish);
+}
+
+a:link, a:visited, a:active {
+  color: @bold-label-color;
+}
+
+body {
+  background: url("@{imgroot}/bg.png");
+  font-family: @label-font;
+}
+
+.control {
+  color: @label-color;
+  background: @control-surface-color;
+  padding: 4px;
+}
+
+@darkish: darken(@dialog-color, 50%);
+
+.modal {
+  .rounded(@spacing);
+  .drop-shadow(0, @spacing / 2, @spacing, 0.25);
+  .bordered(black, black, black, black);
+  .gradient(@dialog-color, @darkish, @dialog-color);
+  color: @label-color;
+  padding: @spacing * 2;
+}
+
+@login-width: 500px;
+
+#login {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -@login-width / 2;
+  width: @login-width;
+}
+
+#login fieldset legend {
+  font-size: 16px;
+  margin-bottom: @spacing;
+  .embossed;
+}
+
+#login input[type=text], #login input[type=password] {
+  width: @spacing * 11;
+  margin: 0 @spacing 0 0;
+  padding: @spacing;
+  font-size: @spacing * 2;
+  .rounded(@spacing / 2);
+}
+
+.workspace {
+  width: 100%;
+  height: 100%;
+  .bar {
+    .control;
+    font-size: 0.8em;
+  }
+}
+
+ul.dataviews {
+  border: @dialog-color;
+  background: white;
+  li {
+    margin: @spacing;
+    margin-bottom: @spacing;
+  }
+}
+
+ul.worksheets {
+  li {
+    margin: @spacing / 2;
+    font-size: 0.8em;
+  }
+}
+
+.dataview-list-container {
+  width: 400px;
+  margin: @spacing;
+  padding: @spacing;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+body>p {
+  padding: @spacing * 2;
+  line-height: 1.2em;
+  width: 400px;
+}

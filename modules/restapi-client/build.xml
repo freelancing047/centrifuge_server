@@ -1,0 +1,90 @@
+<project name="restapi-client" default="compile">
+	
+	<import file="../../source/module-support.xml" />
+
+	<property name="sdk.dir" value="../../build/centrifuge-server" />
+	<property name="RestApiClientClasses" value="../../source/server/java/target/classes" />
+    <path id="compile.classpath">
+        <fileset dir="../../lib">
+            <include name="log4j-1.2.15.jar" />
+        </fileset>
+		<fileset dir="lib">
+			<include name="*.jar" />
+		</fileset>
+    </path> 
+
+    <target name="clean">
+        <delete failonerror="false" includeemptydirs="true">
+            <fileset dir="target" />
+        </delete>
+        <delete failonerror="false" includeemptydirs="true">
+			<fileset dir="api" />
+        </delete>
+    </target>
+
+    <target name="compile" depends="clean, jar">
+        <mkdir dir="target/classes" />
+        <javac srcdir="src" destdir="target/classes" debug="true">
+            <classpath refid="compile.classpath" />
+        </javac>
+		<jar destfile="lib/CsiSampleClient.jar">
+			<fileset dir="target/classes">
+				<include name="**/*" />
+			</fileset>
+		</jar>
+    </target>
+
+	<target name="jar" >
+        <jar destfile="lib/CsiRestApi.jar">
+            <fileset dir="${RestApiClientClasses}">
+				<include name="csi/server/common/dto/CsiMap.class" />
+				<include name="csi/server/common/model/CsiUUID.class" />
+				<include name="csi/server/common/model/ModelObject.class" />
+				<include name="csi/server/ws/rest/wire/*.class" />
+            </fileset>
+        </jar>
+    </target>
+	
+	<target name="javadoc">
+		<if>
+		 	<equals arg1="${ignoreRestJavadoc}" arg2="false" />
+			<then>
+			    <javadoc packagenames="*" 
+			    	     classpathref="compile.classpath"
+			             destdir="api" 
+			             access="protected" 
+			             old="false" 
+			             verbose="true" 
+			             version="true" 
+			             use="true" 
+			             author="true" 
+			             splitindex="false" 
+			             nodeprecated="false" 
+			             nodeprecatedlist="false" 
+			             notree="false" 
+			             noindex="false" 
+			             nohelp="false" 
+			             nonavbar="false" 
+			             serialwarn="false" 
+			             charset="ISO-8859-1"
+					     linksource="false"
+					     breakiterator="false" >
+					<fileset dir="src" />
+					<fileset dir="../../source/server/java/csi/server/ws/rest/wire" />
+				</javadoc>
+			</then>
+		</if>
+	  </target>
+
+    <target name="publish" depends="compile, javadoc">
+		<mkdir dir="${sdk.dir}/sdk/RestAPI" />
+		<copy todir="${sdk.dir}/sdk/RestAPI">
+			<fileset dir="./" >
+				<include name="**/*" />
+				<exclude name="**/target/**" />
+				<exclude name="*.xml" />
+			</fileset>
+		</copy>
+    </target>
+	
+</project>

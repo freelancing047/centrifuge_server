@@ -1,0 +1,82 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+	xmlns:gxtbutton="urn:import:com.sencha.gxt.widget.core.client.button"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
+	xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:gxtform="urn:import:com.sencha.gxt.widget.core.client.form"
+	xmlns:gxtgrid="urn:import:com.sencha.gxt.widget.core.client.grid"
+	xmlns:csiboot="urn:import:csi.client.gwt.widget.boot" xmlns:settings="urn:import:csi.client.gwt.viz.shared.settings"
+	xmlns:this="urn:import:csi.client.gwt.viz.matrix.settings" xmlns:csiui="urn:import:csi.client.gwt.widget.ui"
+	xmlns:cxgrid="urn:import:csi.client.gwt.widget.gxt.grid"
+	xmlns:csigxtform="urn:import:csi.client.gwt.widget.ui.form">
+
+	<ui:style>
+		.sortTypeSelector {
+			margin-left: 20px;
+		}
+		
+		.table {
+			padding: 5px;
+			width: 100%;
+		}
+		
+		.labelCell {
+			text-align: right;
+		}
+		
+		.valueCell {
+			text-align: left;
+			width: 100%;
+		}
+	</ui:style>
+
+	<ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+	<ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+
+	<csiui:FullSizeLayoutPanel>
+		<csiui:layer top="0px" height="30px">
+			<boot:ControlGroup>
+				<g:FlowPanel addStyleNames="{style.sortTypeSelector}">
+					<boot:RadioButton name="sortType" ui:field="sortTypeAxis" text="{i18n.get.matrixSortTab_sortByAxis}" />
+				</g:FlowPanel>
+			</boot:ControlGroup>
+		</csiui:layer>
+		
+		<csiui:layer top="30px" height="100px">
+			<cxgrid:GridContainer ui:field="axisGridContainer" />
+		</csiui:layer>
+		
+		<csiui:layer top="150px" height="30px">
+			<boot:ControlGroup>
+				<g:FlowPanel addStyleNames="{style.sortTypeSelector}">
+					<boot:RadioButton name="sortType" ui:field="sortTypeMeasure" text="{i18n.get.matrixSortTab_sortByMeasure}" />
+				</g:FlowPanel>
+			</boot:ControlGroup>
+		</csiui:layer>
+		
+		<csiui:layer top="180px" bottom="0px">
+			<g:HTMLPanel>
+				<table class="{style.table}">
+					<tr>
+						<td class="{style.labelCell}">
+							<g:Label text="{i18n.get.matrixSortTab_fieldLabel}" />
+						</td>
+						<td class="{style.valueCell}">
+							<g:FlowPanel ui:field="measureFieldName" />
+						</td>
+					</tr>
+					<tr>
+						<td class="{style.labelCell}">
+							<g:Label text="{i18n.get.matrixSortTab_sortLabel}" />
+						</td>
+						<td class="{style.valueCell}">
+							<csigxtform:SortOrderButton ui:field="measureSortOrder" />
+						</td>
+					</tr>
+				</table>
+			</g:HTMLPanel>
+		</csiui:layer>
+	</csiui:FullSizeLayoutPanel>
+
+</ui:UiBinder>

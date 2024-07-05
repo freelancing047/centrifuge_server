@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OptionSet>
+
+<Comment>
+
+DEFAULT NODE TYPES
+
+-People
+-Person
+-Name
+-Flight
+-Address
+-Location
+-Date
+-Alert
+-Account ID
+-Product Name
+-Incident
+-Calendar
+-Unspecified Type
+-PHONE1
+-PHONE2
+-Information
+-Order ID
+-Customer
+-Customer ID
+
+
+I-94 Sample Icons
+-ADM DATE
+-DPT DATE
+-CTZ
+-ADDRESS
+
+Network Analysis Icons
+-SOURCE ORGANIZATION
+-SOURCE ADDRESS
+-DESTINATION ORGANIZATION
+-DESTINATION ADDRESS
+
+Drug Interaction Analysis
+-ISR
+-DRUGNAME
+-REACTION
+-MANUFACTURER
+-COUNTRY
+-REPORTING DATE
+-DRUG_SEQ
+-LOT_NUM
+-ROUTE
+-START_DT
+-END_DT
+
+Golf Camp Data
+-Allergies
+-Interests
+-SSAN
+-Camp Counselor
+-AGE
+-GENDER
+
+Thanksgiving Meal
+-BEGIN
+-END
+
+Fraud Investigation
+-CUSTOMER RISK CATEGORY
+-CUSTOMER ID
+-ACCOUNT ID
+-BRANCH NAME
+-PRODUCT
+-ACCOUNT ADVISOR
+-ALERT NAME
+-LOSS AMT
+-AT RISK VALUE
+-REPORTED DATE
+-ALERT TYPE
+-STATE
+</Comment>
+    <!--
+        DEFAULT NODE TYPE SETTINGS
+    -->
+
+<NodeType
+    nodetype="People"
+    icon="People/Group.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="Name"
+    icon="People/Male 2.png"
+    shape="none"
+    color="65280"
+    subtype="" />
+<NodeType
+    nodetype="Person"
+    icon="People/Male 2.png"
+    shape="none"
+    color="255"
+    subtype="" />
+<NodeType
+    nodetype="Flight"
+    icon="Travel/Airplane.png"
+    shape="Diamond"
+    color="16744448"
+    subtype="" />
+<NodeType
+    nodetype="Address"
+    icon="Buildings/House.png"
+    shape="none"
+    color="255"
+    subtype="" />
+<NodeType
+    nodetype="Location"
+    icon="Travel/Globe.png"
+    shape="none"
+    color="255"
+    subtype="" />
+<NodeType
+    nodetype="Date"
+    icon="Events/Date.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="Alert"
+    icon="Miscellaneous/Warning.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="Account ID"
+    icon="Communications/IP_Address.png"
+    color="16711680"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="Product Name"
+    icon="Miscellaneous/Shield Blue.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="Unspecified Type"
+    icon=""
+    shape="Diamond"
+    color="16777215"
+    subtype="" />
+<NodeType
+    nodetype="Incident"
+    icon="Miscellaneous/Warning.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="calendar"
+    icon="Events/Calendar.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="PHONE1"
+    icon="Communications/Phone.png"
+    shape="none"
+    color="255"
+    subtype="" />
+<NodeType
+    nodetype="PHONE2"
+    icon="Communications/Phone.png"
+    shape="none"
+    color="16777215"
+    subtype="" />
+<NodeType
+    nodetype="Information"
+    icon="Miscellaneous/Information.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="Order ID"
+    icon="Miscellaneous/Flag Green.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="Customer"
+    icon="People/Group.png"
+    color="16776960"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="Customer ID"
+    icon="People/Group.png"
+    color="16776960"
+    shape="none"
+    subtype="" />
+
+    <!--
+    DEFAULT LINK TYPES
+    -->
+<LinkType
+    linktype="Unspecified Type"
+    style="Solid"
+    width="1"
+    color="07956"
+    subtype="" />
+
+
+    <!--
+    SAMPLE APPLICATIONS: 1. I-94 ICONS
+    -->
+
+<NodeType
+    nodetype="CTZ"
+    icon="Travel/Passport.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="ADM DATE"
+    icon="Events/Date.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="DPT DATE"
+    icon="Events/Calendar.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+
+<NodeType
+    nodetype="ADDRESS"
+    icon="Buildings/House.png"
+    shape="none"
+    color="255"
+    subtype="" />
+
+    <!--
+    SAMPLE APPLICATIONS: 2. Network Analysis
+    -->
+<NodeType
+    nodetype="SOURCE ORGANIZATION"
+    icon="Communications/Router.png"
+    color="255"
+    shape="None"
+    subtype="" />
+<NodeType
+    nodetype="SOURCE ADDRESS"
+    icon="Communications/Mail.png"
+    color="8431631"
+    shape="Diamond"
+    subtype="" />
+<NodeType
+    nodetype="DESTINATION ADDRESS"
+    icon="Communications/IP_Address.png"
+    color="16711680"
+    shape="Circle"
+    subtype="" />
+<NodeType
+    nodetype="DESTINATION ORGANIZATION"
+    icon="Communications/Network.png"
+    color="16777215"
+    shape="Square"
+    subtype="" />
+
+    <!--
+    SAMPLE APPLICATIONS: 3. Golf Camp
+    -->
+
+<NodeType
+    nodetype="SSAN"
+    icon="People/Boy.png"
+    color="65280"
+    shape="Circle"
+    subtype="" />
+<NodeType
+    nodetype="CAMP"
+    icon=""
+    color="16711935"
+    shape="Star"
+    subtype="" />
+<NodeType
+    nodetype="Camp Counselor"
+    icon="People/Male 1.png"
+    color="16711680"
+    shape="Circle"
+    subtype="" />
+<NodeType
+    nodetype="Emergency Contact"
+    icon="People/Female 1.png"
+    color="16711680"
+    shape="Circle"
+    subtype="" />
+<NodeType
+    nodetype="Interests"
+    icon="Miscellaneous/Star.png"
+    shape="none"
+    color="16777215"
+    subtype="" />
+<NodeType
+    nodetype="Allergies"
+    icon="Miscellaneous/Error.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="AGE"
+    icon="Events/Time.png"
+    shape="none"
+    color="16744448"
+    subtype="" />
+<NodeType
+    nodetype="GENDER"
+    icon="People/Group.png"
+    shape="none"
+    color="65280"
+    subtype="" />
+
+    <!--
+    SAMPLE APPLICATIONS: 4. Thanksgiving
+    -->
+<NodeType
+    nodetype="BEGIN"
+    icon="Events/Date.png"
+    color="8431631"
+    shape="Square"
+    subtype="" />
+<NodeType
+    nodetype="END"
+    icon="Events/Date.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+
+
+    <!--
+    SAMPLE APPLICATIONS: 5. Drug Interaction Analysis
+    -->
+
+<NodeType
+    nodetype="ISR"
+    icon="People/Group.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="DRUGNAME"
+    icon="Miscellaneous/Chemical.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="DRUG_SEQ"
+    icon="Miscellaneous/Shield Blue.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="REACTION"
+    icon="Miscellaneous/Error.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="LOT_NUM"
+    icon="Miscellaneous/Star.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="COUNTRY"
+    icon="Travel/Passport.png"
+    color="843163"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="END_DT"
+    icon="Events/Calendar.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="START_DT"
+    icon="Events/Date.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="MANUFACTURER"
+    icon="Buildings/Office.png"
+    shape="none"
+    color="255"
+    subtype="" />
+<NodeType
+    nodetype="REPORTING DATE"
+    icon="Events/Date.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="ROUTE"
+    icon="Miscellaneous/Star.png"
+    shape="none"
+    color="16777215"
+    subtype="" />
+
+    <!--
+    SAMPLE APPLICATIONS: 6. Fraud Investigation
+    -->
+<NodeType
+    nodetype="CUSTOMER RISK CATEGORY"
+    icon="Miscellaneous/Error.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="OPEN DATE"
+    icon="Events/Date.png"
+    color="8431631"
+    shape="Square"
+    subtype="" />
+<NodeType
+    nodetype="REPORTED DATE"
+    icon="Events/Date.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="Reported"
+    icon="Events/Date.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="PRODUCT"
+    icon="Miscellaneous/Shield Blue.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="ACCOUNT BALANCE"
+    icon="Financial/Bills.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="Accounts.ACCOUNT BALANCE"
+    icon="Financial/Bills.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="Investigation Note"
+    icon="Miscellaneous/News.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="ALERT NAME"
+    icon="Miscellaneous/Warning.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="ALERT DESCRIPTION"
+    icon="Miscellaneous/Warning.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="CUSTOMER ID"
+    icon="People/Group.png"
+    color="16776960"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="ACCOUNT ID"
+    icon="Communications/IP_Address.png"
+    color="16711680"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="ACCOUNT"
+    icon="Communications/IP_Address.png"
+    color="16711680"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="Account"
+    icon="Communications/IP_Address.png"
+    color="16711680"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="BRANCH NAME"
+    icon="Financial/Bank.png"
+    shape="none"
+    color="16744448"
+    subtype="" />
+<NodeType
+    nodetype="ACCOUNT BRANCH"
+    icon="Financial/Bank.png"
+    shape="none"
+    color="16744448"
+    subtype="" />
+<NodeType
+    nodetype="Transaction"
+    icon="Financial/Bills.png"
+    shape="none"
+    color="65280"
+    subtype="" />
+<NodeType
+    nodetype="CASE ID"
+    icon="Miscellaneous/Star.png"
+    shape="none"
+    color="16777215"
+    subtype="" />
+<NodeType
+    nodetype="CUSTOMER NAME"
+    icon="People/Group.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="KYC Alert"
+    icon="Miscellaneous/Warning.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="ALERT TYPE"
+    icon="Miscellaneous/Information.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="LOSS AMT"
+    icon="Financial/Dollar Sign.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="Nationality"
+    icon="Travel/Globe.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="Watchlist"
+    icon="Miscellaneous/News.png"
+    color="8431631"
+    shape="none"
+    subtype="" />
+<NodeType
+    nodetype="Branch Name"
+    icon="Financial/Bank.png"
+    shape="none"
+    color="16744448"
+    subtype="" />
+<NodeType
+    nodetype="BRANCH NAME"
+    icon="Financial/Bank.png"
+    shape="none"
+    color="16744448"
+    subtype="" />
+<NodeType
+    nodetype="ACCOUNT OFFICER NAME"
+    icon="People/Male 1.png"
+    shape="none"
+    color="65280"
+    subtype="" />
+<NodeType
+    nodetype="Transaction"
+    icon="Financial/Bills.png"
+    shape="none"
+    color="65280"
+    subtype="" />
+<NodeType
+    nodetype="Transaction Date"
+    icon="Events/Date.png"
+    shape="none"
+    color="16744448"
+    subtype="Square" />
+<NodeType
+    nodetype="STATE"
+    icon="Buildings/House.png"
+    shape="Pentagon"
+    color="65280"
+    subtype="" />
+
+
+<!--  Added for Bridge / WebEx Demo -->
+<NodeType nodetype="SUBSCRIBER" 
+        icon="People/Male 1.png"
+        color="16776960"
+        shape="none"
+        subtype=""
+        />
+
+    <NodeType nodetype="SUBSCRIBER1" 
+        icon="People/Male 1.png"
+        color="16776960"
+        shape="none"
+        subtype=""
+        />
+
+        <NodeType nodetype="FLIGHT" 
+        icon="Travel/Airplane.png"
+        shape="none"
+        color="16744448"
+        subtypype=""
+    />   
+    <NodeType nodetype="Flight" 
+        icon="Travel/Airplane.png"
+        shape="none"
+        color="16744448"
+        subtype=""
+    />
+        <NodeType nodetype="FLIGHT Info" 
+        icon="Travel/Airplane.png"
+        shape="none"
+        color="16744448"
+        subtypype=""
+    />   
+    <NodeType nodetype="Flight Info" 
+        icon="Travel/Airplane.png"
+        shape="none"
+        color="16744448"
+        subtype=""
+    />
+
+
+</OptionSet>

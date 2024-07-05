@@ -1,0 +1,209 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+    <persistence-unit name="meta">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+        <class>csi.security.AccessControlEntry</class>
+        <class>csi.security.ACL</class>
+        <class>csi.security.CapcoSecurityTag</class>
+        <class>csi.security.GenericSecurityTag</class>
+        <class>csi.security.DistributionTag</class>
+        <class>csi.security.SourceAclEntry</class>
+        <class>csi.security.LinkupAclEntry</class>
+        <class>csi.security.loginevent.LoginEvent</class>
+
+        <class>csi.server.common.dto.user.preferences.ResourceFilter</class>
+        <class>csi.server.common.dto.user.preferences.DialogPreference</class>
+        <class>csi.server.common.dto.user.preferences.GeneralPreference</class>
+        <class>csi.server.common.dto.system.UserFunction</class>
+
+        <class>csi.server.common.identity.CapcoGroup</class>
+        <class>csi.server.common.identity.Group</class>
+        <class>csi.server.common.identity.Role</class>
+        <class>csi.server.common.identity.User</class>
+
+        <class>csi.server.common.model.AnnotationDef</class>
+        <class>csi.server.common.model.security.CapcoInfo</class>
+        <class>csi.server.common.model.security.SecurityTagsInfo</class>
+        <class>csi.server.common.model.attribute.AttributeDef</class>
+        <class>csi.server.common.model.visualization.graph.DirectionDef</class>
+        <class>csi.server.common.model.visualization.graph.BundleDef</class>
+        <class>csi.server.common.model.visualization.graph.BundleOp</class>
+        <class>csi.server.common.model.SpinoffTuple</class>
+        <class>csi.server.common.model.SpinoffField</class>
+        <class>csi.server.common.model.chart.ChartDimension</class>
+        <class>csi.server.common.model.chart.ChartField</class>
+        <class>csi.server.common.model.chart.ChartMeasure</class>
+        <class>csi.server.common.model.column.ColumnDef</class>
+        <class>csi.server.common.model.column.ColumnFilter</class>
+        <class>csi.server.common.model.column.InstalledColumn</class>
+        <class>csi.server.common.model.column.OrphanColumn</class>
+        <class>csi.server.common.model.BundledFieldReference</class>
+        <class>csi.server.common.model.functions.ConcatFunction</class>
+        <class>csi.server.common.model.ConditionalExpression</class>
+        <class>csi.server.common.model.ConnectionDef</class>
+        <class>csi.server.common.model.CsiUUID</class>
+        <class>csi.server.common.model.DataModelDef</class>
+        <class>csi.server.common.model.DataSetOp</class>
+        <class>csi.server.common.model.DataSourceDef</class>
+        <class>csi.server.common.model.dataview.DataView</class>
+        <class>csi.server.common.model.dataview.DataViewDef</class>
+        <class>csi.server.common.model.DimensionField</class>
+        <class>csi.server.common.model.DrillDownChartViewDef</class>
+        <class>csi.server.common.model.functions.DurationFunction</class>
+        <class>csi.server.common.model.EventDef</class>
+        <class>csi.server.common.model.extension.Classification</class>
+        <class>csi.server.common.model.extension.ClassificationData</class>
+        <class>csi.server.common.model.extension.Labels</class>
+        <class>csi.server.common.model.extension.LabelsData</class>
+        <class>csi.server.common.model.extension.SimpleExtension</class>
+        <class>csi.server.common.model.FieldDef</class>
+        <class>csi.server.common.model.filter.FilterDefinition</class>
+        <class>csi.server.common.model.filter.Filter</class>
+        <class>csi.server.common.model.filter.FilterExpression</class>
+        <class>csi.server.common.model.functions.ScriptFunction</class>
+        <class>csi.server.common.model.functions.SubstringFunction</class>
+        <class>csi.server.common.model.GenericProperties</class>
+        <class>csi.server.common.model.GeoAddressFieldDef</class>
+        <class>csi.server.common.model.GeoDetailsFieldDef</class>
+        <class>csi.server.common.model.GeoNamesFieldDef</class>
+        <class>csi.server.common.model.GoogleMapsViewDef</class>
+        <class>csi.server.common.model.tables.InstalledTable</class>
+        <class>csi.server.common.model.visualization.graph.GraphPlayerSettings</class>
+        <class>csi.server.common.model.LabeledFieldReference</class>
+        <class>csi.server.common.model.linkup.LinkupExtender</class>
+        <class>csi.server.common.model.linkup.LinkupMapDef</class>
+        <class>csi.server.common.model.linkup.LooseMapping</class>
+        <class>csi.server.common.model.visualization.graph.LinkDef</class>
+        <class>csi.server.common.model.functions.MathFunction</class>
+        <class>csi.server.common.model.ModelException</class>
+        <class>csi.server.common.model.ModelObject</class>
+        <class>csi.server.common.model.visualization.graph.NodeDef</class>
+        <class>csi.server.common.model.operator.OpMapItem</class>
+        <class>csi.server.common.model.OrderedField</class>
+        <class>csi.server.common.model.ParamMapEntry</class>
+        <class>csi.server.common.model.Property</class>
+        <class>csi.server.common.model.query.QueryDef</class>
+        <class>csi.server.common.model.query.QueryInterceptorDef</class>
+        <class>csi.server.common.model.query.QueryParameterDef</class>
+        <class>csi.server.common.model.Resource</class>
+        <class>csi.server.common.model.visualization.selection.SelectionModel</class>
+        <class>csi.server.common.model.SketchViewDef</class>
+        <class>csi.server.common.model.SqlTableDef</class>
+        <class>csi.server.common.model.SqlTokenTreeItem</class>
+        <class>csi.server.common.model.SqlTokenTreeItemList</class>
+        <class>csi.server.common.model.visualization.BundleFunctionParameter</class>
+        <class>csi.server.common.model.visualization.table.TableViewDef</class>
+        <class>csi.server.common.model.visualization.table.TableViewSettings</class>
+        <class>csi.server.common.model.visualization.table.TableViewSortField</class>
+        <class>csi.server.common.model.visualization.table.VisibleTableField</class>
+        <class>csi.server.common.model.visualization.chronos.ChronosSettings</class>
+        <class>csi.server.common.model.visualization.chronos.ChronosViewDef</class>
+        <class>csi.server.common.model.visualization.chronos.EventDefinition</class>
+        <class>csi.server.common.model.visualization.chronos.TooltipDefinition</class>
+        <class>csi.server.common.model.visualization.chart.CategoryDefinition</class>
+        <class>csi.server.common.model.visualization.chart.ChartSettings</class>
+        <class>csi.server.common.model.visualization.chart.DrillChartViewDef</class>
+        <class>csi.server.common.model.visualization.chart.LabelDefinition</class>
+        <class>csi.server.common.model.visualization.chart.MeasureDefinition</class>
+        <class>csi.server.common.model.visualization.chart.SortDefinition</class>
+        <class>csi.server.common.model.visualization.chart.ChartCriterion</class>
+        <class>csi.server.common.model.visualization.chart.SingleIntegerTypeCriterion</class>
+        <class>csi.server.common.model.visualization.chart.SingleDoubleTypeCriterion</class>
+        <class>csi.server.common.model.visualization.chart.TwoDoubleTypeCriterion</class>
+        <class>csi.server.common.model.visualization.chart.PositiveIntegerTypeCriterion</class>
+        <class>csi.server.common.model.visualization.chart.ZeroToOneTypeCriterion</class>
+        <class>csi.server.common.model.visualization.GeoSpatialViewDef</class>
+        <class>csi.server.common.model.visualization.MapChartViewDef</class>
+        <class>csi.server.common.model.visualization.map.MapTileLayer</class>
+        <class>csi.server.common.model.visualization.map.MapBundleDefinition</class>
+        <class>csi.server.common.model.visualization.map.MapSettings</class>
+        <class>csi.server.common.model.visualization.map.MapTooltipField</class>
+        <class>csi.server.common.model.visualization.map.MapViewDef</class>
+        <class>csi.server.common.model.visualization.matrix.MatrixCategoryDefinition</class>
+        <class>csi.server.common.model.visualization.matrix.MatrixMeasureDefinition</class>
+        <class>csi.server.common.model.visualization.matrix.MatrixSettings</class>
+        <class>csi.server.common.model.visualization.matrix.MatrixViewDef</class>
+        <class>csi.server.common.model.visualization.matrix.MatrixSortDefinition</class>
+        <class>csi.server.common.model.visualization.timeline.TimelineSettings</class>
+        <class>csi.server.common.model.visualization.timeline.TimelineViewDef</class>
+        <class>csi.server.common.model.visualization.timeline.TimelineEventDefinition</class>
+        <class>csi.server.common.model.visualization.selection.DrillCategory</class>
+        <class>csi.server.common.model.visualization.graph.RelGraphViewDef</class>
+        <class>csi.server.common.model.visualization.graph.PlunkedLink</class>
+        <class>csi.server.common.model.visualization.graph.PlunkedNode</class>
+        <class>csi.server.common.model.visualization.graph.Annotation</class>
+        <class>csi.server.common.model.visualization.TimelineViewDef_V1</class>
+        <class>csi.server.common.model.visualization.VisualizationDef</class>
+        <class>csi.server.common.model.visualization.VisualizationType</class>
+        <class>csi.server.common.model.worksheet.WorksheetDef</class>
+        <class>csi.server.common.model.worksheet.WorksheetScreenLayout</class>
+        <class>csi.server.common.model.worksheet.VisualizationLayoutState</class>
+        <class>csi.server.common.model.worksheet.VisualizationWorksheetLayout</class>
+
+        <class>csi.server.common.publishing.Asset</class>
+        <class>csi.server.common.publishing.Comment</class>
+        <class>csi.server.common.publishing.live.LiveAsset</class>
+        <class>csi.server.common.publishing.pdf.PdfAsset</class>
+        <class>csi.server.common.publishing.Tag</class>
+
+        <class>csi.server.common.publishing.RepositoryAsset</class>
+        <class>csi.server.common.publishing.LiveRepositoryAsset</class>
+        <class>csi.server.common.publishing.SnapshotRepositoryAsset</class>
+        <class>csi.server.common.publishing.RepositoryTag</class>
+        <class>csi.server.common.publishing.RepositoryComment</class>
+        <class>csi.server.common.publishing.RepositoryData</class>
+
+        <class>csi.server.common.model.kml.KmlMapping</class>
+        <class>csi.server.common.dto.CreateKmlRequest</class>
+
+        <class>csi.server.common.model.visualization.timeline.TimelineTimeSetting</class>
+        <class>csi.server.common.model.visualization.timeline.TimelineField</class>
+        <class>csi.server.common.model.visualization.timeline.TimelineLegendDefinition</class>
+        <class>csi.server.common.model.visualization.timeline.TimelineCachedState</class>
+        <class>csi.server.common.model.visualization.timeline.TimelineTrackState</class>
+
+        <class>csi.server.common.model.visualization.pattern.PersistedPattern</class>
+        <class>csi.server.common.model.visualization.pattern.PersistedPatternNode</class>
+        <class>csi.server.common.model.visualization.pattern.PersistedPatternLink</class>
+        
+        <class>csi.server.common.model.themes.Theme</class>
+        <class>csi.server.common.model.themes.VisualItemStyle</class>
+        
+        <class>csi.server.common.model.themes.graph.GraphTheme</class>
+        <class>csi.server.common.model.themes.graph.LinkStyle</class>
+        <class>csi.server.common.model.themes.graph.NodeStyle</class>
+        
+        <class>csi.server.common.model.themes.map.MapTheme</class>
+        <class>csi.server.common.model.themes.map.PlaceStyle</class>
+        <class>csi.server.common.model.themes.map.AssociationStyle</class>
+        
+        <class>csi.server.common.model.icons.Icon</class>
+
+        <class>csi.server.common.model.map.Basemap</class>
+        <class>csi.server.common.model.dataview.AnnotationCardDef</class>
+
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL92Dialect" />
+<!--             <property name="hibernate.pool_size" value="1" /> -->
+            <property name="hibernate.connection.datasource" value="java:comp/env/jdbc/MetaDB" />
+            <property name="hibernate.cache.use_second_level_cache" value="true"></property>
+            <property name="hibernate.order_updates" value="true"/>
+            <property name="hibernate.order_inserts" value="true"/>
+            <property name="hibernate.jdbc.batch_versioned_data" value="true"/>
+            <property name="hibernate.jdbc.fetch_size" value="100"/>
+            <property name="hibernate.jdbc.batch_size" value="100"/>
+            <property name="hibernate.default_batch_fetch_size" value="1000"/>
+            <property name="hibernate.connection.release_mode" value="auto"/>
+
+            <property name="format_sql" value="false"></property>
+<!--              <property name="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider"></property>  -->
+
+            <property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.EhCacheRegionFactory"></property>
+            <!-- <property name="hibernate.hbm2ddl.auto" value="update" /> -->
+            <!-- <property name="hibernate.show_sql" value= "true"/> -->
+            <!-- <property name="hibernate.connection.characterEncoding" value="UTF-8" /> <property name="hibernate.connection.useUnicode"
+                value="true" /> -->
+        </properties>
+    </persistence-unit>
+</persistence>

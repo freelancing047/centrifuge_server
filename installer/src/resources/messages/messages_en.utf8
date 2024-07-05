@@ -1,0 +1,6 @@
+WelcomeLabel2=This will install {0} on your computer.\n\nWe recommend that you close all other applications before continuing.
+FinishedLabel=The Setup Wizard has finished installing Centrifuge on your computer. Please reference the Centrifuge Install / Tutorial documentation to start the Centrifuge server and use your browser of choice to launch the Centrifuge client application.
+LicenseKeyLater=Note that Centrifuge will not start without a license key.  You can skip this step if you do not have the license key available or prefer to enter it manually.
+LicenseKeyExpired=The provided license key has expired and is no longer valid.  Please contact Centrifuge to obtain a new license key.
+LicenseKeyInvalid=The license key you entered is invalid.  Please verify the license key is correct or leave the entry blank.
+FileCorrupted=Some of the installation files are corrupted.

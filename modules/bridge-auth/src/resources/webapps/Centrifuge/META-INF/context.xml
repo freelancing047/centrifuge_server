@@ -1,0 +1,52 @@
+
+<Context>
+
+    <Manager
+        pathname="" />
+
+    <Resource
+        name="jdbc/AdminDatabase"
+        type="javax.sql.DataSource"
+        auth="Container"
+        factory="org.apache.commons.dbcp.BasicDataSourceFactory"
+        driverClassName="org.apache.derby.jdbc.EmbeddedConnectionPoolDataSource"
+        url="jdbc:derby:AdminDatabase"
+        defaultAutoCommit="false"
+        poolPreparedStatements="true"
+        maxActive="100"
+        maxIdle="20" />
+
+    <Resource
+        name="jdbc/MetaDB"
+        type="javax.sql.DataSource"
+        auth="Container"
+        factory="org.apache.commons.dbcp.BasicDataSourceFactory"
+        driverClassName="org.apache.derby.jdbc.EmbeddedConnectionPoolDataSource"
+        url="jdbc:derby:MetaDB;create=true"
+        defaultAutoCommit="false"
+        poolPreparedStatements="false"
+        maxActive="100"
+        maxIdle="20" />
+    <Resource
+        name="jdbc/CacheDB"
+        type="javax.sql.DataSource"
+        auth="Container"
+        factory="org.apache.commons.dbcp.BasicDataSourceFactory"
+        driverClassName="org.apache.derby.jdbc.EmbeddedConnectionPoolDataSource"
+        url="jdbc:derby:CacheDB;create=true"
+        defaultAutoCommit="false"
+        poolPreparedStatements="true"
+        maxActive="100"
+        maxIdle="20" />
+    
+
+    <Realm
+        className="centrifuge.container.realm.JAASRealm"
+        appName="bridge"
+        userClassNames="centrifuge.security.jaas.JAASPrincipal, csi.security.auth.bridge.BridgePrincipal"
+        roleClassNames="centrifuge.security.jaas.JAASRole, csi.security.auth.bridge.BridgeRole, javax.security.auth.x500.X500Principal"
+        digest="SHA"
+        digestEncoding="UTF-8" />
+
+
+</Context>

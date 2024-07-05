@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="rfoster" id="1420639230395-37" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <dropForeignKeyConstraint baseTableName="bundlefunctionparameter" constraintName="fk9b56ee2f3bdfdd04"/>
+    </changeSet>
+    <changeSet author="rfoster" id="1420639230395-38" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <dropColumn columnName="parent_uuid" tableName="bundlefunctionparameter"/>
+    </changeSet>
+    <changeSet author="rfoster" id="1420639230395-39" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="filterexpression_bundlefunctionparameter">
+            <column name="filterexpression_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="bundlefunctionparameters_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="1420639230395-40" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addUniqueConstraint columnNames="bundlefunctionparameters_uuid" constraintName="filterexpression_bundlefuncti_bundlefunctionparameters_uuid_key" deferrable="false" disabled="false" initiallyDeferred="false" tableName="filterexpression_bundlefunctionparameter"/>
+    </changeSet>
+    <changeSet author="rfoster" id="1420639230395-41" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="bundlefunctionparameters_uuid" baseTableName="filterexpression_bundlefunctionparameter" constraintName="fk7c778b4062d2ad09" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="bundlefunctionparameter"/>
+    </changeSet>
+	
+    <changeSet author="rfoster" id="1420639230395-42" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="filterexpression_uuid" baseTableName="filterexpression_bundlefunctionparameter" constraintName="fk7c778b409de62d5e" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="filterexpression"/>
+    </changeSet>
+    <changeSet author="rfoster" id="1420639230395-43" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <dropColumn columnName="dataviewuuid" tableName="linkupmapdef"/>
+    </changeSet>
+    <changeSet author="rfoster" id="1420639230395-44" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="linkupmapdef">
+            <column name="templateowner" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,8 @@
+<project name="Stamen Design Utilities" basedir=".">
+    
+    <property name="output.name" value="com.stamen"/>
+    <property name="output.version" value="1.0" />
+    
+    <import file="../flex-common.xml"/>
+    
+</project>

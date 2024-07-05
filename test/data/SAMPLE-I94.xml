@@ -1,0 +1,1011 @@
+<?xml version="1.0"?>
+<Root>
+	<DataViews>
+		<DataViewName>SAMPLE-I94</DataViewName>
+		<ConnID></ConnID>
+		<QueryID></QueryID>
+		<MetaID></MetaID>
+		<BundleMode></BundleMode>
+		<Remark></Remark>
+	</DataViews>
+	<Connections>
+		<ConnName>I94 Materialized LAT LONG</ConnName>
+		<ConnectString>
+			Provider=Microsoft.Jet.OLEDB.4.0;Data Source=/samples/I94/I94.xls;Extended
+			Properties="Excel 8.0;IMEX=1"
+		</ConnectString>
+		<Remark></Remark>
+		<QBGraphicalUI>False</QBGraphicalUI>
+		<ConnType>Excel</ConnType>
+	</Connections>
+	<Queries>
+		<QueryName>I94 Materialized LAT LONG</QueryName>
+		<QueryText>
+			SELECT * FROM [I94 Materialized LAT LONG]
+		</QueryText>
+		<HasParams>False</HasParams>
+		<UnionAll></UnionAll>
+		<Remark></Remark>
+		<Timeout>30</Timeout>
+		<CallbackType></CallbackType>
+		<TableList>I94 Materialized LAT LONG</TableList>
+	</Queries>
+	<MetaData>
+		<MetaName>
+			I94 Materialized LAT LONG
+		</MetaName>
+		<OptionsName>Baseline</OptionsName>
+		<Remark></Remark>
+	</MetaData>
+	<AdvancedFields>
+		<ObjectID>Event 1</ObjectID>
+		<Attribute>Label</Attribute>
+		<Header></Header>
+		<Separator>(carriage return)</Separator>
+		<DataType>Char</DataType>
+	</AdvancedFields>
+	<AdvancedFields>
+		<ObjectID>Link 1,2</ObjectID>
+		<Attribute>Label</Attribute>
+		<Header>Link Label</Header>
+		<Separator></Separator>
+		<DataType>Char</DataType>
+	</AdvancedFields>
+	<AdvancedFields>
+		<ObjectID>Node 3</ObjectID>
+		<Attribute>Label</Attribute>
+		<Header>Flight</Header>
+		<Separator>(space)</Separator>
+		<DataType>Char</DataType>
+	</AdvancedFields>
+	<ObjectSpecs>
+		<ObjectID>Event 1</ObjectID>
+		<Attribute>End Date</Attribute>
+		<Priority>1</Priority>
+		<Column1>20</Column1>
+		<Column2>0</Column2>
+		<FreeText1>DPT DATE</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Event 1</ObjectID>
+		<Attribute>Label</Attribute>
+		<Priority>1</Priority>
+		<Column1>12</Column1>
+		<Column2>0</Column2>
+		<FreeText1>ADM DATE</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Event 1</ObjectID>
+		<Attribute>Label</Attribute>
+		<Priority>2</Priority>
+		<Column1>4</Column1>
+		<Column2>0</Column2>
+		<FreeText1>Name</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Event 1</ObjectID>
+		<Attribute>Start Date</Attribute>
+		<Priority>1</Priority>
+		<Column1>12</Column1>
+		<Column2>0</Column2>
+		<FreeText1>ADM DATE</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Event 1</ObjectID>
+		<Attribute>Type</Attribute>
+		<Priority>1</Priority>
+		<Column1>10</Column1>
+		<Column2>0</Column2>
+		<FreeText1>STATE</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Link 1,2</ObjectID>
+		<Attribute>End Date</Attribute>
+		<Priority>1</Priority>
+		<Column1>20</Column1>
+		<Column2>0</Column2>
+		<FreeText1>DPT DATE</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Link 1,2</ObjectID>
+		<Attribute>Label</Attribute>
+		<Priority>1</Priority>
+		<Column1>4</Column1>
+		<Column2>0</Column2>
+		<FreeText1>Name</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Link 1,2</ObjectID>
+		<Attribute>Label</Attribute>
+		<Priority>2</Priority>
+		<Column1>0</Column1>
+		<Column2>0</Column2>
+		<FreeText1>(carriage return)</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Link 1,2</ObjectID>
+		<Attribute>Label</Attribute>
+		<Priority>3</Priority>
+		<Column1>9</Column1>
+		<Column2>0</Column2>
+		<FreeText1>Address</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Link 1,2</ObjectID>
+		<Attribute>Label</Attribute>
+		<Priority>4</Priority>
+		<Column1>0</Column1>
+		<Column2>0</Column2>
+		<FreeText1>(carriage return)</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Link 1,2</ObjectID>
+		<Attribute>Start Date</Attribute>
+		<Priority>1</Priority>
+		<Column1>12</Column1>
+		<Column2>0</Column2>
+		<FreeText1>ADM DATE</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Link 1,3</ObjectID>
+		<Attribute>Link</Attribute>
+		<Priority>1</Priority>
+		<Column1>-1</Column1>
+		<Column2>-1</Column2>
+		<FreeText1></FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Link 1,4</ObjectID>
+		<Attribute>Link</Attribute>
+		<Priority>1</Priority>
+		<Column1>-1</Column1>
+		<Column2>-1</Column2>
+		<FreeText1></FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Link 1,5</ObjectID>
+		<Attribute>Link</Attribute>
+		<Priority>1</Priority>
+		<Column1>-1</Column1>
+		<Column2>-1</Column2>
+		<FreeText1></FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 1</ObjectID>
+		<Attribute>End Date</Attribute>
+		<Priority>1</Priority>
+		<Column1>20</Column1>
+		<Column2>0</Column2>
+		<FreeText1>DPT DATE</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 1</ObjectID>
+		<Attribute>Label</Attribute>
+		<Priority>1</Priority>
+		<Column1>4</Column1>
+		<Column2>0</Column2>
+		<FreeText1>Name</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 1</ObjectID>
+		<Attribute>Latitude</Attribute>
+		<Priority>1</Priority>
+		<Column1>28</Column1>
+		<Column2>0</Column2>
+		<FreeText1>LATITUDE</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 1</ObjectID>
+		<Attribute>Longitude</Attribute>
+		<Priority>1</Priority>
+		<Column1>29</Column1>
+		<Column2>0</Column2>
+		<FreeText1>LONGITUDE</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 1</ObjectID>
+		<Attribute>Picture Filename</Attribute>
+		<Priority>1</Priority>
+		<Column1>24</Column1>
+		<Column2>0</Column2>
+		<FreeText1>Photo</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 1</ObjectID>
+		<Attribute>Start Date</Attribute>
+		<Priority>1</Priority>
+		<Column1>12</Column1>
+		<Column2>0</Column2>
+		<FreeText1>ADM DATE</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 1</ObjectID>
+		<Attribute>Type</Attribute>
+		<Priority>1</Priority>
+		<Column1>0</Column1>
+		<Column2>0</Column2>
+		<FreeText1>¿Person</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 2</ObjectID>
+		<Attribute>Label</Attribute>
+		<Priority>1</Priority>
+		<Column1>9</Column1>
+		<Column2>0</Column2>
+		<FreeText1>Address</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 2</ObjectID>
+		<Attribute>Type</Attribute>
+		<Priority>1</Priority>
+		<Column1>0</Column1>
+		<Column2>0</Column2>
+		<FreeText1>¿ADDRESS</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 3</ObjectID>
+		<Attribute>Label</Attribute>
+		<Priority>1</Priority>
+		<Column1>13</Column1>
+		<Column2>0</Column2>
+		<FreeText1>Flight</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 3</ObjectID>
+		<Attribute>Label</Attribute>
+		<Priority>2</Priority>
+		<Column1>12</Column1>
+		<Column2>0</Column2>
+		<FreeText1>ADM DATE</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 3</ObjectID>
+		<Attribute>Label</Attribute>
+		<Priority>3</Priority>
+		<Column1>12</Column1>
+		<Column2>0</Column2>
+		<FreeText1>ADM DATE</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1>WEEKDAY</Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 4</ObjectID>
+		<Attribute>Label</Attribute>
+		<Priority>1</Priority>
+		<Column1>16</Column1>
+		<Column2>0</Column2>
+		<FreeText1>PORT OF ENTRY</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 5</ObjectID>
+		<Attribute>Label</Attribute>
+		<Priority>1</Priority>
+		<Column1>21</Column1>
+		<Column2>0</Column2>
+		<FreeText1>PORT OF DEPARTURE</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Timeline Type</ColumnAttribute>
+		<ColumnValue>1</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>ShowGeoLinks</ColumnAttribute>
+		<ColumnValue>-1</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Rel Graph Type</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Y Pos</ColumnAttribute>
+		<ColumnValue>1 495.26730</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Y Pos</ColumnAttribute>
+		<ColumnValue>2 251.17656</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Y Pos</ColumnAttribute>
+		<ColumnValue>3 413.90372</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Y Pos</ColumnAttribute>
+		<ColumnValue>4 576.63088</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Y Pos</ColumnAttribute>
+		<ColumnValue>5 739.35804</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node X Pos</ColumnAttribute>
+		<ColumnValue>1 35.95791</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node X Pos</ColumnAttribute>
+		<ColumnValue>2 696.31431</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node X Pos</ColumnAttribute>
+		<ColumnValue>3 696.31431</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node X Pos</ColumnAttribute>
+		<ColumnValue>4 696.31431</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node X Pos</ColumnAttribute>
+		<ColumnValue>5 696.31431</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified Start</ColumnAttribute>
+		<ColumnValue>1 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified Start</ColumnAttribute>
+		<ColumnValue>2 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified Start</ColumnAttribute>
+		<ColumnValue>3 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified Start</ColumnAttribute>
+		<ColumnValue>4 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified Start</ColumnAttribute>
+		<ColumnValue>5 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified End Units</ColumnAttribute>
+		<ColumnValue>1 Weeks</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified End</ColumnAttribute>
+		<ColumnValue>1 2</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified End</ColumnAttribute>
+		<ColumnValue>2 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified End</ColumnAttribute>
+		<ColumnValue>3 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified End</ColumnAttribute>
+		<ColumnValue>4 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified End</ColumnAttribute>
+		<ColumnValue>5 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Lat/Lon Input Decimal</ColumnAttribute>
+		<ColumnValue>1</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Init Hidden</ColumnAttribute>
+		<ColumnValue>4</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Init Hidden</ColumnAttribute>
+		<ColumnValue>5</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Duration Option</ColumnAttribute>
+		<ColumnValue>1 0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Duration Option</ColumnAttribute>
+		<ColumnValue>2 0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Duration Option</ColumnAttribute>
+		<ColumnValue>3 0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Duration Option</ColumnAttribute>
+		<ColumnValue>4 0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Duration Option</ColumnAttribute>
+		<ColumnValue>5 0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Address Lat/Lon</ColumnAttribute>
+		<ColumnValue>1</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Main Map</ColumnAttribute>
+		<ColumnValue>1</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Unspecified Start</ColumnAttribute>
+		<ColumnValue>1,2 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Unspecified Start</ColumnAttribute>
+		<ColumnValue>1,3 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Unspecified Start</ColumnAttribute>
+		<ColumnValue>1,4 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Unspecified Start</ColumnAttribute>
+		<ColumnValue>1,5 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Unspecified End Units</ColumnAttribute>
+		<ColumnValue>1,2 Weeks</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Unspecified End</ColumnAttribute>
+		<ColumnValue>1,2 2</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Unspecified End</ColumnAttribute>
+		<ColumnValue>1,3 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Unspecified End</ColumnAttribute>
+		<ColumnValue>1,4 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Unspecified End</ColumnAttribute>
+		<ColumnValue>1,5 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Duration Option</ColumnAttribute>
+		<ColumnValue>1,2 0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Duration Option</ColumnAttribute>
+		<ColumnValue>1,3 0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Duration Option</ColumnAttribute>
+		<ColumnValue>1,4 0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Duration Option</ColumnAttribute>
+		<ColumnValue>1,5 0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Initial View</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Event Unspecified Start</ColumnAttribute>
+		<ColumnValue>1 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Event Unspecified End Units</ColumnAttribute>
+		<ColumnValue>1 Weeks</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Event Unspecified End</ColumnAttribute>
+		<ColumnValue>1 1</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Event Spec Name</ColumnAttribute>
+		<ColumnValue>1 Travel</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Event Participant</ColumnAttribute>
+		<ColumnValue>1 1</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Event Participant</ColumnAttribute>
+		<ColumnValue>1 2</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Event Participant</ColumnAttribute>
+		<ColumnValue>1 3</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Event Order</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Chart Type</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Chart Function</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Chart Cell</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>1</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>450</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>1</ColumnID>
+		<ColumnAttribute>Hidden</ColumnAttribute>
+		<ColumnValue></ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>1</ColumnID>
+		<ColumnAttribute>Data Type</ColumnAttribute>
+		<ColumnValue>Integer</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>2</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>1260</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>3</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>1590</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>4</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>2055</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>4</ColumnID>
+		<ColumnAttribute>Hidden</ColumnAttribute>
+		<ColumnValue></ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>5</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>1350</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>5</ColumnID>
+		<ColumnAttribute>Node Attribute</ColumnAttribute>
+		<ColumnValue>1</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>5</ColumnID>
+		<ColumnAttribute>Format</ColumnAttribute>
+		<ColumnValue>MM/dd/yyyy</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>6</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>510</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>6</ColumnID>
+		<ColumnAttribute>Node Attribute</ColumnAttribute>
+		<ColumnValue>1</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>7</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>2760</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>8</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>1890</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>8</ColumnID>
+		<ColumnAttribute>Chart X Axis</ColumnAttribute>
+		<ColumnValue></ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>9</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>4350</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>10</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>750</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>11</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>960</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>12</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>1095</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>12</ColumnID>
+		<ColumnAttribute>Node Attribute</ColumnAttribute>
+		<ColumnValue>1</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>12</ColumnID>
+		<ColumnAttribute>Format</ColumnAttribute>
+		<ColumnValue>MM/dd/yyyy</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>13</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>1770</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>14</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>870</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>14</ColumnID>
+		<ColumnAttribute>Node Attribute</ColumnAttribute>
+		<ColumnValue>1</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>15</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>825</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>16</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>1650</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>16</ColumnID>
+		<ColumnAttribute>Node Attribute</ColumnAttribute>
+		<ColumnValue>1</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>17</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>1185</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>17</ColumnID>
+		<ColumnAttribute>Hidden</ColumnAttribute>
+		<ColumnValue></ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>18</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>1230</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>18</ColumnID>
+		<ColumnAttribute>Hidden</ColumnAttribute>
+		<ColumnValue></ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>19</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>1185</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>19</ColumnID>
+		<ColumnAttribute>Node Attribute</ColumnAttribute>
+		<ColumnValue>1</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>20</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>1065</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>20</ColumnID>
+		<ColumnAttribute>Node Attribute</ColumnAttribute>
+		<ColumnValue>1</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>20</ColumnID>
+		<ColumnAttribute>Format</ColumnAttribute>
+		<ColumnValue>MM/dd/yyyy</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>21</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>2145</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>21</ColumnID>
+		<ColumnAttribute>Node Attribute</ColumnAttribute>
+		<ColumnValue>1</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>22</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>975</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>22</ColumnID>
+		<ColumnAttribute>Hidden</ColumnAttribute>
+		<ColumnValue></ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>23</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>975</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>23</ColumnID>
+		<ColumnAttribute>Hidden</ColumnAttribute>
+		<ColumnValue></ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>24</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>3315</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>24</ColumnID>
+		<ColumnAttribute>Hidden</ColumnAttribute>
+		<ColumnValue></ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>25</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>645</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>26</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>4350</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>26</ColumnID>
+		<ColumnAttribute>Hidden</ColumnAttribute>
+		<ColumnValue></ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>27</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>600</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>28</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>1050</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>28</ColumnID>
+		<ColumnAttribute>Hidden</ColumnAttribute>
+		<ColumnValue></ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>29</ColumnID>
+		<ColumnAttribute>Width</ColumnAttribute>
+		<ColumnValue>1245</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>29</ColumnID>
+		<ColumnAttribute>Hidden</ColumnAttribute>
+		<ColumnValue></ColumnValue>
+	</ColumnSpecs>
+	<ColumnMap>
+		<MetaName>MD_1_2006_v06 Meta</MetaName>
+		<Col1>1</Col1>
+		<Col2>1</Col2>
+	</ColumnMap>
+	<ColumnMap>
+		<MetaName>MD_1_2006_v06 Meta</MetaName>
+		<Col1>2</Col1>
+		<Col2>10</Col2>
+	</ColumnMap>
+	<ColumnMap>
+		<MetaName>MD_1_2006_v06 Meta</MetaName>
+		<Col1>16</Col1>
+		<Col2>17</Col2>
+	</ColumnMap>
+	<ColumnMap>
+		<MetaName>MD_1_2006_v06 Meta</MetaName>
+		<Col1>28</Col1>
+		<Col2>41</Col2>
+	</ColumnMap>
+	<ColumnMap>
+		<MetaName>MD_1_2006_v06 Meta</MetaName>
+		<Col1>29</Col1>
+		<Col2>42</Col2>
+	</ColumnMap>
+	<ColumnMap>
+		<MetaName>Phone Calls Meta 1</MetaName>
+		<Col1>-1</Col1>
+		<Col2>-1</Col2>
+	</ColumnMap>
+    
+    <BundlingSpecs>
+      <NodeID>2</NodeID>
+      <NodeType />
+      <Priority>1</Priority>
+      <Func />
+      <Col>10</Col>
+      <Vals />
+   </BundlingSpecs>
+
+   <BundlingSpecs>
+      <NodeID>2</NodeID>
+      <NodeType />
+      <Priority>2</Priority>
+      <Func />
+      <Col>8</Col>
+      <Vals />
+   </BundlingSpecs>
+	<Callbacks>
+		<MetaID>1214</MetaID>
+		<Node1ID>1</Node1ID>
+		<Node2ID>0</Node2ID>
+		<CallbackType>1</CallbackType>
+		<CSMID>597</CSMID>
+		<ParamID>1</ParamID>
+		<Col>0</Col>
+		<Value></Value>
+		<DataViewName>News Search</DataViewName>
+	</Callbacks>
+</Root>

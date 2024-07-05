@@ -1,0 +1,44 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+			 xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+			 xmlns:gxtbutton="urn:import:com.sencha.gxt.widget.core.client.button"
+			 xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
+			 xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+			 xmlns:gxtform="urn:import:com.sencha.gxt.widget.core.client.form"
+			 xmlns:gxtgrid="urn:import:com.sencha.gxt.widget.core.client.grid"
+			 xmlns:csiboot="urn:import:csi.client.gwt.widget.boot" xmlns:settings="urn:import:csi.client.gwt.viz.shared.settings"
+			 xmlns:this="urn:import:csi.client.gwt.viz.chart.settings" xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes"
+			 xmlns:csiui="urn:import:csi.client.gwt.widget.ui" xmlns:cxgrid="urn:import:csi.client.gwt.widget.gxt.grid">
+
+	<ui:style>
+		.table {
+			padding: 5px;
+			width: 100%;
+		}
+
+		.deleteCell {
+			text-align: right;
+
+		}
+	</ui:style>
+
+	<ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+	<ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+
+	<csiui:FullSizeLayoutPanel>
+		<csiui:layer top="0px" height="40px">
+			<boot:FluidRow>
+
+				<g:InlineLabel ui:field="selectLabel" text="{i18n.get.select}"></g:InlineLabel>
+				<combo:FieldDefComboBox ui:field="fieldList"/>
+				<boot:Button size="MINI" ui:field="buttonAddCategory"/>
+				<boot:CheckBox name="alignAxisCheckBox" ui:field="alignAxisCheckBox" text="{i18n.get.chartMeasuresTab_alignAxes}"/>
+				<boot:Button size="MINI" ui:field="buttonDeleteCategory" text="{i18n.get.delete}"/>
+			</boot:FluidRow>
+		</csiui:layer>
+		<csiui:layer top="40px" bottom="0px">
+			<cxgrid:GridContainer ui:field="gridContainer" />
+		</csiui:layer>
+	</csiui:FullSizeLayoutPanel>
+
+</ui:UiBinder>

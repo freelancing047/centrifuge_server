@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+			xmlns:g='urn:import:com.google.gwt.user.client.ui'
+            xmlns:misc='urn:import:csi.client.gwt.widget.misc'
+            xmlns:boot='urn:import:com.github.gwtbootstrap.client.ui'
+            xmlns:base='urn:import:com.github.gwtbootstrap.client.ui.base'>
+
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+
+   <ui:style gss="true">
+		.scrollHorizontal{
+			overflow-y: hidden !important;
+		}
+        .invisibleString {
+            color: #ffffff;
+        }
+	</ui:style>
+
+    <g:VerticalPanel addStyleNames="{style.scrollHorizontal}" ui:field="topPanel">
+        <g:HorizontalPanel width="100%">
+            <g:cell horizontalAlignment="ALIGN_LEFT">
+                <g:HorizontalPanel width="100%">
+                    <g:cell horizontalAlignment="ALIGN_LEFT">
+                        <base:InlineLabel visible="false" ui:field="baseLabel" />
+                    </g:cell>
+                    <g:cell horizontalAlignment="ALIGN_LEFT">
+                        <base:InlineLabel visible="false" ui:field="deltaLabel" />
+                    </g:cell>
+                </g:HorizontalPanel>
+            </g:cell>
+            <g:cell horizontalAlignment="ALIGN_RIGHT">
+                <g:HorizontalPanel width="100%" ui:field="usagePrompt" visible="false">
+                    <g:cell horizontalAlignment="ALIGN_RIGHT">
+                        <base:InlineLabel text="{i18n.get.useAsPrompt}" />
+                    </g:cell>
+                    <g:cell horizontalAlignment="ALIGN_RIGHT">
+                        <g:Label text="{i18n.get.threepluses}" styleName="{style.invisibleString}" />
+                    </g:cell>
+                    <g:cell horizontalAlignment="ALIGN_RIGHT">
+                        <boot:RadioButton ui:field="asColumnNames" name="rowUsage" text="{i18n.get.useAsColumnNames}" />
+                    </g:cell>
+                    <g:cell horizontalAlignment="ALIGN_RIGHT">
+                        <g:Label text="{i18n.get.threepluses}" styleName="{style.invisibleString}" />
+                    </g:cell>
+                    <g:cell horizontalAlignment="ALIGN_RIGHT">
+                        <boot:RadioButton ui:field="asDataValues" name="rowUsage" text="{i18n.get.useAsDataValues}" />
+                    </g:cell>
+                </g:HorizontalPanel>
+            </g:cell>
+        </g:HorizontalPanel>
+        <g:ScrollPanel addStyleNames="{style.scrollHorizontal}" ui:field="scrollingPanel">
+            <g:HorizontalPanel ui:field="stringPanel">
+                <misc:NonWrappingLabel visible="true" ui:field="stringValue"></misc:NonWrappingLabel>
+            </g:HorizontalPanel>
+        </g:ScrollPanel>
+	</g:VerticalPanel>
+</ui:UiBinder>

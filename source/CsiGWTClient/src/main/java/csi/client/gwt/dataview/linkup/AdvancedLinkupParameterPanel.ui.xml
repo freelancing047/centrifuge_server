@@ -1,0 +1,89 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:gwt="urn:import:com.google.gwt.user.client.ui"
+	xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+    xmlns:form="urn:import:com.sencha.gxt.widget.core.client.form"
+    xmlns:grid="urn:import:com.sencha.gxt.widget.core.client.grid"
+    xmlns:csibutton="urn:import:csi.client.gwt.widget.buttons"
+    xmlns:list="urn:import:csi.client.gwt.widget.list_boxes">
+    
+ 	<ui:style>
+		.x-tabs-wrap table {
+			position:static;
+			display:inline
+		}
+		.x-tabs-strip a, .x-tabs-strip .on a {
+			position:static
+		}
+  		.tabborder {
+   			border-style:solid;
+   			border-width:1px;
+  		}
+  		.rpad15 {
+   			padding-right:15px;
+		}
+        .margin-fix input {
+            margin-bottom: 0px !important;
+        }
+ 	</ui:style>
+
+    <gwt:AbsolutePanel ui:field="parameterSetSelectionPanel" width="900px" height="365px">
+        <gwt:at left="10" top="0" width="420" height="365">
+            <gwt:VerticalPanel ui:field="parameterSetControlPanel" height="365px" width="420px">
+                <gwt:Label ui:field="setNameLabel"></gwt:Label>
+                <boot:TextBox ui:field="setNameTextBox" addStyleNames="{style.rpad15}" width="400px"/>
+                <gwt:Label ui:field="setDescriptionLabel"></gwt:Label>
+                <boot:TextBox ui:field="setDescriptionTextBox" addStyleNames="{style.rpad15}" width="400px"/>
+                <boot:RadioButton name="restrictions" ui:field="useAllRadioButton" addStyleNames="{style.rpad15}"></boot:RadioButton>
+                <gwt:Label ui:field="notRelGraphLabel"></gwt:Label>
+                <boot:RadioButton name="restrictions" ui:field="useNodeRadioButton" addStyleNames="{style.rpad15}"></boot:RadioButton>
+                <gwt:HorizontalPanel height="30px" width="420px">
+                    <gwt:InlineLabel addStyleNames="{style.rpad15}">&nbsp; &nbsp;</gwt:InlineLabel>
+                    <list:CsiStringListBox ui:field="availableNodes" width="405px" editable="true" visible="true" addStyleNames="{style.margin-fix}"/>
+                    <gwt:cell horizontalAlignment="ALIGN_RIGHT">
+                        <gwt:InlineLabel ui:field="noNodesLabel" addStyleNames="{style.rpad15}"></gwt:InlineLabel>
+                    </gwt:cell>
+                </gwt:HorizontalPanel>
+                <boot:RadioButton name="restrictions" ui:field="useLinkRadioButton" addStyleNames="{style.rpad15}"></boot:RadioButton>
+                <gwt:HorizontalPanel height="30px" width="420px">
+                    <gwt:InlineLabel addStyleNames="{style.rpad15}">&nbsp; &nbsp;</gwt:InlineLabel>
+                    <list:CsiStringListBox ui:field="availableLinks" width="405px" editable="true" visible="true" addStyleNames="{style.margin-fix}"/>
+                    <gwt:cell horizontalAlignment="ALIGN_RIGHT">
+                        <gwt:InlineLabel ui:field="noEdgesLabel" addStyleNames="{style.rpad15}"></gwt:InlineLabel>
+                    </gwt:cell>
+                </gwt:HorizontalPanel>
+                <gwt:cell verticalAlignment="ALIGN_BOTTOM">
+                    <gwt:HorizontalPanel height="30px" width="420px">
+                        <gwt:cell verticalAlignment="ALIGN_BOTTOM" horizontalAlignment="ALIGN_LEFT">
+                            <form:CheckBox ui:field="setDisabledCheckBox"/>
+                        </gwt:cell>
+                        <gwt:cell verticalAlignment="ALIGN_BOTTOM" horizontalAlignment="ALIGN_RIGHT">
+                            <csibutton:RedButton ui:field="setDeleteButton"/>
+                        </gwt:cell>
+                    </gwt:HorizontalPanel>
+                </gwt:cell>
+            </gwt:VerticalPanel>
+        </gwt:at>
+        <gwt:at left="470" top="0" width="420" height="365">
+            <gwt:VerticalPanel ui:field="parameterSetDataPanel" height="365px" width="420px">
+                <gwt:cell verticalAlignment="ALIGN_TOP" horizontalAlignment="ALIGN_CENTER">
+                    <gwt:Label ui:field="optionalParms"></gwt:Label>
+                </gwt:cell>
+                <gwt:cell verticalAlignment="ALIGN_MIDDLE">
+                    <gwt:VerticalPanel>
+                        <gwt:Label ui:field="templateParmsLabel"></gwt:Label>
+                        <grid:Grid addStyleNames="{style.tabborder}" ui:field="templateParms" />
+                    </gwt:VerticalPanel>
+                </gwt:cell>
+                <!-- if (_fieldParmsSupported)
+                 <gwt:cell verticalAlignment="ALIGN_BOTTOM">
+                     <gwt:VerticalPanel>
+                        <gwt:Label ui:field="fieldParmsLabel"></gwt:Label>
+                        <grid:Grid addStyleNames="{style.tabborder}" ui:field="fieldParms" />
+                     </gwt:VerticalPanel>
+                 </gwt:cell>
+                 -->
+            </gwt:VerticalPanel>
+        </gwt:at>
+    </gwt:AbsolutePanel>
+</ui:UiBinder>

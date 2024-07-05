@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+  <changeSet author="dchang" id="chart-3-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+    <sql>
+      insert into singledoubletypecriterion (uuid, testvalue)
+      select uuid, testvalue
+      from singleintegertypecriterion
+      where uuid in (select uuid from chartcriterion where operatorstring in ('Top%', 'Bottom%'))
+    </sql>
+  </changeSet>
+  <changeSet author="dchang" id="chart-3-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+    <sql>
+      delete from singleintegertypecriterion
+      where uuid in (select uuid from chartcriterion where operatorstring in ('Top%', 'Bottom%'))
+    </sql>
+  </changeSet>
+  <changeSet author="dchang" id="chart-3-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+    <addColumn tableName="visualizationdef">
+      <column name="filter" type="VARCHAR(255)"/>
+    </addColumn>
+  </changeSet>
+  <changeSet author="dchang" id="chart-3-4" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+    <sql>
+      update visualizationdef set filter = filter_uuid
+    </sql>
+  </changeSet>
+  <changeSet author="dchang" id="chart-3-5" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+    <addColumn tableName="filter">
+      <column name="localid" type="VARCHAR(255)"/>
+    </addColumn>
+  </changeSet>
+  <changeSet author="dchang" id="chart-3-6" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+    <sql>
+      update filter set localid = uuid
+    </sql>
+  </changeSet>
+  <changeSet author="dchang" id="chart-3-7" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+    <sql>
+      update chartsettings set isshowbreadcrumbs = true where isshowbreadcrumbs is null
+    </sql>
+  </changeSet>
+  <changeSet author="dchang" id="chart-3-8" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+    <sql>
+      UPDATE chartsettings set currentview = 'CHART' where currentview is null
+    </sql>
+  </changeSet>
+  <changeSet author="dchang" id="chart-3-9" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+    <addNotNullConstraint
+      columnDataType="VARCHAR(255)"
+      columnName="currentview"
+      defaultNullValue="CHART"
+      tableName="chartsettings"/>
+  </changeSet>
+</databaseChangeLog>

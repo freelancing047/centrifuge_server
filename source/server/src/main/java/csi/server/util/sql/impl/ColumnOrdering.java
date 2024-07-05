@@ -1,0 +1,39 @@
+/** 
+ *  Copyright (c) 2008 Centrifuge Systems, Inc. 
+ *  All rights reserved. 
+ *   
+ *  This software is the confidential and proprietary information of 
+ *  Centrifuge Systems, Inc. ("Confidential Information").  You shall 
+ *  not disclose such Confidential Information and shall use it only
+ *  in accordance with the terms of the license agreement you entered 
+ *  into with Centrifuge Systems.
+ *
+ **/
+package csi.server.util.sql.impl;
+
+import csi.server.common.model.SortOrder;
+import csi.server.util.sql.Column;
+import csi.server.util.sql.impl.spi.ColumnSpi;
+import csi.server.util.sql.impl.spi.HasSQLRepresentation;
+
+/**
+ * @author Centrifuge Systems, Inc.
+ *
+ */
+public class ColumnOrdering implements HasSQLRepresentation {
+
+    private ColumnSpi column;
+    private SortOrder sortOrder;
+
+    public ColumnOrdering(Column column, SortOrder sortOrder) {
+        super();
+        this.column = (ColumnSpi) column;
+        this.sortOrder = sortOrder;
+    }
+
+    @Override
+    public String getSQL() {
+        return column.getAlias() + " " + sortOrder.getSQL();
+    }
+
+}

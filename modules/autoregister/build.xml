@@ -1,0 +1,39 @@
+<project name="autoregister-filter" default="package">
+
+    <path id="compile.cp">
+        <fileset dir="../../lib">
+            <include name="servlet-api.jar" />
+<!--         <include name="log4j-1.2.15.jar" /> -->
+         <include name="log4j-api-2.8.2.jar" />
+         <include name="log4j-core-2.8.2.jar" />
+        </fileset>
+        <fileset dir="../../lib/hibernate/3.4">
+            <include name="**/*.jar" />
+        </fileset>
+        <fileset dir="../../build/jars">
+            <include name="*.jar" />
+        </fileset>
+    </path>
+
+    <target name="compile">
+        <mkdir dir="target/classes" />
+        <javac srcdir="src/main/java" destdir="target/classes" debug="true" >
+            <classpath>
+                <path refid="compile.cp" />
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="package" depends="compile">
+        <jar destfile="csi-web-autoregister-1.0.0.jar">
+            <fileset dir="target/classes">
+                <include name="**/*.class" />
+            </fileset>
+        </jar>
+    </target>
+
+
+    <target name="clean">
+        <delete dir="target" failonerror="false" />
+    </target>
+</project>

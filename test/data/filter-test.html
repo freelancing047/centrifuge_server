@@ -1,0 +1,236 @@
+<html>
+	<title>Filter Test</title>
+	<script src="centrifuge-widget.js" language="javascript"></script>
+	<script src="jquery-1.4.min.js" language="javascript"></script>
+	<script src="dojo.js" language="javascript"></script>
+
+	<script language="javascript">
+	/*
+	 * Simple example of setting filters on a visualization via javascript
+	 */
+	   function sendJson(event) {
+
+		   /*
+		    * We can instantiate an object and set all of the attributes directly
+		    */
+
+		   var url = "http://localhost:9090/Centrifuge/actions/json/setFilters"
+		   var filterDef = new Object();
+		   filterDef.dvUuid = document.getElementById("dvID").value;
+		   filterDef.vizUuid = document.getElementById("vizID").value;
+		   filterDef.filterFields = new Array();
+		   var filterField = new Object();
+		   filterField.name = document.getElementById("fieldName").value;
+		   var filterString =  document.getElementById("filterValues").value
+		   filterField.selectedValues = filterString.split(",");
+		   filterDef.filterFields[0] = filterField;
+
+		   /*
+		    * Or we can specify the object as json.  Uncomment this portion and
+		    * comment out the portion above to try this
+
+		   var filterDef = {
+			   //"dvUuid": "92674216-ac4a-424b-a462-82e04a6138e0",
+			   //"vizUuid": "322ec764-97cf-e97a-a732-bad7b70f9756",
+			   "filterFields": 
+			   	[
+			   		{ "name": "CTZ", "selectedValues": ["YE", "AE"] },
+			   		//{ "name": "ID", "startValue": "10", "endValue": "100" }
+			   	]
+		   };
+		   */
+
+		  
+		/*
+		 * Use the dojo js library to send the request as json
+		 */
+		dojo.rawXhrPost( {
+        		url: url,
+        		handleAs: "json",
+        		postData: dojo.toJson(filterDef),
+        		timeout: 1000,
+        		error: function(error, ioArgs) {
+ 				dojo.byId("div1").innerHTML = "Form error: " + error;
+        	        }
+	        });
+		 
+           }
+		function reloadViz()
+		{
+		   	var vizUuid = document.getElementById("vizID").value;
+			var frameDom = document.getElementById("div1").contentDocument;
+			var centrifuge = frameDom.getElementById("Centrifuge");
+			centrifuge.loadVisualization(vizUuid); 
+		}
+
+		function broadcastViz()
+		{
+		   	var vizUuid = document.getElementById("vizID").value;
+			var frameDom = document.getElementById("div1").contentDocument;
+			var centrifuge = frameDom.getElementById("Centrifuge");
+			centrifuge.broadcastVisualization(vizUuid); 
+		}
+
+		function setAttachFlag() {
+		   var url = "http://localhost:9090/Centrifuge/actions/json/setVisualizationAttached";
+		   var vizUuid = document.getElementById("vizID").value;
+		   var attachFlag = document.getElementById("attachFlag").value;
+
+			var postData = { "vizID": vizUuid,
+					 "attachFlag" : attachFlag };
+
+		   	dojo.rawXhrPost( {
+        			url: url,
+        			handleAs: "json",
+        			postData: dojo.toJson(postData),
+        			timeout: 10000,
+        			error: function(error, ioArgs) {
+				}
+	           });
+		}
+
+		function getVizDef() {
+		   var url = "http://localhost:9090/Centrifuge/actions/json/getVisualization";
+		   var vizUuid = document.getElementById("vizID").value;
+		   dojo.rawXhrPost( {
+        		url: url,
+        		handleAs: "json",
+        		postData: dojo.toJson(vizUuid),
+        		timeout: 10000,
+			load: function(chartDef, ioArgs) {
+ 				dojo.byId("div1").innerHTML = chartDef.type;
+				 },
+        		error: function(error, ioArgs) {
+ 				dojo.byId("div1").innerHTML = "Form error: " + error;
+        	        }
+	           });
+		}
+
+		function openDataview(event) {
+		   var url = "/Centrifuge/services/widget?id="+document.getElementById("dvID").value
+			alert(url);
+      		   document.getElementById("div1").src = url;
+		}
+
+		function getFields() {
+		   var url = "http://localhost:9090/Centrifuge/actions/json/getFields";
+		   var dvUuid = document.getElementById("dvID").value;
+		   dojo.rawXhrPost( {
+        		url: url,
+        		handleAs: "json",
+        		postData: dojo.toJson(dvUuid),
+        		timeout: 10000,
+			load: function(fieldList, ioArgs) {
+ 				dojo.byId("div1").innerHTML = fieldList.size;
+				 },
+        		error: function(error, ioArgs) {
+ 				dojo.byId("div1").innerHTML = "Form error: " + error;
+        	        }
+	           });
+		}
+
+		function relaunch() {
+		   var url = "http://localhost:9090/Centrifuge/actions/json/relaunchDV";
+		   var dvUuid = document.getElementById("dvID").value;
+		   dojo.rawXhrPost( {
+        		url: url,
+        		handleAs: "json",
+        		postData: dojo.toJson(dvUuid),
+        		timeout: 10000,
+        		error: function(error, ioArgs) {
+ 				dojo.byId("div1").innerHTML = "Form error: " + error;
+        	        }
+	           });
+		}
+
+		function clearFilters() {
+		   var url = "http://localhost:9090/Centrifuge/actions/json/clearFilters";
+		   var vizUuid = document.getElementById("vizID").value;
+		   dojo.rawXhrPost( {
+        		url: url,
+        		handleAs: "json",
+        		postData: dojo.toJson(vizUuid),
+        		timeout: 1000,
+        		error: function(error, ioArgs) {
+ 				dojo.byId("div1").innerHTML = "Form error: " + error;
+        	        }
+	        });
+		}
+
+		function createDVFromTemplate() {
+		   var url = "http://localhost:9090/Centrifuge/actions/json/createDataviewFromTemplate";
+		   var dvUuid = document.getElementById("dvID").value;
+
+			var postData = { "dvTemplateUuid": dvUuid,
+					 "dvName" : "TestDV" };
+		   dojo.rawXhrPost( {
+        		url: url,
+        		handleAs: "json",
+        		postData: dojo.toJson(postData),
+        		timeout: 10000,
+			load: function(newdVUuid ) {
+ 				alert(newdVUuid);
+				 },
+        		error: function(error, ioArgs) {
+ 				dojo.byId("div1").innerHTML = "Form error: " + error;
+        	        }
+	        });
+		}
+
+	   function setInputParams(event) {
+
+		   /*
+		    * We can instantiate an object and set all of the attributes directly
+		    */
+
+		   var url = "http://localhost:9090/Centrifuge/actions/json/setInputParams"
+		   var paramDef = new Object();
+		   paramDef.dvUuid = document.getElementById("dvID").value;
+		   paramDef.parameters = new Array();
+		   var param = new Object();
+		   param.name = document.getElementById("fieldName").value;
+		   var paramString =  document.getElementById("filterValues").value
+		   param.selectedValues = paramString.split(",");
+		   paramDef.parameters[0] = param;
+
+
+		  
+		/*
+		 * Use the dojo js library to send the request as json
+		 */
+		dojo.rawXhrPost( {
+        		url: url,
+        		handleAs: "json",
+        		postData: dojo.toJson(paramDef),
+        		timeout: 1000,
+        		error: function(error, ioArgs) {
+ 				dojo.byId("div1").innerHTML = "Form error: " + error;
+        	        }
+	        });
+		}
+
+	</script>
+	<h1>Filter Test</h1>
+	This is an example of setting filters on Centrifuge visualizations via Javascript.  View page source to see the details. <br><br>
+
+	<body>
+		Dataview ID: <input type="text" id="dvID" name="dvID" size="55" /><br>
+		Viz ID: <input type="text" id="vizID" name="vizID" size="55" /><br>
+		Filter/Parameter Field: <input type="text" id="fieldName" name="fieldName" size="25" /><br>
+		Filter/Parameter Values: <input type="text" id="filterValues" name="filterValues" size="55" /><br>
+		Attach: <input type="text" id="attachFlag" name="attachFlag" size="10" /><br>
+		<button type="button" onClick="openDataview(event)">Open Dataview</button>
+		<button type="button" onClick="sendJson(event)">Set Filters</button>
+		<button type="button" onClick="clearFilters(event)">Clear Filters</button>
+		<button type="button" onClick="getVizDef(event)">Get Viz Def</button>
+		<button type="button" onClick="getFields(event)">Get Fields</button>
+		<button type="button" onClick="reloadViz(event)">Reload Viz</button>
+		<button type="button" onClick="setAttachFlag(event)">Set Attach</button>
+		<button type="button" onClick="createDVFromTemplate(event)">CreateDVFromTemplate</button>
+		<button type="button" onClick="setInputParams(event)">Set Input Parameter</button>
+		<button type="button" onClick="relaunch(event)">Reload Dataview</button>
+
+		<iframe id="div1" name="div1" width="1600" height="700"/>
+
+	</body>
+<html>

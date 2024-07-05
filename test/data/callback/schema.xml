@@ -1,0 +1,13 @@
+<schema>
+<table name = "Phone.txt" separator=",">
+<column name = "Phone1" type = "Integer"/>
+<column name = "RawDate" type = "Varchar"/>
+<column name = "Time" type = "Varchar"/>
+<column name = "Phone2" type = "Integer"/>
+<column name = "Nada" type = "Varchar"/>
+<column name = "Duration" type = "Varchar"/>
+<column name = "Direction" type = "Varchar"/>
+<column name = "Type" type = "Varchar"/>
+<column name = "Nada2" type = "Varchar"/>
+</table>
+</schema>

@@ -1,0 +1,91 @@
+apply from: 'gradle/properties.gradle'
+
+def linuxOutputJre = "${linuxOutput}/jre"
+def linuxOutputJreLib = "${linuxOutputJre}/lib"
+def linuxOutputJreExt = "${linuxOutputJreLib}/ext"
+
+configurations{
+    linuxJre
+    pisces
+}
+
+dependencies{
+    linuxJre 'csi:linux-jre:1.8.0_66@tar.gz'
+    pisces 'csi:pisces:1.0.2@jar'
+}
+
+task deployLinuxJre(group: deployGroup) {
+
+    doLast {
+    
+		println "Copy JRE to ${linuxOutputJre}"
+	    copy {    
+	        from tarTree(configurations.linuxJre.getSingleFile())
+	        into "${linuxOutputJre}"
+	    }
+	
+		println "Copy JRES to ${linuxOutputJreExt}"
+        copy {
+            from fileTree(configurations.pisces.getSingleFile())
+            into "${linuxOutputJreExt}"
+        }
+	
+		println "Unpack JRE library components"
+	    fileTree(dir: linuxOutputJreLib, includes: ["*.pack"]).each { def file ->
+	        exec {
+	            def fileNameWithoutDotPack = file.name[0..-6]
+	            executable = 'unpack200'
+	            args("${linuxOutputJreLib}/${file.name}", "${linuxOutputJreLib}/${fileNameWithoutDotPack}")
+	        }
+        }
+    }
+}
+
+task copyLinuxJreIntoDevelopment(group: deployGroup) {
+    dependsOn 'installCentrifuge'
+
+    doFirst {
+		println "Delete ${jreRuntime}."
+		delete "${jreRuntime}"
+    }
+
+	doLast {
+
+		println "Copy ${linuxOutputJre} into ${jreRuntime}."
+		copy {
+
+		    from "${linuxOutputJre}"
+		    into jreRuntime
+		}
+	}
+}
+
+task copyLinuxJresIntoInstallerFolder(type: Copy) {
+
+    dependsOn 'copyLinuxJreIntoInstallation'
+    doLast {
+		println "Copy JRES jar into ${buildRuntime}/jre/lib/ext"
+	    copy {
+	            from fileTree(configurations.pisces.getSingleFile())
+	            into "${buildRuntime}/jre/lib/ext/pisces.jar"
+	        }
+        
+    }
+}
+
+task copyLinuxJreIntoInstallation(group: deployGroup) {
+    dependsOn 'removeWindowsFiles'
+
+	doLast {
+
+		println "Create directory tree ${jreRuntime}/lib/ext"
+        file("${jreRuntime}/lib/ext").mkdirs()
+		println "Copy JRE from lib/jdk to ${jreRuntime}/lib/ext"
+        copy{
+            from "lib/jdk"
+            into "${jreRuntime}/lib/ext"
+        }
+        ant.gunzip(src: configurations.linuxJre.getSingleFile(), dest: "${buildRuntime}/jre.tar")
+	}
+}
+

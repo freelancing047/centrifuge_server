@@ -1,0 +1,79 @@
+apply from: 'gradle/properties.gradle'
+
+configurations {
+    neo4jWindows
+    neo4jLinux
+}
+
+dependencies {
+    neo4jWindows 'csi:neo4j-windows:2.1.5@zip'
+    neo4jLinux 'csi:neo4j-linux:2.1.5@tar.gz'
+}
+
+task deployNeo4jWindows(group: deployGroup) {
+    doFirst {
+
+
+    }
+    doLast {
+        copy {
+            from zipTree(configurations.neo4jWindows.getSingleFile())
+            into "${windowsOutput}/cachedb"
+        }
+        file("${windowsOutput}/cachedb/neo4j-community-2.1.5").renameTo(file("${windowsOutput}/cachedb/neo4j"))
+        copy {
+            from "server/resources/neo4j"
+            into "${windowsOutput}/cachedb/neo4j"
+        }
+        copy {
+            from "modules/neo4j-plugin/build/libs"
+            into "${windowsOutput}/cachedb/neo4j/plugins"
+        }
+    }
+}
+
+task deployNeo4jLinux(group: deployGroup) {
+    doFirst {
+        delete "${linuxOutput}/cachedb/neo4j}"
+    }
+    doLast {
+        copy {
+            from tarTree(configurations.neo4jLinux.getSingleFile())
+            into "${linuxOutput}/cachedb"
+        }
+        file("${linuxOutput}/cachedb/neo4j-community-2.1.5").renameTo(file("${linuxOutput}/cachedb/neo4j"))
+        copy {
+            from "server/resources/neo4j"
+            into "${linuxOutput}/cachedb/neo4j"
+        }
+        copy {
+            from "modules/neo4j-plugin/build/libs"
+            into "${linuxOutput}/cachedb/neo4j/plugins"
+        }
+        
+        
+        
+        copy {
+            from "modules/neo4j-plugin/build/libs"
+            into "${buildRuntime}/cachedb/plugins"
+        }
+        
+        /*
+        Can be used in the future if we decide not to pack plugin and config in tar
+        copy {
+            from "server/resources/neo4j"
+            into "${buildRuntime}/cachedb/neo4j-configuration"
+        }
+        */
+        
+    }
+}
+
+task copyNeo4jLinuxIntoInstallation(group: deployGroup) {
+    dependsOn 'copyLinuxDatabaseIntoInstallation'
+
+    doLast {
+		println "Copy neo4j tar file into ${cachedbRuntime}."
+        ant.gunzip(src: configurations.neo4jLinux.getSingleFile(), dest: "${buildRuntime}/cachedb/neo4j.tar")
+    }
+}

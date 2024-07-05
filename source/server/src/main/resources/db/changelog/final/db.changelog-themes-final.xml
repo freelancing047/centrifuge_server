@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<!-- From 3.5/db.changelog-themes-1.xml -->
+	<changeSet author="jdanberg" id="themes-final" failOnError="true"
+		runInTransaction="false" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<changeSetExecuted id="themes-1-45" author="jdanberg"
+					changeLogFile="db/changelog/3.5/db.changelog-themes-1.xml" />
+			</not>
+		</preConditions>
+		<customChange class="csi.tools.GenerateIconsInitial">
+			<param name="graphCircularPath" value="classpath:/GraphCircular.zip" />
+			<param name="mapCircularPath" value="classpath:/MapCircular.zip" />
+			<param name="graphBaselinePath" value="classpath:/GraphBaseline.zip" />
+		</customChange>
+	</changeSet>
+
+	<changeSet author="jdanberg" id="map-themes-fix-color" failOnError="false">
+		<validCheckSum>7:6d316ec4cd985df26c467c7a43bbb94c</validCheckSum>
+		<validCheckSum>7:0a668e6465bd80092f0681fc41d591b7</validCheckSum>
+        <sql>
+        <![CDATA[
+            UPDATE public.placestyle
+            SET shape = 'NONE', color = (((((random() * 255) :: bigint) << 8) + ((random() * 255) :: bigint) << 8) + ((random() * 255) :: bigint)) 
+            WHERE (shape IS NULL OR shape = 'NONE') AND color = 16711680;
+        ]]>
+        </sql>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="graph-themes-fix-color" failOnError="false">
+		<validCheckSum>7:78dfa62dfb6d7e446495a5600ed1e97c</validCheckSum>
+		<validCheckSum>7:f24d642407f4394fa48d333baca6a41a</validCheckSum>
+        <sql>
+        <![CDATA[
+            UPDATE public.nodestyle
+            SET shape = 'NONE', color = (((((random() * 255) :: bigint) << 8) + ((random() * 255) :: bigint) << 8) + ((random() * 255) :: bigint)) 
+            WHERE (shape IS NULL OR shape = 'NONE') AND color = 16711680;
+        ]]>
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

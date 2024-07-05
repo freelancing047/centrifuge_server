@@ -1,0 +1,25 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+    xmlns:grid="urn:import:csi.client.gwt.widget.gxt.grid"
+    xmlns:gxtbutton="urn:import:com.sencha.gxt.widget.core.client.button" >
+   <ui:style gss="true">
+    .noselect{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+    </ui:style>
+
+	<g:LayoutPanel ui:field="layoutPanel" addStyleNames="{style.noselect}" height="340px">
+		<g:layer height="290px">
+			<g:FlowPanel>
+				<grid:GridContainer height="260px" ui:field="gridContainer"></grid:GridContainer>
+				<gxtbutton:ButtonBar ui:field="toolBar"></gxtbutton:ButtonBar>
+			</g:FlowPanel>
+		</g:layer>
+	</g:LayoutPanel>
+</ui:UiBinder> 

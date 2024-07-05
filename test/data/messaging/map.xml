@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+<centrifuge.model.TestMapHolder>
+	<id>1</id>
+	<name>MapTest</name>
+	<myMap>
+		   <entry key="guljit">
+		     <csi.server.common.model.legacy.spec.ColumnSpec>
+			     <columnSpecID>10</columnSpecID>
+			     <columnID>6</columnID>
+			     <columnAttribute>Data Type</columnAttribute>
+			     <columnValue>Date</columnValue>
+		     </csi.server.common.model.legacy.spec.ColumnSpec>	
+		   </entry>
+		   <entry key="ed">
+		     <csi.server.common.model.legacy.spec.ColumnSpec>
+			     <columnSpecID>11</columnSpecID>
+			     <columnID>6</columnID>
+			     <columnAttribute>Data Type</columnAttribute>
+			     <columnValue>Date</columnValue>
+		     </csi.server.common.model.legacy.spec.ColumnSpec>	
+		   </entry>
+	   </myMap>
+</centrifuge.model.TestMapHolder>
+</response>

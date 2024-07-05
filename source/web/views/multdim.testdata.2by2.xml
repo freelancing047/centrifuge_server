@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<centrifuge.ws.rest.Result>
+    <table unitCount="3" max="400000" displayName="Sales">
+	<row ype="column">
+		<value colSpan="2" rowSpan="2" chartRowSpan="1" chartColSpan="2" header="yes">BLANK_CORNER_HACK</value>
+		<value colSpan="3" header="yes">2001</value>
+		<value colSpan="3" header="yes">2002</value>
+	</row>
+	<row ype="column" lastColumn="yes">
+		<value colSpan="1" header="yes">CENTRAL</value>
+		<value colSpan="1" header="yes">EAST</value>
+		<value colSpan="1" header="yes">WEST</value>
+		<value colSpan="1" header="yes">CENTRAL</value>
+		<value colSpan="1" header="yes">EAST</value>
+		<value colSpan="1" header="yes">WEST</value>
+	</row>
+	<row type="row">
+		<value rowSpan="3" chartRowSpan="3" header="yes">CONSUMER</value>
+		<value header="yes">DELIVERY TRUCK</value>
+		<value>20091</value>
+		<value>47185</value>
+		<value>60143</value>
+		<value>9879</value>
+		<value>23319</value>
+		<value>28285</value>
+	</row>
+	<row type="row">
+		<value header="yes">EXPRESS AIR</value>
+		<value>17970</value>
+		<value>18057</value>
+		<value>7317</value>
+		<value>10762</value>
+		<value>17894</value>
+		<value>21984</value>
+	</row>
+	<row type="row">
+		<value header="yes">REGULAR AIR</value>
+		<value>113329</value>
+		<value>186998</value>
+		<value>133905</value>
+		<value>81315</value>
+		<value>98128</value>
+		<value>84417</value>
+	</row>
+	<row type="row">
+		<value rowSpan="3" chartRowSpan="3" header="yes">CORPORATE</value>
+		<value header="yes">DELIVERY TRUCK</value>
+		<value>48255</value>
+		<value>124622</value>
+		<value>50507</value>
+		<value>20192</value>
+		<value>50697</value>
+		<value>40726</value>
+	</row>
+	<row type="row">
+		<value header="yes">EXPRESS AIR</value>
+		<value>8951</value>
+		<value>66388</value>
+		<value>53531</value>
+		<value>8807</value>
+		<value>54919</value>
+		<value>28747</value>
+	</row>
+	<row type="row" lastRow="yes">
+		<value header="yes">REGULAR AIR</value>
+		<value>143867</value>
+		<value>359223</value>
+		<value>154660</value>
+		<value>98715</value>
+		<value>295784</value>
+		<value>135310</value>
+	</row>	
+    </table>
+</centrifuge.ws.rest.Result>

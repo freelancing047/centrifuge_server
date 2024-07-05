@@ -1,0 +1,13 @@
+-Dcatalina.base=./
+-Dcatalina.home=./
+-Djava.awt.headless=true
+-Djava.endorsed.dirs=./endorsed
+-Djava.io.tmpdir=./temp
+-Djava.security.auth.login.config=./conf/jaas.config
+-Djava.util.logging.config.file=./conf/logging.properties
+-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+-Dorg.apache.logging.log4j.simplelog.StatusLogger.level=FATAL
+-Xms1024m
+-Xmx4096m
+-XX:+UseConcMarkSweepGC
+-XX:+CMSClassUnloadingEnabled

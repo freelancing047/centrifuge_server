@@ -1,0 +1,61 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:gwt="urn:import:csi.client.gwt.widget.ui"
+             xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+             xmlns:csiboot="urn:import:csi.client.gwt.widget.boot"
+             xmlns:csibuttons="urn:import:csi.client.gwt.widget.buttons"
+             xmlns:grid="urn:import:csi.client.gwt.widget.gxt.grid">
+
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+
+	<ui:style>
+        .standoff {
+            margin-right: 20px;
+        }
+        .table {
+            padding: 2px;
+        }
+		.maxCell {
+			width: 100%;
+		}
+	</ui:style>
+
+	<gwt:FullSizeLayoutPanel ui:field="topLevelPanel">
+        <gwt:layer top="0px" height="40px" left="10px" right="0px">
+            <csiboot:CsiHeading ui:field="heading"/>
+        </gwt:layer>
+        <gwt:layer top="45" height="150px">
+            <g:FlowPanel ui:field="tableSummary">
+            </g:FlowPanel>
+        </gwt:layer>
+        <gwt:layer top="195" height="40px">
+            <csiboot:Instructions ui:field="instructionText" />
+        </gwt:layer>
+        <gwt:layer top="240px" bottom="0px">
+			<gwt:FullSizeLayoutPanel ui:field="columnPanel">
+				<gwt:layer top="0" height="35px" left="10px" right="0px">
+					<g:HTMLPanel>
+						<table class="{style.table}">
+							<tr>
+								<td class="{style.maxCell}"><g:InlineLabel text="{i18n.get.tableDetailEditor_Columns}"/></td>
+								<td><nobr>
+                                    <csibuttons:MiniRedButton ui:field="buttonResetQuery" text="{i18n.get.tableDetailEditor_Reset_Query}" addStyleNames="{style.standoff}"/>
+                                    <csibuttons:MiniBlueButton ui:field="buttonEditQuery" text="{i18n.get.tableDetailEditor_Edit_Query}"/>
+                                    <csibuttons:MiniCyanButton ui:field="buttonSelectAll" text="{i18n.get.tableDetailEditor_Select_All}"/>
+									<csibuttons:MiniCyanButton size="MINI" ui:field="buttonDeselectAll" text="{i18n.get.tableDetailEditor_Deselect_All}"/>
+									</nobr>
+								</td>
+							</tr>
+						</table>
+					</g:HTMLPanel>
+				</gwt:layer>
+				<gwt:layer top="35px" bottom="0">
+					<grid:GridContainer ui:field="gridContainer" />
+				</gwt:layer>
+			</gwt:FullSizeLayoutPanel>
+		</gwt:layer>
+	</gwt:FullSizeLayoutPanel>
+
+
+</ui:UiBinder>

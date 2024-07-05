@@ -1,0 +1,81 @@
+apply from: 'gradle/properties.gradle'
+
+def windowsOutputJre = "${windowsOutput}/jre"
+def windowsOutputJreLib = "${windowsOutputJre}/lib"
+def windowsOutputJreExt = "${windowsOutputJreLib}/ext"
+
+configurations{
+    windowsJre
+    pisces
+}
+
+dependencies{
+    windowsJre 'csi:windows-jre:1.8.0_66@tar.gz'
+    pisces 'csi:pisces:1.0.2@jar'
+}
+
+task deployWindowsJre(group: deployGroup) {
+	
+	doLast {
+	
+	    copy {
+	        from tarTree(configurations.windowsJre.getSingleFile())
+	        into "${windowsOutputJre}"
+	    }
+		
+	   copy {
+            from fileTree(configurations.pisces.getSingleFile())
+            into "${windowsOutputJreExt}"
+        }
+	
+	    fileTree(dir: windowsOutputJreLib, includes: ["*.pack"]).each { def file ->
+	        exec {
+	            def fileNameWithoutDotPack = file.name[0..-6]
+	            executable = 'unpack200'
+	            args("${windowsOutputJreLib}/${file.name}", "${windowsOutputJreLib}/${fileNameWithoutDotPack}")
+	        }
+	    }
+    }
+}
+
+task copyJresIntoInstallerFolder(type: Copy) {
+	dependsOn 'installCentrifuge'
+    from configurations.windowsJre //Referenced by installer/csi-server.install4j
+    into installerRuntime
+}
+
+task copyWindowsJreIntoDevelopment(group: deployGroup) {
+    dependsOn 'installCentrifuge'
+
+    doFirst {
+        delete "${jreRuntime}"
+    }
+
+	doLast {
+
+		copy {
+
+		    from "${windowsOutputJre}"
+		    into jreRuntime
+		}
+	}
+}
+
+task copyWindowsJreIntoInstallation(group: deployGroup) {
+    dependsOn 'installCentrifuge'
+    dependsOn 'deployWindowsJre'
+
+    doFirst {
+        delete "${jreRuntime}"
+    }
+
+	//doLast {
+
+		//copy {
+
+		    //from "${windowsOutputJre}"
+		    //into jreRuntime
+		//}
+	//}
+}
+

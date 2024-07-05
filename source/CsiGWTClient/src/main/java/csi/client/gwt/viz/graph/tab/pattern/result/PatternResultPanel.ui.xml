@@ -1,0 +1,115 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+        xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:g="urn:import:com.google.gwt.user.client.ui"
+        xmlns:grid="urn:import:csi.client.gwt.widget.gxt.grid"
+        xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+        xmlns:core="urn:import:com.sencha.gxt.widget.core.client"
+        xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes"
+        >
+   <ui:style gss="true">
+        .right {
+            float: right;
+        }
+
+        .checkbox {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .colorButton {
+            font-size: 18px;
+            width: 15px;
+            padding: 4px;
+            margin-left: 10px;
+        }
+
+        .no-margin {
+            margin-bottom: 0;
+            margin-left: 10px;
+        }
+
+        .colorTextBox {
+            background: white;
+            border: 1px solid #999999;
+            position: absolute;
+            left: 92px;
+            width: 100px;
+            top: 102px;
+        }
+    </ui:style>
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <g:LayoutPanel ui:field="layoutPanel">
+        <g:layer
+                top="45px"
+                bottom="0px">
+            <grid:GridContainer ui:field="gridContainer"/>
+        </g:layer>
+        <g:layer
+                top="5px"
+                height="40px">
+            <boot:FluidRow ui:field="controlLayer">
+                <boot:SplitDropdownButton
+                        ui:field="searchButton"
+                        icon="SEARCH"
+                        text="{i18n.get.search}">
+                </boot:SplitDropdownButton>
+                <boot:Button
+                        icon="TINT"
+                        ui:field="colorButton"
+                        addStyleNames="{style.colorButton}"/>
+
+                <core:ColorPalette
+                        visible="false"
+                        ui:field="colorPalette"
+                        addStyleNames="pattern-color-palette">
+                </core:ColorPalette>
+                <!--<boot:TextBox
+                        visible="false"
+                        placeholder="#123456"
+                        ui:field="colorTextBox"
+                        alternateSize="MINI"
+                        addStyleNames="{style.colorTextBox}"/>-->
+                <combo:CommonNumberComboBox
+                        ui:field="itemsToShowListBox"
+                        visible="false"
+                        height="18px">
+                </combo:CommonNumberComboBox>
+                <boot:CheckBox
+                        inline="true"
+                        addStyleNames="{style.checkbox}"
+                        ui:field="autoHighlightCheckBox"
+                        value="true"
+                        text="{i18n.get.patternTab_autoHighlight}">
+                </boot:CheckBox>
+                <boot:Button
+                        ui:field="clearHighlightsButton"
+                        text="{i18n.get.patternTab_clearHighlight}">
+                </boot:Button>
+
+                <boot:DropdownButton
+                        text="{i18n.get.patternTab_actions}"
+                        rightDropdown="true"
+                        addStyleNames="{style.right}">
+                    <boot:NavLink ui:field="highlightNavLink" text="{i18n.get.patternTab_action_highlight}"/>
+                    <boot:NavLink ui:field="selectNavLink" text="{i18n.get.patternTab_action_select}"/>
+                    <boot:NavLink ui:field="addSelectNavLink" text="{i18n.get.patternTab_action_addToSelection}"/>
+                    <boot:NavLink ui:field="showNavLink" text="{i18n.get.patternTab_action_showOnly}"/>
+                </boot:DropdownButton>
+                <boot:CheckBox
+                        ui:field="nodeCheckBox"
+                        inline="true"
+                        addStyleNames="{style.right},{style.checkbox}"
+                        value="true"
+                        text="{i18n.get.patternTab_nodes}"/>
+                <boot:CheckBox
+                        ui:field="linkCheckBox"
+                        inline="true"
+                        addStyleNames="{style.right},{style.checkbox}"
+                        value="true"
+                        text="{i18n.get.patternTab_links}"/>
+            </boot:FluidRow>
+        </g:layer>
+    </g:LayoutPanel>
+
+</ui:UiBinder>

@@ -1,0 +1,43 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder' xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+    xmlns:gxtbutton="urn:import:com.sencha.gxt.widget.core.client.button" xmlns:g="urn:import:com.google.gwt.user.client.ui"
+    xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client" xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+    xmlns:gxtform="urn:import:com.sencha.gxt.widget.core.client.form" xmlns:gxtgrid="urn:import:com.sencha.gxt.widget.core.client.grid"
+    xmlns:csiboot="urn:import:csi.client.gwt.widget.boot" xmlns:gwt="urn:import:csi.client.gwt.widget.ui" xmlns:this="urn:import:csi.client.gwt.viz.shared.filter"
+    xmlns:b="urn:import:com.github.gwtbootstrap.client.ui.base" xmlns:c="urn:import:com.google.gwt.canvas.client">
+
+   <ui:style gss="true">
+        .colorGrid {
+			cursor: crosshair;
+        }
+        .selectedRangeWrapper {
+			padding: 5px 0px 5px 0px;
+		}
+    </ui:style>
+
+    <ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <csiboot:Dialog title="{i18n.get.continuousColorPickerTitle}" bodyWidth="540px" bodyHeight="380px">
+        <gwt:FullSizeLayoutPanel>
+            <gwt:layer top="0" height="20">
+                <g:Label text="{i18n.get.continuousColorPickerInstructions}"></g:Label>
+            </gwt:layer>
+            <gwt:layer top="20" height="300px">
+                <g:Image ui:field="colorBox" />
+            </gwt:layer>
+            <gwt:layer top="20" height="300px">
+                <c:Canvas ui:field="canvas" addStyleNames="{style.colorGrid}"/>
+            </gwt:layer>
+            <gwt:layer bottom="0" height="55px">
+                <g:FlowPanel>
+                    <boot:Label text="{i18n.get.continuousColorPickerRangeHeader}"></boot:Label>
+                    <g:FlowPanel addStyleNames="{style.selectedRangeWrapper}">
+                        <g:Image ui:field="selectedRange" />
+                    </g:FlowPanel>
+                </g:FlowPanel>
+            </gwt:layer>
+        </gwt:FullSizeLayoutPanel>
+    </csiboot:Dialog>
+
+</ui:UiBinder>

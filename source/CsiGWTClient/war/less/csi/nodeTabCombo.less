@@ -1,0 +1,116 @@
+.nodeTabCombo{
+    input {
+        margin:0px;
+    }
+    
+    margin-right:10px;
+    
+}
+
+.nodeTabTable{
+
+    display: inline-table;
+    position: relative;
+    overflow: visible;
+    height: 22px
+}
+
+.nodeTab-filter-combo{
+    display:inline-block;
+    border:1px solid #ccc;
+    a { 
+        font-color:black;
+        font-size:12px;
+        display: block;
+        padding: 4px 5px;
+        clear: both;
+        font-weight: normal;
+        color: black;
+        white-space: nowrap;
+        text-decoration:none;
+    }
+    
+    .caret {
+      display: inline-block;
+      float:right;
+      width: 0;
+      height: 0;
+      vertical-align: top;
+      border-top:   4px solid @black;
+      border-right: 4px solid transparent;
+      border-left:  4px solid transparent;
+      visibility: visible;
+      content: "";
+      position:absolute;
+      margin-left:10px;
+      overflow:hidden
+    }
+    
+    .dropdown-menu{
+        overflow: scroll;
+        height: 170px;
+        overflow-x: hidden;
+    }
+}
+
+.filter-label{
+    
+    display:inline;
+    vertical-align: super;
+    margin-top: 6px;
+    margin-left: 6px;
+    padding-left: 4px;
+    padding-right: 16px;
+    padding-top: 2px;
+    padding-bottom: 3px;
+    
+    }
+
+.filter-label-close-button{
+    
+    font-weight: bolder;
+    margin-top: 6px;
+    position: absolute;
+    margin-left: -12px;
+    color: white;
+    opacity: 0;
+}
+
+.filter-label-close-button-visible{
+    
+    font-weight: bolder;
+    margin-top: 6px;
+    position: absolute;
+    margin-left: -12px;
+    color: white;
+    opacity: 1;
+    text-decoration:none;
+    
+    a{
+        color:white;
+        text-decoration:none;
+    }
+    a:visited{
+        color:white;
+        text-decoration:none;
+    }
+    a:active{
+        color:white;
+        text-decoration:none;
+    }
+    a:hover{
+        color:white;
+        text-decoration:underline;
+    }
+    
+    a:focus{
+        color:white;
+        text-decoration:none;
+    }
+    
+    .gwt-Anchor:link {color:white;}
+    .gwt-Anchor:visited {color:white;}
+    .gwt-Anchor:hover {color:white;}
+    .gwt-Anchor:focus {color:white;}
+    .gwt-Anchor:active {color:white;}
+}

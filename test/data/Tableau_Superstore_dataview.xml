@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<Root>
+<DataViews>
+<DataViewName>Tableau_Superstore</DataViewName><ConnID>61</ConnID><QueryID>64</QueryID><MetaID>73</MetaID><BundleMode></BundleMode><Remark></Remark>
+</DataViews>
+<Connections>
+<ConnName>Superstore Sales Connection</ConnName>
+<ConnectString>Provider=Microsoft.Jet.OLEDB.4.0;Data Source=../../test/data/Tableau_Superstore.xls;Extended Properties="Excel 8.0;IMEX=1";Persist Security Info=False</ConnectString>
+<Remark></Remark><QBGraphicalUI>False</QBGraphicalUI><ConnType>Excel</ConnType>
+</Connections>
+<Queries>
+<QueryName>Sales_Database</QueryName>
+<QueryText>SELECT * FROM `Sales_Database$`</QueryText>
+<HasParams>False</HasParams><UnionAll></UnionAll><Remark></Remark><Timeout>30</Timeout><CallbackType>2</CallbackType><TableList>Sales_Database$</TableList>
+</Queries>
+<MetaData>
+<MetaName>Sales_Database Meta</MetaName><OptionsName>Baseline</OptionsName><Remark></Remark>
+</MetaData>
+<ColumnSpecs>
+<ColumnID>0</ColumnID><ColumnAttribute>Timeline Type</ColumnAttribute><ColumnValue>1</ColumnValue>
+</ColumnSpecs>
+<ColumnSpecs>
+<ColumnID>0</ColumnID><ColumnAttribute>Main Map</ColumnAttribute><ColumnValue>1</ColumnValue>
+</ColumnSpecs>
+<ColumnSpecs>
+<ColumnID>0</ColumnID><ColumnAttribute>Initial View</ColumnAttribute><ColumnValue>0</ColumnValue>
+</ColumnSpecs>
+<ColumnSpecs>
+<ColumnID>0</ColumnID><ColumnAttribute>Event Order</ColumnAttribute><ColumnValue>0</ColumnValue>
+</ColumnSpecs>
+<ColumnSpecs>
+<ColumnID>0</ColumnID><ColumnAttribute>Chart Type</ColumnAttribute><ColumnValue>0</ColumnValue>
+</ColumnSpecs>
+<ColumnSpecs>
+<ColumnID>0</ColumnID><ColumnAttribute>Chart Function</ColumnAttribute><ColumnValue>0</ColumnValue>
+</ColumnSpecs>
+<ColumnSpecs>
+<ColumnID>0</ColumnID><ColumnAttribute>Chart Cell</ColumnAttribute><ColumnValue>0</ColumnValue>
+</ColumnSpecs>
+<ColumnSpecs>
+<ColumnID>1</ColumnID><ColumnAttribute>Data Type</ColumnAttribute><ColumnValue>Integer</ColumnValue>
+</ColumnSpecs>
+<ColumnSpecs>
+<ColumnID>2</ColumnID><ColumnAttribute>Data Type</ColumnAttribute><ColumnValue>Integer</ColumnValue>
+</ColumnSpecs>
+<ColumnSpecs>
+<ColumnID>3</ColumnID><ColumnAttribute>Data Type</ColumnAttribute><ColumnValue>Date</ColumnValue>
+</ColumnSpecs>
+<ColumnSpecs>
+<ColumnID>4</ColumnID><ColumnAttribute>Data Type</ColumnAttribute><ColumnValue>Date</ColumnValue>
+</ColumnSpecs>
+<ColumnSpecs>
+<ColumnID>7</ColumnID><ColumnAttribute>Chart X Axis</ColumnAttribute><ColumnValue></ColumnValue>
+</ColumnSpecs>
+<ColumnSpecs>
+<ColumnID>10</ColumnID><ColumnAttribute>Data Type</ColumnAttribute><ColumnValue>Integer</ColumnValue>
+</ColumnSpecs>
+<ColumnSpecs>
+<ColumnID>13</ColumnID><ColumnAttribute>Chart Y Axis</ColumnAttribute><ColumnValue></ColumnValue>
+</ColumnSpecs>
+</Root>

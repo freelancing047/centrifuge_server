@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <bean id="driverList" class="csi.server.connector.config.DriverList">
+        <property name="drivers" ref="drivers"/>
+    </bean>
+
+
+    <util:list id="drivers" value-type="csi.server.connector.config.JdbcDriver">
+        <ref bean="installedTableDriver"/>
+        <ref bean="oracleDriver"/>
+        <ref bean="accessDriver"/>
+        <ref bean="postgresDriver"/>
+        <ref bean="dataCacheDriver"/>
+        <ref bean="sqlServerDriver"/>
+        <ref bean="customJdbcDriver"/>
+        <ref bean="impalaDriver"/>
+        <ref bean="jsonFileDriver"/>
+        <ref bean="jsonWebDriver"/>
+        <ref bean="xmlDriver"/>
+        <ref bean="anxDriver"/>
+        <ref bean="excelDriver"/>
+        <ref bean="textDriver"/>
+        <ref bean="adminToolsDriver"/>
+    </util:list>
+
+
+</beans>

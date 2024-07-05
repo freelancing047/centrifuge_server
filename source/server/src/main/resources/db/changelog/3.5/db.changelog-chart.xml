@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="igrinkevich" id="chart-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="chartsettings_quicksortdef">
+            <column name="chartsettings_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="quicksortdefs_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="igrinkevich" id="chart-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addUniqueConstraint
+                columnNames="quicksortdefs_uuid"
+                constraintName="chartsettings_quicksortdef_quicksortdefs_uuid_unique"
+                deferrable="false"
+                disabled="false"
+                initiallyDeferred="false"
+                tableName="chartsettings_quicksortdef"
+        />
+    </changeSet>
+
+    <changeSet author="igrinkevich" id="chart-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint
+                baseColumnNames="quicksortdefs_uuid"
+                baseTableName="chartsettings_quicksortdef"
+                constraintName="chartsettings_quicksortdef_sortdefinition_uuid"
+                deferrable="false" initiallyDeferred="false"
+                onDelete="NO ACTION" onUpdate="NO ACTION"
+                referencedColumnNames="uuid" referencedTableName="sortdefinition"
+        />
+    </changeSet>
+
+    <changeSet author="igrinkevich" id="chart-4" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint
+                baseColumnNames="chartsettings_uuid"
+                baseTableName="chartsettings_quicksortdef"
+                constraintName="chartsettings_quicksortdef_uuid"
+                deferrable="false"
+                initiallyDeferred="false"
+                onDelete="NO ACTION" onUpdate="NO ACTION"
+                referencedColumnNames="uuid"
+                referencedTableName="chartsettings"
+        />
+    </changeSet>
+
+</databaseChangeLog>

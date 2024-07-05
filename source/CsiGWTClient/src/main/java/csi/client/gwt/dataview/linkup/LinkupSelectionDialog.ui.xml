@@ -1,0 +1,99 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:gwt="urn:import:com.google.gwt.user.client.ui"
+    xmlns:form="urn:import:com.sencha.gxt.widget.core.client.form"
+    xmlns:grid="urn:import:com.sencha.gxt.widget.core.client.grid"
+    xmlns:csiboot="urn:import:csi.client.gwt.widget.boot"
+    xmlns:csigwt="urn:import:csi.client.gwt.widget.ui">
+
+   <ui:style gss="true">
+		.important {
+			font-weight: bold;
+		}
+        .rpad {
+            padding-right:15px;
+        }
+        .lpad {
+            padding-left:30px;
+        }
+  		.tabborder {
+   			border-style:solid;
+   			border-width:1px;
+  		}
+    </ui:style>
+
+    <ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+
+    <csiboot:ValidatingDialog bodyWidth="920px" bodyHeight="400px" ui:field="dialog">
+        <csigwt:FullSizeLayoutPanel ui:field="topPanel">
+            <csigwt:layer top="10px" height="380px" left="20px" width="440px">
+                <gwt:VerticalPanel height="380px" width="440px">
+	                <gwt:HorizontalPanel>
+	                    <gwt:InlineLabel ui:field="linkupDefNameLabel" addStyleNames="{style.rpad}"> </gwt:InlineLabel>
+	                    <gwt:InlineLabel ui:field="linkupDefName"> </gwt:InlineLabel>
+	                </gwt:HorizontalPanel>
+	                <gwt:HorizontalPanel>
+	                    <gwt:InlineLabel ui:field="templateNameLabel" addStyleNames="{style.rpad}"> </gwt:InlineLabel>
+	                    <gwt:InlineLabel ui:field="templateName"> </gwt:InlineLabel>
+	                </gwt:HorizontalPanel>
+	                <gwt:HorizontalPanel>
+	                    <gwt:Label ui:field="noExtendersLabel" addStyleNames="{style.rpad}"> </gwt:Label>
+	                </gwt:HorizontalPanel>
+	                <gwt:HorizontalPanel>
+	                    <boot:RadioButton name="parameterSource" ui:field="useDefault" addStyleNames="{style.rpad}"></boot:RadioButton>
+	                    <boot:RadioButton name="parameterSource" ui:field="useExtenders"></boot:RadioButton>
+	                </gwt:HorizontalPanel>
+	                <gwt:HorizontalPanel>
+	                    <gwt:Label ui:field="noMappingLabel" addStyleNames="{style.rpad}"> </gwt:Label>
+	                </gwt:HorizontalPanel>
+	                <gwt:HorizontalPanel>
+	                    <boot:RadioButton name="spinupOrMerge" ui:field="mergeData" addStyleNames="{style.rpad}"></boot:RadioButton>
+                        <boot:RadioButton name="spinupOrMerge" ui:field="spinOff" addStyleNames="{style.rpad}"></boot:RadioButton>
+                        <boot:RadioButton name="spinupOrMerge" ui:field="spinUp"></boot:RadioButton>
+	                </gwt:HorizontalPanel>
+	                <gwt:HorizontalPanel>
+	                 	<gwt:InlineLabel ui:field="newDataviewNameLabel" addStyleNames="{style.rpad}"></gwt:InlineLabel>
+	                    <boot:TextBox ui:field="newDataviewName" width="160px"/>
+	                </gwt:HorizontalPanel>
+	                <gwt:cell verticalAlignment="ALIGN_BOTTOM">
+		            	<grid:Grid addStyleNames="{style.tabborder}" ui:field="fieldMap" />
+	                </gwt:cell>
+            	</gwt:VerticalPanel>
+           	</csigwt:layer>
+           	<csigwt:layer top="10px" height="380px" left="460px" width="440px">
+                <gwt:VerticalPanel height="380px" width="440px">
+			 		<gwt:cell verticalAlignment="ALIGN_TOP" horizontalAlignment="ALIGN_CENTER">
+						<gwt:Label ui:field="nothingSavedLabel"></gwt:Label>
+					</gwt:cell>
+	                <gwt:cell verticalAlignment="ALIGN_BOTTOM">
+						<gwt:AbsolutePanel ui:field="greyPanel" width="440px" height="350px">
+							<gwt:at left="5" top="0" width="430" height="345">
+								<gwt:AbsolutePanel ui:field="parameterSetSelectionPanel" width="430px" height="345px">
+									<gwt:at left="10" top="30" width="410" height="305">
+						 		        <gwt:VerticalPanel ui:field="parameterSetDataPanel" height="305px" width="410px">
+						               		<gwt:Label ui:field="templateParmsLabel"></gwt:Label>
+						                    <grid:Grid addStyleNames="{style.tabborder}" ui:field="templateParms" />
+                                            <!-- if (_fieldParmsSupported)
+							                <gwt:cell verticalAlignment="ALIGN_BOTTOM">
+								 		        <gwt:VerticalPanel>
+							               			<gwt:Label ui:field="fieldParmsLabel"></gwt:Label>
+							                       	<grid:Grid addStyleNames="{style.tabborder}" ui:field="fieldParms" />
+								 		        </gwt:VerticalPanel>
+							                </gwt:cell>
+							                -->
+			 		        				<gwt:cell verticalAlignment="ALIGN_BOTTOM" horizontalAlignment="ALIGN_LEFT">
+			 		        					<form:CheckBox ui:field="setDisabledCheckBox"/>
+			 		        				</gwt:cell>
+						 		        </gwt:VerticalPanel>
+									</gwt:at>
+								</gwt:AbsolutePanel>
+							</gwt:at>
+						</gwt:AbsolutePanel>
+	                </gwt:cell>
+                </gwt:VerticalPanel>
+           	</csigwt:layer>
+        </csigwt:FullSizeLayoutPanel>
+    </csiboot:ValidatingDialog>
+
+</ui:UiBinder>

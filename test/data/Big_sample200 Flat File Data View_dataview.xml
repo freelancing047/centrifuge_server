@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<Root>
+	<DataViews>
+		<DataViewName>Big_sample200 Flat File Data View</DataViewName>
+		<ConnID>67</ConnID>
+		<QueryID>6</QueryID>
+		<MetaID>1</MetaID>
+		<BundleMode/>
+		<Remark/>
+	</DataViews>
+	<Connections>
+		<ConnName>Test Data2 Jet</ConnName>
+		<ConnectString>Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\\10.8.0.221\e$\Work\Centrifuge1.8\Installshield\Sample Data\;Extended Properties="text"</ConnectString>
+		<Remark/>
+		<QBGraphicalUI>False</QBGraphicalUI>
+		<ConnType>Text</ConnType>
+	</Connections>
+	<Queries>
+		<QueryName>Big_sample200</QueryName>
+		<QueryText>SELECT 	*
+FROM 	[Big_sample200.txt]</QueryText>
+		<HasParams>False</HasParams>
+		<UnionAll/>
+		<Remark/>
+		<Timeout>30</Timeout>
+		<CallbackType>0</CallbackType>
+		<TableList>Big_sample200.txt</TableList>
+	</Queries>
+	<MetaData>
+		<MetaName>Big_sample200 1 Meta 1</MetaName>
+		<OptionsName>Baseline</OptionsName>
+		<Remark/>
+	</MetaData>
+	<ObjectSpecs>
+		<ObjectID>Link 1,2</ObjectID>
+		<Attribute>Link</Attribute>
+		<Priority>1</Priority>
+		<Column1>-1</Column1>
+		<Column2>-1</Column2>
+		<FreeText1/>
+		<FreeText2/>
+		<Func1/>
+		<Func2/>
+		<Operator/>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 1</ObjectID>
+		<Attribute>Label</Attribute>
+		<Priority>1</Priority>
+		<Column1>1</Column1>
+		<Column2>0</Column2>
+		<FreeText1>Phone1</FreeText1>
+		<FreeText2/>
+		<Func1/>
+		<Func2/>
+		<Operator/>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 2</ObjectID>
+		<Attribute>Label</Attribute>
+		<Priority>1</Priority>
+		<Column1>4</Column1>
+		<Column2>0</Column2>
+		<FreeText1>Phone2</FreeText1>
+		<FreeText2/>
+		<Func1/>
+		<Func2/>
+		<Operator/>
+	</ObjectSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Timeline Type</ColumnAttribute>
+		<ColumnValue>1</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Rel Graph Type</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Y Pos</ColumnAttribute>
+		<ColumnValue>1 364.00825</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Y Pos</ColumnAttribute>
+		<ColumnValue>2 364.00825</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node X Pos</ColumnAttribute>
+		<ColumnValue>1 -58.02903</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node X Pos</ColumnAttribute>
+		<ColumnValue>2 427.31531</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified Start</ColumnAttribute>
+		<ColumnValue>1 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified Start</ColumnAttribute>
+		<ColumnValue>2 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified End</ColumnAttribute>
+		<ColumnValue>1 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified End</ColumnAttribute>
+		<ColumnValue>2 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Duration Option</ColumnAttribute>
+		<ColumnValue>1 0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Duration Option</ColumnAttribute>
+		<ColumnValue>2 0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>MapProjectionValue</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>MapProjectionOption</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Unspecified Start</ColumnAttribute>
+		<ColumnValue>1,2 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Unspecified End</ColumnAttribute>
+		<ColumnValue>1,2 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Duration Option</ColumnAttribute>
+		<ColumnValue>1,2 0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Initial View</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Event Order</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Chart Type</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Chart Function</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Chart Cell</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>1</ColumnID>
+		<ColumnAttribute>Chart X Axis</ColumnAttribute>
+		<ColumnValue/>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>3</ColumnID>
+		<ColumnAttribute>Format</ColumnAttribute>
+		<ColumnValue>HH:mm:ss</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>5</ColumnID>
+		<ColumnAttribute>Hidden</ColumnAttribute>
+		<ColumnValue/>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>9</ColumnID>
+		<ColumnAttribute>Syn Header</ColumnAttribute>
+		<ColumnValue>Nada2</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>9</ColumnID>
+		<ColumnAttribute>Hidden</ColumnAttribute>
+		<ColumnValue/>
+	</ColumnSpecs>
+</Root>

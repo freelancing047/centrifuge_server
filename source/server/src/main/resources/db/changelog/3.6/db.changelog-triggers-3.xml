@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <preConditions>
+        <dbms type="postgresql" />
+    </preConditions>
+    
+    <changeSet author="jdanberg" id="triggers-3-0" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            DROP TRIGGER IF EXISTS t_chart_storage ON chartstorages;
+                
+            CREATE TRIGGER t_chart_storage BEFORE UPDATE OR DELETE ON chartstorages
+                FOR EACH ROW EXECUTE PROCEDURE lo_manage(chartinfo);
+         </sql>
+        <rollback>
+            DROP TRIGGER t_chart_storage ON chartstorages;
+        </rollback>
+    </changeSet>
+    <changeSet author="jdanberg" id="triggers-3-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            DROP TRIGGER IF EXISTS t_map_storage ON mapstorages;
+                
+            CREATE TRIGGER t_map_storage BEFORE UPDATE OR DELETE ON mapstorages
+                FOR EACH ROW EXECUTE PROCEDURE lo_manage(mapinfo);
+         </sql>
+        <rollback>
+            DROP TRIGGER t_map_storage ON mapstorages;
+        </rollback>
+    </changeSet>
+    <changeSet author="jdanberg" id="triggers-3-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            DROP TRIGGER IF EXISTS t_matrix_storage ON matrixstorages;
+                
+            CREATE TRIGGER t_matrix_storage BEFORE UPDATE OR DELETE ON matrixstorages
+                FOR EACH ROW EXECUTE PROCEDURE lo_manage(matrixinfo);
+         </sql>
+        <rollback>
+            DROP TRIGGER t_matrix_storage ON matrixstorages;
+        </rollback>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="triggers-3-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            DROP TRIGGER IF EXISTS t_broadcast_storage ON broadcaststorages;
+                
+            CREATE TRIGGER t_broadcast_storage BEFORE UPDATE OR DELETE ON broadcaststorages
+                FOR EACH ROW EXECUTE PROCEDURE lo_manage(broadcast);
+         </sql>
+        <rollback>
+            DROP TRIGGER t_broadcast_storage ON broadcaststorages;
+        </rollback>
+    </changeSet>
+    
+    
+</databaseChangeLog>

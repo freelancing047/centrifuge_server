@@ -1,0 +1,62 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+	xmlns:gxtbutton="urn:import:com.sencha.gxt.widget.core.client.button"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
+	xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:gxtform="urn:import:com.sencha.gxt.widget.core.client.form"
+	xmlns:gxtgrid="urn:import:com.sencha.gxt.widget.core.client.grid"
+	xmlns:csiboot="urn:import:csi.client.gwt.widget.boot" xmlns:settings="urn:import:csi.client.gwt.viz.shared.settings"
+	xmlns:this="urn:import:csi.client.gwt.viz.chart.settings"
+	xmlns:csiui="urn:import:csi.client.gwt.widget.ui" xmlns:cxgrid="urn:import:csi.client.gwt.widget.gxt.grid"
+	xmlns:form="urn:import:com.sencha.gxt.widget.core.client.form"
+	xmlns:list="urn:import:com.sencha.gxt.widget.core.client" xmlns:grid="urn:import:com.sencha.gxt.widget.core.client.grid"
+	xmlns:base="urn:import:com.github.gwtbootstrap.client.ui.base">
+	<ui:style>
+		.important {
+		font-weight: bold;
+		}
+
+		.rpad {
+		padding-right: 15px;
+		}
+
+		.scols {
+		padding-left: 160px;
+		padding-bottom: 5px;
+		}
+
+		.colsel {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		}
+
+		.tabborder {
+		border-style: solid;
+		border-width: 1px;
+		}
+	</ui:style>
+	
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+	<g:SimpleLayoutPanel width="100%" height="100%">
+		<boot:Form type="HORIZONTAL">
+			<boot:FluidRow>
+				<boot:Column size="4">
+					<boot:ControlLabel addStyleNames="{style.rpad}" title="{i18n.get.tableSortTabFieldLabel}">
+                        <base:InlineLabel text="{i18n.get.tableSortTabFieldLabel}"/>
+                    </boot:ControlLabel>
+					<boot:ControlGroup>
+						<boot:Button text="{i18n.get.tableAddSortFieldButtonLabel}" ui:field="addSortFieldButton" />
+						<list:ListView addStyleNames="{style.rpad}" ui:field="fieldslist" />
+					</boot:ControlGroup>
+				</boot:Column>
+				<boot:Column size="8">
+					<boot:ControlGroup>
+						<boot:Button text="{i18n.get.tableDeleteSortFieldButtonLabel}" ui:field="deleteSortFieldButton" />
+					</boot:ControlGroup>
+					<grid:Grid addStyleNames="{style.tabborder}" ui:field="sortFieldsGrid" />
+				</boot:Column>
+			</boot:FluidRow>
+		</boot:Form>
+	</g:SimpleLayoutPanel>
+</ui:UiBinder>

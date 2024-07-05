@@ -1,0 +1,2 @@
+include 'source:jaas', 'source:prefuse', 'source:tomcat-extensions', 'modules:csi-shared', 'modules:pluggable-datasource', 'modules:graph-persist', 'source:server', 'source:CsiGWTClient', 'installer'
+

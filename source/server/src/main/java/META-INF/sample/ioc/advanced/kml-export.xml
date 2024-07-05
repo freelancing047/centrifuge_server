@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="kmlExportAdvConfig" class="csi.config.advanced.KmlExportAdvConfig">
+        <property name="availableIcons">
+            <list>
+                <ref bean="bedIcon"/>
+                <ref bean="buildingIcon"/>
+                <ref bean="carIcon"/>
+                <ref bean="churchIcon"/>
+                <ref bean="dangerIcon"/>
+                <ref bean="flagIcon"/>
+                <ref bean="foodIcon"/>
+                <ref bean="forestIcon"/>
+                <ref bean="gasStationIcon"/>
+                <ref bean="houseIcon"/>
+                <ref bean="intersectionIcon"/>
+                <ref bean="interstateIcon"/>
+                <ref bean="mountainsIcon"/>
+                <ref bean="plainIcon"/>
+                <ref bean="planeIcon"/>
+                <ref bean="pointIcon"/>
+                <ref bean="policeIcon"/>
+                <ref bean="redcrossIcon"/>
+                <ref bean="rxIcon"/>
+                <ref bean="schoolIcon"/>
+                <ref bean="starIcon"/>
+                <ref bean="thumbtackIcon"/>
+                <ref bean="warningIcon"/>
+                <ref bean="yellowFlagIcon"/>
+            </list>
+        </property>
+
+
+    </bean>
+    <bean id="bedIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="bed"/>
+        <property name="URL" value="../images/bed.png"/>
+    </bean>
+    <bean id="buildingIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="building"/>
+        <property name="URL" value="../images/building.png"/>
+    </bean>
+    <bean id="carIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="car"/>
+        <property name="URL" value="../images/car.png"/>
+    </bean>
+    <bean id="churchIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="church"/>
+        <property name="URL" value="../images/church.png"/>
+    </bean>
+    <bean id="dangerIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="danger"/>
+        <property name="URL" value="../images/danger.png"/>
+    </bean>
+    <bean id="flagIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="flag"/>
+        <property name="URL" value="../images/flag.png"/>
+    </bean>
+    <bean id="foodIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="food"/>
+        <property name="URL" value="../images/food.png"/>
+    </bean>
+    <bean id="forestIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="forest"/>
+        <property name="URL" value="../images/forest.png"/>
+    </bean>
+    <bean id="gasStationIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="gas.station"/>
+        <property name="URL" value="../images/gas.station.png"/>
+    </bean>
+    <bean id="pointIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="point"/>
+        <property name="URL" value="../images/green.point.png"/>
+    </bean>
+    <bean id="houseIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="house"/>
+        <property name="URL" value="../images/house.png"/>
+    </bean>
+    <bean id="intersectionIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="intersection"/>
+        <property name="URL" value="../images/intersection.png"/>
+    </bean>
+    <bean id="interstateIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="interstate"/>
+        <property name="URL" value="../images/interstate.png"/>
+    </bean>
+    <bean id="mountainsIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="mountains"/>
+        <property name="URL" value="../images/mountains.png"/>
+    </bean>
+    <bean id="plainIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="plain"/>
+        <property name="URL" value="../images/plain.png"/>
+    </bean>
+    <bean id="planeIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="plane"/>
+        <property name="URL" value="../images/plane.png"/>
+    </bean>
+    <bean id="policeIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="police"/>
+        <property name="URL" value="../images/police.png"/>
+    </bean>
+    <bean id="redcrossIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="redcross"/>
+        <property name="URL" value="../images/redcross.png"/>
+    </bean>
+    <bean id="rxIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="rx"/>
+        <property name="URL" value="../images/rx.png"/>
+    </bean>
+    <bean id="schoolIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="school"/>
+        <property name="URL" value="../images/school.png"/>
+    </bean>
+    <bean id="starIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="star"/>
+        <property name="URL" value="../images/star.png"/>
+    </bean>
+    <bean id="thumbtackIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="thumbtack"/>
+        <property name="URL" value="../images/thumbtack.png"/>
+    </bean>
+    <bean id="warningIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="warning"/>
+        <property name="URL" value="../images/warning.png"/>
+    </bean>
+    <bean id="yellowFlagIcon" class="csi.shared.gwt.dataview.export.kml.mapping.KmlIcon">
+        <property name="name" value="Yellow Flag"/>
+        <property name="URL" value="../images/yellow.flag.png"/>
+    </bean>
+</beans>

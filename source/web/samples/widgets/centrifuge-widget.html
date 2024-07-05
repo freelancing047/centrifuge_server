@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>centrifuge-widget.js test harness</title>
+		<style type="text/css">
+			#Centrifuge {
+				width:80%;
+				height:80%;
+				border: 1px dashed black;
+			}
+		</style>
+		<script type="text/javascript" src="/Centrifuge/javascript/jquery.js"></script>
+		<script type="text/javascript" src="/Centrifuge/javascript/centrifuge-widget.js"></script>
+		<script type="text/javascript">
+			var dv;
+			var viz;
+			var viz2;
+			function newDV() {
+				dv = new DataviewTemplate(document.getElementById("Uuid").value, document.getElementById("dvName").value, document.getElementById("docElement").value);
+			}
+			function existDV() {
+				dv = new Dataview(document.getElementById("Uuid").value, document.getElementById("docElement").value);
+			}
+			function create() {
+				dv.createDvFromTemplate();
+			}
+			function launch() {
+				dv.launch();
+			}
+			function deleteDV() {
+				dv.deleteDataview();
+			}
+			function getDetails() {
+				viz = dv.getVisualization(document.getElementById("vizName").value);
+			}
+			function addParam() {
+				dv.setParameters(document.getElementById("paramName").value, document.getElementById("paramValue").value);
+			}
+			function reload() {
+				dv.reload();
+			}
+		</script>
+	</head>
+	<body>
+		Uuid: <input type="text" name="Uuid" id="Uuid" value="d98ee0ca-452a-cd0a-5047-b1b3642a2104"/>
+		Dataview Name: <input type="text" name="dvName" id="dvName" value="template test" />
+		Visualization Name: <input type="text" name="vizName" id="vizName" value="Relationship Graph" />
+		DOM Element: <input type="text" name="docElement" id="docElement" value="Centrifuge" />
+		Param Name: <input type="text" name="paramName" id="paramName" value="CTZ" />
+		Param Value: <input type="text" name="paramValue" id="paramValue" value="EG" /><br/>
+		<input type='button' value='Click to construct DV Template Object' onclick='newDV()' /><input type='button' value='Click to construct DV Object' onclick='existDV()' /><input type='button' value='Click to create from Template' onclick='create()' /><input type='button' value='Click to Launch' onclick='launch()' /><input type='button' value='Get Viz Details' onclick='getDetails()' /><input type='button' value='Delete Dataview' onclick='deleteDV()' /><input type='button' value='Add Parameter' onclick='addParam()' /><input type='button' value='Reload DV' onclick='reload()' /><br/><br/>
+		<div id='Centrifuge'></div>
+	</body>
+</html>

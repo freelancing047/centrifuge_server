@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flexLibProperties version="1">
+  <includeClasses>
+    <classEntry path="com.sandy.util.DistortImage"/>
+    <classEntry path="com.sandy.util.SandyPoint"/>
+    <classEntry path="com.sandy.util.Triangle"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>

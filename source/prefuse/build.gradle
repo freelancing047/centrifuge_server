@@ -1,0 +1,24 @@
+apply plugin: 'java'
+
+repositories {
+  mavenCentral()
+}
+
+sourceSets {
+  main {
+    java {
+      srcDir 'src'
+    }
+  }
+}
+
+def LOG4J_VERSION = '2.8.2'
+def GUAVA_VERSION = '20.0'//17.0
+
+dependencies {
+  compile "com.google.guava:guava:$GUAVA_VERSION"
+  compile 'lucene:lucene:1.4.3'
+  compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: "$LOG4J_VERSION"
+  compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: "$LOG4J_VERSION"
+  testCompile 'junit:junit:4.11'
+}

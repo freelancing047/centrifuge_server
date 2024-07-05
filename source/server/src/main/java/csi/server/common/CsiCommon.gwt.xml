@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- When updating your version of GWT, you should also update this DTD reference, so that your app can take advantage of 
+    the latest GWT module capabilities. -->
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.5.0//EN"
+  "http://google-web-toolkit.googlecode.com/svn/tags/2.5.0/distro-source/core/src/gwt-module.dtd">
+<module rename-to='csicommon'>
+    <set-configuration-property name="CssResource.conversionMode" value="strict" />
+    <!-- Inherit the core Web Toolkit stuff. -->
+    <inherits name='com.google.gwt.user.User' />
+    <inherits name="csi.CsiRoot"/>
+    <inherits name="csi.server.business.CsiBusiness"/>
+    <!-- Other module inherits -->
+
+    <!-- Specify the paths for translatable code -->
+    <source path='csi_java' />
+    <source path='util' />
+    <source path='exception'>
+        <include name="CentrifugeException.java" />
+    </source>
+    <source path="graphics/shapes">
+        <include name="ShapeType.java" />
+    </source>
+    <source path="interfaces" />
+    <source path="model" />
+    <source path="linkup" />
+
+    <source path="dto" />
+    <source path="enumerations" />
+
+    <source path="dto/gwt" />
+    <source path="dto/installed_tables" />
+    <source path="dto/config/connection">
+    </source>
+    <source path="dto/graph">
+        <include name="GraphInfo.java" />
+        <include name="GraphRequest.java" />
+        <include name="GraphStateFlags.java" />
+        <!-- <include name="NodeListing.java"/> <include name="EdgeListing.java"/> -->
+        <include name="GraphOperation.java" />
+        <include name="TypeInfo.java" />
+    </source>
+    <source path="dto/graph/gwt" />
+    <source path="dto/graph/pattern" />
+    <source path="dto/graph/path">
+        <include name="FindPathResponse.java" />
+        <include name="FindPathRequest.java" />
+        <include name="FindAllNodesMetaRequest.java" />
+        <include name="PathMeta.java" />
+    </source>
+    <source path="dto/graph/search">
+        <include name="GraphSearchResults.java" />
+        <include name="GraphSearch.java" />
+        <include name="NodeInfo.java" />
+        <include name="SearchType.java" />
+        <include name="LinkSearchCriterion.java" />
+        <include name="NodeSearchCriterion.java" />
+        <include name="EdgeInfo.java" />
+        <include name="AttributeCriterion.java" />
+    </source>
+
+    <source path="file_slicing" />
+
+    <source path="identity" />
+
+    <source path="service" />
+    <source path="exception" />
+</module>

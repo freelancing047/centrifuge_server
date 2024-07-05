@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+    <changeSet author="pledbetter" id="1427134228772-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="patternnodes">
+            <column name="show_in_results" type="boolean" defaultValueBoolean="false" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="pledbetter" id="1427134228772-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="patternlinks">
+            <column name="show_in_results" type="boolean" defaultValueBoolean="false" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="pledbetter" id="1427826836492-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="graphpatterns">
+            <column name="require_distinct_nodes" type="boolean" defaultValueBoolean="true" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="pledbetter" id="1427826836492-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="graphpatterns">
+            <column name="require_distinct_links" type="boolean" defaultValueBoolean="true" />
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

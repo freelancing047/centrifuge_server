@@ -1,0 +1,13 @@
+<servicerequest version="1.0">
+  <header>
+    <user name="Haiyuan Wang" idtype="AIN" id="12345678">
+      <userid>hwang</userid>
+      <group>QA</group>
+    </user>
+  </header>
+  <data>
+    <dataview name="SAMPLE-Golf Camp">
+    </dataview>
+  </data>
+  <view type="rg" layout="centrifuge"/>
+</servicerequest>

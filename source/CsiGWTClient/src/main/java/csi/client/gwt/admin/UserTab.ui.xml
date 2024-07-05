@@ -1,0 +1,158 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+			xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+			xmlns:csibutton="urn:import:csi.client.gwt.widget.buttons"
+            xmlns:csidrop="urn:import:csi.client.gwt.widget.list_boxes"
+			xmlns:csigd="urn:import:csi.client.gwt.widget.gxt.grid"
+			xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		.invisibleString {
+			color: #ffffff;
+		}
+        .bigLeftPadding {
+            padding-left: 200px;
+        }
+        .bigLeftMargin {
+            margin-left: 200px;
+        }
+        .leftMargin {
+            margin-left: 40px;
+        }
+        .radioPadding {
+            padding-left: 20px;
+        }
+	</ui:style>
+	
+	<ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+
+    <g:LayoutPanel width="100%" height="100%" ui:field="container">
+        <g:layer>
+            <g:HorizontalPanel ui:field="topContainer" width="100%" horizontalAlignment="ALIGN_LEFT" verticalAlignment="ALIGN_TOP">
+                <g:VerticalPanel horizontalAlignment="ALIGN_LEFT" verticalAlignment="ALIGN_TOP">
+                    <g:HorizontalPanel height="40px" verticalAlignment="ALIGN_TOP">
+                        <g:VerticalPanel height="35px" verticalAlignment="ALIGN_MIDDLE">
+                            <boot:RadioButton name="userSearch" ui:field="searchCheckBox" value="false" />
+                        </g:VerticalPanel>
+                        <g:Label text="{i18n.get.plusplus}" styleName="{style.invisibleString}" />
+                        <g:TextBox width="180px" ui:field="searchTextBox"/>
+                        <g:Label text="{i18n.get.plusplus}" styleName="{style.invisibleString}" />
+                        <g:VerticalPanel height="35px" verticalAlignment="ALIGN_MIDDLE">
+                            <boot:RadioButton name="userSearch" ui:field="allCheckBox" value="true" />
+                        </g:VerticalPanel>
+                        <g:Label text="{i18n.get.plusplus}" styleName="{style.invisibleString}" />
+                        <g:VerticalPanel height="30px" verticalAlignment="ALIGN_MIDDLE">
+                            <g:Label text="{i18n.get.membersOf}" ui:field="filterLabel"/>
+                        </g:VerticalPanel>
+                        <g:Label text="{i18n.get.plusplus}" styleName="{style.invisibleString}" />
+                        <csidrop:CsiStringListBox width="170px" ui:field="sharingFilterListBox" />
+                        <g:Label text="{i18n.get.plusplus}" styleName="{style.invisibleString}" />
+                        <g:cell horizontalAlignment="ALIGN_LEFT">
+                            <g:HorizontalPanel height="40px" horizontalAlignment="ALIGN_LEFT" ui:field="showForSecurity_1">
+                                <g:VerticalPanel height="30px" verticalAlignment="ALIGN_MIDDLE">
+                                    <g:Label text="{i18n.get.having}" ui:field="combinedFilterLabel"/>
+                                </g:VerticalPanel>
+                                <g:Label text="{i18n.get.plusplus}" styleName="{style.invisibleString}" />
+                                <csidrop:CsiStringListBox width="170px" ui:field="securityFilterListBox" />
+                                <g:VerticalPanel height="30px" verticalAlignment="ALIGN_MIDDLE">
+                                    <g:Label text="{i18n.get.access}" ui:field="capcoLabel"/>
+                                </g:VerticalPanel>
+                                <g:Label text="{i18n.get.plusplus}" styleName="{style.invisibleString}" />
+                            </g:HorizontalPanel>
+                        </g:cell>
+                        <csibutton:CyanButton text="{i18n.get.getResults}" ui:field="getButton" width="90px"/>
+                        <g:VerticalPanel height="35px" verticalAlignment="ALIGN_MIDDLE">
+                            <boot:RadioButton ui:field="augmentButton" name="update" text="&nbsp; {i18n.get.gridAction_Augment}" styleName="{style.radioPadding}" />
+                        </g:VerticalPanel>
+                        <g:VerticalPanel height="35px" verticalAlignment="ALIGN_MIDDLE">
+                            <boot:RadioButton ui:field="replaceButton" name="update" text="&nbsp; {i18n.get.gridAction_Replace}" styleName="{style.radioPadding}" />
+                        </g:VerticalPanel>
+                    </g:HorizontalPanel>
+                    <g:HorizontalPanel height="40px" horizontalAlignment="ALIGN_LEFT">
+                        <g:VerticalPanel height="35px" verticalAlignment="ALIGN_MIDDLE">
+                            <csibutton:BlueButton ui:field="newButton" width="90px"/>
+                        </g:VerticalPanel>
+                        <g:VerticalPanel height="35px" verticalAlignment="ALIGN_TOP">
+                            <g:Label text="{i18n.get.includeOnly}" styleName="{style.bigLeftMargin}"/>
+                        </g:VerticalPanel>
+                        <g:VerticalPanel height="40px" verticalAlignment="ALIGN_TOP">
+                            <boot:CheckBox ui:field="activePerpetualCB" text="&nbsp; {i18n.get.activePerpetual}" styleName="{style.leftMargin}"/>
+                        </g:VerticalPanel>
+                        <g:VerticalPanel height="40px" verticalAlignment="ALIGN_TOP">
+                            <boot:CheckBox ui:field="activeTemporaryCB" text="&nbsp; {i18n.get.activeNotPerpetual}" styleName="{style.leftMargin}"/>
+                        </g:VerticalPanel>
+                        <g:VerticalPanel height="40px" verticalAlignment="ALIGN_TOP">
+                            <boot:CheckBox ui:field="disabledCB" text="&nbsp; {i18n.get.disabled}" styleName="{style.leftMargin}"/>
+                        </g:VerticalPanel>
+                        <g:VerticalPanel height="40px" verticalAlignment="ALIGN_TOP">
+                            <boot:CheckBox ui:field="suspendedCB" text="&nbsp; {i18n.get.suspended}" styleName="{style.leftMargin}"/>
+                        </g:VerticalPanel>
+                    </g:HorizontalPanel>
+                </g:VerticalPanel>
+                <g:VerticalPanel horizontalAlignment="ALIGN_RIGHT" verticalAlignment="ALIGN_MIDDLE">
+                    <g:HorizontalPanel height="40px" horizontalAlignment="ALIGN_RIGHT" verticalAlignment="ALIGN_TOP">
+                        <g:Label ui:field="itemsReturnedLabel" visible="false"/>
+                    </g:HorizontalPanel>
+                    <g:HorizontalPanel height="40px" horizontalAlignment="ALIGN_RIGHT" verticalAlignment="ALIGN_TOP">
+                        <csibutton:CyanButton ui:field="clearButton" text="{i18n.get.clear}" width="80px"/>
+                    </g:HorizontalPanel>
+                </g:VerticalPanel>
+            </g:HorizontalPanel>
+        </g:layer>
+        <g:layer>
+            <csigd:GridContainer ui:field="gridContainer" />
+        </g:layer>
+        <g:layer>
+            <g:HorizontalPanel ui:field="bottomContainer" width="100%" height="40px" horizontalAlignment="ALIGN_RIGHT" verticalAlignment="ALIGN_TOP">
+                <g:cell horizontalAlignment="ALIGN_LEFT">
+                    <g:HorizontalPanel height="40px" horizontalAlignment="ALIGN_RIGHT" ui:field="sharingPanel">
+                        <csibutton:GreenButton text="{i18n.get.add}" ui:field="groupAddButton" width="90px"/>
+                        <g:Label text="{i18n.get.plusplus}" styleName="{style.invisibleString}" />
+                        <csibutton:RedButton text="{i18n.get.remove}" ui:field="groupRemoveButton" width="90px"/>
+                        <g:Label text="{i18n.get.plusplus}" styleName="{style.invisibleString}" />
+                        <g:Label text="{i18n.get.plusplus}" styleName="{style.invisibleString}" />
+                        <g:Label text="{i18n.get.plusplus}" styleName="{style.invisibleString}" />
+                        <g:cell horizontalAlignment="ALIGN_LEFT">
+                            <g:HorizontalPanel height="40px" horizontalAlignment="ALIGN_LEFT" ui:field="showForSecurity_2">
+                                <g:Label text="{i18n.get.plusplus}" styleName="{style.invisibleString}" />
+                                <g:VerticalPanel height="35px" verticalAlignment="ALIGN_MIDDLE">
+                                    <boot:RadioButton name="groupUpdate" ui:field="sharingCheckBox" text="" value="false" />
+                                </g:VerticalPanel>
+                            </g:HorizontalPanel>
+                        </g:cell>
+                        <g:Label text="{i18n.get.plusplus}" styleName="{style.invisibleString}" />
+                        <csidrop:CsiStringListBox width="155px" ui:field="sharingListBox" />
+                        <g:VerticalPanel height="30px" verticalAlignment="ALIGN_MIDDLE">
+                            <g:Label text="{i18n.get.membership}"/>
+                        </g:VerticalPanel>
+                        <g:Label text="{i18n.get.plusplus}" styleName="{style.invisibleString}" />
+                        <g:Label text="{i18n.get.plusplus}" styleName="{style.invisibleString}" />
+                        <g:Label text="{i18n.get.plusplus}" styleName="{style.invisibleString}" />
+                        <g:cell horizontalAlignment="ALIGN_LEFT">
+                            <g:HorizontalPanel height="40px" horizontalAlignment="ALIGN_LEFT" ui:field="showForSecurity_3">
+                                <g:VerticalPanel height="35px" verticalAlignment="ALIGN_MIDDLE">
+                                    <boot:RadioButton name="groupUpdate" ui:field="securityCheckBox" text="" value="false" />
+                                </g:VerticalPanel>
+                                <g:Label text="{i18n.get.plusplus}" styleName="{style.invisibleString}" />
+                                <csidrop:CsiStringListBox width="155px" ui:field="securityListBox" />
+                                <g:VerticalPanel height="30px" verticalAlignment="ALIGN_MIDDLE">
+                                    <g:Label text="{i18n.get.access}"/>
+                                </g:VerticalPanel>
+                            </g:HorizontalPanel>
+                        </g:cell>
+                    </g:HorizontalPanel>
+                </g:cell>
+                <g:cell horizontalAlignment="ALIGN_RIGHT">
+                    <g:HorizontalPanel height="40px" horizontalAlignment="ALIGN_RIGHT">
+                        <csibutton:RedButton text="{i18n.get.delete}" ui:field="deleteButton" width="90px"/>
+                        <g:Label text="{i18n.get.plusplus}" styleName="{style.invisibleString}" />
+                        <csibutton:BlueButton text="{i18n.get.edit}" ui:field="editButton" width="90px"/>
+                        <g:Label text="{i18n.get.eightpluses}" styleName="{style.invisibleString}" />
+                        <csibutton:RedButton text="{i18n.get.userTab_deactivate}" ui:field="deactivateButton" width="90px"/>
+                        <g:Label text="{i18n.get.plusplus}" styleName="{style.invisibleString}" />
+                        <csibutton:GreenButton text="{i18n.get.userTab_activate}" ui:field="activateButton" width="90px"/>
+                    </g:HorizontalPanel>
+                </g:cell>
+            </g:HorizontalPanel>
+        </g:layer>
+    </g:LayoutPanel>
+</ui:UiBinder>

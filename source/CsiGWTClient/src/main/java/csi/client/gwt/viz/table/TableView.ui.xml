@@ -1,0 +1,14 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder' xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+	xmlns:button="urn:import:com.sencha.gxt.widget.core.client.button" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
+	xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui" xmlns:form="urn:import:com.sencha.gxt.widget.core.client.form" xmlns:grid="urn:import:com.sencha.gxt.widget.core.client.grid"
+	xmlns:hc="urn:import:org.moxieapps.gwt.highcharts.client" xmlns:csiboot="urn:import:csi.client.gwt.widget.boot" xmlns:this="urn:import:csi.client.gwt.viz.chart"
+	xmlns:gxt-grid="urn:import:csi.client.gwt.widget.gxt.grid">
+	<ui:style>
+		.important {
+			font-weight: bold;
+		}
+	</ui:style>
+	<gxt-grid:GridContainer ui:field="gridContainer">
+	</gxt-grid:GridContainer>
+</ui:UiBinder>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="pledbetter" id="alignAxes" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="chartsettings">
+            <column name="alignaxes" type="boolean" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="pledbetter" id="chartTypeMigration361" failOnError="true" runInTransaction="false" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <preConditions onFail="CONTINUE">
+                <tableExists tableName="iqhgrjreuqhrguiqhegrqeg"></tableExists>
+        </preConditions>
+        <customChange class="csi.tools.UpdateChatSettings361" >
+        </customChange>
+    </changeSet>
+</databaseChangeLog>

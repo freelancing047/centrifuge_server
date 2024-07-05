@@ -1,0 +1,75 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+	xmlns:gxtbutton="urn:import:com.sencha.gxt.widget.core.client.button"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
+	xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:gxtform="urn:import:com.sencha.gxt.widget.core.client.form"
+	xmlns:gxtgrid="urn:import:com.sencha.gxt.widget.core.client.grid"
+	xmlns:combo1="urn:import:csi.client.gwt.widget.ui.color"
+	xmlns:combo2="urn:import:csi.client.gwt.widget.combo_boxes"
+	xmlns:csiboot="urn:import:csi.client.gwt.widget.boot" xmlns:gwt="urn:import:csi.client.gwt.widget.ui"
+	xmlns:this="urn:import:csi.client.gwt.viz.shared.filter" xmlns:b="urn:import:com.github.gwtbootstrap.client.ui.base">
+
+	<ui:style>
+		.label {
+		margin-bottom: 0px;
+		}
+
+		.colorRangeContainer {
+		overflow-y: auto;
+		background-color: #EEE;
+		}
+
+		.table {
+		padding: 2px;
+		width: 100%;
+		}
+
+		.labelCell {
+		text-align: right;
+		}
+	</ui:style>
+
+	<ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+
+	<ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+	<csiboot:Dialog title="{i18n.get.discreteColorPickerTitle}"
+		bodyWidth="480px" bodyHeight="250px">
+		<gwt:FullSizeLayoutPanel>
+			<gwt:layer top="0" height="50px">
+				<g:HTMLPanel>
+					<table class="{style.table}">
+						<tr>
+							<td class="{style.labelCell}">
+								<boot:ControlLabel for="input01"
+									addStyleNames="{style.label}">
+									<b:InlineLabel text="{i18n.get.discreteColorPickerCategoryLabel} " />
+								</boot:ControlLabel>
+							</td>
+							<td>
+								<combo1:DiscreteColorTypeComboBox ui:field="categoryList" boot:id="input01"
+									/>
+							</td>
+							<td class="{style.labelCell}">
+								<boot:ControlLabel for="input02"
+									addStyleNames="{style.label}">
+									<b:InlineLabel text="{i18n.get.discreteColorPickerSizelabel} " />
+								</boot:ControlLabel>
+							</td>
+							<td>
+								<combo2:StringComboBox ui:field="sizeList" width="100px" boot:id="input02"
+									/>
+							</td>
+						</tr>
+					</table>
+				</g:HTMLPanel>
+			</gwt:layer>
+			<gwt:layer top="50px" bottom="0">
+				<g:FlowPanel width="100%" ui:field="colorRangeContainer"
+					addStyleNames="{style.colorRangeContainer}" />
+			</gwt:layer>
+		</gwt:FullSizeLayoutPanel>
+	</csiboot:Dialog>
+
+</ui:UiBinder>

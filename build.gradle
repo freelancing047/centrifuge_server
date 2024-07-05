@@ -1,0 +1,68 @@
+apply {
+    from 'gradle/properties.gradle'
+    from 'gradle/windows-jre.gradle'
+    from 'gradle/linux-jre.gradle'
+    from 'gradle/windows-db.gradle'
+    from 'gradle/linux-db.gradle'
+    from 'gradle/db-config.gradle'
+    from 'gradle/docs.gradle'
+    from 'gradle/syslib.gradle'
+    from 'gradle/webapp.gradle'
+    from 'gradle/tomcat.gradle'
+    from 'gradle/number.gradle'
+    from 'gradle/license.gradle'
+    from 'gradle/dev-util.gradle'
+    from 'gradle/installer.gradle'
+    from 'gradle/neo4j.gradle'
+    from 'gradle/timeline.gradle'
+
+}
+
+allprojects{
+    tasks.withType(JavaCompile) {
+        sourceCompatibility = "1.8"
+        targetCompatibility = "1.8"
+    }
+}
+
+task clean {
+    doLast {
+        delete file(buildOutput)
+    }
+}
+
+task copyInternationalization(type: Copy) {
+
+    from 'source/CsiGWTClient/src/main/java/csi/client/gwt/i18n'
+    into 'source/server/src/main/resources'
+	include 'CentrifugeConstants.properties'
+}
+
+task installCentrifuge {
+    def depends = []
+    depends << 'copyInternationalization'
+    depends << 'deployNeo4jWindows' << 'deployNeo4jLinux'
+    depends << 'deployWindowsJre' << 'deployLinuxJre'
+    depends << 'deployDatabaseDdl' << 'deployDocs'
+    depends << 'deploySyslib' << 'deployTomcat'
+    depends << 'deployWebapp'
+    dependsOn(depends)
+}
+
+task installDevCentrifuge {
+    def depends = []
+    if (getOperatingSystemName() == windowsKey)
+        depends << 'copyWindowsDatabaseIntoDevelopment' << 'copyWindowsJreIntoDevelopment'
+    else
+        depends << 'copyLinuxDatabaseIntoDevelopment' << 'copyLinuxJreIntoDevelopment'
+
+    dependsOn(depends)
+}
+
+task build {
+    dependsOn 'genVersionString', 'deployLicense'
+}
+
+subprojects {
+    task listAllDependencies(type: DependencyReportTask) {}
+}

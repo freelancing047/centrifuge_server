@@ -1,0 +1,131 @@
+/**
+ * Generates and deploys license.txt.
+ * Used for development; in production, we do not ship license.txt with the product.
+ */
+apply from: 'gradle/properties.gradle'
+
+def myMajorVersion = '0'
+def myMinorVersion = '0'
+def myMajorSubVersion = '0'
+def myMinorSubVersion = '0'
+def myReleaseVersion = '0'
+
+configurations {
+    license
+}
+dependencies {
+  license project(':source:server')
+}
+
+task deployLicense {
+    dependsOn 'genLicense'
+    group = deployGroup
+    outputs.file "${buildRuntime}/license.txt"
+    doLast {
+        def licenseText = tasks.genLicense.output().split("\n")[0];
+        file(buildRuntime).mkdirs()
+        File file = file("${buildRuntime}/license.txt")
+        file.text = licenseText
+
+    }
+}
+
+task genVersionString() {
+
+    def versionPath = "${projectDir}/${sourceInput}/server/src/main/java/csi/VersionData.java"
+
+    File myFile = new File("${versionPath}")
+    def myLines = myFile.readLines()
+
+    for (myLine in myLines) {
+
+        def myTokens = myLine.tokenize(' \t\n\r;=')
+        def myCount = myTokens.size()
+
+        if (myCount > 2) {
+
+            if (myTokens[myCount - 2] == 'MAJOR_VERSION') {
+
+                myMajorVersion = myTokens[myCount - 1]
+
+            } else if(myTokens[myCount - 2] == 'MINOR_VERSION') {
+
+                myMinorVersion = myTokens[myCount - 1]
+
+            } else if(myTokens[myCount - 2] == 'MAJOR_SUB_VERSION') {
+
+                myMajorSubVersion = myTokens[myCount - 1]
+
+            } else if(myTokens[myCount - 2] == 'MINOR_SUB_VERSION') {
+
+                myMinorSubVersion = myTokens[myCount - 1]
+            }
+        }
+    }
+    if (myMinorSubVersion != '0') {
+
+        myReleaseVersion = "${myMajorVersion}.${myMinorVersion}.${myMajorSubVersion}.${myMinorSubVersion}"
+
+    } else {
+
+        if (myMajorSubVersion != '0') {
+
+            myReleaseVersion = "${myMajorVersion}.${myMinorVersion}.${myMajorSubVersion}"
+
+        } else {
+
+            myReleaseVersion = "${myMajorVersion}.${myMinorVersion}"
+        }
+    }
+    project.ext.set("majorVersion", myMajorVersion)
+    project.ext.set("minorVersion", myMinorVersion)
+    project.ext.set("majorSubVersion", myMajorSubVersion)
+    project.ext.set("minorSubVersion", myMinorSubVersion)
+    project.ext.set("releaseVersion", myReleaseVersion)
+
+    println ""
+    println "<><><> Major Version = " + majorVersion
+    println "<><><> Minor Version = " + minorVersion
+    println ""
+    println "<><><> Release Version = " + releaseVersion
+    println ""
+
+    doFirst {
+
+        project.ext.set("majorVersion", myMajorVersion)
+        project.ext.set("minorVersion", myMinorVersion)
+        project.ext.set("majorSubVersion", myMajorSubVersion)
+        project.ext.set("minorSubVersion", myMinorSubVersion)
+        project.ext.set("releaseVersion", myReleaseVersion)
+    }
+    doLast {
+
+        project.ext.set("majorVersion", myMajorVersion)
+        project.ext.set("minorVersion", myMinorVersion)
+        project.ext.set("majorSubVersion", myMajorSubVersion)
+        project.ext.set("minorSubVersion", myMinorSubVersion)
+        project.ext.set("releaseVersion", myReleaseVersion)
+    }
+}
+
+task genLicense(type: JavaExec) {
+   dependsOn 'genVersionString', 'installDevCentrifuge'
+
+   doFirst {
+      println ""
+      println "<><><> Create development license for major version " + myMajorVersion + " and minor version " + myMinorVersion + "."
+      println ""
+
+      group = deployGroup
+      main = 'csi.license.persist.creator.AntLicenseCreator'
+      classpath += files("${projectDir}\\dev-license", "${projectDir}\\lib\\license-persistence-1.0.0-jar-with-dependencies.jar")
+      args "Centrifuge", "50", "true", "true", "Dec 1, 2021 10:50 PM", myMajorVersion, myMinorVersion, "0"
+
+      standardOutput = new ByteArrayOutputStream()
+      ext.output = {
+         return standardOutput.toString()
+      }
+   }
+}
+
+genLicense.mustRunAfter genVersionString

@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <bean id="textDriver" class="csi.server.connector.config.JdbcDriver">
+        <property name="name" value="Original Text Driver"/>
+        <property name="key" value="text"/>
+        <property name="baseUrl" value="jdbc:jstels:csv:"/>
+        <property name="jdbcFactory"><null/></property>
+        <property name="tableNameQualifier"><null/></property>
+        <property name="factory" value="csi.server.connector.jdbc.jstels.JStelsTextConnectionFactory"/>
+        <property name="driverClass" value="jstels.jdbc.csv.CsvDriver2"/>
+        <property name="driverAccessRole"><null/></property>
+        <property name="sourceEditRole"><null/></property>
+        <property name="connectionEditRole"><null/></property>
+        <property name="queryEditRole"><null/></property>
+        <property name="dataViewingRole"><null/></property>
+        <property name="escapeChar" value="\\"/>
+        <property name="selectNullString" value="''" />
+        <property name="sortOrder"><null/></property>
+		<property name="castNulls" value="false"/>
+		<property name="remarks" value="This driver may be used to load data from a CSV or other text file into either an Installed Data Source or a DataView."/>
+        <property name="tableAliasMap">
+            <map>
+            </map>
+        </property>
+        <property name="capcoColumnMap">
+            <map>
+            </map>
+        </property>
+        <property name="authErrorCodes">
+            <list>
+            </list>
+        </property>
+        <property name="authSqlStates">
+            <list>
+            </list>
+        </property>
+        <property name="defaultProperties">
+            <props>
+                <prop key="caching">false</prop>
+                <prop key="maxScanRows">10</prop>
+                <prop key="dateFormat">
+                    yyyy-MM-dd HH:mm:ss.SSS | yyyy-MM-dd HH:mm:ss | yyyy-MM-dd |  HH:mm:ss.SSS |  HH:mm:ss | MM/dd/yyyy
+                </prop>
+                <prop key="distinctSources">true</prop>
+            </props>
+        </property>
+        <property name="typeMapping">
+            <props>
+            </props>
+        </property>
+        <property name="uiConnectionConfig" ref="textConnectionConfig"/>
+    </bean>
+
+    <bean id="textConnectionConfig" class="csi.server.common.dto.config.connection.DriverConfigInfo">
+        <property name="configItems" ref="textConfigItemList" />
+
+    </bean>
+
+    <util:list id="textConfigItemList" value-type="csi.server.common.dto.config.connection.ConfigItem">
+        <ref bean="textFileConfigItem" />
+        <ref bean="textFirstRowConfigItem" />
+        <ref bean="textCellDelimeterConfigItem" />
+        <ref bean="textRowDelimeterConfigItem" />
+        <ref bean="textEncodingConfigItem" />
+    </util:list>
+
+    <bean id="textFileConfigItem" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Choose a formatted data file with the extension '.txt' or '.csv' such as a file exported by Excel from those listed. Or, you may browse your local file system for a file to upload; and when it has been uploaded, select it. Note the character used as a delimeter between different fields as well as the character used to terminate a row. Each will be asked for further on by this wizard."/>
+        <property name="label" value="Select a formatted data file:"/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="true"/>
+        <property name="type" value="file"/>
+        <property name="key" value="csi.file"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues" ref="textDefaultValues" />
+        <property name="validationOperations" ref="textValidationOptions" />
+    </bean>
+
+    <util:list id="textDefaultValues" value-type="csi.server.common.dto.KeyValueItem">
+        <ref bean="textDefaultKeyValue" />
+    </util:list>
+
+    <bean id="textDefaultKeyValue" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="filePickerDescription"/>
+        <property name="value" value="Text Files (*.txt, *.csv)"/>
+    </bean>
+
+    <util:list id="textValidationOptions" value-type="csi.server.common.dto.KeyValueItem">
+        <ref bean="textValidationKeyValue1" />
+        <ref bean="textValidationKeyValue2" />
+    </util:list>
+
+    <bean id="textValidationKeyValue1" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="fileType"/>
+        <property name="value" value=".txt"/>
+    </bean>
+
+    <bean id="textValidationKeyValue2" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="fileType"/>
+        <property name="value" value=".csv"/>
+    </bean>
+
+    <bean id="textFirstRowConfigItem" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="If checked the first row will be used to name the individual columns."/>
+        <property name="label" value="Use first row as column names?"/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="true"/>
+        <property name="type" value="boolean"/>
+        <property name="key" value="csi.schema.firstRowHeaders"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues" ref="textFirstRowDefaultValues" />
+        <property name="validationOperations" ref="textValidationOptions" />
+    </bean>
+
+    <util:list id="textFirstRowDefaultValues" value-type="csi.server.common.dto.KeyValueItem">
+        <ref bean="textFirstRowDefaultValuesKeyValue" />
+    </util:list>
+
+    <bean id="textFirstRowDefaultValuesKeyValue" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="csi.schema.firstRowHeaders"/>
+        <property name="value" value="true"/>
+    </bean>
+
+    <bean id="textCellDelimeterConfigItem" class="csi.server.common.dto.config.connection.SelectListConfigItem">
+        <property name="allowMultiSelection" value="false"/>
+        <property name="helpText" value="Select the character or character group used to separate individual fields within the same row of data. If you do not find the value in the list, you may enter your own value."/>
+        <property name="label" value="Select the field separator."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="true"/>
+        <property name="required" value="true"/>
+        <property name="type" value="selectList"/>
+        <property name="key" value="csi.schema.cellDelim"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+        <property name="defaultValues" ref="textCellDelimDefaultValues" />
+        <property name="listItemValues" ref="textListCellValues">
+        </property>
+
+    </bean>
+
+    <util:list id="textCellDelimDefaultValues" value-type="csi.server.common.dto.KeyValueItem">
+        <ref bean="textCellDelimDefaultValuesKeyValue" />
+    </util:list>
+
+    <bean id="textCellDelimDefaultValuesKeyValue" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="csi.schema.cellDelim"/>
+        <property name="value" value=","/>
+    </bean>
+
+    <util:list id="textListCellValues" scope="prototype" list-class="java.util.LinkedList" value-type="csi.server.common.dto.config.connection.ListItem">
+        <ref bean="textListItemValuesComma" />
+        <ref bean="textListItemValuesTab" />
+        <ref bean="textListItemValuesBar" />
+        <ref bean="textListItemValuesSemi" />
+        <ref bean="textListItemValuesBraceBracket" />
+        <ref bean="textListItemValuesBracketBrace" />
+        <ref bean="textListItemValuesCrLf" />
+        <ref bean="textListItemValuesLf" />
+        <ref bean="textListItemValuesCr" />
+    </util:list>
+
+    <util:list id="textListRowValues" scope="prototype" list-class="java.util.LinkedList" value-type="csi.server.common.dto.config.connection.ListItem">
+        <ref bean="textListItemValuesCrLf" />
+        <ref bean="textListItemValuesLf" />
+        <ref bean="textListItemValuesCr" />
+        <ref bean="textListItemValuesBar" />
+        <ref bean="textListItemValuesSemi" />
+        <ref bean="textListItemValuesBraceBracket" />
+        <ref bean="textListItemValuesBracketBrace" />
+        <ref bean="textListItemValuesComma" />
+        <ref bean="textListItemValuesTab" />
+    </util:list>
+
+    <bean id="textListItemValuesComma" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value=","/>
+        <property name="value" value=","/>
+    </bean>
+
+    <bean id="textListItemValuesTab" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="Tab"/>
+        <property name="value" value="Tab"/>
+    </bean>
+
+    <bean id="textListItemValuesCrLf" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="CR-LF"/>
+        <property name="value" value="CR-LF"/>
+    </bean>
+
+    <bean id="textListItemValuesLf" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="LF"/>
+        <property name="value" value="LF"/>
+    </bean>
+
+    <bean id="textListItemValuesCr" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="CR"/>
+        <property name="value" value="CR"/>
+    </bean>
+
+    <bean id="textListItemValuesBar" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="|"/>
+        <property name="value" value="|"/>
+    </bean>
+
+    <bean id="textListItemValuesSemi" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value=";"/>
+        <property name="value" value=";"/>
+    </bean>
+
+    <bean id="textListItemValuesBraceBracket" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="{]"/>
+        <property name="value" value="{]"/>
+    </bean>
+
+    <bean id="textListItemValuesBracketBrace" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="[}"/>
+        <property name="value" value="[}"/>
+    </bean>
+
+    <bean id="textRowDelimeterConfigItem" class="csi.server.common.dto.config.connection.SelectListConfigItem">
+        <property name="allowMultiSelection" value="false"/>
+        <property name="helpText" value="Select the character or character group used to terminate a row of data. If the you do not find the value in the list, you may enter your own value."/>
+        <property name="label" value="Select the row terminator."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="true"/>
+        <property name="required" value="true"/>
+        <property name="type" value="selectList"/>
+        <property name="key" value="csi.schema.rowDelim"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+        <property name="defaultValues" ref="textRowDelimDefaultValues" />
+        <property name="listItemValues" ref="textListRowValues">
+        </property>
+
+    </bean>
+
+    <util:list id="textRowDelimDefaultValues" value-type="csi.server.common.dto.KeyValueItem">
+        <ref bean="textRowDelimDefaultValuesKeyValue" />
+    </util:list>
+
+    <bean id="textRowDelimDefaultValuesKeyValue" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="csi.schema.rowDelim"/>
+        <property name="value" value="CR-LF"/>
+    </bean>
+
+    <bean id="textEncodingConfigItem" class="csi.server.common.dto.config.connection.SelectListConfigItem">
+        <property name="allowMultiSelection" value="false"/>
+        <property name="helpText" value="Various types of character encoding are supported. Recent Windows files are likely UTF-16LE or US-ASCII. US-ASCII can also be loaded as UTF-8. Choose the type of character encoding present in the file being loaded."/>
+        <property name="label" value="Select the type of character encoding."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="true"/>
+        <property name="type" value="selectList"/>
+        <property name="key" value="csi.schema.charset"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+        <property name="defaultValues" ref="textEncodingDefaultValues" />
+        <property name="listItemValues" ref="textEncodingListItemValues">
+        </property>
+
+    </bean>
+
+    <util:list id="textEncodingDefaultValues" value-type="csi.server.common.dto.KeyValueItem">
+        <ref bean="textEncodingDefaultValuesKeyValue" />
+    </util:list>
+
+    <bean id="textEncodingDefaultValuesKeyValue" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="csi.encoding"/>
+        <property name="value" value="UTF-8 -- Eight-bit UCS Format"/>
+    </bean>
+
+    <util:list id="textEncodingListItemValues" list-class="java.util.LinkedList" value-type="csi.server.common.dto.config.connection.ListItem">
+        <ref bean="textEncodingValue_UTF-8" />
+        <ref bean="textEncodingValue_UTF-16" />
+        <ref bean="textEncodingValue_UTF-16BE" />
+        <ref bean="textEncodingValue_UTF-16LE" />
+        <ref bean="textEncodingValue_US-ASCII" />
+        <ref bean="textEncodingValue_ISO8859_1" />
+        <ref bean="textEncodingValue_ISO8859_2" />
+        <ref bean="textEncodingValue_ISO8859_4" />
+        <ref bean="textEncodingValue_ISO8859_5" />
+        <ref bean="textEncodingValue_ISO8859_7" />
+        <ref bean="textEncodingValue_ISO8859_9" />
+        <ref bean="textEncodingValue_ISO8859_13" />
+        <ref bean="textEncodingValue_ISO8859_15" />
+        <ref bean="textEncodingValue_KOI8_R" />
+    </util:list>
+
+    <bean id="textEncodingValue_UTF-8" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="UTF-8 -- Eight-bit UCS Format"/>
+        <property name="value" value="UTF-8"/>
+    </bean>
+
+    <bean id="textEncodingValue_UTF-16" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="UTF-16 -- Sixteen-bit UCS Format"/>
+        <property name="value" value="UTF-16"/>
+    </bean>
+
+    <bean id="textEncodingValue_UTF-16BE" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="UTF-16BE -- Sixteen-bit Unicode, big-endian"/>
+        <property name="value" value="UTF-16BE"/>
+    </bean>
+
+    <bean id="textEncodingValue_UTF-16LE" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="UTF-16LE -- Sixteen-bit Unicode, little-endian"/>
+        <property name="value" value="UTF-16LE"/>
+    </bean>
+
+    <bean id="textEncodingValue_US-ASCII" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="US-ASCII -- Seven-bit American Standard Code"/>
+        <property name="value" value="US-ASCII"/>
+    </bean>
+
+    <bean id="textEncodingValue_ISO8859_1" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="ISO8859_1 -- Latin Alphabet No. 1"/>
+        <property name="value" value="ISO8859_1"/>
+    </bean>
+
+    <bean id="textEncodingValue_ISO8859_2" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="ISO8859_2 -- Latin Alphabet No. 2"/>
+        <property name="value" value="ISO8859_2"/>
+    </bean>
+
+    <bean id="textEncodingValue_ISO8859_4" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="ISO8859_4 -- Latin Alphabet No. 4"/>
+        <property name="value" value="ISO8859_4"/>
+    </bean>
+
+    <bean id="textEncodingValue_ISO8859_5" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="ISO8859_5 -- Latin/Cyrillic Alphabet"/>
+        <property name="value" value="ISO8859_5"/>
+    </bean>
+
+    <bean id="textEncodingValue_ISO8859_7" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="ISO8859_7 -- Latin/Greek Alphabet"/>
+        <property name="value" value="ISO8859_7"/>
+    </bean>
+
+    <bean id="textEncodingValue_ISO8859_9" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="ISO8859_9 -- Latin Alphabet No. 5"/>
+        <property name="value" value="ISO8859_9"/>
+    </bean>
+
+    <bean id="textEncodingValue_ISO8859_13" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="ISO8859_13 -- Latin Alphabet No. 7 "/>
+        <property name="value" value="ISO8859_13"/>
+    </bean>
+
+    <bean id="textEncodingValue_ISO8859_15" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="ISO8859_15 -- Latin Alphabet No. 9 "/>
+        <property name="value" value="ISO8859_15"/>
+    </bean>
+
+    <bean id="textEncodingValue_KOI8_R" scope="prototype" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="KOI8_R -- Eight-bit Russian Code"/>
+        <property name="value" value="KOI8_R"/>
+    </bean>
+
+</beans>

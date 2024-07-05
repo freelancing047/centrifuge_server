@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                            http://www.springframework.org/schema/util
+                            http://www.springframework.org/schema/util/spring-util-2.5.xsd"
+       default-init-method="init" default-destroy-method="destroy">
+
+    <bean id="configuration" class="csi.config.Configuration">
+        <property name="dbConfig" ref="dbConfig"/>
+        <property name="taskManagerConfig" ref="taskManagerConfig"/>
+        <property name="featureToggleConfig" ref="featureToggleConfig"/>
+        <property name="formatConfig" ref="formatConfig"/>
+        <property name="chartConfig" ref="chartConfig"/>
+        <property name="graphConfig" ref="relGraphConfig"/>
+        <property name="externalLinkConfig" ref="externalLinkConfig"/>
+        <property name="graphAdvConfig" ref="graphAdvConfig"/>
+        <property name="kmlExportAdvConfig" ref="kmlExportAdvConfig"/>
+        <property name="dataCacheConfig" ref="dataCacheConfig"/>
+        <property name="popupConfig" ref="popupConfig"/>
+        <property name="protocolConfig" ref="protocolConfig"/>
+        <property name="uiSortConfig" ref="uiSortConfig"/>
+        <property name="applicationConfig" ref="applicationConfig"/>
+        <property name="broadcastConfig" ref="broadcastConfig"/>
+        <property name="securityPolicyConfig" ref="securityPolicyConfig"/>
+        <property name="restApiConfig" ref="restAPIConfig"/>
+        <property name="appLabelConfig" ref="appLabelConfig"/>
+        <property name="mapConfig" ref="mapConfig"/>
+        <property name="clientConfig" ref="clientConfig"/>
+        <property name="matrixConfig" ref="matrixConfig"/>
+        <property name="messageBrokerConfig" ref="messageConfig"/>
+		<property name="fileNameConfig" ref="fileNameConfigRef"/>
+        <property name="mailConfig" ref="mailConfig" />
+    </bean>
+
+    <bean id="appLabelConfig" class="csi.config.AppLabelConfig">
+        <property name="headerLeftLabel" value="Left"/>
+        <property name="headerCenterLabel" value="Center"/>
+        <property name="headerRightLabel" value="Right"/>
+        <property name="headerLeftLink" value="http://www.allgov.com"/>
+        <!-- <property name="headerCenterLink"><null/></property> -->
+        <property name="headerCenterLink" value="http://www.google.com"/>
+        <property name="headerRightLink" value="http://www.pbs.org"/>
+        <property name="headerForegroundColor" value="black"/>
+        <property name="headerBackgroundColor" value="#d9d9d9"/>
+        <property name="includeFullScreenHeaderLabels" value="false"/>
+        <property name="includeHeaderLabels" value="false"/>
+    </bean>
+
+    <bean id="featureToggleConfig" class="csi.config.FeatureToggleConfiguration">
+        <property name="showMapper" value="false"/>
+        <property name="scriptingEnabled" value="false"/>
+        <property name="precacheEnabled" value="true"/>
+        <property name="showTimeline" value="true"/>
+        <property name="showMap" value="true"/>
+        <property name="showAdvancedParameter" value="false"/>
+        <property name="showReportsTab" value="true" />
+        <property name="useNewLogoutPage" value="true" />
+    </bean>
+
+    <bean id="applicationConfig" class="csi.config.ApplicationConfig">
+        <property name="applicationId">
+            <null/>
+        </property>
+        <property name="disableTestConnections" value="false"/>
+        <property name="enableGeoIQ" value="false"/>
+        <property name="enableTemplateCache" value="true"/>
+        <property name="iconManagementAccess" value="administrators"/>
+        <property name="iconManagementAccessDelimiter" value="/"/>
+        <property name="purgeOldDataViews" value="false"/>
+        <property name="dataViewPurgeAge" value="1"/>
+        <property name="purgeOrphanDataViews" value="true"/>
+        <property name="purgeSamples" value="false"/>
+        <property name="displaySamples" value="true"/>
+        <property name="defaultRowLimit" value="4000000"/>
+        <property name="dailyReaperCount" value="2"/>
+        <property name="allowInUseFieldTypeChange" value="administrators"/>
+    </bean>
+
+    <bean id="mailConfig" class="csi.config.MailConfig">
+        <property name="defaultToEmailAddress" value="test@test.com" />
+        <property name="defaultFromEmailAddress" value="test@test.com" />
+        <property name="useMaxActive" value="true" />
+        <property name="useMaxKnown" value="true" />
+        <property name="useTotalUnique" value="true" />
+    </bean>
+
+    <bean id="broadcastConfig" class="csi.config.BroadcastConfig">
+        <property name="listenByDefault" value="true"/>
+    </bean>
+
+    <bean id="chartConfig" class="csi.config.ChartConfig">
+        <property name="numberFormat" value="#,###.##"/>
+        <property name="maxSpreadsheetDefault" value="0"/>
+        <property name="maxSizeDefault" value="0"/>
+        <property name="maxPieDefault" value="0"/>
+        <property name="maxDimensionNameLength" value="50"/>
+        <property name="maxChartCategories" value="300"/>
+        <property name="hideOverviewByDefault" value="false"/>
+    </bean>
+
+    <bean id="dataCacheConfig" class="csi.config.DataCacheConfig">
+        <property name="shutdownCache" value="true"/>
+        <property name="preCommandWait" value="10"/>
+        <property name="windowsCommandWait" value="10"/>
+        <property name="linuxCommandWait" value="10000"/>
+    </bean>
+
+    <bean id="popupConfig" class="csi.config.PopupConfig">
+        <property name="satisfiedCount" value="10"/>
+        <property name="millisecondWait" value="2000"/>
+    </bean>
+
+    <bean id="dbConfig" class="csi.config.DBConfig">
+        <property name="recordFetchSize" value="256"/>
+        <property name="drivers" ref="driverList"/>
+        <property name="usingRemoteDB" value="false" />
+    </bean>
+
+    <bean id="formatConfig" class="csi.config.FormatConfig">
+        <property name="timeFormat" value="HH:mm:ss"/>
+        <property name="dateFormat" value="MM/dd/yyyy"/>
+        <property name="timestampFormat" value="MM/dd/yyyy HH:mm:ss.S"/>
+        <property name="numberFormat" value="#0.########"/>
+    </bean>
+
+    <bean id="protocolConfig" class="csi.config.ProtocolConfig">
+        <property name="cometSessionTimeout" value="60000"/>
+        <property name="taskManagerCoreThreads" value="5"/>
+        <property name="taskManagerMaxThreads" value="30"/>
+        <property name="taskManagerKeepAlive" value="300"/>
+        <property name="statusProcessorCoreThreads" value="5"/>
+        <property name="statusProcessorMaxThreads" value="30"/>
+        <property name="statusProcessorKeepAlive" value="300"/>
+    </bean>
+
+    <bean id="relGraphConfig" class="csi.config.RelGraphConfig">
+        <property name="defaultTheme" value="Graph-Circular"/>
+        <property name="qualifyNodeByTypeDefault" value="false"/>
+        <property name="searchResultsLimit" value="500"/>
+        <property name="dotPath">
+            <null/>
+        </property>
+        <property name="autoBundleThreshold" value="2500"/>
+        <property name="autoBundleEnabled" value="false"/>
+        <property name="initialLayout" value="forceDirected"/>
+        <property name="renderThreshold" value="20000000"/>
+        <property name="tooltipOpenDelayTime" value="1500"/>
+        <property name="layoutAnimationThreshold" value="0"/>
+        <property name="maxLabelLength" value="40"/>
+        <property name="typeLimit" value="2000"/>
+    </bean>
+    <bean id="timelineConfig" class="csi.config.TimelineConfig">
+        <property name="eventLimit" value="10000"></property>
+        <property name="legendLimit" value="2000"></property>
+    </bean>
+
+    <bean id="externalLinkConfig" class="csi.server.common.dto.ExternalLinkConfig">
+        <property name="gettingStartedGuideUrl" value="https://CentrifugeSystems.com/downloads/Centrifuge-Analytics-User-Guide-361.pdf"></property>
+        <property name="tutorialUrl" value="https://CentrifugeSystems.com/downloads/Centrifuge-Analytics-Initial-Tutorial-361.pdf"></property>
+        <property name="centrifugeCompanyHomeUrl" value="https://CentrifugeSystems.com"></property>
+    </bean>
+
+    <bean id="restAPIConfig" class="csi.config.RestAPIConfig">
+        <property name="version" value="api-v1"/>
+        <property name="inactivityTimeout" value="300"/>
+    </bean>
+
+    <bean id="securityPolicyConfig" class="csi.config.SecurityPolicyConfig">
+        <property name="autoSuspendWhenOverLimit" value="true"/>
+
+        <!-- Fixed Time Expiration -->
+        <property name="expireUsersByDefault" value="false"/> <!-- Expire user after a fixed time since account was last enabled -->
+        <property name="daysUntilExpiration" value="30"/> <!-- Number of days since account was last enabled until auto-expiration -->
+        <!--Idle Time Expiration -->
+        <property name="expireIdleUsers" value="false"/> <!-- Expire user after the account has been inactive for a specific time -->
+        <property name="idleDaysUntilExpiration" value="30"/> <!-- Number of days since last logon until auto-expiration -->
+        <!-- User Expiration Master Switch -->
+        <property name="enableUserAccountExpiration" value="true"/> <!-- Must be "true" for Fixed Time Expiration or Idle Time Expiration to occur -->
+
+        <property name="enforceCapcoRestrictions" value="false"/>
+        <property name="forceUnrecognizedSciProcessing" value="false"/>
+        <property name="forceSciCompliance" value="false"/>
+        <property name="forceSapCompliance" value="false"/>
+        <property name="enableCapcoLabelProcessing" value="false"/>
+        <property name="useAbreviations" value="true"/>
+        <property name="defaultPortion" value="TS//SI/TK//REL TO USA, FVEY"/>
+        <property name="failOverPortion" value="TS//SI/TK//NF"/>
+
+        <property name="enforceDataSecurityTags" value="false"/>
+        <property name="enableTagLabelProcessing" value="false"/>
+        <property name="tagBannerPrefix" value="COI-"/>
+        <property name="tagBannerSuffix" value=""/>
+        <property name="tagItemPrefix" value=""/>
+        <property name="tagBannerDelimiter" value="-"/>
+        <property name="tagBannerSubDelimiter" value=","/>
+        <property name="defaultTags">
+            <null/>
+        </property>
+        <property name="failOverTags" value="Tag2|Tag3"/>
+
+        <!-- property name="defaultBanner" value="TOP SECRET//SI/TK//NO FOREIGN"/ -->
+        <property name="defaultBanner" value="TOP SECRET//SI/TK//NO FOREIGN"/>
+        <property name="bannerColors" ref="bannerColorMap"/>
+
+        <property name="restrictRoleVisibility" value="false"/>
+        <property name="hideFromGroups">
+            <null/>
+        </property>
+        <property name="restrictToGroups">
+            <null/>
+        </property>
+        <property name="ownerSetsSecurity" value="false"/>
+
+        <property name="showSharingPanel" value="false"/> <!-- Not supported -->
+    </bean>
+
+    <util:map id="bannerColorMap">
+        <entry key="DEFAULT" value="white,darkblue,default colors when classification cannot be matched"/>
+        <entry key="UNCLASSIFIED" value="white,darkgreen,as shipped - replace with authorized color"/>
+        <entry key="CONFIDENTIAL" value="white,#808000,as shipped - replace with authorized color"/>
+        <entry key="SECRET" value="white,darkred,as shipped - replace with authorized color"/>
+        <entry key="TOP SECRET" value="white,darkblue,as shipped - replace with authorized color"/>
+        <entry key="TAG" value="white,darkblue,as shipped - replace with authorized color"/>
+    </util:map>
+
+    <bean id="taskManagerConfig" class="csi.config.TaskManagerConfig">
+        <property name="minimumThreads" value="1"/>
+        <property name="maximumThreads" value="5"/>
+    </bean>
+
+    <bean id="uiSortConfig" class="csi.config.UiSortConfig">
+        <property name="sortFieldsAlphabetically" value="true"/>
+    </bean>
+
+    <bean id="mapConfig" class="csi.config.MapConfig">
+        <property name="baseMaps" ref="baseMaps"/>
+        <property name="boundaryLayers" ref="boundaryLayers"/>
+        <property name="maxLabelLength" value="20"/>
+        <property name="pointLimit" value="25000"/>
+        <property name="linkLimit" value="25000"/>
+        <property name="typeLimit" value="2000"/>
+        <property name="frontendToggleThreshold" value="1000"/>
+        <property name="frontendZoomThreshold" value="10000"/>
+        <property name="defaultBasemapOwner" value="administrators"/>
+        <property name="defaultBasemapId" value="topo"/>
+        <property name="minPlaceSize" value="8"/>
+        <property name="maxPlaceSize" value="24"/>
+        <property name="minTrackWidth" value="1"/>
+        <property name="maxTrackWidth" value="10"/>
+        <property name="mapCacheMaxSize" value="1000"/>
+        <property name="mapCacheMaxIdleTimeForQueue" value="1"/>
+        <property name="mapCacheTimeUnitForMaxIdleTimeForQueue" value="HOURS"/>
+        <property name="defaultThemeName" value="Map-Circular"/>
+        <property name="outOfBoundResourcesSize" value="10"/>
+        <property name="allowBlankBasemap" value="false"/>
+        <property name="locatorUrl" value="https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer"/>
+    </bean>
+
+	<bean id="fileNameConfigRef" class="csi.config.FileNameConfig">
+        <property name="orderMap" ref="orderMapRef"/>
+    </bean>
+
+    <bean id="matrixConfig" class="csi.config.MatrixConfig">
+        <property name="maxCellCount" value="6000"/>
+        <property name="minMatrixSelectionRadius" value="5"/>
+    </bean>
+
+    <util:map id="baseMaps">
+        <entry key="streets" value=""/>
+        <!-- <entry key="streets" value="http://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer"/> -->
+        <!-- <entry key="streets" value="http://localhost:6080/arcgis/rest/services/World_Street_Map/MapServer"/> -->
+        <entry key="satellite" value=""/>
+        <entry key="hybrid" value=""/>
+        <!-- <entry key="hybrid" value="http://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer"/> -->
+        <!-- <entry key="hybrid" value="http://localhost:6080/arcgis/rest/services/World_Boundaries_and_Places/MapServer"/> -->
+        <entry key="topo" value=""/>
+        <!-- <entry key="topo" value="http://services.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer"/>-->
+        <!-- <entry key="topo" value="http://localhost:6080/arcgis/rest/services/World_Topo_Map/MapServer"/> -->
+        <entry key="gray" value=""/>
+        <!-- <entry key="gray" value="http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer"/> -->
+        <!-- <entry key="gray" value="http://localhost:6080/arcgis/rest/services/World_Light_Gray_Reference/MapServer"/> -->
+        <entry key="dark-gray" value=""/>
+        <!-- <entry key="dark-gray" value="http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer"/> -->
+        <entry key="oceans" value=""/>
+        <!-- <entry key="oceans" value="http://services.arcgisonline.com/arcgis/rest/services/Ocean/World_Ocean_Base/MapServer"/> -->
+        <entry key="national-geographic" value=""/>
+        <!-- <entry key="national-geographic" value="http://services.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer"/> -->
+        <entry key="terrain" value=""/>
+        <!-- <entry key="terrain" value="http://services.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer"/> -->
+        <entry key="osm" value=""/>
+    </util:map>
+
+    <util:map id="boundaryLayers">
+        <entry key="state" value="http://services.nationalmap.gov/arcgis/rest/services/govunits/MapServer"/>
+        <entry key="county" value=""/>
+        <entry key="zip" value=""/>
+        <entry key="city" value=""/>
+    </util:map>
+	
+	<!-- Positionining for the Filenames is new in 3.6.3 -->
+	<util:map id="orderMapRef">
+        <entry key="type" value=""/>
+        <entry key="owner" value=""/>
+        <entry key="name" value=""/>
+        <entry key="date" value=""/>
+    </util:map>
+
+    <bean id="clientConfig" class="csi.config.ClientConfig">
+        <property name="maxBufferSize" value="16M"/>
+        <property name="provideSourceName" value="true"/>
+        <property name="bracketDefault" value="false"/>
+        <property name="incrementImmediately" value="false"/>
+    </bean>
+    <bean id="messageConfig" class="csi.config.MessageBrokerConfig">
+        <property name="pollTimeoutDuration" value="120"/>
+        <property name="pollTimeoutUnit" value="SECONDS"/>
+    </bean>
+
+</beans>
+
+

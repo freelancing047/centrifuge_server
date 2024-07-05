@@ -1,0 +1,114 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui" xmlns:base="urn:import:com.github.gwtbootstrap.client.ui.base" xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes" xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client" xmlns:stringcombobox="urn:import:csi.client.gwt.widget.combo_boxes" xmlns:csigxtform="urn:import:csi.client.gwt.widget.ui.form" xmlns:buttons="urn:import:csi.client.gwt.widget.buttons">
+    <ui:style>
+        .inline-block {
+        display: inline-block;
+        margin-right: 4px;
+        }
+        .appearance-container {
+        padding: 0;
+        padding-top: 0px;
+        }
+        .smallerInput {
+        width: 190px !important;
+        }
+        .colorButton {
+        font-size: 18px;
+        width: 15px;
+        padding: 4px;
+        }
+        .donotscroll{
+        overflow-y:hidden !important;
+        overflow-x:hidden !important;
+        }
+        .preview-label {
+        cursor: default;
+        }
+    </ui:style>
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+    <g:LayoutPanel height="99%" width="99%">
+        <g:layer top="0px" bottom="0px">
+            <boot:FluidContainer addStyleNames="no-user-select {style.appearance-container}">
+                <boot:FluidRow>
+                    <boot:Column size="6" addStyleNames="{style.donotscroll}">
+                        <boot:Form type="HORIZONTAL" addStyleNames="node-appearance-form">
+                            <boot:Fieldset>
+                                <boot:ControlGroup>
+                                    <boot:ControlLabel for="placeField">
+                                        <base:InlineLabel text="{i18n.get.mapSettingsView_tracksTab_Place}" />
+                                    </boot:ControlLabel>
+                                    <boot:Controls>
+                                        <stringcombobox:StringComboBox boot:id="placeField" ui:field="placeField" />
+                                    </boot:Controls>
+                                </boot:ControlGroup>
+                                <boot:ControlGroup ui:field="identityControlGroup">
+                                    <boot:ControlLabel>
+                                        <base:InlineLabel text="{i18n.get.mapSettingsIdentity}" />
+                                    </boot:ControlLabel>
+                                    <boot:Controls>
+                                        <boot:RadioButton name="IdentityMode" value="true" ui:field="identityFixedRB" addStyleNames="{style.inline-block}" text="{i18n.get.fixed}" />
+                                        <boot:RadioButton name="IdentityMode" ui:field="identityDynamicRB" addStyleNames="{style.inline-block}" text="{i18n.get.field}" />
+                                        <boot:RadioButton name="IdentityMode" ui:field="identityPlaceRB" addStyleNames="{style.inline-block}" text="{i18n.get.map_place_name}" />
+                                        <combo:FieldDefComboBox ui:field="identityFDCB" addStyleNames="node-edit-field-list" />
+                                        <boot:TextBox placeholder="{i18n.get.name}" ui:field="identityTextBox" />
+                                    </boot:Controls>
+                                </boot:ControlGroup>
+                                <boot:ControlGroup ui:field="sequenceControlGroup">
+                                    <boot:ControlLabel for="sequenceField" title="{i18n.get.mapSettingsSequence}">
+                                        <base:InlineLabel text="{i18n.get.mapSettingsSequence}" />
+                                    </boot:ControlLabel>
+                                    <boot:Controls>
+                                        <combo:FieldDefComboBox ui:field="sequenceFDCB" addStyleNames="kml-field-list-combo-box" />
+                                        <csigxtform:SortOrderButton ui:field="sequenceSortOrder" />
+                                    </boot:Controls>
+                                </boot:ControlGroup>
+                            </boot:Fieldset>
+                        </boot:Form>
+                    </boot:Column>
+                    <boot:Column size="6">
+                        <boot:Form type="HORIZONTAL" addStyleNames="node-appearance-form">
+                            <boot:Fieldset>
+                                <boot:ControlGroup>
+                                    <boot:ControlLabel for="styleField">
+                                        <base:InlineLabel text="{i18n.get.mapSettingsView_associationStyle}" />
+                                    </boot:ControlLabel>
+                                    <boot:Controls>
+                                        <combo:StringComboBox ui:field="styleField" boot:id="styleField" />
+                                    </boot:Controls>
+                                </boot:ControlGroup>
+                                <boot:ControlGroup>
+                                    <boot:ControlLabel>
+                                        <boot:CheckBox value="true" text="{i18n.get.mapSettingsView_associationWidth}" ui:field="widthCheckBox" addStyleNames="no-margin-input" />
+                                    </boot:ControlLabel>
+                                    <boot:Controls>
+                                        <boot:TextBox placeholder="2" ui:field="widthTextBox" alternateSize="MINI" />
+                                    </boot:Controls>
+                                </boot:ControlGroup>
+                                <boot:ControlGroup>
+                                    <boot:ControlLabel>
+                                        <boot:CheckBox value="true" text="{i18n.get.nodeAppearance_color}" ui:field="colorCheckBox" addStyleNames="no-margin-input" />
+                                    </boot:ControlLabel>
+                                    <boot:Controls>
+                                        <boot:PrependButton>
+                                            <boot:Button icon="TINT" ui:field="colorButton" addStyleNames="{style.colorButton}" />
+                                            <boot:TextBox boot:id="color" placeholder="#123456" ui:field="colorTextBox" alternateSize="SMALL" />
+                                        </boot:PrependButton>
+                                        <gxt:ColorPalette ui:field="colorPalette" addStyleNames="map-color-pallette" />
+                                    </boot:Controls>
+                                </boot:ControlGroup>
+                                <boot:ControlGroup>
+                                    <boot:ControlLabel>
+                                        <boot:CheckBox value="true" text="{i18n.get.nodesTabOpacity}" ui:field="placeOpacityCheckBox" addStyleNames="no-margin-input" />
+                                    </boot:ControlLabel>
+                                    <boot:Controls>
+                                        <boot:TextBox placeholder=".65" ui:field="placeOpacityTextBox" alternateSize="MINI" />
+                                    </boot:Controls>
+                                </boot:ControlGroup>
+                            </boot:Fieldset>
+                        </boot:Form>
+                    </boot:Column>
+                </boot:FluidRow>
+            </boot:FluidContainer>
+        </g:layer>
+    </g:LayoutPanel>
+</ui:UiBinder>

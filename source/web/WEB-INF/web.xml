@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="web-app_1" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0" metadata-complete="true">
+	<!-- Refer to http://stackoverflow.com/questions/7798783/ for why the metadata-complete="true" 
+		attribute is required. -->
+
+	<display-name>Centrifuge Server</display-name>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:META-INF/ioc/spring-main.xml
+			classpath:META-INF/override/ioc/spring-main.xml
+			/WEB-INF/mvc-dispatcher-servlet.xml
+		</param-value>
+	</context-param>
+	<context-param>
+		<param-name>guice-modules</param-name>
+		<param-value>
+               csi.config.app.StandardConfiguration 
+        </param-value>
+	</context-param>
+
+   <context-param>
+     <param-name>log4jConfiguration</param-name>
+     <param-value>/WEB-INF/classes/log4j2.xml</param-value>
+   </context-param>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>csi.config.app.ConfiguredServletListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>csi.startup.Bootstrap</listener-class>
+	</listener>
+
+
+	<filter>
+		<filter-name>LogThreadContextFilter</filter-name>
+		<filter-class>csi.log.LogThreadContextCometFilter</filter-class>
+		<async-supported>true</async-supported>
+	</filter>
+	<filter-mapping>
+		<filter-name>LogThreadContextFilter</filter-name>
+		<url-pattern>/actions/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>LogThreadContextFilter</filter-name>
+		<url-pattern>/services/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>LogThreadContextFilter</filter-name>
+		<url-pattern>/views/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>LogThreadContextFilter</filter-name>
+		<url-pattern>/UserManagement/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>LogThreadContextFilter</filter-name>
+		<url-pattern>/flex/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>LogThreadContextFilter</filter-name>
+		<url-pattern>/feeds/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>LogThreadContextFilter</filter-name>
+		<url-pattern>/WidgetControllerServlet/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>LogThreadContextFilter</filter-name>
+		<url-pattern>/asset/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>LogThreadContextFilter</filter-name>
+		<url-pattern>/samples/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>LogThreadContextFilter</filter-name>
+		<url-pattern>/tac/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>LogThreadContextFilter</filter-name>
+		<url-pattern>/admin/*</url-pattern>
+	</filter-mapping>
+  
+  <filter>
+    <filter-name>UsageMonitoringFilter</filter-name>
+    <filter-class>csi.container.filter.UsageMonitoringFilter</filter-class>
+    <async-supported>true</async-supported>
+  </filter>
+  <filter-mapping>
+    <filter-name>UsageMonitoringFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+	<filter>
+		<filter-name>CentrifugeApplicationFilter</filter-name>
+		<filter-class>csi.container.filter.ApplicationFilter</filter-class>
+		<async-supported>true</async-supported>
+	</filter>
+	<filter-mapping>
+		<filter-name>CentrifugeApplicationFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>NoCachingFilter</filter-name>
+		<filter-class>csi.container.filter.NoCachingFilter</filter-class>
+		<async-supported>true</async-supported>
+	</filter>
+	<filter-mapping>
+		<filter-name>NoCachingFilter</filter-name>
+		<url-pattern>/actions/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>NoCachingFilter</filter-name>
+		<url-pattern>/services/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>NoCachingFilter</filter-name>
+		<url-pattern>/views/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>NoCachingFilter</filter-name>
+		<url-pattern>/UserManagement/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>EtagFilter</filter-name>
+		<filter-class>csi.container.filter.EtagFilter</filter-class>
+		<async-supported>true</async-supported>
+	</filter>
+	<filter-mapping>
+		<filter-name>EtagFilter</filter-name>
+		<url-pattern>/h5/js/arcgis_js_api/3.16/extras34/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+        <filter-name>EtagFilter</filter-name>
+        <url-pattern>/h5/csi/csi.nocache.js</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>EtagFilter</filter-name>
+        <url-pattern>/h5/csi/*</url-pattern>
+    </filter-mapping>
+
+
+	<filter>
+		<filter-name>uploadManager</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		<init-param>
+			<param-name>targetFilterLifecycle</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<!-- The folder within the server where uploads are written to -->
+			<param-name>topLevelFolder</param-name>
+			<param-value>userfiles</param-value>
+		</init-param>
+		<init-param>
+			<!-- The folder within the server where uploads are temporarily held -->
+			<param-name>tempFolder</param-name>
+			<param-value>temp</param-value>
+		</init-param>
+		<init-param>
+			<!-- The size in MB above which uploaded files are not temporarily held in memory -->
+			<param-name>inMemoryThreshold</param-name>
+			<param-value>1</param-value>
+		</init-param>
+		<init-param>
+			<!-- The maximum allowed size in MB that a user uploaded file can be -->		
+			<param-name>maxFileSize</param-name>
+			<param-value>2000</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>uploadManager</filter-name>
+		<url-pattern>/h5/csi/upload</url-pattern>
+	</filter-mapping>
+	
+	
+	<servlet>
+		<servlet-name>jsp</servlet-name>
+		<servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
+		<init-param>
+			<param-name>fork</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>xpoweredBy</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+
+	<!-- ****************************************** -->
+	<!-- ********** BEGIN GWT CONFIG ************* -->
+	<servlet>
+		<servlet-name>remoteLogging</servlet-name>
+		<servlet-class>csi.server.gwt.logging.CsiRemoteLoggingServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>remoteLogging</servlet-name>
+		<url-pattern>/h5/csi/remote_logging</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>vortex</servlet-name>
+		<servlet-class>csi.server.gwt.vortex.VortexServlet</servlet-class>
+	</servlet>
+	    
+    <servlet-mapping>
+        <servlet-name>vortex</servlet-name>
+        <url-pattern>/h5/vortex</url-pattern>
+    </servlet-mapping>
+	<!-- Default page to serve -->
+	<welcome-file-list>
+		<welcome-file>h5.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+		
+
+	<!-- ********** END GWT CONFIG *************** -->
+	<!-- ****************************************** -->
+
+    <servlet>
+        <servlet-name>downloadServlet</servlet-name>
+        <servlet-class>csi.server.business.service.export.DownloadServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>downloadServlet</servlet-name>
+        <url-pattern>/download/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>iconProviderServlet</servlet-name>
+        <servlet-class>csi.server.business.service.icon.IconProviderServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>iconProviderServlet</servlet-name>
+        <url-pattern>/iconProvider/*</url-pattern>
+    </servlet-mapping>
+
+	<security-role>
+		<role-name>Administrator</role-name>
+	</security-role>
+
+	<security-role>
+		<role-name>Authenticated</role-name>
+	</security-role>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>StandardProtection</web-resource-name>
+			<url-pattern>/flex/*</url-pattern>
+			<url-pattern>/services/*</url-pattern>
+			<url-pattern>/views/*</url-pattern>
+			<url-pattern>/feeds/*</url-pattern>
+			<url-pattern>/WidgetControllerServlet/*</url-pattern>
+			<url-pattern>/actions/*</url-pattern>
+			<url-pattern>/asset/*</url-pattern>
+			<url-pattern>/samples/*</url-pattern>
+			<url-pattern>/tac/*</url-pattern>
+			<url-pattern>/poc/*</url-pattern>
+			<url-pattern>/flexpoc/*</url-pattern>
+			<url-pattern>/h5/*</url-pattern>
+			<url-pattern>/iconProvider/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>Authenticated</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Test</web-resource-name>
+			<url-pattern>/echo.jsp</url-pattern>
+		</web-resource-collection>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<realm-name>Centrifuge</realm-name>
+		<form-login-config>
+			<form-login-page>/admin1/login.jsp</form-login-page>
+			<form-error-page>/admin1/failed.jsp</form-error-page>
+		</form-login-config>
+	</login-config>
+
+	<servlet>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/h5/rest/*</url-pattern>
+	</servlet-mapping>
+</web-app>

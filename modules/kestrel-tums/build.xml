@@ -1,0 +1,40 @@
+<project name="kestrel-tums login" default="package">
+
+    <path id="compile.cp">
+        <fileset dir="../../lib">
+            <include name="servlet-api.jar" />
+            <include name="log4j-1.2.15.jar" />
+            <include name="httpclient-4.0.jar" />
+            <include name="httpcore-4.0.1.jar" />
+            <include name="commons-lang-2.4.jar" />
+        </fileset>
+        <fileset dir="../../lib/hibernate/3.4">
+            <include name="**/*.jar" />
+        </fileset>
+        <fileset dir="../../build/jars">
+            <include name="*.jar" />
+        </fileset>
+    </path>
+
+    <target name="compile">
+        <mkdir dir="target/classes" />
+        <javac srcdir="src/main/java" destdir="target/classes" debug="true" >
+            <classpath>
+                <path refid="compile.cp" />
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="package" depends="compile">
+        <jar destfile="csi-kestrel-tums-login-1.0.0.jar">
+            <fileset dir="target/classes">
+                <include name="**/*.class" />
+            </fileset>
+        </jar>
+    </target>
+
+
+    <target name="clean">
+        <delete dir="target" failonerror="false" />
+    </target>
+</project>

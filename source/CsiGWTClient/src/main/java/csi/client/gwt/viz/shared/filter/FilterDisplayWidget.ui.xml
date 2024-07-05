@@ -1,0 +1,70 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+	xmlns:gxtbutton="urn:import:com.sencha.gxt.widget.core.client.button"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
+	xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:gxtform="urn:import:com.sencha.gxt.widget.core.client.form"
+	xmlns:gxtgrid="urn:import:com.sencha.gxt.widget.core.client.grid"
+	xmlns:csiboot="urn:import:csi.client.gwt.widget.boot" xmlns:grid="urn:import:csi.client.gwt.widget.gxt.grid"
+	xmlns:gwt="urn:import:csi.client.gwt.widget.ui">
+
+	<ui:style>
+		.filterDetailContainer {
+			border-top: 1px solid silver;
+		}
+
+		.table {
+			padding: 2px;
+		}
+
+		.maxCell {
+			width: 100%;
+		}
+	</ui:style>
+
+	<ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+	<ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+
+	<gwt:FullSizeLayoutPanel ui:field="filterDetailContainer">
+		<gwt:layer top="5px" height="30px">
+			<g:HTMLPanel>
+				<table class="{style.table}">
+					<tr>
+						<td>
+							<boot:Label text="{i18n.get.name}" />
+						</td>
+						<td class="{style.maxCell}">
+							<nobr>
+								<g:InlineLabel ui:field="filterName" />
+							</nobr>
+						</td>
+					</tr>
+				</table>
+			</g:HTMLPanel>
+		</gwt:layer>
+		<gwt:layer top="35px" bottom="30px">
+			<grid:GridContainer ui:field="gridContainer" />
+		</gwt:layer>
+		<gwt:layer bottom="0px" height="30px">
+			<g:HTMLPanel>
+				<table class="{style.table}">
+					<tr>
+						<td>
+							<nobr>
+								<boot:Label text="{i18n.get.filterDisplayWidget_referencedBy}" />
+							</nobr>
+						</td>
+						<td class="{style.maxCell}">
+							<nobr>
+								<boot:FluidRow ui:field="referencedBy" />
+							</nobr>
+						</td>
+					</tr>
+				</table>
+			</g:HTMLPanel>
+		</gwt:layer>
+	</gwt:FullSizeLayoutPanel>
+
+
+</ui:UiBinder>

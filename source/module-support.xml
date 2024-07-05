@@ -1,0 +1,49 @@
+
+<project name="module-support">
+    <dirname property="modules.dir" file="${ant.file.module-support}" />
+
+    <property file="${modules.dir}/module-support.props" />
+
+    <path id="build.classpath" />
+
+
+    <target name="output:init">
+        <mkdir dir="${output}" />
+        <mkdir dir="${output.classes}" />
+    </target>
+
+    <target name="compile" depends="output:init">
+        <javac debug="${javac.debug}" optimize="${javac.optimize}" deprecation="${javac.deprecation}" source="${javac.source}" target="${javac.target}" destdir="${output.classes}">
+            <classpath>
+                <path refid="build.classpath" />
+            </classpath>
+
+            <src>
+                <pathelement location="${basedir}/src/main/java" />
+            	<pathelement location="${basedir}/src/main/java" />
+            </src>
+
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar destfile="${output}/${ant.project.name}.jar">
+            <fileset dir="${output.classes}">
+            </fileset>
+        </jar>
+    </target>
+
+    <target name="publish" depends="jar">
+        <copy file="${output}/${ant.project.name}.jar" todir="${build.jars}" />
+    </target>
+
+    <target name="build" depends="publish">
+    </target>
+
+    <target name="clean">
+        <echo>Removing output directory for ${ant.project.name} : ${output}</echo>
+        <delete dir="${output}" failonerror="false">
+        </delete>
+    </target>
+
+</project>

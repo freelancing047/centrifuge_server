@@ -1,0 +1,207 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:gxtcontainer="urn:import:com.sencha.gxt.widget.core.client.container"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:dialog="urn:import:csi.client.gwt.widget.boot" xmlns:gwt="urn:import:csi.client.gwt.widget.ui"
+	xmlns:gwtc="urn:import:com.google.gwt.canvas.client"
+	xmlns:grid="urn:import:csi.client.gwt.widget.gxt.grid" xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes"
+	xmlns:buttons="urn:import:csi.client.gwt.widget.buttons" xmlns:base="urn:import:com.github.gwtbootstrap.client.ui.base"
+	xmlns:upload="csi.client.gwt.widget.ui.uploader" xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client">
+	<ui:style>
+		.noselect{
+		-webkit-touch-callout: none;
+		-webkit-user-select:
+		none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select:
+		none;
+		user-select: none;
+		}
+		.remove-space{
+		margin-left:-3px;
+		padding-top:1px;
+		padding-left:0px;
+		}
+
+		.image-border{
+		border:1px solid
+		#A8A8A8;
+		margin:5px;
+		padding:5px;
+		height:40px;
+		width:40px;
+		margin-bottom:1px;
+		background-color:#efefef;
+		}
+
+
+		.colorButton {
+		font-size:
+		18px;
+		width: 15px;
+		padding:
+		4px;
+		}
+
+		.remove-margin{
+		margin-left:0px;
+		}
+
+		.margin-top{
+		margin-top:10px;
+		}
+
+		.border{
+		border-style:solid;
+		border: 1px;
+		border-width: 1px;
+		border-color:lightgray;
+		}
+
+		.preview{
+		opacity: 1;
+		height:
+		50px;
+		width: 50px;
+		margin: 5px;
+		padding: 4px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		border: 1px;
+		border-style: solid;
+		border-color:
+		#a8a8a8;
+		background-color: #efefef;
+		}
+
+		.gridtop{
+		margin-top:53px;
+		}
+
+		.name{
+		width:195px;
+		}
+
+		.icon-scale{
+
+		width:20px;
+		margin-top:52px;
+		}
+
+		.small-space-top{
+		margin-top:5px;
+		}
+
+		.erase-label-margin{
+		margin-bottom:0px !important;
+		}
+
+		.icon-input{
+		margin-top:-4px !important;
+		}
+	</ui:style>
+
+
+	<ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+
+	<ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+
+	<g:LayoutPanel height="100%" width="100%">
+		<g:layer>
+			<boot:ControlGroup>
+				<boot:Column size="3">
+					<boot:Controls addStyleNames="{style.margin-top}">
+
+						<boot:ControlGroup>
+
+							<g:HorizontalPanel>
+								<g:VerticalPanel>
+									<boot:ControlLabel for="icon"
+										addStyleNames="{style.erase-label-margin}">
+										<boot:CheckBox boot:id="icon" ui:field="icon"
+											text="Icon" addStyleNames="{style.margin-top}{style.erase-label-margin}" />
+									</boot:ControlLabel>
+									<g:SimplePanel addStyleNames="{style.preview}">
+										<g:Image ui:field="imagePreview" addStyleNames="{style.border}{style.preview}" />
+									</g:SimplePanel>
+									<g:SimplePanel ui:field="uploadContainer" />
+								</g:VerticalPanel>
+								<boot:ControlGroup>
+									<g:HorizontalPanel addStyleNames="{style.icon-scale}">
+										<boot:ControlLabel for="iconScale" title="{i18n.get.themeEditor_map_place_style_appearance_scale}"
+											addStyleNames="{style.small-space-top}{style.erase-label-margin}">
+											<base:InlineLabel text="{i18n.get.themeEditor_map_place_style_appearance_scale}"
+												addStyleNames="{style.margin-top}{style.erase-label-margin}" />
+										</boot:ControlLabel>
+										<boot:Controls>
+											<boot:TextBox alternateSize="LARGE" boot:id="nameField"
+												ui:field="iconScale" width="24px" addStyleNames="{style.icon-input}" />
+										</boot:Controls>
+									</g:HorizontalPanel>
+								</boot:ControlGroup>
+							</g:HorizontalPanel>
+						</boot:ControlGroup>
+
+						<boot:ControlGroup>
+							<boot:ControlLabel for="shapeInput"
+								addStyleNames="{style.erase-label-margin}">
+								<boot:CheckBox text="{i18n.get.nodeAppearance_shape}"
+									ui:field="hideShapeCheckBox" addStyleNames="{style.erase-label-margin}"
+									value="true" />
+							</boot:ControlLabel>
+							<boot:Controls>
+                                <g:HTMLPanel ui:field="shapePanel" addStyleNames="node-edit-shape-panel" />
+								<boot:ControlLabel for="color"
+									addStyleNames="{style.erase-label-margin}">
+									<base:InlineLabel text="{i18n.get.nodeAppearance_color}"
+										addStyleNames="{style.erase-label-margin}" />
+								</boot:ControlLabel>
+								<boot:Controls>
+									<boot:PrependButton>
+										<boot:Button icon="TINT" ui:field="colorButton"
+											addStyleNames="{style.colorButton}" />
+										<boot:TextBox boot:id="color" placeholder="#123456"
+											ui:field="colorTextBox" alternateSize="SMALL" />
+									</boot:PrependButton>
+									<gxt:ColorPalette ui:field="colorPalette"
+										addStyleNames="node-edit-color-pallette" />
+								</boot:Controls>
+							</boot:Controls>
+						</boot:ControlGroup>
+					</boot:Controls>
+				</boot:Column>
+
+				<boot:Column size="3">
+					<boot:Controls>
+						<boot:ControlGroup>
+							<boot:Controls>
+
+								<boot:Controls>
+									<boot:Column size="1" addStyleNames="{style.remove-margin}">
+										<boot:ControlLabel for="stylePrevious"
+											title="{i18n.get.themeEditor_map_place_style_appearance_previous}" addStyleNames="{style.erase-label-margin}">
+											<base:InlineLabel text="{i18n.get.themeEditor_map_place_style_appearance_previous}"
+												addStyleNames="{style.erase-label-margin}" />
+										</boot:ControlLabel>
+										<g:Image ui:field="stylePrevious" addStyleNames="{style.image-border}" />
+									</boot:Column>
+									<boot:Column size="1">
+										<boot:ControlLabel for="styleCurrent" title="{i18n.get.themeEditor_map_place_style_appearance_current}"
+											addStyleNames="{style.erase-label-margin}">
+											<base:InlineLabel text="{i18n.get.themeEditor_map_place_style_appearance_current}"
+												addStyleNames="{style.erase-label-margin}" />
+										</boot:ControlLabel>
+										<g:Image ui:field="styleCurrent" addStyleNames="{style.image-border}" />
+									</boot:Column>
+								</boot:Controls>
+
+							</boot:Controls>
+						</boot:ControlGroup>
+					</boot:Controls>
+				</boot:Column>
+
+			</boot:ControlGroup>
+		</g:layer>
+	</g:LayoutPanel>
+</ui:UiBinder> 

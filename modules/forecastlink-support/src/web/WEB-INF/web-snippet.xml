@@ -1,0 +1,12 @@
+<servlet>
+    <display-name>GraphActionsJSON</display-name>
+    <servlet-name>GraphActionsJSON</servlet-name>
+    <servlet-class>csi.server.ws.actions.GraphActionsJSON</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>GraphActionsJSON</servlet-name>
+    <url-pattern>/actions/flsupport/*</url-pattern>
+</servlet-mapping>
+
+
+   

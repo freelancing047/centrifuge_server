@@ -1,0 +1,204 @@
+
+<project name="CentrifugeServer" default="usage" basedir="." >
+
+	<!-- include antcontrib tasks to do conditional if-then stuff -->
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" classpath="tools/ant-contrib-1.0b3.jar"/>
+	<property file="build.properties" />
+	
+	<condition property="remotenas" value="//csinas1/Builds">
+		<os family="windows" />
+    </condition>
+	<condition property="remotenas" value="/mnt/csinas1">
+		<os family="unix" />
+    </condition>
+	
+	<target name="usage">
+	</target>
+
+	<target name="update">
+
+		<if>
+			<not>
+				<isset property="git.branch" />
+			</not>
+		<then>
+			<fail message="Property 'git.branch' not set in build.properties file, MUST BE set to the GIT branch name being build" />
+		</then>
+		</if>
+		
+		<property name="projectname" value="Server-${git.branch}" />
+		<property name="version.simple" value="${git.branch}" />
+
+		<tstamp>
+			<format property="cctimestamp" pattern="yyyyMMddHHmmss" />
+		</tstamp>
+		<property name="publish.directory" value="${remotenas}/${projectname}/${cctimestamp}" />
+
+			
+		<ant antfile="build.xml" target="clean" />
+		
+        <exec executable="git" failifexecutionfails="no" outputproperty="source.revision">
+          <arg value="describe"/>
+          <arg value="--match"/>
+          <arg value="buildnumber"/>
+          <redirector>
+            <outputfilterchain>
+              <tokenfilter>
+                <replaceregex pattern="^[^-]+-" replace=""/>
+                <replaceregex pattern="-.+$" replace=""/>
+              </tokenfilter>
+           </outputfilterchain>
+         </redirector>
+        </exec>
+
+		<property name="version" value="${git.branch}-${source.revision}" />
+	</target>
+
+	<target name="dev" depends="update">
+		<ant antfile="build.xml" target="build" />
+	</target>
+
+	<target name="eval" depends="update">
+		<ant antfile="build.xml" target="dist.eval">
+			<property name="version" value="${version.simple}" />
+			<property name="build.number" value="${source.revision}" />
+		</ant>
+	</target>
+
+	<target name="brandlessDistro" depends="update">
+		<echo level="info" message="build full distribution." />
+		<property name="brandless" value="true" />
+		<ant antfile="build.xml" target="dist.full">
+			<property name="version" value="${version.simple}" />
+			<property name="build.number" value="${source.revision}" />
+		</ant>
+
+	</target>
+	
+	<target name="distro" depends="update">
+		<echo level="info" message="build full ${version} distribution." />
+		<ant antfile="build.xml" target="dist.full">
+			<property name="version" value="${version.simple}"/>
+            <property name="version.full" value="${version}" />
+			<property name="build.number" value="${source.revision}" />
+		</ant>
+		<antcall target="publish.install.images" />
+	</target>
+
+	<target name="distro.win32" depends="update">
+		<echo level="info" message="build windows 32 bit ${version} distribution." />
+		<ant antfile="build.xml" target="dist.windows">
+			<property name="os.name" value="Windows"/>
+			<property name="os.size" value="32"/>
+			<property name="version" value="${version.simple}"/>
+            <property name="version.full" value="${version}" />
+			<property name="build.number" value="${source.revision}" />
+		</ant>
+		<antcall target="publish.install.images" />
+	</target>
+
+	<target name="distro.win64" depends="update">
+		<echo level="info" message="build windows 64 bit ${version} distribution." />
+		<ant antfile="build.xml" target="dist.windows64">
+			<property name="os.name" value="Windows"/>
+			<property name="os.size" value="64"/>
+			<property name="version" value="${version.simple}"/>
+            <property name="version.full" value="${version}" />
+			<property name="build.number" value="${source.revision}" />
+		</ant>
+		<antcall target="publish.install.images" />
+	</target>
+
+	<target name="distro.linux32" depends="update">
+		<echo level="info" message="build linux and RPM 32 bit ${version} distribution." />
+		<ant antfile="build.xml" target="dist.linux">
+			<property name="os.name" value="Linux"/>
+			<property name="os.size" value="32"/>
+			<property name="version" value="${version.simple}"/>
+            <property name="version.full" value="${version}" />
+			<property name="build.number" value="${source.revision}" />
+		</ant>
+		<antcall target="publish.install.images" />
+	</target>
+
+	<target name="distro.linux64" depends="update">
+		<echo level="info" message="build linux and RPM 64 bit ${version} distribution." />
+		<ant antfile="build.xml" target="dist.linux64">
+			<property name="os.name" value="Linux"/>
+			<property name="os.size" value="64"/>
+			<property name="version" value="${version.simple}"/>
+            <property name="version.full" value="${version}" />
+			<property name="build.number" value="${source.revision}" />
+		</ant>
+		<antcall target="publish.install.images" />
+	</target>
+
+	<target name="distro.all" depends="update">
+		<antcall target="distro.win32" />
+		<antcall target="distro.win64" />
+		<antcall target="distro.linux32" />
+		<antcall target="distro.linux64" />
+	</target>
+
+	<target name="distro.allOS32" depends="update">
+		<echo level="info" message="build windows,linux and RPM 32 bit ${version} distribution." />
+		<antcall target="distro.win32" />
+		<antcall target="distro.linux32" />
+	</target>
+
+	<target name="distro.allOS64" depends="update">
+		<echo level="info" message="build Windows,linux and RPM 64 bit ${version} distribution." />
+		<antcall target="distro.win64" />
+		<antcall target="distro.linux64" />
+	</target>
+
+	<target name="distro-install4j" depends="update">
+		<echo level="info" message="build full ${git.branch} distribution."/>
+		<ant antfile="build.xml" target="dist.full-install4j">
+			<property name="version" value="${version.simple}"/>
+			<property name="build.number" value="${source.revision}" />
+		</ant>
+	</target>
+
+    <target name="distro-subscription" depends="update">
+        <echo level="info" message="build Subscription distribution." />
+        <ant antfile="build.xml" target="dist.subscription" />
+    </target>
+
+
+	<target name="renameEval">
+		<copy tofile="${publish.directory}/Centrifuge-Eval-${version}.exe" file="build/installer/CentrifugeEval.exe"
+           failonerror="true" verbose="true" />
+		<copy tofile="${publish.directory}/Centrifuge64-Eval-${version}.exe" file="build/installer/Centrifuge64Eval.exe"
+           failonerror="true" verbose="true" />
+
+		<copy tofile="${publish.directory}/Centrifuge-Eval-${version}.sh"  file="dist/CentrifugeInstallerEval.sh"
+           failonerror="true" verbose="true"/>
+	</target>
+
+	<target name="publish.install.images">
+		<copy todir="${publish.directory}">
+			<fileset dir="build/installer">
+				<include name="*.exe" />
+				<include name="*.sh" />
+				<exclude name="*.rpm" />
+			</fileset>
+			<fileset dir="dist">
+				<include name="*.sh" />
+				<include name="*.exe" />
+			</fileset>
+		</copy>
+		<echo level="info" message="Install image files copied to ${publish.directory}" />
+	</target>
+
+	<target name="rename.install4j">
+		<copy tofile="${publish.directory}/Centrifuge-${version}.exe"   file="build/installer/Centrifuge.exe"
+                failonerror="true" verbose="true" />
+		<copy tofile="${publish.directory}/Centrifuge64-${version}.exe" file="build/installer/Centrifuge64.exe"
+                failonerror="true" verbose="true" />
+		<copy tofile="${publish.directory}/CentrifugeEval-${version}.exe"   file="build/installer/CentrifugeEval.exe"
+                failonerror="true" verbose="true" />
+		<copy tofile="${publish.directory}/Centrifuge64Eval-${version}.exe" file="build/installer/Centrifuge64Eval.exe"
+                failonerror="true" verbose="true" />
+	</target>
+</project>

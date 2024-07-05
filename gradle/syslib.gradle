@@ -1,0 +1,56 @@
+/**
+ * Copies jars needed for connectors into the appropriate place.
+ */
+
+apply from: 'gradle/properties.gradle'
+
+repositories {
+  mavenCentral()
+}
+
+configurations {
+  install
+}
+
+def LOG4J_VERSION = '2.8.2'
+def DISRUPTOR_VERSION = '3.4.2'
+def POSTGRES_DRIVER_VERSION = '42.0.0.jre6'//'9.3-1100-jdbc4'//9.3-1102-jdbc4 (also 9.3-1102-jdbc41)
+def syslibRuntime = "${buildRuntime}/lib"
+//def GWT_VERSION = '2.8.1'
+//def HTTPCLIENT_VERSION = '4.5.1'
+//def SPRING_CRYPTO_VERSION = '5.4.2'
+
+dependencies {
+  install group: 'org.apache.logging.log4j', name: 'log4j-core', version: "$LOG4J_VERSION"
+  install group: 'org.apache.logging.log4j', name: 'log4j-api', version: "$LOG4J_VERSION"
+  install group: 'org.apache.logging.log4j', name: 'log4j-1.2-api', version: "$LOG4J_VERSION"
+  install group: 'com.lmax', name: 'disruptor', version: "$DISRUPTOR_VERSION"
+//  install group: 'com.google.gwt', name: 'gwt-user', version: "$GWT_VERSION"
+//  install group: 'org.apache.httpcomponents', name: 'httpclient', version: "$HTTPCLIENT_VERSION"
+//  install group: 'org.springframwork.security', name: 'spring-security-crypto', version: "$SPRING_CRYPTO_VERSION"
+  install "org.postgresql:postgresql:$POSTGRES_DRIVER_VERSION"
+}
+
+task deploySyslib {
+  dependsOn ':source:tomcat-extensions:jar', ':source:jaas:jar'
+  group = deployGroup
+  outputs.dir syslibRuntime
+
+  doLast {
+    copy {
+      from configurations.install
+      from project(':source:tomcat-extensions').tasks.jar
+      from project(':source:jaas').tasks.jar
+      from fileTree(dir: 'lib/jdbc/access')
+      from fileTree(dir: 'lib/jdbc/excel')
+      from fileTree(dir: 'lib/jdbc/flatfile', exclude: "eval*")
+      from fileTree(dir: 'lib/jdbc/impala')
+      from fileTree(dir: 'lib/jdbc/LDAP')
+      from fileTree(dir: 'lib/jdbc/mssql', exclude: 'sqljdbc*')
+      from fileTree(dir: 'lib/jdbc/netezza')
+      from fileTree(dir: 'lib/jdbc/oracle/10g2')
+      from fileTree(dir: 'lib/jdbc/xml', exclude: "eval*")
+      into syslibRuntime
+    }
+  }
+}

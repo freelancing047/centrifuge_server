@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-init-method="init" default-destroy-method="destroy">
+
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+
+	<context:annotation-config />
+
+    <import resource="classpath:META-INF/ioc/application-config.xml"/>
+	<import resource="classpath:META-INF/ioc/services-infrastructure.xml"/>
+    <import resource="classpath:META-INF/ioc/services-persistence.xml"/>
+	<import resource="classpath:META-INF/ioc/services-business.xml"/>
+    <import resource="classpath:META-INF/ioc/vortex-web.xml" />
+
+	<import resource="classpath:META-INF/override/ioc/drivers/driver-list.xml"/>
+	<import resource="classpath:META-INF/override/ioc/drivers/access-driver.xml" />
+	<import resource="classpath:META-INF/override/ioc/drivers/customJdbc-driver.xml" />
+	<import resource="classpath:META-INF/override/ioc/drivers/data-cache-driver.xml" />
+	<import resource="classpath:META-INF/override/ioc/drivers/excel-driver.xml" />
+	<import resource="classpath:META-INF/override/ioc/drivers/installed-table-driver.xml" />
+	<import resource="classpath:META-INF/override/ioc/drivers/remote-table-driver.xml" />
+	<import resource="classpath:META-INF/override/ioc/drivers/impala-driver.xml" />
+	<import resource="classpath:META-INF/override/ioc/drivers/json-file-driver.xml" />
+	<import resource="classpath:META-INF/override/ioc/drivers/json-web-driver.xml" />
+	<import resource="classpath:META-INF/override/ioc/drivers/ldap-driver.xml" />
+	<import resource="classpath:META-INF/override/ioc/drivers/oracle-driver.xml" />
+	<import resource="classpath:META-INF/override/ioc/drivers/postgres-driver.xml" />
+	<import resource="classpath:META-INF/override/ioc/drivers/sqlServer-driver.xml" />
+	<import resource="classpath:META-INF/override/ioc/drivers/text-driver.xml" />
+	<import resource="classpath:META-INF/override/ioc/drivers/xml-driver.xml" />
+	<import resource="classpath:META-INF/override/ioc/drivers/mysql-driver.xml" />
+	<import resource="classpath:META-INF/override/ioc/drivers/anx-driver.xml" />
+    <import resource="classpath:META-INF/ioc/drivers/admin-tools-driver.xml" />
+
+</beans>
+	

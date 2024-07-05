@@ -1,0 +1,81 @@
+<project name="api-ref-impls" default="compile">
+
+	<import file="../../source/module-support.xml" />
+
+	<property name="sdk.dir" value="../../build/centrifuge-server" />
+    <path id="compile.classpath">
+
+
+        <fileset dir="../../lib">
+            <include name="log4j-1.2.16.jar" />
+        </fileset>
+		<fileset dir="../pluggable-datasource/target"/>
+		<fileset dir="sdk/PluggableDS/lib">
+			<include name="*.jar" />
+			<exclude name="CSISamplePDS.jar" />
+		</fileset>
+    </path> 
+	
+	<condition property="javadoc.generate">
+		<istrue value="${building.full.dist}"/>
+	</condition>
+
+    <target name="clean">
+        <delete failonerror="false" includeemptydirs="true">
+            <fileset dir="target">
+            </fileset>
+        </delete>
+    </target>
+
+    <target name="compile" depends="clean">
+        <mkdir dir="target/classes" />
+        <javac srcdir="sdk/PluggableDS/src" destdir="target/classes" debug="true">
+            <classpath refid="compile.classpath" />
+        </javac>
+        <copy todir="target/classes">
+            <fileset dir="sdk/PluggableDS/src">
+                <include name="**/*.properties" />
+            </fileset>
+        </copy>
+    </target>
+	
+	<target name="jar" depends="compile">
+		<mkdir dir="sdk/PluggableDS/jar" />
+        <jar destfile="sdk/PluggableDS/jar/CSISamplePDS.jar">
+            <fileset dir="target/classes">
+            </fileset>
+        </jar>
+    </target>
+
+	<target name="javadoc" if="javadoc.generate">
+	    <javadoc sourcepath="sdk/PluggableDS/src" 
+	    	     classpathref="compile.classpath"
+	             packagenames="*" 
+	             destdir="sdk/PluggableDS/api" 
+	             access="private" 
+	             old="false" 
+	             verbose="true" 
+	             version="true" 
+	             use="true" 
+	             author="true" 
+	             splitindex="false" 
+	             nodeprecated="false" 
+	             nodeprecatedlist="false" 
+	             notree="false" 
+	             noindex="false" 
+	             nohelp="false" 
+	             nonavbar="false" 
+	             serialwarn="false" 
+	             charset="ISO-8859-1" 
+	             linksource="false" 
+	             breakiterator="false"/>
+	  </target>
+
+    <target name="publish" depends="javadoc, jar">
+		<mkdir dir="${sdk.dir}/sdk" />
+		<copy todir="${sdk.dir}/sdk">
+			<fileset dir="sdk" />
+		</copy>
+    </target>
+	
+</project>

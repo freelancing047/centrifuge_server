@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <bean id="jsonWebDriver" class="csi.server.connector.config.JdbcDriver">
+        <property name="name" value="JSON Web"/>
+        <property name="key" value="jsonWeb"/>
+        <property name="factory" value="csi.server.connector.jdbc.JsonConnectionFactory"/>
+        <property name="driverClass" value="org.h2.Driver"/>
+        <property name="driverAccessRole"><null/></property>
+        <property name="sourceEditRole"><null/></property>
+        <property name="connectionEditRole"><null/></property>
+        <property name="queryEditRole"><null/></property>
+        <property name="dataViewingRole"><null/></property>
+        <property name="sortOrder"><null/></property>
+		<property name="castNulls" value="false"/>
+		<property name="remarks" value="This driver may be used to load data from a website providing JSON output into either an Installed Data Source or a DataView."/>
+        <property name="tableAliasMap">
+            <map>
+            </map>
+        </property>
+        <property name="capcoColumnMap">
+            <map>
+            </map>
+        </property>
+        <property name="defaultProperties">
+            <props>
+                <prop key="StoreLocation">file</prop>
+                <prop key="FileMode">webservice</prop>
+                <prop key="cleanupDelay">180</prop>
+                <prop key="TempDirectory">./TempFolder/</prop>
+                <!--
+                <prop key="WebLocation">http://www.google.com</prop>
+                <prop key="SafePrefix">~</prop>
+                <prop key="ValueColumnName">_VALUE_</prop>
+                -->
+                <prop key="distinctSources">true</prop>
+            </props>
+        </property>
+        <property name="uiConnectionConfig" ref="jsonWebConnectionConfig"/>
+    </bean>
+    <bean id="jsonWebConnectionConfig" class="csi.server.common.dto.config.connection.DriverConfigInfo">
+        <property name="configItems" ref="jsonWebConfigItemList"/>
+    </bean>
+    <bean id="jsonWebConfigItem" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the URL for the JSON data source."/>
+        <property name="label" value="JSON Web Service"/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="true"/>
+        <property name="required" value="true"/>
+        <property name="type" value="string"/>
+        <property name="key" value="WebLocation"/>
+        <property name="isAdvancedOption" value="false"/>
+    </bean>
+    <util:list id="jsonWebConfigItemList" value-type="csi.server.common.dto.config.connection.ConfigItem">
+        <ref bean="jsonWebConfigItem" />
+    </util:list>
+</beans>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <bean id="oracleDriver" class="csi.server.connector.config.JdbcDriver">
+        <property name="name" value="Oracle Thin"/>
+        <property name="key" value="oracle"/>
+        <property name="baseUrl" value="jdbc:oracle:thin:/"/>
+        <property name="jdbcFactory"><null/></property>
+        <property name="tableNameQualifier"><null/></property>
+        <property name="factory" value="csi.server.connector.jdbc.OracleConnectionFactory"/>
+        <property name="driverClass" value="oracle.jdbc.driver.OracleDriver"/>
+        <property name="driverAccessRole"><null/></property>
+        <property name="sourceEditRole"><null/></property>
+        <property name="connectionEditRole"><null/></property>
+        <property name="queryEditRole"><null/></property>
+        <property name="dataViewingRole"><null/></property>
+        <property name="escapeChar" value="'"/>
+        <property name="selectNullString"><null/></property>
+        <property name="sortOrder"><null/></property>
+		<property name="castNulls" value="false"/>
+        <property name="useProxyAuthentication" value="false"/>
+		<property name="remarks" value="This driver may be used to load data from an Oracle database into either an Installed Data Source or a DataView."/>
+        <property name="tableAliasMap">
+            <map>
+            </map>
+        </property>
+        <property name="capcoColumnMap">
+            <map>
+            </map>
+        </property>
+        <property name="authErrorCodes">
+            <list>
+                <value>1017</value>
+                <value>17443</value>
+                <value>17433</value>
+            </list>
+        </property>
+        <property name="authSqlStates">
+            <list>
+            </list>
+        </property>
+        <property name="defaultProperties">
+            <props>
+                <prop key="oracle.jdbc.J2EE13Compliant">true</prop>
+                <prop key="distinctSources">false</prop>
+            </props>
+        </property>
+        <property name="typeMapping">
+            <props>
+                <prop key="date">DateTime</prop>
+            </props>
+        </property>
+        <property name="castMapping">
+            <props>
+                <prop key="String">TO_CHAR(%)</prop>
+                <prop key="Boolean">%</prop>
+                <prop key="Integer">CAST(% AS NUMBER)</prop>
+                <prop key="Float">CAST(% AS DOUBLE PRECISION)</prop>
+                <prop key="Date-Time">CAST(% AS TIMESTAMP)</prop>
+                <prop key="Date">CAST(% AS DATE)</prop>
+                <prop key="Time">CAST(% AS TIME)</prop>
+                <prop key="Unsupported">CAST(% AS VARCHAR)</prop>
+            </props>
+        </property>
+        <property name="uiConnectionConfig" ref="oracleConnectionConfig"/>
+    </bean>
+
+    <bean id="oracleConnectionConfig" class="csi.server.common.dto.config.connection.DriverConfigInfo">
+        <property name="configItems" ref="oracleConfigItemList">
+        </property>
+    </bean>
+
+    <util:list id="oracleConfigItemList" value-type="csi.server.common.dto.config.connection.ConfigItem">
+        <ref bean="oracleConfigItem1" />
+        <ref bean="oracleConfigItem2" />
+        <ref bean="oracleConfigItem3" />
+        <ref bean="oracleConfigItem4" />
+        <ref bean="oracleConfigItem5" />
+        <ref bean="oracleConfigItem6" />
+        <ref bean="oracleConfigItem7" />
+    </util:list>
+
+    <bean id="oracleConfigItem1" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the name of the server hosting the the Oracle server software or its IP address."/>
+        <property name="label" value="Enter the host name or IP address for the Oracle server."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="true"/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.hostname"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="oracleConfigItem2" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the port number being used by the the Oracle server software."/>
+        <property name="label" value="Enter the Oracle server port number."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.port"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations" ref="oraclePortValidationOptions">
+        </property>
+    </bean>
+
+    <util:list id="oraclePortValidationOptions" value-type="csi.server.common.dto.KeyValueItem">
+        <ref bean="oraclePortValidationKeyValue1" />
+        <ref bean="oraclePortValidationKeyValue2" />
+        <ref bean="oraclePortValidationKeyValue3" />
+    </util:list>
+
+    <bean id="oraclePortValidationKeyValue1" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="minValue"/>
+        <property name="value" value="1"/>
+    </bean>
+
+    <bean id="oraclePortValidationKeyValue2" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="maxValue"/>
+        <property name="value" value="65535"/>
+    </bean>
+
+    <bean id="oraclePortValidationKeyValue3" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="isNumber"/>
+        <property name="value" value="true"/>
+    </bean>
+
+    <bean id="oracleConfigItem3" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the name of the database to be accessed using the Oracle server."/>
+        <property name="label" value="Enter the database name."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="true"/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.databaseName"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="oracleConfigItem4" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the username for accessing the Oracle server. If both a valid username and password are entered here they will be used anytime the DataView is refreshed from the database. If not the user will be prompted for a username and password."/>
+        <property name="label" value="Enter the username for accessing the Oracle server."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.username"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="oracleConfigItem5" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the password for accessing the Oracle server. If both a valid username and password are entered here they will be used anytime the DataView is refreshed from the database. If not the user will be prompted for a username and password."/>
+        <property name="label" value="Enter the password for accessing the Oracle server."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="password"/>
+        <property name="key" value="csi.password"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="oracleConfigItem6" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter any extra parameters which are required by the driver to make a proper connection."/>
+        <property name="label" value="Enter any extra parameters."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="csiParmsTable"/>
+        <property name="key" value="csi.params"/>
+        <property name="isAdvancedOption" value="true"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="oracleConfigItem7" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter commands that must re run before and/or after retrieving data via the connection. An example would be commands that first created and then destroyed either a view or a temporary table."/>
+        <property name="label" value="Enter required Pre/Post-Query Commands."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="csiQueryCommands"/>
+        <property name="key" value="csiQueryCommands"/>
+        <property name="isAdvancedOption" value="true"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* CSS Document */
+/*login page styles*/
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('montserrat-regular-webfont.woff2') format('woff2'),
+         url('montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html {
+    height: 100%
+}
+
+body {
+    height: 100%
+    overflow: hidden;
+    margin: 0;
+}
+
+.background {
+    height: 100%
+}
+
+.background .bottomHalf {
+    z-index: 1;
+    width: 100%;
+    height: calc(100% - 360px);
+    background-color: #101724;
+    position: relative;
+}
+.background .topHalf {
+    width: 100%;
+    height: 360px;
+    background-color: white;
+    z-index: 1;
+    position: relative;
+}
+
+.loginPage {
+     margin: 0px auto;
+     height: 640px;
+     display: table;
+     font-family: 'montserratregular';
+     font-size: 22px;
+     width: 100%;
+     z-index: 2;
+     position: absolute;
+     top: 150px;
+ }
+
+.loginWrap {
+    width: 510px;
+    margin: 0px auto;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.logo {
+    margin: 0px auto;
+    width: 300px;
+}
+
+.formWrap {
+    height: 500px;
+    width: 507px;
+    margin: 10px auto 0;
+    background-color: #f8f8f8;
+}
+
+.formTitle {
+    color: white;
+    padding: 25px 25px 5px;
+}
+
+.formTitle h3 {
+    font-family: 'montserratregular';
+    font-size: 2em;
+    color: #226894;
+    text-shadow: 1px 1px #000000;
+    height: 32px;
+    width: 100%;
+    text-align: center;
+}
+
+.input-bg {
+    height: 34px;
+    width: 463px;
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 25px;
+}
+
+.input-bg .username, .input-bg .password {
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    width: 425px;
+    padding: 8px 5px 5px;
+    float: right;
+    font-size: 12px;
+    margin-top: 3px;
+    border-spacing: 8px;
+    background-color: #f8f8f8;
+    box-sizing: border-box;
+}
+
+.loginbtn {
+    position: relative;
+    height: 48px;
+    font-size: 18px;
+    color: white;
+    background-color: #226894;
+    border: none;
+    width: 35%;
+    vertical-align: middle;
+    border-radius: 6px;
+    left: 32%;
+}
+
+.alertBox {
+    color: #226894;
+    margin-left: 23px;
+    margin-top: 5px;
+}

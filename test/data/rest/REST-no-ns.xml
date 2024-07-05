@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results>
+  <name>Test Result Set</name>
+  <author>Fred Henderson</author>
+  <sources>
+    <source>CNN Website</source>
+    <source>NBC News</source>
+  </sources>
+  <columns>
+    <column>CacheTimeStamp</column>
+    <column>URL</column>
+    <column>AColumn</column>
+    <column>BColumn</column>
+    <column>CColumn</column>
+  </columns>
+  <rows>
+    <row classificationString="FOUO">
+      <value>2009-01-01 13:45:00.275</value>
+      <value>/cache/1234/1</value>
+      <value>ABC</value>
+      <value>123</value>
+      <value>111</value>
+    </row>
+    <row classificationString="Secret">
+      <value>2009-01-01 13:55:00.275</value>
+      <value>/cache/1234/2</value>
+      <value>DEF</value>
+      <value>456</value>
+      <value>222</value>
+    </row>
+    <row classificationString="Super Secret">
+      <value>2009-01-01 13:57:00.275</value>
+      <value>/cache/1234/3</value>
+      <value>GHI</value>
+      <value>789</value>
+      <value>333</value>
+    </row>
+    <row classificationString="FOUO">
+      <value>2009-01-02 13:45:00.275</value>
+      <value>/cache/1234/4</value>
+      <value>JKL</value>
+      <value>123</value>
+      <value>444</value>
+    </row>
+    <row classificationString="FOUO">
+      <value>2009-01-02 13:55:00.275</value>
+      <value>/cache/1234/5</value>
+      <value>MNO</value>
+      <value>456</value>
+      <value>555</value>
+    </row>
+    <row classificationString="Eels">
+      <value>2009-01-02 13:57:00.275</value>
+      <value>/cache/1234/6</value>
+      <value>PQR</value>
+      <value>789</value>
+      <value>666</value>
+    </row>
+    <row classificationString="FOUO">
+      <value>2009-01-03 13:45:00.275</value>
+      <value>/cache/1234/7</value>
+      <value>ABC</value>
+      <value>123</value>
+      <value>111</value>
+    </row>
+    <row classificationString="FOUO">
+      <value>2009-01-03 13:55:00.275</value>
+      <value>/cache/1234/8</value>
+      <value>DEF</value>
+      <value>456</value>
+      <value>222</value>
+    </row>
+    <row classificationString="Bats">
+      <value>2009-01-03 13:57:00.275</value>
+      <value>/cache/1234/9</value>
+      <value>GHI</value>
+      <value>789</value>
+      <value>333</value>
+    </row>
+    <row classificationString="FOUO">
+      <value>2009-01-03 13:45:00.275</value>
+      <value>/cache/1234/10</value>
+      <value>JKL</value>
+      <value>123</value>
+      <value>444</value>
+    </row>
+    <row classificationString="FOUO">
+      <value>2009-01-03 13:55:00.275</value>
+      <value>/cache/1234/11</value>
+      <value>MNO</value>
+      <value>456</value>
+      <value>555</value>
+    </row>
+    <row classificationString="FOUO">
+      <value>2009-01-03 13:57:00.275</value>
+      <value>/cache/1234/12</value>
+      <value>PQR</value>
+      <value>789</value>
+      <value>666</value>
+    </row>
+    <row classificationString="Cats">
+      <value>2009-01-05 13:45:00.275</value>
+      <value>/cache/1234/13</value>
+      <value>ABC</value>
+      <value>123</value>
+      <value>111</value>
+    </row>
+    <row classificationString="FOUO">
+      <value>2009-01-05 13:55:00.275</value>
+      <value>/cache/1234/14</value>
+      <value>DEF</value>
+      <value>456</value>
+      <value>222</value>
+    </row>
+    <row classificationString="FOUO">
+      <value>2009-01-05 13:57:00.275</value>
+      <value>/cache/1234/15</value>
+      <value>GHI</value>
+      <value>789</value>
+      <value>333</value>
+    </row>
+    <row classificationString="Dogs">
+      <value>2009-01-05 13:45:00.275</value>
+      <value>/cache/1234/16</value>
+      <value>JKL</value>
+      <value>123</value>
+      <value>444</value>
+    </row>
+    <row classificationString="FOUO">
+      <value>2009-01-05 13:55:00.275</value>
+      <value>/cache/1234/17</value>
+      <value>MNO</value>
+      <value>456</value>
+      <value>555</value>
+    </row>
+    <row classificationString="FOUO">
+      <value>2009-01-05 13:57:00.275</value>
+      <value>/cache/1234/18</value>
+      <value>PQR</value>
+      <value>789</value>
+      <value>666</value>
+    </row>
+    <row classificationString="FOUO">
+      <value>2009-01-05 13:45:00.275</value>
+      <value>/cache/1234/19</value>
+      <value>ABC</value>
+      <value>123</value>
+      <value>111</value>
+    </row>
+    <row classificationString="FOUO">
+      <value>2009-01-05 13:55:00.275</value>
+      <value>/cache/1234/20</value>
+      <value>DEF</value>
+      <value>456</value>
+      <value>222</value>
+    </row>
+    <row classificationString="FOUO">
+      <value>2009-01-15 13:57:00.275</value>
+      <value>/cache/1234/21</value>
+      <value>GHI</value>
+      <value>789</value>
+      <value>AAA</value>
+    </row>
+    <row classificationString="Pigs">
+      <value>2009-01-05 13:45:00.275</value>
+      <value>/cache/1234/22</value>
+      <value>JKL</value>
+      <value>123</value>
+      <value>444</value>
+    </row>
+    <row classificationString="FOUO">
+      <value>2009-01-05 13:55:00.275</value>
+      <value>/cache/1234/23</value>
+      <value>MNO</value>
+      <value>456</value>
+      <value>555</value>
+    </row>
+    <row classificationString="FOUO">
+      <value>2009-01-05 13:57:00.275</value>
+      <value>/cache/1234/24</value>
+      <value>PQR</value>
+      <value>789</value>
+      <value>666</value>
+    </row>
+  </rows>
+</results>

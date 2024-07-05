@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flexLibProperties version="1">
+  <includeClasses>
+    <classEntry path="com.farata.as3.lang.EnumBase"/>
+    <classEntry path="com.farata.as3.lang.EnumClass"/>
+    <classEntry path="com.farata.as3.lang.as3_lang"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>

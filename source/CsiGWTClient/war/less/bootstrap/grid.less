@@ -1,0 +1,43 @@
+//
+// Grid system
+// --------------------------------------------------
+
+
+// Fixed (940px)
+#grid > .core(@gridColumnWidth, @gridGutterWidth);
+
+// Fluid (940px)
+#grid > .fluid(@fluidGridColumnWidth, @fluidGridGutterWidth);
+
+// Reset utility classes due to specificity
+[class*="span"].hide,
+.row-fluid [class*="span"].hide {
+  display: none;
+}
+
+[class*="span"].pull-right,
+.row-fluid [class*="span"].pull-right {
+  float: right;
+}
+
+.name-column>div>span{
+display:block;
+overflow:hidden;
+text-overflow:ellipsis;
+}
+
+.N5F5U6B-x-m {
+left: 0;
+margin-top: 4px;
+position: absolute;
+}
+
+.N5F5U6B-x-k>span.gwt-InlineHTML{
+padding-left:8px;
+}
+
+.N5F5U6B-x-l>span.gwt-InlineHTML{
+padding-left:8px;
+}
+
+

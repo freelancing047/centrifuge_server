@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<mbeans-descriptors>
+
+
+  <mbean name="CrossOriginValve"
+         description="Concrete implementation of RequestFilterValve that handles cross orign requests. see: http://www.w3.org/TR/cors/"
+         domain="Catalina"
+         group="Valve"
+         type="csi.container.tomcat.security.CrossOrginValve">
+
+    <attribute name="containerName"
+               description="Object name of the container"
+               type="javax.management.ObjectName"/>
+
+    <attribute   name="className"
+               description="Fully qualified class name of the managed object"
+               type="java.lang.String"
+               writeable="false"/>
+
+    <attribute name="allow"
+               description="The comma-delimited set of allow expressions"
+               type="java.lang.String"/>
+               
+    <attribute name="allowUrl"
+               description="The comma-delimited set of allow url expressions"
+               type="java.lang.String"/>               
+
+
+    <attribute   name="deny"
+               description="The comma-delimited set of deny expressions"
+               type="java.lang.String"/>
+               
+    <attribute   name="denyUrl"
+               description="The comma-delimited set of deny url expressions"
+               type="java.lang.String"/>               
+
+  </mbean>
+</mbeans-descriptors>

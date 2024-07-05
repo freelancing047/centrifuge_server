@@ -1,0 +1,73 @@
+<project name="ConnectionTest" default="dist" basedir=".">
+    <description>
+        simple example build file
+    </description>
+  <!-- set global properties for this build -->
+  <property name="src" location="src/java"/>
+  <property name="build" location="build"/>
+  <property name="dist"  location="dist"/>
+
+    <path id="compile.classpath">
+        <fileset dir="../../lib">
+            <include name="**/*.jar" />
+        </fileset>
+        <fileset dir="../../build/jars">
+            <include name="**/*.jar" />
+        </fileset>
+    </path>
+
+  <target name="cleanBuild" depends="clean,dist"/>
+
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build}"/>
+  	<mkdir dir="${build}/classes"/>
+    <mkdir dir="${dist}" />
+  </target>
+
+  <target name="compile" depends="init"
+        description="compile the source " >
+    <!-- Compile the java code from ${src} into ${build} -->
+    <javac srcdir="${src}"
+           destdir="${build}/classes"
+           target="1.5"
+            debug="true">
+        <compilerarg value="-Xlint:-checked"/>
+        <classpath refid="compile.classpath"/>
+    </javac>
+
+  </target>
+
+  <target name="dist" depends="compile"
+        description="generate the distribution" >
+    <!-- Create the distribution directory -->
+    <mkdir dir="${dist}"/>
+
+    <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
+    <jar jarfile="${dist}/testconn.jar">
+        <manifest>
+          <attribute name="Main-Class" value="csi.tools.ConnectionTester"/>
+        </manifest>
+        <fileset dir="${build}/classes">
+        	<include name="**/*"/>
+        </fileset>
+    </jar>
+  	<copy todir="${dist}">
+        <fileset dir="${src}/..">
+            <include name="sample-test.props"/>
+        	<include name="testconn.*"/>
+        </fileset>    	
+  	</copy>
+  </target>
+
+  <target name="clean"
+        description="clean up" >
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+    <delete dir="${src}/dist"/>
+  </target>
+</project>
+

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <bean id="xmlDriver" class="csi.server.connector.config.JdbcDriver">
+
+        <property name="name" value="XML"/>
+        <property name="key" value="xml"/>
+        <property name="baseUrl" value="jdbc:jstels:xml:"/>
+        <property name="jdbcFactory" value=""/>
+        <property name="factory" value="csi.server.connector.jdbc.jstels.JStelsXMLConnectionFactory"/>
+        <property name="driverClass" value="jstels.jdbc.xml.XMLDriver2"/>
+        <property name="driverAccessRole"><null/></property>
+        <property name="sourceEditRole"><null/></property>
+        <property name="connectionEditRole"><null/></property>
+        <property name="queryEditRole"><null/></property>
+        <property name="dataViewingRole"><null/></property>
+        <property name="escapeChar" value="\\"/>
+        <property name="selectNullString" value=""/>
+        <property name="sortOrder"><null/></property>
+		<property name="castNulls" value="false"/>
+		<property name="remarks" value="This driver may be used to load data from an XML file into either an Installed Data Source or a DataView."/>
+        <property name="tableAliasMap">
+            <map>
+            </map>
+        </property>
+        <property name="capcoColumnMap">
+            <map>
+            </map>
+        </property>
+        <property name="authErrorCodes">
+            <list>
+            </list>
+        </property>
+        <property name="authSqlStates">
+            <list>
+            </list>
+        </property>
+        <property name="defaultProperties">
+            <props>
+                <prop key="caching">false</prop>
+                <prop key="readOnlySubMode">true</prop>
+                <prop key="maxSwapStringSize">60</prop>
+                <prop key="maxRecordsInMemoryPerTable">5000</prop>
+                <prop key="maxScanRows">10</prop>
+                <prop key="namespaceAware">false</prop>
+                <prop key="dateFormat">
+                    MM/dd/yyyy KK:mm:ssaa | yyyy-MM-dd HH:mm:ss.SSS | yyyy-MM-dd HH:mm:ss | yyyy-MM-dd |  HH:mm:ss.SSS |  HH:mm:ss | MM/dd/yyyy
+                </prop>
+                <prop key="distinctSources">true</prop>
+            </props>
+        </property>
+        <property name="typeMapping">
+            <props>
+            </props>
+        </property>
+        <property name="hiddenProperties">
+            <props>
+            </props>
+        </property>
+        <property name="uiConnectionConfig" ref="xmlConnectionConfig"/>
+    </bean>
+
+    <bean id="xmlConnectionConfig" class="csi.server.common.dto.config.connection.DriverConfigInfo">
+        <property name="configItems" ref="xmlConfigItemList"/>
+    </bean>
+
+    <util:list id="xmlConfigItemList" value-type="csi.server.common.dto.config.connection.ConfigItem">
+        <ref bean="xmlFileConfigItem" />
+        <ref bean="xmlNamespacesConfigItem" />
+        <ref bean="xmlTableNameConfigItem" />
+        <ref bean="xmlXpathConfigItem" />
+		<ref bean="xmlTableColumnsConfigItem" />
+        <ref bean="xmlDateFormatConfigItem" />
+    </util:list>
+
+    <bean id="xmlFileConfigItem" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Choose an XML file with an extension of '.xml' from those listed. Or, you may browse your local file system for a file to upload; and when it has been uploaded, select it."/>
+        <property name="label" value="Select an XML file."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="true"/>
+        <property name="type" value="file"/>
+        <property name="validationOperations" ref="xmlValidationOperations" />
+        <property name="key" value="csi.file"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues" ref="xmlDefaultValues" />
+    </bean>
+
+    <bean id="xmlNamespacesConfigItem" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Add required name spaces for accessing data within your XML document."/>
+        <property name="label" value="Enter required namespaces"/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="csiNamespaceTable"/>
+        <property name="key" value="csi.schema.namespace"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="xmlTableNameConfigItem" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter a table name (e.g. 'MyTable'). The name will be used to access the XML data as though it were stored within a database table."/>
+        <property name="label" value="Enter a name for the logical table."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="true"/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.schema.tableName"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="xmlXpathConfigItem" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter an xpath expression to the root of the data to be accessed as a logical table."/>
+        <property name="label" value="Enter an Xpath expression to the data."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="true"/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.schema.xpath"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="xmlTableColumnsConfigItem" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Define the columns within the logical table."/>
+        <property name="label" value="Define the columns within the logical table. For each column, supply a name it will be known by, th relative xpath from the table xpath, and the type of data to be found there."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="true"/>
+        <property name="type" value="csiXMLColumnsTable"/>
+        <property name="key" value="csi.schema.columns"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="xmlDateFormatConfigItem" class="csi.server.common.dto.config.connection.SelectListConfigItem">
+        <property name="allowMultiSelection" value="false"/>
+        <property name="helpText" value="Select a date or date-time format to be used when evaluating date and time information within the file."/>
+        <property name="label" value="Select a date or date-time format."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="true"/>
+        <property name="required" value="false"/>
+        <property name="type" value="selectList"/>
+        <property name="key" value="csi.schema.dateFormat"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+        <property name="defaultValues" ref="xmlDateFormatDefaultValues" />
+        <property name="listItemValues" ref="xmlListItemValues">
+        </property>
+
+    </bean>
+
+    <util:list id="xmlListItemValues" list-class="java.util.LinkedList" value-type="csi.server.common.dto.config.connection.ListItem">
+        <ref bean="xmlListItemValuesFormat1" />
+        <ref bean="xmlListItemValuesFormat2" />
+        <ref bean="xmlListItemValuesFormat3" />
+        <ref bean="xmlListItemValuesFormat4" />
+        <ref bean="xmlListItemValuesFormat5" />
+        <ref bean="xmlListItemValuesFormat6" />
+        <ref bean="xmlListItemValuesFormat7" />
+
+    </util:list>
+
+    <bean id="xmlListItemValuesFormat1" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="MM/dd/yyyy KK:mm:ssaa"/>
+        <property name="value" value="MM/dd/yyyy KK:mm:ssaa"/>
+    </bean>
+
+    <bean id="xmlListItemValuesFormat2" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="yyyy-MM-dd HH:mm:ss.SSS"/>
+        <property name="value" value="yyyy-MM-dd HH:mm:ss.SSS"/>
+    </bean>
+
+    <bean id="xmlListItemValuesFormat3" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="yyyy-MM-dd HH:mm:ss"/>
+        <property name="value" value="yyyy-MM-dd HH:mm:ss"/>
+    </bean>
+
+    <bean id="xmlListItemValuesFormat4" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="yyyy-MM-dd"/>
+        <property name="value" value="yyyy-MM-dd"/>
+    </bean>
+
+    <bean id="xmlListItemValuesFormat5" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="HH:mm:ss.SSS"/>
+        <property name="value" value="HH:mm:ss.SSS"/>
+    </bean>
+
+    <bean id="xmlListItemValuesFormat6" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="HH:mm:ss"/>
+        <property name="value" value="HH:mm:ss"/>
+    </bean>
+
+    <bean id="xmlListItemValuesFormat7" class="csi.server.common.dto.config.connection.ListItem">
+        <property name="label" value="MM/dd/yyyy"/>
+        <property name="value" value="MM/dd/yyyy"/>
+    </bean>
+
+
+
+
+    <util:list id="xmlValidationOperations" value-type="csi.server.common.dto.KeyValueItem">
+        <ref bean="xmlValidationOperationsKeyValue" />
+    </util:list>
+
+    <bean id="xmlValidationOperationsKeyValue" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="fileType"/>
+        <property name="value" value=".xml"/>
+    </bean>
+
+
+    <util:list id="xmlDefaultValues" value-type="csi.server.common.dto.KeyValueItem">
+        <ref bean="xmlDefaultValuesKeyValue" />
+    </util:list>
+
+    <bean id="xmlDefaultValuesKeyValue" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="filePickerDescription"/>
+        <property name="value" value="XML Files (*.xml)"/>
+    </bean>
+
+    <util:list id="xmlDateFormatDefaultValues" value-type="csi.server.common.dto.KeyValueItem">
+        <ref bean="xmlDateFormatDefaultValuesKeyValue" />
+    </util:list>
+
+    <bean id="xmlDateFormatDefaultValuesKeyValue" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="csi.schema.dateFormat"/>
+        <property name="value" value="yyyy-MM-dd HH:mm:ss"/>
+    </bean>
+
+</beans>

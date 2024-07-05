@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <bean id="customJdbcDriver" class="csi.server.connector.config.JdbcDriver">
+        <property name="name" value="Custom JDBC"/>
+        <property name="key" value="legacy"/>
+        <property name="baseUrl"><null/></property>
+        <property name="jdbcFactory" value="false"/>
+        <property name="tableNameQualifier"><null/></property>
+        <property name="factory" value="csi.server.connector.jdbc.JdbcConnectionFactory"/>
+        <property name="driverClass"><null/></property>
+        <property name="driverAccessRole"><null/></property>
+        <property name="sourceEditRole"><null/></property>
+        <property name="connectionEditRole"><null/></property>
+        <property name="queryEditRole"><null/></property>
+        <property name="dataViewingRole"><null/></property>
+        <property name="escapeChar"><null/></property>
+        <property name="selectNullString"><null/></property>
+        <property name="sortOrder"><null/></property>
+		<property name="castNulls" value="false"/>
+		<property name="remarks" value="This driver may be used to load data from a JDC source other than one supported by one of the other drivers in the list into either an Installed Data Source or a DataView."/>
+        <property name="tableAliasMap">
+            <map>
+            </map>
+        </property>
+        <property name="capcoColumnMap">
+            <map>
+            </map>
+        </property>
+        <property name="authErrorCodes">
+            <list>
+            </list>
+        </property>
+        <property name="authSqlStates">
+            <list>
+            </list>
+        </property>
+        <property name="defaultProperties">
+            <props>
+                <prop key="distinctSources">false</prop>
+            </props>
+        </property>
+        <property name="typeMapping">
+            <props>
+            </props>
+        </property>
+        <property name="uiConnectionConfig" ref="customJdbcConnectionConfig"/>
+    </bean>
+
+    <bean id="customJdbcConnectionConfig" class="csi.server.common.dto.config.connection.DriverConfigInfo">
+        <property name="configItems" ref="customJdbcConfigItemList">
+        </property>
+    </bean>
+
+    <util:list id="customJdbcConfigItemList" value-type="csi.server.common.dto.config.connection.ConfigItem">
+        <ref bean="customJdbcConfigItem1" />
+        <ref bean="customJdbcConfigItem2" />
+        <ref bean="customJdbcConfigItem3" />
+    </util:list>
+
+    <bean id="customJdbcConfigItem1" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the properly formatted connection string to be used when making a connection. Example format: jdbc:oracle:thin:[user]/[password]@[hostname]:[port]:XE"/>
+        <property name="label" value="Enter the connection string for accessing the database."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="true"/>
+        <property name="type" value="csiLegacyConnectionString"/>
+        <property name="key" value="csiLegacyConnectionString"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="customJdbcConfigItem2" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter any extra parameters which are required by the driver to make a proper connection."/>
+        <property name="label" value="Enter any extra parameters."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="csiParmsTable"/>
+        <property name="key" value="csi.params"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="customJdbcConfigItem3" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter commands that must re run before and/or after retrieving data via the connection. An example would be commands that first created and then destroyed either a view or a temporary table."/>
+        <property name="label" value="Enter required Pre/Post-Query Commands."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="csiQueryCommands"/>
+        <property name="key" value="csiQueryCommands"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+</beans>

@@ -1,0 +1,394 @@
+<?xml version="1.0"?>
+<Root>
+	<MetaData>
+		<MetaName>DCSO2 Meta</MetaName>
+		<OptionsName>I94</OptionsName>
+		<Remark></Remark>
+	</MetaData>
+	<ObjectSpecs>
+		<ObjectID>Link 1,2</ObjectID>
+		<Attribute>Type</Attribute>
+		<Priority>1</Priority>
+		<Column1>0</Column1>
+		<Column2>0</Column2>
+		<FreeText1>¿Regular</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Link 1,3</ObjectID>
+		<Attribute>Type</Attribute>
+		<Priority>1</Priority>
+		<Column1>0</Column1>
+		<Column2>0</Column2>
+		<FreeText1>¿Regular</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Link 1,4</ObjectID>
+		<Attribute>Type</Attribute>
+		<Priority>1</Priority>
+		<Column1>0</Column1>
+		<Column2>0</Column2>
+		<FreeText1>¿Regular</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 1</ObjectID>
+		<Attribute>Label</Attribute>
+		<Priority>1</Priority>
+		<Column1>1</Column1>
+		<Column2>0</Column2>
+		<FreeText1>Full Name</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 1</ObjectID>
+		<Attribute>Lat,Lon</Attribute>
+		<Priority>1</Priority>
+		<Column1>14</Column1>
+		<Column2>0</Column2>
+		<FreeText1>Address1LL</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 1</ObjectID>
+		<Attribute>Type</Attribute>
+		<Priority>1</Priority>
+		<Column1>0</Column1>
+		<Column2>0</Column2>
+		<FreeText1>¿Criminal</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 2</ObjectID>
+		<Attribute>Label</Attribute>
+		<Priority>1</Priority>
+		<Column1>6</Column1>
+		<Column2>0</Column2>
+		<FreeText1>Address</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 2</ObjectID>
+		<Attribute>Type</Attribute>
+		<Priority>1</Priority>
+		<Column1>0</Column1>
+		<Column2>0</Column2>
+		<FreeText1>¿ADDRESS</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 3</ObjectID>
+		<Attribute>Label</Attribute>
+		<Priority>1</Priority>
+		<Column1>8</Column1>
+		<Column2>0</Column2>
+		<FreeText1>Address2</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 3</ObjectID>
+		<Attribute>Lat,Lon</Attribute>
+		<Priority>1</Priority>
+		<Column1>15</Column1>
+		<Column2>0</Column2>
+		<FreeText1>Address2LL</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 3</ObjectID>
+		<Attribute>Type</Attribute>
+		<Priority>1</Priority>
+		<Column1>7</Column1>
+		<Column2>0</Column2>
+		<FreeText1>Address2 Type</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 4</ObjectID>
+		<Attribute>Label</Attribute>
+		<Priority>1</Priority>
+		<Column1>13</Column1>
+		<Column2>0</Column2>
+		<FreeText1>Address3</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 4</ObjectID>
+		<Attribute>Lat,Lon</Attribute>
+		<Priority>1</Priority>
+		<Column1>16</Column1>
+		<Column2>0</Column2>
+		<FreeText1>Address3LL</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ObjectSpecs>
+		<ObjectID>Node 4</ObjectID>
+		<Attribute>Type</Attribute>
+		<Priority>1</Priority>
+		<Column1>12</Column1>
+		<Column2>0</Column2>
+		<FreeText1>Address3 Type</FreeText1>
+		<FreeText2></FreeText2>
+		<Func1></Func1>
+		<Func2></Func2>
+		<Operator></Operator>
+	</ObjectSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Timeline Type</ColumnAttribute>
+		<ColumnValue>1</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>ShowGeoLinks</ColumnAttribute>
+		<ColumnValue>-1</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Rel Graph Type</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Y Pos</ColumnAttribute>
+		<ColumnValue>1 505.20951</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Y Pos</ColumnAttribute>
+		<ColumnValue>2 286.31441</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Y Pos</ColumnAttribute>
+		<ColumnValue>3 505.20951</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Y Pos</ColumnAttribute>
+		<ColumnValue>4 724.10461</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node X Pos</ColumnAttribute>
+		<ColumnValue>1 -8.46369</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node X Pos</ColumnAttribute>
+		<ColumnValue>2 665.14899</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node X Pos</ColumnAttribute>
+		<ColumnValue>3 665.14899</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node X Pos</ColumnAttribute>
+		<ColumnValue>4 665.14899</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified Start</ColumnAttribute>
+		<ColumnValue>1 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified Start</ColumnAttribute>
+		<ColumnValue>2 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified Start</ColumnAttribute>
+		<ColumnValue>3 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified Start</ColumnAttribute>
+		<ColumnValue>4 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified End</ColumnAttribute>
+		<ColumnValue>1 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified End</ColumnAttribute>
+		<ColumnValue>2 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified End</ColumnAttribute>
+		<ColumnValue>3 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Unspecified End</ColumnAttribute>
+		<ColumnValue>4 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Duration Option</ColumnAttribute>
+		<ColumnValue>1 0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Duration Option</ColumnAttribute>
+		<ColumnValue>2 0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Duration Option</ColumnAttribute>
+		<ColumnValue>3 0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Duration Option</ColumnAttribute>
+		<ColumnValue>4 0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Address Lat,Lon</ColumnAttribute>
+		<ColumnValue>1</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Address Lat,Lon</ColumnAttribute>
+		<ColumnValue>3</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Node Address Lat,Lon</ColumnAttribute>
+		<ColumnValue>4</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>MapProjectionValue</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>MapProjectionOption</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Unspecified Start</ColumnAttribute>
+		<ColumnValue>1,2 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Unspecified Start</ColumnAttribute>
+		<ColumnValue>1,3 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Unspecified Start</ColumnAttribute>
+		<ColumnValue>1,4 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Unspecified End</ColumnAttribute>
+		<ColumnValue>1,2 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Unspecified End</ColumnAttribute>
+		<ColumnValue>1,3 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Unspecified End</ColumnAttribute>
+		<ColumnValue>1,4 Extreme</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Duration Option</ColumnAttribute>
+		<ColumnValue>1,2 0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Duration Option</ColumnAttribute>
+		<ColumnValue>1,3 0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Link Duration Option</ColumnAttribute>
+		<ColumnValue>1,4 0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Initial View</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Event Order</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Chart Type</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Chart Function</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>0</ColumnID>
+		<ColumnAttribute>Chart Cell</ColumnAttribute>
+		<ColumnValue>0</ColumnValue>
+	</ColumnSpecs>
+	<ColumnSpecs>
+		<ColumnID>1</ColumnID>
+		<ColumnAttribute>Aux Map Data</ColumnAttribute>
+		<ColumnValue>
+			C:\TEMP\ESRI\ESRI Runtime Data Canada US etc\usa\StreetMap
+			USA w KML.mxd
+		</ColumnValue>
+	</ColumnSpecs>
+</Root>

@@ -1,0 +1,150 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+        xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:g="urn:import:com.google.gwt.user.client.ui"
+        xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+        xmlns:gwtbootstrap="urn:import:com.github.gwtbootstrap.client.ui"
+        xmlns:grid="urn:import:csi.client.gwt.widget.gxt.grid"
+        xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes"
+        xmlns:gt="urn:import:csi.client.gwt.viz.graph.tab"
+        >
+   <ui:style gss="true">
+        .right {
+            float: right;
+        }
+
+        .button {
+            padding: 4px 7px;
+            border-bottom: 1px solid #CCC;
+        }
+
+        .quick-filter-buttons {
+            margin: 0px 5px 10px 5px;
+        }
+
+        .filters-label {
+            margin: 0px 5px 0px 15px;
+        }
+
+        .white-background {
+            background: #ffffff;
+            padding-top: 5px;
+        }
+
+        .filter-combo {
+            font-size: 12px;
+            display: inline-block;
+
+        }
+
+        .spacing {
+            margin-left: 25px;
+        }
+
+        .inline {
+            display: inline;
+        }
+    </ui:style>
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <gt:GraphTab
+            tabname="{i18n.get.nodesTab_heading}"
+            icon="ASTERISK"
+            ui:field="nodesTab">
+        <g:LayoutPanel ui:field="layoutPanel">
+            <g:layer
+                    top="0px"
+                    bottom="0px">
+                <grid:GridContainer ui:field="gridContainer"/>
+            </g:layer>
+            <g:layer
+                    top="0px"
+                    height="40px">
+                <gwtbootstrap:FluidRow ui:field="controlLayer" addStyleNames="{style.white-background}">
+                    <boot:InputAddOn prependIcon="SEARCH">
+                        <boot:TextBox
+                                placeholder="{i18n.get.nodesTab_searchPlaceholder}"
+                                ui:field="searchTextBox"
+                                width="150px"/>
+                        <boot:Tooltip
+                                text="{i18n.get.nodesTab_clearSearch}"
+                                placement="BOTTOM">
+                            <boot:Button
+                                    icon="REMOVE"
+                                    ui:field="removeButton"
+                                    addStyleNames="{style.button}">
+                            </boot:Button>
+                        </boot:Tooltip>
+                    </boot:InputAddOn>
+                    <combo:CommonNumberComboBox
+                            ui:field="itemsToShowListBox"
+                            visible="false"
+                            height="18px">
+                    </combo:CommonNumberComboBox>
+
+
+                    <boot:InputAddOn ui:field="filterIcon" prependIcon="FILTER" addStyleNames="{style.spacing}">
+
+                        <boot:Dropdown
+                                text="{i18n.get.nodesTab_filters}"
+                                ui:field="filterCombo"
+                                width="100px"
+                                height="28px"
+                                addStyleNames="nodeTab-filter-combo">
+                            <boot:NavLink ui:field="selectedFilter" icon="UNCHECKED"
+                                          text="{i18n.get.nodesTab_filter_selected}"/>
+                            <boot:NavLink ui:field="unselectedFilter" icon="UNCHECKED"
+                                          text="{i18n.get.nodesTab_filter_unselected}"/>
+                            <boot:NavLink ui:field="bundledFilter" icon="UNCHECKED"
+                                          text="{i18n.get.nodesTab_filter_bundled}"/>
+                            <boot:NavLink ui:field="unbundledFilter" icon="UNCHECKED"
+                                          text="{i18n.get.nodesTab_filter_unbundled}"/>
+                            <boot:NavLink ui:field="visibleFilter" icon="UNCHECKED"
+                                          text="{i18n.get.nodesTab_filter_visible}"/>
+                            <boot:NavLink ui:field="hiddenFilter" icon="UNCHECKED"
+                                          text="{i18n.get.nodesTab_filter_hidden}"/>
+                            <boot:NavLink ui:field="plunkedFilter" icon="UNCHECKED"
+                                          text="{i18n.get.nodesTab_filter_user}"/>
+                            <boot:NavLink ui:field="unplunkedFilter" icon="UNCHECKED"
+                                          text="{i18n.get.nodesTab_filter_data}"/>
+                            <boot:NavLink ui:field="isBundleFilter" icon="UNCHECKED"
+                                          text="{i18n.get.nodesTab_filter_isBundle}"/>
+                            <boot:NavLink ui:field="annotationFilter" icon="UNCHECKED"
+                                          text="{i18n.get.nodesTab_filter_commented}"/>
+                            <boot:NavLink ui:field="unannotationFilter" icon="UNCHECKED"
+                                          text="{i18n.get.nodesTab_filter_uncommented}"/>
+                        </boot:Dropdown>
+
+                        <boot:Tooltip
+                                text="{i18n.get.nodesTab_filter_clearAll}"
+                                placement="BOTTOM">
+                            <boot:Button
+                                    icon="REMOVE"
+                                    ui:field="removeFilters"
+                                    addStyleNames="{style.button}">
+                            </boot:Button>
+                        </boot:Tooltip>
+                    </boot:InputAddOn>
+
+                    <gwtbootstrap:Controls ui:field="tagCloud" addStyleNames="{style.inline}">
+                    </gwtbootstrap:Controls>
+
+                    <boot:DropdownButton
+                            ui:field="actionsButton"
+                            text="{i18n.get.nodesTab_actions}"
+                            rightDropdown="true"
+                            addStyleNames="{style.right}">
+                        <boot:NavLink ui:field="zoomNavLink" text="{i18n.get.nodesTab_action_zoomTo}"/>
+                        <boot:NavLink ui:field="showNavLink" text="{i18n.get.nodesTab_action_show}"/>
+                        <boot:NavLink ui:field="hideNavLink" text="{i18n.get.nodesTab_action_hide}"/>
+                        <boot:NavLink ui:field="bundleNavLink" text="{i18n.get.nodesTab_action_bundle}"/>
+                        <boot:NavLink ui:field="unbundleNavLink" text="{i18n.get.nodesTab_action_unbundle}"/>
+                        <boot:NavLink ui:field="selectNavLink" text="{i18n.get.nodesTab_action_select}"/>
+                        <boot:NavLink ui:field="addSelectNavLink" text="{i18n.get.nodesTab_action_addToSelection}"/>
+                        <boot:NavLink ui:field="removeSelectNavLink" text="{i18n.get.nodesTab_action_removeFromSelection}"/>
+                        <boot:NavLink ui:field="exportNodesList" text="{i18n.get.nodesTab_action_exportNodesList}"/>
+                    </boot:DropdownButton>
+                </gwtbootstrap:FluidRow>
+            </g:layer>
+        </g:LayoutPanel>
+    </gt:GraphTab>
+</ui:UiBinder>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="jdanberg" id="datamodeldef-1-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="datamodeldef_worksheetdef">
+            <column name="worksheets_order" type="INT4" defaultValue="0" value="0"/>
+        </addColumn>
+    </changeSet>
+    
+    
+   <changeSet author="jdanberg" id="datamodeldef-1-2">
+	   <sql>
+	   UPDATE datamodeldef_worksheetdef a
+       SET worksheets_order=(
+       SELECT COUNT(*)
+       FROM datamodeldef_worksheetdef c
+       WHERE a.datamodeldef_uuid = c.datamodeldef_uuid
+       AND (
+	           SELECT querya.rn 
+	           FROM (
+		           SELECT worksheets_uuid, row_number() OVER() as rn 
+		           FROM datamodeldef_worksheetdef) as querya 
+		           WHERE a.worksheets_uuid = querya.worksheets_uuid
+           ) > (
+	           SELECT queryb.rn 
+	           FROM (
+		           SELECT worksheets_uuid, row_number() OVER() as rn 
+		           FROM datamodeldef_worksheetdef) as queryb 
+		           WHERE c.worksheets_uuid = queryb.worksheets_uuid
+	           )
+        );
+	   </sql>
+   </changeSet>
+    
+</databaseChangeLog>

@@ -1,0 +1,84 @@
+<style type="text/css">
+	#Centrifuge {
+		width:1000px;
+		height:600px;
+		border: 1px dashed black;
+	}
+	pre {
+		width:100%;
+	}
+</style>
+<script type="text/javascript">
+	var dv = new Dataview(cookie, "Centrifuge");
+	dv.launch();
+	var viz = dv.getVisualization("Relationship Graph");
+	viz.setVisualizationAttached("false", function(){});
+	viz.clearFilters();
+	
+	function filterViz() {
+		viz.clearFilters( 
+		  function () {  
+		      viz.setSelectionFilter("CTZ", $("#filterSelection").val(), false);
+		  }
+		  ,false 
+		);   
+	}
+	function clearFilters() {
+		viz.clearFilters();
+	}
+	function onGraphLoadSuccess() {
+		$("#filterViz").removeAttr("disabled");
+		$("#clearFilters").removeAttr("disabled");
+		$('#status').html('<img src="resources/Ok-icon.png" /> Dataview Launched');
+	}
+</script>
+<h2>Filter Visualization</h2>
+<div id='overview'>
+	<h2>Overview</h2>
+	<p>The Visualization API provides the ability to perform basic actions on visualizations within a Dataview.</p>
+	<p>This uses an external HTML control to provide the input to dynamically filter a Centrifuge visualization.</p>
+</div>
+<div id='code'>
+	<h2>Sample Code</h2>
+	<pre class="prettyprint">
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;script type=&quot;text/javascript&quot; src=&quot;/Centrifuge/javascript/jquery.js&quot;&gt;&lt;/script&gt;
+		&lt;script type=&quot;text/javascript&quot; src=&quot;/Centrifuge/javascript/centrifuge-widget.js&quot;&gt;&lt;/script&gt;
+		&lt;script type=&quot;text/javascript&quot;&gt;
+			var dv = new Dataview(&quot;&lt;dvUuid&gt;&quot;, &quot;Centrifuge&quot;); // replace dvUuid with the uuid of the dataview to be opened
+			dv.launch();
+			var viz = dv.getVisualization(&quot;Relationship Graph&quot;);
+			function filterViz() {
+				alert($(&quot;#filterSelection&quot;).val());
+				viz.setSelectionFilter(&quot;CTZ&quot;, $(&quot;#filterSelection&quot;).val());
+			}
+			function clearFilters() {
+				viz.clearFilters();
+			}
+		&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;select id=&quot;filterSelection&quot;&gt;
+			&lt;option value=&quot;SA&quot;&gt;Saudi Arabia&lt;/option&gt;
+			&lt;option value=&quot;AE&quot;&gt;United Arab Emirates&lt;/option&gt;
+			&lt;option value=&quot;EG&quot;&gt;Egypt&lt;/option&gt;
+			&lt;option value=&quot;&quot;&gt;Null&lt;/option&gt;
+		&lt;/select&gt;
+		&lt;button onClick=&quot;filterViz()&quot;&gt;Filter Relationship Graph&lt;/button&gt;&lt;button onClick=&quot;clearFilters()&quot;&gt;Clear Filters&lt;/button&gt;
+		&lt;div id='Centrifuge'&gt;&lt;/div&gt;  &lt;!-- container div for flash content --&gt;
+	&lt;body&gt;
+&lt;/html&gt;
+	</pre>
+</div>
+<div id='sample'>
+	<h2>Sample</h2>
+	<select id="filterSelection">
+		<option value="SA">Saudi Arabia</option>
+		<option value="AE">United Arab Emirates</option>
+		<option value="EG">Egypt</option>
+		<option value="">Null</option>
+	</select>
+	<button id="filterViz" disabled="disabled" onClick="filterViz()">Filter Relationship Graph</button><button id="clearFilters" disabled="disabled" onClick="clearFilters()">Clear Filters</button> <span id="status"><img src="resources/ajax-loader.gif" /> Launching Dataview...</span>
+	<div id='Centrifuge'></div>
+</div>

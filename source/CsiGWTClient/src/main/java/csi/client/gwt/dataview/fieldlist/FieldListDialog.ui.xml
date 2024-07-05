@@ -1,0 +1,37 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+    xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:csiButton="urn:import:csi.client.gwt.widget.buttons"
+    xmlns:csiboot="urn:import:csi.client.gwt.widget.boot"
+    xmlns:gwt="urn:import:com.google.gwt.user.client.ui">
+    <ui:with
+        field="i18n"
+        type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+
+
+   <ui:style gss="true">
+        .button_pad {
+            margin:2px 0px 2px 0px;
+        }
+    </ui:style>
+    
+    
+    <ui:with field="gridInstructionsText" type="java.lang.String" />
+    <ui:with field="buttonText" type="java.lang.String" />
+
+    <csiboot:ValidatingDialog
+        ui:field="dialog"
+        width="625px">
+                <gwt:VerticalPanel ui:field="basePanel">
+                    <gwt:HorizontalPanel ui:field="gridLabelPanel" width="100%">
+                        <gwt:cell horizontalAlignment="ALIGN_LEFT">
+                            <gwt:Label ui:field="gridInstructions" text="{gridInstructionsText}"></gwt:Label>
+                        </gwt:cell>
+                        <gwt:cell horizontalAlignment="ALIGN_RIGHT" width="100px">
+                            <csiButton:MiniCyanButton ui:field="createNewButton" addStyleNames="{style.button_pad}" text="{buttonText}"></csiButton:MiniCyanButton>
+                        </gwt:cell>
+                    </gwt:HorizontalPanel>
+                </gwt:VerticalPanel>
+
+    </csiboot:ValidatingDialog>
+</ui:UiBinder>

@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="rfoster" id="rfoster-10-001" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="columndef">
+            <column name="referenceid" type="VARCHAR(255)" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-10-002" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="userfunction">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="userfunction_pkey"/>
+            </column>
+            <column name="group" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="result" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="displayname" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="functionname" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="arguments" type="VARCHAR(255)"/>
+       </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-10-003" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="securitytagsinfo">
+            <column name="fallback" type="TEXT" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-10-004" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="linkupmapdef">
+            <column name="nonulls" type="BOOLEAN" defaultValueBoolean="true" valueBoolean="true">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-10-sql-001" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createProcedure>
+		<![CDATA[
+		create or replace function num_token(arg1 text, arg2 text) returns integer as $$
+		begin
+			return array_length(string_to_array(arg1, arg2), 1);
+		exception
+			when others then
+				return null;
+		end;
+		$$ language plpgsql immutable;
+		]]>
+        </createProcedure>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-10-sql-002" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createProcedure>
+		<![CDATA[
+		create or replace function get_last_token(arg1 text, arg2 text) returns text as $$
+		declare
+			myArray text[] = string_to_array(arg1, arg2);
+			myCount  bigint = array_length(myArray, 1)::bigint;
+		begin
+			return myArray[myCount];
+		exception
+			when others then
+				return null;
+		end;
+		$$ language plpgsql immutable;
+		]]>
+        </createProcedure>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-10-sql-003" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createProcedure>
+		<![CDATA[
+		create or replace function get_nth_token(arg1 text, arg2 text, arg3 bigint) returns text as $$
+		declare
+			myArray text[] = string_to_array(arg1, arg2);
+			myCount  bigint = array_length(myArray, 1)::bigint;
+		begin
+			if arg3 < 0 and arg3 + myCount >= 0 then
+				return myArray[myCount + arg3 + 1];
+			elsif arg3 > 0 and arg3 <= myCount then
+				return myArray[arg3];
+			else
+				return null;
+			end if;
+		exception
+			when others then
+				return null;
+		end;
+		$$ language plpgsql immutable;
+		]]>
+        </createProcedure>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-10-sql-004" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<sql splitStatements="false" stripComments="false">
+			<![CDATA[
+
+				-- From String data type to any other
+
+				create or replace function cast_string(input text) returns text as $$
+				begin
+					return cast(input as text);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_boolean(input text) returns boolean as $$
+				begin
+					return cast(input as boolean);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_integer(input text) returns bigint as $$
+				begin
+					return cast(input as bigint);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_double(input text) returns float8 as $$
+				begin
+					return cast(input as float8);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_datetime(input text) returns timestamp without time zone as $$
+				begin
+					return cast(input as timestamp);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_date(input text) returns date as $$
+				begin
+					return cast(input as date);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_time(input text) returns time without time zone as $$
+				begin
+					return cast(input as time);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_interval(input text) returns interval as $$
+				begin
+					return cast(input as interval);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+
+				-- From Number data type to any other
+
+				create or replace function cast_string(input float8) returns text as $$
+				begin
+					return cast(input as text);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_boolean(input float8) returns boolean as $$
+				begin
+					return cast(input as boolean);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_integer(input float8) returns bigint as $$
+				begin
+					return cast(input as bigint);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_double(input float8) returns float8 as $$
+				begin
+					return cast(input as float8);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_datetime(input float8) returns timestamp without time zone as $$
+				begin
+					return cast(input as timestamp);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_date(input float8) returns date as $$
+				begin
+					return cast(input as date);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_time(input float8) returns time without time zone as $$
+				begin
+					return cast(input as time);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_interval(input float8) returns interval as $$
+				begin
+					return cast(input as interval);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+
+				-- From Integer data type to any other
+
+				create or replace function cast_string(input bigint) returns text as $$
+				begin
+					return cast(input as text);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_boolean(input bigint) returns boolean as $$
+				begin
+					return cast(input as boolean);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_integer(input bigint) returns bigint as $$
+				begin
+					return cast(input as bigint);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_double(input bigint) returns float8 as $$
+				begin
+					return cast(input as float8);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_datetime(input bigint) returns timestamp without time zone as $$
+				begin
+					return cast(input as timestamp);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_date(input bigint) returns date as $$
+				begin
+					return cast(input as date);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_time(input bigint) returns time without time zone as $$
+				begin
+					return cast(input as time);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_interval(input bigint) returns interval as $$
+				begin
+					return cast(input as interval);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+
+				-- From DateTime data type to any other
+
+				create or replace function cast_string(input timestamp without time zone) returns text as $$
+				begin
+					return cast(input as text);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_boolean(input timestamp without time zone) returns boolean as $$
+				begin
+					return cast(input as boolean);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_integer(input timestamp without time zone) returns bigint as $$
+				begin
+					return cast(input as bigint);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_double(input timestamp without time zone) returns float8 as $$
+				begin
+					return cast(input as float8);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_datetime(input timestamp without time zone) returns timestamp without time zone as $$
+				begin
+					return cast(input as timestamp);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_date(input timestamp without time zone) returns date as $$
+				begin
+					return cast(input as date);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_time(input timestamp without time zone) returns time without time zone as $$
+				begin
+					return cast(input as time);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_interval(input timestamp without time zone) returns interval as $$
+				begin
+					return cast(input as interval);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+
+				-- From Date data type to any other
+
+				create or replace function cast_string(input date) returns text as $$
+				begin
+					return cast(input as text);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_boolean(input date) returns boolean as $$
+				begin
+					return cast(input as boolean);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_integer(input date) returns bigint as $$
+				begin
+					return cast(input as bigint);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_double(input date) returns float8 as $$
+				begin
+					return cast(input as float8);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_datetime(input date) returns timestamp without time zone as $$
+				begin
+					return cast(input as timestamp);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_date(input date) returns date as $$
+				begin
+					return cast(input as date);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_time(input date) returns time without time zone as $$
+				begin
+					return cast(input as time);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_interval(input date) returns interval as $$
+				begin
+					return cast(input as interval);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+
+				-- From Time data type to any other
+
+				create or replace function cast_string(input time without time zone) returns text as $$
+				begin
+					return cast(input as text);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_boolean(input time without time zone) returns boolean as $$
+				begin
+					return cast(input as boolean);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_integer(input time without time zone) returns bigint as $$
+				begin
+					return cast(input as bigint);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_double(input time without time zone) returns float8 as $$
+				begin
+					return cast(input as float8);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_datetime(input time without time zone) returns timestamp without time zone as $$
+				begin
+					return cast(input as timestamp);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_date(input time without time zone) returns date as $$
+				begin
+					return cast(input as date);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_time(input time without time zone) returns time without time zone as $$
+				begin
+					return cast(input as time);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_interval(input time without time zone) returns interval as $$
+				begin
+					return cast(input as interval);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+
+				-- From Interval data type to any other
+
+				create or replace function cast_string(input interval) returns text as $$
+				begin
+					return cast(input as text);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_boolean(input interval) returns boolean as $$
+				begin
+					return cast(input as boolean);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_integer(input interval) returns bigint as $$
+				begin
+					return cast(input as bigint);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_double(input interval) returns float8 as $$
+				begin
+					return cast(input as float8);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_datetime(input interval) returns timestamp without time zone as $$
+				begin
+					return cast(input as timestamp);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_date(input interval) returns date as $$
+				begin
+					return cast(input as date);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_time(input interval) returns time without time zone as $$
+				begin
+					return cast(input as time);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+				create or replace function cast_interval(input interval) returns interval as $$
+				begin
+					return cast(input as interval);
+				exception
+					when others then
+						return null;
+				end;
+				$$ language plpgsql immutable;
+			]]>
+		</sql>
+	</changeSet>
+</databaseChangeLog>

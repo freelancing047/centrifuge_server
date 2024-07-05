@@ -1,0 +1,27 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:csibutton="urn:import:csi.client.gwt.widget.buttons"
+	xmlns:bootBase="urn:import:com.github.gwtbootstrap.client.ui.base">
+
+	<ui:style gss="true">
+		.leftControl {
+		position: absolute;
+		bottom: 7px;
+		}
+	</ui:style>
+
+	<ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+
+	<ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+	<boot:ModalFooter>
+		<bootBase:DivWidget ui:field="rightControlContainer">
+			<csibutton:Button type="SUCCESS" ui:field="buttonAction" />
+			<csibutton:Button ui:field="buttonCancel" />
+			<bootBase:DivWidget addStyleNames="{style.leftControl}"
+				ui:field="leftControlContainer">
+			</bootBase:DivWidget>
+		</bootBase:DivWidget>
+	</boot:ModalFooter>
+
+</ui:UiBinder>

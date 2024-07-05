@@ -1,0 +1,134 @@
+/**
+ * Tasks to install Centrifuge in both linux and windows.
+ * Requires jre.gradle to also be included in the top level build.gradle
+ */
+
+apply from: 'gradle/properties.gradle'
+
+def INSTALL4J_HOME = hasProperty("installHome") ? installHome : "/usr/local/bin"
+def INSTALL4J_EXE = hasProperty("installExe") ? installExe : "${INSTALL4J_HOME}/install4jc"
+def DATE_STRING = new Date().format("yyyyMMddHHmmss")
+def REMOTE_NAS_LOCATION = "/mnt/csinas1"
+def INSTALLER_PATH = hasProperty("installerPath") ? installerPath : null
+if (getOperatingSystemName() == windowsKey) {
+    REMOTE_NAS_LOCATION = "//csinas1/Builds"
+}
+
+configurations {
+    install4j
+}
+
+dependencies {
+    install4j fileTree(dir: "${INSTALL4J_HOME}", includes: ['ant.jar'])
+}
+
+task createDistribution {
+    dependsOn 'genVersionString', 'concatenateLinuxFiles'
+
+    doFirst {
+		println "Add executable permission to shell file."
+        ant.chmod(dir: "${buildOutput}/installer", includes: "*.sh", perm: "uga+x")
+	}
+
+    doLast {
+        def PROJECT_NAME = "Centrifuge-${releaseVersion}"
+        def myInstallPath = INSTALLER_PATH ? "${INSTALLER_PATH}${PROJECT_NAME}" : "${REMOTE_NAS_LOCATION}/${PROJECT_NAME}/${DATE_STRING}"
+		println "Copy installers from ${buildOutput}/installer to ${myInstallPath}."
+        copy {
+            from "${buildOutput}/installer"
+            into "${myInstallPath}"
+            include '*.exe', '*.sh'
+        }
+
+    }
+}
+
+task fixWindowsLineEndings {
+
+    dependsOn 'genVersionString', 'copyWindowsDatabaseIntoInstallation', 'copyWindowsJreIntoInstallation', ':installer:jar'
+    doFirst{
+		println "Fix Windows line endings in ${buildRuntime}."
+        ant.fixcrlf(srcdir: buildRuntime, includes: "**/*.xml **/*.properties **/*.config **/*.txt", eol:"crlf", preservelastmodified:"true")
+        println "Execute ${INSTALL4J_EXE} -r ${releaseVersion} -b 722 installer/csi-server.install4j"
+    }
+}
+
+task invokeInstall4jWindows(type: Exec) {
+
+    dependsOn 'genVersionString', 'fixWindowsLineEndings'
+    doFirst {
+        executable = "${INSTALL4J_EXE}"
+        args("-r", "${releaseVersion}", "-b", "722", "installer/csi-server.install4j")
+    }
+}
+
+task removeWindowsFiles {
+
+	dependsOn 'genVersionString', 'invokeInstall4jWindows'
+    doFirst {
+        delete "${jreRuntime}"
+		println "Delete Windows files from ${cachedbRuntime}."
+        delete "${cachedbRuntime}/pgsql_${releaseVersion}"
+        delete "${cachedbRuntime}/neo4j"
+        delete "${cachedbRuntime}/pgsql"
+        delete "${cachedbRuntime}/neo4j-community-2.1.5"
+    }
+}
+
+/**
+ * Copies various files into the build for linux. This task destroys the windows build
+ * output, so this should only be run for installation, and only after the windows
+ * installer has already been built.
+ */
+task customizeLinuxInstall {
+    dependsOn 'copyNeo4jLinuxIntoInstallation'
+    doFirst{
+		println "Fix Linux line endings in ${buildRuntime}."
+        ant.fixcrlf(srcdir: buildRuntime, includes: "**/*.xml **/*.properties **/*.config **/*.txt **/*.sh", eol:"unix", preservelastmodified:"true")
+    }
+    doLast{
+		println "Zip Centrifuge files into ${installerRuntime}/centrifuge-server.tgz."
+    }
+}
+
+/**
+ * Creates a tar.gz out of the build output, after some manipulation to exclude windows files
+ * and include some files only for the linux installer.
+ */
+task archiveCentrifugeServer(type: Tar) {
+    dependsOn 'customizeLinuxInstall'
+    compression = Compression.GZIP
+    archiveName = "centrifuge-server.tgz"
+    destinationDir = file(installerRuntime)
+    includes = ["centrifuge-server/**/*"]
+    excludes = ["**/*.bat", "**/*.exe", "**/*.cmd", "**/*.dll"]
+    from buildOutput
+}
+
+/**
+ * Builds a .sh file that can be executed to install Centrifuge on linux.
+ * Uses ant concat to get the line endings right.
+ */
+task concatenateLinuxFiles {
+    dependsOn 'genVersionString', 'archiveCentrifugeServer'
+	doFirst {
+        File file = file("${linuxOutput}/version.txt")
+        //The branch has a new line character automatically added by git.
+        file.text = "EOF\nversion=${releaseVersion}\nnewpgsql=pgsql_${releaseVersion}\n"
+		println "Fix line endings in tools and docs."
+		ant.fixcrlf(srcdir: "tools", includes: "install.header.prefix install.header.script", eol:"unix")
+        ant.fixcrlf(srcdir: "docs", includes: "Centrifuge EULA.txt", eol:"unix")
+	}
+    doLast {
+		println "Concatenate files into installation shell."
+        ant.concat(destfile: "${installerRuntime}/CentrifugeInstaller-x64-${releaseVersion}.sh", force: "true", eol: "unix", binary: "true"){
+            ant.filelist(dir: "."){
+                ant.file( name:"${linuxOutput}/version.txt")
+                ant.file( name:"tools/install.header.prefix")
+                ant.file( name:"docs/Centrifuge EULA.txt")
+                ant.file( name:"tools/install.header.script")
+                ant.file( name:"${buildOutput}/installer/centrifuge-server.tgz")
+            }
+        }
+    }
+}

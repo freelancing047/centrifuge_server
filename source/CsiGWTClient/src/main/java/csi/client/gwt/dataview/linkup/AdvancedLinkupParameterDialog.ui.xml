@@ -1,0 +1,108 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:gwt="urn:import:com.google.gwt.user.client.ui"
+	xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+    xmlns:form="urn:import:com.sencha.gxt.widget.core.client.form"
+    xmlns:grid="urn:import:com.sencha.gxt.widget.core.client.grid"
+    xmlns:csigwt="urn:import:csi.client.gwt.widget.ui"
+    xmlns:csibutton="urn:import:csi.client.gwt.widget.buttons"	
+    xmlns:csiboot="urn:import:csi.client.gwt.widget.boot"
+    xmlns:list="urn:import:csi.client.gwt.widget.list_boxes">	
+    
+ 	<ui:style>
+		.x-tabs-wrap table {
+			position:static;
+			display:inline
+		}
+		
+		.x-tabs-strip-scroller {
+		   	overflow:hidden;
+		   	position:relative;
+		   	top:1px
+		}
+		
+		.x-tabs-strip a, .x-tabs-strip .on a {
+			position:static
+		}
+	    .sep {
+	        margin-top: 20px;
+	    }
+  		.rpad5 {
+   			padding-right:5px;
+  		}
+  		.tabborder {
+   			border-style:solid;
+   			border-width:1px;
+  		}
+  		.noborder {
+   			border-width:0px;
+  		}
+  		.rpad15 {
+   			padding-right:15px;
+		}
+  		.lpad15 {
+   			padding-leftt:15px;
+		}
+  		.tpad15 {
+   			padding-top:15px;
+		}
+  		.bpad15 {
+   			padding-bottom:15px;
+		}
+        .margin-fix input {
+            margin-bottom: 0px !important;
+        }
+ 	</ui:style>
+ 
+    <csiboot:ValidatingDialog bodyWidth="950px" bodyHeight="500px" ui:field="dialog">
+        <csigwt:FullSizeLayoutPanel ui:field="topPanel">
+            <csigwt:layer top="10px" left="20px" height="60px" width="910px">
+ 		        <gwt:HorizontalPanel height="60px" width="910px">
+					<gwt:cell horizontalAlignment="ALIGN_LEFT" width="320px">
+						<gwt:VerticalPanel width="320px" height="60px">
+							<gwt:Label ui:field="availableVisualizationsLabel"></gwt:Label>
+							<gwt:cell horizontalAlignment="ALIGN_LEFT">
+	 		        			<gwt:HorizontalPanel addStyleNames="{style.margin-fix}">
+									<list:CsiListBox ui:field="availableVisualizations" addStyleNames="{style.margin-fix}" width="320px" editable="true"/>
+                        			<gwt:InlineLabel addStyleNames="{style.rpad5}">&nbsp;&nbsp;</gwt:InlineLabel>
+<!-- 									<csibutton:Button text="?" ui:field="vizHelpButton"/> -->
+	                			</gwt:HorizontalPanel>
+							</gwt:cell>
+		                </gwt:VerticalPanel>
+	                </gwt:cell>
+					<gwt:cell horizontalAlignment="ALIGN_CENTER">
+				 		<gwt:VerticalPanel height="60px">
+							<gwt:cell horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE">
+								<gwt:Label ui:field="parameterNotice"></gwt:Label>
+							</gwt:cell>
+						</gwt:VerticalPanel>
+	                </gwt:cell>
+					<gwt:cell horizontalAlignment="ALIGN_RIGHT" width="230px">
+						<gwt:VerticalPanel width="230px" height="60px">
+							<gwt:Label text="&nbsp;"></gwt:Label>
+							<gwt:cell horizontalAlignment="ALIGN_RIGHT">
+	 		        			<gwt:HorizontalPanel>
+									<csibutton:CyanButton ui:field="setAddButton"/>
+                        			<gwt:InlineLabel addStyleNames="{style.rpad5}"></gwt:InlineLabel>
+<!-- 									<csibutton:Button text="?" ui:field="parmHelpButton"/> -->
+	                			</gwt:HorizontalPanel>
+							</gwt:cell>
+		                </gwt:VerticalPanel>
+	                </gwt:cell>
+                </gwt:HorizontalPanel>
+            </csigwt:layer>
+           	<csigwt:layer top="70px" left="20px" height="430px" width="910px">
+				<gwt:AbsolutePanel ui:field="greyPanel" width="910px" height="430px">
+					<gwt:at left="5" top="5" width="900" height="420">
+						<gwt:AbsolutePanel ui:field="tabPanel" width="900px" height="420px">
+                            <gwt:at left="0" top="28" width="900" height="392">
+                                <gwt:AbsolutePanel ui:field="whitePanel" width="900px" height="392px">
+                                </gwt:AbsolutePanel>
+                            </gwt:at>
+						</gwt:AbsolutePanel>
+					</gwt:at>
+				</gwt:AbsolutePanel>
+            </csigwt:layer>
+        </csigwt:FullSizeLayoutPanel>
+    </csiboot:ValidatingDialog>
+</ui:UiBinder> 

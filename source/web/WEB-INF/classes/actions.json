@@ -1,0 +1,10 @@
+{
+"actionMappings":[
+        {"processorClass":"csi.widget.processor.core.GoogleMapsDataProcessor",
+         "dataExtractorClass" : "csi.widget.dataextractor.core.GoogleMapsDataExtractor",
+         "action":["loadData"]},
+            
+        {"processorClass":"csi.widget.processor.core.WidgetInitProcessor",
+         "dataExtractorClass" : "csi.widget.dataextractor.core.EmptyDataExtractor",
+         "action":["load"]} ]
+}

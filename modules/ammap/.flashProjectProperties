@@ -1,0 +1,33 @@
+<projectDescription>
+  <id>1242842402421</id>
+  <name>ammap</name>
+  <asVersion>1</asVersion>
+  <boundTemplate>file:///C|/Documents and Settings/eduardo/Local Settings/Application Data/Adobe/Flash CS4/en/Configuration/Project/templates/boundClass_as2.as</boundTemplate>
+  <classTemplate>file:///C|/Documents and Settings/eduardo/Local Settings/Application Data/Adobe/Flash CS4/en/Configuration/Project/templates/standardClass_as2.as</classTemplate>
+  <classPath>.</classPath>
+  <defaultApp/>
+  <rootURI>file:///F|/Java/CSI/Dev/modules/ammap/</rootURI>
+  <flexSDK/>
+  <sources editable="false"/>
+  <libraries editable="false"/>
+  <externalLibraries editable="false"/>
+  <compileList editable="false">
+    <uri label="ammap.fla">file:///F|/Java/CSI/Dev/modules/ammap/ammap.fla</uri>
+  </compileList>
+  <recentFiles editable="false">
+    <uri label="Ammap.as">file:///F|/Java/CSI/Dev/modules/ammap/com/ammap/Ammap.as</uri>
+    <uri label="ParseXML.as">file:///F|/Java/CSI/Dev/modules/ammap/com/ammap/ParseXML.as</uri>
+    <uri label="NavigationPath.as">file:///F|/Java/CSI/Dev/modules/ammap/com/ammap/NavigationPath.as</uri>
+    <uri label="Utils.as">file:///F|/Java/CSI/Dev/modules/ammap/com/ammap/Utils.as</uri>
+    <uri label="Movies.as">file:///F|/Java/CSI/Dev/modules/ammap/com/ammap/Movies.as</uri>
+    <uri label="Shape.as">file:///F|/Java/CSI/Dev/modules/ammap/com/ammap/Shape.as</uri>
+    <uri label="Preloader.as">file:///F|/Java/CSI/Dev/modules/ammap/com/ammap/Preloader.as</uri>
+    <uri label="Load.as">file:///F|/Java/CSI/Dev/modules/ammap/com/ammap/Load.as</uri>
+    <uri label="LCBridgeAS2.as">file:///F|/Java/CSI/Dev/modules/ammap/com/ammap/LCBridgeAS2.as</uri>
+    <uri label="Config.as">file:///F|/Java/CSI/Dev/modules/ammap/com/ammap/Config.as</uri>
+    <uri label="Balloon.as">file:///F|/Java/CSI/Dev/modules/ammap/com/ammap/Balloon.as</uri>
+    <uri label="Legend.as">file:///F|/Java/CSI/Dev/modules/ammap/com/ammap/Legend.as</uri>
+    <uri label="XML2Object.as">file:///F|/Java/CSI/Dev/modules/ammap/com/ammap/XML2Object.as</uri>
+  </recentFiles>
+  <locations editable="false"/>
+</projectDescription>

@@ -1,0 +1,260 @@
+apply plugin: 'java'
+apply plugin: 'war'
+
+repositories {
+  maven {
+    url "http://10.11.10.3:8081/nexus/content/repositories/Installer"
+  }
+  mavenCentral()
+}
+
+buildscript {
+  repositories {
+    maven {
+      url "http://10.11.10.3:8081/nexus/content/repositories/Installer"
+    }
+    mavenCentral()
+  }
+		
+  dependencies {
+    classpath 'de.obqo.gradle:gradle-lesscss-plugin:1.0-1.3.3'
+  }
+}
+
+apply plugin: 'lesscss'
+
+lesscss {
+    source = fileTree('war/less') {
+        include 'csi.less'
+    }
+    dest = 'war/css'
+    compress = true
+}
+
+evaluationDependsOn(':source:server')
+
+def GUICE_VERSION = '4.0'
+def GWT_VERSION = "2.8.1"//2.6.1
+def GXT_VERSION = '4.0.2'
+def GWT_QUERY_VERSION = '1.3.3'//1.4.2
+def POSTGRES_DRIVER_VERSION = '42.0.0.jre6'//'9.3-1100-jdbc4'//9.3-1102-jdbc4 (also 9.3-1102-jdbc41)
+def GWT_MOCKITO_VERSION = '1.1.6'//1.1.4
+def LIB_SVG_VERSION = '0.5.13'
+def codeServerLocation = hasProperty('codeServerLocation') ? codeServerLocation : "C:/DEV/gwt-2.8.1/gwt-codeserver.jar"
+
+dependencies {
+
+   
+    providedCompile fileTree(dir: '../../lib/tomcat-8.0.30', includes: ['*.jar'])
+    providedCompile fileTree(dir: '../../lib', includes: ['centrifuge-sf.jar'])
+
+    compile fileTree(dir: '../../lib/GWT', includes: ['gwt-bootstrap*.jar']) //'com.github.gwtbootstrap:gwt-bootstrap:2.3.2.0'
+
+    compile fileTree(dir: '../../lib/GWT', includes: ['org.moxieapps*.jar'])
+
+    compile fileTree(dir: '../../lib/GWT', includes: ['lib-gwt-file-0.3.6.jar'])
+
+    compile 'com.emitrom:lienzo-core:1.2-RELEASE' //Upgraded from a snapshot
+
+    compile ("com.google.inject:guice:$GUICE_VERSION") {
+	  exclude module: 'asm'
+	}
+    compile "com.google.inject.extensions:guice-multibindings:$GUICE_VERSION"
+    compile "com.google.inject.extensions:guice-servlet:$GUICE_VERSION"
+    compile "com.google.inject.extensions:guice-assistedinject:$GUICE_VERSION"
+    compile ('com.google.gwt.inject:gin:2.1.2') {
+	  exclude module: 'asm'
+	}
+    compile "com.googlecode.gwtquery:gwtquery:$GWT_QUERY_VERSION"
+    providedCompile "org.postgresql:postgresql:$POSTGRES_DRIVER_VERSION"
+    providedCompile "com.google.gwt:gwt-dev:${GWT_VERSION}"
+    runtime "com.google.gwt:gwt-servlet:${GWT_VERSION}"    
+    providedCompile "com.google.gwt:gwt-user:${GWT_VERSION}@jar"
+    
+    compile fileTree(dir: '../../lib/GWT', includes: ["gxt-$GXT_VERSION" + ".jar"])
+    compile fileTree(dir: '../../lib/GWT', includes: ["gxt-theme-neptune-$GXT_VERSION" + ".jar"])
+
+//    compile "../../lib/GWT/gxt-theme-neptune-$GXT_VERSION"
+
+    
+//    compile "com.sencha.gxt:gxt:$GXT_VERSION"
+//    compile "com.sencha.gxt:gxt-theme-neptune:$GXT_VERSION"
+
+    providedCompile project(':source:jaas')
+    providedCompile project(':source:tomcat-extensions')
+
+    providedCompile 'org.slf4j:slf4j-api:1.6.1'
+    
+        //asm >5.* needed for gwt 2.7 because compatibility wiht jdk8
+    // https://mvnrepository.com/artifact/org.ow2.asm/asm
+    compile group: 'org.ow2.asm', name: 'asm', version: '5.1'
+    
+     // https://mvnrepository.com/artifact/org.vectomatic/lib-gwt-svg
+    compile group: 'org.vectomatic', name: 'lib-gwt-svg', version: "$LIB_SVG_VERSION"
+    
+    compile project(':source:server')
+    compile project(':modules:csi-shared')
+    
+    testCompile ("com.google.gwt.gwtmockito:gwtmockito:$GWT_MOCKITO_VERSION")
+    testCompile 'junit:junit:4.11'
+}
+def GWT_OUTPUT_DIR = "${buildDir}/gwtCompile"
+
+def isDevCompile = hasProperty('devCompile') ? Boolean.valueOf(devCompile) : false
+def numberOfLocalWorkers = hasProperty('localWorkers') ? localWorkers : 2
+def heapSize = hasProperty('heapSize') ? heapSize : "10g"
+def superDevWorkDir = hasProperty('superDevWorkDir') ? superDevWorkDir : "C:/Dev/temp-superdev"
+
+def moduleName = "csi.client.CSI"
+def styleOutput = "OBF"
+def logLevel = "INFO"
+
+
+if (isDevCompile) {
+    moduleName = "csi.client.dev_CSI"
+    styleOutput = "DETAILED"
+    logLevel = "ERROR"
+}
+
+def serverFolders = project(':source:server').sourceSets.main.java.srcDirs
+def serverResourceFolders = project(':source:server').sourceSets.main.resources.srcDirs
+def sharedFolders = project(':modules:csi-shared').sourceSets.main.java.srcDirs
+
+task('compileGwt') {
+
+    def depends = []
+     if (getOperatingSystemName() == windowsKey)
+        depends << 'compileGwtWindows'
+     else
+        depends << 'compileGwtLinux'
+        
+     dependsOn(depends)
+}
+
+task('compileGwtLinux', dependsOn: 'classes', type: JavaExec) {
+
+  outputs.dir(GWT_OUTPUT_DIR)
+    dependsOn 'classes'
+
+    FileCollection gwtClasspath = files(configurations.compile, 'build/classes/main', 'src/csi/client/rebind', sourceSets.main.java.srcDirs, sharedFolders, serverFolders)
+    classpath(gwtClasspath)
+    main("com.google.gwt.dev.Compiler")
+    maxHeapSize(heapSize)
+
+    args("-style")
+    args(styleOutput)
+
+    args("-logLevel")
+    args(logLevel)
+
+    args("-localWorkers")
+    args("$numberOfLocalWorkers")
+
+    if (isDevCompile)
+        args("-draftCompile")
+
+    args("-war")
+    args(GWT_OUTPUT_DIR)
+    args(moduleName)
+}
+
+task('compileGwtWindows', dependsOn: 'dependencyJar',type: JavaExec) {
+    
+   outputs.dir(GWT_OUTPUT_DIR)
+
+    doFirst {
+        classpath = files(sourceSets.main.java.srcDirs, dependencyJar.archivePath)
+    }
+    
+    main("com.google.gwt.dev.Compiler")
+    maxHeapSize(heapSize)
+
+    args("-style")
+    args(styleOutput)
+
+    args("-logLevel")
+    args(logLevel)
+
+    args("-localWorkers")
+    args("$numberOfLocalWorkers")
+
+    if (isDevCompile)
+        args("-draftCompile")
+
+    args("-war")
+    args(GWT_OUTPUT_DIR)
+    args(moduleName)
+}
+
+
+task dependencyJar(type: Jar) {
+    dependsOn 'classes'
+    appendix 'dependencies'
+    entryCompression=ZipEntryCompression.STORED
+    zip64=true
+    FileCollection gwtClasspath = files(sharedFolders, serverFolders, serverResourceFolders,configurations.compile)
+    from { gwtClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+    include '**/*.xml', '**/*.java','**/*.class','**/*.png','**/*.gif','**/*.jpg','**/*.css','**/*.gss','**/*.less',
+    '**/*.jsp','**/*.js','**/*.*script','**/*.properties','**/*.html','**/war/**','**/*.rsc','**/*.xsd','**/*.dtd','**/.xsd',
+    '**/*.jar'
+    
+    String classpathVar;
+    classpathVar = gwtClasspath.collect {  ((it.toURI().toString())) }.join(' ')
+   
+
+    manifest {
+            attributes("Implementation-Title": "Gradle Classpath Container",
+                "Implementation-Version": "1",
+                "Class-Path": classpathVar
+                )
+    }
+    
+}
+   
+
+task('superDev', dependsOn:'dependencyJar', type: JavaExec) {
+        
+    classpath = files(dependencyJar.archivePath,new File(codeServerLocation))
+    
+    
+    main("com.google.gwt.dev.codeserver.CodeServer")
+    maxHeapSize("6048m")
+
+    
+//    args("-module")
+    args("csi.client.dev_CSI")
+    
+    args("-src")
+    args("./src/main/java")
+
+
+    args("-src")
+    args("../../modules/csi-shared/src/main/java")
+
+    args("-src")
+    args("../server/src/main/java")
+
+    args("-src")
+    args("../server/src/main/resources")
+
+    args("-style")
+    args("PRETTY")
+
+    args("-noprecompile")
+
+    args("-workDir") 
+    args(superDevWorkDir)
+    
+    args("-launcherDir")
+    args("../../build/centrifuge-server/webapps/Centrifuge/h5/csi")
+    
+}
+
+
+webAppDirName = 'war'
+war {
+    dependsOn 'lesscss'
+    dependsOn 'compileGwt'
+    from GWT_OUTPUT_DIR
+}

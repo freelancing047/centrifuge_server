@@ -1,0 +1,14 @@
+<schema>
+<table name="CONNECTION" file="cisco_test_5000_desc2_511.xml" path="/ROOT/CONNECTION">
+<column name="ID1" type="string" path="/ROOT/CONNECTION/ID1"/>
+<column name="IDENTITY1" type="string" path="/ROOT/CONNECTION/IDENTITY1"/>
+<column name="DESCRIPTION1" type="string" path="/ROOT/CONNECTION/DESCRIPTION1"/>
+<column name="URL1" type="string" path="/ROOT/CONNECTION/URL1"/>
+<column name="DATE" type="string" path="/ROOT/CONNECTION/DATE"/>
+<column name="TYPE1" type="string" path="/ROOT/CONNECTION/TYPE1"/>
+<column name="ID2" type="string" path="/ROOT/CONNECTION/ID2"/>
+<column name="IDENTITY2" type="string" path="/ROOT/CONNECTION/IDENTITY2"/>
+<column name="DESCRIPTION2" type="string" path="/ROOT/CONNECTION/DESCRIPTION2"/>
+<column name="TYPE2" type="string" path="/ROOT/CONNECTION/TYPE2"/>
+</table>
+</schema>

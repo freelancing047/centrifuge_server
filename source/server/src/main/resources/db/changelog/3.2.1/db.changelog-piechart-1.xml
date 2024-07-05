@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="dchang" id="piechart-1-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="chartsettings">
+            <column name="pielabelenabled" type="boolean" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="dchang" id="piechart-1-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="chartsettings">
+            <column name="pielabelshowvalue" type="boolean" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="dchang" id="piechart-1-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="chartsettings">
+            <column name="pielabelshowpercentage" type="boolean" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="dchang" id="piechart-1-4" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="chartsettings">
+            <column name="pielabelpercentagethreshold" type="double" defaultValue="0">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="dchang" id="piechart-1-5" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="chartsettings">
+            <column name="pielegendenabled" type="boolean" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="dchang" id="piechart-1-6" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="chartsettings">
+            <column name="pielegendshowvalue" type="boolean" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="dchang" id="piechart-1-7" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="chartsettings">
+            <column name="pielegendshowpercentage" type="boolean" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

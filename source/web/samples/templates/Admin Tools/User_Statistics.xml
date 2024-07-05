@@ -1,0 +1,687 @@
+<DataViewDef id="1">
+  <uuid></uuid>
+  <clientProperties id="2">
+    <entry>
+      <string>currentWorksheet</string>
+      <string>0</string>
+    </entry>
+  </clientProperties>
+  <__entered>false</__entered>
+  <name>User Statistics</name>
+  <remarks></remarks>
+  <createDate>1582810924803</createDate>
+  <template>true</template>
+  <resourceType>ADMIN_TOOL</resourceType>
+  <size>0</size>
+  <useCount>0</useCount>
+  <version>3.6.2</version>
+  <dataTree id="3">
+    <uuid></uuid>
+    <__entered>false</__entered>
+    <name>01 UserStatsJoin</name>
+    <initialized>false</initialized>
+    <tableDef id="4">
+      <uuid></uuid>
+      <clientProperties id="5"/>
+      <__entered>false</__entered>
+      <localId>08b03ec0-ef25-46e6-8903-55ec8d6b2b47</localId>
+      <schemaName>public</schemaName>
+      <tableType>VIEW</tableType>
+      <tableName>UserStatsJoin</tableName>
+      <isCustom>false</isCustom>
+      <source id="6">
+        <uuid></uuid>
+        <clientProperties id="7">
+          <entry>
+            <string>color</string>
+            <string>13593813</string>
+          </entry>
+        </clientProperties>
+        <__entered>false</__entered>
+        <name>01 ? [admintools]</name>
+        <template>false</template>
+        <resourceType>DATA_SOURCE</resourceType>
+        <size>0</size>
+        <useCount>0</useCount>
+        <flags>0</flags>
+        <ordinal>0</ordinal>
+        <connection id="8">
+          <uuid></uuid>
+          <clientProperties id="9"/>
+          <__entered>false</__entered>
+          <template>false</template>
+          <resourceType>CONNECTION</resourceType>
+          <size>0</size>
+          <useCount>0</useCount>
+          <flags>0</flags>
+          <type>admintools</type>
+          <properties id="10">
+            <uuid></uuid>
+            <__entered>false</__entered>
+            <properties id="11"/>
+          </properties>
+        </connection>
+        <localId>deb4402d-41b8-4859-b5c5-f5487cda98c1</localId>
+        <inPlace>false</inPlace>
+        <singleTable>false</singleTable>
+        <simpleLoader>false</simpleLoader>
+        <childCount>0</childCount>
+      </source>
+      <columns id="12">
+        <ColumnDef id="13">
+          <uuid></uuid>
+          <clientProperties id="14"/>
+          <__entered>false</__entered>
+          <localId>fba476d6-e97f-4de9-a195-ae0882610467</localId>
+          <schemaName>public</schemaName>
+          <tableName>UserStatsJoin</tableName>
+          <columnName>TotalUsers</columnName>
+          <dataTypeName>int8</dataTypeName>
+          <jdbcDataType>-5</jdbcDataType>
+          <columnSize>19</columnSize>
+          <decimalDigits>0</decimalDigits>
+          <ordinal>0</ordinal>
+          <nullable>YES</nullable>
+          <csiType>Integer</csiType>
+          <selected>true</selected>
+          <columnFilters id="15"/>
+          <tableDef reference="4"/>
+          <mapped>false</mapped>
+        </ColumnDef>
+        <ColumnDef id="16">
+          <uuid></uuid>
+          <clientProperties id="17"/>
+          <__entered>false</__entered>
+          <localId>876c599e-e919-44af-a92a-18dee45b7ee8</localId>
+          <schemaName>public</schemaName>
+          <tableName>UserStatsJoin</tableName>
+          <columnName>PerpetualUsers</columnName>
+          <dataTypeName>int8</dataTypeName>
+          <jdbcDataType>-5</jdbcDataType>
+          <columnSize>19</columnSize>
+          <decimalDigits>0</decimalDigits>
+          <ordinal>1</ordinal>
+          <nullable>YES</nullable>
+          <csiType>Integer</csiType>
+          <selected>true</selected>
+          <columnFilters id="18"/>
+          <tableDef reference="4"/>
+          <mapped>false</mapped>
+        </ColumnDef>
+        <ColumnDef id="19">
+          <uuid></uuid>
+          <clientProperties id="20"/>
+          <__entered>false</__entered>
+          <localId>8d817fac-2e3a-4a14-86b0-b1d680715f33</localId>
+          <schemaName>public</schemaName>
+          <tableName>UserStatsJoin</tableName>
+          <columnName>ActiveUsers</columnName>
+          <dataTypeName>int8</dataTypeName>
+          <jdbcDataType>-5</jdbcDataType>
+          <columnSize>19</columnSize>
+          <decimalDigits>0</decimalDigits>
+          <ordinal>2</ordinal>
+          <nullable>YES</nullable>
+          <csiType>Integer</csiType>
+          <selected>true</selected>
+          <columnFilters id="21"/>
+          <tableDef reference="4"/>
+          <mapped>false</mapped>
+        </ColumnDef>
+        <ColumnDef id="22">
+          <uuid></uuid>
+          <clientProperties id="23"/>
+          <__entered>false</__entered>
+          <localId>e688508c-235c-47f5-aa1b-f3a40e5c3188</localId>
+          <schemaName>public</schemaName>
+          <tableName>UserStatsJoin</tableName>
+          <columnName>InactiveUsers</columnName>
+          <dataTypeName>int8</dataTypeName>
+          <jdbcDataType>-5</jdbcDataType>
+          <columnSize>19</columnSize>
+          <decimalDigits>0</decimalDigits>
+          <ordinal>3</ordinal>
+          <nullable>YES</nullable>
+          <csiType>Integer</csiType>
+          <selected>true</selected>
+          <columnFilters id="24"/>
+          <tableDef reference="4"/>
+          <mapped>false</mapped>
+        </ColumnDef>
+        <ColumnDef id="25">
+          <uuid></uuid>
+          <clientProperties id="26"/>
+          <__entered>false</__entered>
+          <localId>956989e8-df5b-4c8a-8334-ef5ea2e0ca0e</localId>
+          <schemaName>public</schemaName>
+          <tableName>UserStatsJoin</tableName>
+          <columnName>SuspendedUsers</columnName>
+          <dataTypeName>int8</dataTypeName>
+          <jdbcDataType>-5</jdbcDataType>
+          <columnSize>19</columnSize>
+          <decimalDigits>0</decimalDigits>
+          <ordinal>4</ordinal>
+          <nullable>YES</nullable>
+          <csiType>Integer</csiType>
+          <selected>true</selected>
+          <columnFilters id="27"/>
+          <tableDef reference="4"/>
+          <mapped>false</mapped>
+        </ColumnDef>
+        <ColumnDef id="28">
+          <uuid></uuid>
+          <clientProperties id="29"/>
+          <__entered>false</__entered>
+          <localId>4935a00f-c60a-42d4-a158-bed1a35c7ace</localId>
+          <schemaName>public</schemaName>
+          <tableName>UserStatsJoin</tableName>
+          <columnName>DisabledUsers</columnName>
+          <dataTypeName>int8</dataTypeName>
+          <jdbcDataType>-5</jdbcDataType>
+          <columnSize>19</columnSize>
+          <decimalDigits>0</decimalDigits>
+          <ordinal>5</ordinal>
+          <nullable>YES</nullable>
+          <csiType>Integer</csiType>
+          <selected>true</selected>
+          <columnFilters id="30"/>
+          <tableDef reference="4"/>
+          <mapped>false</mapped>
+        </ColumnDef>
+      </columns>
+      <nextOrdinal>6</nextOrdinal>
+    </tableDef>
+    <mapItems id="31"/>
+    <mapType>JOIN</mapType>
+    <joinType>EQUI_JOIN</joinType>
+    <appendAll>false</appendAll>
+    <forceLocal>false</forceLocal>
+    <passOnlyMapped>false</passOnlyMapped>
+  </dataTree>
+  <dataSetParameters id="32"/>
+  <linkupDefinitions id="33"/>
+  <dataSources id="34">
+    <DataSourceDef reference="6"/>
+  </dataSources>
+  <filters id="35"/>
+  <modelDef id="36">
+    <uuid></uuid>
+    <clientProperties id="37"/>
+    <__entered>false</__entered>
+    <template>false</template>
+    <resourceType>DATA_MODEL</resourceType>
+    <size>0</size>
+    <useCount>0</useCount>
+    <flags>0</flags>
+    <fieldDefs id="38">
+      <FieldDef id="39">
+        <uuid></uuid>
+        <clientProperties id="40"/>
+        <__entered>false</__entered>
+        <fieldType>COLUMN_REF</fieldType>
+        <fieldName>TotalUsers</fieldName>
+        <localId>4a70ae38-6786-4717-ac31-981e0dfced56</localId>
+        <dsLocalId>deb4402d-41b8-4859-b5c5-f5487cda98c1</dsLocalId>
+        <tableLocalId>08b03ec0-ef25-46e6-8903-55ec8d6b2b47</tableLocalId>
+        <columnLocalId>fba476d6-e97f-4de9-a195-ae0882610467</columnLocalId>
+        <ordinal>0</ordinal>
+        <functionType>NONE</functionType>
+        <functions id="41"/>
+        <valueType>Integer</valueType>
+        <storageType>Integer</storageType>
+        <preCalculated>false</preCalculated>
+        <dirty>false</dirty>
+        <finalSort>0</finalSort>
+        <__level>0</__level>
+      </FieldDef>
+      <FieldDef id="42">
+        <uuid></uuid>
+        <clientProperties id="43"/>
+        <__entered>false</__entered>
+        <fieldType>COLUMN_REF</fieldType>
+        <fieldName>PerpetualUsers</fieldName>
+        <localId>1bcd502f-ac84-4a0e-b211-b45200a80b31</localId>
+        <dsLocalId>deb4402d-41b8-4859-b5c5-f5487cda98c1</dsLocalId>
+        <tableLocalId>08b03ec0-ef25-46e6-8903-55ec8d6b2b47</tableLocalId>
+        <columnLocalId>876c599e-e919-44af-a92a-18dee45b7ee8</columnLocalId>
+        <ordinal>1</ordinal>
+        <functionType>NONE</functionType>
+        <functions id="44"/>
+        <valueType>Integer</valueType>
+        <storageType>Integer</storageType>
+        <preCalculated>false</preCalculated>
+        <dirty>false</dirty>
+        <finalSort>1</finalSort>
+        <__level>0</__level>
+      </FieldDef>
+      <FieldDef id="45">
+        <uuid></uuid>
+        <clientProperties id="46"/>
+        <__entered>false</__entered>
+        <fieldType>COLUMN_REF</fieldType>
+        <fieldName>ActiveUsers</fieldName>
+        <localId>01e2084b-f67f-4e65-811c-1e6daaae76b2</localId>
+        <dsLocalId>deb4402d-41b8-4859-b5c5-f5487cda98c1</dsLocalId>
+        <tableLocalId>08b03ec0-ef25-46e6-8903-55ec8d6b2b47</tableLocalId>
+        <columnLocalId>8d817fac-2e3a-4a14-86b0-b1d680715f33</columnLocalId>
+        <ordinal>2</ordinal>
+        <functionType>NONE</functionType>
+        <functions id="47"/>
+        <valueType>Integer</valueType>
+        <storageType>Integer</storageType>
+        <preCalculated>false</preCalculated>
+        <dirty>false</dirty>
+        <finalSort>2</finalSort>
+        <__level>0</__level>
+      </FieldDef>
+      <FieldDef id="48">
+        <uuid></uuid>
+        <clientProperties id="49"/>
+        <__entered>false</__entered>
+        <fieldType>COLUMN_REF</fieldType>
+        <fieldName>InactiveUsers</fieldName>
+        <localId>74babf76-613a-4fcf-91bb-9affd5c692df</localId>
+        <dsLocalId>deb4402d-41b8-4859-b5c5-f5487cda98c1</dsLocalId>
+        <tableLocalId>08b03ec0-ef25-46e6-8903-55ec8d6b2b47</tableLocalId>
+        <columnLocalId>e688508c-235c-47f5-aa1b-f3a40e5c3188</columnLocalId>
+        <ordinal>3</ordinal>
+        <functionType>NONE</functionType>
+        <functions id="50"/>
+        <valueType>Integer</valueType>
+        <storageType>Integer</storageType>
+        <preCalculated>false</preCalculated>
+        <dirty>false</dirty>
+        <finalSort>3</finalSort>
+        <__level>0</__level>
+      </FieldDef>
+      <FieldDef id="51">
+        <uuid></uuid>
+        <clientProperties id="52"/>
+        <__entered>false</__entered>
+        <fieldType>COLUMN_REF</fieldType>
+        <fieldName>SuspendedUsers</fieldName>
+        <localId>60dc6e4c-6dd1-40d4-b21b-f9894e0bb38d</localId>
+        <dsLocalId>deb4402d-41b8-4859-b5c5-f5487cda98c1</dsLocalId>
+        <tableLocalId>08b03ec0-ef25-46e6-8903-55ec8d6b2b47</tableLocalId>
+        <columnLocalId>956989e8-df5b-4c8a-8334-ef5ea2e0ca0e</columnLocalId>
+        <ordinal>4</ordinal>
+        <functionType>NONE</functionType>
+        <functions id="53"/>
+        <valueType>Integer</valueType>
+        <storageType>Integer</storageType>
+        <preCalculated>false</preCalculated>
+        <dirty>false</dirty>
+        <finalSort>4</finalSort>
+        <__level>0</__level>
+      </FieldDef>
+      <FieldDef id="54">
+        <uuid></uuid>
+        <clientProperties id="55"/>
+        <__entered>false</__entered>
+        <fieldType>COLUMN_REF</fieldType>
+        <fieldName>DisabledUsers</fieldName>
+        <localId>a6a201f2-7f46-42be-8349-0ad067f7b820</localId>
+        <dsLocalId>deb4402d-41b8-4859-b5c5-f5487cda98c1</dsLocalId>
+        <tableLocalId>08b03ec0-ef25-46e6-8903-55ec8d6b2b47</tableLocalId>
+        <columnLocalId>4935a00f-c60a-42d4-a158-bed1a35c7ace</columnLocalId>
+        <ordinal>5</ordinal>
+        <functionType>NONE</functionType>
+        <functions id="56"/>
+        <valueType>Integer</valueType>
+        <storageType>Integer</storageType>
+        <preCalculated>false</preCalculated>
+        <dirty>false</dirty>
+        <finalSort>5</finalSort>
+        <__level>0</__level>
+      </FieldDef>
+      <FieldDef id="57">
+        <uuid></uuid>
+        <__entered>false</__entered>
+        <fieldType>DERIVED</fieldType>
+        <fieldName>PercentInactive</fieldName>
+        <localId>3db3a2fb-4abc-47c8-a9f0-e798dc50de17</localId>
+        <ordinal>6</ordinal>
+        <functionType>NONE</functionType>
+        <functions id="58"/>
+        <valueType>Number</valueType>
+        <storageType>Number</storageType>
+        <sqlExpression id="59">
+          <uuid></uuid>
+          <__entered>false</__entered>
+          <tokenList id="60">
+            <csi.server.common.model.SqlTokenTreeItem id="61">
+              <uuid></uuid>
+              <__entered>false</__entered>
+              <ordinal>0</ordinal>
+              <token>DecimalDivision</token>
+              <arguments id="62">
+                <uuid></uuid>
+                <__entered>false</__entered>
+                <tokenList id="63">
+                  <csi.server.common.model.SqlTokenTreeItem id="64">
+                    <uuid></uuid>
+                    <__entered>false</__entered>
+                    <ordinal>0</ordinal>
+                    <token>IntegerField</token>
+                    <arguments id="65">
+                      <uuid></uuid>
+                      <__entered>false</__entered>
+                      <tokenList id="66"/>
+                      <ordinal>0</ordinal>
+                    </arguments>
+                    <value>74babf76-613a-4fcf-91bb-9affd5c692df</value>
+                    <dataTypeMask>12</dataTypeMask>
+                  </csi.server.common.model.SqlTokenTreeItem>
+                  <csi.server.common.model.SqlTokenTreeItem id="67">
+                    <uuid></uuid>
+                    <__entered>false</__entered>
+                    <ordinal>1</ordinal>
+                    <token>IntegerField</token>
+                    <arguments id="68">
+                      <uuid></uuid>
+                      <__entered>false</__entered>
+                      <tokenList id="69"/>
+                      <ordinal>0</ordinal>
+                    </arguments>
+                    <value>4a70ae38-6786-4717-ac31-981e0dfced56</value>
+                    <dataTypeMask>12</dataTypeMask>
+                  </csi.server.common.model.SqlTokenTreeItem>
+                </tokenList>
+                <ordinal>2</ordinal>
+              </arguments>
+              <dataTypeMask>8</dataTypeMask>
+            </csi.server.common.model.SqlTokenTreeItem>
+          </tokenList>
+          <ordinal>1</ordinal>
+        </sqlExpression>
+        <preCalculated>false</preCalculated>
+        <dirty>false</dirty>
+        <finalSort>0</finalSort>
+        <__level>0</__level>
+      </FieldDef>
+      <FieldDef id="70">
+        <uuid></uuid>
+        <__entered>false</__entered>
+        <fieldType>DERIVED</fieldType>
+        <fieldName>PercentOfInactiveSuspended</fieldName>
+        <localId>dfb7143c-675b-4b24-aa08-a5560ef2b246</localId>
+        <ordinal>7</ordinal>
+        <functionType>NONE</functionType>
+        <functions id="71"/>
+        <valueType>Number</valueType>
+        <storageType>Number</storageType>
+        <sqlExpression id="72">
+          <uuid></uuid>
+          <__entered>false</__entered>
+          <tokenList id="73">
+            <csi.server.common.model.SqlTokenTreeItem id="74">
+              <uuid></uuid>
+              <__entered>false</__entered>
+              <ordinal>0</ordinal>
+              <token>DecimalDivision</token>
+              <arguments id="75">
+                <uuid></uuid>
+                <__entered>false</__entered>
+                <tokenList id="76">
+                  <csi.server.common.model.SqlTokenTreeItem id="77">
+                    <uuid></uuid>
+                    <__entered>false</__entered>
+                    <ordinal>0</ordinal>
+                    <token>IntegerField</token>
+                    <arguments id="78">
+                      <uuid></uuid>
+                      <__entered>false</__entered>
+                      <tokenList id="79"/>
+                      <ordinal>0</ordinal>
+                    </arguments>
+                    <value>60dc6e4c-6dd1-40d4-b21b-f9894e0bb38d</value>
+                    <dataTypeMask>12</dataTypeMask>
+                  </csi.server.common.model.SqlTokenTreeItem>
+                  <csi.server.common.model.SqlTokenTreeItem id="80">
+                    <uuid></uuid>
+                    <__entered>false</__entered>
+                    <ordinal>1</ordinal>
+                    <token>IntegerField</token>
+                    <arguments id="81">
+                      <uuid></uuid>
+                      <__entered>false</__entered>
+                      <tokenList id="82"/>
+                      <ordinal>0</ordinal>
+                    </arguments>
+                    <value>74babf76-613a-4fcf-91bb-9affd5c692df</value>
+                    <dataTypeMask>12</dataTypeMask>
+                  </csi.server.common.model.SqlTokenTreeItem>
+                </tokenList>
+                <ordinal>2</ordinal>
+              </arguments>
+              <dataTypeMask>8</dataTypeMask>
+            </csi.server.common.model.SqlTokenTreeItem>
+          </tokenList>
+          <ordinal>1</ordinal>
+        </sqlExpression>
+        <preCalculated>false</preCalculated>
+        <dirty>false</dirty>
+        <finalSort>0</finalSort>
+        <__level>0</__level>
+      </FieldDef>
+      <FieldDef id="83">
+        <uuid></uuid>
+        <__entered>false</__entered>
+        <fieldType>DERIVED</fieldType>
+        <fieldName>PercentOfInactiveDisabled</fieldName>
+        <localId>b67c6c03-d48b-4af3-b313-b205098e0db9</localId>
+        <ordinal>8</ordinal>
+        <functionType>NONE</functionType>
+        <functions id="84"/>
+        <valueType>Number</valueType>
+        <storageType>Number</storageType>
+        <sqlExpression id="85">
+          <uuid></uuid>
+          <__entered>false</__entered>
+          <tokenList id="86">
+            <csi.server.common.model.SqlTokenTreeItem id="87">
+              <uuid></uuid>
+              <__entered>false</__entered>
+              <ordinal>0</ordinal>
+              <token>DecimalDivision</token>
+              <arguments id="88">
+                <uuid></uuid>
+                <__entered>false</__entered>
+                <tokenList id="89">
+                  <csi.server.common.model.SqlTokenTreeItem id="90">
+                    <uuid></uuid>
+                    <__entered>false</__entered>
+                    <ordinal>0</ordinal>
+                    <token>IntegerField</token>
+                    <arguments id="91">
+                      <uuid></uuid>
+                      <__entered>false</__entered>
+                      <tokenList id="92"/>
+                      <ordinal>0</ordinal>
+                    </arguments>
+                    <value>a6a201f2-7f46-42be-8349-0ad067f7b820</value>
+                    <dataTypeMask>12</dataTypeMask>
+                  </csi.server.common.model.SqlTokenTreeItem>
+                  <csi.server.common.model.SqlTokenTreeItem id="93">
+                    <uuid></uuid>
+                    <__entered>false</__entered>
+                    <ordinal>1</ordinal>
+                    <token>IntegerField</token>
+                    <arguments id="94">
+                      <uuid></uuid>
+                      <__entered>false</__entered>
+                      <tokenList id="95"/>
+                      <ordinal>0</ordinal>
+                    </arguments>
+                    <value>74babf76-613a-4fcf-91bb-9affd5c692df</value>
+                    <dataTypeMask>12</dataTypeMask>
+                  </csi.server.common.model.SqlTokenTreeItem>
+                </tokenList>
+                <ordinal>2</ordinal>
+              </arguments>
+              <dataTypeMask>8</dataTypeMask>
+            </csi.server.common.model.SqlTokenTreeItem>
+          </tokenList>
+          <ordinal>1</ordinal>
+        </sqlExpression>
+        <preCalculated>false</preCalculated>
+        <dirty>false</dirty>
+        <finalSort>0</finalSort>
+        <__level>0</__level>
+      </FieldDef>
+    </fieldDefs>
+    <visualizations id="96">
+      <TableViewDef id="97">
+        <uuid></uuid>
+        <__entered>false</__entered>
+        <name>Table</name>
+        <createDate>1549464258917</createDate>
+        <lastOpenDate>1549464258917</lastOpenDate>
+        <lastUpdateDate>1549464258917</lastUpdateDate>
+        <template>false</template>
+        <resourceType>VISUALIZATION</resourceType>
+        <size>0</size>
+        <useCount>0</useCount>
+        <flags>0</flags>
+        <type>TABLE</type>
+        <broadcastListener>true</broadcastListener>
+        <suppressLoadAtStartup>false</suppressLoadAtStartup>
+        <localId>3a8e720e-09e4-426c-8816-05a03555eeda</localId>
+        <readOnly>false</readOnly>
+        <hideOverview>false</hideOverview>
+        <tableViewSettings id="98">
+          <uuid></uuid>
+          <__entered>false</__entered>
+          <visibleFields id="99">
+            <VisibleTableField id="100">
+              <uuid></uuid>
+              <__entered>false</__entered>
+              <fieldId>4a70ae38-6786-4717-ac31-981e0dfced56</fieldId>
+              <listPosition>0</listPosition>
+            </VisibleTableField>
+            <VisibleTableField id="101">
+              <uuid></uuid>
+              <__entered>false</__entered>
+              <fieldId>1bcd502f-ac84-4a0e-b211-b45200a80b31</fieldId>
+              <listPosition>1</listPosition>
+            </VisibleTableField>
+            <VisibleTableField id="102">
+              <uuid></uuid>
+              <__entered>false</__entered>
+              <fieldId>01e2084b-f67f-4e65-811c-1e6daaae76b2</fieldId>
+              <listPosition>2</listPosition>
+            </VisibleTableField>
+            <VisibleTableField id="103">
+              <uuid></uuid>
+              <__entered>false</__entered>
+              <fieldId>74babf76-613a-4fcf-91bb-9affd5c692df</fieldId>
+              <listPosition>3</listPosition>
+            </VisibleTableField>
+            <VisibleTableField id="104">
+              <uuid></uuid>
+              <__entered>false</__entered>
+              <fieldId>60dc6e4c-6dd1-40d4-b21b-f9894e0bb38d</fieldId>
+              <listPosition>4</listPosition>
+            </VisibleTableField>
+            <VisibleTableField id="105">
+              <uuid></uuid>
+              <__entered>false</__entered>
+              <fieldId>a6a201f2-7f46-42be-8349-0ad067f7b820</fieldId>
+              <listPosition>5</listPosition>
+            </VisibleTableField>
+            <VisibleTableField id="106">
+              <uuid></uuid>
+              <__entered>false</__entered>
+              <fieldId>3db3a2fb-4abc-47c8-a9f0-e798dc50de17</fieldId>
+              <listPosition>6</listPosition>
+            </VisibleTableField>
+            <VisibleTableField id="107">
+              <uuid></uuid>
+              <__entered>false</__entered>
+              <fieldId>dfb7143c-675b-4b24-aa08-a5560ef2b246</fieldId>
+              <listPosition>7</listPosition>
+            </VisibleTableField>
+            <VisibleTableField id="108">
+              <uuid></uuid>
+              <__entered>false</__entered>
+              <fieldId>b67c6c03-d48b-4af3-b313-b205098e0db9</fieldId>
+              <listPosition>8</listPosition>
+            </VisibleTableField>
+          </visibleFields>
+          <sortFields id="109"/>
+          <pageSize>0</pageSize>
+        </tableViewSettings>
+        <state id="110">
+          <uuid></uuid>
+          <__entered>false</__entered>
+          <verticalScrollPosition>0</verticalScrollPosition>
+          <horizontalScrollPosition>0</horizontalScrollPosition>
+          <page>0</page>
+          <columnStates id="111"/>
+        </state>
+        <selection id="112">
+          <uuid></uuid>
+          <__entered>false</__entered>
+          <selectedItems class="csi.shared.core.util.IntCollection" id="113">
+            <sorted>false</sorted>
+            <items id="114"/>
+          </selectedItems>
+        </selection>
+      </TableViewDef>
+    </visualizations>
+    <worksheets id="115">
+      <WorksheetDef id="116">
+        <uuid></uuid>
+        <clientProperties id="117">
+          <entry>
+            <string>worksheet.zOrdersLength</string>
+            <string>1</string>
+          </entry>
+        </clientProperties>
+        <__entered>false</__entered>
+        <visualizations id="118">
+          <TableViewDef reference="97"/>
+        </visualizations>
+        <worksheetScreenLayout id="119">
+          <uuid></uuid>
+          <clientProperties id="120"/>
+          <__entered>false</__entered>
+          <worksheetDef reference="116"/>
+          <layout id="121">
+            <uuid></uuid>
+            <clientProperties id="122"/>
+            <__entered>false</__entered>
+            <dirty>false</dirty>
+            <layouts id="123">
+              <csi.server.common.model.worksheet.VisualizationLayoutState id="124">
+                <uuid></uuid>
+                <clientProperties id="125"/>
+                <__entered>false</__entered>
+                <maximized>false</maximized>
+                <minimized>false</minimized>
+                <x>0</x>
+                <y>0</y>
+                <width>1226</width>
+                <height>302</height>
+                <minimizedX>0</minimizedX>
+                <minimizedY>0</minimizedY>
+                <visualizationDef class="TableViewDef" reference="97"/>
+              </csi.server.common.model.worksheet.VisualizationLayoutState>
+            </layouts>
+          </layout>
+          <activatedVisualizationUuid>792f68e4-0432-4faa-8876-6458fef691f4</activatedVisualizationUuid>
+        </worksheetScreenLayout>
+        <worksheetName>Untitled Worksheet</worksheetName>
+      </WorksheetDef>
+    </worksheets>
+    <sorted>false</sorted>
+    <initialViewIndex>0</initialViewIndex>
+  </modelDef>
+  <extensionConfigs id="126"/>
+  <extensionData id="127"/>
+  <orphanColumns id="128"/>
+  <nextJoinNumber>1</nextJoinNumber>
+  <nextAppendNumber>1</nextAppendNumber>
+  <storageTypesFlag>true</storageTypesFlag>
+  <rowLimit>4000000</rowLimit>
+</DataViewDef>

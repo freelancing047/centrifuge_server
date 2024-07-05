@@ -1,0 +1,36 @@
+
+<project name="modules" basedir=".">
+
+    <path id="module-dep-order">
+    	<pathelement location="../modules/graph-persist" />
+    	<pathelement location="../modules/pluggable-datasource" />
+    	<pathelement location="../modules/api-ref-impls" />
+        <!-- <pathelement location="${basedir}/glowacki" /> -->
+        <!-- <pathelement location="${basedir}/squiggle" /> -->
+        <pathelement location="${basedir}/jaas" />
+        <pathelement location="${basedir}/tomcat-extensions" />
+        <pathelement location="${basedir}/prefuse" />
+    	<pathelement location="../modules/csi-shared" />
+    	<pathelement location="${basedir}/server" />
+        <pathelement location="${basedir}/CsiGWTClient" />
+    </path>
+
+
+    <target name="compile">
+        <subant target="compile" verbose="true" inheritall="false">
+            <buildpath refid="module-dep-order" />
+        </subant>
+    </target>
+
+    <target name="build">
+        <subant target="build">
+            <buildpath refid="module-dep-order" />
+        </subant>
+    </target>
+
+    <target name="clean">
+        <subant target="clean">
+            <buildpath refid="module-dep-order" />
+        </subant>
+    </target>
+</project>

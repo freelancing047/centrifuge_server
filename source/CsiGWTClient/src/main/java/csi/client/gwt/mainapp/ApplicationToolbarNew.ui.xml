@@ -1,0 +1,108 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:menu="urn:import:csi.client.gwt.viz.shared.menu"
+             xmlns:gwtbootstrap="urn:import:com.github.gwtbootstrap.client.ui"
+             xmlns:gwtboostrap="urn:import:com.google.gwt.user.client.ui">
+
+    <ui:style>
+
+        .nav {
+        padding-top: 7px;
+        }
+        .navIcons i{
+        font-size: 18px;
+        padding-top: 3px;
+        }
+        .navDropdown {
+        font-size: 12px;
+        }
+
+        .label {
+        margin-left: 25px;
+        color: white;
+        text-shadow: 0px 1px black
+        }
+
+        .centrifugeDropdown{
+        font-size: 13px;
+        }
+        .centrifugeDropdown li{
+        font-size: 12px;
+        }
+
+        .dataviewName{
+        left: calc(50%) !important;
+        color: gray;
+        cursor: pointer;
+        font-size:13px;
+        /*padding-top: 5px;*/
+        }
+
+        .hidden {
+        display: none !important;
+        }
+
+        .header {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        color: #226894;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: none;
+        }
+
+        .fixPadding{
+        padding-top: 5px !important;
+        }
+
+    </ui:style>
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <g:HTMLPanel>
+        <div class="csi-header-nav-new">
+            <gwtbootstrap:Navbar height="28px" width="100%" addStyleNames="application-nav-bar" ui:field="navbar">
+                <gwtbootstrap:NavHeader addStyleNames="{style.header}" ui:field="header" />
+                <gwtbootstrap:Nav addStyleNames="{style.nav},application-nav-bar-nav {style.fixPadding}">
+                    <g:InlineLabel ui:field="emptyCentrifuge" text="" addStyleNames="{style.label}" visible="false" />
+                </gwtbootstrap:Nav>
+                <gwtbootstrap:Nav addStyleNames="{style.nav},application-nav-bar-nav, {style.fixPadding}">
+                    <menu:CsiDropdown text="Dataview" addStyleNames="{style.centrifugeDropdown}" ui:field="centrifugeDropdown">
+                    </menu:CsiDropdown>
+                </gwtbootstrap:Nav>
+                <gwtbootstrap:Nav addStyleNames="{style.nav},application-nav-bar-nav {style.fixPadding}">
+                    <menu:CsiDropdown visible="false" addStyleNames="{style.centrifugeDropdown}" ui:field="dataviewDropdown" text="{i18n.get.applicationToolbar_dataviewDropdown}">
+                        <gwtbootstrap:NavLink ui:field="openFieldList" text="{i18n.get.applicationToolbar_editFields}" />
+                        <gwtbootstrap:NavLink ui:field="editDataSources" text="{i18n.get.applicationToolbar_editDataSources}" />
+                        <gwtbootstrap:NavLink ui:field="shareDataView" text="{i18n.get.applicationToolbar_shareDataView}" />
+                        <gwtbootstrap:NavLink ui:field="manageLinkupDef" text="{i18n.get.applicationToolbar_manageLinkups}" />
+                        <gwtbootstrap:NavLink ui:field="displayParameters" text="{i18n.get.applicationToolbar_displayParameters}" />
+                    </menu:CsiDropdown>
+                </gwtbootstrap:Nav>
+                <gwtbootstrap:Nav alignment="RIGHT" addStyleNames="{style.nav} {style.fixPadding}">
+                    <menu:CsiDropdown title="{i18n.get.applicationToolbar_helpDropDown_caption}" ui:field="helpDropDown" addStyleNames="{style.navIcons}">
+                        <gwtbootstrap:NavLink ui:field="openAbout" addStyleNames="{style.navDropdown}" text="{i18n.get.applicationToolbar_about}" />
+                        <gwtbootstrap:NavLink ui:field="helpTopics" addStyleNames="{style.navDropdown}" text="{i18n.get.applicationToolbar_help}" />
+                    </menu:CsiDropdown>
+                </gwtbootstrap:Nav>
+                <gwtbootstrap:Nav alignment="RIGHT" addStyleNames="{style.nav} {style.fixPadding}">
+                    <menu:CsiDropdown title="{i18n.get.applicationToolbar_managementDropDown_caption}" ui:field="managementDropdown" addStyleNames="{style.navIcons}"></menu:CsiDropdown>
+                </gwtbootstrap:Nav>
+                <gwtbootstrap:Nav alignment="RIGHT" addStyleNames="{style.nav} {style.fixPadding}">
+                    <menu:CsiDropdown ui:field="loggedInUserDropDown" addStyleNames="{style.navIcons}">
+                        <gwtbootstrap:NavLink ui:field="changePassword" addStyleNames="{style.navDropdown}" text="{i18n.get.applicationToolbar_changePassword}" />
+                        <gwtbootstrap:NavLink ui:field="logout" addStyleNames="{style.navDropdown}" text="{i18n.get.applicationToolbar_logout}" />
+                    </menu:CsiDropdown>
+                </gwtbootstrap:Nav>
+                <gwtbootstrap:Nav alignment="RIGHT" addStyleNames="{style.nav} {style.fixPadding}">
+                    <gwtbootstrap:Button ui:field="tMessengerButton" addStyleNames="{style.navIcons}">
+                    </gwtbootstrap:Button>
+                    <gwtbootstrap:Button ui:field="newMessageAlert" addStyleNames="{style.navIcons}">
+                    </gwtbootstrap:Button>
+                </gwtbootstrap:Nav>
+
+            </gwtbootstrap:Navbar>
+        </div>
+    </g:HTMLPanel>
+</ui:UiBinder>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:boot='urn:import:com.github.gwtbootstrap.client.ui'
+            xmlns:csiboot="urn:import:csi.client.gwt.widget.boot"
+            xmlns:csibutton="urn:import:csi.client.gwt.widget.buttons"
+			xmlns:csiwidget="urn:import:csi.client.gwt.widget.display_list_widgets"
+			xmlns:csigwt="urn:import:csi.client.gwt.widget.ui">
+
+   <ui:style gss="true">
+        .important {
+            font-weight: bold;
+        }
+        .button_pad {
+            margin:2px 0px 2px 0px;
+        }
+        .button_toppad {
+            font-weight: bold;
+            margin:5px 0px 0px 0px;
+        }
+        .radio_pad {
+            margin:0px 0px 0px 10px;
+        }
+        .list_pad {
+            margin:0px 1px 0px 0px;
+        }
+        .noborder{
+            border-style: none;
+        }
+    </ui:style>
+
+    <csiboot:ValidatingDialog bodyWidth="1015px" bodyHeight="500px">
+        <csigwt:FullSizeLayoutPanel ui:field="topPanel">
+            <csigwt:layer top="5px" height="80px" left="5px" width="790px">
+                <g:HorizontalPanel width="675px">
+                    <g:cell horizontalAlignment="ALIGN_LEFT" width="80px">
+                        <g:VerticalPanel width="80px" visible="true">
+                            <g:cell verticalAlignment="ALIGN_MIDDLE" height="75px">
+                                <g:VerticalPanel width="80px" visible="true">
+                                    <csibutton:MiniCyanButton ui:field="undoButton" width="40px" addStyleNames="{style.button_pad}" />
+                                    <csibutton:MiniRedButton ui:field="deleteButton" width="40px" addStyleNames="{style.button_pad}" />
+                                </g:VerticalPanel>
+                            </g:cell>
+                        </g:VerticalPanel>
+                    </g:cell>
+                    <g:cell horizontalAlignment="ALIGN_LEFT" width="595px">
+                        <g:VerticalPanel width="595px" visible="true">
+                            <g:cell verticalAlignment="ALIGN_MIDDLE" height="75px">
+                                <g:VerticalPanel width="595px" visible="true" horizontalAlignment="ALIGN_LEFT">
+                                    <csiwidget:SegmentedStringWidget ui:field="expressionWidget" />
+                                    <g:HorizontalPanel verticalAlignment="ALIGN_TOP">
+                                        <g:cell horizontalAlignment="ALIGN_LEFT" verticalAlignment="ALIGN_TOP">
+                                            <boot:RadioButton ui:field="radio1" name="dataTypeRadio" addStyleNames="{style.radio_pad}" />
+                                        </g:cell>
+                                        <g:cell horizontalAlignment="ALIGN_LEFT" verticalAlignment="ALIGN_TOP">
+                                            <boot:RadioButton ui:field="radio2" name="dataTypeRadio" addStyleNames="{style.radio_pad}" />
+                                        </g:cell>
+                                        <g:cell horizontalAlignment="ALIGN_LEFT" verticalAlignment="ALIGN_TOP">
+                                            <boot:RadioButton ui:field="radio3" name="dataTypeRadio" addStyleNames="{style.radio_pad}" />
+                                        </g:cell>
+                                        <g:cell horizontalAlignment="ALIGN_LEFT" verticalAlignment="ALIGN_TOP">
+                                            <boot:RadioButton ui:field="radio4" name="dataTypeRadio" addStyleNames="{style.radio_pad}" />
+                                        </g:cell>
+                                        <g:cell horizontalAlignment="ALIGN_LEFT" verticalAlignment="ALIGN_TOP">
+                                            <boot:RadioButton ui:field="radio5" name="dataTypeRadio" addStyleNames="{style.radio_pad}" />
+                                        </g:cell>
+                                        <g:cell horizontalAlignment="ALIGN_LEFT" verticalAlignment="ALIGN_TOP">
+                                            <boot:RadioButton ui:field="radio6" name="dataTypeRadio" addStyleNames="{style.radio_pad}" />
+                                        </g:cell>
+                                        <g:cell horizontalAlignment="ALIGN_LEFT" verticalAlignment="ALIGN_TOP">
+                                            <boot:RadioButton ui:field="radio7" name="dataTypeRadio" addStyleNames="{style.radio_pad}" />
+                                        </g:cell>
+                                    </g:HorizontalPanel>
+                                </g:VerticalPanel>
+                            </g:cell>
+                        </g:VerticalPanel>
+                    </g:cell>
+                </g:HorizontalPanel>
+            </csigwt:layer>
+            <csigwt:layer top="90px" height="405px" left="5px" width="200px">
+                <csiwidget:ComponentTreePanel ui:field="treeWidget" height="405px" width="200px" />
+            </csigwt:layer>
+            <csigwt:layer top="90px" height="200px" left="210px" width="155px">
+                <g:VerticalPanel width="155px" visible="true">
+                    <csibutton:MiniAmberButton ui:field="group1Label" width="138px" addStyleNames="{style.important}" />
+                    <csiboot:CsiListView ui:field="group1" height="172px" width="150px" addStyleNames="{style.list_pad}" />
+                </g:VerticalPanel>
+            </csigwt:layer>
+            <csigwt:layer top="90px" height="200px" left="370px" width="155px">
+                <g:VerticalPanel width="155px" visible="true">
+                    <csibutton:MiniAmberButton ui:field="group2Label" width="138px" addStyleNames="{style.important}" />
+                    <csiboot:CsiListView ui:field="group2" height="172px" width="150px" addStyleNames="{style.list_pad}" />
+                </g:VerticalPanel>
+            </csigwt:layer>
+            <csigwt:layer top="295px" height="200px" left="210px" width="155px">
+                <g:VerticalPanel width="155px" visible="true">
+                    <csibutton:MiniAmberButton ui:field="group3Label" width="138px" addStyleNames="{style.important}" />
+                    <csiboot:CsiListView ui:field="group3" height="172px" width="150px" addStyleNames="{style.list_pad}" />
+                </g:VerticalPanel>
+            </csigwt:layer>
+            <csigwt:layer top="295px" height="200px" left="370px" width="155px">
+                <g:VerticalPanel width="155px" visible="true">
+                    <csibutton:MiniAmberButton ui:field="group4Label" width="138px" addStyleNames="{style.important}" />
+                    <csiboot:CsiListView ui:field="group4" height="172px" width="150px" addStyleNames="{style.list_pad}" />
+                </g:VerticalPanel>
+            </csigwt:layer>
+            <csigwt:layer top="90px" height="415px" left="530px" width="160px">
+                <g:VerticalPanel width="155px" visible="true">
+                    <csibutton:MiniBlueButton ui:field="valueButton" width="142px" addStyleNames="{style.important}" />
+                    <g:HorizontalPanel ui:field="valuePanel" width="155px" height="100px" visible="false" />
+                    <csibutton:MiniBlueButton ui:field="parameterButton" width="142px" addStyleNames="{style.button_toppad}" />
+                    <csiboot:CsiListView ui:field="parameterList" height="320px" width="154px" visible="false" addStyleNames="{style.list_pad}" />
+                    <csibutton:MiniAmberButton ui:field="fieldButton" width="142px" addStyleNames="{style.button_toppad}" />
+                    <csiboot:CsiListView ui:field="fieldList" height="320px" width="154px" visible="true" addStyleNames="{style.list_pad}" />
+                </g:VerticalPanel>
+            </csigwt:layer>
+            <csigwt:layer top="5px" height="490px" left="700px" width="310px">
+                <csiboot:DialogInfoTextArea ui:field="instructionTextArea" height="100%" width="97%" addStyleNames="{style.noborder}">
+                </csiboot:DialogInfoTextArea>
+            </csigwt:layer>
+        </csigwt:FullSizeLayoutPanel>
+	</csiboot:ValidatingDialog>
+</ui:UiBinder>

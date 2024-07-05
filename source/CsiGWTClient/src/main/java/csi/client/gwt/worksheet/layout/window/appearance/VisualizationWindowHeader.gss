@@ -1,0 +1,19 @@
+.header {
+    font-size: 10px;
+    color: #9a9a9a;
+    padding: 0px;
+    letter-spacing: 0.1em;
+    background-color: none;
+
+}
+
+.headerBar{
+        margin-right: 15px !important;
+}
+.headerText {
+  font-family: tahoma,arial,verdana,sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 0px;
+  display: none;
+}

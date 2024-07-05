@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flexLibProperties version="1">
+  <includeClasses>
+    <classEntry path="com.yahoo.yahoo.astra.mx.controls.TimeInput"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.controls.colorPickerClasses.ColorWheelPicker"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.controls.colorPickerClasses.DividedColorViewer"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.controls.colorPickerClasses.IColorPicker"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.controls.colorPickerClasses.IColorPreviewViewer"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.controls.colorPickerClasses.IColorRequester"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.controls.colorPickerClasses.IColorViewer"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.controls.colorPickerClasses.SwatchPicker"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.controls.colorPickerClasses.SwatchPickerDropDown"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.controls.inputClasses.BaseMultiFieldInput"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.core.yahoo_mx_internal"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.events.ColorRequestEvent"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.events.TimeInputEvent"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.events.TimeStepperEvent"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.managers.AutoCompleteManager"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.skins.halo.ColorViewerSimpleSkin"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.skins.halo.ColorViewerSkin"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.skins.halo.DropDownViewerSkin"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.skins.halo.EditableColorViewerSkin"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.skins.halo.SliderThumbSkin"/>
+    <classEntry path="com.yahoo.yahoo.astra.mx.skins.halo.SwatchHighlightSkin"/>
+    <classEntry path="com.yahoo.yahoo.astra.net.IPv4Address"/>
+    <classEntry path="com.yahoo.yahoo.astra.utils.CMYColor"/>
+    <classEntry path="com.yahoo.yahoo.astra.utils.CMYKColor"/>
+    <classEntry path="com.yahoo.yahoo.astra.utils.Color"/>
+    <classEntry path="com.yahoo.yahoo.astra.utils.ColorSpace"/>
+    <classEntry path="com.yahoo.yahoo.astra.utils.ColorUtil"/>
+    <classEntry path="com.yahoo.yahoo.astra.utils.DateUtil"/>
+    <classEntry path="com.yahoo.yahoo.astra.utils.HSBColor"/>
+    <classEntry path="com.yahoo.yahoo.astra.utils.IColor"/>
+    <classEntry path="com.yahoo.yahoo.astra.utils.PointUtil"/>
+    <classEntry path="com.yahoo.yahoo.astra.utils.RGBColor"/>
+    <classEntry path="com.yahoo.yahoo.astra.utils.StringUtil"/>
+    <classEntry path="com.yahoo.yahoo.astra.utils.TimeUnit"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>

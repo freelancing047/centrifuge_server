@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <bean id="impalaDriver" class="csi.server.connector.config.JdbcDriver">
+        <property name="name" value="Impala"/>
+        <property name="key" value="impala"/>
+        <property name="baseUrl" value="jdbc:impala://"/>
+        <property name="jdbcFactory"><null/></property>
+        <property name="tableNameQualifier" value=""/>
+        <property name="factory" value="csi.server.connector.jdbc.ImpalaConnectionFactory"/>
+        <property name="driverClass" value="com.cloudera.impala.jdbc41.Driver"/>
+        <property name="driverAccessRole"><null/></property>
+        <property name="sourceEditRole"><null/></property>
+        <property name="connectionEditRole"><null/></property>
+        <property name="queryEditRole"><null/></property>
+        <property name="dataViewingRole"><null/></property>
+        <property name="escapeChar"><null/></property>
+        <property name="selectNullString"><null/></property>
+        <property name="sortOrder"><null/></property>
+		<property name="castNulls" value="false"/>
+		<property name="remarks" value="This driver may be used to load data from a Big Data source providing an Impala interface into either an Installed Data Source or a DataView."/>
+        <property name="tableAliasMap">
+            <map>
+            </map>
+        </property>
+        <property name="capcoColumnMap">
+            <map>
+            </map>
+        </property>
+        <property name="authErrorCodes">
+            <list>
+            </list>
+        </property>
+        <property name="authSqlStates">
+            <list>
+            </list>
+        </property>
+        <property name="defaultProperties">
+            <props>
+                <prop key="csi.internal.defaultSchema">default</prop>
+                <prop key="csi.internal.authMech">3
+                    <!--The authentication mechanism to use. Set the value to one of the following numbers:
+                    0 for No Authentication
+                    1 for Kerberos
+                    2 for User Name
+                    3 for User Name and Password-->
+                </prop>
+                <prop key="distinctSources">false</prop>
+            </props>
+        </property>
+        <property name="typeMapping">
+            <props>
+            </props>
+        </property>
+        <property name="castMapping">
+            <props>
+                <prop key="String">CAST(% AS STRING)</prop>
+                <prop key="Boolean">CAST(% AS BOOLEAN)</prop>
+                <prop key="Integer">CAST(% AS BIGINT)</prop>
+                <prop key="Float">CAST(% AS DOUBLE PRECISION)</prop>
+                <prop key="Date-Time">CAST(% AS TIMESTAMP)</prop>
+                <prop key="Date">CAST(% AS TIMESTAMP)</prop>
+                <prop key="Time">CAST(% AS TIMESTAMP)</prop>
+                <prop key="Unsupported">%</prop>
+            </props>
+        </property>
+        <property name="uiConnectionConfig" ref="impalaConnectionConfig"/>
+    </bean>
+
+    <bean id="impalaConnectionConfig" class="csi.server.common.dto.config.connection.DriverConfigInfo">
+        <property name="configItems" ref="impalaConfigItemList_usernameAndPassword"/>
+        <!-- Alternative ux prompts for different authentication schemes
+        <property name="configItems" ref="impalaConfigItemList_noAuthentication"/>
+        <property name="configItems" ref="impalaConfigItemList_kerberos"/>
+        <property name="configItems" ref="impalaConfigItemList_username"/>
+        <property name="configItems" ref="impalaConfigItemList_usernameAndPassword"/>
+        -->
+    </bean>
+
+    <util:list id="impalaConfigItemList_noAuthentication" value-type="csi.server.common.dto.config.connection.ConfigItem">
+        <ref bean="impalaHostConfigItem" />
+        <ref bean="impalaPortConfigItem" />
+        <ref bean="impalaAdvancedConfigItem" />
+    </util:list>
+
+    <util:list id="impalaConfigItemList_kerberos" value-type="csi.server.common.dto.config.connection.ConfigItem">
+        <ref bean="impalaHostConfigItem" />
+        <ref bean="impalaPortConfigItem" />
+        <ref bean="impalaKbrRealmConfigItem" />
+        <ref bean="impalaKbrHostFQDNConfigItem" />
+        <ref bean="impalaKbrServiceNameConfigItem" />
+        <ref bean="impalaAdvancedConfigItem" />
+    </util:list>
+
+    <util:list id="impalaConfigItemList_username" value-type="csi.server.common.dto.config.connection.ConfigItem">
+        <ref bean="impalaHostConfigItem" />
+        <ref bean="impalaPortConfigItem" />
+        <ref bean="impalaUsernameConfigItem" />
+        <ref bean="impalaAdvancedConfigItem" />
+    </util:list>
+
+    <util:list id="impalaConfigItemList_usernameAndPassword" value-type="csi.server.common.dto.config.connection.ConfigItem">
+        <ref bean="impalaHostConfigItem" />
+        <ref bean="impalaPortConfigItem" />
+        <ref bean="impalaUsernameConfigItem" />
+        <ref bean="impalaPasswordConfigItem" />
+        <ref bean="impalaAdvancedConfigItem" />
+    </util:list>
+
+    <bean id="impalaHostConfigItem" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the name of the server hosting the Impala software or its IP address."/>
+        <property name="label" value="Enter the host name or IP address for the Impala server."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="true"/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.hostname"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="impalaPortConfigItem" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the port number being used by the Impala server."/>
+        <property name="label" value="Enter the Impala Server port number."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.port"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations" ref="impalaPortValidationOptions" />
+    </bean>
+
+    <util:list id="impalaPortValidationOptions" value-type="csi.server.common.dto.KeyValueItem">
+        <ref bean="impalaPortValidationKeyValue1" />
+        <ref bean="impalaPortValidationKeyValue2" />
+        <ref bean="impalaPortValidationKeyValue3" />
+    </util:list>
+
+    <bean id="impalaPortValidationKeyValue1" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="minValue"/>
+        <property name="value" value="1"/>
+    </bean>
+
+    <bean id="impalaPortValidationKeyValue2" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="maxValue"/>
+        <property name="value" value="65535"/>
+    </bean>
+
+    <bean id="impalaPortValidationKeyValue3" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="isNumber"/>
+        <property name="value" value="true"/>
+    </bean>
+
+
+    <bean id="impalaKbrRealmConfigItem" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="If your Kerberos setup does not define a default realm or if the realm of your Impala server is not the default, then enter the realm of the Impala server."/>
+        <property name="label" value="Enter the Kerberos realm"/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="string"/>
+        <property name="key" value="impala.kerberos.realm"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="impalaKbrHostFQDNConfigItem" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Use the fully qualified domain name of the Impala server host"/>
+        <property name="label" value="Enter the Kerberos host"/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="true"/>
+        <property name="type" value="string"/>
+        <property name="key" value="impala.kerberos.host"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="impalaKbrServiceNameConfigItem" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Use the service name of the Impala server"/>
+        <property name="label" value="Enter the Kerberos service"/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="true"/>
+        <property name="type" value="string"/>
+        <property name="key" value="impala.kerberos.service"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="impalaAdvancedConfigItem" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter any extra parameters for the connection. See Impala configuration guide for options."/>
+        <property name="label" value="Enter any extra parameters."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="csiParmsTable"/>
+        <property name="key" value="csi.params"/>
+        <property name="isAdvancedOption" value="true"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+
+
+    <bean id="impalaUsernameConfigItem" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the username for accessing the Impala server."/>
+        <property name="label" value="Enter the username for accessing the Impala server."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="string"/>
+        <property name="key" value="impala.username"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="impalaPasswordConfigItem" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the password for accessing the Impala."/>
+        <property name="label" value="Enter the password for accessing the Impala server."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="password"/>
+        <property name="key" value="impala.password"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+</beans>

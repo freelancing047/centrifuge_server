@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="modules/graph-persist/src/main/java"/>
+	<classpathentry kind="src" path="source/CsiGWTClient/src"/>
+	<classpathentry kind="src" path="source/glowacki/src/main/java"/>
+	<classpathentry kind="src" path="source/jaas/src/main/java"/>
+	<classpathentry kind="src" path="source/server/java"/>
+	<classpathentry kind="src" path="source/prefuse"/>
+	<classpathentry kind="src" path="source/tomcat-extensions/src/main/java"/>
+	<classpathentry kind="src" path="test/java"/>
+	<classpathentry kind="src" path="modules/pluggable-datasource/src/main/java"/>
+	<classpathentry kind="src" path="modules/api-ref-impls/sdk/PluggableDS/src"/>
+	<classpathentry kind="src" path="modules/csi-shared/src/main/java"/>
+	<classpathentry kind="src" path="source/web/WEB-INF/classes"/>
+	<classpathentry kind="src" path="source/CsiGWTClient/war"/>
+	<classpathentry kind="lib" path="lib/axis-1.4/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="lib/axis-1.4/saaj.jar"/>
+	<classpathentry kind="lib" path="lib/centrifuge-sf.jar"/>
+	<classpathentry kind="lib" path="lib/charting/Filters.jar"/>
+	<classpathentry kind="lib" path="lib/charting/jackson-core-asl-1.8.8.jar" sourcepath="c:/dev/apache/maven-repo/org/codehaus/jackson/jackson-core-asl/1.8.8/jackson-core-asl-1.8.8-sources.jar"/>
+	<classpathentry kind="lib" path="lib/charting/jackson-jaxrs-1.8.5.jar"/>
+	<classpathentry kind="lib" path="lib/charting/jackson-mapper-asl-1.8.5.jar"/>
+	<classpathentry kind="lib" path="lib/charting/jaxrs-api-2.3.4.Final.jar"/>
+	<classpathentry kind="lib" path="lib/charting/jcommon-1.0.17.jar"/>
+	<classpathentry kind="lib" path="lib/charting/jettison-1.3.1.jar"/>
+	<classpathentry kind="lib" path="lib/charting/jfreechart-1.0.14.jar" sourcepath="c:/dev/apache/maven-repo/org/jfree/jfreechart/1.0.14/jfreechart-1.0.14-sources.jar"/>
+	<classpathentry kind="lib" path="lib/charting/scannotation-1.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/charting/stax-api-1.0-2.jar" sourcepath="c:/dev/apache/maven-repo/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2-sources.jar"/>
+	<classpathentry kind="lib" path="lib/com.farata.dto2fx.annotations.jar"/>
+	<classpathentry kind="lib" path="lib/com.objectplanet.image.PngEncoder.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections-3.1.jar" sourcepath="c:/dev/apache/maven-repo/commons-collections/commons-collections/3.1/commons-collections-3.1-sources.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.4.jar" sourcepath="c:/dev/apache/maven-repo/commons-lang/commons-lang/2.4/commons-lang-2.4-sources.jar"/>
+	<classpathentry kind="lib" path="lib/DdlUtils-1.0-RC1.jar"/>
+	<classpathentry kind="lib" path="lib/empire-db/empire-db-2.4.0.jar"/>
+	<classpathentry kind="lib" path="lib/Filters.jar"/>
+	<classpathentry kind="lib" path="lib/flexjson-2.1.jar"/>
+	<classpathentry kind="lib" path="lib/guice/guice-3.0.jar"/>
+	<classpathentry kind="lib" path="lib/guice/guice-multibindings-3.0.jar"/>
+	<classpathentry kind="lib" path="lib/GWT/org.moxieapps.gwt.highcharts-1.7.0.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/3.4/annotations3.4.0/hibernate-annotations.jar" sourcepath="c:/dev/apache/maven-repo/org/hibernate/hibernate-annotations/3.4.0.GA/hibernate-annotations-3.4.0.GA-sources.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/3.4/core3.4/ejb3-persistence.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/3.4/core3.4/hibernate3.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/3.4/core3.4/hibernate-core.jar" sourcepath="c:/dev/apache/maven-repo/org/hibernate/hibernate-core/3.3.0.SP1/hibernate-core-3.3.0.SP1-sources.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/3.4/entitymanager3.4.0/hibernate-entitymanager.jar" sourcepath="c:/dev/apache/maven-repo/org/hibernate/hibernate-entitymanager/3.4.0.GA/hibernate-entitymanager-3.4.0.GA-sources.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-4.0.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-4.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/httpmime-4.0.jar"/>
+	<classpathentry kind="lib" path="lib/iText-2.1.3.jar"/>
+	<classpathentry kind="lib" path="lib/JavaAPIforKml.jar"/>
+	<classpathentry kind="lib" path="lib/jaxb-2007-01-24/jaxb-api.jar"/>
+	<classpathentry kind="lib" path="lib/jaxb-2007-01-24/jsr173_1.0_api.jar"/>
+	<classpathentry kind="lib" path="lib/jaxrs-api-2.2.2.GA.jar"/>
+	<classpathentry kind="lib" path="lib/jdbc/postgresql/postgresql-8.4-701.jdbc4.jar"/>
+	<classpathentry kind="lib" path="lib/joda-time-1.6.jar"/>
+	<classpathentry kind="lib" path="lib/jsr311-api-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/jung/2.0.1/collections-generic-4.01.jar"/>
+	<classpathentry kind="lib" path="lib/jung/2.0.1/colt-1.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/jung/2.0.1/jung-algorithms-2.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/jung/2.0.1/jung-api-2.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/jung/2.0.1/jung-graph-impl-2.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/jung/2.0.1/stax-api-1.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.15.jar" sourcepath="c:/dev/apache/maven-repo/log4j/log4j/1.2.15/log4j-1.2.15-sources.jar"/>
+	<classpathentry kind="lib" path="lib/lucene-1.4.3.jar"/>
+	<classpathentry kind="lib" path="lib/xstream/xstream-1.4.3/jettison-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/xstream/xstream-1.4.3/joda-time-1.6.jar"/>
+	<classpathentry kind="lib" path="lib/xstream/xstream-1.4.3/stax-api-1.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/xstream/xstream-1.4.3/xstream-1.4.3.jar" sourcepath="c:/dev/apache/maven-repo/com/thoughtworks/xstream/xstream/1.4.3/xstream-1.4.3-sources.jar"/>
+	<classpathentry kind="lib" path="lib/rome-0.9.jar"/>
+	<classpathentry kind="lib" path="lib/scannotation-1.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/charting/slf4j-api-1.7.1.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat-7.0.14/servlet-api.jar" sourcepath="c:/dev/apache/maven-repo/org/apache/tomcat/tomcat-servlet-api/7.0.14/tomcat-servlet-api-7.0.14-sources.jar"/>
+	<classpathentry kind="lib" path="lib/xstream/xstream-1.4.3/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/build-only/junit-4.1.jar" sourcepath="c:/dev/apache/maven-repo/junit/junit/4.1/junit-4.1-sources.jar"/>
+	<classpathentry kind="lib" path="lib/httpunit/httpunit.jar"/>
+	<classpathentry kind="lib" path="lib/build-only/jaxen-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/build-only/naming-factory-dbcp.jar"/>
+	<classpathentry kind="lib" path="lib/guice/guice-servlet-3.0.jar"/>
+	<classpathentry kind="lib" path="lib/stringtree-json-2.0.9.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat-7.0.14/tomcat-dbcp.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat-7.0.14/catalina.jar" sourcepath="d:/maven/repo/org/apache/tomcat/tomcat-catalina/7.0.14/tomcat-catalina-7.0.14-sources.jar"/>
+	<classpathentry kind="lib" path="lib/metro1.2/webservices-tools.jar"/>
+	<classpathentry kind="lib" path="lib/jdbc/access/Access_JDBC40.jar"/>
+	<classpathentry kind="lib" path="lib/metro1.2/webservices-rt.jar"/>
+	<classpathentry kind="lib" path="lib/easymock/easymock-3.0.jar"/>
+	<classpathentry kind="lib" path="modules/api-ref-impls/sdk/PluggableDS/lib/sqlbuilder-2.0.10.jar"/>
+	<classpathentry kind="lib" path="modules/api-ref-impls/sdk/PluggableDS/lib/common-util-1.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/tomcat-7.0.14/tomcat-coyote.jar"/>
+	<classpathentry kind="lib" path="lib/GWT/lib-gwt-svg-0.5.7.jar" sourcepath="c:/dev/apache/maven-repo/org/vectomatic/lib-gwt-svg/0.5.7/lib-gwt-svg-0.5.7-sources.jar"/>
+	<classpathentry kind="lib" path="lib/GWT/gin-2.0.0.jar" sourcepath="c:/dev/apache/maven-repo/com/google/gwt/inject/gin/2.0.0/gin-2.0.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/GWT/guice-assistedinject-3.0.jar"/>
+	<classpathentry kind="lib" path="lib/GWT/gwt-user-2.5.1.jar" sourcepath="c:/dev/apache/maven-repo/com/google/gwt/gwt-user/2.5.1/gwt-user-2.5.1-sources.jar"/>
+	<classpathentry kind="lib" path="lib/GWT/gwt-dev-2.5.1.jar" sourcepath="c:/dev/apache/maven-repo/com/google/gwt/gwt-dev/2.5.1/gwt-dev-2.5.1-sources.jar"/>
+	<classpathentry kind="lib" path="lib/GWT/validation-api-1.0.0.GA-sources.jar"/>
+	<classpathentry kind="lib" path="lib/GWT/validation-api-1.0.0.GA.jar"/>
+	<classpathentry kind="lib" path="lib/spring/3.2.1/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/spring/3.2.1/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/spring/3.2.1/spring-aop-3.2.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring/3.2.1/spring-beans-3.2.1.RELEASE.jar" sourcepath="c:/dev/apache/maven-repo/org/springframework/spring-beans/3.2.1.RELEASE/spring-beans-3.2.1.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="lib/spring/3.2.1/spring-context-3.2.1.RELEASE.jar" sourcepath="c:/dev/apache/maven-repo/org/springframework/spring-context/3.2.1.RELEASE/spring-context-3.2.1.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="lib/spring/3.2.1/spring-core-3.2.1.RELEASE.jar" sourcepath="c:/dev/apache/maven-repo/org/springframework/spring-core/3.2.1.RELEASE/spring-core-3.2.1.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="lib/spring/3.2.1/spring-expression-3.2.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring/3.2.1/spring-jdbc-3.2.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring/3.2.1/spring-tx-3.2.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring/3.2.1/spring-web-3.2.1.RELEASE.jar" sourcepath="c:/dev/apache/maven-repo/org/springframework/spring-web/3.2.1.RELEASE/spring-web-3.2.1.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="lib/gentyref-1.1.0.jar" sourcepath="c:/dev/apache/maven-repo/com/googlecode/gentyref/gentyref/1.1.0/gentyref-1.1.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/guava-14.0.jar" sourcepath="c:/dev/apache/maven-repo/com/google/guava/guava/14.0/guava-14.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/javax.inject-1.jar"/>
+	<classpathentry kind="lib" path="lib/lombok-0.11.6.jar"/>
+	<classpathentry kind="lib" path="lib/GWT/guava-gwt-14.0.jar"/>
+	<classpathentry kind="lib" path="lib/GWT/json-20090211.jar"/>
+	<classpathentry kind="lib" path="lib/GWT/gwtquery-1.3.3.jar" sourcepath="c:/dev/apache/maven-repo/com/googlecode/gwtquery/gwtquery/1.3.3/gwtquery-1.3.3-sources.jar"/>
+	<classpathentry kind="lib" path="lib/build-only/mockito-all-1.9.5.jar"/>
+	<classpathentry kind="lib" path="lib/batik/batik-transcoder-1.7.jar"/>
+	<classpathentry kind="lib" path="lib/batik/batik-dom-1.7.jar"/>
+	<classpathentry kind="lib" path="lib/commons-cli-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/build-only/gwt-codeserver-2.5.1.jar"/>
+	<classpathentry kind="lib" path="lib/GWT/org.moxieapps.gwt.uploader-1.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-fileupload-1.3.jar" sourcepath="c:/dev/apache/maven-repo/commons-fileupload/commons-fileupload/1.3/commons-fileupload-1.3-sources.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.4.jar" sourcepath="c:/dev/apache/maven-repo/commons-io/commons-io/2.4/commons-io-2.4-sources.jar"/>
+	<classpathentry kind="lib" path="lib/GWT/gwt-bootstrap-2.3.2.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib/GWT/gxt-3.0.5.jar"/>
+	<classpathentry kind="lib" path="lib/GWT/lienzo-core-1.2-20130703.210012-1.jar"/>
+	<classpathentry kind="lib" path="lib/mongo-2.7.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JRE_6"/>
+	<classpathentry kind="output" path="build/centrifuge-server/webapps/Centrifuge/WEB-INF/classes"/>
+</classpath>

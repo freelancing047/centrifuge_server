@@ -1,0 +1,140 @@
+/**
+ * Copies static web resources into the appropriate place in the build
+ */
+
+apply from: 'gradle/properties.gradle'
+
+
+def h5Runtime = "${webappCentrifugeRuntime}/h5"
+
+configurations{
+    arcgisJs
+}
+
+dependencies{
+    arcgisJs 'csi:arcgis_js:3.23@zip'
+}
+
+task deployWebapp {
+    dependsOn ':source:CsiGWTClient:war', 'deployTomcat'
+    outputs.dir webappRuntime
+    outputs.dir "${buildRuntime}/conf/centrifuge"
+    group = deployGroup
+    doLast {
+
+        def ROOT = new File(webappRuntime,"ROOT")
+
+        if(!ROOT.exists()){
+            if(ROOT.mkdirs()) {
+            }
+        }
+
+        copy {
+            from('source/web/ROOT/WEB-INF/rewrite.config')
+            into "${webappRuntime}/ROOT/WEB-INF/"
+        }
+
+        copy {
+            from project(':source:CsiGWTClient').tasks.war
+            into webappRuntime
+        }
+        copy {
+            from zipTree("${webappRuntime}/CsiGWTClient.war")
+            into webappCentrifugeRuntime
+        }
+        delete "${webappRuntime}/CsiGWTClient.war"
+        delete "${webappCentrifugeRuntime}/META-INF"
+
+        copy {
+            from "${webappCentrifugeRuntime}"
+            into "${h5Runtime}"
+            exclude "WEB-INF"
+        }
+        delete "${webappCentrifugeRuntime}/csi"
+        delete "${webappCentrifugeRuntime}/font"
+        delete "${webappCentrifugeRuntime}/img"
+        delete "${webappCentrifugeRuntime}/js"
+        delete "${webappCentrifugeRuntime}/less"
+        delete "${webappCentrifugeRuntime}/h5.jsp"
+
+        copy {
+            from('source/web')
+            into webappCentrifugeRuntime
+            exclude 'admin', 'assets', 'flex', 'flexpoc', 'html', 'javascript', 'pages', 'poc', 'samples', 'views', 'map2.jsp', 'bundlemap2.jsp', 'heatmap2.jsp', 'trackmap.jsp', 'csimap.css', 'proxy.jsp', 'ROOT'
+        }
+        copy {
+            from('source/web/samples/templates/Admin Tools')
+            into "${webappCentrifugeRuntime}/samples/templates/Admin Tools"
+            include "*.xml"
+        }
+        copy {
+            from('source/web/samples/templates/CSI Samples')
+            into "${webappCentrifugeRuntime}/samples/templates/CSI Samples"
+            include "*.xml"
+        }
+        copy {
+            from('source/web/samples/templates/CSI Samples')
+            into "${buildRuntime}/userfiles/centrifuge/datafiles"
+            exclude "*.xml"
+        }
+        copy {
+            from('source/server/src/main/resources')
+            into "${webappCentrifugeRuntime}/resources"
+        }
+        file("${webappCentrifugeRuntime}/resources/temp").mkdirs()
+
+        copy {
+            from 'help'
+            into "${h5Runtime}/help"
+        }
+        copy {
+            from zipTree(configurations.arcgisJs.getSingleFile())
+            into "${h5Runtime}/js/arcgis_js_api"
+            exclude '**/build/'
+            rename 'init.js', 'init_orig.js'
+        }
+        copy {
+            from('source/web/javascript/arcgis_js_api')
+            into "${h5Runtime}/js/arcgis_js_api"
+        }
+        copy {
+            from('source/web/map2.jsp')
+            into "${h5Runtime}"
+        }
+        copy {
+            from('source/web/heatmap2.jsp')
+            into "${h5Runtime}"
+        }
+        copy {
+            from('source/web/bundlemap2.jsp')
+            into "${h5Runtime}"
+        }
+        copy {
+            from('source/web/trackmap.jsp')
+            into "${h5Runtime}"
+        }
+        copy {
+            from('source/web/proxy.jsp')
+            into "${h5Runtime}"
+        }
+        copy {
+            from('source/web/csimap.css')
+            into "${h5Runtime}/css"
+        }
+
+        copy {
+            from 'source/server/src/main/java/META-INF/ioc'
+            into "${buildRuntime}/conf/centrifuge/META-INF/ioc"
+        }
+        
+        copy {
+            from 'source/server/src/main/java/META-INF/override'
+            into "${buildRuntime}/conf/centrifuge/META-INF/override"
+        }
+
+        copy {
+            from 'source/server/src/main/java/META-INF/sample'
+            into "${buildRuntime}/conf/centrifuge/META-INF/sample"
+        }
+    }
+}

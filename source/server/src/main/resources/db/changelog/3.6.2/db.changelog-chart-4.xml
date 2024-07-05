@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="jkim" id="chart-4-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="chartsettings">
+            <column name="chartdisplay" type="BOOLEAN" defaultValueBoolean="true" valueBoolean="true" >
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="jkim" id="chart-4-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="chartsettings">
+            <column name="tabledisplay" type="BOOLEAN" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="pl" id="graph-4-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="relgraphviewdef">
+            <column name="minimumnodescalefactor" type="FLOAT" defaultValueNumeric="8" valueNumeric="8">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="pl" id="graph-4-4" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="visualizationdef">
+            <column name="hideoverview" type="BOOLEAN" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,120 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:d="urn:import:csi.client.gwt.widget.drawing" xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes"
+	xmlns:settings="urn:import:csi.client.gwt.viz.shared.settings"
+	xmlns:layoutcombo="urn:import:csi.client.gwt.viz.graph.settings">
+	<ui:style>
+		.mainRight {
+		margin-bottom: 8px;
+		}
+
+		.mainLeft {
+		max-height: 325px;
+		overflow-y: auto;
+		width: 100%;
+		display: block;
+		border-top: 1px solid #CCC;
+		border-bottom: 1px solid #CCC;
+		}
+
+		.fieldSearch {
+		margin: 0;
+		margin-bottom: 12px;
+		width: 90%;
+		}
+
+		.rowStyle {
+		white-space: nowrap;
+		}
+
+		.controlMargin {
+		margin-left: 14px;
+		}
+
+        .marginText {
+        padding-top: 4px;
+        padding-right:2px;
+        }
+	</ui:style>
+	<ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+	<ui:with field="dataViewDef" type="csi.server.common.model.dataview.DataViewDef" />
+	<ui:with field="visualizationDef"
+		type="csi.server.common.model.visualization.graph.RelGraphViewDef" />
+	<settings:VisualizationSettingsModal
+		visualizationDef="{visualizationDef}" dataViewDef="{dataViewDef}"
+		ui:field="modal" title="{i18n.get.graphSettings}" width="1080px">
+		<boot:FluidContainer>
+			<boot:FluidRow addStyleNames="{style.rowStyle}">
+				<boot:Column size="3">
+					<g:HorizontalPanel>
+					       <boot:ControlLabel for="fieldDefComboBox" addStyleNames="{style.marginText}">
+                                    <g:InlineLabel text="{i18n.get.tableSortTabFieldLabel}" />
+                        </boot:ControlLabel>
+						<combo:FieldDefComboBox ui:field="fieldDefComboBox"></combo:FieldDefComboBox>
+						<boot:Button ui:field="addButton"></boot:Button>
+					</g:HorizontalPanel>
+					<!-- <boot:NavSearch -->
+					<!-- placeholder="{i18n.get.find}..." -->
+					<!-- ui:field="searchField" -->
+					<!-- size="12" -->
+					<!-- addStyleNames="{style.fieldSearch}" -->
+					<!-- alignment="LEFT"/> -->
+					<!-- <g:HTMLPanel -->
+					<!-- ui:field="mainLeft" -->
+					<!-- addStyleNames="{style.mainLeft}"> -->
+					<!-- <boot:FluidContainer -->
+					<!-- ui:field="detailsContainer" -->
+					<!-- addStyleNames="overlay, graph-setting-detail-panel"/> -->
+					<!-- </g:HTMLPanel> -->
+
+				</boot:Column>
+				<boot:Column size="9" ui:field="mainRight">
+					<boot:Form type="INLINE" addStyleNames="{style.mainRight}">
+						<boot:Fieldset>
+							<boot:Controls>
+								<boot:ControlLabel for="input01">
+									<g:InlineLabel text="{i18n.get.title}" />
+								</boot:ControlLabel>
+								<boot:TextBox alternateSize="XLARGE" boot:id="input01"
+									ui:field="visualizationTitle" />
+							</boot:Controls>
+							<boot:Controls>
+								<boot:ControlLabel for="input02"
+									addStyleNames="{style.controlMargin}">
+									<g:InlineLabel text="{i18n.get.filter_name}" />
+								</boot:ControlLabel>
+								<combo:StringComboBox boot:id="input02"
+									ui:field="filterListBox" />
+							</boot:Controls>
+							<boot:Controls>
+								<boot:ControlLabel for="input03">
+									<g:InlineLabel text="{i18n.get.menuKeyConstants_layout}" />
+								</boot:ControlLabel>
+								<layoutcombo:GraphLayoutComboBox
+									boot:id="input03" ui:field="layoutListBox" />
+							</boot:Controls>
+							<boot:Controls>
+								<boot:ControlLabel for="input04">
+									<g:InlineLabel text="{i18n.get.theme}" />
+								</boot:ControlLabel>
+								<combo:ResourceBasicsComboBox
+									boot:id="input04" ui:field="themeListBox" />
+							</boot:Controls>
+						</boot:Fieldset>
+					</boot:Form>
+				</boot:Column>
+			</boot:FluidRow>
+			<boot:FluidRow>
+
+				<boot:Column size="12">
+					<g:AbsolutePanel ui:field="panel"
+						addStyleNames="graph-setting-right-panel">
+						<d:DrawingPanel ui:field="drawingPanel" />
+					</g:AbsolutePanel>
+
+				</boot:Column>
+			</boot:FluidRow>
+		</boot:FluidContainer>
+	</settings:VisualizationSettingsModal>
+</ui:UiBinder>

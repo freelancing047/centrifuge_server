@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="false" version="1">
+  <includeClasses>
+    <classEntry path="com.adobe.cairngorm.CairngormMessageCodes"/>
+    <classEntry path="com.adobe.cairngorm.commands.ICommand"/>
+    <classEntry path="com.adobe.cairngorm.control.CairngormEvent"/>
+    <classEntry path="com.adobe.cairngorm.control.CairngormEventDispatcher"/>
+    <classEntry path="com.adobe.cairngorm.control.FrontController"/>
+    <classEntry path="com.adobe.cairngorm.model.IModelLocator"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>

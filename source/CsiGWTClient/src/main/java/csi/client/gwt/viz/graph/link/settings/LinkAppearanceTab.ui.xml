@@ -1,0 +1,259 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+        xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:g="urn:import:com.google.gwt.user.client.ui"
+        xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
+        xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes"
+        xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+        xmlns:form="urn:import:com.sencha.gxt.widget.core.client.form"
+        xmlns:base="urn:import:com.github.gwtbootstrap.client.ui.base"
+        xmlns:local="urn:import:csi.client.gwt.viz.graph.node.settings.appearance">
+   <ui:style gss="true">
+        .inline-block {
+            display: inline-block;
+            margin-right: 4px;
+        }
+
+        .colorButton {
+            font-size: 18px;
+            width: 15px;
+            padding: 4px;
+        }
+
+        .appearance-container {
+            padding: 0;
+            padding-top: 10px;
+        }
+
+        .preview-label {
+            cursor: default;
+        }
+    </ui:style>
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <boot:Tab
+            heading="{i18n.get.linkSettings_appearance}"
+            active="true">
+        <g:LayoutPanel
+                height="100%"
+                width="100%">
+            <g:layer
+                    top="0px"
+                    bottom="0px">
+                <boot:FluidContainer
+                        addStyleNames="no-user-select {style.appearance-container}">
+                    <boot:FluidRow>
+                        <boot:Column size="6">
+                            <boot:Form
+                                    type="HORIZONTAL"
+                                    addStyleNames="node-appearance-form">
+                                <boot:Fieldset>
+                                    <boot:ControlGroup>
+                                        <boot:ControlLabel
+                                                for="nameInput">
+                                            <base:InlineLabel text="{i18n.get.name}"/>
+                                        </boot:ControlLabel>
+                                        <boot:Controls>
+                                            <boot:TextBox
+                                                    boot:id="nameInput"
+                                                    placeholder="{i18n.get.name}"
+                                                    ui:field="nameTextBox"/>
+                                        </boot:Controls>
+                                    </boot:ControlGroup>
+                                    <boot:ControlGroup>
+                                        <boot:ControlLabel>
+                                            <boot:CheckBox
+                                                    text="{i18n.get.label}"
+                                                    ui:field="labelCheckBox"
+                                                    addStyleNames="no-margin-input"/>
+                                        </boot:ControlLabel>
+                                        <boot:Controls>
+                                            <boot:RadioButton
+                                                    name="LabelMode"
+                                                    value="true"
+                                                    ui:field="labelFixed"
+                                                    addStyleNames="{style.inline-block}"
+                                                    text="{i18n.get.fixed}"/>
+                                            <boot:RadioButton
+                                                    name="LabelMode"
+                                                    ui:field="labelDynamic"
+                                                    addStyleNames="{style.inline-block}"
+                                                    text="{i18n.get.field}"/>
+                                            <combo:FieldDefComboBox
+                                                    ui:field="labelFdcb"
+                                                    addStyleNames="node-edit-field-list"/>
+                                            <boot:TextBox
+                                                    placeholder="{i18n.get.name}"
+                                                    ui:field="labelTextBox"/>
+                                        </boot:Controls>
+                                    </boot:ControlGroup>
+                                    <boot:ControlGroup>
+                                        <boot:ControlLabel>
+                                            <base:InlineLabel text="{i18n.get.type}"/>
+                                        </boot:ControlLabel>
+                                        <boot:Controls>
+                                            <boot:RadioButton
+                                                    name="TypeMode"
+                                                    value="true"
+                                                    ui:field="typeFixed"
+                                                    addStyleNames="{style.inline-block}"
+                                                    text="{i18n.get.fixed}"/>
+                                            <boot:RadioButton
+                                                    name="TypeMode"
+                                                    ui:field="typeDynamic"
+                                                    addStyleNames="{style.inline-block}"
+                                                    text="{i18n.get.field}"/>
+                                            <combo:FieldDefComboBox
+                                                    ui:field="typeFieldList"
+                                                    addStyleNames="node-edit-field-list"/>
+                                            <boot:TextBox
+                                                    placeholder="{i18n.get.linkSetting_typePlaceholder}"
+                                                    ui:field="typeTextBox"/>
+                                        </boot:Controls>
+                                    </boot:ControlGroup>
+                                </boot:Fieldset>
+                            </boot:Form>
+                        </boot:Column>
+                        <boot:Column size="6">
+                            <boot:Form
+                                    type="HORIZONTAL"
+                                    addStyleNames="node-appearance-form">
+                                <boot:Fieldset>
+                                    <boot:ControlGroup>
+                                        <boot:ControlLabel for="color">
+                                            <boot:CheckBox text="{i18n.get.nodeAppearance_color}" ui:field="colorCheckBox"
+                                                addStyleNames="no-margin-input" value="true" />
+                                        </boot:ControlLabel>
+                                        <boot:Controls>
+                                            <boot:PrependButton>
+                                                <boot:Button
+                                                        icon="TINT"
+                                                        ui:field="colorButton"
+                                                        addStyleNames="{style.colorButton}"/>
+                                                <boot:TextBox
+                                                        boot:id="color"
+                                                        placeholder="#123456"
+                                                        ui:field="colorTextBox"
+                                                        alternateSize="SMALL"/>
+                                            </boot:PrependButton>
+                                            <gxt:ColorPalette
+                                                    ui:field="colorPalette"
+                                                    addStyleNames="node-edit-color-pallette"
+                                                    visible="false"/>
+                                        </boot:Controls>
+                                    </boot:ControlGroup>
+                                    <boot:ControlGroup>
+                                        <boot:ControlLabel
+                                                for="linkSize">
+                                            <boot:CheckBox
+                                                    text="{i18n.get.size}"
+                                                    ui:field="hideSizeCheckBox"
+                                                    addStyleNames="no-margin-input"
+                                                    value="true"/>
+                                        </boot:ControlLabel>
+                                        <boot:Controls>
+                                            <boot:RadioButton
+                                                    name="SizeMode"
+                                                    value="true"
+                                                    ui:field="sizeFixed"
+                                                    addStyleNames="{style.inline-block}"
+                                                    text="{i18n.get.fixed}"/>
+                                            <boot:RadioButton
+                                                    name="SizeMode"
+                                                    ui:field="sizeDynamic"
+                                                    addStyleNames="{style.inline-block}"
+                                                    text="{i18n.get.metric}"/>
+                                            <boot:RadioButton
+                                                    name="SizeMode"
+                                                    ui:field="sizeComputed"
+                                                    addStyleNames="{style.inline-block}"
+                                                    text="{i18n.get.function}">
+                                            </boot:RadioButton>
+                                        </boot:Controls>
+                                        <boot:Controls>
+                                            <boot:TextBox
+                                                    placeholder="1.0"
+                                                    ui:field="staticSizeTextBox"
+                                                    alternateSize="MINI"/>
+                                            <boot:HelpInline
+                                                    ui:field="staticSizeHelp"
+                                                    text="{i18n.get.linkSettings_sizeHelp}"/>
+                                        </boot:Controls>
+                                        <boot:Controls>
+                                            <combo:FieldDefComboBox
+                                                    ui:field="sizeFunctionFdcb"
+                                                    addStyleNames="bootstrapComboBox"/>
+                                        </boot:Controls>
+                                        <boot:Controls>
+                                            <form:ComboBox
+                                                    ui:field="sizeFunctionComboBox"
+                                                    addStyleNames="bootstrapComboBox"/>
+                                        </boot:Controls>
+                                        <boot:Controls>
+                                            <local:SizingAttributeComboBox
+                                                    ui:field="sizeByAttribute">
+                                            </local:SizingAttributeComboBox>
+                                        </boot:Controls>
+                                    </boot:ControlGroup>
+                                    <boot:ControlGroup>
+                                        <boot:ControlLabel
+                                                for="transparencyByType">
+                                            <boot:CheckBox
+                                                    text="{i18n.get.transparencyShort}"
+                                                    ui:field="hideTransaprencyCheckBox"
+                                                    addStyleNames="no-margin-input"
+                                                    value="true"/>
+                                        </boot:ControlLabel>
+                                        <boot:Controls>
+                                            <boot:RadioButton
+                                                    name="transparencyMode"
+                                                    value="true"
+                                                    ui:field="transparencyFixed"
+                                                    addStyleNames="{style.inline-block}"
+                                                    text="{i18n.get.fixed}"/>
+                                            <boot:RadioButton
+                                                    name="transparencyMode"
+                                                    ui:field="transparencyDynamic"
+                                                    addStyleNames="{style.inline-block}"
+                                                    text="{i18n.get.metric}"/>
+                                            <boot:RadioButton
+                                                    value="true"
+                                                    name="transparencyMode"
+                                                    ui:field="transparencyComputed"
+                                                    addStyleNames="{style.inline-block}"
+                                                    text="{i18n.get.function}"/>
+                                        </boot:Controls>
+                                        <boot:Controls>
+                                            <boot:TextBox
+                                                    placeholder="1.0"
+                                                    ui:field="staticTransparencyTextBox"
+                                                    alternateSize="MINI"/>
+                                            <boot:HelpInline
+                                                    ui:field="staticTransparencyHelp"
+                                                    text="{i18n.get.linkSettings_transparencyHelp}">
+                                            </boot:HelpInline>
+                                        </boot:Controls>
+                                        <boot:Controls>
+                                            <combo:FieldDefComboBox
+                                                    ui:field="transparencyFunctionFdcb"
+                                                    addStyleNames="bootstrapComboBox"/>
+                                        </boot:Controls>
+                                        <boot:Controls>
+                                            <form:ComboBox
+                                                    ui:field="transparencyFunctionComboBox"
+                                                    addStyleNames="bootstrapComboBox"/>
+                                        </boot:Controls>
+                                        <boot:Controls>
+                                            <local:SizingAttributeComboBox
+                                                    ui:field="transparencyByAttribute">
+                                            </local:SizingAttributeComboBox>
+                                        </boot:Controls>
+                                    </boot:ControlGroup>
+                                </boot:Fieldset>
+                            </boot:Form>
+                        </boot:Column>
+                    </boot:FluidRow>
+                </boot:FluidContainer>
+            </g:layer>
+        </g:LayoutPanel>
+    </boot:Tab>
+</ui:UiBinder>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <bean id="installedTableDriver" class="csi.server.connector.config.JdbcDriver">
+        <property name="name" value="Excel - Text - Installed"/>
+        <property name="key" value="installedtabledriver"/>
+        <property name="baseUrl" value="jdbc:postgresql:"/>
+        <property name="jdbcFactory"><null/></property>
+        <property name="tableNameQualifier"><null/></property>
+        <property name="factory" value="csi.server.connector.jdbc.InstalledTableConnectionFactory"/>
+        <property name="driverClass" value="org.postgresql.Driver"/>
+        <property name="driverAccessRole"><null/></property>
+        <property name="sourceEditRole"><null/></property>
+        <property name="connectionEditRole"><null/></property>
+        <property name="queryEditRole"><null/></property>
+        <property name="dataViewingRole"><null/></property>
+        <property name="escapeChar" value="'"/>
+        <property name="selectNullString"><null/></property>
+        <property name="sortOrder"><null/></property>
+		<property name="allowCustomQueries" value="true"/>
+		<property name="castNulls" value="false"/>
+		<property name="remarks" value="This driver is used to install and secure data sources for sharing; and to load data from such sources into another installed source or a DataView."/>
+        <property name="tableAliasMap">
+            <map>
+           </map>
+        </property>
+        <property name="capcoColumnMap">
+            <map>
+            </map>
+        </property>
+        <property name="authErrorCodes">
+            <list>
+            </list>
+        </property>
+        <property name="authSqlStates">
+            <list>
+                <value>08004</value>
+            </list>
+        </property>
+        <property name="defaultProperties">
+            <props>
+                <prop key="distinctSources">false</prop>
+                <prop key="inPlace">true</prop>
+            </props>
+        </property>
+        <property name="hiddenProperties">
+            <props>
+                <prop key="csi.hostname">127.0.0.1</prop>
+                <prop key="csi.port">9191</prop>
+                <prop key="csi.databaseName">cachedb</prop>
+                <prop key="csi.username">csiserver</prop>
+                <prop key="csi.password">changeme</prop>
+                <prop key="csi.list">installed_tables</prop>
+            </props>
+        </property>
+        <property name="typeMapping">
+            <props>
+            </props>
+        </property>
+        <property name="castMapping">
+            <props>
+                <prop key="String">cast_string(%)</prop>
+                <prop key="boolean">cast_boolean(%)</prop>
+                <prop key="Integer">cast_integer(%)</prop>
+                <prop key="Float">cast_double(%)</prop>
+                <prop key="Date-Time">cast_datetime(%)</prop>
+                <prop key="Date">cast_date(%)</prop>
+                <prop key="Time">cast_time(%)</prop>
+                <prop key="Unsupported">%</prop>
+            </props>
+        </property>
+        <property name="uiConnectionConfig" ref="installedTableConnectionConfig"/>
+    </bean>
+
+    <bean id="installedTableConnectionConfig" class="csi.server.common.dto.config.connection.DriverConfigInfo">
+        <property name="configItems" ref="installedTableConfigItemList">
+        </property>
+    </bean>
+
+    <util:list id="installedTableConfigItemList" value-type="csi.server.common.dto.config.connection.ConfigItem">
+    </util:list>
+
+</beans>

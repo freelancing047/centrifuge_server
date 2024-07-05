@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet author="dchang" id="chartselectionandfilter-1-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<createTable tableName="chartcriterion">
+			<column name="columnindex" type="INT4">
+                <constraints nullable="false"/>
+            </column>
+            <column name="columnheader" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="operatorstring" type="VARCHAR(31)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="listposition" type="INT4">
+                <constraints nullable="false"/>
+            </column>
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+		</createTable>
+	</changeSet>
+    <changeSet author="dchang" id="chartselectionandfilter-1-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="chartcriterion_pkey" tableName="chartcriterion"/>
+    </changeSet>
+    <changeSet author="dchang" id="chartselectionandfilter-1-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="chartsettings_chartcriterion">
+            <column name="chartsettings_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="filtercriteria_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="dchang" id="chartselectionandfilter-1-4" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addUniqueConstraint columnNames="filtercriteria_uuid" constraintName="chartsettings_chartcriterion_filtercriteria_uuid_key" deferrable="false" disabled="false" initiallyDeferred="false" tableName="chartsettings_chartcriterion"/>
+    </changeSet>
+    <changeSet author="dchang" id="chartselectionandfilter-1-5" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="chartcriterion" constraintName="fkchartselectionandfilter-1-5" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelobject"/>
+    </changeSet>
+    <changeSet author="dchang" id="chartselectionandfilter-1-6" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="chartsettings_uuid" baseTableName="chartsettings_chartcriterion" constraintName="fkchartselectionandfilter-1-6" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="chartsettings"/>
+    </changeSet>
+    <changeSet author="dchang" id="chartselectionandfilter-1-7" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="filtercriteria_uuid" baseTableName="chartsettings_chartcriterion" constraintName="fkchartselectionandfilter-1-7" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="chartcriterion"/>
+    </changeSet>
+    
+	<changeSet author="dchang" id="chartselectionandfilter-1-8" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<createTable tableName="singledoubletypecriterion">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="testvalue" type="DOUBLE">
+            	<constraints nullable="false"/>
+            </column>
+		</createTable>
+	</changeSet>
+    <changeSet author="dchang" id="chartselectionandfilter-1-9" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="singledoubletypecriterion" constraintName="fkchartselectionandfilter-1-9" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="chartcriterion"/>
+    </changeSet>
+
+	<changeSet author="dchang" id="chartselectionandfilter-1-10" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<createTable tableName="singleintegertypecriterion">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="testvalue" type="INT">
+            	<constraints nullable="false"/>
+            </column>
+		</createTable>
+	</changeSet>
+    <changeSet author="dchang" id="chartselectionandfilter-1-11" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="singleintegertypecriterion" constraintName="fkchartselectionandfilter-1-11" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="chartcriterion"/>
+    </changeSet>
+
+	<changeSet author="dchang" id="chartselectionandfilter-1-12" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<createTable tableName="twodoubletypecriterion">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="minvalue" type="DOUBLE">
+            	<constraints nullable="false"/>
+            </column>
+            <column name="maxvalue" type="DOUBLE">
+            	<constraints nullable="false"/>
+            </column>
+		</createTable>
+	</changeSet>
+    <changeSet author="dchang" id="chartselectionandfilter-1-13" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="twodoubletypecriterion" constraintName="fkchartselectionandfilter-1-13" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="chartcriterion"/>
+    </changeSet>
+
+</databaseChangeLog>

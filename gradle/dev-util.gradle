@@ -1,0 +1,20 @@
+/**
+ * Tasks that speed development up.
+ */
+
+apply from: 'gradle/properties.gradle'
+
+/**
+ * Builds the server jar and deploys it into the build.
+ * You have to stop and start your server for changes to take affect.
+ */
+
+task redeployServer {
+    dependsOn ':source:server:jar'
+    doLast {
+        copy {
+            from project(':source:server').tasks.jar
+            into "${webappCentrifugeRuntime}/WEB-INF/lib"
+        }
+    }
+}

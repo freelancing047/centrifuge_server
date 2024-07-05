@@ -1,0 +1,70 @@
+<project name="migration tools" default="dist" basedir=".">
+    <description>
+        simple example build file
+    </description>
+  <!-- set global properties for this build -->
+  <property name="src" location="source/java"/>
+  <property name="build" location="build"/>
+  <property name="dist"  location="dist"/>
+
+    <path id="compile.classpath">
+        <fileset dir="../../lib">
+            <include name="**/*.jar" />
+        </fileset>
+        <fileset dir="../../build/jars">
+            <include name="**/*.jar" />
+        </fileset>
+    </path>
+
+  <target name="cleanBuild" depends="clean,dist"/>
+
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build}"/>
+  	<mkdir dir="${build}/classes"/>
+    <mkdir dir="${dist}" />
+  </target>
+
+  <target name="compile" depends="init"
+        description="compile the source " >
+    <!-- Compile the java code from ${src} into ${build} -->
+    <javac srcdir="${src}"
+           destdir="${build}/classes"
+           target="1.5"
+            debug="true">
+        <compilerarg value="-Xlint:-checked"/>
+        <classpath refid="compile.classpath"/>
+    </javac>
+
+  </target>
+
+  <target name="dist" depends="compile"
+        description="generate the distribution" >
+    <!-- Create the distribution directory -->
+    <mkdir dir="${dist}/lib"/>
+
+    <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
+    <jar jarfile="${dist}/lib/migrate.jar">
+        <manifest>
+          <attribute name="Main-Class" value="csi.tools.migrate.BootStrap"/>
+        </manifest>
+        <fileset dir="${build}/classes">
+        	<include name="**/*"/>
+        </fileset>
+        <fileset dir="${src}">
+            <include name="*.xsl"/>
+        </fileset>    	
+    </jar>
+  </target>
+
+  <target name="clean"
+        description="clean up" >
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+    <delete dir="${src}/dist"/>
+  </target>
+</project>
+

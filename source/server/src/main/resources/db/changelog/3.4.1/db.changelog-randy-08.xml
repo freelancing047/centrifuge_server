@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="rfoster" id="rfoster-08-001" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="datasetop">
+            <column name="forcelocal" type="BOOLEAN" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-002" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="queryparameterdef">
+            <column name="alwaysprompt" type="BOOLEAN" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-003" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="linkupmapdef">
+            <column name="editok" type="BOOLEAN" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-004" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <dropColumn columnName="cachetype" tableName="fielddef"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-005" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "modelresource" SET "resourcetype" = 14 WHERE "resourcetype" = 11
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-006" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "modelresource" SET "resourcetype" = 13 WHERE "resourcetype" = 10
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-007" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "modelresource" SET "resourcetype" = 10 WHERE "resourcetype" IS NULL AND "template" = true
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-008" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="modelresource">
+            <column name="priortype" type="INTEGER"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-009" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="securitytagsinfo">
+            <column name="basetagstring" type="VARCHAR(255)"/>
+            <column name="datatagstring" type="VARCHAR(255)"/>
+            <column name="delimiterstring" type="VARCHAR(255)"/>
+            <column name="columnstring" type="VARCHAR(255)"/>
+            <column name="ignoredtagstring" type="VARCHAR(255)"/>
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="mode" type="INTEGER"/>
+            <column name="parent_uuid" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-010" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="securitytagsinfo_pkey" tableName="securitytagsinfo"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-011" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="securitytagsinfo" constraintName="fk__securitytagsinfo__uuid__modelobject__uuid" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelobject"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-012" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="modelresource">
+            <column name="securitytagsinfo_uuid" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-013" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="securitytagsinfo_uuid" baseTableName="modelresource" constraintName="fk__modelresource__securitytagsinfo_uuid__capcoinfo__uuid" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="securitytagsinfo"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-014" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <dropColumn columnName="blocked" tableName="acl"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-015" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="sourceaclentry">
+            <column name="key" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="datapreviewrole" type="VARCHAR(255)"/>
+            <column name="driveraccessrole" type="VARCHAR(255)"/>
+            <column name="sourceeditrole" type="VARCHAR(255)"/>
+            <column name="connectioneditrole" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-016" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="key" constraintName="sourceaclentry_pkey" tableName="sourceaclentry"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-017" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="acl_sourceentries">
+            <column name="acl_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sourceentries_key" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-018" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="sourceentries_key" baseTableName="acl_sourceentries" constraintName="acl_sourceentries_sourceentries_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="key" referencedTableName="sourceaclentry"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-019" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="acl_id" baseTableName="acl_sourceentries" constraintName="acl_sourceentries_acl_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="acl"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-022" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="acl_linkupentries">
+            <column name="acl_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="linkupentries_key" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-023" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="linkupentries_key" baseTableName="acl_linkupentries" constraintName="acl_linkupentries_linkupentries_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="key" referencedTableName="sourceaclentry"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-024" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="acl_id" baseTableName="acl_linkupentries" constraintName="acl_linkupentries_acl_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="acl"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-025" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="capcosecuritytag">
+            <column name="rolename" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="enforce" type="boolean" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-026" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="rolename" constraintName="capcosecuritytag_pkey" tableName="capcosecuritytag"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-027" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="acl_capcotags">
+            <column name="acl_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="capcotags_rolename" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-028" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="capcotags_rolename" baseTableName="acl_capcotags" constraintName="acl_capcotags_capcotags_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="rolename" referencedTableName="capcosecuritytag"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-029" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="acl_id" baseTableName="acl_capcotags" constraintName="acl_capcotags_acl_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="acl"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-030" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="genericsecuritytag">
+            <column name="rolename" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="enforce" type="boolean" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-031" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="rolename" constraintName="genericsecuritytag_pkey" tableName="genericsecuritytag"/>
+    </changeSet>
+	<changeSet author="rfoster" id="rfoster-08-032" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="acl_generictags">
+            <column name="acl_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="generictags_rolename" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-033" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="generictags_rolename" baseTableName="acl_generictags" constraintName="acl_generictags_generictags_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="rolename" referencedTableName="genericsecuritytag"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-034" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="acl_id" baseTableName="acl_generictags" constraintName="acl_generictags_acl_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="acl"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-035" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="acl">
+            <column name="locked" type="BOOLEAN" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-036" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="acl">
+            <column name="usecapcodefault" type="BOOLEAN" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-08-037" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="sqltabledef">
+            <column name="referenceid" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,293 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+        xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:g="urn:import:com.google.gwt.user.client.ui"
+        xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+        xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes"
+        xmlns:d="urn:import:com.github.gwtbootstrap.datetimepicker.client.ui"
+        xmlns:base="urn:import:com.github.gwtbootstrap.client.ui.base"
+        xmlns:gt="urn:import:csi.client.gwt.viz.graph.tab"
+        >
+   <ui:style gss="true">
+        .inline-block {
+            display: inline-block;
+            margin-right: 4px;
+        }
+
+        .form {
+            width: 375px;
+            margin: 5px 10px;
+            display: inline-block;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+            vertical-align: top;
+            padding: 0px 5px;
+        }
+    </ui:style>
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <gt:GraphTab
+            tabname="{i18n.get.timePlayerTab_heading}"
+            icon="TIME"
+            ui:field="tab">
+        <g:LayoutPanel
+                height="100%"
+                width="100%">
+            <g:layer
+                    top="0"
+                    bottom="0">
+                <boot:FluidContainer addStyleNames="time-player-tab">
+                    <boot:FluidRow>
+                        <boot:Form
+                                type="HORIZONTAL"
+                                addStyleNames="{style.form}"
+                                visible="false">
+                            <boot:Legend ui:field="timeControlsLegend"/>
+                            <boot:Fieldset>
+                                <boot:FluidRow>
+                                    <boot:ProgressBar
+                                            ui:field="progressBar"
+                                            color="INFO"/>
+                                    <boot:Button
+                                            ui:field="playButton"
+                                            icon="PLAY"
+                                            type="SUCCESS"
+                                            text="{i18n.get.timePlayerTab_timeControls_play}"/>
+
+                                    <boot:Button
+                                            ui:field="stepButton"
+                                            icon="STEP_FORWARD"
+                                            type="WARNING"
+                                            text="{i18n.get.timePlayerTab_timeControls_step}"/>
+
+                                    <boot:Button
+                                            ui:field="stopButton"
+                                            icon="STOP"
+                                            enabled="false"
+                                            type="DANGER"
+                                            text="{i18n.get.timePlayerTab_timeControls_stop}"/>
+                                    <boot:Button
+                                            ui:field="resetButton"
+                                            icon="UNDO"
+                                            enabled="false"
+                                            type="INVERSE"
+                                            text="{i18n.get.timePlayerTab_timeControls_reset}">
+                                    </boot:Button>
+                                </boot:FluidRow>
+                            </boot:Fieldset>
+                        </boot:Form>
+                        <boot:Form
+                                type="HORIZONTAL"
+                                addStyleNames="{style.form}">
+                            <boot:Legend ui:field="timeRangeLegend"/>
+                            <boot:Fieldset>
+                                <boot:ControlGroup>
+                                    <boot:ControlLabel><base:InlineLabel text="{i18n.get.timePlayerTab_startTime}"/>
+                                    </boot:ControlLabel>
+                                    <boot:Controls>
+                                        <d:DateTimeBox
+                                                minView="MONTH"
+                                                pickerPosition="TOP_RIGHT"
+                                                alternateSize="SMALL"
+                                                ui:field="startDateBoxAppended"/>
+                                        <boot:TextBox
+                                                alternateSize="SMALL"
+                                                width="100px"
+                                                ui:field="startTextBox"/>
+                                    </boot:Controls>
+                                </boot:ControlGroup>
+                                <boot:ControlGroup>
+                                    <boot:ControlLabel><base:InlineLabel text="{i18n.get.timePlayerTabCurrentTime}"/>
+                                    </boot:ControlLabel>
+                                    <boot:Controls>
+                                        <d:DateTimeBox
+                                                minView="MONTH"
+                                                pickerPosition="TOP_RIGHT"
+                                                alternateSize="SMALL"
+                                                ui:field="currentDateBoxAppended"/>
+                                        <boot:TextBox
+                                                alternateSize="SMALL"
+                                                width="100px"
+                                                ui:field="currentTextBox"/>
+                                    </boot:Controls>
+                                </boot:ControlGroup>
+                                <boot:ControlGroup>
+                                    <boot:ControlLabel><base:InlineLabel text="{i18n.get.timePlayerTabEndTime}"/>
+                                    </boot:ControlLabel>
+                                    <boot:Controls>
+                                        <d:DateTimeBox
+                                                minView="MONTH"
+                                                pickerPosition="TOP_RIGHT"
+                                                alternateSize="SMALL"
+                                                ui:field="endDateBoxAppended"/>
+                                        <boot:TextBox
+                                                ui:field="endTextBox"
+                                                width="100px"
+                                                alternateSize="SMALL"/>
+                                    </boot:Controls>
+                                </boot:ControlGroup>
+                            </boot:Fieldset>
+                        </boot:Form>
+                        <boot:Form
+                                type="HORIZONTAL"
+                                addStyleNames="{style.form}">
+                            <boot:Legend ui:field="eventDefinitionLegend"/>
+                            <boot:Fieldset>
+                                <boot:ControlGroup>
+                                    <boot:ControlLabel><base:InlineLabel text="{i18n.get.timePlayerTabStartTime}"/></boot:ControlLabel>
+                                    <boot:Controls>
+                                        <combo:FieldDefComboBox
+                                                addStyleNames="node-edit-field-list"
+                                                ui:field="startFieldDefCB"/>
+                                    </boot:Controls>
+                                </boot:ControlGroup>
+                                <boot:ControlGroup>
+                                    <boot:ControlLabel><base:InlineLabel text="{i18n.get.timePlayerTabEndTime}"/>
+                                    </boot:ControlLabel>
+                                    <boot:Controls>
+                                        <boot:RadioButton
+                                                name="playbackMode"
+                                                addStyleNames="{style.inline-block}"
+                                                ui:field="playbackModeCumulativeRB" text="{i18n.get.timePlayerTabNone}">
+                                        </boot:RadioButton>
+                                        <boot:RadioButton
+                                                name="playbackMode"
+                                                addStyleNames="{style.inline-block}"
+                                                ui:field="playbackModeFixedTimeSpanRB" text="{i18n.get.timePlayerTabConstant}">
+                                        </boot:RadioButton>
+                                        <boot:RadioButton
+                                                name="playbackMode"
+                                                addStyleNames="{style.inline-block}"
+                                                ui:field="playbackModeTimeSpanRB" text="{i18n.get.timePlayerTabField}">
+                                        </boot:RadioButton>
+                                    </boot:Controls>
+                                </boot:ControlGroup>
+                                <boot:ControlGroup ui:field="endFieldControlGroup" visible="false">
+                                    <boot:ControlLabel><base:InlineLabel text="{i18n.get.timePlayerTabEndField}"/></boot:ControlLabel>
+                                    <boot:Controls>
+                                        <combo:FieldDefComboBox
+                                                addStyleNames="node-edit-field-list"
+                                                ui:field="endFieldDefCB"/>
+                                    </boot:Controls>
+                                </boot:ControlGroup>
+                                <boot:ControlGroup
+                                        ui:field="durationControlGroup" visible="false">
+                                    <boot:ControlLabel><base:InlineLabel text="{i18n.get.timePlayerTabDuration}"/></boot:ControlLabel>
+                                    <boot:Controls>
+                                        <g:HorizontalPanel>
+	                                        <boot:TextBox
+	                                                alternateSize="MINI"
+	                                                ui:field="durationTextBox"/>
+	                                        <combo:StringComboBox 
+	                                                addStyleNames="string-combo-style"
+                                                    width="162px"
+	                                                ui:field="durationListBox">
+	                                        </combo:StringComboBox>
+                                        </g:HorizontalPanel>
+                                    </boot:Controls>
+                                </boot:ControlGroup>
+                            </boot:Fieldset>
+                        </boot:Form>
+                        <boot:Form
+                                type="HORIZONTAL"
+                                addStyleNames="{style.form}">
+                            <boot:Legend ui:field="timeWindowLegend"/>
+                            <boot:Fieldset>
+                                <boot:ControlGroup
+                                        ui:field="stepSizeControlGroup">
+                                    <boot:ControlLabel>
+                                        <base:InlineLabel text="{i18n.get.timeplayerTab_stepMode}"/>
+                                    </boot:ControlLabel>
+                                    <boot:Controls>
+                                        <boot:RadioButton
+                                                name="stepMode"
+                                                ui:field="percentageStepModeRB"
+                                                addStyleNames="{style.inline-block}"
+                                                text="{i18n.get.timeplayerTab_stepMode_percentage}">
+                                        </boot:RadioButton>
+                                        <boot:RadioButton
+                                                name="stepMode"
+                                                ui:field="absoluteStepModeRB"
+                                                addStyleNames="{style.inline-block}"
+                                                text="{i18n.get.timeplayerTab_stepMode_absoluteTime}">
+                                        </boot:RadioButton>
+                                        <boot:RadioButton
+                                                name="stepMode"
+                                                ui:field="relativeStepModeRB"
+                                                addStyleNames="{style.inline-block}"
+                                                text="{i18n.get.timeplayerTab_stepMode_relativeTime}">
+                                        </boot:RadioButton>
+                                    </boot:Controls>
+                                    <boot:ControlLabel>
+                                        <base:InlineLabel text="{i18n.get.timeplayerTab_stepSize}"/>
+                                    </boot:ControlLabel>
+                                    <boot:Controls>
+                                        <g:HorizontalPanel>
+	                                        <boot:TextBox
+	                                                alternateSize="MINI"
+	                                                ui:field="stepSizeTextBox"/>
+	                                        <combo:StringComboBox 
+	                                                addStyleNames="string-combo-style"
+	                                                width="162px"
+	                                                ui:field="stepSizeListBox">
+	                                        </combo:StringComboBox>
+                                        </g:HorizontalPanel>
+                                    </boot:Controls>
+                                </boot:ControlGroup>
+                                <boot:ControlGroup
+                                        ui:field="frameSizeControlGroup">
+                                    <boot:ControlLabel>
+                                        <base:InlineLabel text="{i18n.get.timePlayerTab_frameSize}"/>
+                                    </boot:ControlLabel>
+                                    <boot:Controls>
+                                        <g:HorizontalPanel>
+	                                        <boot:TextBox
+	                                                alternateSize="MINI"
+	                                                ui:field="frameSizeTextBox"/>
+	                                        <combo:StringComboBox 
+	                                                addStyleNames="string-combo-style"
+	                                                width="160px"
+	                                                ui:field="frameSizeListBox">
+	                                        </combo:StringComboBox>
+                                        </g:HorizontalPanel>
+                                    </boot:Controls>
+                                </boot:ControlGroup>
+                                <boot:ControlGroup>
+                                    <boot:ControlLabel>
+                                        <base:InlineLabel text="{i18n.get.timePlayerTab_hide}"/>
+                                    </boot:ControlLabel>
+                                    <boot:Controls>
+                                        <boot:CheckBox
+                                                ui:field="nonVisibleItems"
+                                                text="{i18n.get.nonVisisbleItems}"/>
+                                    </boot:Controls>
+                                </boot:ControlGroup>
+                                <boot:ControlGroup>
+                                    <boot:ControlLabel>
+                                        <base:InlineLabel text="{i18n.get.timePlayerTab_speed}"/>
+                                    </boot:ControlLabel>
+                                    <boot:Controls>
+                                        <boot:RadioButton
+                                                name="speed"
+                                                ui:field="slowSpeedRB"
+                                                addStyleNames="{style.inline-block}"
+                                                text="{i18n.get.timePlayerTab_speed_slow}"/>
+                                        <boot:RadioButton
+                                                name="speed"
+                                                ui:field="moderateSpeedRB"
+                                                addStyleNames="{style.inline-block}"
+                                                text="{i18n.get.timePlayerTab_speed_moderate}"/>
+                                        <boot:RadioButton
+                                                name="speed"
+                                                ui:field="fastSpeedRB"
+                                                addStyleNames="{style.inline-block}"
+                                                text="{i18n.get.timePlayerTab_speed_fast}"/>
+                                    </boot:Controls>
+                                </boot:ControlGroup>
+                            </boot:Fieldset>
+                        </boot:Form>
+                    </boot:FluidRow>
+                </boot:FluidContainer>
+            </g:layer>
+        </g:LayoutPanel>
+    </gt:GraphTab>
+</ui:UiBinder>

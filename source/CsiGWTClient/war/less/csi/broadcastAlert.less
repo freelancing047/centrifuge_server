@@ -1,0 +1,35 @@
+.broadcast-alert {
+	height: 20px;
+	width: 130px;
+	right: 184px;
+	position: absolute;
+}
+
+.broadcast-alert-in {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 2s linear;
+}
+
+.broadcast-alert-out {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+
+.broadcast-alert-div {
+
+    height: 38px;
+}
+
+
+.sendTo:hover{
+  opacity: 1;
+  background-color: rgba(0,0,0,.08);
+  /*transition: opacity 0.5s ease;*/
+}
+.sendTo{
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  background-color: rgba(0,0,0,.08);
+}

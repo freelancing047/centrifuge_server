@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <bean id="excelDriver" class="csi.server.connector.config.JdbcDriver">
+        <property name="name" value="Original Excel Driver"/>
+        <property name="key" value="excel"/>
+        <property name="baseUrl" value="jdbc:excel:///"/>
+        <property name="jdbcFactory"><null/></property>
+        <property name="tableNameQualifier"><null/></property>
+        <property name="factory" value="csi.server.connector.jdbc.hxtt.ExcelConnectionFactory"/>
+        <property name="driverClass" value="com.hxtt.sql.excel.ExcelDriver"/>
+        <property name="driverAccessRole"><null/></property>
+        <property name="sourceEditRole"><null/></property>
+        <property name="connectionEditRole"><null/></property>
+        <property name="queryEditRole"><null/></property>
+        <property name="dataViewingRole"><null/></property>
+        <property name="escapeChar" value="&quot;"/>
+        <property name="selectNullString"><null/></property>
+        <property name="sortOrder"><null/></property>
+		<property name="castNulls" value="false"/>
+		<property name="remarks" value="This driver may be used to load data from an Excel file into either an Installed Data Source or a DataView."/>
+        <property name="tableAliasMap">
+            <map>
+            </map>
+        </property>
+        <property name="capcoColumnMap">
+            <map>
+            </map>
+        </property>
+        <property name="authErrorCodes">
+            <list>
+            </list>
+        </property>
+        <property name="authSqlStates">
+            <list>
+            </list>
+        </property>
+        <property name="defaultProperties">
+            <props>
+                <prop key="dateFormat">
+                    yyyy-MM-dd HH:mm:ss.SSS | yyyy-MM-dd HH:mm:ss | yyyy-MM-dd |  HH:mm:ss.SSS |  HH:mm:ss | MM/dd/yyyy
+                </prop>
+                <prop key="maxScanRows">10</prop>
+                <prop key="delayedClose">-1</prop>
+                <prop key="distinctSources">false</prop>
+            </props>
+        </property>
+        <property name="typeMapping">
+            <props>
+                <prop key="BLOB">string</prop>
+                <prop key="JAVA_OBJECT">string</prop>
+            </props>
+        </property>
+        <property name="castMapping">
+            <props>
+                <prop key="String">CSTR(%)</prop>
+                <prop key="Boolean">CBOOL(% AS YES/NO)</prop>
+                <prop key="Integer">CLNG(% AS BIGINT)</prop>
+                <prop key="Float">CDBL(% AS DOUBLE)</prop>
+                <prop key="Date-Time">CAST(% AS TIMESTAMP)</prop>
+                <prop key="Date">CAST(% AS DATE)</prop>
+                <prop key="Time">CAST(% AS TIME)</prop>
+                <prop key="Unsupported">%</prop>
+            </props>
+        </property>
+        <property name="uiConnectionConfig" ref="excelConnectionConfig"/>
+    </bean>
+
+    <bean id="excelConnectionConfig" class="csi.server.common.dto.config.connection.DriverConfigInfo">
+        <property name="configItems" ref="excelConfigItemList">
+        </property>
+    </bean>
+
+    <util:list id="excelConfigItemList" value-type="csi.server.common.dto.config.connection.ConfigItem">
+        <ref bean="excelFileConfigItem" />
+    </util:list>
+
+    <bean id="excelFileConfigItem" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Choose an Excel data file with an extension of '.xls' or '.xlsx' from those listed. Or, you may browse your local file system for a file to upload; and when it has been uploaded, select it."/>
+        <property name="label" value="Select an Excel file to open."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="true"/>
+        <property name="type" value="file"/>
+        <property name="key" value="csi.file"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues" ref="excelDefaultValues" />
+        <property name="validationOperations" ref="excelValidationOptions" />
+    </bean>
+
+    <util:list id="excelDefaultValues" value-type="csi.server.common.dto.KeyValueItem">
+        <ref bean="excelDefaultKeyValue" />
+    </util:list>
+
+    <bean id="excelDefaultKeyValue" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="filePickerDescription"/>
+        <property name="value" value="Microsoft Excel Files (*.xls, *.xlsx)"/>
+    </bean>
+
+    <util:list id="excelValidationOptions" value-type="csi.server.common.dto.KeyValueItem">
+        <ref bean="excelValidationKeyValue1" />
+        <ref bean="excelValidationKeyValue2" />
+    </util:list>
+
+    <bean id="excelValidationKeyValue1" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="fileType"/>
+        <property name="value" value=".xls"/>
+    </bean>
+
+    <bean id="excelValidationKeyValue2" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="fileType"/>
+        <property name="value" value=".xlsx"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,78 @@
+
+form {
+	margin: 0;
+}
+
+// This is to make textboxes smaller in size within grids so that they don't look wierd (combo-box not alligning).
+.sencha-gxt-grid {
+	select , textarea , input[type="text"] , input[type="password"] , input[type="datetime"] , input[type="datetime-local"] , input[type="date"] , input[type="month"] , input[type="time"] , input[type="week"] , input[type="number"] , input[type="email"] , input[type="url"] , input[type="search"] , input[type="tel"] , input[type="color"] , .uneditable-input {
+		padding: 0;
+		margin-bottom: 0;
+	}
+		
+}
+
+// When not in grid and we want the same compact input field sizes (especially for use with ComboBox).
+.compact {
+	select , textarea , input[type="text"] , input[type="password"] , input[type="datetime"] , input[type="datetime-local"] , input[type="date"] , input[type="month"] , input[type="time"] , input[type="week"] , input[type="number"] , input[type="email"] , input[type="url"] , input[type="search"] , input[type="tel"] , input[type="color"] , .uneditable-input {
+		padding: 0;
+		margin-bottom: 0;
+	}
+}
+
+// Make sencha comboBox look like bootstrap combo
+.bootstrapComboBox {
+	td {
+		input {
+			width: 206px ! important;
+			background: none;
+		}
+
+		div {
+			position: relative;
+			left: -25px;
+			width: 17px;
+			height: 20px;
+			margin-top: 1px;
+			background: url("/Centrifuge/h5/img/listboxCursor.png") no-repeat ! important;
+			border: none;
+			cursor: pointer;
+		}
+	}
+}
+
+.bootstrapCompactComboBox {
+	td {
+		input {
+			width: 150px ! important;
+			background: none;
+		}
+
+		div {
+			position: relative;
+			left: -25px;
+			width: 17px;
+			height: 20px;
+			margin-top: 1px;
+			background: url("/Centrifuge/h5/img/listboxCursor.png") no-repeat ! important;
+			border: none;
+			cursor: pointer;
+		}
+	}
+}
+
+//Allows inline forms to use control groups and controls
+//may not be needed for future versions of bootstrap.
+.form-inline .controls {
+	display: inline;
+	margin-right: 10px;
+}
+
+.csi-dual-list-spacer {
+    margin-top:10px
+}
+
+.csi-dual-list-buttons {
+    overflow-y:auto; 
+    position:relative;
+}

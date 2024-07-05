@@ -1,0 +1,23 @@
+#!/bin/bash
+if [ "$(id -u)" != "0" ]; then
+   echo ""
+else
+   echo "This installation script can not be run using sudo or as the root user."
+   exit 1
+fi
+
+SCRIPT=$(readlink -f "$0")
+SCRIPTDIR=$(dirname "$SCRIPT")
+
+if [ "${SCRIPTDIR}" != "${PWD}" ]; then
+    echo "This installation script must be executed from the directory it resides in."
+    exit 10
+fi
+
+echo ""
+echo "# --------------------------------------------------"
+echo "# Installing Centrifuge %%%%%"
+echo "# --------------------------------------------------"
+
+more <<"EOF"
+

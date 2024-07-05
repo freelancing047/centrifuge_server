@@ -1,0 +1,3 @@
+*.sh        eol=lf
+*.script    eol=lf
+install.header.prefix   eol=lf

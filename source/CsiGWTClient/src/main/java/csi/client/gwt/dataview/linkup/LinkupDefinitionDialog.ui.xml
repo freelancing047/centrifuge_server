@@ -1,0 +1,121 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:gwt="urn:import:com.google.gwt.user.client.ui"
+	xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+    xmlns:grid="urn:import:com.sencha.gxt.widget.core.client.grid"
+    xmlns:csigwt="urn:import:csi.client.gwt.widget.ui"
+    xmlns:csiboot="urn:import:csi.client.gwt.widget.boot"
+    xmlns:csibutton="urn:import:csi.client.gwt.widget.buttons"
+    xmlns:list="urn:import:csi.client.gwt.widget.list_boxes">
+
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+
+   <ui:style gss="true">
+  		.rpad {
+   			padding-right:15px;
+  		}
+  		.tabborder {
+   			border-style:solid;
+   			border-width:1px;
+  		}
+        .margin-fix input {
+            margin-bottom: 0px !important;
+            margin-left: 8px;
+        }
+        .top-margin {
+            margin-top: 10px;
+        }
+        .button-spacer {
+            margin-left: 8px;
+        }
+        .leftRadioButton {
+            padding-right:0px;
+            width:26px;
+        }
+        .rightRadioButton {
+            padding-left:0px;
+        }
+ 	</ui:style>
+
+    <csiboot:ValidatingDialog bodyWidth="950px" bodyHeight="450px" ui:field="dialog">
+        <csigwt:FullSizeLayoutPanel ui:field="topPanel">
+            <csigwt:layer top="10px" height="30px" left="20px" width="425px">
+                <gwt:HorizontalPanel height="60px" width="425px">
+                    <boot:RadioButton name="linkup" ui:field="newLinkup" addStyleNames="{style.rpad}{style.leftRadioButton}"></boot:RadioButton>
+                    <boot:RadioButton name="linkup" ui:field="existingLinkup" addStyleNames="{style.rpad}{style.rightRadioButton}"></boot:RadioButton>
+                    <csibutton:MiniCyanButton ui:field="renameButton" text="{i18n.get.changeName}" addStyleNames="{style.button-spacer}" />
+                    <csibutton:MiniSimpleButton ui:field="restoreButton" text="{i18n.get.restoreName}" visible="false" addStyleNames="{style.button-spacer}" />
+                </gwt:HorizontalPanel>
+            </csigwt:layer>
+            <csigwt:layer top="40px" height="120px" left="20px" width="425px" addStyleNames="{style.margin-fix}">
+                <gwt:VerticalPanel width="420px">
+                        <gwt:HorizontalPanel ui:field="availableLinkupsDropDownPanel" height="40px" addStyleNames="{style.margin-fix}">
+                            <gwt:Label ui:field="availableLinkupLabel"></gwt:Label>
+                            <list:CsiStringListBox ui:field="availableLinkups" width="343px" visible="false"/>
+                        </gwt:HorizontalPanel>
+                        <gwt:HorizontalPanel ui:field="linkupNamePanel" height="40px" addStyleNames="{style.margin-fix}">
+                            <gwt:Label ui:field="linkupNameLabel"></gwt:Label>
+                            <boot:TextBox ui:field="newLinkupName" addStyleNames="{style.rpad}{style.margin-fix}" width="320px" enabled="false"/>
+                        </gwt:HorizontalPanel>
+                        <gwt:HorizontalPanel height="40px" ui:field="templateDropDownPanel" addStyleNames="{style.margin-fix}">
+                            <gwt:Label ui:field="availableTemplatesLabel"></gwt:Label>
+                            <list:CsiStringListBox ui:field="availableTemplates" width="345px"/>
+                        </gwt:HorizontalPanel>
+
+                </gwt:VerticalPanel>
+            </csigwt:layer>
+           	<csigwt:layer top="130px" height="320px" left="20px" width="425px">
+ 		        <gwt:VerticalPanel ui:field="parameterSetDataPanel" width="425px">
+<!-- 		        	<gwt:HorizontalPanel ui:field="noParametersPanel" height="20px" width="425px"> -->
+<!-- 				 		<gwt:cell horizontalAlignment="ALIGN_CENTER"> -->
+<!-- 	               			<gwt:Label ui:field="optionalParms"></gwt:Label> -->
+<!-- 						</gwt:cell> -->
+<!-- 		        	</gwt:HorizontalPanel> -->
+                		<gwt:Label ui:field="templateParmsLabel"></gwt:Label>
+                    <grid:Grid addStyleNames="{style.tabborder}" ui:field="templateParms" />
+                    <gwt:cell verticalAlignment="ALIGN_BOTTOM">
+                        <boot:CheckBox ui:field="noNullsCheckBox" visible="false" addStyleNames="{style.top-margin}" />
+                    </gwt:cell>
+                    <gwt:cell verticalAlignment="ALIGN_BOTTOM">
+                        <boot:CheckBox ui:field="editOkCheckBox" visible="false" />
+                    </gwt:cell>
+                    <gwt:cell verticalAlignment="ALIGN_BOTTOM">
+                        <boot:CheckBox ui:field="promptCheckBox" visible="false" />
+                    </gwt:cell>
+                    <gwt:cell verticalAlignment="ALIGN_BOTTOM">
+                        <boot:CheckBox ui:field="monitorCheckBox" visible="false" />
+                    </gwt:cell>
+                    <!-- if (_fieldParmsSupported)
+               		<gwt:Label ui:field="fieldParmsLabel"></gwt:Label>
+                       <grid:Grid addStyleNames="{style.tabborder}" ui:field="fieldParms" />
+                       -->
+ 		        </gwt:VerticalPanel>
+	        </csigwt:layer>
+            <csigwt:layer top="10px" height="30px" left="470px" width="460px">
+                <gwt:HorizontalPanel height="30px" width="460px">
+                    <gwt:cell horizontalAlignment="ALIGN_CENTER">
+                        <gwt:Label ui:field="fieldMapError"></gwt:Label>
+                    </gwt:cell>
+                </gwt:HorizontalPanel>
+            </csigwt:layer>
+            <csigwt:layer top="10px" height="450px" left="470px" width="460px">
+                <gwt:VerticalPanel height="435px" width="460px">
+                    <gwt:HorizontalPanel height="20px" width="460px">
+                        <gwt:cell horizontalAlignment="ALIGN_LEFT">
+                            <gwt:Label ui:field="fieldMapLabel"></gwt:Label>
+                        </gwt:cell>
+                        <gwt:cell horizontalAlignment="ALIGN_RIGHT">
+                            <csibutton:MiniCyanButton ui:field="newFieldButton"></csibutton:MiniCyanButton>
+                        </gwt:cell>
+                    </gwt:HorizontalPanel>
+                    <grid:Grid addStyleNames="{style.tabborder}" ui:field="fieldMap" />
+                    <gwt:HorizontalPanel height="20px" width="460px">
+                        <gwt:InlineLabel ui:field="dataModeLabel" addStyleNames="{style.rpad}"></gwt:InlineLabel>
+                        <boot:RadioButton name="dataMode" ui:field="allRows" addStyleNames="{style.rpad}{style.leftRadioButton}"></boot:RadioButton>
+                        <boot:RadioButton name="dataMode" ui:field="uniqueRows" addStyleNames="{style.rpad}{style.rightRadioButton}"></boot:RadioButton>
+                    </gwt:HorizontalPanel>
+                </gwt:VerticalPanel>
+          	</csigwt:layer>
+        </csigwt:FullSizeLayoutPanel>
+    </csiboot:ValidatingDialog>
+</ui:UiBinder>

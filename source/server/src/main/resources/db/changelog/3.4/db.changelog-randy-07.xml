@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="rfoster" id="rfoster-07-001" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <renameColumn tableName="installedtable" oldColumnName="groupname" newColumnName="toplevel"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-002" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <renameColumn tableName="installedtable" oldColumnName="subgroupname" newColumnName="midlevel"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-003" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="installedtable">
+            <column name="firstrow" type="BIGINT" defaultValueNumeric="1" valueNumeric="1">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-004" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="installedtable">
+            <column name="rowcount" type="BIGINT" defaultValueNumeric="0" valueNumeric="0">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-005" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="installedtable">
+            <column name="lowlevel" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-006" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="componenttable">
+            <column name="tableid" type="VARCHAR(255)"/>
+            <column name="tablename" type="VARCHAR(255)"/>
+            <column name="firstrow" type="BIGINT" defaultValueNumeric="0" valueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rowcount" type="BIGINT" defaultValueNumeric="0" valueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="active" type="BOOLEAN" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+            <column name="generation" type="INTEGER" defaultValueNumeric="0" valueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="templatefields" type="TEXT"/>
+            <column name="dataviewfields" type="TEXT"/>
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+       </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-007" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="fielddef">
+            <column name="finalsort" type="INTEGER" defaultValueNumeric="0" valueNumeric="0">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-008" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="datamodeldef">
+            <column name="sorted" type="BOOLEAN" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-009" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="dataview">
+            <column name="firstlinkupid" type="INTEGER" defaultValueNumeric="1" valueNumeric="1">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-010" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="componenttable_pkey" tableName="componenttable"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-011" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="componenttable" constraintName="componenttable_modeldef_link" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelobject"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-012" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="querydef">
+            <column name="linkuptext" type="TEXT"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-013" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="users">
+            <column name="infoid" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-014" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <renameColumn tableName="opmapitem" oldColumnName="fromtablelocalid" newColumnName="lefttablelocalid"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-015" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <renameColumn tableName="opmapitem" oldColumnName="totablelocalid" newColumnName="righttablelocalid"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-016" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <renameColumn tableName="opmapitem" oldColumnName="fromcolumnlocalid" newColumnName="leftcolumnlocalid"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-017" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <renameColumn tableName="opmapitem" oldColumnName="tocolumnlocalid" newColumnName="rightcolumnlocalid"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-018" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="orphancolumn">
+            <column name="columnname" type="VARCHAR(255)"/>
+            <column name="ordinal" type="INT4">
+                <constraints nullable="false"/>
+            </column>
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="parent_uuid" type="VARCHAR(255)"/>
+            <column name="localid" type="VARCHAR(255)"/>
+            <column name="datatype" type="VARCHAR(255)"/>
+            <column name="fieldlocalid" type="VARCHAR(255)"/>
+		</createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-019" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="orphancolumn_pkey" tableName="orphancolumn"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-020" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="parent_uuid" baseTableName="orphancolumn" constraintName="orphancolumn_dataviewdef_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="dataviewdef"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-021" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="orphancolumn" constraintName="orphancolumn_modelobject_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelobject"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-07-022" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<sql splitStatements="false" stripComments="false">
+<![CDATA[
+UPDATE "modelresource" T1 SET "resourcetype" = null FROM "dataview" T2 WHERE T1."uuid" = T2."meta_uuid"
+		]]></sql>
+	</changeSet>
+</databaseChangeLog>

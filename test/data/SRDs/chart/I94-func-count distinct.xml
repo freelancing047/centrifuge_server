@@ -1,0 +1,17 @@
+<servicerequest version="1.0">
+  <header>
+    <user name="Fred Flintstone" idtype="AIN" id="12345678">
+      <userid>fflintstone</userid>
+      <group>Operations</group>
+    </user>
+  </header>
+  <data>
+    <dataview name="SAMPLE-I94">
+    </dataview>
+  </data>
+  <view type="chart" charttype="matrix">
+    <dimension sequence="2">PORT OF ENTRY</dimension>
+    <dimension sequence="1">CTZ</dimension>
+    <aggregate fieldname="ID" function="Count Distinct" />
+  </view>
+</servicerequest>

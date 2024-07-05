@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: 'war'
+
+def GWT_VERSION = "2.8.1"
+def GUAVA_VERSION = '20.0'//17.0
+def XSTREAM_VERSION = '1.4.3'//1.4.7
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "com.thoughtworks.xstream:xstream:$XSTREAM_VERSION"
+    compile ("com.google.guava:guava:$GUAVA_VERSION")  {
+      exclude module: 'asm'
+    }
+    compile "com.google.gwt:gwt-user:$GWT_VERSION"
+    providedCompile "com.google.gwt:gwt-dev:$GWT_VERSION"
+//    compile "com.google.gwt:gwt-dev:$GWT_VERSION"
+    runtime "com.google.gwt:gwt-servlet:$GWT_VERSION"
+    testCompile 'junit:junit:4.11'
+}

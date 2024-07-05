@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+
+@sprite .barChartIcon {
+	gwt-image: 'barChartIcon';
+}
+
+@sprite .areaChartIcon {
+	gwt-image: 'areaChartIcon';
+}
+
+@sprite .lineChartIcon {
+	gwt-image: 'lineChartIcon';
+}
+
+@sprite .pieChartIcon {
+	gwt-image: 'pieChartIcon';
+}
+
+@sprite .bubbleChartIcon {
+	gwt-image: 'bubbleChartIcon';
+}
+
+@sprite .editIcon {
+	gwt-image: 'editIcon';
+}
+
+@sprite .moveIcon {
+	gwt-image: 'moveIcon';
+}
+
+@sprite .deleteIcon {
+	gwt-image: 'deleteIcon';
+}
+
+@sprite .loadingSpinner {
+	gwt-image: 'loadingSpinner';
+}
+
+.option {
+	background: #eee;
+	cursor: pointer;
+}
+
+@external container-fluid;
+.spinner {
+	position: relative;
+	top: -33px;
+	left: 110px;
+	height: 15px;
+	width: 15px;
+}
+
+.start .container-fluid:hover {
+	background: #eee;
+	cursor: pointer;
+}
+
+.existing .container-fluid:hover {
+	background: #eee;
+	cursor: pointer;
+}

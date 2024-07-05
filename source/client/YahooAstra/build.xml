@@ -1,0 +1,8 @@
+<project name="Yahoo Astra" basedir=".">
+    
+    <property name="output.name" value="com.yahoo.astra"/>
+    <property name="output.version" value="1.0" />
+    
+    <import file="../flex-common.xml"/>
+    
+</project>

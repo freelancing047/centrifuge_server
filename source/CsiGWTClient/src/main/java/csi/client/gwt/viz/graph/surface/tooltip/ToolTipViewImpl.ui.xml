@@ -1,0 +1,42 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+    xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    xmlns:g="urn:import:com.google.gwt.user.client.ui"
+    xmlns:gwtbootstrap="urn:import:com.github.gwtbootstrap.client.ui"
+    xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container">
+    <container:SimpleContainer
+        ui:field="mySimpleContainer"
+        addStyleNames="graph-tooltip">
+    <!-- I use a Simple Container on the outside to allow for draggable and resizable  -->
+        <gwtbootstrap:FluidContainer
+            ui:field="tooltipFluidContainer"
+            addStyleNames="graph-tooltip-fc1">
+            <gwtbootstrap:FluidRow ui:field="headingFluidRow">
+                <gwtbootstrap:Column
+                    ui:field="headingColumn"
+                    size="12"
+                    addStyleNames="tooltip-heading">
+                    <gwtbootstrap:Icon
+                        ui:field="moveIcon"
+                        alignment="LEFT"
+                        type="MOVE"
+                        addStyleNames="tooltip-move"/>
+                    <gwtbootstrap:Icon
+                        alignment="RIGHT"
+                        ui:field="closeIcon"
+                        type="REMOVE"
+                        addStyleNames="tooltip-close"/>
+                    <g:Label
+                        addStyleNames="tooltip-heading-label"
+                        ui:field="toolTipHeadingLabel"/>
+                </gwtbootstrap:Column>
+            </gwtbootstrap:FluidRow>
+            <gwtbootstrap:FluidRow ui:field="bodyFluidRow">
+                <gwtbootstrap:FluidContainer
+                    ui:field="bodyFluidContainer"
+                    addStyleNames="tooltip-details">
+                </gwtbootstrap:FluidContainer>
+            </gwtbootstrap:FluidRow>
+        </gwtbootstrap:FluidContainer>
+    </container:SimpleContainer>
+</ui:UiBinder>

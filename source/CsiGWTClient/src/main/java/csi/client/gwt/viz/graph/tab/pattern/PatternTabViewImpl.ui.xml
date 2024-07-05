@@ -1,0 +1,17 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+        xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+        xmlns:gt="urn:import:csi.client.gwt.viz.graph.tab"
+        >
+   <ui:style gss="true">
+        /**/
+    </ui:style>
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <gt:GraphTab
+            tabname="{i18n.get.patternTab_heading}"
+            icon="PUZZLE_PIECE"
+            ui:field="tab">
+        <container:CardLayoutContainer height="100%" width="100%" ui:field="cardContainer"/>
+    </gt:GraphTab>
+</ui:UiBinder>

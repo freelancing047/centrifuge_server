@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+    <changeSet author="dchang" id="map-7-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="mapsettings_maptilelayer">
+            <column name="mapsettings_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="maptilelayer_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="dchang" id="map-7-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="mapsettings_uuid" baseTableName="mapsettings_maptilelayer"
+                                 constraintName="fkmap0706" deferrable="false" initiallyDeferred="false"
+                                 onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid"
+                                 referencedTableName="mapsettings"/>
+    </changeSet>
+    <changeSet author="dchang" id="map-7-4" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="maptilelayer">
+            <column name="listposition" type="INT4">
+                <constraints nullable="false"/>
+            </column>
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="layerid" type="varchar(255)"/>
+            <column name="asbasemap" type="BOOL"/>
+            <column name="visible" type="BOOL"/>
+            <column name="opacity" type="INT4">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="dchang" id="map-7-10" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="basemap">
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="layerid" type="VARCHAR(255)"/>
+            <column name="layername" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="dchang" id="map-7-11" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            UPDATE basemap
+            SET type = 'ArcGISTiled'
+        </sql>
+    </changeSet>
+    <changeSet author="dchang" id="map-7-12" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="mapsettings">
+            <column name="usetrackfield" type="boolean" defaultValueBoolean="false" valueBoolean="false"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="dchang" id="map-7-20" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="maptrack">
+            <column name="listposition" type="INT4">
+                <constraints nullable="false"/>
+            </column>
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+            <column name="styletypestring" type="varchar(10)"/>
+            <column name="usedefaultwidthsetting" type="boolean" defaultValueBoolean="false" valueBoolean="false"/>
+            <column name="width" type="INT4"/>
+            <column name="usedefaultcolorsetting" type="boolean" defaultValueBoolean="false" valueBoolean="false"/>
+            <column name="colorstring" type="varchar(10)"/>
+            <column name="place" type="varchar(255)"/>
+            <column name="isidentityfixed" type="boolean" defaultValueBoolean="true" valueBoolean="true"/>
+            <column name="isidentitydynamic" type="boolean" defaultValueBoolean="true" valueBoolean="true"/>
+            <column name="isidentityplace" type="boolean" defaultValueBoolean="true" valueBoolean="true"/>
+            <column name="identityname" type="varchar(255)"/>
+            <column name="identityfield_uuid" type="varchar(255)"/>
+            <column name="sequencefield_uuid" type="varchar(255)"/>
+            <column name="sequencesortorder" type="varchar(255)"/>
+            <column name="usedefaultopacity" type="boolean" defaultValueBoolean="false" valueBoolean="false"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="dchang" id="map-7-21" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="maptrack_pkey" tableName="maptrack"/>
+    </changeSet>
+    <changeSet author="dchang" id="map-7-22" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="mapsettings_maptrack">
+            <column name="mapsettings_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="maptracks_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="dchang" id="map-7-23" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="mapsettings_uuid" baseTableName="mapsettings_maptrack"
+                                 constraintName="fkmap0723" deferrable="false" initiallyDeferred="false"
+                                 onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid"
+                                 referencedTableName="mapsettings"/>
+    </changeSet>
+    <changeSet author="dchang" id="map-7-24" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="maptracks_uuid" baseTableName="mapsettings_maptrack"
+                                 constraintName="fkmap0724" deferrable="false" initiallyDeferred="false"
+                                 onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid"
+                                 referencedTableName="maptrack"/>
+    </changeSet>
+    <changeSet author="dchang" id="map-7-25" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="mapsettings">
+            <column name="nodetransparency" type="FLOAT" defaultValueNumeric="55" valueNumeric="55" />
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <bean id="adminToolsDriver" class="csi.server.connector.config.JdbcDriver">
+        <property name="name" value="Admin Tools Driver"/>
+        <property name="key" value="admintools"/>
+        <property name="baseUrl" value="jdbc:postgresql:"/>
+        <property name="jdbcFactory"><null/></property>
+        <property name="tableNameQualifier"><null/></property>
+        <property name="factory" value="csi.server.connector.jdbc.PostgreSQLConnectionFactory"/>
+        <property name="driverClass" value="org.postgresql.Driver"/>
+        <property name="driverAccessRole" value="MetaViewers"/>
+        <property name="sourceEditRole" value="MetaViewers"/>
+        <property name="connectionEditRole" value="MetaViewers"/>
+        <property name="queryEditRole" value="MetaViewers"/>
+        <property name="dataViewingRole" value="MetaViewers"/>
+        <property name="allowCustomQueries" value="false"/>
+        <property name="escapeChar" value="'"/>
+        <property name="selectNullString"><null/></property>
+        <property name="sortOrder"><null/></property>
+		<property name="castNulls" value="false"/>
+		<property name="remarks" value="This driver may be used to load data from any of the views defined within the applications meta-data into either an Installed Data Source or a DataView. Normal access to this driver requires the user to be a memeber of one of the groups: Administrator, CSO, or "/>
+        <property name="tableAliasMap">
+            <map>
+            </map>
+        </property>
+        <property name="capcoColumnMap">
+            <map>
+            </map>
+        </property>
+        <property name="authErrorCodes">
+            <list>
+            </list>
+        </property>
+        <property name="authSqlStates">
+            <list>
+                <value>08004</value>
+            </list>
+        </property>
+        <property name="defaultProperties">
+            <props>
+                <prop key="distinctSources">false</prop>
+                <prop key="inPlace">true</prop>
+            </props>
+        </property>
+        <property name="hiddenProperties">
+            <props>
+                <prop key="csi.hostname">127.0.0.1</prop>
+                <prop key="csi.port">9191</prop>
+                <prop key="csi.databaseName">metadb</prop>
+                <prop key="csi.username">csiserver</prop>
+                <prop key="csi.password">changeme</prop>
+            </props>
+        </property>
+        <property name="tableFilters">
+            <props>
+                <prop key="table_type">VIEW</prop>
+                <prop key="schema">public</prop>
+            </props>
+        </property>
+        <property name="typeMapping">
+            <props>
+            </props>
+        </property>
+        <property name="uiConnectionConfig" ref="adminToolsConnectionConfig"/>
+    </bean>
+
+    <bean id="adminToolsConnectionConfig" class="csi.server.common.dto.config.connection.DriverConfigInfo">
+        <property name="configItems" ref="adminToolsConfigItemList">
+        </property>
+    </bean>
+
+    <util:list id="adminToolsConfigItemList" value-type="csi.server.common.dto.config.connection.ConfigItem">
+    </util:list>
+
+</beans>

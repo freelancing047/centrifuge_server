@@ -1,0 +1,84 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'
+    xmlns:gwtbootstrap="urn:import:com.github.gwtbootstrap.client.ui"
+    xmlns:csiboot="urn:import:csi.client.gwt.widget.boot" xmlns:buttons="urn:import:csi.client.gwt.widget.buttons"
+    xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes"
+    xmlns:base="urn:import:com.github.gwtbootstrap.client.ui.base"
+    xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+    xmlns:grid="urn:import:csi.client.gwt.widget.gxt.grid">
+   <ui:style gss="true">
+    .left {
+    	margin-left: -25px;
+    }
+    .left-label {
+	
+        margin-left: 25px;
+    }
+    </ui:style>
+    <ui:with field="i18n"
+        type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+    <csiboot:Dialog ui:field="dialog">
+        <gwtbootstrap:FluidContainer>
+            <gwtbootstrap:FluidRow>
+                <gwtbootstrap:Heading size="4">
+                </gwtbootstrap:Heading>
+            </gwtbootstrap:FluidRow>
+            <boot:Form type="HORIZONTAL" width="100%">
+                <boot:Fieldset>
+                    <boot:ControlGroup addStyleNames="{style.left}">
+                        <boot:ControlLabel for="labelField" addStyleNames="{style.left-label}"
+                            title="{i18n.get.timelineSettingsLabel}"
+                            width="100px">
+                            <base:InlineLabel 
+                                text="{i18n.get.timelineSettingsLabel}" />
+                        </boot:ControlLabel>
+                        <boot:Controls>
+                            <combo:FieldDefComboBox
+                                ui:field="labelField" addStyleNames="kml-field-list-combo-box" />
+                            <buttons:Button type="LINK"
+                                size="MINI" ui:field="clearLabel" addStyleNames="align-with-combo-box" text="{i18n.get.clear}">
+                            </buttons:Button>
+                        </boot:Controls>
+                    </boot:ControlGroup>
+                    <boot:ControlGroup addStyleNames="{style.left}">
+                        <boot:ControlLabel for="startEventField" addStyleNames="{style.left-label}"
+                            width="100px" title="{i18n.get.timelineSettingsStart}">
+                            <base:InlineLabel  
+                                text="{i18n.get.timelineSettingsStart}" />
+                        </boot:ControlLabel>
+                        <boot:Controls >
+                            <combo:FieldDefComboBox
+                                ui:field="startEventField"
+                                addStyleNames="kml-field-list-combo-box" />
+
+                            <buttons:Button type="LINK"
+                                size="MINI" ui:field="clearStart" addStyleNames="align-with-combo-box" text="{i18n.get.clear}">
+                            </buttons:Button>
+                        </boot:Controls>
+                    </boot:ControlGroup>
+
+                    <boot:ControlGroup addStyleNames="{style.left}">
+                        <boot:ControlLabel for="endEventField" addStyleNames="{style.left-label}"
+                            width="100px" title="{i18n.get.timelineSettingsEnd}">
+                            <base:InlineLabel  
+                                text="{i18n.get.timelineSettingsEnd}" />
+                        </boot:ControlLabel>
+                        <boot:Controls>
+                            <combo:FieldDefComboBox
+                                ui:field="endEventField" addStyleNames="kml-field-list-combo-box" />
+
+                            <buttons:Button type="LINK"
+                                size="MINI" ui:field="clearEnd" addStyleNames="align-with-combo-box" text="{i18n.get.clear}">
+                            </buttons:Button>
+                        </boot:Controls>
+
+                        <boot:Controls>
+                        </boot:Controls>
+                    </boot:ControlGroup>
+
+
+                </boot:Fieldset>
+            </boot:Form>
+        </gwtbootstrap:FluidContainer>
+    </csiboot:Dialog>
+</ui:UiBinder>

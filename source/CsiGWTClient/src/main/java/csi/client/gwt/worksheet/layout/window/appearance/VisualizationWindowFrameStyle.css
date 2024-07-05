@@ -1,0 +1,47 @@
+/**
+ * Sencha GXT 3.0.4 - Sencha for GWT
+ * Copyright(c) 2007-2013, Sencha, Inc.
+ * licensing@sencha.com
+ *
+ * http://www.sencha.com/products/gxt/license/
+ */
+@external noheader;
+.topLeft,.top,.topRight {
+	height: auto;
+}
+
+.topRight {
+	line-height: 0px;
+}
+
+.topLeft {
+	border: none;
+}
+
+.noheader .topLeft,.noheader .top {
+	height: 0px;
+	border: none;
+}
+
+.left {
+	background-color: none;
+}
+
+.right {
+	background-color: none;
+}
+
+.content {
+	background: none;
+}
+
+.bottom,.bottomLeft,.bottomRight {
+	height: 0px;
+}
+
+.contentArea {
+	padding-top: 6px;
+	padding-bottom: 6px;
+	border: 1px solid #bdc3c7;
+	background-color: white;
+}

@@ -1,0 +1,65 @@
+<style type="text/css">
+	#Centrifuge {
+		width:100%;
+		height:600px;
+		border: 1px dashed black;
+	}
+	pre {
+		width:100%;
+	}
+</style>
+<script type="text/javascript">
+	var dv = new Dataview(cookie, "Centrifuge");
+	dv.launch();
+	var table = dv.getVisualization("Table");
+	var rg = dv.getVisualization("Relationship Graph");
+	rg.setVisualizationAttached("true", function(){$("#broadcastViz").removeAttr("disabled");});
+	function broadcastViz() {
+		table.broadcastViz();
+	}
+	function onGraphLoadSuccess() {
+		$('#status').html('<img src="resources/Ok-icon.png" /> Dataview Launched');
+	}
+</script>
+<h2>Broadcast Visualization</h2>
+<div id='overview'>
+	<h2>Overview</h2>
+	<p>The Visualization API provides the ability to perform basic actions on visualizations within a Dataview.</p>
+	<p>This sample showcases some of the automation features of the API. In this scenario, you may perform an action of the Centrifuge user interface by broadcasting the selection of one visualization to another.</p>
+</div>
+<div id='code'>
+	<h2>Sample Code</h2>
+	<pre class="prettyprint">
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;script type=&quot;text/javascript&quot; src=&quot;/Centrifuge/javascript/jquery.js&quot;&gt;&lt;/script&gt;
+		&lt;script type=&quot;text/javascript&quot; src=&quot;/Centrifuge/javascript/centrifuge-widget.js&quot;&gt;&lt;/script&gt;
+		&lt;script type=&quot;text/javascript&quot;&gt;
+			var dv = new Dataview(&quot;&lt;dvUuid&gt;&quot;, &quot;Centrifuge&quot;); // replace dvUuid with the uuid of the dataview to be opened
+			dv.launch();
+			var table = dv.getVisualization(&quot;Table&quot;);
+			var rg = dv.getVisualization(&quot;Relationship Graph&quot;);
+			rg.setVisualizationAttached(&quot;true&quot;, function(){$(&quot;#broadcastViz&quot;).removeAttr(&quot;disabled&quot;);});
+			function broadcastViz() {
+				table.broadcastViz();
+			}
+		&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;ol&gt;
+			&lt;li&gt;Make a selection in the 'Table' Visualization&lt;/li&gt;
+			&lt;li&gt;&lt;button id=&quot;broadcastViz&quot; onClick=&quot;broadcastViz()&quot; disabled=&quot;disabled&quot;&gt;Broadcast Table Selection&lt;/button&gt;&lt;/li&gt;
+		&lt;/ol&gt;
+		&lt;div id='Centrifuge'&gt;&lt;/div&gt;  &lt;!-- container div for flash content --&gt;
+	&lt;body&gt;
+&lt;/html&gt;
+	</pre>
+</div>
+<div id='sample'>
+	<h2>Sample</h2>
+	<ol>
+		<li>Make a selection in the 'Table' Visualization</li>
+		<li><button id="broadcastViz" onClick="broadcastViz()" disabled="disabled">Broadcast Table Selection</button> <span id="status"><img src="resources/ajax-loader.gif" /> Launching Dataview...</span></li>
+	</ol>
+	<div id='Centrifuge'></div>
+</div>

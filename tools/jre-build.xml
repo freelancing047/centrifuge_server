@@ -1,0 +1,70 @@
+<project name="jre-builder" default="usage">
+
+	<target name="usage">
+		<echo>Sets up JRE in development server</echo>
+		<echo>These targets use the current machine</echo>
+		<echo>to determine which JRE is extracted.</echo>
+	</target>
+
+	<condition property="jre.extracted">
+		<available file="${build.runtime}/jre" />
+	</condition>
+
+	<target name="build.jre.name">
+		<script language="javascript">
+			<![CDATA[
+        var os = project.getProperty('os.name').toLowerCase();
+        if( os.toLowerCase().startsWith('windows') ) {
+        os = 'windows';
+        }
+        
+        var arch = project.getProperty('os.arch').toLowerCase();
+        var jre_version = project.getProperty('jre.version')
+        var jre_target = os + '-' + arch + '-' + jre_version + '.tar.gz';
+        
+        project.setProperty('jre.target', jre_target);
+      ]]>
+		</script>
+
+		<echo>JRE target file for this build is ${jre.target}</echo>
+
+	</target>
+
+	<target name="build.jre.instance" depends="build.jre.name" unless="jre.extracted">
+
+		<mkdir dir="${build.runtime}/jre" />
+		<delete quiet="true">
+			<fileset dir="${build.runtime}/jre">
+				<include name="*" />
+			</fileset>
+		</delete>
+		<untar src="installer/src/resources/jres/${jre.target}" dest="${build.runtime}/jre" compression="gzip">
+		</untar>
+
+		<!-- install4j jre images use pack200 on jars to reduce size -->
+		<echo>Unpacking jars for extracted jre</echo>
+		<foreach param="src" target="unpack">
+			<path>
+				<fileset dir="${build.runtime}/jre/lib" includes="*.pack" />
+			</path>
+		</foreach>
+
+		<if>
+			<equals arg1="${os.name}" arg2="Windows 7" />
+			<then>
+				<copy file="${build.runtime}/jre/bin/msvcr71.dll" todir="${build.runtime}/bin" failonerror="false" />
+			</then>
+		</if>
+	</target>
+
+	<target name="unpack">
+		<basename property="local" file="${src}" suffix=".pack" />
+		<dirname property="local.dir" file="${src}" />
+		<property name="src.target" value="${local.dir}/${local}" />
+		<echo>Unpacking ${src.target} from ${src}</echo>
+		<exec executable="unpack200">
+			<arg value="${src}" />
+			<arg value="${src.target}" />
+		</exec>
+	</target>
+</project>

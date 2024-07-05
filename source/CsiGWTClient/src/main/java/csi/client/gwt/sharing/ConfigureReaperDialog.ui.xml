@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+             xmlns:csiboot="urn:import:csi.client.gwt.widget.boot"
+             xmlns:csibox="urn:import:csi.client.gwt.widget.input_boxes"
+             xmlns:wizwidget="urn:import:csi.client.gwt.csiwizard.widgets"
+             xmlns:csigwt="urn:import:csi.client.gwt.widget.ui"
+             xmlns:list="urn:import:csi.client.gwt.widget.list_boxes"
+             xmlns:label="urn:import:csi.client.gwt.widget.labels">
+
+   <ui:style gss="true">
+        .panel {
+            background-color: ivory;
+        }
+        .colsel {
+            padding-top:5px;
+            padding-bottom:5px;
+        }
+        .noborder{
+            border-style: none;
+        }
+    </ui:style>
+
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+
+    <csiboot:ValidatingDialog ui:field="dialog" bodyWidth="760px" bodyHeight="390px">
+        <csigwt:FullSizeLayoutPanel>
+            <csigwt:layer top="0px" height="390px" left="20px" right="20px">
+                <csigwt:FullSizeLayoutPanel>
+                    <csigwt:layer top="5px" height="25px" left="0px" width="90px">
+                        <g:Label text="{i18n.get.reaperInfoPopup_ResourceTypePrompt}" />
+                    </csigwt:layer>
+                    <csigwt:layer top="0px" height="30px" left="90px" width="310px">
+                        <list:CsiStringListBox ui:field="resourceType" width="190px"/>
+                    </csigwt:layer>
+                    <csigwt:layer top="45px" height="25px" left="0px" width="90px">
+                        <g:Label text="{i18n.get.reaperInfoPopup_remarks}" />
+                    </csigwt:layer>
+                    <csigwt:layer top="40px" height="30px" left="90px" width="310px">
+                        <boot:TextBox width="295px" ui:field="remarks"/>
+                    </csigwt:layer>
+                    <csigwt:layer top="90px" height="30px" left="0px" width="80px">
+                        <boot:RadioButton name="filter" ui:field="createdRadioButton" text="{i18n.get.reaperInfoPopup_Created}" />
+                    </csigwt:layer>
+                    <csigwt:layer top="90px" height="30px" left="80px" width="120px">
+                        <boot:RadioButton name="filter" ui:field="accessedRadioButton" text="{i18n.get.reaperInfoPopup_LastAccessed}" />
+                    </csigwt:layer>
+                    <csigwt:layer top="90px" height="30px" left="200px" width="60px">
+                        <g:InlineLabel text="{i18n.get.reaperInfoPopup_OnOrBefore}" />
+                    </csigwt:layer>
+                    <csigwt:layer top="90px" height="30px" left="270px" width="60px">
+                        <csibox:FilteredIntegerInput width="45px" ui:field="daysBeforeReaping" />
+                    </csigwt:layer>
+                    <csigwt:layer top="90px" height="30px" left="340px" width="60px">
+                        <g:InlineLabel text="{i18n.get.reaperInfoPopup_DaysAgo}" />
+                    </csigwt:layer>
+                    <csigwt:layer top="130px" height="25px" left="0px" width="400px">
+                        <label:InfoLabel ui:field="ownerLabel" text="{i18n.get.reaperInfoPopup_UserSelectionPrompt}" />
+                    </csigwt:layer>
+                    <csigwt:layer top="165px" height="230px" left="0px" width="400px">
+                        <wizwidget:PairedStringList ui:field="ownerSelection" height="230" width="400"/>
+                    </csigwt:layer>
+                    <csigwt:layer top="0px" height="390px" left="420px" width="300px">
+                        <csigwt:FullSizeLayoutPanel ui:field="infoPanel">
+                            <csigwt:layer top="0px" height="390px" left="0px" width="300px">
+                                <csiboot:Instructions ui:field="instructionTextArea"
+                                                            height="100%" width="97%" addStyleNames="{style.noborder}" />
+                            </csigwt:layer>
+                        </csigwt:FullSizeLayoutPanel>
+                    </csigwt:layer>
+                </csigwt:FullSizeLayoutPanel>
+            </csigwt:layer>
+        </csigwt:FullSizeLayoutPanel>
+    </csiboot:ValidatingDialog>
+</ui:UiBinder>

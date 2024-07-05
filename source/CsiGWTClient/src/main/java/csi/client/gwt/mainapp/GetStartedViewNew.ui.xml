@@ -1,0 +1,382 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g="urn:import:com.google.gwt.user.client.ui">
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+
+    <ui:style>
+        /*.landingContainer {*/
+        /*height: 100%*/
+        /*}*/
+
+        .header-element {
+        height: 60px;
+        font-size: 40px;
+        color: white;
+        align-content: center;
+        text-align: center;
+        padding-top: 35px;
+        }
+
+        .recentHeader {
+        line-height: 20px;
+        padding-top: 2em;
+        }
+
+        .needBetterHeight {
+        padding-top: 2vh;
+        height: 100vh;
+        }
+
+        .plainCard {
+        padding-left: 15px;
+        background: #F2F2F2;
+        /*display: inline-block;*/
+        position: relative;
+        width: 100vw;
+        }
+
+        .card {
+        position: absolute;
+        left: 0%;
+        right: 0%;
+        top: -1.95%;
+        bottom: 0%;
+        background: #101724;
+        }
+
+        .card-1 {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.4);
+        transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+        }
+
+        .card-header {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.4);
+        transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+        }
+
+        .card-1:hover {
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25), 0 8px 8px rgba(0, 0, 0, 0.22);
+        }
+
+        .card-2 {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        .card-3 {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        .card-4 {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+
+        .card-5 {
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+        }
+
+        .cardContent {
+        color: white;
+        font-size: 17px;
+        vertical-align: middle;
+        padding: 15px;
+        }
+
+        .rightMargin {
+        margin-left: 5px;
+
+        }
+
+        .recentGrid {
+        height: 90vh;
+        width: 98.5%;
+        /*margin-right: 1rem;*/
+        /*padding-right: 15px;*/
+        }
+
+        .cardText {
+        color: white;
+        font-size: 14px;
+        margin: 1px 0 3px;
+        vertical-align: middle;
+        }
+
+        .cardIcon {
+
+        float: left;
+        color: #226894;
+        align-content: center;
+        text-align: center;
+        font-size: 20px;
+        padding: 15px 10px 0;
+        height: 100%;
+        width: 30px;
+        vertical-align: middle;
+        }
+
+        .mainContainer {
+        height: 100%;
+        }
+
+        .table thead {
+        backgroud: #d9d9d9;
+        }
+
+        .background {
+        min-width: 850px;
+        margin-top: -2px;
+        background: #d9d9d9;
+        }
+
+        .logo-div {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 12px;
+        }
+
+        .todo-new {
+        background-color: #101724;
+        color: #101724;
+        margin-bottom: 20px;
+        }
+
+        .todo-new ul {
+        margin: 0;
+        list-style-type: none;
+        }
+
+        .todo-new li {
+        background: #101724;
+        background-size: 20px 20px;
+        cursor: pointer;
+        margin-top: 2px;
+        position: relative;
+        -webkit-transition: 0.25s;
+        -moz-transition: 0.25s;
+        -o-transition: 0.25s;
+        transition: 0.25s;
+        -webkit-backface-visibility: hidden;
+        }
+
+        .todo-new li:first-child {
+        margin-top: 0;
+        }
+
+        .todo-new li.todo-new-done {
+        background-size: 20px 20px;
+        color: #1abc9c;
+        }
+
+        .todo-new li:hover{
+        background-color: #101724;
+        }
+
+        .todo-new li.todo-new-done .todo-new-name {
+        color: #1abc9c;
+        }
+
+        .todo-new-search {
+        background: #1abc9c url("../images/todo-new/search.png") 92% center no-repeat;
+        background-size: 16px 16px;
+        border-radius: 6px 6px 0 0;
+        color: #34495e;
+        padding: 19px 25px 20px;
+        }
+
+        input.todo-new-search-field {
+        background: none;
+        border: none;
+        color: #34495e;
+        font-size: 19px;
+        font-weight: 700;
+        margin: 0;
+        line-height: 23px;
+        padding: 5px 0;
+        text-indent: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        }
+
+        input.todo-new-search-field:-moz-placeholder {
+        color: #34495e;
+        }
+
+        input.todo-new-search-field::-webkit-input-placeholder {
+        color: #34495e;
+        }
+
+        input.todo-new-search-field.placeholder {
+        color: #34495e;
+        }
+
+        .todo-new-icon {
+        color: #B2B200;
+        float: left;
+        font-size: 24px;
+        padding: 0px 10px 0 0;
+        height: 100%;
+        width: 30px;
+        vertical-align: middle;
+        }
+
+        .todo-new-content {
+        padding-top: 1px;
+        overflow: hidden;
+        }
+
+        .todo-new-name {
+        color: white;
+        font-size: 16px;
+        margin: 1px 0 3px;
+        }
+
+    </ui:style>
+
+
+    <g:HTMLPanel addStyleNames="{style.background}">
+        <div class="container-fluid {style.mainContainer}"  >
+            <div class="row-fluid"  style="height: 100%;  margin-top:10px" >
+                <div class="span3 {style.rightMargin}">
+                    <div class="todo-new {style.needBetterHeight} {style.card} {style.card-4}">
+                        <!--<div class="{style.card} {style.card-header} {style.header-element}">-->
+                        <!--<g:InlineLabel text="{i18n.get.getStartedView_header}" />-->
+                        <!--</div>-->
+                        <g:HTMLPanel>
+                            <div class="{style.logo-div}">
+                                <image style="height: 60px" src="{resources.new_logo.getSafeUri}"/>
+                            </div>
+                            <ul class="get-started-list">
+                                <!--</li>-->
+                                <li class="{style.card} {style.card-1}" data-content-class="open-dataview" ui:field="openContainer">
+                                    <g:HTMLPanel ui:field="openDataview">
+                                        <div class="{style.cardIcon}">
+                                            <i class="icon-minus"/>
+                                        </div>
+                                        <div class="{style.cardContent}">
+                                            <h4 class="{style.cardText}"> <g:InlineLabel text="{i18n.get.getStartedView_open}" />
+                                            </h4>
+                                            <!--<g:InlineLabel text="{i18n.get.getStartedView_createNewText}" /> -->
+                                        </div>
+                                    </g:HTMLPanel>
+                                </li>
+                                <li class="{style.card} {style.card-1}" data-content-class="new-dataview" ui:field="createContainer">
+                                    <g:HTMLPanel ui:field="newDataViewOption">
+                                        <div class="{style.cardIcon}">
+                                            <i class="icon-plus"/>
+                                        </div>
+                                        <div class="{style.cardContent}">
+                                            <h4 class="{style.cardText}"> <g:InlineLabel text="{i18n.get.getStartedView_createNewHeader}" />
+                                            </h4>
+                                            <!--<g:InlineLabel text="{i18n.get.getStartedView_createNewText}" /> -->
+                                        </div>
+                                    </g:HTMLPanel>
+                                </li>
+                                <li class="{style.card} {style.card-1}" data-content-class="new-dataview-from-template" ui:field="launchContainer">
+                                    <g:HTMLPanel ui:field="newDataViewFromTemplateOption">
+                                        <div class="{style.cardIcon}">
+                                            <i class="icon-folder-open"/>
+                                        </div>
+                                        <div class="{style.cardContent}">
+                                            <h4 class="{style.cardText}">
+                                                <g:InlineLabel text="{i18n.get.getStartedView_createNewFromTemplateHeader}" />
+                                            </h4>
+                                            <!--<g:InlineLabel text="{i18n.get.getStartedView_createNewFromTemplateText}" />-->
+                                        </div>
+                                    </g:HTMLPanel>
+                                </li>
+                                <li class="{style.card} {style.card-1}" ui:field="resourceContainer">
+                                    <g:HTMLPanel ui:field="manageResource">
+                                        <div class="{style.cardIcon}">
+                                            <i class="icon-cog"/>
+                                        </div>
+                                        <div class="{style.cardContent}">
+                                            <h4 class="{style.cardText}">
+                                                <g:InlineLabel text="{i18n.get.applicationToolbar_manageResources}" />
+                                            </h4>
+                                            <!--<g:InlineLabel text="{i18n.get.getStartedView_createNewFromTemplateText}" />-->
+                                        </div>
+                                    </g:HTMLPanel>
+                                    <li class="{style.card} {style.card-1}" ui:field="filterContainer">
+                                        <g:HTMLPanel ui:field="manageResourceFilters">
+                                            <div class="{style.cardIcon}">
+                                                <i class="icon-filter"/>
+                                            </div>
+                                            <div class="{style.cardContent}">
+                                                <h4 class="{style.cardText}"> <g:InlineLabel text="{i18n.get.applicationToolbar_manageResourceFilters}" />
+                                                </h4>
+                                                <!--<g:InlineLabel text="{i18n.get.getStartedView_sysAdminText}" />-->
+                                            </div>
+                                        </g:HTMLPanel>
+                                    </li>
+                                </li>
+                                <li class="{style.card} {style.card-1}" ui:field="iconContainer">
+                                    <g:HTMLPanel ui:field="manageIcons">
+                                        <div class="{style.cardIcon}">
+                                            <i class="icon-picture"/>
+                                        </div>
+                                        <div class="{style.cardContent}">
+                                            <h4 class="{style.cardText}">
+                                                <g:InlineLabel text="{i18n.get.applicationToolbar_manageIcons}" />
+                                            </h4>
+                                        </div>
+                                    </g:HTMLPanel>
+                                </li>
+                                <li class="{style.card} {style.card-1}" ui:field="themeContainer">
+                                    <g:HTMLPanel ui:field="manageThemes">
+                                        <div class="{style.cardIcon}">
+                                            <i class="icon-th-large"/>
+                                        </div>
+                                        <div class="{style.cardContent}">
+                                            <h4 class="{style.cardText}">
+                                                <g:InlineLabel text="{i18n.get.applicationToolbar_editThemes}" />
+                                            </h4>
+                                        </div>
+                                    </g:HTMLPanel>
+                                </li>
+                                <li class="{style.card} {style.card-1}" ui:field="samplesContainer">
+                                    <g:HTMLPanel ui:field="samplesOption">
+                                        <div class="{style.cardIcon}">
+                                            <i class="icon-file"/>
+                                        </div>
+                                        <div class="{style.cardContent}">
+                                            <h4 class="{style.cardText}"> <g:InlineLabel text="{i18n.get.getStartedView_exploreSamplesHeader}" />
+                                            </h4>
+                                        </div>
+                                    </g:HTMLPanel>
+                                </li>
+                                <li class="{style.card} {style.card-1}" ui:field="usersContainer">
+                                    <g:HTMLPanel ui:field="manageUsers">
+                                        <div class="{style.cardIcon}">
+                                            <i class="icon-user"/>
+                                        </div>
+                                        <div class="{style.cardContent}">
+                                            <h4 class="{style.cardText}"> <g:InlineLabel text="{i18n.get.getStartedView_sysAdminHeader}" />
+                                            </h4>
+                                            <!--<g:InlineLabel text="{i18n.get.getStartedView_sysAdminText}" />-->
+                                        </div>
+                                    </g:HTMLPanel>
+                                </li>
+                            </ul>
+                        </g:HTMLPanel>
+                    </div>
+                </div>
+                <div class="span9 {style.plainCard} {style.card-3} {style.needBetterHeight}">
+                    <g:HTMLPanel ui:field="scrollingPanel">
+                        <g:HTMLPanel ui:field="recentDataViewsPanel" >
+                            <div class="recent-dataviews">
+                                <div class="{style.recentHeader}">
+                                    <h4>
+                                        <g:InlineLabel text="{i18n.get.getStartedView_recentDataviews}" />
+                                    </h4>
+                                </div>
+                                <g:LayoutPanel addStyleNames="{style.recentGrid}" ui:field="recentDataviewLayoutPanel">
+                                </g:LayoutPanel>
+                            </div>
+                        </g:HTMLPanel>
+                    </g:HTMLPanel>
+                </div>
+            </div>
+        </div>
+    </g:HTMLPanel>
+</ui:UiBinder>

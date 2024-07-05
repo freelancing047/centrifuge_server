@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="rfoster" id="rfoster-04-001" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="capcoinfo">
+            <column name="banner" type="text"/>
+            <column name="abbreviation" type="text"/>
+            <column name="portion" type="text"/>
+            <column name="dataportion" type="text"/>
+            <column name="userportion" type="text"/>
+            <column name="fieldstring" type="varchar(255)"/>
+            <column name="mode" type="int4"/>
+            <column name="uuid" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-002" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="capcoinfo_pkey" tableName="capcoinfo"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-003" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="capcoinfo" constraintName="fk__capcoinfo__uuid__modelobject__uuid" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelobject"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-004" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <dropColumn columnName="islinkup" tableName="queryparameterdef"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-005" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <dropColumn columnName="transientparam" tableName="queryparameterdef"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-006" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <dropColumn columnName="hidden" tableName="queryparameterdef"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-007" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="queryparameterdef">
+            <column name="neverprompt" type="boolean" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-008" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="queryparameterdef">
+            <column name="systemparam" type="boolean" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-009" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <dropColumn columnName="securitybanner" tableName="modelresource"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-010" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <dropColumn columnName="securitybannercolor" tableName="modelresource"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-011" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="modelresource">
+            <column name="capcoinfo_uuid" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-012" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="capcoinfo_uuid" baseTableName="modelresource" constraintName="fk__modelresource__capcoinfo_uuid__capcoinfo__uuid" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="capcoinfo"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-013" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="capcotagdef">
+            <column name="section" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="level" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="portion" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="banner" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="abreviation" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-014" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="capcocountries">
+            <column name="trigraph" type="char(3)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-015" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="capcocountrygroups">
+            <column name="tetragraph" type="char(4)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="trigraph" type="char(3)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-016" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <dropColumn tableName="capcogroups" columnName="enforce"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-017" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <dropColumn tableName="capcogroups" columnName="header"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-018" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <dropColumn tableName="capcogroups" columnName="mask"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-019" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="capcogroups">
+            <column name="reject" type="boolean" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-020" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <renameColumn tableName="capcogroups" oldColumnName="paragraph" newColumnName="portion"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-021" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="acl">
+            <column name="blocked" type="boolean" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-sql-001" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "users" SET "perpetual" = 'true' WHERE "display" = 'centrifuge';
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-sql-002" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "capcogroups" SET "section" = 7 WHERE "section" = 8;
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-sql=003" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			DELETE FROM "group_members" m WHERE m."group_id" = ( SELECT "id" FROM "roles" WHERE "name" = 'us-only' ) OR m."role_id" = ( SELECT "id" FROM "roles" WHERE "name" = 'us-only' );
+			DELETE FROM "capcogroups" c WHERE c."id" = ( SELECT "id" FROM "groups" g WHERE g."id" = ( SELECT "id" FROM "roles" WHERE "name" = 'us-only' ) );
+			DELETE FROM "groups" g WHERE g."id" = ( SELECT "id" FROM "roles" WHERE "name" = 'us-only' );
+			DELETE FROM "roles" WHERE "name" = 'us-only';
+
+			DELETE FROM "group_members" m WHERE m."group_id" = ( SELECT "id" FROM "roles" WHERE "name" = 'fouo' ) OR m."role_id" = ( SELECT "id" FROM "roles" WHERE "name" = 'fouo' );
+			DELETE FROM "capcogroups" c WHERE c."id" = ( SELECT "id" FROM "groups" g WHERE g."id" = ( SELECT "id" FROM "roles" WHERE "name" = 'fouo' ) );
+			DELETE FROM "groups" g WHERE g."id" = ( SELECT "id" FROM "roles" WHERE "name" = 'fouo' );
+			DELETE FROM "roles" WHERE "name" = 'fouo';
+
+			DELETE FROM "group_members" m WHERE m."group_id" = ( SELECT "id" FROM "roles" WHERE "name" = 'fisa-ok' ) OR m."role_id" = ( SELECT "id" FROM "roles" WHERE "name" = 'fisa-ok' );
+			DELETE FROM "capcogroups" c WHERE c."id" = ( SELECT "id" FROM "groups" g WHERE g."id" = ( SELECT "id" FROM "roles" WHERE "name" = 'fisa-ok' ) );
+			DELETE FROM "groups" g WHERE g."id" = ( SELECT "id" FROM "roles" WHERE "name" = 'fisa-ok' );
+			DELETE FROM "roles" WHERE "name" = 'fisa-ok';
+
+			DELETE FROM "group_members" m WHERE m."group_id" = ( SELECT "id" FROM "roles" WHERE "name" = 'cosmic top secret' ) OR m."role_id" = ( SELECT "id" FROM "roles" WHERE "name" = 'cosmic top secret' );
+			DELETE FROM "capcogroups" c WHERE c."id" = ( SELECT "id" FROM "groups" g WHERE g."id" = ( SELECT "id" FROM "roles" WHERE "name" = 'cosmic top secret' ) );
+			DELETE FROM "groups" g WHERE g."id" = ( SELECT "id" FROM "roles" WHERE "name" = 'cosmic top secret' );
+			DELETE FROM "roles" WHERE "name" = 'cosmic top secret';
+
+			DELETE FROM "group_members" m WHERE m."group_id" = ( SELECT "id" FROM "roles" WHERE "name" = 'nato secret' ) OR m."role_id" = ( SELECT "id" FROM "roles" WHERE "name" = 'nato secret' );
+			DELETE FROM "capcogroups" c WHERE c."id" = ( SELECT "id" FROM "groups" g WHERE g."id" = ( SELECT "id" FROM "roles" WHERE "name" = 'nato secret' ) );
+			DELETE FROM "groups" g WHERE g."id" = ( SELECT "id" FROM "roles" WHERE "name" = 'nato secret' );
+			DELETE FROM "roles" WHERE "name" = 'nato secret';
+
+			DELETE FROM "group_members" m WHERE m."group_id" = ( SELECT "id" FROM "roles" WHERE "name" = 'nato confidential' ) OR m."role_id" = ( SELECT "id" FROM "roles" WHERE "name" = 'nato confidential' );
+			DELETE FROM "capcogroups" c WHERE c."id" = ( SELECT "id" FROM "groups" g WHERE g."id" = ( SELECT "id" FROM "roles" WHERE "name" = 'nato confidential' ) );
+			DELETE FROM "groups" g WHERE g."id" = ( SELECT "id" FROM "roles" WHERE "name" = 'nato confidential' );
+			DELETE FROM "roles" WHERE "name" = 'nato confidential';
+
+			DELETE FROM "group_members" m WHERE m."group_id" = ( SELECT "id" FROM "roles" WHERE "name" = 'nato restricted' ) OR m."role_id" = ( SELECT "id" FROM "roles" WHERE "name" = 'nato restricted' );
+			DELETE FROM "capcogroups" c WHERE c."id" = ( SELECT "id" FROM "groups" g WHERE g."id" = ( SELECT "id" FROM "roles" WHERE "name" = 'nato restricted' ) );
+			DELETE FROM "groups" g WHERE g."id" = ( SELECT "id" FROM "roles" WHERE "name" = 'nato restricted' );
+			DELETE FROM "roles" WHERE "name" = 'nato restricted';
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-04-sql=004" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'AFG', 'AFGHANISTAN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ALA', 'ALAND ISLANDS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ALB', 'ALBANIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'DZA', 'ALGERIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ASM', 'AMERICAN SAMOA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'AND', 'ANDORRA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'AGO', 'ANGOLA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'AIA', 'ANGUILLA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ATA', 'ANTARCTICA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ATG', 'ANTIGUA AND BARBUDA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ARG', 'ARGENTINA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ARM', 'ARMENIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ABW', 'ARUBA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'AUS', 'AUSTRALIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'AUT', 'AUSTRIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'AZE', 'AZERBAIJAN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BHS', 'BAHAMAS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BHR', 'BAHRAIN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BGD', 'BANGLADESH' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BRB', 'BARBADOS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BLR', 'BELARUS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BEL', 'BELGIUM' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BLZ', 'BELIZE' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BEN', 'BENIN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BMU', 'BERMUDA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BTN', 'BHUTAN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BOL', 'BOLIVIA, PLURINATIONAL STATE OF' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BES', 'BONAIRE, SINT EUSTATIUS AND SABA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BIH', 'BOSNIA AND HERZEGOVINA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BWA', 'BOTSWANA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BVT', 'BOUVET ISLAND' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BRA', 'BRAZIL' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'IOT', 'BRITISH INDIAN OCEAN TERRITORY' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BRN', 'BRUNEI DARUSSALAM' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BGR', 'BULGARIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BFA', 'BURKINA FASO' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BDI', 'BURUNDI' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'KHM', 'CAMBODIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'CMR', 'CAMEROON' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'CAN', 'CANADA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'CPV', 'CAPE VERDE' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'CYM', 'CAYMAN ISLANDS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'CAF', 'CENTRAL AFRICAN REPUBLIC' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'TCD', 'CHAD' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'CHL', 'CHILE' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'CHN', 'CHINA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'CXR', 'CHRISTMAS ISLAND' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'CCK', 'COCOS (KEELING) ISLANDS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'COL', 'COLOMBIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'COM', 'COMOROS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'COG', 'CONGO' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'COD', 'CONGO, DEMOCRATIC REPUBLIC OF THE' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'COK', 'COOK ISLANDS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'CRI', 'COSTA RICA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'CIV', 'CÔTE D''IVOIRE' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'HRV', 'CROATIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'CUB', 'CUBA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'CUW', 'CURAÇAO' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'CYP', 'CYPRUS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'CZE', 'CZECH REPUBLIC' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'DNK', 'DENMARK' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'DJI', 'DJIBOUTI' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'DMA', 'DOMINICA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'DOM', 'DOMINICAN REPUBLIC' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ECU', 'ECUADOR' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'EGY', 'EGYPT' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SLV', 'EL SALVADOR' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'GNQ', 'EQUATORIAL GUINEA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ERI', 'ERITREA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'EST', 'ESTONIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ETH', 'ETHIOPIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'FLK', 'FALKLAND ISLANDS (MALVINAS)' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'FRO', 'FAROE ISLANDS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'FJI', 'FIJI' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'FIN', 'FINLAND' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'FRA', 'FRANCE' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'GUF', 'FRENCH GUIANA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'PYF', 'FRENCH POLYNESIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ATF', 'FRENCH SOUTHERN TERRITORIES' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'GAB', 'GABON' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'GMB', 'GAMBIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'GEO', 'GEORGIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'DEU', 'GERMANY' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'GHA', 'GHANA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'GIB', 'GIBRALTAR' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'GRC', 'GREECE' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'GRL', 'GREENLAND' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'GRD', 'GRENADA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'GLP', 'GUADELOUPE' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'GUM', 'GUAM' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'GTM', 'GUATEMALA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'GGY', 'GUERNSEY' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'GIN', 'GUINEA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'GNB', 'GUINEA-BISSAU' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'GUY', 'GUYANA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'HTI', 'HAITI' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'HMD', 'HEARD ISLAND AND MCDONALD ISLANDS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'VAT', 'HOLY SEE (VATICAN CITY STATE)' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'HND', 'HONDURAS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'HKG', 'HONG KONG' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'HUN', 'HUNGARY' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ISL', 'ICELAND' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'IND', 'INDIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'IDN', 'INDONESIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'IRN', 'IRAN, ISLAMIC REPUBLIC OF' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'IRQ', 'IRAQ' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'IRL', 'IRELAND' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'IMN', 'ISLE OF MAN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ISR', 'ISRAEL' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ITA', 'ITALY' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'JAM', 'JAMAICA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'JPN', 'JAPAN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'JEY', 'JERSEY' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'JOR', 'JORDAN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'KAZ', 'KAZAKHSTAN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'KEN', 'KENYA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'KIR', 'KIRIBATI' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'PRK', 'KOREA, DEMOCRATIC PEOPLE''S REPUBLIC OF' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'KOR', 'KOREA, REPUBLIC OF' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'KWT', 'KUWAIT' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'KGZ', 'KYRGYZSTAN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'LAO', 'LAO PEOPLE''S DEMOCRATIC REPUBLIC' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'LVA', 'LATVIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'LBN', 'LEBANON' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'LSO', 'LESOTHO' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'LBR', 'LIBERIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'LBY', 'LIBYA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'LIE', 'LIECHTENSTEIN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'LTU', 'LITHUANIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'LUX', 'LUXEMBOURG' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MAC', 'MACAO' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MKD', 'MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MDG', 'MADAGASCAR' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MWI', 'MALAWI' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MYS', 'MALAYSIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MDV', 'MALDIVES' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MLI', 'MALI' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MLT', 'MALTA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MHL', 'MARSHALL ISLANDS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MTQ', 'MARTINIQUE' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MRT', 'MAURITANIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MUS', 'MAURITIUS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MYT', 'MAYOTTE' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MEX', 'MEXICO' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'FSM', 'MICRONESIA, FEDERATED STATES OF' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MDA', 'MOLDOVA, REPUBLIC OF' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MCO', 'MONACO' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MNG', 'MONGOLIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MNE', 'MONTENEGRO' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MSR', 'MONTSERRAT' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MAR', 'MOROCCO' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MOZ', 'MOZAMBIQUE' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MMR', 'MYANMAR' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'NAM', 'NAMIBIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'NRU', 'NAURU' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'NPL', 'NEPAL' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'NLD', 'NETHERLANDS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'NCL', 'NEW CALEDONIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'NZL', 'NEW ZEALAND' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'NIC', 'NICARAGUA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'NER', 'NIGER' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'NGA', 'NIGERIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'NIU', 'NIUE' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'NFK', 'NORFOLK ISLAND' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MNP', 'NORTHERN MARIANA ISLANDS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'NOR', 'NORWAY' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'OMN', 'OMAN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'PAK', 'PAKISTAN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'PLW', 'PALAU' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'PSE', 'PALESTINIAN TERRITORY, OCCUPIED' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'PAN', 'PANAMA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'PNG', 'PAPUA NEW GUINEA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'PRY', 'PARAGUAY' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'PER', 'PERU' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'PHL', 'PHILIPPINES' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'PCN', 'PITCAIRN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'POL', 'POLAND' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'PRT', 'PORTUGAL' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'PRI', 'PUERTO RICO' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'QAT', 'QATAR' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'REU', 'RÉUNION' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ROU', 'ROMANIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'RUS', 'RUSSIAN FEDERATION' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'RWA', 'RWANDA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'BLM', 'SAINT BARTHÉLEMY' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SHN', 'SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'KNA', 'SAINT KITTS AND NEVIS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'LCA', 'SAINT LUCIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'MAF', 'SAINT MARTIN (FRENCH PART)' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SPM', 'SAINT PIERRE AND MIQUELON' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'VCT', 'SAINT VINCENT AND THE GRENADINES' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'WSM', 'SAMOA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SMR', 'SAN MARINO' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'STP', 'SAO TOME AND PRINCIPE' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SAU', 'SAUDI ARABIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SEN', 'SENEGAL' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SRB', 'SERBIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SYC', 'SEYCHELLES' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SLE', 'SIERRA LEONE' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SGP', 'SINGAPORE' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SXM', 'SINT MAARTEN (DUTCH PART)' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SVK', 'SLOVAKIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SVN', 'SLOVENIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SLB', 'SOLOMON ISLANDS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SOM', 'SOMALIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ZAF', 'SOUTH AFRICA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SGS', 'SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SSD', 'SOUTH SUDAN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ESP', 'SPAIN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'LKA', 'SRI LANKA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SDN', 'SUDAN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SUR', 'SURINAME' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SJM', 'SVALBARD AND JAN MAYEN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SWZ', 'SWAZILAND' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SWE', 'SWEDEN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'CHE', 'SWITZERLAND' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'SYR', 'SYRIAN ARAB REPUBLIC' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'TWN', 'TAIWAN, PROVINCE OF CHINA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'TJK', 'TAJIKISTAN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'TZA', 'TANZANIA, UNITED REPUBLIC OF' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'THA', 'THAILAND' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'TLS', 'TIMOR-LESTE' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'TGO', 'TOGO' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'TKL', 'TOKELAU' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'TON', 'TONGA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'TTO', 'TRINIDAD AND TOBAGO' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'TUN', 'TUNISIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'TUR', 'TURKEY' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'TKM', 'TURKMENISTAN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'TCA', 'TURKS AND CAICOS ISLANDS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'TUV', 'TUVALU' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'UGA', 'UGANDA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'UKR', 'UKRAINE' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ARE', 'UNITED ARAB EMIRATES' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'GBR', 'UNITED KINGDOM' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'USA', 'UNITED STATES' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'UMI', 'UNITED STATES MINOR OUTLYING ISLANDS' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'URY', 'URUGUAY' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'UZB', 'UZBEKISTAN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'VUT', 'VANUATU' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'VEN', 'VENEZUELA, BOLIVARIAN REPUBLIC OF' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'VNM', 'VIET NAM' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'VGB', 'VIRGIN ISLANDS, BRITISH' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'VIR', 'VIRGIN ISLANDS, U.S.' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'WLF', 'WALLIS AND FUTUNA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ESH', 'WESTERN SAHARA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'YEM', 'YEMEN' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ZMB', 'ZAMBIA' );
+			INSERT INTO capcocountries( trigraph, name ) VALUES ( 'ZWE', 'ZIMBABWE' );
+        </sql>
+    </changeSet>
+</databaseChangeLog>

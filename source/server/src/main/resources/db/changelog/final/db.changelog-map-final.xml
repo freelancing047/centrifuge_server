@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<!-- from 3.5.1/db.changelog-map-6.xml -->
+    <changeSet author="dchang" id="map-final" failOnError="true" runInTransaction="false" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <customChange class="csi.tools.GenerateBasemapsInitial" >
+        </customChange>
+    </changeSet>
+    <changeSet author="dchang" id="map-7-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <customChange class="csi.tools.GenerateMapTileLayerUUID"/>
+    </changeSet>
+    <changeSet author="dchang" id="map-7-5" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="maptilelayer_pkey" tableName="maptilelayer"/>
+    </changeSet>
+    <changeSet author="dchang" id="map-7-6" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            INSERT INTO maptilelayer (listposition, uuid, layerid, visible, opacity)
+            SELECT 0, b.maptilelayer_uuid, basemapfield, true, 100
+            FROM mapsettings a, mapsettings_maptilelayer b
+            WHERE a.uuid = b.mapsettings_uuid;
+        </sql>
+    </changeSet>
+    <changeSet author="dchang" id="map-7-7" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="maptilelayer_uuid" baseTableName="mapsettings_maptilelayer"
+                                 constraintName="fkmap0705" deferrable="false" initiallyDeferred="false"
+                                 onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid"
+                                 referencedTableName="maptilelayer"/>
+    </changeSet>
+    <changeSet author="dchang" id="map-7-8" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            INSERT INTO modelobject (uuid)
+            SELECT uuid
+            FROM maptilelayer
+        </sql>
+    </changeSet>
+    <changeSet author="dchang" id="map-7-9" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="maptilelayer"
+                                 constraintName="fk_maptilelayer_modelobject" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="uuid" referencedTableName="modelobject"/>
+    </changeSet>
+</databaseChangeLog>

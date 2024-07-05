@@ -1,0 +1,2 @@
+serviceClass: csi.shared.gwt.vortex.VortexRpcDispatcher
+path: CA02065069446339AB0ADA52696C8E55.gwt.rpc

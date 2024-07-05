@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+	<changeSet author="dchang" id="map-5-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+    	<sql>
+    	UPDATE mapplace
+		SET size = 1
+		WHERE size IS NULL;
+    	</sql>
+    </changeSet>
+	<changeSet author="dchang" id="map-5-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+    	<sql>
+		UPDATE mapplace
+		SET shapetypestring = 'Circle'
+		WHERE shapetypestring IS NULL;
+    	</sql>
+    </changeSet>
+	<changeSet author="dchang" id="map-5-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+    	<sql>
+		UPDATE mapplace
+		SET colorstring = 'EA4C88'
+		WHERE colorstring IS NULL;
+    	</sql>
+    </changeSet>
+</databaseChangeLog>

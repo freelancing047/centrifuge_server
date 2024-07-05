@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    
+    <changeSet author="liquibase-docs" id="renameTable-example">
+        <renameTable
+            newTableName="timelineviewdef_v1"
+            oldTableName="timelineviewdef"/>
+    </changeSet>
+    
+
+    <changeSet author="jdanberg" id="TimelineChange1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="timelineviewdef">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="timelinesettings_uuid" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="jdanberg" id="TimelineChange2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="timelinesettings">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="jdanberg" id="TimelineChange3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="timelineviewdef_uuid_primarykey" tableName="timelineviewdef"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="TimelineChange6" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="timelinesettings_uuid_pkey" tableName="timelinesettings"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="TimelineChange4" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="timelineviewdef" constraintName="timelineviewdef_uuid_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="visualizationdef"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="TimelineChange5" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="timelinesettings_uuid" baseTableName="timelineviewdef" constraintName="timelineviewdef_timelinesettings_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="timelinesettings"/>
+    </changeSet>
+    
+    
+    <changeSet author="jdanberg" id="TimelineChange7" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="timelinesettings" constraintName="modelobject_timelinesettings_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelobject"/>
+    </changeSet>
+    
+</databaseChangeLog>

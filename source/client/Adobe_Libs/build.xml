@@ -1,0 +1,22 @@
+<project name="Common Adobe Libraries" basedir=".">
+
+    <property name="output.name" value="com.adobe.libs" />
+    <property name="output.version" value="1.0" />
+
+    <import file="../flex-common.xml" />
+
+
+    <target name="compile" unless="needs-compile">
+		<echo>Flex Home set to ${FLEX_HOME}</echo>
+        <compc output="${basedir}/${output.name}-${output.version}.swc" include-classes="${library.classes}">
+            <source-path path-element="${basedir}/src" />
+            <library-path dir="${FLEX_HOME}/frameworks/libs" append="true">
+                <include name="*.swc" />
+            </library-path>
+            <library-path dir="${basedir}/../Sandy" append="true">
+                    <include name="*.swc" />
+            </library-path>
+        </compc>
+    </target>
+
+</project>

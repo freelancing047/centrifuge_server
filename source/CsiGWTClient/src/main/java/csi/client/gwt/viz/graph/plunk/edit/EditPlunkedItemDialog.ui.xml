@@ -1,0 +1,16 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+        xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:csiGWT="urn:import:csi.client.gwt.widget.boot">
+
+    <ui:with
+            field="i18n"
+            type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+    <csiGWT:Dialog
+            ui:field="dialog"
+            width="565px"
+            height="375px">
+
+    </csiGWT:Dialog>
+
+</ui:UiBinder>

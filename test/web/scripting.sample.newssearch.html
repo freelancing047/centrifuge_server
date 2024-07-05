@@ -1,0 +1,42 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Centrifuge Server News Search Sample</title>
+
+
+<style>
+body {
+	font-size: 11px;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+#header {
+	width: 700px;
+	height: 120px;
+	margin: 0 auto;
+	padding-top: 70px;
+}
+</style>
+
+</head>
+
+<body>
+
+  <div id="header">
+      <img alt="News Search" width=400 height=70 src="news.search.png" >
+  </div>
+
+<form action="/Centrifuge/services/integration" name=f>
+<input maxlength=2048 name=param1 size=55 title="News Search" value="">
+<input name=id type=hidden value=5>
+<input name=tab type=hidden value=0>
+<input name=paramCount type=hidden value=1>
+<br>
+<input name=btnNS type=submit value="Search">
+</form>
+<p></p>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+2014-05-05 13:58:58,850, ERROR, Thread-24, csi.test.log.Producer.run(Producer.java:20), , , , , , , error log number 0from thread Thread-24
+2014-05-05 13:58:58,853, ERROR, Thread-31, csi.test.log.Producer.run(Producer.java:20), , , , , , , error log number 0from thread Thread-31
+2014-05-05 13:58:58,853, ERROR, Thread-32, csi.test.log.Producer.run(Producer.java:20), , , , , , , error log number 0from thread Thread-32
+2014-05-05 13:58:58,853, ERROR, Thread-33, csi.test.log.Producer.run(Producer.java:20), , , , , , , error log number 0from thread Thread-33
+2014-05-05 13:58:58,854, ERROR, Thread-33, csi.test.log.Producer.run(Producer.java:20), , , , , , , error log number 1from thread Thread-33
+2014-05-05 13:58:58,854, ERROR, Thread-33, csi.test.log.Producer.run(Producer.java:20), , , , , , , error log number 2from thread Thread-33
+2014-05-05 13:58:58,855, ERROR, Thread-33, csi.test.log.Producer.run(Producer.java:20), , , , , , , error log number 3from thread Thread-33
+2014-05-05 13:58:58,855, ERROR, Thread-33, csi.test.log.Producer.run(Producer.java:20), , , , , , , error log number 4from thread Thread-33
+2014-05-05 13:58:58,855, ERROR, Thread-33, csi.test.log.Producer.run(Producer.java:20), , , , , , , error log number 5from thread Thread-33
+2014-05-05 13:58:58,855, ERROR, Thread-33, csi.test.log.Producer.run(Producer.java:20), , , , , , , error log number 6from thread Thread-33

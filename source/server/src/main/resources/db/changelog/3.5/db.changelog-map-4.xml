@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    
+    <changeSet author="dchang" id="map-4-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="mapplace">
+            <column name="isiconfixed" type="boolean" defaultValueBoolean="true" valueBoolean="true" />
+        </addColumn>
+        <addColumn tableName="mapplace">
+            <column name="iconfield_uuid" type="varchar(255)" />
+        </addColumn>
+        <addColumn tableName="mapplace">
+            <column name="istypefixed" type="boolean" defaultValueBoolean="true" valueBoolean="true" />
+        </addColumn>
+    	<addColumn tableName="mapplace">
+            <column name="typename" type="VARCHAR(255)" />
+        </addColumn>
+        <addColumn tableName="mapplace">
+            <column name="typefield_uuid" type="varchar(255)" />
+        </addColumn>
+        <addColumn tableName="mapplace">
+            <column name="iconid" type="varchar(255)" />
+        </addColumn>
+        <addColumn tableName="mapplace">
+            <column name="usedefaulticonsetting" type="boolean" defaultValueBoolean="false" valueBoolean="false" />
+        </addColumn>
+        <addColumn tableName="mapplace">
+            <column name="usedefaultshapesetting" type="boolean" defaultValueBoolean="false" valueBoolean="false" />
+        </addColumn>
+        <modifyDataType tableName="mapplace"
+            columnName="shapetypestring"
+            newDataType="varchar(15)"/>
+        <addColumn tableName="mapplace">
+            <column name="isplacesizebydynamictype" type="boolean" defaultValueBoolean="false" valueBoolean="false" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="dchang" id="map-4-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="mapsettings">
+            <column name="themeuuid" type="varchar(255)" />
+        </addColumn>
+        <addColumn tableName="mapsettings">
+            <column name="minplacesize" type="INT4" defaultValueNumeric="6" valueNumeric="6" />
+        </addColumn>
+        <addColumn tableName="mapsettings">
+            <column name="maxplacesize" type="INT4" defaultValueNumeric="20" valueNumeric="20" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="dchang" id="map-4-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="mapassociation">
+            <column name="usedefaultwidthsetting" type="boolean" defaultValueBoolean="false" valueBoolean="false" />
+        </addColumn>
+        <addColumn tableName="mapassociation">
+            <column name="usedefaultcolorsetting" type="boolean" defaultValueBoolean="false" valueBoolean="false" />
+        </addColumn>
+    </changeSet>
+    
+</databaseChangeLog>

@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="rfoster" id="rfoster-05-001" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <dropColumn tableName="columndef" columnName="overridecsitype"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-002" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="sqltabledef">
+            <column name="capcocolumn" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-003" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="sqltabledef">
+            <column name="capcostring" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-004" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="installedcolumn">
+            <column name="fieldname" type="VARCHAR(255)"/>
+            <column name="columnname" type="VARCHAR(255)"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="nullable" type="BOOL">
+                <constraints nullable="true"/>
+            </column>
+            <column name="ordinal" type="INT4">
+                <constraints nullable="false"/>
+            </column>
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="installedtable_uuid" type="VARCHAR(255)"/>
+       </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-005" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="installedtable">
+            <column name="origin" type="VARCHAR(255)"/>
+            <column name="driver" type="VARCHAR(255)"/>
+            <column name="tablename" type="VARCHAR(255)"/>
+            <column name="groupname" type="VARCHAR(255)"/>
+            <column name="subgroupname" type="VARCHAR(255)"/>
+            <column name="basename" type="VARCHAR(255)"/>
+            <column name="uploadtype" type="VARCHAR(255)"/>
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-006" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="installedcolumn_pkey" tableName="installedcolumn"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-007" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="installedcolumn" constraintName="installedcolumn_modelobject_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelobject"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-008" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="installedtable_pkey" tableName="installedtable"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-009" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="installedtable" constraintName="installedtable_modelresource_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelresource"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-010" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="installedtable_uuid" baseTableName="installedcolumn" constraintName="installedcolumn_installedtable_linkback" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="installedtable"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-011" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <renameColumn tableName="labels_defaultvalues" oldColumnName="element" newColumnName="defaultValues"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-012" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <renameColumn tableName="labelsdata_labels" oldColumnName="element" newColumnName="labels"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-013" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <renameColumn tableName="querydef_parameters" oldColumnName="element" newColumnName="parameters"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-014" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <renameColumn tableName="spinofffield_fieldnames" oldColumnName="element" newColumnName="fieldNames"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-015" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <renameColumn tableName="spinofffield_params" oldColumnName="element" newColumnName="params"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-016" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="sqltokentreeitem">
+            <column name="datatypemask" type="integer" defaultValueNumeric="0" valueNumeric="0">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+	<changeSet author="rfoster" id="rfoster-05-sql-001" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "fielddef" SET "valuetype" = 'String' WHERE "valuetype" = 'string';
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-sql-002" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "fielddef" SET "valuetype" = 'Boolean' WHERE "valuetype" = 'boolean';
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-sql-003" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "fielddef" SET "valuetype" = 'Integer' WHERE "valuetype" = 'integer';
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-sql-004" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "fielddef" SET "valuetype" = 'Number' WHERE "valuetype" = 'number';
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-sql-005" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "fielddef" SET "valuetype" = 'DateTime' WHERE "valuetype" = 'datetime';
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-sql-006" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "fielddef" SET "valuetype" = 'Date' WHERE "valuetype" = 'date';
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-sql-007" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "fielddef" SET "valuetype" = 'Time' WHERE "valuetype" = 'time';
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-sql-008" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "fielddef" SET "valuetype" = 'Unsupported' WHERE "valuetype" = 'unsupported';
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-sql-009" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "columndef" SET "csitype" = 'String' WHERE "csitype" = 'string';
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-sql-010" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "columndef" SET "csitype" = 'Boolean' WHERE "csitype" = 'boolean';
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-sql-011" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "columndef" SET "csitype" = 'Integer' WHERE "csitype" = 'integer';
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-sql-012" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "columndef" SET "csitype" = 'Number' WHERE "csitype" = 'number';
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-sql-013" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "columndef" SET "csitype" = 'DateTime' WHERE "csitype" = 'datetime';
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-sql-014" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "columndef" SET "csitype" = 'Date' WHERE "csitype" = 'date';
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-sql-015" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "columndef" SET "csitype" = 'Time' WHERE "csitype" = 'time';
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-sql-016" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+			UPDATE "columndef" SET "csitype" = 'Unsupported' WHERE "csitype" = 'unsupported';
+        </sql>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-05-sql-017" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<sql splitStatements="false" stripComments="false">
+<![CDATA[
+
+-- From String data type to any other
+
+create or replace function string_to_string(input text) returns text as $$
+begin
+    return cast(input as text);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function string_to_boolean(input text) returns boolean as $$
+begin
+    return cast(input as boolean);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function string_to_integer(input text) returns bigint as $$
+begin
+    return cast(input as bigint);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function string_to_number(input text) returns float8 as $$
+begin
+    return cast(input as float8);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function string_to_datetime(input text) returns timestamp as $$
+begin
+    return cast(input as timestamp);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function string_to_date(input text) returns date as $$
+begin
+    return cast(input as date);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function string_to_time(input text) returns time as $$
+begin
+    return cast(input as time);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function string_to_interval(input text) returns interval as $$
+begin
+    return cast(input as interval);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+
+-- From Number data type to any other
+
+create or replace function number_to_string(input float8) returns text as $$
+begin
+    return cast(input as text);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function number_to_boolean(input float8) returns boolean as $$
+begin
+    return cast(input as boolean);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function number_to_integer(input float8) returns bigint as $$
+begin
+    return cast(input as bigint);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function number_to_number(input float8) returns float8 as $$
+begin
+    return cast(input as float8);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function number_to_datetime(input float8) returns timestamp as $$
+begin
+    return cast(input as timestamp);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function number_to_date(input float8) returns date as $$
+begin
+    return cast(input as date);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function number_to_time(input float8) returns time as $$
+begin
+    return cast(input as time);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function number_to_interval(input float8) returns interval as $$
+begin
+    return cast(input as interval);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+
+-- From Integer data type to any other
+
+create or replace function integer_to_string(input bigint) returns text as $$
+begin
+    return cast(input as text);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function integer_to_boolean(input bigint) returns boolean as $$
+begin
+    return cast(input as boolean);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function integer_to_integer(input bigint) returns bigint as $$
+begin
+    return cast(input as bigint);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function integer_to_number(input bigint) returns float8 as $$
+begin
+    return cast(input as float8);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function integer_to_datetime(input bigint) returns timestamp as $$
+begin
+    return cast(input as timestamp);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function integer_to_date(input bigint) returns date as $$
+begin
+    return cast(input as date);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function integer_to_time(input bigint) returns time as $$
+begin
+    return cast(input as time);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function integer_to_interval(input bigint) returns interval as $$
+begin
+    return cast(input as interval);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+
+-- From DateTime data type to any other
+
+create or replace function datetime_to_string(input timestamp) returns text as $$
+begin
+    return cast(input as text);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function datetime_to_boolean(input timestamp) returns boolean as $$
+begin
+    return cast(input as boolean);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function datetime_to_integer(input timestamp) returns bigint as $$
+begin
+    return cast(input as bigint);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function datetime_to_number(input timestamp) returns float8 as $$
+begin
+    return cast(input as float8);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function datetime_to_datetime(input timestamp) returns timestamp as $$
+begin
+    return cast(input as timestamp);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function datetime_to_date(input timestamp) returns date as $$
+begin
+    return cast(input as date);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function datetime_to_time(input timestamp) returns time as $$
+begin
+    return cast(input as time);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function datetime_to_interval(input timestamp) returns interval as $$
+begin
+    return cast(input as interval);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+
+-- From Date data type to any other
+
+create or replace function date_to_string(input date) returns text as $$
+begin
+    return cast(input as text);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function date_to_boolean(input date) returns boolean as $$
+begin
+    return cast(input as boolean);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function date_to_integer(input date) returns bigint as $$
+begin
+    return cast(input as bigint);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function date_to_number(input date) returns float8 as $$
+begin
+    return cast(input as float8);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function date_to_datetime(input date) returns timestamp as $$
+begin
+    return cast(input as timestamp);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function date_to_date(input date) returns date as $$
+begin
+    return cast(input as date);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function date_to_time(input date) returns time as $$
+begin
+    return cast(input as time);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function date_to_interval(input date) returns interval as $$
+begin
+    return cast(input as interval);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+
+-- From Time data type to any other
+
+create or replace function time_to_string(input time) returns text as $$
+begin
+    return cast(input as text);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function time_to_boolean(input time) returns boolean as $$
+begin
+    return cast(input as boolean);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function time_to_integer(input time) returns bigint as $$
+begin
+    return cast(input as bigint);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function time_to_number(input time) returns float8 as $$
+begin
+    return cast(input as float8);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function time_to_datetime(input time) returns timestamp as $$
+begin
+    return cast(input as timestamp);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function time_to_date(input time) returns date as $$
+begin
+    return cast(input as date);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function time_to_time(input time) returns time as $$
+begin
+    return cast(input as time);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function time_to_interval(input time) returns interval as $$
+begin
+    return cast(input as interval);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+
+-- From Interval data type to any other
+
+create or replace function interval_to_string(input interval) returns text as $$
+begin
+    return cast(input as text);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function interval_to_boolean(input interval) returns boolean as $$
+begin
+    return cast(input as boolean);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function interval_to_integer(input interval) returns bigint as $$
+begin
+    return cast(input as bigint);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function interval_to_number(input interval) returns float8 as $$
+begin
+    return cast(input as float8);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function interval_to_datetime(input interval) returns timestamp as $$
+begin
+    return cast(input as timestamp);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function interval_to_date(input interval) returns date as $$
+begin
+    return cast(input as date);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function interval_to_time(input interval) returns time as $$
+begin
+    return cast(input as time);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+create or replace function interval_to_interval(input interval) returns interval as $$
+begin
+    return cast(input as interval);
+exception
+    when data_exception then
+        return null;
+end;
+$$ language plpgsql immutable;
+		]]></sql>
+	</changeSet>
+</databaseChangeLog>

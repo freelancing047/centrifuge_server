@@ -1,0 +1,81 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g="urn:import:com.google.gwt.user.client.ui"
+    xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+    xmlns:gxtform="urn:import:com.sencha.gxt.widget.core.client.form"
+    xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes"
+    xmlns:base="urn:import:com.github.gwtbootstrap.client.ui.base">
+
+   <ui:style gss="true">
+       .small_lbl {
+           margin-left: 10px !important;
+           width: 70px !important;
+           text-align: left !important;
+       }
+
+       .betterForm {
+           margin-left: 80px !important;
+           margin-bottom: 20px;
+       }
+
+       .radio_margin {
+           margin-left: 20px !important;
+           margin-bottom: 0px !important;
+       }
+   </ui:style>
+
+    <ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+
+    <g:SimpleLayoutPanel width="100%" height="100%">
+        <boot:Form type="HORIZONTAL">
+            <boot:FluidRow>
+                <boot:Column size="6">
+                    <boot:ControlGroup addStyleNames="{style.radio_margin}">
+                        <boot:Controls addStyleNames="{style.betterForm}">
+                            <boot:RadioButton  name="measureType"  ui:field="measureTypeField" text="{i18n.get.matrixMeasuresTab_measureTypeField}" />
+                        </boot:Controls>
+                    </boot:ControlGroup>
+                    <boot:ControlGroup>
+                        <boot:ControlLabel addStyleNames="{style.small_lbl}" for="fieldControl"><base:InlineLabel text="{i18n.get.matrixMeasuresTab_fieldControl}" /></boot:ControlLabel>
+                        <boot:Controls>
+                            <combo:FieldDefComboBox ui:field="fieldList" boot:id="fieldControl"/>
+                        </boot:Controls>
+                    </boot:ControlGroup>
+                    <boot:ControlGroup>
+                        <boot:ControlLabel addStyleNames="{style.small_lbl}" for="functionControl"><base:InlineLabel text="{i18n.get.matrixMeasuresTab_functionControl}" /></boot:ControlLabel>
+                        <boot:Controls>
+                            <gxtform:ComboBox ui:field="aggregateFunction" gxtform:id="functionControl"/>
+                        </boot:Controls>
+                    </boot:ControlGroup>
+                    <boot:ControlGroup>
+                        <boot:ControlLabel addStyleNames="{style.small_lbl}" for="scaleMinControl"><base:InlineLabel text="{i18n.get.matrixMeasuresTab_scaleMinControl}" /></boot:ControlLabel>
+                        <boot:Controls>
+                            <boot:TextBox ui:field="scaleMin" boot:id="scaleMinControl"></boot:TextBox>
+                        </boot:Controls>
+                    </boot:ControlGroup>
+                    <boot:ControlGroup>
+                        <boot:ControlLabel addStyleNames="{style.small_lbl}" for="scaleMaxControl"><base:InlineLabel text="{i18n.get.matrixMeasuresTab_scaleMaxControl}" /></boot:ControlLabel>
+                        <boot:Controls>
+                            <boot:TextBox ui:field="scaleMax" boot:id="scaleMaxControl"></boot:TextBox>
+                        </boot:Controls>
+                    </boot:ControlGroup>
+                    <boot:ControlGroup>
+                        <boot:ControlLabel addStyleNames="{style.small_lbl}" for="displayAsControl"><base:InlineLabel text="{i18n.get.matrixMeasuresTab_displayAsControl}" /></boot:ControlLabel>
+                        <boot:Controls>
+                            <boot:TextBox ui:field="displayAs" boot:id="displayAsControl"></boot:TextBox>
+                        </boot:Controls>
+                    </boot:ControlGroup>
+                </boot:Column>
+                <boot:Column size="5">
+                    <boot:ControlGroup>
+                        <boot:Controls addStyleNames="{style.betterForm}">
+                            <boot:RadioButton name="measureType" ui:field="measureTypeCount" text="{i18n.get.matrixMeasuresTab_measureTypeCount}" />
+                        </boot:Controls>
+                    </boot:ControlGroup>
+                </boot:Column>
+            </boot:FluidRow>
+        </boot:Form>
+    </g:SimpleLayoutPanel>
+
+</ui:UiBinder>

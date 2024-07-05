@@ -1,0 +1,2310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<install4j version="5.1.15" transformSequenceNumber="4">
+  <directoryPresets config="./src/resources/jres/windows-amd64-1.8.0_202/java.security" />
+  <application name="Centrifuge" distributionSourceDir="" applicationId="3465-0428-2862-8686" mediaDir="../build/installer" mediaFilePattern="${compiler:sys.shortName}${compiler:csi.type}-${compiler:sys.platform}${compiler:sys.architecture}-${compiler:sys.version}" compression="6" lzmaCompression="false" pack200Compression="false" excludeSignedFromPacking="true" commonExternalFiles="false" createMd5Sums="true" shrinkRuntime="true" shortName="Centrifuge" publisher="Centrifuge Systems Inc." publisherWeb="http://www.CentrifugeSystems.com" version="1" allPathsRelative="true" backupOnSave="true" autoSave="true" convertDotsToUnderscores="false" macSignature="????" installerName="" javaMinVersion="1.7.0" javaMaxVersion="" allowBetaVM="false" jdkMode="runtimeJre" jdkName="">
+    <languages skipLanguageSelection="false" languageSelectionInPrincipalLanguage="false">
+      <principalLanguage id="en" customLocalizationFile="./src/resources/messages/messages_en.utf8" />
+      <additionalLanguages />
+    </languages>
+    <searchSequence>
+      <registry />
+      <envVar name="JAVA_HOME" />
+      <envVar name="JDK_HOME" />
+    </searchSequence>
+    <variables>
+      <variable name="sys.architecture" value="-x86" description="" category="" />
+      <variable name="csi.type" value="" description="" category="" />
+      <variable name="csi.eula" value="../docs/Centrifuge EULA.html" description="" category="" />
+      <variable name="csi.loopback" value="127.0.0.1" description="" category="" />
+      <variable name="csi.metadb.dir" value="./cachedb/metadb" description="" category="" />
+      <variable name="postgres.archive" value="postgresql-9.6.1-1-windows-x64-binaries.zip" description="" category="" />
+      <variable name="source.postgres.distribution" value="../cachedb/pgsql_${compiler:sys.version}/9.6.1-1/postgresql-9.6.1-1-windows-x64-binaries.zip" description="" category="" />
+    </variables>
+    <mergedProjects />
+    <codeSigning macEnabled="false" macPkcs12File="" windowsEnabled="false" windowsKeySource="pvkAndSpc" windowsPvkFile="" windowsSpcFile="" windowsPkcs12File="" />
+  </application>
+  <files keepModificationTimes="false" missingFilesStrategy="warn" globalExcludeSuffixes="" defaultOverwriteMode="1" defaultUninstallMode="2" launcherOverwriteMode="1" defaultFileMode="644" defaultDirMode="755">
+    <filesets>
+      <fileset name="postgres-windows-9.6.1-1" id="133" customizedId="" />
+      <fileset name="Standard Files" id="514" customizedId="" />
+      <fileset name="Service Files" id="531" customizedId="" />
+      <fileset name="Standard Drivers" id="621" customizedId="" />
+      <fileset name="Evaluation Drivers" id="623" customizedId="" />
+      <fileset name="postgres-linux" id="1118" customizedId="" />
+      <fileset name="cachedb-config" id="1129" customizedId="" />
+      <fileset name="migration linux" id="1336" customizedId="" />
+      <fileset name="migration windows" id="1341" customizedId="" />
+      <fileset name="neo4j-windows-2.1.5" id="2276" customizedId="" />
+      <fileset name="Java lib ext" id="3010" customizedId="" />
+    </filesets>
+    <roots>
+      <root id="134" fileset="133" location="" />
+      <root id="515" fileset="514" location="" />
+      <root id="532" fileset="531" location="" />
+      <root id="622" fileset="621" location="" />
+      <root id="624" fileset="623" location="" />
+      <root id="1119" fileset="1118" location="" />
+      <root id="1130" fileset="1129" location="" />
+      <root id="1337" fileset="1336" location="" />
+      <root id="1342" fileset="1341" location="" />
+      <root id="2277" fileset="2276" location="" />
+      <root id="3011" fileset="3010" location="" />
+    </roots>
+    <mountPoints>
+      <mountPoint id="68" root="" location="bin" mode="755" />
+      <mountPoint id="2517" root="" location="backup" mode="755" />
+      <mountPoint id="2518" root="" location="backup/pre_${compiler:sys.version}" mode="755" />
+      <mountPoint id="2519" root="" location="conf" mode="755" />
+      <mountPoint id="2520" root="" location="conf/centrifuge" mode="755" />
+      <mountPoint id="2521" root="" location="conf/centrifuge/META-INF" mode="755" />
+      <mountPoint id="2522" root="" location="conf/centrifuge/META-INF/override" mode="755" />
+      <mountPoint id="2731" root="" location="conf/centrifuge/META-INF/sample" mode="755" />
+      <mountPoint id="2732" root="" location="conf/centrifuge/META-INF/ioc" mode="755" />
+      <mountPoint id="2526" root="" location="logdb" mode="755" />
+      <mountPoint id="2527" root="" location="userfiles" mode="755" />
+      <mountPoint id="19" root="" location="" mode="755" />
+      <mountPoint id="142" root="134" location="cachedb" mode="755" />
+      <mountPoint id="145" root="134" location="cachedb/pgsql_${compiler:sys.version}" mode="755" />
+      <mountPoint id="530" root="515" location="bin" mode="755" />
+      <mountPoint id="533" root="532" location="bin" mode="755" />
+      <mountPoint id="625" root="622" location="lib" mode="755" />
+      <mountPoint id="626" root="624" location="lib" mode="755" />
+      <mountPoint id="2411" root="1119" location="cachedb" mode="755" />
+      <mountPoint id="1131" root="1130" location="cachedb" mode="755" />
+      <mountPoint id="1132" root="1130" location="cachedb/config" mode="755" />
+      <mountPoint id="1133" root="1130" location="cachedb/ddl" mode="755" />
+      <mountPoint id="1568" root="1337" location="utils" mode="755" />
+      <mountPoint id="1569" root="1337" location="utils/migrate" mode="755" />
+      <mountPoint id="1570" root="1342" location="utils" mode="755" />
+      <mountPoint id="1571" root="1342" location="utils/migrate" mode="755" />
+      <mountPoint id="2278" root="2277" location="cachedb" mode="755" />
+      <mountPoint id="2279" root="2277" location="cachedb/neo4j" mode="755" />
+      <mountPoint id="3012" root="3011" location="jre" mode="755" />
+      <mountPoint id="3013" root="3011" location="jre/lib" mode="755" />
+      <mountPoint id="3014" root="3011" location="jre/lib/ext" mode="755" />
+      <mountPoint id="3153" root="3011" location="jre/lib/security" mode="755" />
+    </mountPoints>
+    <entries>
+      <fileEntry mountPoint="68" file="./GetHelp.url" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="68" file="./LocalServerShortCut.url" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="68" file="../build/centrifuge-server/bin/bootstrap.jar" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="68" file="../build/centrifuge-server/bin/commons-daemon.jar" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="68" file="../build/centrifuge-server/bin/tomcat-juli.jar" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="68" file="../build/centrifuge-server/bin/tomcat-native.tar.gz" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="68" file="./logo-96x96.ico" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="68" file="./logo-96x96.png" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="68" file="./centrifuge.ico" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="68" file="./favicon.ico" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="68" file="./src/resources/charsets.jar" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="68" file="./src/windows/BrowserLauncher/BrowserLauncher/bin/Release/BrowserLauncher.exe" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <dirEntry mountPoint="2522" file="../build/centrifuge-server/conf/centrifuge/META-INF/override" overwriteMode="0" shared="false" fileMode="644" uninstallMode="1" overrideFileMode="false" overrideOverwriteMode="true" overrideUninstallMode="true" entryMode="direct" subDirectory="override" excludeSuffixes="" dirMode="755" overrideDirMode="false">
+        <exclude />
+      </dirEntry>
+      <dirEntry mountPoint="2731" file="../build/centrifuge-server/conf/centrifuge/META-INF/sample" overwriteMode="1" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="true" overrideUninstallMode="true" entryMode="direct" subDirectory="sample" excludeSuffixes="" dirMode="755" overrideDirMode="false">
+        <exclude />
+      </dirEntry>
+      <dirEntry mountPoint="2732" file="../build/centrifuge-server/conf/centrifuge/META-INF/ioc" overwriteMode="1" shared="false" fileMode="444" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" entryMode="direct" subDirectory="ioc" excludeSuffixes="" dirMode="755" overrideDirMode="false">
+        <exclude />
+      </dirEntry>
+      <fileEntry mountPoint="2519" file="../build/centrifuge-server/conf/jaas.config" overwriteMode="1" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="2519" file="../build/centrifuge-server/conf/context.xml" overwriteMode="1" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <dirEntry mountPoint="2526" file="../build/centrifuge-server/logdb" overwriteMode="0" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="true" overrideUninstallMode="false" entryMode="direct" subDirectory="logdb" excludeSuffixes="" dirMode="755" overrideDirMode="false">
+        <exclude />
+      </dirEntry>
+      <dirEntry mountPoint="2527" file="../build/centrifuge-server/userfiles" overwriteMode="1" shared="false" fileMode="644" uninstallMode="1" overrideFileMode="false" overrideOverwriteMode="true" overrideUninstallMode="true" entryMode="direct" subDirectory="userfiles" excludeSuffixes="" dirMode="755" overrideDirMode="false">
+        <exclude />
+      </dirEntry>
+      <dirEntry mountPoint="19" file="../build/centrifuge-server" overwriteMode="1" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="true" overrideUninstallMode="true" entryMode="direct" subDirectory="" excludeSuffixes="*.bat,*.sh, *.cmd" dirMode="755" overrideDirMode="false">
+        <exclude>
+          <entry location="bin" fileType="regular" />
+          <entry location="cachedb" fileType="regular" />
+          <entry location="conf/centrifuge/META-INF/ioc" fileType="regular" />
+          <entry location="conf/centrifuge/META-INF/override" fileType="regular" />
+          <entry location="conf/centrifuge/META-INF/sample" fileType="regular" />
+          <entry location="conf/jaas.config" fileType="regular" />
+          <entry location="lib/csvdriver.jar" fileType="regular" />
+          <entry location="lib/jtds-1.2.2.jar" fileType="regular" />
+          <entry location="lib/ojdbc14.jar" fileType="regular" />
+          <entry location="lib/postgresql-9.3-1100-jdbc4.jar" fileType="regular" />
+          <entry location="lib/xmldriver.jar" fileType="regular" />
+          <entry location="logdb" fileType="regular" />
+          <entry location="logs" fileType="regular" />
+          <entry location="userfiles" fileType="regular" />
+          <entry location="work" fileType="regular" />
+        </exclude>
+      </dirEntry>
+      <dirEntry mountPoint="145" file="../build/centrifuge-server/cachedb/pgsql_${compiler:sys.version}" overwriteMode="1" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="true" overrideUninstallMode="false" entryMode="direct" subDirectory="" excludeSuffixes="" dirMode="755" overrideDirMode="false">
+        <exclude />
+      </dirEntry>
+      <fileEntry mountPoint="530" file="./Shutdown.vmoptions" overwriteMode="1" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="530" file="./Start.vmoptions" overwriteMode="1" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="533" file="./CentrifugeService.vmoptions" overwriteMode="1" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="625" file="../lib/jdbc/flatfile/csvdriver.jar" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="625" file="../lib/jdbc/mssql/jtds-1.2.2.jar" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="625" file="../lib/jdbc/oracle/10g2/ojdbc14.jar" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="625" file="../lib/jdbc/postgresql/postgresql-9.3-1100.jdbc4.jar" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="625" file="../lib/jdbc/xml/xmldriver.jar" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="626" file="../lib/jdbc/flatfile/eval-csvdriver.jar" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="626" file="../lib/jdbc/mssql/jtds-1.2.2.jar" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="626" file="../lib/jdbc/oracle/10g2/ojdbc14.jar" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="626" file="../lib/jdbc/postgresql/postgresql-9.3-1100.jdbc4.jar" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="626" file="../lib/jdbc/xml/eval-xmldriver.jar" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <dirEntry mountPoint="2411" file="../build/centrifuge-server/cachedb" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" entryMode="direct" subDirectory="cachedb" excludeSuffixes="" dirMode="755" overrideDirMode="false">
+        <exclude />
+      </dirEntry>
+      <dirEntry mountPoint="1132" file="../build/centrifuge-server/cachedb/config" overwriteMode="1" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" entryMode="direct" subDirectory="" excludeSuffixes="" dirMode="755" overrideDirMode="true">
+        <exclude />
+      </dirEntry>
+      <dirEntry mountPoint="1133" file="../build/centrifuge-server/cachedb/ddl" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="true" overrideUninstallMode="true" entryMode="direct" subDirectory="" excludeSuffixes="" dirMode="755" overrideDirMode="true">
+        <exclude />
+      </dirEntry>
+      <fileEntry mountPoint="1569" file="../tools/Migration/scripts/export.sh" overwriteMode="4" shared="false" fileMode="755" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1569" file="../tools/Migration/scripts/import.sh" overwriteMode="4" shared="false" fileMode="755" uninstallMode="0" overrideFileMode="true" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="1571" file="../tools/Migration/scripts/export.cmd" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <fileEntry mountPoint="1571" file="../tools/Migration/scripts/import.cmd" overwriteMode="2" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="true" overrideUninstallMode="true" />
+      <dirEntry mountPoint="2279" file="../build/centrifuge-server/cachedb/neo4j" overwriteMode="1" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="true" overrideUninstallMode="false" entryMode="direct" subDirectory="" excludeSuffixes="" dirMode="755" overrideDirMode="false">
+        <exclude />
+      </dirEntry>
+      <fileEntry mountPoint="3014" file="../build/windows/jre/lib/ext/pisces-1.0.2.jar" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+      <fileEntry mountPoint="3153" file="./src/resources/jres/windows-amd64-1.8.0_202/java.security" overwriteMode="4" shared="false" fileMode="644" uninstallMode="0" overrideFileMode="false" overrideOverwriteMode="false" overrideUninstallMode="false" />
+    </entries>
+    <components />
+  </files>
+  <launchers>
+    <launcher name="Centrifuge" id="20" customizedId="" external="false" excludeFromMenu="true" unixMode="755" menuName="" icnsFile="" customMacBundleIdentifier="false" macBundleIdentifier="" swtApp="false" fileset="" macBundleBinary="JavaApplicationStub" addMacEntitlements="false" macEntitlementsFile="">
+      <executable name="CentrifugeService" type="1" iconSet="true" iconFile="./favicon.ico" executableDir="bin" redirectStderr="false" stderrFile="error.log" stderrMode="overwrite" redirectStdout="false" stdoutFile="output.log" stdoutMode="overwrite" failOnStderrOutput="true" executableMode="3" changeWorkingDirectory="true" workingDirectory="../" singleInstance="false" serviceStartType="2" serviceDependencies="" serviceDescription="" jreLocation="" executionLevel="asInvoker" checkConsoleParameter="false" globalSingleInstance="false" singleInstanceActivate="true">
+        <versionInfo include="true" fileVersion="3.0.0.0" fileDescription="Centrifuge Installer" legalCopyright="Copyright Centrifuge Systems, Inc." internalName="Centrifuge" productName="Centrifuge" />
+      </executable>
+      <splashScreen show="false" autoOff="true" alwaysOnTop="true" width="0" height="0" bitmapFile="" java6SplashScreen="false">
+        <text>
+          <statusLine x="20" y="20" text="" font="Arial" fontSize="8" fontColor="0,0,0" fontWeight="500" />
+          <versionLine x="20" y="40" text="version ${compiler:sys.version}" font="Arial" fontSize="8" fontColor="0,0,0" fontWeight="500" />
+        </text>
+      </splashScreen>
+      <java mainClass="org.apache.catalina.startup.Bootstrap" vmParameters="" arguments="" allowVMPassthroughParameters="true" preferredVM="" bundleRuntime="true">
+        <classPath>
+          <archive location="bin/bootstrap.jar" failOnError="false" />
+          <archive location="bin/tomcat-juli.jar" failOnError="false" />
+        </classPath>
+        <nativeLibraryDirectories />
+      </java>
+      <includedFiles />
+      <unextractableFiles />
+      <vmOptionsFile mode="none" overwriteMode="0" fileMode="644">
+        <content />
+      </vmOptionsFile>
+      <customScript mode="1" file="">
+        <content />
+      </customScript>
+      <infoPlist mode="1" file="">
+        <content />
+      </infoPlist>
+      <iconImageFiles>
+        <file path="./logo16x16.png" />
+        <file path="./logo32x32.png" />
+      </iconImageFiles>
+    </launcher>
+    <launcher name="Start" id="53" customizedId="" external="false" excludeFromMenu="false" unixMode="755" menuName="" icnsFile="" customMacBundleIdentifier="false" macBundleIdentifier="" swtApp="false" fileset="" macBundleBinary="JavaApplicationStub" addMacEntitlements="false" macEntitlementsFile="">
+      <executable name="Start" type="1" iconSet="true" iconFile="./favicon.ico" executableDir="bin" redirectStderr="false" stderrFile="error.log" stderrMode="overwrite" redirectStdout="false" stdoutFile="output.log" stdoutMode="overwrite" failOnStderrOutput="true" executableMode="2" changeWorkingDirectory="true" workingDirectory=".." singleInstance="false" serviceStartType="2" serviceDependencies="" serviceDescription="" jreLocation="" executionLevel="asInvoker" checkConsoleParameter="false" globalSingleInstance="false" singleInstanceActivate="true">
+        <versionInfo include="false" fileVersion="" fileDescription="" legalCopyright="" internalName="" productName="" />
+      </executable>
+      <splashScreen show="false" autoOff="true" alwaysOnTop="true" width="0" height="0" bitmapFile="../source/CentrifugeInstaller/splash.logo.png" java6SplashScreen="false">
+        <text>
+          <statusLine x="20" y="20" text="" font="Arial" fontSize="8" fontColor="0,0,0" fontWeight="500" />
+          <versionLine x="20" y="40" text="version ${compiler:sys.version}" font="Arial" fontSize="8" fontColor="0,0,0" fontWeight="500" />
+        </text>
+      </splashScreen>
+      <java mainClass="org.apache.catalina.startup.Bootstrap" vmParameters="" arguments="start" allowVMPassthroughParameters="true" preferredVM="" bundleRuntime="true">
+        <classPath>
+          <archive location="bin/bootstrap.jar" failOnError="false" />
+          <archive location="bin/tomcat-juli.jar" failOnError="false" />
+        </classPath>
+        <nativeLibraryDirectories />
+      </java>
+      <includedFiles />
+      <unextractableFiles />
+      <vmOptionsFile mode="none" overwriteMode="0" fileMode="644">
+        <content />
+      </vmOptionsFile>
+      <customScript mode="1" file="">
+        <content />
+      </customScript>
+      <infoPlist mode="1" file="">
+        <content />
+      </infoPlist>
+      <iconImageFiles>
+        <file path="./logo16x16.png" />
+        <file path="./logo32x32.png" />
+      </iconImageFiles>
+    </launcher>
+    <launcher name="Shutdown" id="54" customizedId="" external="false" excludeFromMenu="false" unixMode="755" menuName="" icnsFile="" customMacBundleIdentifier="false" macBundleIdentifier="" swtApp="false" fileset="" macBundleBinary="JavaApplicationStub" addMacEntitlements="false" macEntitlementsFile="">
+      <executable name="Shutdown" type="1" iconSet="true" iconFile="./favicon.ico" executableDir="bin" redirectStderr="false" stderrFile="error.log" stderrMode="overwrite" redirectStdout="false" stdoutFile="output.log" stdoutMode="overwrite" failOnStderrOutput="true" executableMode="2" changeWorkingDirectory="true" workingDirectory=".." singleInstance="false" serviceStartType="2" serviceDependencies="" serviceDescription="" jreLocation="" executionLevel="asInvoker" checkConsoleParameter="false" globalSingleInstance="false" singleInstanceActivate="true">
+        <versionInfo include="false" fileVersion="" fileDescription="" legalCopyright="" internalName="" productName="" />
+      </executable>
+      <splashScreen show="false" autoOff="true" alwaysOnTop="true" width="0" height="0" bitmapFile="" java6SplashScreen="false">
+        <text>
+          <statusLine x="20" y="20" text="" font="Arial" fontSize="8" fontColor="0,0,0" fontWeight="500" />
+          <versionLine x="20" y="40" text="version ${compiler:sys.version}" font="Arial" fontSize="8" fontColor="0,0,0" fontWeight="500" />
+        </text>
+      </splashScreen>
+      <java mainClass="org.apache.catalina.startup.Bootstrap" vmParameters="" arguments="stop" allowVMPassthroughParameters="true" preferredVM="" bundleRuntime="true">
+        <classPath>
+          <archive location="bin/bootstrap.jar" failOnError="false" />
+          <archive location="bin/tomcat-juli.jar" failOnError="false" />
+        </classPath>
+        <nativeLibraryDirectories />
+      </java>
+      <includedFiles />
+      <unextractableFiles />
+      <vmOptionsFile mode="none" overwriteMode="0" fileMode="644">
+        <content />
+      </vmOptionsFile>
+      <customScript mode="1" file="">
+        <content />
+      </customScript>
+      <infoPlist mode="1" file="">
+        <content />
+      </infoPlist>
+      <iconImageFiles>
+        <file path="./logo16x16.png" />
+        <file path="./logo32x32.png" />
+      </iconImageFiles>
+    </launcher>
+  </launchers>
+  <installerGui installerType="1" addOnAppId="" suggestPreviousLocations="true" autoUpdateDescriptorUrl="" useAutoUpdateBaseUrl="false" autoUpdateBaseUrl="">
+    <customCode>
+      <archive location="../lib/commons-lang-2.4.jar" />
+      <archive location="../lib/log4j-api-2.8.2.jar" />
+      <archive location="../lib/log4j-core-2.8.2.jar" />
+      <archive location="./build/libs/installer.jar" />
+    </customCode>
+    <autoUpdate useMinUpdatableVersion="false" minUpdatableVersion="" useMaxUpdatableVersion="false" maxUpdatableVersion="">
+      <commentFiles />
+      <customAttributes />
+    </autoUpdate>
+    <applications>
+      <application name="" id="installer" customizedId="" beanClass="com.install4j.runtime.beans.applications.InstallerApplication" enabled="true" commentSet="false" comment="" actionElevationType="none" fileset="" customIcnsFile="" customIcoFile="" macEntitlementsFile="" automaticLauncherIntegration="false" launchMode="startupFirstWindow" launchInNewProcess="false" launchSchedule="updateSchedule" allLaunchers="true">
+        <serializedBean>
+          <java class="java.beans.XMLDecoder">
+            <object class="com.install4j.runtime.beans.applications.InstallerApplication">
+              <void property="customHeaderImage">
+                <object class="com.install4j.api.beans.ExternalFile">
+                  <string>./logo-72x72-inset.png</string>
+                </object>
+              </void>
+              <void property="customIconImageFiles">
+                <void method="add">
+                  <object class="com.install4j.api.beans.ExternalFile">
+                    <string>./logo16x16.png</string>
+                  </object>
+                </void>
+                <void method="add">
+                  <object class="com.install4j.api.beans.ExternalFile">
+                    <string>./logo32x32.png</string>
+                  </object>
+                </void>
+              </void>
+              <void property="customWatermarkText">
+                <string>Centrifuge Systems</string>
+              </void>
+              <void property="frameSizeClientArea">
+                <boolean>false</boolean>
+              </void>
+              <void property="useCustomIcon">
+                <boolean>true</boolean>
+              </void>
+            </object>
+          </java>
+        </serializedBean>
+        <launcherIds />
+        <variables>
+          <variable name="JVM_OPTIONS_VARIABLE" value="&quot;1g&quot;, &quot;2g&quot;, &quot;4g&quot;, &quot;8g&quot;" description="" category="" valueClass="string_array" />
+          <variable name="JVM_SUGGESTED_INDEX" value="0" description="" category="" valueClass="integer" />
+          <variable name="csi.licenseKey" value="" description="" category="" valueClass="string" />
+        </variables>
+        <startup>
+          <screen name="" id="1" customizedId="" beanClass="com.install4j.runtime.beans.screens.StartupScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.StartupScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions>
+              <action name="" id="1022" customizedId="" beanClass="com.install4j.runtime.beans.actions.misc.RequestPrivilegesAction" enabled="true" commentSet="false" comment="" actionElevationType="none" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.misc.RequestPrivilegesAction">
+                      <void property="failIfNotRootUnix">
+                        <boolean>true</boolean>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+            </actions>
+            <formComponents />
+          </screen>
+        </startup>
+        <screens>
+          <screen name="" id="2" customizedId="" beanClass="com.install4j.runtime.beans.screens.WelcomeScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.WelcomeScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions>
+              <action name="" id="1023" customizedId="" beanClass="com.install4j.runtime.beans.actions.misc.LoadResponseFileAction" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" multiExec="true" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.misc.LoadResponseFileAction" />
+                  </java>
+                </serializedBean>
+                <condition>context.getBooleanVariable("sys.confirmedUpdateInstallation")</condition>
+              </action>
+            </actions>
+            <formComponents />
+          </screen>
+          <screen name="" id="22" customizedId="" beanClass="com.install4j.runtime.beans.screens.LicenseScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.LicenseScreen">
+                  <void property="displayedTextFile">
+                    <void property="languageIdToExternalFile">
+                      <void method="put">
+                        <string>en</string>
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>${compiler:csi.eula}</string>
+                        </object>
+                      </void>
+                    </void>
+                  </void>
+                </object>
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents />
+          </screen>
+          <screen name="" id="3" customizedId="" beanClass="com.install4j.runtime.beans.screens.InstallationDirectoryScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.InstallationDirectoryScreen">
+                  <void property="allowNewFolderCreation">
+                    <boolean>true</boolean>
+                  </void>
+                  <void property="existingDirWarning">
+                    <boolean>false</boolean>
+                  </void>
+                  <void property="suggestAppDir">
+                    <boolean>false</boolean>
+                  </void>
+                </object>
+              </java>
+            </serializedBean>
+            <condition>ApplicationRegistry.ApplicationInfo[] applicationInfos =
+    ApplicationRegistry.getApplicationInfoById(context.getApplicationId());
+
+if (applicationInfos != null &amp;&amp; applicationInfos.length &gt; 1) {
+    return true;
+}else{
+    return !context.getBooleanVariable("sys.confirmedUpdateInstallation");
+}</condition>
+            <validation />
+            <preActivation />
+            <postActivation>final int MEMORY_DIVIDER = 1024 * 1024 * 1024;
+
+long systemMemory = SystemInfo.getPhysicalMemory();
+
+int gigsMemory = (int)(systemMemory / MEMORY_DIVIDER);
+int suggestedMemory = (int)(systemMemory / 2 / MEMORY_DIVIDER);
+
+if(gigsMemory == 0){
+context.setVariable("JVM_OPTIONS_VARIABLE", new String[]{"512m"});
+    return;
+}
+
+List&lt;String&gt; memList = new ArrayList&lt;String&gt;();
+int memory = 1;
+int index = 0;
+for(int ii=1; memory &lt;= gigsMemory; ii++){
+    memList.add(memory + "g");
+    if(memory &lt; suggestedMemory){
+        context.setVariable("JVM_SUGGESTED_INDEX", index);
+    }
+    index++;
+    memory = (int)Math.pow(2, ii);
+
+}
+
+context.setVariable("JVM_OPTIONS_VARIABLE", memList.toArray());
+return;</postActivation>
+            <actions>
+              <action name="" id="4" customizedId="" beanClass="com.install4j.runtime.beans.actions.misc.LoadResponseFileAction" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" multiExec="true" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.misc.LoadResponseFileAction">
+                      <void property="excludedVariables">
+                        <array class="java.lang.String" length="1">
+                          <void index="0">
+                            <string>sys.installationDir</string>
+                          </void>
+                        </array>
+                      </void>
+                      <void property="overwrite">
+                        <boolean>false</boolean>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition>context.getVariable("sys.responseFile") == null</condition>
+              </action>
+            </actions>
+            <formComponents />
+          </screen>
+          <screen name="License Key Information" id="23" customizedId="" beanClass="com.install4j.runtime.beans.screens.FormScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.FormScreen">
+                  <void property="subTitle">
+                    <string>Please enter your license key below to activate Centrifuge.</string>
+                  </void>
+                  <void property="title">
+                    <string>Licensing Information</string>
+                  </void>
+                </object>
+              </java>
+            </serializedBean>
+            <condition />
+            <validation>import csi.installer.InstallationHelper;
+import csi.license.*;
+
+FormComponent comp = formEnvironment.getFormComponentById("26");
+JTextField licenseInput = (JTextField) comp.getConfigurationObject();
+
+String value = licenseInput.getText();
+value = ( value == null ) ? "" : value.trim();
+
+boolean proceed = (value.length() &gt; 0 );
+if( proceed ) {
+    InstallerLicense license = InstallationHelper.createLicense( licenseInput );
+    proceed = (license != null );
+    if( !proceed ) {
+        Util.showErrorMessage(context.getMessage("LicenseKeyInvalid"));
+    } else if( InstallationHelper.isExpired( license ) ) {
+        Util.showErrorMessage(context.getMessage("LicenseKeyExpired"));
+    }
+}
+
+
+return true;</validation>
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents>
+              <formComponent name="" id="25" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.SpacerComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.formcomponents.SpacerComponent" />
+                  </java>
+                </serializedBean>
+                <initScript />
+                <visibilityScript />
+              </formComponent>
+              <formComponent name="" id="24" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.LabelComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.formcomponents.LabelComponent">
+                      <void property="labelText">
+                        <string>License Key</string>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <initScript />
+                <visibilityScript />
+              </formComponent>
+              <formComponent name="" id="26" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.TextfieldComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.formcomponents.TextfieldComponent">
+                      <void property="variableName">
+                        <string>csi.licenseKey</string>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <initScript>import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.datatransfer.*;
+import csi.installer.InstallationHelper;
+
+InstallationHelper.addPasteMenu( configurationObject );
+configurationObject.setEditable(true);</initScript>
+                <visibilityScript />
+              </formComponent>
+              <formComponent name="" id="358" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.ButtonComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.formcomponents.ButtonComponent">
+                      <void property="actionScript">
+                        <object class="com.install4j.api.beans.ScriptProperty">
+                          <void property="value">
+                            <string>import java.awt.*;
+import java.awt.datatransfer.*;
+import csi.installer.InstallationHelper;
+
+FormComponent licenseKeyComp = formEnvironment.getFormComponentById("26");
+JTextField licenseField = (JTextField) licenseKeyComp.getConfigurationObject();
+
+String clipBoardText = InstallationHelper.getClipboardData(licenseField);
+if( clipBoardText != null &amp;&amp; clipBoardText.trim().length() &gt; 0 ) {
+    licenseField.setText( clipBoardText.trim() );
+}
+
+return;</string>
+                          </void>
+                        </object>
+                      </void>
+                      <void property="buttonText">
+                        <string>Paste Key from Clipboard</string>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <initScript />
+                <visibilityScript />
+              </formComponent>
+              <formComponent name="" id="948" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent">
+                      <void property="labelText">
+                        <string>${i18n:LicenseKeyLater}</string>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <initScript />
+                <visibilityScript />
+              </formComponent>
+            </formComponents>
+          </screen>
+          <screen name="" id="2649" customizedId="" beanClass="com.install4j.runtime.beans.screens.CustomizableInfoScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.CustomizableInfoScreen">
+                  <void property="infoText">
+                    <string>Please shutdown the existing instance of Centrifuge before continuing.</string>
+                  </void>
+                  <void property="subTitle">
+                    <string>An instance of centrifuge is already running</string>
+                  </void>
+                  <void property="title">
+                    <string>Possible conflicts</string>
+                  </void>
+                </object>
+              </java>
+            </serializedBean>
+            <condition>ProcessBuilder pb = new ProcessBuilder("tasklist", "");
+pb.redirectError();
+Process process = pb.start();
+InputStream is = process.getInputStream();
+InputStreamReader isr = new InputStreamReader(is);
+BufferedReader br = new BufferedReader(isr);
+String line;
+while ((line = br.readLine()) != null) {
+  if (line.contains("Start.exe")) return true;
+}
+return false;</condition>
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents />
+          </screen>
+          <screen name="JVM Memory Form" id="2086" customizedId="JVM_MEMORY" beanClass="com.install4j.runtime.beans.screens.FormScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.FormScreen">
+                  <void property="subTitle">
+                    <string>Please enter the amount of memory you wish to allocate to the JVM</string>
+                  </void>
+                  <void property="title">
+                    <string>Memory Configuration</string>
+                  </void>
+                </object>
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents>
+              <formComponent name="" id="2088" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.ComboboxComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.formcomponents.ComboboxComponent">
+                      <void property="fillHorizontal">
+                        <boolean>false</boolean>
+                      </void>
+                      <void property="helpText">
+                        <string>&lt;html&gt;&lt;tt&gt;The preselected value is determined by your system's memory capacity.&lt;br&gt;If you plan to run other programs, or notice errors, this value should be lowered.&lt;/tt&gt;&lt;/html&gt;</string>
+                      </void>
+                      <void property="labelText">
+                        <string>JVM Memory:</string>
+                      </void>
+                      <void property="listEntries">
+                        <array class="java.lang.String" length="1">
+                          <void index="0">
+                            <string>${installer:JVM_OPTIONS_VARIABLE}</string>
+                          </void>
+                        </array>
+                      </void>
+                      <void property="variableName">
+                        <string>JVM_MEMORY_INPUT</string>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <initScript>configurationObject.setEditable(false);
+configurationObject.setSelectedIndex((Integer)context.getVariable("JVM_SUGGESTED_INDEX"));
+return;</initScript>
+                <visibilityScript />
+              </formComponent>
+            </formComponents>
+          </screen>
+          <screen name="" id="5" customizedId="" beanClass="com.install4j.runtime.beans.screens.ComponentsScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.ComponentsScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents />
+          </screen>
+          <screen name="" id="6" customizedId="" beanClass="com.install4j.runtime.beans.screens.StandardProgramGroupScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.StandardProgramGroupScreen">
+                  <void property="programGroupName">
+                    <string>${compiler:sys.fullName}</string>
+                  </void>
+                </object>
+              </java>
+            </serializedBean>
+            <condition>!context.getBooleanVariable("sys.confirmedUpdateInstallation")</condition>
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents />
+          </screen>
+          <screen name="" id="7" customizedId="" beanClass="com.install4j.runtime.beans.screens.InstallationScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="true" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.InstallationScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions>
+              <group name="" id="2524" customizedId="" beanClass="com.install4j.runtime.beans.groups.ActionGroup" enabled="true" commentSet="false" comment="" actionElevationType="inherit">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.groups.ActionGroup">
+                      <void property="conditionExpression">
+                        <object class="com.install4j.api.beans.ScriptProperty">
+                          <void property="value">
+                            <string>// The value returned by context.getInstallationDirectory() will be the last installation directory
+// if the user has already installed the application
+ApplicationRegistry.ApplicationInfo applicationInfo =
+    ApplicationRegistry.getApplicationInfoByDir(context.getInstallationDirectory());
+
+if (applicationInfo == null) {
+  // The application has never been installed before
+    return false;
+}
+
+return true;</string>
+                          </void>
+                        </object>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <beans>
+                  <action name="Backup Configuration Files" id="2523" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.CopyFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.CopyFileAction">
+                          <void property="destinationFile">
+                            <object class="java.io.File">
+                              <string>backup/pre_${compiler:sys.version}/conf</string>
+                            </object>
+                          </void>
+                          <void property="files">
+                            <array class="java.io.File" length="1">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>conf</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                          <void property="triggerReboot">
+                            <boolean>false</boolean>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="" id="3328" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.MoveFileAction" enabled="false" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.MoveFileAction">
+                          <void property="destinationFile">
+                            <object class="java.io.File">
+                              <string>backup/pre_${compiler:sys.version}/conf</string>
+                            </object>
+                          </void>
+                          <void property="files">
+                            <array class="java.io.File" length="2">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>conf/jaas.config</string>
+                                </object>
+                              </void>
+                              <void index="1">
+                                <object class="java.io.File">
+                                  <string>conf/context.xml</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="" id="3560" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.MoveFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.MoveFileAction">
+                          <void property="destinationFile">
+                            <object class="java.io.File">
+                              <string>backup/pre_${compiler:sys.version}/bin/Start.vmoptions</string>
+                            </object>
+                          </void>
+                          <void property="files">
+                            <array class="java.io.File" length="1">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>bin/Start.vmoptions</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="" id="3329" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.MoveFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.MoveFileAction">
+                          <void property="destinationFile">
+                            <object class="java.io.File">
+                              <string>backup/pre_${compiler:sys.version}/bin/Shutdown.vmoptions</string>
+                            </object>
+                          </void>
+                          <void property="files">
+                            <array class="java.io.File" length="1">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>bin/Shutdown.vmoptions</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="" id="3406" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.MoveFileAction" enabled="false" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.MoveFileAction">
+                          <void property="destinationFile">
+                            <object class="java.io.File">
+                              <string>backup/pre_${compiler:sys.version}/webapps/Centrifuge/WEB-INF</string>
+                            </object>
+                          </void>
+                          <void property="files">
+                            <array class="java.io.File" length="1">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>webapps/Centrifuge/WEB-INF/*.*</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="" id="3407" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.MoveFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.MoveFileAction">
+                          <void property="destinationFile">
+                            <object class="java.io.File">
+                              <string>backup/pre_${compiler:sys.version}/webapps/Centrifuge/WEB-INF/classes/ehcache.xml</string>
+                            </object>
+                          </void>
+                          <void property="files">
+                            <array class="java.io.File" length="1">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>webapps/Centrifuge/WEB-INF/classes/ehcache.xml</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="" id="3561" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.MoveFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.MoveFileAction">
+                          <void property="destinationFile">
+                            <object class="java.io.File">
+                              <string>backup/pre_${compiler:sys.version}/webapps/Centrifuge/WEB-INF/classes/log4j.out.xml</string>
+                            </object>
+                          </void>
+                          <void property="files">
+                            <array class="java.io.File" length="1">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>webapps/Centrifuge/WEB-INF/classes/log4j.out.xml</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="" id="3562" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.MoveFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.MoveFileAction">
+                          <void property="destinationFile">
+                            <object class="java.io.File">
+                              <string>backup/pre_${compiler:sys.version}/webapps/Centrifuge/WEB-INF/classes/log4j.xml</string>
+                            </object>
+                          </void>
+                          <void property="files">
+                            <array class="java.io.File" length="1">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>webapps/Centrifuge/WEB-INF/classes/log4j.xml</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="" id="3563" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.MoveFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.MoveFileAction">
+                          <void property="destinationFile">
+                            <object class="java.io.File">
+                              <string>backup/pre_${compiler:sys.version}/webapps/Centrifuge/WEB-INF/classes/logging.properties</string>
+                            </object>
+                          </void>
+                          <void property="files">
+                            <array class="java.io.File" length="1">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>webapps/Centrifuge/WEB-INF/classes/logging.properties</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="" id="3564" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.MoveFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.MoveFileAction">
+                          <void property="destinationFile">
+                            <object class="java.io.File">
+                              <string>backup/pre_${compiler:sys.version}/webapps/Centrifuge/WEB-INF/classes/log4j2.xml</string>
+                            </object>
+                          </void>
+                          <void property="files">
+                            <array class="java.io.File" length="1">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>webapps/Centrifuge/WEB-INF/classes/log4j2.xml</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="" id="3408" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.MoveFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.MoveFileAction">
+                          <void property="destinationFile">
+                            <object class="java.io.File">
+                              <string>backup/pre_${compiler:sys.version}/cachedb/config</string>
+                            </object>
+                          </void>
+                          <void property="files">
+                            <array class="java.io.File" length="1">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>cachedb/config</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="" id="3409" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.MoveFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.MoveFileAction">
+                          <void property="destinationFile">
+                            <object class="java.io.File">
+                              <string>backup/pre_${compiler:sys.version}/cachedb/neo4j/conf</string>
+                            </object>
+                          </void>
+                          <void property="files">
+                            <array class="java.io.File" length="1">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>cachedb/neo4j/conf</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="" id="2525" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.MoveFileAction" enabled="false" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.MoveFileAction">
+                          <void property="destinationFile">
+                            <object class="java.io.File">
+                              <string>conf/centrifuge/META-INF/backup/${compiler:sys.version}/ioc</string>
+                            </object>
+                          </void>
+                          <void property="files">
+                            <array class="java.io.File" length="1">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>conf/centrifuge/META-INF/ioc</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                          <void property="overwriteMode">
+                            <object class="com.install4j.api.context.OverwriteMode" field="NEVER" />
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="" id="2863" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.DeleteFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.DeleteFileAction">
+                          <void property="files">
+                            <array class="java.io.File" length="1">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>webapps/Centrifuge</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                          <void property="recursive">
+                            <boolean>true</boolean>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="" id="3254" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.DeleteFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.DeleteFileAction">
+                          <void property="files">
+                            <array class="java.io.File" length="1">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>jre</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                          <void property="recursive">
+                            <boolean>true</boolean>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="" id="3486" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.DeleteFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.DeleteFileAction">
+                          <void property="files">
+                            <array class="java.io.File" length="1">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>lib/log4j-1.2.16.jar</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="Backup Existing License File" id="2936" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.CopyFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.CopyFileAction">
+                          <void property="destinationFile">
+                            <object class="java.io.File">
+                              <string>license.bak</string>
+                            </object>
+                          </void>
+                          <void property="files">
+                            <array class="java.io.File" length="1">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>license.txt</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                          <void property="overwriteMode">
+                            <object class="com.install4j.api.context.OverwriteMode" field="ALWAYS" />
+                          </void>
+                          <void property="showProgress">
+                            <boolean>true</boolean>
+                          </void>
+                          <void property="triggerReboot">
+                            <boolean>false</boolean>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="" id="3647" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.DeleteFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.DeleteFileAction">
+                          <void property="files">
+                            <array class="java.io.File" length="1">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>lib/joda-time-1.6.jar</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                </beans>
+              </group>
+              <action name="" id="8" customizedId="" beanClass="com.install4j.runtime.beans.actions.InstallFilesAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="2" errorMessage="${i18n:FileCorrupted}">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.InstallFilesAction">
+                      <void property="showFileNames">
+                        <boolean>false</boolean>
+                      </void>
+                      <void property="updateBundledJre">
+                        <boolean>false</boolean>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+              <group name="License File Operations" id="49" customizedId="" beanClass="com.install4j.runtime.beans.groups.ActionGroup" enabled="true" commentSet="false" comment="" actionElevationType="inherit">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.groups.ActionGroup">
+                      <void property="conditionExpression">
+                        <object class="com.install4j.api.beans.ScriptProperty">
+                          <void property="value">
+                            <string>Object object = (context.getVariable( "csi.licenseKey" ));
+
+if(object == null)
+    return false;
+
+String key = (String)object;
+
+return key != null &amp;&amp; key.trim().length() &gt; 0;</string>
+                          </void>
+                        </object>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <beans>
+                  <action name="Backup Existing License File" id="47" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.CopyFileAction" enabled="false" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.CopyFileAction">
+                          <void property="destinationFile">
+                            <object class="java.io.File">
+                              <string>license.bak</string>
+                            </object>
+                          </void>
+                          <void property="files">
+                            <array class="java.io.File" length="1">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>license.txt</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                          <void property="overwriteMode">
+                            <object class="com.install4j.api.context.OverwriteMode" field="ALWAYS" />
+                          </void>
+                          <void property="showProgress">
+                            <boolean>true</boolean>
+                          </void>
+                          <void property="triggerReboot">
+                            <boolean>false</boolean>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="Remove Pre-Existing License File" id="48" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.DeleteFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="Failed to remove old license file">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.files.DeleteFileAction">
+                          <void property="backupForRollback">
+                            <boolean>false</boolean>
+                          </void>
+                          <void property="files">
+                            <array class="java.io.File" length="1">
+                              <void index="0">
+                                <object class="java.io.File">
+                                  <string>license.txt</string>
+                                </object>
+                              </void>
+                            </array>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="Update License File" id="35" customizedId="" beanClass="com.install4j.runtime.beans.actions.text.WriteTextFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="Unable to write license key to file">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.text.WriteTextFileAction">
+                          <void property="append">
+                            <boolean>true</boolean>
+                          </void>
+                          <void property="file">
+                            <object class="java.io.File">
+                              <string>license.txt</string>
+                            </object>
+                          </void>
+                          <void property="text">
+                            <string>${installer:csi.licenseKey}</string>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                </beans>
+              </group>
+              <group name="Service Actions" id="31" customizedId="" beanClass="com.install4j.runtime.beans.groups.ActionGroup" enabled="true" commentSet="false" comment="" actionElevationType="inherit">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.groups.ActionGroup" />
+                  </java>
+                </serializedBean>
+                <beans>
+                  <action name="" id="32" customizedId="" beanClass="com.install4j.runtime.beans.actions.services.InstallServiceAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.services.InstallServiceAction">
+                          <void property="autoStart">
+                            <boolean>false</boolean>
+                          </void>
+                          <void property="launcherId">
+                            <string>20</string>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="" id="33" customizedId="" beanClass="com.install4j.runtime.beans.actions.misc.AddVmOptionsAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.misc.AddVmOptionsAction">
+                          <void property="launcherId">
+                            <string>20</string>
+                          </void>
+                          <void property="vmOptions">
+                            <array class="java.lang.String" length="12">
+                              <void index="0">
+                                <string>-Dcatalina.base=./</string>
+                              </void>
+                              <void index="1">
+                                <string>-Dcatalina.home=./</string>
+                              </void>
+                              <void index="2">
+                                <string>-Djava.endorsed.dirs=./endorsed</string>
+                              </void>
+                              <void index="3">
+                                <string>-Djava.io.tmpdir=./temp</string>
+                              </void>
+                              <void index="4">
+                                <string>-Djava.security.auth.login.config=./conf/jaas.config</string>
+                              </void>
+                              <void index="5">
+                                <string>-Djava.util.logging.config.file=./conf/logging.properties</string>
+                              </void>
+                              <void index="6">
+                                <string>-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager</string>
+                              </void>
+                              <void index="7">
+                                <string>-Xms${installer:JVM_MEMORY_INPUT}</string>
+                              </void>
+                              <void index="8">
+                                <string>-Xmx${installer:JVM_MEMORY_INPUT}</string>
+                              </void>
+                              <void index="9">
+                                <string>-XX:+UseConcMarkSweepGC</string>
+                              </void>
+                              <void index="10">
+                                <string>-XX:+CMSClassUnloadingEnabled</string>
+                              </void>
+                              <void index="11">
+                                <string>-XX:MaxPermSize=128m</string>
+                              </void>
+                            </array>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="" id="34" customizedId="" beanClass="com.install4j.runtime.beans.actions.services.StartServiceAction" enabled="false" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.services.StartServiceAction">
+                          <void property="autostartOnly">
+                            <boolean>true</boolean>
+                          </void>
+                          <void property="launcherId">
+                            <string>20</string>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="" id="2218" customizedId="" beanClass="com.install4j.runtime.beans.actions.misc.AddVmOptionsAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.misc.AddVmOptionsAction">
+                          <void property="launcherId">
+                            <string>53</string>
+                          </void>
+                          <void property="vmOptions">
+                            <array class="java.lang.String" length="13">
+                              <void index="0">
+                                <string>-Dcatalina.base=./</string>
+                              </void>
+                              <void index="1">
+                                <string>-Dcatalina.home=./</string>
+                              </void>
+                              <void index="2">
+                                <string>-Djava.awt.headless=true</string>
+                              </void>
+                              <void index="3">
+                                <string>-Djava.endorsed.dirs=./endorsed</string>
+                              </void>
+                              <void index="4">
+                                <string>-Djava.io.tmpdir=./temp</string>
+                              </void>
+                              <void index="5">
+                                <string>-Djava.security.auth.login.config=./conf/jaas.config</string>
+                              </void>
+                              <void index="6">
+                                <string>-Djava.util.logging.config.file=./conf/logging.properties</string>
+                              </void>
+                              <void index="7">
+                                <string>-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager</string>
+                              </void>
+                              <void index="8">
+                                <string>-Dorg.apache.logging.log4j.simplelog.StatusLogger.level=FATAL</string>
+                              </void>
+                              <void index="9">
+                                <string>-Xms${installer:JVM_MEMORY_INPUT}</string>
+                              </void>
+                              <void index="10">
+                                <string>-Xmx${installer:JVM_MEMORY_INPUT}</string>
+                              </void>
+                              <void index="11">
+                                <string>-XX:+UseConcMarkSweepGC</string>
+                              </void>
+                              <void index="12">
+                                <string>-XX:+CMSClassUnloadingEnabled</string>
+                              </void>
+                            </array>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                </beans>
+              </group>
+              <group name="Postgres Initialization and Bootstrap" id="267" customizedId="" beanClass="com.install4j.runtime.beans.groups.ActionGroup" enabled="false" commentSet="false" comment="" actionElevationType="inherit">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.groups.ActionGroup" />
+                  </java>
+                </serializedBean>
+                <beans>
+                  <action name="Initialize MetaDB" id="216" customizedId="" beanClass="com.install4j.runtime.beans.actions.misc.RunExecutableAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.misc.RunExecutableAction">
+                          <void property="arguments">
+                            <array class="java.lang.String" length="3">
+                              <void index="0">
+                                <string>--encoding=UTF-8</string>
+                              </void>
+                              <void index="1">
+                                <string>-D</string>
+                              </void>
+                              <void index="2">
+                                <string>${compiler:csi.metadb.dir}</string>
+                              </void>
+                            </array>
+                          </void>
+                          <void property="executable">
+                            <object class="java.io.File">
+                              <string>cachedb/pgsql_${compiler:sys.version}/bin/initdb.exe</string>
+                            </object>
+                          </void>
+                          <void property="wait">
+                            <boolean>true</boolean>
+                          </void>
+                          <void property="workingDirectory">
+                            <object class="java.io.File">
+                              <string>${installer:sys.installationDir}</string>
+                            </object>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="Start MetaDB Instance" id="217" customizedId="" beanClass="com.install4j.runtime.beans.actions.misc.RunExecutableAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.misc.RunExecutableAction">
+                          <void property="arguments">
+                            <array class="java.lang.String" length="3">
+                              <void index="0">
+                                <string>start</string>
+                              </void>
+                              <void index="1">
+                                <string>-D</string>
+                              </void>
+                              <void index="2">
+                                <string>${compiler:csi.metadb.dir}</string>
+                              </void>
+                            </array>
+                          </void>
+                          <void property="executable">
+                            <object class="java.io.File">
+                              <string>cachedb/pgsql_${compiler:sys.version}/bin/pg_ctl.exe</string>
+                            </object>
+                          </void>
+                          <void property="workingDirectory">
+                            <object class="java.io.File">
+                              <string>${installer:sys.installationDir}</string>
+                            </object>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="Wait for Postgres Start" id="265" customizedId="" beanClass="com.install4j.runtime.beans.actions.control.SleepAction" enabled="true" commentSet="false" comment="" actionElevationType="none" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.control.SleepAction">
+                          <void property="sleepTimeMs">
+                            <int>10000</int>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="Install MetaDB DDL" id="218" customizedId="" beanClass="com.install4j.runtime.beans.actions.misc.RunExecutableAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.misc.RunExecutableAction">
+                          <void property="arguments">
+                            <array class="java.lang.String" length="8">
+                              <void index="0">
+                                <string>-h</string>
+                              </void>
+                              <void index="1">
+                                <string>${installer:sys.installationDir}/cachedb/pgsql_${compiler:sys.version}</string>
+                              </void>
+                              <void index="2">
+                                <string>-p</string>
+                              </void>
+                              <void index="3">
+                                <string>${compiler:csi.loopback}</string>
+                              </void>
+                              <void index="4">
+                                <string>-d</string>
+                              </void>
+                              <void index="5">
+                                <string>postgres</string>
+                              </void>
+                              <void index="6">
+                                <string>-f</string>
+                              </void>
+                              <void index="7">
+                                <string>${installer:sys.installationDir}/cachedb/ddl/CreateMetaDB.sql</string>
+                              </void>
+                            </array>
+                          </void>
+                          <void property="executable">
+                            <object class="java.io.File">
+                              <string>cachedb/pgsql_${compiler:sys.version}/bin/psql.exe</string>
+                            </object>
+                          </void>
+                          <void property="workingDirectory">
+                            <object class="java.io.File">
+                              <string>${installer:sys.installationDir}</string>
+                            </object>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                  <action name="Stop MetaDB Instance" id="269" customizedId="" beanClass="com.install4j.runtime.beans.actions.misc.RunExecutableAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                    <serializedBean>
+                      <java class="java.beans.XMLDecoder">
+                        <object class="com.install4j.runtime.beans.actions.misc.RunExecutableAction">
+                          <void property="arguments">
+                            <array class="java.lang.String" length="3">
+                              <void index="0">
+                                <string>stop</string>
+                              </void>
+                              <void index="1">
+                                <string>-D</string>
+                              </void>
+                              <void index="2">
+                                <string>${compiler:csi.metadb.dir}</string>
+                              </void>
+                            </array>
+                          </void>
+                          <void property="executable">
+                            <object class="java.io.File">
+                              <string>cachedb/pgsql_${compiler:sys.version}/bin/pg_ctl.exe</string>
+                            </object>
+                          </void>
+                          <void property="workingDirectory">
+                            <object class="java.io.File">
+                              <string>${installer:sys.installationDir}</string>
+                            </object>
+                          </void>
+                        </object>
+                      </java>
+                    </serializedBean>
+                    <condition />
+                  </action>
+                </beans>
+              </group>
+              <action name="" id="3720" customizedId="" beanClass="com.install4j.runtime.beans.actions.misc.RunExecutableAction" enabled="false" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="true" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.misc.RunExecutableAction">
+                      <void property="executable">
+                        <object class="java.io.File">
+                          <string>C:/Program Files/PostgreSQL/9.6/bin/stackbuilder.exe</string>
+                        </object>
+                      </void>
+                      <void property="wait">
+                        <boolean>true</boolean>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+              <action name="" id="9" customizedId="" beanClass="com.install4j.runtime.beans.actions.desktop.CreateProgramGroupAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.desktop.CreateProgramGroupAction">
+                      <void property="uninstallerMenuName">
+                        <string>${i18n:UninstallerMenuEntry(${compiler:sys.fullName})}</string>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition>!context.getBooleanVariable("sys.programGroupDisabled")</condition>
+              </action>
+              <action name="" id="10" customizedId="" beanClass="com.install4j.runtime.beans.actions.desktop.RegisterAddRemoveAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.desktop.RegisterAddRemoveAction">
+                      <void property="itemName">
+                        <string>${compiler:sys.fullName} ${compiler:sys.version}</string>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+              <action name="" id="421" customizedId="" beanClass="com.install4j.runtime.beans.actions.text.ReplaceInstallerVariablesAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.text.ReplaceInstallerVariablesAction">
+                      <void property="files">
+                        <array class="java.io.File" length="1">
+                          <void index="0">
+                            <object class="java.io.File">
+                              <string>bin/LocalServerShortCut.url</string>
+                            </object>
+                          </void>
+                        </array>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+              <action name="" id="422" customizedId="" beanClass="com.install4j.runtime.beans.actions.text.ReplaceInstallerVariablesAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.text.ReplaceInstallerVariablesAction">
+                      <void property="files">
+                        <array class="java.io.File" length="1">
+                          <void index="0">
+                            <object class="java.io.File">
+                              <string>bin/GetHelp.url</string>
+                            </object>
+                          </void>
+                        </array>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+              <action name="" id="319" customizedId="" beanClass="com.install4j.runtime.beans.actions.desktop.CreateDesktopLinkAction" enabled="false" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.desktop.CreateDesktopLinkAction">
+                      <void property="description">
+                        <string>Login to Centrifuge</string>
+                      </void>
+                      <void property="file">
+                        <object class="java.io.File">
+                          <string>bin/LocalServerShortCut.url</string>
+                        </object>
+                      </void>
+                      <void property="name">
+                        <string>${compiler:sys.shortName}</string>
+                      </void>
+                      <void property="winIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>${installer:sys.installationDir}/bin/logo-96x96.ico</string>
+                        </object>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+              <action name="" id="355" customizedId="" beanClass="com.install4j.runtime.beans.actions.desktop.CreateDesktopLinkAction" enabled="false" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.desktop.CreateDesktopLinkAction">
+                      <void property="description">
+                        <string>View online evaluation resources for using Centrifuge</string>
+                      </void>
+                      <void property="file">
+                        <object class="java.io.File">
+                          <string>bin/GetHelp.url</string>
+                        </object>
+                      </void>
+                      <void property="name">
+                        <string>Evaluation Resources</string>
+                      </void>
+                      <void property="winIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>${installer:sys.installationDir}/bin/logo-96x96.ico</string>
+                        </object>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+              <action name="" id="1021" customizedId="" beanClass="com.install4j.runtime.beans.actions.desktop.CreateDesktopLinkAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.desktop.CreateDesktopLinkAction">
+                      <void property="description">
+                        <string>Login to Centrifuge</string>
+                      </void>
+                      <void property="file">
+                        <object class="java.io.File">
+                          <string>bin/BrowserLauncher.exe</string>
+                        </object>
+                      </void>
+                      <void property="name">
+                        <string>${compiler:sys.shortName}</string>
+                      </void>
+                      <void property="winIconFile">
+                        <object class="com.install4j.api.beans.ExternalFile">
+                          <string>./logo-96x96.ico</string>
+                        </object>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+              <action name="" id="865" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.CopyFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.files.CopyFileAction">
+                      <void property="destinationFile">
+                        <object class="java.io.File">
+                          <string>${installer:sys.programGroupDir}/Evaluation Resources.url</string>
+                        </object>
+                      </void>
+                      <void property="files">
+                        <array class="java.io.File" length="1">
+                          <void index="0">
+                            <object class="java.io.File">
+                              <string>bin/GetHelp.url</string>
+                            </object>
+                          </void>
+                        </array>
+                      </void>
+                      <void property="overwriteMode">
+                        <object class="com.install4j.api.context.OverwriteMode" field="ALWAYS" />
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+              <action name="" id="866" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.CopyFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.files.CopyFileAction">
+                      <void property="destinationFile">
+                        <object class="java.io.File">
+                          <string>${installer:sys.programGroupDir}/Launch Centrifuge.url</string>
+                        </object>
+                      </void>
+                      <void property="files">
+                        <array class="java.io.File" length="1">
+                          <void index="0">
+                            <object class="java.io.File">
+                              <string>bin/LocalServerShortCut.url</string>
+                            </object>
+                          </void>
+                        </array>
+                      </void>
+                      <void property="overwriteMode">
+                        <object class="com.install4j.api.context.OverwriteMode" field="ALWAYS" />
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+              <action name="Copy JRE charsets.jar" id="907" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.CopyFileAction" enabled="false" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.files.CopyFileAction">
+                      <void property="destinationFile">
+                        <object class="java.io.File">
+                          <string>jre/lib</string>
+                        </object>
+                      </void>
+                      <void property="files">
+                        <array class="java.io.File" length="1">
+                          <void index="0">
+                            <object class="java.io.File">
+                              <string>bin/charsets.jar</string>
+                            </object>
+                          </void>
+                        </array>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+            </actions>
+            <formComponents />
+          </screen>
+          <screen name="" id="733" customizedId="" beanClass="com.install4j.runtime.beans.screens.CustomizableInfoScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.CustomizableInfoScreen">
+                  <void property="displayedText">
+                    <string>Congratulations!  The installation is completed, and the Centrifuge service is already starting to initialize in the background.  Before you launch and start using the application, we would like to provide some helpful information to ensure a fulfilling and successful evaluation.
+
+As with many evaluation products, the evaluation version of Centrifuge has some restrictions.  Specifically, the number of rows of data you can load from Excel, CSV or Access is restricted.   You can read about the specifics of these limitations and find answers to other questions you may have in the FAQs
+
+The FAQs and a series of training videos are available on an Evaluation Resources web page, which you can access via a desktop shortcut and/or the programs list on the Start Menu (both made possible through this installation routine).</string>
+                  </void>
+                  <void property="subTitle">
+                    <string>Review some additional notes prior to getting started with Centrifuge.</string>
+                  </void>
+                  <void property="textSource">
+                    <object class="com.install4j.runtime.beans.screens.components.TextSource" field="DIRECT" />
+                  </void>
+                  <void property="title">
+                    <string>Before Getting Started</string>
+                  </void>
+                </object>
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents />
+          </screen>
+          <screen name="" id="11" customizedId="" beanClass="com.install4j.runtime.beans.screens.FinishedScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" backButton="2" finishScreen="true" wizardIndexChangeType="unchanged" wizardIndexKey="">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.FinishedScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions>
+              <action name="" id="44" customizedId="" beanClass="com.install4j.runtime.beans.actions.finish.ShowFileAction" enabled="true" commentSet="true" comment="" actionElevationType="none" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.finish.ShowFileAction">
+                      <void property="file">
+                        <object class="java.io.File">
+                          <string>README.txt</string>
+                        </object>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition>context.getBooleanVariable("csi.openReadmeNotes") &amp;&amp; (!context.isUnattended())</condition>
+              </action>
+              <action name="" id="46" customizedId="" beanClass="com.install4j.runtime.beans.actions.finish.ShowURLAction" enabled="true" commentSet="false" comment="" actionElevationType="none" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.finish.ShowURLAction">
+                      <void property="urlSpec">
+                        <string>http://127.0.0.1:9090/Centrifuge</string>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition>context.getBooleanVariable("csi.openLocalBrowser") &amp;&amp; (!context.isUnattended())</condition>
+              </action>
+            </actions>
+            <formComponents>
+              <formComponent name="" id="41" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.CheckboxComponent" enabled="false" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.formcomponents.CheckboxComponent">
+                      <void property="checkboxText">
+                        <string>Open Readme </string>
+                      </void>
+                      <void property="variableName">
+                        <string>csi.openReadmeNotes</string>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <initScript />
+                <visibilityScript />
+              </formComponent>
+              <formComponent name="" id="42" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.SpacerComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.formcomponents.SpacerComponent" />
+                  </java>
+                </serializedBean>
+                <initScript />
+                <visibilityScript />
+              </formComponent>
+              <formComponent name="" id="43" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.CheckboxComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="" insetBottom="" insetRight="" resetInitOnPrevious="false">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.formcomponents.CheckboxComponent">
+                      <void property="checkboxText">
+                        <string>Launch Centrifuge Now</string>
+                      </void>
+                      <void property="initiallySelected">
+                        <boolean>true</boolean>
+                      </void>
+                      <void property="variableName">
+                        <string>csi.openLocalBrowser</string>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <initScript />
+                <visibilityScript>String type = (String) context.getCompilerVariable("csi.type" );
+boolean show = (type != null &amp;&amp; type.equalsIgnoreCase( "Evaluation" ));
+
+if( !show ) {
+    configurationObject.setSelected( false );
+}
+return show;
+</visibilityScript>
+              </formComponent>
+              <formComponent name="" id="461" customizedId="" beanClass="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent" enabled="true" commentSet="false" comment="" insetTop="" insetLeft="20" insetBottom="" insetRight="" resetInitOnPrevious="false">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.formcomponents.MultilineLabelComponent">
+                      <void property="labelText">
+                        <string>NOTE: The login screen will appear after Centrifuge has been initialized, which could take up to one minute.</string>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <initScript />
+                <visibilityScript>String type = (String) context.getCompilerVariable( "csi.type" );
+
+boolean show = (type != null &amp;&amp; type.equalsIgnoreCase( "Evaluation" ));
+
+return show;
+</visibilityScript>
+              </formComponent>
+            </formComponents>
+          </screen>
+        </screens>
+      </application>
+      <application name="" id="uninstaller" customizedId="" beanClass="com.install4j.runtime.beans.applications.UninstallerApplication" enabled="true" commentSet="false" comment="" actionElevationType="none" fileset="" customIcnsFile="" customIcoFile="" macEntitlementsFile="" automaticLauncherIntegration="false" launchMode="startupFirstWindow" launchInNewProcess="false" launchSchedule="updateSchedule" allLaunchers="true">
+        <serializedBean>
+          <java class="java.beans.XMLDecoder">
+            <object class="com.install4j.runtime.beans.applications.UninstallerApplication">
+              <void property="customHeaderImage">
+                <object class="com.install4j.api.beans.ExternalFile">
+                  <string>./logo-72x72-inset.png</string>
+                </object>
+              </void>
+              <void property="customWatermarkText">
+                <string>Centrifuge Systems</string>
+              </void>
+              <void property="customizeVersionInfo">
+                <boolean>true</boolean>
+              </void>
+              <void property="frameSizeClientArea">
+                <boolean>false</boolean>
+              </void>
+              <void property="versionInfoCopyright">
+                <string>Copyright Centrifuge Systems, Inc.</string>
+              </void>
+              <void property="versionInfoFileDescription">
+                <string>Centrifuge Uninstaller</string>
+              </void>
+              <void property="versionInfoFileVersion">
+                <string>3.0</string>
+              </void>
+              <void property="versionInfoInternalName">
+                <string>Centrifuge</string>
+              </void>
+              <void property="versionInfoProductName">
+                <string>Centrifuge</string>
+              </void>
+            </object>
+          </java>
+        </serializedBean>
+        <launcherIds />
+        <variables />
+        <startup>
+          <screen name="" id="12" customizedId="" beanClass="com.install4j.runtime.beans.screens.StartupScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.StartupScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions>
+              <link name="" id="1024" customizedId="" beanClass="" enabled="true" targetId="1022" mergedProjectId="" />
+              <action name="" id="18" customizedId="" beanClass="com.install4j.runtime.beans.actions.misc.LoadResponseFileAction" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.misc.LoadResponseFileAction" />
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+            </actions>
+            <formComponents />
+          </screen>
+        </startup>
+        <screens>
+          <screen name="" id="13" customizedId="" beanClass="com.install4j.runtime.beans.screens.UninstallWelcomeScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.UninstallWelcomeScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents />
+          </screen>
+          <screen name="" id="14" customizedId="" beanClass="com.install4j.runtime.beans.screens.UninstallationScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" backButton="2" finishScreen="false" wizardIndexChangeType="unchanged" wizardIndexKey="">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.UninstallationScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions>
+              <action name="" id="15" customizedId="" beanClass="com.install4j.runtime.beans.actions.UninstallFilesAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.UninstallFilesAction" />
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+              <action name="" id="491" customizedId="" beanClass="com.install4j.runtime.beans.actions.files.DeleteFileAction" enabled="true" commentSet="false" comment="" actionElevationType="elevated" rollbackBarrier="false" multiExec="false" failureStrategy="1" errorMessage="">
+                <serializedBean>
+                  <java class="java.beans.XMLDecoder">
+                    <object class="com.install4j.runtime.beans.actions.files.DeleteFileAction">
+                      <void property="files">
+                        <array class="java.io.File" length="1">
+                          <void index="0">
+                            <object class="java.io.File">
+                              <string>${installer:sys.installationDir}</string>
+                            </object>
+                          </void>
+                        </array>
+                      </void>
+                      <void property="recursive">
+                        <boolean>true</boolean>
+                      </void>
+                    </object>
+                  </java>
+                </serializedBean>
+                <condition />
+              </action>
+            </actions>
+            <formComponents />
+          </screen>
+          <screen name="" id="17" customizedId="" beanClass="com.install4j.runtime.beans.screens.UninstallFailureScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" backButton="2" finishScreen="true" wizardIndexChangeType="unchanged" wizardIndexKey="">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.UninstallFailureScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents />
+          </screen>
+          <screen name="" id="16" customizedId="" beanClass="com.install4j.runtime.beans.screens.UninstallSuccessScreen" enabled="true" commentSet="false" comment="" actionElevationType="inherit" rollbackBarrier="false" backButton="2" finishScreen="true" wizardIndexChangeType="unchanged" wizardIndexKey="">
+            <serializedBean>
+              <java class="java.beans.XMLDecoder">
+                <object class="com.install4j.runtime.beans.screens.UninstallSuccessScreen" />
+              </java>
+            </serializedBean>
+            <condition />
+            <validation />
+            <preActivation />
+            <postActivation />
+            <actions />
+            <formComponents />
+          </screen>
+        </screens>
+      </application>
+    </applications>
+  </installerGui>
+  <mediaSets>
+    <windows name="Evaluation Windows 32 bit" id="36" customizedId="" mediaFileName="" installDir="Centrifuge" overridePrincipalLanguage="false" jreBitType="32" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" useLegacyMediaFileIds="false" legacyMediaFileIds="" includedJRE="" manualJREEntry="false" bundleType="1" jreURL="" jreShared="false" directDownload="false" installOnlyIfNecessary="false" customInstallBaseDir="C:/" contentFilesType="1" downloadURL="" verifyIntegrity="true">
+      <excludedLaunchers>
+        <launcher id="53" />
+        <launcher id="54" />
+      </excludedLaunchers>
+      <excludedBeans />
+      <overriddenPrincipalLanguage id="en" customLocalizationFile="" />
+      <exclude>
+        <entry location=".i4j_fileset_514" fileType="regular" />
+        <entry location=".i4j_fileset_621" fileType="regular" />
+        <entry location=".i4j_fileset_1118" fileType="regular" />
+        <entry location=".i4j_fileset_1120" fileType="regular" />
+      </exclude>
+      <variables>
+        <variable name="csi.type" value="Evaluation" description="" category="" />
+      </variables>
+      <autoUpdate useMinUpdatableVersion="false" minUpdatableVersion="" useMaxUpdatableVersion="false" maxUpdatableVersion="">
+        <commentFiles />
+        <customAttributes />
+      </autoUpdate>
+      <excludedComponents />
+      <includedDownloadableComponents />
+    </windows>
+    <windows name="Evaluation Windows 64 bit" id="318" customizedId="" mediaFileName="" installDir="Centrifuge" overridePrincipalLanguage="false" jreBitType="64" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" useLegacyMediaFileIds="false" legacyMediaFileIds="" includedJRE="" manualJREEntry="false" bundleType="1" jreURL="" jreShared="false" directDownload="false" installOnlyIfNecessary="false" customInstallBaseDir="C:/Centrifuge Systems" contentFilesType="1" downloadURL="" verifyIntegrity="true">
+      <excludedLaunchers>
+        <launcher id="53" />
+        <launcher id="54" />
+      </excludedLaunchers>
+      <excludedBeans>
+        <bean refId="907" />
+      </excludedBeans>
+      <overriddenPrincipalLanguage id="en" customLocalizationFile="" />
+      <exclude>
+        <entry location=".i4j_fileset_514" fileType="regular" />
+        <entry location=".i4j_fileset_621" fileType="regular" />
+        <entry location=".i4j_fileset_1118" fileType="regular" />
+        <entry location=".i4j_fileset_1120" fileType="regular" />
+      </exclude>
+      <variables>
+        <variable name="csi.type" value="Evaluation" description="" category="" />
+        <variable name="sys.architecture" value="" description="" category="" />
+      </variables>
+      <autoUpdate useMinUpdatableVersion="false" minUpdatableVersion="" useMaxUpdatableVersion="false" maxUpdatableVersion="">
+        <commentFiles />
+        <customAttributes />
+      </autoUpdate>
+      <excludedComponents />
+      <includedDownloadableComponents />
+    </windows>
+    <windows name="Full Version 32 bit" id="519" customizedId="" mediaFileName="" installDir="Centrifuge" overridePrincipalLanguage="false" jreBitType="32" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" useLegacyMediaFileIds="false" legacyMediaFileIds="" includedJRE="src/resources/jres/windows-x86-1.8.0_202.tar.gz" manualJREEntry="true" bundleType="1" jreURL="" jreShared="false" directDownload="false" installOnlyIfNecessary="false" customInstallBaseDir="C:/" contentFilesType="1" downloadURL="" verifyIntegrity="true">
+      <excludedLaunchers />
+      <excludedBeans>
+        <bean refId="733" />
+      </excludedBeans>
+      <overriddenPrincipalLanguage id="en" customLocalizationFile="" />
+      <exclude>
+        <entry location=".i4j_fileset_531" fileType="regular" />
+        <entry location=".i4j_fileset_623" fileType="regular" />
+        <entry location=".i4j_fileset_1118" fileType="regular" />
+        <entry location=".i4j_fileset_1120" fileType="regular" />
+        <entry location=".i4j_fileset_1336" fileType="regular" />
+      </exclude>
+      <variables />
+      <autoUpdate useMinUpdatableVersion="false" minUpdatableVersion="" useMaxUpdatableVersion="false" maxUpdatableVersion="">
+        <commentFiles />
+        <customAttributes />
+      </autoUpdate>
+      <excludedComponents />
+      <includedDownloadableComponents />
+    </windows>
+    <windows name="Full Version 64 bit" id="722" customizedId="" mediaFileName="" installDir="Centrifuge" overridePrincipalLanguage="false" jreBitType="64" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" useLegacyMediaFileIds="false" legacyMediaFileIds="" includedJRE="src/resources/jres/windows-amd64-1.8.0_202.tar.gz" manualJREEntry="true" bundleType="1" jreURL="" jreShared="false" directDownload="false" installOnlyIfNecessary="false" customInstallBaseDir="C:/" contentFilesType="1" downloadURL="" verifyIntegrity="true">
+      <excludedLaunchers />
+      <excludedBeans>
+        <bean refId="907" />
+        <bean refId="733" />
+      </excludedBeans>
+      <overriddenPrincipalLanguage id="en" customLocalizationFile="" />
+      <exclude>
+        <entry location=".i4j_fileset_623" fileType="regular" />
+        <entry location=".i4j_fileset_1118" fileType="regular" />
+        <entry location=".i4j_fileset_1120" fileType="regular" />
+        <entry location=".i4j_fileset_1336" fileType="regular" />
+      </exclude>
+      <variables>
+        <variable name="sys.architecture" value="" description="" category="" />
+      </variables>
+      <autoUpdate useMinUpdatableVersion="false" minUpdatableVersion="" useMaxUpdatableVersion="false" maxUpdatableVersion="">
+        <commentFiles />
+        <customAttributes />
+      </autoUpdate>
+      <excludedComponents />
+      <includedDownloadableComponents />
+    </windows>
+    <linuxRPM name="Linux RPM 32 bit" id="1105" customizedId="" mediaFileName="" installDir="/opt/Centrifuge" overridePrincipalLanguage="false" jreBitType="all" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" useLegacyMediaFileIds="false" legacyMediaFileIds="" includedJRE="src/resources/jres/linux-amd64-1.7.0_45.tar.gz" manualJREEntry="true" os="linux" arch="i386">
+      <excludedLaunchers />
+      <excludedBeans />
+      <overriddenPrincipalLanguage id="en" customLocalizationFile="" />
+      <exclude>
+        <entry location="bin/msvcr71.dll" fileType="regular" />
+        <entry location="bin/BrowserLauncher.exe" fileType="regular" />
+        <entry location=".i4j_fileset_133" fileType="regular" />
+        <entry location=".i4j_fileset_531" fileType="regular" />
+        <entry location=".i4j_fileset_623" fileType="regular" />
+        <entry location=".i4j_fileset_1120" fileType="regular" />
+        <entry location=".i4j_fileset_1341" fileType="regular" />
+      </exclude>
+      <variables />
+      <autoUpdate useMinUpdatableVersion="false" minUpdatableVersion="" useMaxUpdatableVersion="false" maxUpdatableVersion="">
+        <commentFiles />
+        <customAttributes />
+      </autoUpdate>
+      <preInstallScript mode="2" file="./src/resources/rpm/pre-install.sh">
+        <content />
+      </preInstallScript>
+      <postInstallScript mode="2" file="./src/resources/rpm/post-install.sh">
+        <content />
+      </postInstallScript>
+      <preUninstallScript mode="1" file="">
+        <content />
+      </preUninstallScript>
+      <postUninstallScript mode="2" file="./src/resources/rpm/post-uninstall.sh">
+        <content />
+      </postUninstallScript>
+    </linuxRPM>
+    <linuxRPM name="Linux RPM 64 bit" id="1113" customizedId="" mediaFileName="" installDir="/opt/Centrifuge" overridePrincipalLanguage="false" jreBitType="all" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" useLegacyMediaFileIds="false" legacyMediaFileIds="" includedJRE="src/resources/jres/linux-amd64-1.7.0_45.tar.gz" manualJREEntry="true" os="linux" arch="i386">
+      <excludedLaunchers />
+      <excludedBeans />
+      <overriddenPrincipalLanguage id="en" customLocalizationFile="" />
+      <exclude>
+        <entry location="bin/msvcr71.dll" fileType="regular" />
+        <entry location="bin/BrowserLauncher.exe" fileType="regular" />
+        <entry location=".i4j_fileset_133" fileType="regular" />
+        <entry location=".i4j_fileset_531" fileType="regular" />
+        <entry location=".i4j_fileset_623" fileType="regular" />
+        <entry location=".i4j_fileset_1341" fileType="regular" />
+      </exclude>
+      <variables>
+        <variable name="sys.architecture" value="" description="" category="" />
+      </variables>
+      <autoUpdate useMinUpdatableVersion="false" minUpdatableVersion="" useMaxUpdatableVersion="false" maxUpdatableVersion="">
+        <commentFiles />
+        <customAttributes />
+      </autoUpdate>
+      <preInstallScript mode="2" file="./src/resources/rpm/pre-install.sh">
+        <content />
+      </preInstallScript>
+      <postInstallScript mode="2" file="./src/resources/rpm/post-install.sh">
+        <content />
+      </postInstallScript>
+      <preUninstallScript mode="1" file="">
+        <content />
+      </preUninstallScript>
+      <postUninstallScript mode="2" file="./src/resources/rpm/post-uninstall.sh">
+        <content />
+      </postUninstallScript>
+    </linuxRPM>
+    <unixArchive name="Unix Archive" id="2085" customizedId="" mediaFileName="" installDir="Centrifuge" overridePrincipalLanguage="false" jreBitType="all" runPostProcessor="false" postProcessor="" failOnPostProcessorError="false" useLegacyMediaFileIds="false" legacyMediaFileIds="" includedJRE="" manualJREEntry="false">
+      <excludedLaunchers />
+      <excludedBeans />
+      <overriddenPrincipalLanguage id="en" customLocalizationFile="" />
+      <exclude>
+        <entry location=".i4j_fileset_133" fileType="regular" />
+        <entry location=".i4j_fileset_514" fileType="regular" />
+        <entry location=".i4j_fileset_531" fileType="regular" />
+        <entry location=".i4j_fileset_621" fileType="regular" />
+        <entry location=".i4j_fileset_623" fileType="regular" />
+        <entry location=".i4j_fileset_1118" fileType="regular" />
+        <entry location=".i4j_fileset_1129" fileType="regular" />
+        <entry location=".i4j_fileset_1336" fileType="regular" />
+        <entry location=".i4j_fileset_1341" fileType="regular" />
+        <entry location=".i4j_fileset_1665" fileType="regular" />
+      </exclude>
+      <variables />
+      <autoUpdate useMinUpdatableVersion="false" minUpdatableVersion="" useMaxUpdatableVersion="false" maxUpdatableVersion="">
+        <commentFiles />
+        <customAttributes />
+      </autoUpdate>
+    </unixArchive>
+  </mediaSets>
+  <buildIds buildAll="false">
+    <mediaSet refId="722" />
+  </buildIds>
+  <buildOptions verbose="true" faster="false" disableSigning="false" debug="true" />
+</install4j>
+

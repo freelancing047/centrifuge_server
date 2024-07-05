@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Centrifuge</title>
+    <link rel="stylesheet/less" type="text/css" href="style/centrifuge.less" />
+    <script src="javascript/lib/less.js"></script>
+    <script src="javascript/lib/modernizr.js"></script>
+    <script data-main="javascript/main" src="javascript/require.js"></script>
+
+    <!-- Begin templates -->
+
+    <script id="dataview-list-template" type="text/html">
+      {{#dataviews}}
+        <li data-id="{{uuid}}"><span class="dataview-name clickable">{{name}}</span>
+ 	  {{#meta}}
+	    <ul class="worksheets">
+   	      {{#modelDef.worksheets}}
+                <li data-id="{{uuid}}"><span class="worksheet-name clickable">{{worksheetName}}</span></li>
+	      {{/modelDef.worksheets}}
+	    </ul>
+     	  {{/meta}}
+	</li>
+      {{/dataviews}}
+    </script>
+
+    <script id="viz-panel-template" type="text/html">
+      <div class="bar">{{name}} ({{type}})</div>
+      <div class="content"></div>
+    </script>
+
+    <!-- End templates -->
+
+  </head>
+  <body>
+    <p>Please excuse our dust. This UI has lost any styling from the
+    previous versions due to a complete component rearchitecture. It
+    will be back soon.</p>
+    <div id="app">
+      <form id="login" class="modal" style="display: none;">
+	<fieldset>
+	  <legend>Please Log In to Continue</legend>
+	  <div class="error-message"></div>
+	  <input type="text" class="username" id="login-username" placeholder="Username"></input>
+	  <input type="password" class="password" id="login-password" placeholder="Password"></input>
+	  <input type="submit" class="login-button" value="Login" />
+	</fieldset>
+      </form>
+
+      <!-- This div will be populated with the <ul> containing the
+      user's recent dataviews -->
+      <div class="dataview-list-container">
+      </div>
+
+      <!-- When a worksheet is selected, the .workspace div will be
+      populated with a panel for each visualization -->
+      <div class="workspace">
+      </div>
+    </div>
+  </body>
+</html>
+

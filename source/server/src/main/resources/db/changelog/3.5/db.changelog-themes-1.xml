@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    
+    <changeSet author="jdanberg" id="themes-1-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="theme">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="owner" type="VARCHAR(255)" />
+            <column name="visualizationtype" type="VARCHAR(255)" />
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="graphtheme">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="bundlestyle_uuid" type="VARCHAR(255)">
+            </column>
+            <column name="bundlethreshold" type="INT4">
+            </column>
+            
+            <column name="defaultshape" type="VARCHAR(255)" />
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="graphtheme_nodestyle">
+            <column name="graphtheme_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nodestyles_uuid" type="VARCHAR(255)">
+            </column>
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-4" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="graphtheme_linkstyle">
+            <column name="graphtheme_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="linkstyles_uuid" type="VARCHAR(255)">
+            </column>
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-5" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="nodestyle">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="iconid" type="VARCHAR(255)">
+            </column>
+            <column name="color" type="INT4" />
+            <column name="iconscale" type="DOUBLE" />
+            <column name="shape" type="VARCHAR(255)" />
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-6" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="linkstyle">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="color" type="INT4" />
+            <column name="width" type="DOUBLE" />
+            <column name="linestyle" type="VARCHAR(255)" />
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-7" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="visualitemstyle">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+            </column>
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-8" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="visualitemstyle_fieldnames">
+            <column name="visualitemstyle_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fieldnames" type="VARCHAR(255)" />
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-9" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="icon">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="image" type="OID" />
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-10" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="theme_uuid_pkey" tableName="theme"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="themes-1-11" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="theme" constraintName="theme_resource_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelresource"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-12" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="graphtheme_uuid_pkey" tableName="graphtheme"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="themes-1-13" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="graphtheme" constraintName="graphtheme_theme_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="theme"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-14" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="nodestyle_uuid_pkey" tableName="nodestyle"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="themes-1-15" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="nodestyles_uuid" baseTableName="graphtheme_nodestyle" constraintName="nodestyle_graphtheme_join_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="nodestyle"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="themes-1-16" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="graphtheme_uuid" baseTableName="graphtheme_nodestyle" constraintName="graphtheme_nodestyle_join_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="graphtheme"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-17" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="link_uuid_pkey" tableName="linkstyle"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="themes-1-18" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="linkstyles_uuid" baseTableName="graphtheme_linkstyle" constraintName="linkstyle_graphtheme_join_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="linkstyle"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="themes-1-19" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="graphtheme_uuid" baseTableName="graphtheme_linkstyle" constraintName="graphtheme_linkstyle_join_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="graphtheme"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-20" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="icon_uuid_pkey" tableName="icon"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="themes-1-21" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="icon" constraintName="theme_resource_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelresource"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-22" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="visualitemstyle_uuid_pkey" tableName="visualitemstyle"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-23" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="visualitemstyle" constraintName="modelobject_visualitemstyle_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelobject"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-24" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="nodestyle" constraintName="nodestyle_visualitemstyle_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="visualitemstyle"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-25" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="linkstyle" constraintName="linkstyle_visualitemstyle_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="visualitemstyle"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-26" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="bundlestyle_uuid" baseTableName="graphtheme" constraintName="graphtheme_bundle_nodestyle_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="nodestyle"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-27" objectQuotingStrategy="QUOTE_ALL_OBJECTS"><createTable tableName="icon_tags">
+            <column name="tag" type="VARCHAR(255)" />
+            <column name="icon_uuid" type="VARCHAR(255)" />
+        </createTable>
+    </changeSet>
+    
+     <changeSet author="jdanberg" id="themes-1-28" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="icon_uuid" baseTableName="icon_tags" constraintName="icon_tags_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="icon"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-29" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="maptheme">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="bundlestyle_uuid" type="VARCHAR(255)">
+            </column>
+            <column name="defaultshape" type="VARCHAR(255)" />
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-30" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="maptheme_placestyle">
+            <column name="maptheme_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="placestyles_uuid" type="VARCHAR(255)">
+            </column>
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-31" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="maptheme_associationstyle">
+            <column name="maptheme_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="associationstyles_uuid" type="VARCHAR(255)">
+            </column>
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-32" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="placestyle">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="iconid" type="VARCHAR(255)">
+            </column>
+            <column name="color" type="INT4" />
+            <column name="iconscale" type="DOUBLE" />
+            <column name="shape" type="VARCHAR(255)" />
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-33" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="associationstyle">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="color" type="INT4" />
+            <column name="width" type="DOUBLE" />
+            <column name="linestyle" type="VARCHAR(255)" />
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-34" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="maptheme_uuid_pkey" tableName="maptheme"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="themes-1-35" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="maptheme" constraintName="maptheme_theme_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="theme"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-36" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="placestyle_uuid_pkey" tableName="placestyle"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="themes-1-37" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="placestyles_uuid" baseTableName="maptheme_placestyle" constraintName="placestyle_maptheme_join_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="placestyle"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="themes-1-38" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="maptheme_uuid" baseTableName="maptheme_placestyle" constraintName="maptheme_placestyle_join_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="maptheme"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-39" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="association_uuid_pkey" tableName="associationstyle"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="themes-1-40" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="associationstyles_uuid" baseTableName="maptheme_associationstyle" constraintName="associationstyle_maptheme_join_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="associationstyle"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="themes-1-41" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="maptheme_uuid" baseTableName="maptheme_associationstyle" constraintName="maptheme_associationstyle_join_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="maptheme"/>
+    </changeSet>
+     <changeSet author="jdanberg" id="themes-1-42" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="placestyle" constraintName="placestyle_visualitemstyle_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="visualitemstyle"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-43" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="associationstyle" constraintName="associationstyle_visualitemstyle_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="visualitemstyle"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="themes-1-44" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="bundlestyle_uuid" baseTableName="maptheme" constraintName="maptheme_bundle_placestyle_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="placestyle"/>
+    </changeSet>
+    
+</databaseChangeLog>

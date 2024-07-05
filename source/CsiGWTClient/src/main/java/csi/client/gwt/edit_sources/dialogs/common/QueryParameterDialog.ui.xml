@@ -1,0 +1,113 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:gwt="urn:import:com.google.gwt.user.client.ui"
+	xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+    xmlns:csibox="urn:import:csi.client.gwt.widget.input_boxes"
+    xmlns:buttons="urn:import:csi.client.gwt.widget.buttons"
+	xmlns:csiboot="urn:import:csi.client.gwt.widget.boot"
+    xmlns:csidrop="urn:import:csi.client.gwt.widget.list_boxes"
+	xmlns:csigwt="urn:import:csi.client.gwt.widget.ui">
+
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+
+   <ui:style gss="true">
+		.compactLabel {
+			width: 100px !important;
+		}
+		
+		.compactControls {
+			margin-left: 120px !important;
+		}
+        .left_spacer20 {
+            margin-left:20px;
+        }
+        .left_spacer15 {
+            margin-left:15px;
+        }
+        .top_spacer15 {
+            margin-top:15px;
+        }
+        .noborder{
+            border-style: none;
+        }
+	</ui:style>
+
+	<ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+
+	<csiboot:ValidatingDialog ui:field="dialog" bodyHeight="390px" bodyWidth="800px">
+        <csigwt:FullSizeLayoutPanel width="800px" height="390px">
+			<csigwt:layer top="10" bottom="60px" left="20px" right="312px">
+				<boot:Form type="HORIZONTAL">
+					<boot:Fieldset>
+						<boot:ControlGroup ui:field="nameControlGroup">
+							<boot:ControlLabel ui:field="nameLabel" for="nameId" addStyleNames="{style.compactLabel}">
+                                <gwt:InlineHTML text="{i18n.get.parameterEditor_NameLabel}"/>
+                            </boot:ControlLabel>
+							<boot:Controls addStyleNames="{style.compactControls}">
+								<csibox:FilteredAlphaNumString ui:field="nameField" />
+							</boot:Controls>
+						</boot:ControlGroup>
+
+                        <boot:ControlGroup>
+							<boot:ControlLabel ui:field="promptLabel" for="promptId" addStyleNames="{style.compactLabel}">
+                                <gwt:InlineHTML text="{i18n.get.parameterEditor_PromptLabel}"/>
+                            </boot:ControlLabel>
+							<boot:Controls addStyleNames="{style.compactControls}">
+								<boot:TextBox ui:field="promptField" />
+							</boot:Controls>
+						</boot:ControlGroup>
+
+                        <boot:ControlGroup>
+                            <boot:ControlLabel ui:field="descriptionLabel" for="descriptionId" addStyleNames="{style.compactLabel}">
+                                <gwt:InlineHTML text="{i18n.get.parameterEditor_DescriptionLabel}"/>
+                            </boot:ControlLabel>
+                            <boot:Controls addStyleNames="{style.compactControls}">
+                                <boot:TextArea ui:field="descriptionField" width="330px" height="60px" />
+                            </boot:Controls>
+                        </boot:ControlGroup>
+
+						<boot:ControlGroup>
+							<boot:ControlLabel ui:field="typeLabel" for="typeId" addStyleNames="{style.compactLabel}">
+                                <gwt:InlineHTML text="{i18n.get.parameterEditor_TypeLabel}"/>
+                            </boot:ControlLabel>
+							<boot:Controls addStyleNames="{style.compactControls}">
+                                <gwt:HorizontalPanel>
+                                    <csidrop:CsiStringListBox ui:field="typeField" />
+                                    <boot:CheckBox ui:field="trim" text="Trim individual values" />
+                                </gwt:HorizontalPanel>
+							</boot:Controls>
+						</boot:ControlGroup>
+
+                        <boot:ControlGroup>
+							<boot:ControlLabel ui:field="defaultsLabel" addStyleNames="{style.compactLabel}">
+                                <gwt:InlineHTML text="{i18n.get.parameterEditor_DefaultsLabel}"/>
+                            </boot:ControlLabel>
+							<boot:Controls addStyleNames="{style.compactControls}" controlsRow="true">
+                                <gwt:HorizontalPanel>
+                                    <csiboot:CsiListView ui:field="defaultValuesListView" width="250px" height="70px" />
+                                    <gwt:VerticalPanel addStyleNames="{style.left_spacer20}">
+                                        <buttons:MiniCyanButton ui:field="editDefaultsButton" width="65px" text="{i18n.get.parameterEditor_EditDefaultsButton}" />
+                                        <buttons:MiniRedButton ui:field="clearDefaultsButton" width="65px" addStyleNames="{style.top_spacer15}" text="Clear Defaults" />
+                                    </gwt:VerticalPanel>
+                                </gwt:HorizontalPanel>
+							</boot:Controls>
+						</boot:ControlGroup>
+					</boot:Fieldset>
+				</boot:Form>
+            </csigwt:layer>
+            <csigwt:layer height="50" bottom="0px" left="20px" right="312px">
+                <gwt:HorizontalPanel>
+                    <boot:CheckBox ui:field="alwaysFillField" text="{i18n.get.parameterEditor_AlwaysFillCheckBox}" />
+                    <boot:CheckBox ui:field="alwaysPromptField" addStyleNames="{style.left_spacer15}" text="{i18n.get.parameterEditor_AlwaysPromptCheckBox}" />
+                    <boot:CheckBox ui:field="neverPromptField" addStyleNames="{style.left_spacer15}" text="{i18n.get.parameterEditor_NeverPromptCheckBox}" />
+                    <boot:CheckBox ui:field="listParameter" addStyleNames="{style.left_spacer15}" text="{i18n.get.parameterEditor_AcceptMultipleCheckBox}" />
+                </gwt:HorizontalPanel>
+			</csigwt:layer>
+            <csigwt:layer top="10px" bottom="10px" left="512px" right="20px">
+                <csiboot:Instructions ui:field="instructionTextArea" height="100%" width="97%" addStyleNames="{style.noborder}">
+                </csiboot:Instructions>
+            </csigwt:layer>
+		</csigwt:FullSizeLayoutPanel>
+	</csiboot:ValidatingDialog>
+
+</ui:UiBinder>

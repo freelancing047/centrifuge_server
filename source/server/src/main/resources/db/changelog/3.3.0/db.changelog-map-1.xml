@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="dchang" id="map-1-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="mapviewdef">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="mapsettings_uuid" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="dchang" id="map-1-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="mapviewdef_pkey" tableName="mapviewdef"/>
+    </changeSet>
+    <changeSet author="dchang" id="map-1-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="mapviewdef" constraintName="fk_mapviewdef_visualizationdef"	deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="visualizationdef"/>
+    </changeSet>
+
+    <changeSet author="dchang" id="map-1-4" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="mapsettings">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="latfield_uuid" type="varchar(255)" />
+            <column name="longfield_uuid" type="varchar(255)" />
+            <column name="basemapfield" type="varchar(255)" />
+            <column name="colorstring" type="varchar(10)" />
+            <column name="shapetypestring" type="varchar(10)" />
+            <column name="useheatmapfield" type="BOOL" />
+            <column name="colormodel" type="TEXT"/>
+            <column name="weightfield_uuid" type="varchar(255)"/>
+            <column name="usebundlefield" type="BOOL" />
+        </createTable>
+    </changeSet>
+    <changeSet author="dchang" id="map-1-5" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="mapsettings_pkey" tableName="mapsettings"/>
+    </changeSet>
+    <changeSet author="dchang" id="map-1-6" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="mapsettings" constraintName="fk_mapsettings_modelobject" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelobject"/>
+    </changeSet>
+    <changeSet author="dchang" id="map-1-7" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="mapsettings_uuid" baseTableName="mapviewdef" constraintName="fk_mapviewdef_mapsettings" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="mapsettings"/>
+    </changeSet>
+    <changeSet author="dchang" id="map-1-8" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="latfield_uuid" baseTableName="mapsettings" constraintName="mapsettings_latfield_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="fielddef"/>
+    </changeSet>
+    <changeSet author="dchang" id="map-1-9" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="longfield_uuid" baseTableName="mapsettings" constraintName="mapsettings_longfield_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="fielddef"/>
+    </changeSet>
+
+     <changeSet author="dchang" id="map-1-10" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="maptooltipfield">
+            <column name="listposition" type="INT4">
+                <constraints nullable="false"/>
+            </column>
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fieldid" type="varchar(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="dchang" id="map-1-11" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="maptooltipfield_pkey" tableName="maptooltipfield"/>
+    </changeSet>
+    <changeSet author="dchang" id="map-1-12" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="maptooltipfield" constraintName="fkmap0112" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelobject"/>
+    </changeSet>
+    
+    <changeSet author="dchang" id="map-1-13" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="mapsettings_maptooltipfield">
+            <column name="mapsettings_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tooltipfields_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="dchang" id="map-1-14" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="tooltipfields_uuid" baseTableName="mapsettings_maptooltipfield" constraintName="fkmap0114" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="maptooltipfield"/>
+    </changeSet>
+    <changeSet author="dchang" id="map-1-15" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="mapsettings_uuid" baseTableName="mapsettings_maptooltipfield" constraintName="fkmap0115" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="mapsettings"/>
+    </changeSet>
+    
+    <changeSet author="dchang" id="map-1-16" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="mapbundledefinition">
+            <column name="listposition" type="INT4">
+                <constraints nullable="false"/>
+            </column>
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fielddef_uuid" type="VARCHAR(255)"/>
+            <column name="minzoom" type="INT4" />
+            <column name="maxzoom" type="INT4" />
+            <column name="associatedlayer" type="varchar(255)"/>
+            <column name="shapestring" type="varchar(10)"/>
+            <column name="colorstring" type="varchar(10)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="dchang" id="map-1-17" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="mapbundledefinition_pkey" tableName="mapbundledefinition"/>
+    </changeSet>
+    <changeSet author="dchang" id="map-1-18" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="fielddef_uuid" baseTableName="mapbundledefinition" constraintName="fkmap0118" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="fielddef"/>
+    </changeSet>
+    <changeSet author="dchang" id="map-1-19" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="mapbundledefinition" constraintName="fkmap0119" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelobject"/>
+    </changeSet>
+    
+    <changeSet author="dchang" id="map-1-20" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="mapsettings_mapbundledefinition">
+            <column name="mapsettings_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="mapbundledefinition_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="dchang" id="map-1-21" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="mapsettings_uuid" baseTableName="mapsettings_mapbundledefinition" constraintName="fkmap0121" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="mapsettings"/>
+    </changeSet>
+    <changeSet author="dchang" id="map-1-22" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="mapbundledefinition_uuid" baseTableName="mapsettings_mapbundledefinition" constraintName="fkmap0122" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="mapbundledefinition"/>
+    </changeSet>
+</databaseChangeLog>

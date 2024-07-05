@@ -1,0 +1,50 @@
+/**
+ * Global properties used by build files. Only exists in here if it is used by multiple files.
+ */
+
+project.ext {
+    sourceInput = 'source'
+
+    buildOutput = 'build'
+    buildRuntime = "${buildOutput}/centrifuge-server"
+    webappRuntime = "${buildRuntime}/webapps"
+    webappCentrifugeRuntime = "${webappRuntime}/Centrifuge"
+
+    jreRuntime = "${buildRuntime}/jre"
+    cachedbRuntime = "${buildRuntime}/cachedb"
+    configRuntime = "${cachedbRuntime}/config"
+    ddlRuntime = "${cachedbRuntime}/ddl"
+    logdbRuntime = "${buildRuntime}/logdb"
+    installerRuntime = "${buildOutput}/installer"
+    windowsKey = 'windows'
+    linuxKey = 'linux'
+
+    windowsOutput = "${buildOutput}/${windowsKey}"
+    linuxOutput = "${buildOutput}/${linuxKey}"
+
+    deployGroup = 'deploy'
+    installGroup = 'install'
+    startingDirectory = new File(".").absolutePath
+
+    majorVersion = ''
+    minorVersion = ''
+    majorSubVersion = ''
+    minorSubVersion = ''
+    releaseVersion = ''
+
+    getOperatingSystemName = {
+        def operatingSystem = System.getenv("os")
+        if (operatingSystem?.toLowerCase()?.contains(windowsKey)) {
+            operatingSystem = windowsKey;
+        } else {
+            operatingSystem = linuxKey
+        }
+        return operatingSystem
+    }
+}
+
+repositories{
+    maven {
+        url "http://10.11.10.3:8081/nexus/content/repositories/Installer"
+    }
+}

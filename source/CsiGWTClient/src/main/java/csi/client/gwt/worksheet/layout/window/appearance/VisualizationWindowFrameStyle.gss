@@ -1,0 +1,45 @@
+@external noheader;
+.topLeft,
+.top,
+.topRight {
+  height: auto;
+}
+
+.topRight {
+  line-height: 0;
+}
+
+.topLeft {
+  border: none;
+}
+
+.noheader .topLeft,
+.noheader .top {
+  height: 0;
+  border: none;
+}
+
+.left {
+  background-color: none;
+}
+
+.right {
+  background-color: none;
+}
+
+.content {
+  background: none;
+}
+
+.bottom,
+.bottomLeft,
+.bottomRight {
+  height: 0;
+}
+
+.contentArea {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border: 1px solid #bdc3c7;
+  background-color: white;
+}

@@ -1,0 +1,82 @@
+<project name="server" basedir=".">
+
+	<dirname file="${ant.file.server}" property="working.dir"/>
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" classpath="${working.dir}/../tools/ant-contrib-1.0b3.jar" />
+	<path id="build.classpath">
+		<pathelement location="../modules/jaas/target/csi-security-jaas-1.0.jar" />
+	</path>
+
+	<property file="${basedir}/project.properties" />
+
+
+	<import file="${working.dir}/../source/module-support.xml" />
+
+
+	<property name="server.dir" value="${build}/centrifuge-server" />
+	<property name="cache.dir" value="${server.dir}/cachedb" />
+	<property name="apps.dir" value="${server.dir}/webapps" />
+
+
+	<target name="output:init">
+		<mkdir dir="${server.dir}" />
+		<mkdir dir="${output}" />
+	</target>
+
+	<target name="compile">
+		<unzip src="resources/${container}" dest="${output}">
+			<patternset>
+				<exclude name="apache-tomcat-7.0.52/webapps/**" />
+			</patternset>
+			<mapper type="glob" from="apache-tomcat-7.0.52/*" to="centrifuge-server/*" />
+		</unzip>
+		<delete quiet="true">
+			<fileset dir="${output}/centrifuge-server">
+				<include name="NOTICE" />
+				<include name="RELEASE-NOTES" />
+				<include name="LICENSE" />
+				<include name="RUNNING.txt" />
+			</fileset>
+		</delete>
+	</target>
+
+	<target name="publish" depends="compile">
+		<mkdir dir="${output}/centrifuge-server/webapps" />
+
+		<!-- overlay local resources that override default tomcat settings and scripts -->
+		<!--<copy todir="${output}/centrifuge-server">-->
+		<!--<fileset dir="resources">-->
+		<!--<exclude name="bin/**/*" />-->
+		<!--<exclude name="${container}" />-->
+		<!--</fileset>-->
+		<!--</copy>-->
+
+		<echo>Overlay local resources that override default tomcat settings and scripts</echo>
+		<copy todir="${output}/centrifuge-server" overwrite="true">
+			<fileset dir="resources/tomcat_7.0.52">
+				<!--<include name="bin/*.*" />-->
+			</fileset>
+		</copy>
+        <copy todir="${output}/centrifuge-server/conf/centrifuge/META-INF/ioc" overwrite="true">
+            <fileset dir="../source/server/src/main/java/META-INF/ioc">
+
+            </fileset>
+        </copy>
+
+    </target>
+
+
+	<target name="build" depends="output:init, publish">
+
+		<echo>Copying server template to ${server.dir}</echo>
+		<copy todir="${build}">
+			<fileset dir="${output}">
+				<exclude name="${container}" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="clean">
+		<delete dir="${output}" />
+		<delete dir="${build}/centrifuge-server" />
+	</target>
+</project>

@@ -1,0 +1,31 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" 
+    updateCheck="true"
+    monitoring="autodetect" 
+    dynamicConfig="true">
+ 
+    <diskStore path="java.io.tmpdir" />
+    
+    
+    <defaultCache maxEntriesLocalHeap="300000" eternal="true"
+        maxElementsInMemory="300000"
+        diskSpoolBufferSizeMB="240"
+        maxEntriesLocalDisk="10000000" diskExpiryThreadIntervalSeconds="1200"
+        memoryStoreEvictionPolicy="LRU" statistics="true">
+        <persistence strategy="localTempSwap" />
+    </defaultCache>
+ 
+    <cache name="org.hibernate.cache.internal.StandardQueryCache"
+        maxEntriesLocalHeap="5" eternal="false" timeToLiveSeconds="1200">
+        <persistence strategy="localTempSwap" />
+    </cache>
+ 
+    <cache name="org.hibernate.cache.spi.UpdateTimestampsCache"
+        maxElementsInMemory="300000"
+        maxEntriesLocalHeap="5000" eternal="true">
+        <persistence strategy="localTempSwap" />
+    </cache>
+ 
+    
+ 
+</ehcache>

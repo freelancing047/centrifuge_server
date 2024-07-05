@@ -1,0 +1,106 @@
+EOF
+
+getDirectory() {
+    confirmed=0
+    while [ $confirmed != 1 ]; do
+        echo " "
+        echo "> Please specify a directory in which to extract the Centrifuge RPM [$PWD]: "
+        read reply leftover
+        if [ "$reply" != "" ]; then
+                installPath=$reply;
+        else
+                installPath=$PWD;
+        fi
+        echo " "
+        echo "> You specified $installPath : Is this correct? [y/N] "
+        read reply leftover
+        nogo=0
+        case $reply in
+            [yY] | [yY][eE][sS])
+                confirmed=1
+                ;;
+            [nN] | [nN][oO])
+                confirmed=0
+                ;;
+            *)
+                confirmed=0
+                ;;
+        esac
+    done
+}
+
+agreed=
+while [ -z "$agreed" ]; do
+    echo
+    echo "> Do you agree to the above license terms? [y/n] "
+    read reply leftover
+    case $reply in
+        [yY] | [yY][eE][sS])
+            agreed=1
+            ;;
+        [nN] | [nN][oO])
+            echo "! If you do not agree to the license terms you cannot install this software.";
+            exit 1
+            ;;
+    esac
+done
+
+isPathValid=0
+while [ $isPathValid != 1 ]; do
+
+        getDirectory
+
+        if [ -e $installPath ]; then
+                if [ -d $installPath ]; then
+                        if [ -w $installPath ]; then
+                                isPathValid=1
+                        else
+                                echo "! The specified directory cannot be written.  Please make the directory writable or specify a different directory."
+                        fi
+                else
+                        echo "! The specified directory refers to a file, not a directory.  Please specify a writable directory or a directory that can be created."
+                fi
+        else
+                mkdir -p $installPath
+
+                if [ $? -eq 0 ]; then
+                        isPathValid=1
+                else
+                        echo "! The specified directory cannot be created.  Please make the directory writable or specify a different directory."
+                fi
+        fi
+done
+
+originalPath=$PWD
+cd "$installPath"
+
+outfile="$installPath/centrifuge-%%%%%.rpm"
+
+#
+# Find the line where the tar archive starts.
+#
+TAG_LINE=`grep --binary-files=text -n END-OF-SCRIPT "$originalPath/$0"  | tail -1 | sed -e 's/:END-OF-SCRIPT//'`
+TAR_START_LINE=`expr $TAG_LINE + 1`
+
+#
+# Take the archive portion of this file and pipe it to tar.
+#
+if tail  -n +${TAR_START_LINE} "$originalPath/$0" > "$outfile"
+then 
+  echo " "
+  echo "# Extraction of the RPM completed successfully."
+  echo "# You are now ready to install Centrifuge."
+  echo " "
+else
+  echo " "
+  echo "*** Extraction ended due to errors. ***"
+  echo " "
+  echo "This is sometimes caused by a corrupted installer file or incorrect file"
+  echo "permissions.  Before retrying, verify the integrity of this installer file"
+  echo "and make sure the current directory is writable."
+  echo " "
+fi
+
+cd "$originalPath"
+exit 0
+END-OF-SCRIPT

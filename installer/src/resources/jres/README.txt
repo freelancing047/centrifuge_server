@@ -1,0 +1,1 @@
+1/28/17 The windows jre in this folder actual contains JRE 7u7 and not 7u45. The packaging of 7u45 was causing problems during the install process, and the JRE for windows has been reverted.

@@ -1,0 +1,55 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+             xmlns:bootBase="urn:import:com.github.gwtbootstrap.client.ui.base">
+
+   <ui:style gss="true">
+    	.loadAtStartup {
+			display: inline-block;
+        	padding-right: 10px;
+        }
+        
+        .loadAfterSave {
+			display: inline-block;
+        	padding-right: 10px;
+        }
+        
+        .modalFooterControlGroup {
+        	margin-bottom: 0px;
+        }
+        
+        .leftControl {
+        	position: absolute;
+        	bottom: 7px;
+        }
+    </ui:style>
+
+    <ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+
+    <boot:ModalFooter>
+        <!-- <boot:Form type="INLINE"> -->
+        <!-- <boot:Fieldset> -->
+        <!-- <boot:ControlGroup addStyleNames="{style.modalFooterControlGroup}"> -->
+        <!-- <boot:Controls> -->
+        <!-- <boot:CheckBox text="Don't load after save" ui:field="suppressLoadAfterSave" addStyleNames="{style.loadAfterSave}" 
+            /> -->
+        <!-- <boot:Button type="SUCCESS" ui:field="buttonSave">Save</boot:Button> -->
+        <!-- <boot:Button ui:field="buttonCancel">Cancel</boot:Button> -->
+        <!-- </boot:Controls> -->
+        <!-- </boot:ControlGroup> -->
+        <!-- </boot:Fieldset> -->
+        <!-- </boot:Form> -->
+
+        <bootBase:DivWidget ui:field="rightControlContainer">
+            <boot:CheckBox text="{i18n.get.vizSettingsDontLoadAtStartup}" ui:field="suppressLoadAtStartup" addStyleNames="{style.loadAtStartup}" />
+            <boot:CheckBox visible="false" text="{i18n.get.vizSettingsDontLoadAfterSave}" ui:field="suppressLoadAfterSave" addStyleNames="{style.loadAfterSave}" />
+            <boot:CheckBox text="{i18n.get.menuKeyConstants_hide_overview}" ui:field="hideOverviewCheckBox" addStyleNames="{style.loadAfterSave}" />
+            <boot:Button type="SUCCESS" ui:field="buttonSave" text="{i18n.get.vizSettingsSaveButton}"></boot:Button>
+            <boot:Button ui:field="buttonCancel" text="{i18n.get.vizSettingsCancelButton}"></boot:Button>
+            <bootBase:DivWidget addStyleNames="{style.leftControl}" ui:field="leftControlContainer">
+            </bootBase:DivWidget>
+        </bootBase:DivWidget>
+    </boot:ModalFooter>
+
+</ui:UiBinder>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="rfoster" id="rfoster-11-sql-001" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<sql splitStatements="false" stripComments="false">
+			<![CDATA[
+create or replace function cast_boolean(input boolean) returns boolean as $$
+	begin
+		return cast(input as boolean);
+	exception
+		when data_exception then
+			return null;
+	end;
+	$$ language plpgsql immutable;
+create or replace function cast_boolean(input text) returns boolean as $$
+	begin
+		return cast(input as text);
+	exception
+		when data_exception then
+			return null;
+	end;
+	$$ language plpgsql immutable;
+create or replace function cast_string(input boolean) returns text as $$
+	begin
+		return cast(input as boolean);
+	exception
+		when data_exception then
+			return null;
+	end;
+	$$ language plpgsql immutable;
+			]]>
+		</sql>
+	</changeSet>
+</databaseChangeLog>

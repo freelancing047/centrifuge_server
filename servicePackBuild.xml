@@ -1,0 +1,140 @@
+<project name="servicepack" default="package">
+	<property name="version" value="29" />
+	
+	<!-- user friendly representation of the version -->
+	<property name="publish.version" value="2.9" />
+	<property name="rev" value="SP1" />
+	<property name="csi.anttask.cp" value="tools/Ant/target/classes;tools/Ant/lib/commons-io-1.2.jar" />
+	<property file="build.properties" />
+
+	<target name="init">
+		<mkdir dir="servicepacks/target/win/patches" />
+		<mkdir dir="servicepacks/target/linux/patches" />
+		<mkdir dir="servicepacks/SP" />
+		<copy todir="servicepacks/target/win/patches">
+			<fileset dir="servicepacks/README">
+				<include name="*.txt" />
+			</fileset>
+		</copy>
+		<copy todir="servicepacks/target/linux/patches">
+			<fileset dir="servicepacks/README">
+				<include name="*.txt" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="compilediff">
+		<mkdir dir="tools/Ant/target/classes" />
+		<javac srcdir="tools/Ant/src" destdir="tools/Ant/target/classes" debug="on" >
+			<compilerarg value ="${javac.warnArg}"/>
+			<classpath>
+				<fileset dir="tools/Ant/lib"/>
+			</classpath>
+		</javac>
+	</target>
+	
+	<taskdef name="csispdiff" classname="csi.AntTasks.CsiSPDiff" classpath="${csi.anttask.cp}"/>
+	
+	<target name="spdiff">
+		<delete dir="${basedir}/servicepacks/build" />
+		<mkdir dir="servicepacks/build" />
+		<csispdiff destdir="servicepacks/build" 
+			       installdir="${ga.install.dir}" 
+			       builddir="build/centrifuge-server"
+			       chktime="false"
+			       chksize="true"
+			       chkmissing="false"
+			       chkdigest="true" >
+			<fileset dir="build/centrifuge-server" >
+				<include name="bin/**/*.*" />
+				<include name="lib/**/*.*" />
+				<include name="webapps/**/*.*" />
+				<exclude name="webapps/Centrifuge/WEB-INF/classes/**/*.*" />
+				<exclude name="bin/*.sh" />
+
+				
+				<exclude name="lib/csi-security-jaas.jar" />
+				<exclude name="lib/csi-tomcat-ext.jar" />
+				<exclude name="webapps/Centrifuge/WEB-INF/*.tld" />
+				<exclude name="webapps/Centrifuge/WEB-INF/lib/mongo-graph.jar" />
+				<exclude name="webapps/Centrifuge/WEB-INF/lib/javassist.jar" />
+				<exclude name="webapps/Centrifuge/WEB-INF/lib/pluggable-datasource.jar" />
+				<exclude name="webapps/Centrifuge/WEB-INF/lib/prefuse.jar" />
+				<exclude name="webapps/Centrifuge/WEB-INF/lib/glowacki.jar" />
+				<exclude name="webapps/Centrifuge/flex/index.html" />
+				<exclude name="webapps/Centrifuge/flex/*.js" />
+				<exclude name="webapps/Centrifuge/index.html" />
+
+				<exclude name="webapps/Centrifuge/WEB-INF/web.xml" />
+				<exclude name="webapps/Centrifuge/images/**/*.*" />
+				<exclude name="webapps/Centrifuge/UserManagement/**/*.*" />
+				<exclude name="webapps/Centrifuge/css/**/*.*" />
+				<exclude name="webapps/Centrifuge/filemanager/**/*.*" />
+				<exclude name="webapps/Centrifuge/javascript/**/*.*" />
+				<exclude name="webapps/Centrifuge/pages/**/*.*" />
+				<exclude name="webapps/Centrifuge/resources/**/*.*" />
+				<exclude name="webapps/Centrifuge/samples/**/*.*" />
+				<exclude name="webapps/Centrifuge/views/**/*.*" />
+				<exclude name="webapps/Centrifuge/assets/**/*.*" />
+
+<!--				
+                <exclude name="webapps/Centrifuge/flex/CentrifugeWidget.swf" />
+				<exclude name="webapps/Centrifuge/flex/VisualizationWidget.swf" />
+				<exclude name="webapps/Centrifuge/flex/liveAsset.swf" />
+-->				
+			</fileset>
+		</csispdiff>
+	</target>
+
+	<target name="package" depends="clean, init, spdiff, package.win, package.unix, publish">
+
+	</target>
+
+
+	<target name="package.win" depends="init">
+		<zip destfile="servicepacks/target/tempfile" basedir="servicepacks/build">
+		</zip>
+
+		<move file="servicepacks/target/tempfile" tofile="servicepacks/target/win/patches/CSI_${version}_${rev}_patch.zip" />
+
+		<zip destfile="servicepacks/SP/CSI_${version}_${rev}_windows.zip">
+			<fileset dir="servicepacks/target/win">
+				<include name="**/*.*" />
+			</fileset>
+		</zip>
+	</target>
+
+	<target name="package.unix" depends="init">
+		<tar destfile="servicepacks/target/tempfile" basedir="servicepacks/build" compression="gzip">
+		</tar>
+
+		<move file="servicepacks/target/tempfile" tofile="servicepacks/target/linux/patches/CSI_${version}_${rev}_patch.tar.gz" />
+
+		<tar destfile="servicepacks/SP/CSI_${version}_${rev}_linux.tar.gz" compression="gzip">
+			<fileset dir="servicepacks/target/linux">
+				<include name="**/*.*" />
+			</fileset>
+		</tar>
+	</target>
+
+	<target name="publish" >
+		<tstamp>
+			<format property="cctimestamp" pattern="yyyyMMddhhmmss" />
+		</tstamp>
+		<property name="publish.servicepack" value="//csinas1/builds/Server-${publish.version}/Service_Packs/${cctimestamp}" />
+		
+		<mkdir dir="${publish.servicepack}" />
+		<copy todir="${publish.servicepack}"> 
+		      <fileset dir="servicepacks/SP">
+				<include name="**/*.*" />
+		      </fileset>
+		</copy>
+	</target>
+		
+	<target name="clean">
+		<delete dir="${basedir}/servicepacks/target/win/patches" />
+		<delete dir="${basedir}/servicepacks/target/linux/patches" />
+		<delete dir="${basedir}/servicepacks/SP" />
+	</target>
+
+</project>

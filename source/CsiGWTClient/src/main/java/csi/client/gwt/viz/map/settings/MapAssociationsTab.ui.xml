@@ -1,0 +1,51 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:base="urn:import:com.github.gwtbootstrap.client.ui.base" xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:gwtui="urn:import:csi.client.gwt.widget.ui" xmlns:gwtbootstrap="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:grid="urn:import:csi.client.gwt.widget.gxt.grid" xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes">
+	<ui:style>
+	.right {
+		float: right;
+		margin-top: 10px;
+		margin-right: 12px;
+		text-decoration: none !important;
+		bottom: 0px
+	}
+	.left {
+		float: left;
+		margin-top: 10px;
+		margin-right: 12px;
+		text-decoration: none !important;
+		bottom: 0px
+	}
+	.right-stringcombobox {
+		float: right;
+		text-decoration: none !important;
+		bottom: 0px
+	}
+	</ui:style>
+
+	<ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+
+	<gwtui:FullSizeLayoutPanel>
+		<gwtui:layer top="0px" height="40px">
+			<gwtbootstrap:FluidContainer height="20px"
+				width="100%">
+				<gwtbootstrap:FluidRow>
+					<gwtbootstrap:Column size="3">
+						<gwtbootstrap:Heading size="4"
+							text="{i18n.get.mapSettingsView_associationsTab_associationDefinition}"></gwtbootstrap:Heading>
+					</gwtbootstrap:Column>
+					<gwtbootstrap:Column size="3">
+						<gwtbootstrap:Button ui:field="newAssociationButton"
+							text="{i18n.get.mapSettingsView_associationsTab_newDefinition}" type="LINK"
+							size="DEFAULT" addStyleNames="{style.left}" />
+					</gwtbootstrap:Column>
+				</gwtbootstrap:FluidRow>
+			</gwtbootstrap:FluidContainer>
+		</gwtui:layer>
+		<gwtui:layer top="40px" bottom="0px">
+			<grid:GridContainer ui:field="associationGridContainer" />
+		</gwtui:layer>
+	</gwtui:FullSizeLayoutPanel>
+</ui:UiBinder> 

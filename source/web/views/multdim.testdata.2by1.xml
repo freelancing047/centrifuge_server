@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<centrifuge.ws.rest.Result>
+    <table unitCount="3" max="600000" displayName="Sales">
+	<row type="column">
+		<value colSpan="1" rowSpan="2" chartRowSpan="1" header="yes">BLANK_CORNER_HACK</value>
+		<value colSpan="3" header="yes">2001</value>
+		<value colSpan="3" header="yes">2002</value>
+		<value colSpan="3" header="yes">2003</value>
+	</row>
+	<row type="column" lastColumn="yes">
+		<value header="yes">CENTRAL</value>
+		<value header="yes">EAST</value>
+		<value header="yes">WEST</value>
+		<value header="yes">CENTRAL</value>
+		<value header="yes">EAST</value>
+		<value header="yes">WEST</value>
+		<value header="yes">CENTRAL</value>
+		<value header="yes">EAST</value>
+		<value header="yes">WEST</value>
+	</row>
+	<row type="row">
+		<value header="yes">CORPORATE</value>
+		<value>201072</value>
+		<value>550232</value>
+		<value>258697</value>
+		<value>127714</value>
+		<value>401400</value>
+		<value>204782</value>
+		<value>120209</value>
+		<value>378997</value>
+		<value>163946</value>
+	</row>
+	<row type="row">
+		<value header="yes">HOME OFFICE</value>
+		<value>132373</value>
+		<value>411632</value>
+		<value>185479</value>
+		<value>48394</value>
+		<value>277572</value>
+		<value>144950</value>
+		<value>85126</value>
+		<value>251832</value>
+		<value>119174</value>
+	</row>
+	<row type="row" lastRow="yes">
+		<value header="yes">SMALL BUSINESS</value>
+		<value>70031</value>
+		<value>255129</value>
+		<value>132678</value>
+		<value>81851</value>
+		<value>189205</value>
+		<value>54651</value>
+		<value>46761</value>
+		<value>166612</value>
+		<value>70185</value>
+	</row>	
+    </table>
+</centrifuge.ws.rest.Result>

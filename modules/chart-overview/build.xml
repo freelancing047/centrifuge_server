@@ -1,0 +1,47 @@
+<project name="chart-overview" default="compile">
+
+	<import file="../../source/module-support.xml" />
+
+	<path id="compile.classpath">
+		<fileset dir="../../lib">
+			<exclude name="**/sqljdbc.jar" />
+			<exclude name="mongo-2.6.5.jar" />
+			<include name="*.jar" />
+			<include name="hibernate/3.4/**/*.jar" />
+			<include name="httpunit/*.jar" />
+			<include name="jaxb-2007-01-24/*.jar" />
+			<include name="jdbc/**/*.jar" />
+			<include name="metro1.2/*.jar" />
+			<include name="${xstream.location}/*.jar" />
+			<include name="tomcat-7.0.52/*.jar" />
+			<include name="jung/2.0.1/*.jar" />
+			<exclude name="jung/2.0.1/*stax-api*.jar" />
+			<include name="guice/*.jar" />
+			<include name="easymock/*.jar" />
+			<include name="empire-db/*.jar" />
+			<include name="apache-mime4j-0.6.jar" />
+			<include name="GWT/*.jar"/>
+         <include name="charting/*.jar" />
+         <include name="log4j-api-*.jar" />
+         <include name="log4j-core-*.jar" />
+		</fileset>
+		<fileset dir="../../build/jars">
+			<include name="centrifuge-services.jar" />
+		</fileset>
+	</path>
+	
+    <target name="clean">
+        <delete failonerror="false" includeemptydirs="true">
+            <fileset dir="target">
+            </fileset>
+        </delete>
+    </target>
+
+    <target name="compile" depends="clean">
+        <mkdir dir="target/classes" />
+        <javac srcdir="src/main/java" destdir="target/classes" debug="true">
+            <classpath refid="compile.classpath" />
+        </javac>
+    </target>
+	
+</project>

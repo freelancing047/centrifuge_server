@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="jdobson" id="chartcriterion-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="zerotoonetypecriterion">
+           <column name="uuid" type="VARCHAR(255)">
+               <constraints nullable="false" />
+           </column>
+            <column name="testvalue" type="DOUBLE">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="chartcriterion-2" author="jdobson" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseTableName="zerotoonetypecriterion" baseColumnNames="uuid" constraintName="fkchartcriterion-2"
+                                 deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedTableName="chartcriterion" referencedColumnNames="uuid" />
+    </changeSet>
+    <changeSet author="jdobson" id="chartcriterion-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="positiveintegertypecriterion">
+            <column name="uuid" type="VARCHAR(255)" >
+                <constraints nullable="false" />
+            </column>
+            <column name="testvalue" type="INT">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="chartcriterion-4" author="jdobson" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseTableName="positiveintegertypecriterion" baseColumnNames="uuid" constraintName="fkchartcriterion-4"
+        deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+        referencedTableName="chartcriterion" referencedColumnNames="uuid" />
+    </changeSet>
+</databaseChangeLog>

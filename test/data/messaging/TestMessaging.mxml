@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This is an example of using the Flex/Java REST Messaging System
+There is a corresponding TestService that is invoked to 
+communicate with the server.
+-->
+
+
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute">
+<mx:Script>
+	<![CDATA[
+		import mx.collections.ItemResponder;
+		import mx.rpc.AsyncToken;
+	import centrifuge.messaging.rest.TestService;
+	import centrifuge.messaging.rest.ServiceResponder;
+	import centrifuge.model.*;
+	import mx.controls.Alert;
+	
+	//In this case, we will get back an array of DataViews
+	function handleSuccess(result:Object, token:Object=null):void
+	{
+		//var dvArray:Array = result.result;
+		Alert.show("success");
+		
+	}
+	
+	function handleFailure(error:Object, token:Object=null):void
+	{
+		//handle failure
+		
+	}
+	
+	function doTest():void
+		{   	
+			var ts:TestService = new TestService(); 
+			var token:AsyncToken = ts.send();
+			// We need to add a 'Responder' to the token that indicates what should
+			// happen on success/failure.  This example, uses the default 
+			// ItemResponder implementation.  We could also use our own IResponder 
+			// with it's own methods to handle the results.
+			token.addResponder( new ServiceResponder(handleSuccess, handleFailure) );
+		}
+
+	]]>
+</mx:Script>
+<!-- Simple button to kiick things off -->
+	<mx:Panel x="62" y="123" width="633" height="410" layout="absolute">
+		<mx:Button x="479" y="319" label="Test" click="doTest()"/>
+	</mx:Panel>
+	
+</mx:Application>

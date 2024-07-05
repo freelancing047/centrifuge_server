@@ -1,0 +1,81 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+        xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:g="urn:import:com.google.gwt.user.client.ui"
+        xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+        xmlns:gwtbootstrap="urn:import:com.github.gwtbootstrap.client.ui"
+        xmlns:grid="urn:import:csi.client.gwt.widget.gxt.grid"
+        xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes"
+        xmlns:gt="urn:import:csi.client.gwt.viz.graph.tab"
+        >
+   <ui:style gss="true">
+        .right {
+            float: right;
+        }
+
+        .checkbox {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+    </ui:style>
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <gt:GraphTab
+            tabname="{i18n.get.pathTab_heading}"
+            icon="SITEMAP"
+            ui:field="pathsTab">
+        <g:LayoutPanel ui:field="layoutPanel">
+            <g:layer
+                    top="45px"
+                    bottom="0px">
+                <grid:GridContainer ui:field="gridContainer"/>
+            </g:layer>
+            <g:layer
+                    top="5px"
+                    height="40px">
+                <gwtbootstrap:FluidRow ui:field="controlLayer">
+                    <boot:Button
+                            ui:field="searchButton"
+                            icon="SEARCH"
+                            text="{i18n.get.pathTab_search}">
+                    </boot:Button>
+                    <combo:CommonNumberComboBox
+                            ui:field="itemsToShowListBox"
+                            visible="false"
+                            height="18px">
+                    </combo:CommonNumberComboBox>
+                    <boot:CheckBox
+                            inline="true"
+                            addStyleNames="{style.checkbox}"
+                            ui:field="autoHighlightCheckBox"
+                            value="true"
+                            text="{i18n.get.pathTab_autoHighlight}"/>
+                    <boot:Button
+                            ui:field="clearHighlightsButton"
+                            text="{i18n.get.pathTab_clearHighlights}">
+                    </boot:Button>
+                    <boot:DropdownButton
+                            text="{i18n.get.pathTab_actionButton}"
+                            rightDropdown="true"
+                            addStyleNames="{style.right}">
+                        <boot:NavLink ui:field="highlightNavLink" text="{i18n.get.pathTab_action_highlight}"/>
+                        <boot:NavLink ui:field="selectNavLink" text="{i18n.get.pathTab_action_select}"/>
+                        <boot:NavLink ui:field="addSelectNavLink" text="{i18n.get.pathTab_action_addToSelection}"/>
+                        <boot:NavLink ui:field="showNavLink" text="{i18n.get.pathTab_action_showOnly}"/>
+                    </boot:DropdownButton>
+                    <boot:CheckBox
+                            ui:field="nodeCheckBox"
+                            inline="true"
+                            addStyleNames="{style.right},{style.checkbox}"
+                            value="true"
+                            text="{i18n.get.pathTab_action_targetNodes}"/>
+                    <boot:CheckBox
+                            ui:field="linkCheckBox"
+                            inline="true"
+                            addStyleNames="{style.right},{style.checkbox}"
+                            value="true"
+                            text="{i18n.get.pathTab_action_targetLinks}"/>
+                </gwtbootstrap:FluidRow>
+            </g:layer>
+        </g:LayoutPanel>
+    </gt:GraphTab>
+</ui:UiBinder>

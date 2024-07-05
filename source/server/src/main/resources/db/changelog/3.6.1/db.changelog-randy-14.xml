@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="rfoster" id="rfoster-14-001" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="installedtable">
+            <column name="fieldmap" type="TEXT"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-002" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="installedtable">
+            <column name="rowlimit" type="INTEGER"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-003" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="installedtable">
+            <column name="orderedmapping" type="BOOLEAN" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-004" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="datasourcedef">
+            <column name="simpleloader" type="BOOLEAN" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-005" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="queryparameterdef">
+            <column name="sourcecount" type="INTEGER" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-006" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="queryparameterdef">
+            <column name="fieldcount" type="INTEGER" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-007" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="queryparameterdef">
+            <column name="alwaysfill" type="BOOLEAN" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-008" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="modelresource">
+            <column name="flags" type="INTEGER" defaultValueNumeric="0" valueNumeric="0">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-009" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		    <modifyDataType tableName="modelresource" columnName="name" newDataType="TEXT"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-010" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		    <modifyDataType tableName="modelresource" columnName="remarks" newDataType="TEXT"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-011" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		    <modifyDataType tableName="recentaccess" columnName="name" newDataType="TEXT"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-012" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		    <modifyDataType tableName="linkupmapdef" columnName="linkupname" newDataType="TEXT"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-013" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		    <modifyDataType tableName="linkupmapdef" columnName="templatename" newDataType="TEXT"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-014" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		    <modifyDataType tableName="installedtable" columnName="basename" newDataType="TEXT"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-015" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="graphcachedstate">
+            <column name="nodelegenddecorationskeystring" type="TEXT"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-016" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="graphcachedstate">
+            <column name="linklegenddecorationskeystring" type="TEXT"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-017" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="queryparameterdef">
+            <column name="trimvalues" type="BOOLEAN" defaultValueBoolean="true" valueBoolean="true">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-018" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="dataview">
+            <column name="rowlevelcapco" type="BOOLEAN" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-019" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="dataview">
+            <column name="rowleveltags" type="BOOLEAN" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-020" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="installedtable">
+            <column name="rowlevelcapco" type="BOOLEAN" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-14-021" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="installedtable">
+            <column name="rowleveltags" type="BOOLEAN" defaultValueBoolean="false" valueBoolean="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

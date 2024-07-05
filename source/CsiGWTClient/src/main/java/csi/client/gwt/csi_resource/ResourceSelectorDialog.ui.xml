@@ -1,0 +1,28 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    xmlns:csigwt="urn:import:csi.client.gwt.widget.ui"
+    xmlns:csiboot="urn:import:csi.client.gwt.widget.boot"
+    xmlns:csipanel="urn:import:csi.client.gwt.csiwizard.panels">
+	<ui:style>
+		.noresize {
+			resize: none;
+		}
+        .important {
+            font-weight: bold;
+        }
+        .noborder{
+            border-style: none;
+        }
+	</ui:style>
+ 
+    <csiboot:Dialog bodyWidth="800px" bodyHeight="350px" ui:field="dialog">
+        <csigwt:FullSizeLayoutPanel ui:field="controlPanel" height="350px" width="800px">
+            <csigwt:layer top="0px" bottom="0px" left="0px" width="488px">
+                <csipanel:ResourceSelectorPanel ui:field="selectorWidget" width="488" height="350" />
+            </csigwt:layer>
+            <csigwt:layer top="20px" bottom="20px" left="512px" right="20px">
+                <csiboot:DialogInfoTextArea ui:field="instructionTextArea" height="100%" width="97%" addStyleNames="{style.noborder}" />
+            </csigwt:layer>
+        </csigwt:FullSizeLayoutPanel>
+    </csiboot:Dialog>
+</ui:UiBinder> 

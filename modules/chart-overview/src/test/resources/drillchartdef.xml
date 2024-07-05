@@ -1,0 +1,184 @@
+<csi.server.common.model.DrillDownChartViewDef>
+  <clientProperties>
+    <entry>
+      <String>vizBox.loadOnStartup</String>
+      <boolean>true</boolean>
+    </entry>
+    <entry>
+      <String>vizBox.top</String>
+      <int>0</int>
+    </entry>
+    <entry>
+      <String>vizBox.height</String>
+      <int>350</int>
+    </entry>
+    <entry>
+      <String>vizBox.width</String>
+      <int>600</int>
+    </entry>
+    <entry>
+      <String>vizBox.left</String>
+      <int>656</int>
+    </entry>
+  </clientProperties>
+  <dimensions>
+    <csi.server.common.model.chart.ChartField>
+      <clientProperties />
+      <dimension>
+        <cacheScale>0</cacheScale>
+        <cacheSize>0</cacheSize>
+        <clientProperties>
+          <sourceName>Sample Database.mdb</sourceName>
+          <tableName>Sample Phone</tableName>
+          <tableType>TABLE</tableType>
+        </clientProperties>
+        <columnLocalId>B7DFD930-0977-33A0-42B7-E6C22AA9E925</columnLocalId>
+        <dsLocalId>B458721D-B487-67BB-D913-E6C22AA9C96E</dsLocalId>
+        <fieldName>Direction</fieldName>
+        <fieldType>COLUMN_REF</fieldType>
+        <functions>
+          <csi.server.common.model.ConcatFunction>
+            <clientProperties />
+            <fields />
+            <ordinal>0</ordinal>
+            <separator>&amp;#32;</separator>
+            <uuid>d2d99953-fe15-4db2-9c1c-2a356a4027d1</uuid>
+          </csi.server.common.model.ConcatFunction>
+        </functions>
+        <functionType>CONCAT</functionType>
+        <ordinal>6</ordinal>
+        <tableLocalId>94400081-5AC9-7B8E-933F-E6C22A991119</tableLocalId>
+        <uuid>2d745cde-9634-42b9-9764-1ad5c7356364</uuid>
+        <valueType>string</valueType>
+      </dimension>
+      <dimName>Direction</dimName>
+      <ordinal>0</ordinal>
+      <uuid>f792c0a8-d6b3-3bb8-24ad-1fb05385961d</uuid>
+    </csi.server.common.model.chart.ChartField>
+    <csi.server.common.model.chart.ChartField>
+      <bundleParams>
+        <clientProperties />
+        <uuid>dc62f577-8f3f-f4b9-1c08-1fb0b5d5a008</uuid>
+      </bundleParams>
+      <clientProperties />
+      <dimension>
+        <cacheScale>0</cacheScale>
+        <cacheSize>0</cacheSize>
+        <clientProperties>
+          <sourceName>Sample Database.mdb</sourceName>
+          <tableName>Sample Phone</tableName>
+          <tableType>TABLE</tableType>
+        </clientProperties>
+        <columnLocalId>D5B2923E-A818-DE4A-DD7D-E6C22AA967E5</columnLocalId>
+        <dsLocalId>B458721D-B487-67BB-D913-E6C22AA9C96E</dsLocalId>
+        <fieldName>Type</fieldName>
+        <fieldType>COLUMN_REF</fieldType>
+        <functions>
+          <csi.server.common.model.ConcatFunction>
+            <clientProperties />
+            <fields />
+            <ordinal>0</ordinal>
+            <separator>&amp;#32;</separator>
+            <uuid>7259f192-7c1e-48b5-a157-a2fecfeb740f</uuid>
+          </csi.server.common.model.ConcatFunction>
+        </functions>
+        <functionType>CONCAT</functionType>
+        <ordinal>7</ordinal>
+        <tableLocalId>94400081-5AC9-7B8E-933F-E6C22A991119</tableLocalId>
+        <uuid>73c3c581-0e45-4f5c-b82e-d70311587074</uuid>
+        <valueType>string</valueType>
+      </dimension>
+      <dimName>Type</dimName>
+      <ordinal>1</ordinal>
+      <uuid>34e03e2a-7921-a677-23c5-1fb057d9800a</uuid>
+    </csi.server.common.model.chart.ChartField>
+  </dimensions>
+  <isAttached>false</isAttached>
+  <metrics>
+    <csi.server.common.model.chart.ChartMeasure>
+      <clientProperties />
+      <measureField>
+        <cacheScale>0</cacheScale>
+        <cacheSize>0</cacheSize>
+        <clientProperties>
+          <sourceName>Sample Database.mdb</sourceName>
+          <tableName>Sample Phone</tableName>
+          <tableType>TABLE</tableType>
+        </clientProperties>
+        <columnLocalId>0693CA5F-A015-29B5-B566-E6C22A992EE7</columnLocalId>
+        <dsLocalId>B458721D-B487-67BB-D913-E6C22AA9C96E</dsLocalId>
+        <fieldName>Phone1</fieldName>
+        <fieldType>COLUMN_REF</fieldType>
+        <functions>
+          <csi.server.common.model.ConcatFunction>
+            <clientProperties />
+            <fields />
+            <ordinal>0</ordinal>
+            <separator>&amp;#32;</separator>
+            <uuid>b7ec5ca8-a678-4ca3-b675-0a19351a15df</uuid>
+          </csi.server.common.model.ConcatFunction>
+        </functions>
+        <functionType>CONCAT</functionType>
+        <ordinal>0</ordinal>
+        <tableLocalId>94400081-5AC9-7B8E-933F-E6C22A991119</tableLocalId>
+        <uuid>8d68fe6a-c25b-46cf-8d33-8f35af9f8242</uuid>
+        <valueType>integer</valueType>
+      </measureField>
+      <measureFunction>Count</measureFunction>
+      <name>Phone1</name>
+      <ordinal>0</ordinal>
+      <uuid>9a988c44-c099-d558-34ce-1fb07c34f1e9</uuid>
+    </csi.server.common.model.chart.ChartMeasure>
+    <csi.server.common.model.chart.ChartMeasure>
+      <clientProperties />
+      <measureField>
+        <cacheScale>0</cacheScale>
+        <cacheSize>0</cacheSize>
+        <clientProperties>
+          <sourceName>Sample Database.mdb</sourceName>
+          <tableName>Sample Phone</tableName>
+          <tableType>TABLE</tableType>
+        </clientProperties>
+        <columnLocalId>6CCDA56D-41B5-89AF-06E8-E6C22AA9D300</columnLocalId>
+        <dsLocalId>B458721D-B487-67BB-D913-E6C22AA9C96E</dsLocalId>
+        <fieldName>Phone2</fieldName>
+        <fieldType>COLUMN_REF</fieldType>
+        <functions>
+          <csi.server.common.model.ConcatFunction>
+            <clientProperties />
+            <fields />
+            <ordinal>0</ordinal>
+            <separator>&amp;#32;</separator>
+            <uuid>216fd13a-6b9d-422e-9d17-fce44ef6fb5c</uuid>
+          </csi.server.common.model.ConcatFunction>
+        </functions>
+        <functionType>CONCAT</functionType>
+        <ordinal>3</ordinal>
+        <tableLocalId>94400081-5AC9-7B8E-933F-E6C22A991119</tableLocalId>
+        <uuid>12a01824-61a4-42c1-ab7a-4f0f608ba298</uuid>
+        <valueType>integer</valueType>
+      </measureField>
+      <measureFunction>Count</measureFunction>
+      <name>Phone2</name>
+      <ordinal>1</ordinal>
+      <uuid>12238609-15f8-8400-1640-1fb07f84320f</uuid>
+    </csi.server.common.model.chart.ChartMeasure>
+  </metrics>
+  <name>Drill Chart</name>
+  <renderThreshold>0</renderThreshold>
+  <settings>
+    <clientProperties />
+    <properties>
+      <csi.server.common.model.Property>
+        <clientProperties />
+        <name>chartType</name>
+        <uuid>302217a8-03bb-9dec-cb71-1fb04d5ad0a7</uuid>
+        <value>VerticalBarChart</value>
+      </csi.server.common.model.Property>
+    </properties>
+    <uuid>63550816-a139-73a5-aba6-1fb04c1d96c6</uuid>
+  </settings>
+  <suppressNulls>false</suppressNulls>
+  <type>BAR_CHART</type>
+  <uuid>4bcd7586-e081-b164-e64e-1fb04c1dcae9</uuid>
+</csi.server.common.model.DrillDownChartViewDef>

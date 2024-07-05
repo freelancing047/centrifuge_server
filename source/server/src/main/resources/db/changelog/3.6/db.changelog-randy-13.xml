@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="rfoster" id="rfoster-13-001" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="createkmlrequest">
+            <column name="fielddefids" type="TEXT"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-002" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="users">
+            <column name="activatedate" type="TIMESTAMP WITHOUT TIME ZONE"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-003" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="adhocdatasource">
+            <column name="nextappendnumber" type="INT4">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nextjoinnumber" type="INT4">
+                <constraints nullable="false"/>
+            </column>
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sorted" type="BOOLEAN" defaultValue="false" value="false">
+                <constraints nullable="false"/>
+			</column>
+            <column name="datatree_uuid" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-004" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="queryparameterdef">
+            <column name="dataparent_uuid" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-005" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="datasourcedef">
+            <column name="dataparent_uuid" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-006" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="orphancolumn">
+            <column name="dataparent_uuid" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-007" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="fielddef">
+            <column name="dataparent_uuid" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-008" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="adhocdatasource_pkey" tableName="adhocdatasource"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-009" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="datatree_uuid" baseTableName="adhocdatasource" constraintName="adhocdatasource_datatree_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="datasetop"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-010" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="dataparent_uuid" baseTableName="queryparameterdef" constraintName="adhocdatasource_queryparameterdef_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="adhocdatasource"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-011" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="dataparent_uuid" baseTableName="datasourcedef" constraintName="adhocdatasource_datasourcedef_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="adhocdatasource"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-012" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="dataparent_uuid" baseTableName="orphancolumn" constraintName="adhocdatasource_orphancolumn_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="adhocdatasource"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-013" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="dataparent_uuid" baseTableName="fielddef" constraintName="adhocdatasource_fielddef_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="adhocdatasource"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-014" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<dropNotNullConstraint tableName="queryparameterdef" columnName="dataparent_uuid" columnDataType="VARCHAR(255)"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-015" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<dropNotNullConstraint tableName="datasourcedef" columnName="dataparent_uuid" columnDataType="VARCHAR(255)"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-016" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<dropNotNullConstraint tableName="orphancolumn" columnName="dataparent_uuid" columnDataType="VARCHAR(255)"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-017" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<dropNotNullConstraint tableName="fielddef" columnName="dataparent_uuid" columnDataType="VARCHAR(255)"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-018" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<dropNotNullConstraint tableName="queryparameterdef" columnName="parent_uuid" columnDataType="VARCHAR(255)"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-019" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<dropNotNullConstraint tableName="datasourcedef" columnName="parent_uuid" columnDataType="VARCHAR(255)"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-020" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<dropNotNullConstraint tableName="orphancolumn" columnName="parent_uuid" columnDataType="VARCHAR(255)"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-021" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<dropColumn tableName="componenttable" columnName="tableid" />
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-022" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<dropColumn tableName="componenttable" columnName="tablename" />
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-023" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<renameColumn tableName="componenttable" oldColumnName="templatefields" newColumnName="sourcecolumns" />
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-024" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+		<renameColumn tableName="componenttable" oldColumnName="dataviewfields" newColumnName="targetcolumns" />
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-025" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="componenttable">
+            <column name="table_uuid" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-026" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="table_uuid" baseTableName="componenttable" constraintName="componenttable_installedtable_fkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="installedtable"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-027" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <dropColumn columnName="users" tableName="installedtable"/>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-028" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="installedtable">
+            <column name="revision" type="INTEGER" defaultValueNumeric="0" valueNumeric="0">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-029" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="installedtable">
+            <column name="revisionlist" type="TEXT"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-030" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="installedtable">
+            <column name="sourcedefinition_uuid" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-031" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="dataview">
+            <column name="installedtables" type="TEXT"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-032" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="opmapitem">
+            <column name="casttotype" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-033" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="opmapitem">
+            <column name="comparingtoken" type="VARCHAR(255)" defaultValue="EQ" value="EQ"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-034" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="datasetop">
+            <column name="passonlymapped" type="BOOLEAN" defaultValue="false" value="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-035" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="fielddef">
+            <column name="abandonedid" type="VARCHAR(255)" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-036" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="orphancolumn">
+            <column name="tablelocalid" type="VARCHAR(255)" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-037" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="resourcefilter">
+            <column name="editmatchstring" type="TEXT" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-038" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="resourcefilter">
+            <column name="editrejectstring" type="TEXT" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-039" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="resourcefilter">
+            <column name="deletematchstring" type="TEXT" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-040" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="resourcefilter">
+            <column name="deleterejectstring" type="TEXT" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-041" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="recentaccess">
+            <column name="key" type="VARCHAR(255)">
+                <constraints primaryKey="true" primaryKeyName="recentaccess_pkey"/>
+            </column>
+			<column name="logonid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+			</column>
+			<column name="resourceid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+			</column>
+			<column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+			</column>
+			<column name="lastaccess" type="TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-042" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createIndex indexName="idx_recentaccess_logonid" tableName="recentaccess" unique="false">
+			<column name="logonid" type="VARCHAR(255)"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-043" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createIndex indexName="idx_recentaccess_resourceid" tableName="recentaccess" unique="false">
+			<column name="resourceid" type="VARCHAR(255)"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-044" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="installedtable">
+            <column name="version" type="VARCHAR(255)" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-045" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="installedtable">
+            <column name="needssource" type="BOOLEAN" defaultValue="false" value="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-046" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="fielddef">
+            <column name="storagetype" type="VARCHAR(255)" defaultValue="null" value="null"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-047" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="dataviewdef">
+            <column name="storagetypesflag" type="BOOLEAN" defaultValue="false" value="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-048" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="adhocdatasource">
+            <column name="storagetypesflag" type="BOOLEAN" defaultValue="false" value="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-049" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="dataview">
+            <column name="nextlinkuprowid" type="BIGINT"
+					defaultValue="1073741824" value="1073741824">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-050" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <dropColumn tableName="dataview">
+            <column name="firstlinkupid" />
+        </dropColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-051" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="modelresource">
+            <column name="owner" type="TEXT" defaultValue="null" value="null" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-052" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="dataviewdef">
+            <column name="rowlimit" type="INTEGER" defaultValue="null" value="null" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-053" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="adhocdatasource">
+            <column name="rowlimit" type="INTEGER" defaultValue="null" value="null" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-054" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="resourcefilter">
+            <column name="testname" type="BOOLEAN" defaultValue="false" value="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-055" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="resourcefilter">
+            <column name="testremarks" type="BOOLEAN" defaultValue="false" value="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-056" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="resourcefilter">
+            <column name="defaultfilter" type="BOOLEAN" defaultValue="false" value="false">
+                <constraints nullable="false"/>
+			</column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-057" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="modelresource">
+            <column name="aclid" type="BIGINT" defaultValue="null" value="null" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-058" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="waitingtables">
+            <column name="id" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tablename" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="viewname" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-059" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="waitingdataviews">
+            <column name="id" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tablename" type="VARCHAR(255)" />
+            <column name="viewname" type="VARCHAR(255)" />
+            <column name="metaid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="linkups" type="TEXT" />
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-060" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="linkupsecurity">
+            <column name="capco" type="VARCHAR(255)" />
+            <column name="tags" type="VARCHAR(255)" />
+            <column name="linkups" type="TEXT" />
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-061" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="brokenitems">
+            <column name="id" type="VARCHAR(255)" />
+            <column name="tablename" type="VARCHAR(255)" />
+            <column name="viewname" type="VARCHAR(255)" />
+            <column name="message" type="TEXT" />
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-062" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="dataview">
+            <column name="datakeys" type="TEXT" defaultValue="null" value="null" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-063" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="dataviewdef">
+            <column name="datakeys" type="TEXT" defaultValue="null" value="null" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-064" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="installedtable">
+            <column name="datakeys" type="TEXT" defaultValue="null" value="null" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-065" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="capcoinfo">
+            <column name="next_uuid" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-066" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="securitytagsinfo">
+            <column name="next_uuid" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-067" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="missingtopviews">
+            <column name="id" type="VARCHAR(255)" />
+            <column name="tablestring" type="TEXT" />
+            <column name="viewname" type="VARCHAR(255)" />
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-068" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="missingtableviews">
+            <column name="id" type="VARCHAR(255)" />
+            <column name="tablestring" type="TEXT" />
+            <column name="viewname" type="VARCHAR(255)" />
+        </createTable>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-sql-000" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createProcedure>
+		<![CDATA[
+		UPDATE "datasourcedef" SET "inplace" = true WHERE "connection_uuid" IN (SELECT "uuid" FROM "connectiondef" WHERE "type" = 'installedtabledriver');
+		]]>
+        </createProcedure>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-sql-001" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createProcedure>
+		<![CDATA[
+		UPDATE "users" SET "activatedate" = "creationdate";
+		]]>
+        </createProcedure>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-sql-002" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createProcedure>
+		<![CDATA[
+		UPDATE "modelresource" SET "usecount" = 1 WHERE resourcetype = 6;
+		]]>
+        </createProcedure>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-sql-003" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createProcedure>
+		<![CDATA[
+		UPDATE "installedtable" SET "origin" = '@@' || "midlevel" || '@@' WHERE midlevel IS NOT NULL;
+		]]>
+        </createProcedure>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-sql-005" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createProcedure>
+		<![CDATA[
+		CREATE OR REPLACE FUNCTION identify_resource_owner() RETURNS void AS $$
+			DECLARE
+				myError varchar;
+				myResourceId varchar;
+				myOwner varchar;
+				myAclCursor CURSOR FOR SELECT * FROM "acl";
+			BEGIN
+				FOR myAcl IN myAclCursor LOOP
+					myResourceId := myAcl.uuid;
+					myOwner := myAcl.owner;
+					IF ((myResourceId IS NOT NULL) AND (myOwner IS NOT NULL) AND (char_length(myResourceId) > 0) AND (char_length(myOwner) > 0)) THEN
+						BEGIN
+							EXECUTE format('UPDATE "modelresource" SET "owner" = ''%s'' WHERE "uuid" = ''%s''', myOwner, myResourceId);
+						EXCEPTION WHEN others THEN
+							myError := 'Problems encountered adding owner ''''' || myOwner || ''''' to Resource with UUID = ''''' || myResourceId || '''''.';
+							EXECUTE format('INSERT INTO "brokenitems" ("id", "tablename", "viewname", "message") VALUES (''%s'', null, null, ''%s'')',
+											myResourceId, myError);
+							RAISE WARNING '%', myError;
+						END;
+					END IF;
+				END LOOP;
+			END;
+			$$ LANGUAGE 'plpgsql' VOLATILE;
+		]]>
+        </createProcedure>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-sql-006" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createProcedure>
+		<![CDATA[
+		CREATE OR REPLACE FUNCTION fix_installedtable_cache_names() RETURNS void AS $$
+			DECLARE
+				myError varchar;
+				myTableId varchar;
+				myViewName varchar;
+				myOldTableName varchar;
+				myNewTableName varchar;
+				myOldSequenceName varchar;
+				myNewSequenceName varchar;
+				myColumnId varchar;
+				myOldColumnName varchar;
+				myNewColumnName varchar;
+				myTableCursor CURSOR FOR SELECT * FROM "installedtable";
+				myColumnCursor CURSOR FOR SELECT * FROM "installedcolumn" WHERE "installedtable_uuid" = myTableId;
+			BEGIN
+				FOR myTable IN myTableCursor LOOP
+					myTableId := myTable.uuid;
+					myOldTableName := myTable.tablename;
+					IF ((myTableId IS NOT NULL) AND (myOldTableName IS NOT NULL) AND (char_length(myTableId) > 0) AND (char_length(myOldTableName) > 0)
+							AND (myTable.toplevel IS NOT NULL) AND (myTable.midlevel IS NOT NULL) AND (myTable.basename IS NOT NULL)) THEN
+						BEGIN
+							myOldSequenceName := concat(myOldTableName, '_internal_id_seq');
+							myNewTableName := replace(myOldTableName, '-', '_');
+							myNewSequenceName := concat(myNewTableName, '_internal_id_seq');
+							myViewName := myTable.toplevel || '.' || myTable.midlevel || '.' || myTable.basename;
+							FOR myColumn IN myColumnCursor LOOP
+								myColumnId := myColumn.localid;
+								myOldColumnName := myColumn.columnname;
+								IF (myColumnId IS NOT NULL) THEN
+									BEGIN
+										myNewColumnName := replace(myColumnId, '-', '_');
+										EXECUTE format('ALTER TABLE %I RENAME COLUMN %I TO %I', myOldTableName, myOldColumnName, myNewColumnName);
+									END;
+								ELSE
+									BEGIN
+										myColumnId := replace(myOldColumnName, '-', '_');
+										myNewColumnName := replace(myOldColumnName, '-', '_');
+										EXECUTE format('ALTER TABLE %I RENAME COLUMN %I TO %I', myOldTableName, myOldColumnName, myNewColumnName);
+										EXECUTE format('UPDATE "installedcolumn" SET "localid" = ''%s'' WHERE CURRENT OF myColumnCursor', myColumnId);
+									END;
+								END IF;
+								EXECUTE format('UPDATE "installedcolumn" SET "columnname" = ''%s'' WHERE CURRENT OF myColumnCursor', myNewColumnName);
+							END LOOP;
+							EXECUTE format('ALTER TABLE %I RENAME TO %I', myOldTableName, myNewTableName);
+							EXECUTE format('ALTER SEQUENCE %I RENAME TO %I', myOldSequenceName, myNewSequenceName);
+							EXECUTE format('UPDATE "installedtable" SET "tablename" = ''%s'' WHERE CURRENT OF myTableCursor', myNewTableName);
+							EXECUTE format('INSERT INTO "waitingtables" ("id", "tablename", "viewname") VALUES (''%s'', ''%s'', ''%s'')',
+											myTableId, myNewTableName, myViewName);
+						EXCEPTION WHEN others THEN
+							myError := 'Problems encountered while updating Installed Table ''''' || myViewName || ''''', UUID = ''''' || myTableId || '''''.';
+							EXECUTE format('INSERT INTO "brokenitems" ("id", "tablename", "viewname", "message") VALUES (''%s'', ''%s'', ''%s'', ''%s'')',
+											myTableId, myNewTableName, myViewName, myError);
+							RAISE WARNING '%', myError;
+						END;
+					END IF;
+				END LOOP;
+			END;
+			$$ LANGUAGE 'plpgsql' VOLATILE;
+		]]>
+        </createProcedure>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-sql-007-FIX" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createProcedure>
+		<![CDATA[
+		CREATE OR REPLACE FUNCTION fix_dataview_cache_names() RETURNS void AS $$
+			DECLARE
+				myError varchar;
+				myTableId varchar;
+				myOldTableString text[];
+				myNewTableString text;
+				myTransitionString text;
+				myBaseTable text;
+				myTopView text;
+				myOldTableName text;
+				myNewTableName text;
+				myRequest text;
+				myLimit integer;
+				myCount integer;
+				myDataViewCursor CURSOR FOR SELECT * FROM "dataview";
+			BEGIN
+				FOR myDataView IN myDataViewCursor LOOP
+					BEGIN
+						myTableId := myDataView.uuid;
+						myTopView := replace(myTableId, '-', '_');
+						myTopView := concat('cache_', myTopView);
+						myBaseTable := concat(myTopView, '_0');
+						myTransitionString := 'null';
+						myNewTableString := 'null';
+						IF (myDataView.linkups IS NOT NULL) THEN
+							myOldTableString := regexp_split_to_array(myDataView.linkups, '\|');
+							myTransitionString := '''';
+							myNewTableString := '''';
+							myLimit := array_length(myOldTableString, 1);
+							myCount := 1;
+							WHILE (myCount <= myLimit) LOOP
+								myOldTableName := myOldTableString[myCount];
+								myNewTableName := concat(myTopView, '_', cast(myCount as text));
+								BEGIN
+									myRequest = format('ALTER TABLE %I RENAME TO %I', myOldTableName, myNewTableName);
+									EXECUTE myRequest;
+									myNewTableString := myNewTableString || myNewTableName;
+									myTransitionString := myTransitionString || myOldTableName || ',' || myNewTableName;
+									IF (myCount < myLimit) THEN
+										myNewTableString := myNewTableString || '|';
+										myTransitionString := myTransitionString || '|';
+									ELSE
+										myNewTableString := myNewTableString || '''';
+										myTransitionString := myTransitionString || '''';
+									END IF;
+								EXCEPTION WHEN others THEN
+									myError := 'Unable to rename linkup table from ''''' || myOldTableName || ''''' to ''''' || myNewTableName || ''''' for DataView with UUID = ''''' || myTableId || '''''.';
+									EXECUTE format('INSERT INTO "brokenitems" ("id", "tablename", "viewname", "message") VALUES (''%s'', ''%s'', ''%s'', ''%s'')',
+													myTableId, myBaseTable, myTopView, myError);
+									RAISE WARNING '%', myError;
+									RAISE WARNING 'Request: %', myRequest;
+								END;
+								myCount := myCount + 1;
+							END LOOP;
+						END IF;
+						myRequest = format('UPDATE "dataview" SET "tables" = ''%s'', "views" = ''%s'', "linkups" = %s WHERE CURRENT OF myDataViewCursor', myBaseTable, myTopView, myNewTableString);
+						EXECUTE myRequest;
+						myRequest = format('INSERT INTO "waitingdataviews" ("id", "tablename", "viewname", "metaid", "linkups") VALUES (''%s'', ''%s'', ''%s'', ''%s'', %s)',
+											myTableId, myBaseTable, myTopView, myDataView.meta_uuid, myTransitionString);
+						EXECUTE myRequest;
+					EXCEPTION WHEN others THEN
+						myError := 'Problems encountered while updating DataView with UUID = ''''' || myTableId || '''''.';
+						EXECUTE format('INSERT INTO "brokenitems" ("id", "tablename", "viewname", "message") VALUES (''%s'', ''%s'', ''%s'', ''%s'')',
+										myTableId, myBaseTable, myTopView, myError);
+						RAISE WARNING '%', myError;
+						RAISE WARNING 'Request: %', myRequest;
+					END;
+				END LOOP;
+			END;
+			$$ LANGUAGE 'plpgsql' VOLATILE;
+		]]>
+        </createProcedure>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-sql-008" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createProcedure>
+		<![CDATA[
+		SELECT identify_resource_owner();
+		]]>
+        </createProcedure>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-sql-009" failOnError="true" runInTransaction="false" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <customChange class="csi.tools.TraceLinkupSecurity" >
+        </customChange>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-sql-010" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createProcedure>
+		<![CDATA[
+		SELECT fix_installedtable_cache_names();
+		]]>
+        </createProcedure>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-sql-011" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createProcedure>
+		<![CDATA[
+		SELECT fix_dataview_cache_names();
+		]]>
+        </createProcedure>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-sql-012" failOnError="true" runInTransaction="false" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <customChange class="csi.tools.DataMover" >
+        </customChange>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-sql-013" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createProcedure>
+		<![CDATA[
+		CREATE ROLE csiuser LOGIN ENCRYPTED PASSWORD 'changeme';
+		]]>
+        </createProcedure>
+    </changeSet>
+    <changeSet author="rfoster" id="rfoster-13-sql-014" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createProcedure>
+		<![CDATA[
+		UPDATE "dataviewdef" SET "version" = '3.6';
+		]]>
+        </createProcedure>
+    </changeSet>
+</databaseChangeLog>

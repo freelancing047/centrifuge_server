@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.3-b02-. --><wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:auth="http://oculusinfo.com/ncompass/authentication" targetNamespace="http://oculusinfo.com/ncompass/authentication">
+	
+	<wsdl:types>
+		<xs:schema elementFormDefault="qualified" targetNamespace="http://oculusinfo.com/ncompass/authentication">
+			
+			<xs:element name="UserData">
+				<xs:annotation><xs:documentation>The UserData structure contains some basic information about a user, including an authentication token (only present if the user is presently authenticated), username and real name, an organization, title(s), postal address, email addresses (optional) and phone numbers (optional).</xs:documentation></xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="token" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>
+									The current authentication token for the user.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="userName" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>
+									The username of the user.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="firstName" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>
+									The first name of the user.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="lastName" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>
+									The last name of the user.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="emailAddress" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>
+									The optional email address of the user.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="postalAddress" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>
+									The optional postal email address of the user.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="organization" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>
+									The optional organization of the user.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="title" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>
+									The optional role(s) of the user.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="phoneNumber" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>
+									The optional phone number(s) of the user.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="organizationGroup" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<revision>2.0.0</revision>
+								</xs:appinfo>
+								<xs:documentation>
+									A group id refering to the organization that this user belongs too.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="contactList" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<revision>2.0.0</revision>
+								</xs:appinfo>
+								<xs:documentation>
+									A group id refering to the group of contacts for this user.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="agentsGroup" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<revision>2.0.0</revision>
+								</xs:appinfo>
+								<xs:documentation>
+									A group id refering to the set of services, users and groups that can operate on behalf of this user.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						
+						<xs:element name="extensions" nillable="true">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:any processContents="lax" namespace="##any"></xs:any>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			
+			<xs:element name="AuthenticateRequest">
+				<xs:annotation><xs:documentation>AuthenticateRequest is used to request an authentication token from the authentication service.</xs:documentation></xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="userName" type="xs:string"></xs:element>
+						<xs:element name="password" type="xs:string"></xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			
+			<xs:element name="AuthenticateResponse">
+				<xs:annotation><xs:documentation>The authentication response contains an authentication token which should be used in ws-security headers when calling to other services.</xs:documentation></xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="authenticationToken" type="xs:string"></xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
+			<xs:element name="AuthenticateFault">
+				<xs:annotation><xs:documentation>This is the fault structure that is returned when an authentication attempt fails.</xs:documentation></xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="faultInfo" type="xs:string">
+							<xs:annotation><xs:documentation>Fault details that may not fit into the regular soap fault structure.</xs:documentation></xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			
+			<xs:element name="UserDataRequest">
+				<xs:annotation><xs:documentation>UserDataRequest is used to request user information based on an authentication token.</xs:documentation></xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="token" type="xs:string"></xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="UserDataByNameRequest">
+				<xs:annotation><xs:documentation>UserDataRequest is used to request user information based the user's username.</xs:documentation></xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="username" type="xs:string"></xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
+			<xs:element name="UserDataResponse">
+				<xs:annotation><xs:documentation>UserDataResponse contains the user data associated with a given token or username.</xs:documentation></xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="auth:UserData"></xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
+			<xs:element name="UserDataFault">
+				<xs:annotation><xs:documentation>This fault is returned if the UserDataRequest or UserDataByNameRequest fails.</xs:documentation></xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="faultInfo" type="xs:string"></xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
+		</xs:schema>
+		
+	</wsdl:types>
+	
+	<wsdl:message name="AuthenticationRequestMsg">
+		<wsdl:part name="body" element="auth:AuthenticateRequest"></wsdl:part>
+	</wsdl:message>
+	
+	<wsdl:message name="AuthenticationResponseMsg">
+		<wsdl:part name="body" element="auth:AuthenticateResponse"></wsdl:part>
+	</wsdl:message>
+	
+	<wsdl:message name="AuthenticationFaultMsg">
+		<wsdl:part name="fault" element="auth:AuthenticateFault"></wsdl:part>
+	</wsdl:message>
+	
+	<wsdl:message name="UserDataRequestMsg">
+		<wsdl:part name="body" element="auth:UserDataRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="UserDataByNameRequestMsg">
+		<wsdl:part name="body" element="auth:UserDataByNameRequest"></wsdl:part>
+	</wsdl:message>
+	
+	<wsdl:message name="UserDataResponseMsg">
+		<wsdl:part name="body" element="auth:UserDataResponse"></wsdl:part>
+	</wsdl:message>
+	
+	<wsdl:message name="UserDataFaultMsg">
+		<wsdl:part name="fault" element="auth:UserDataFault"></wsdl:part>
+	</wsdl:message>
+	
+	<wsdl:portType name="AuthenticationInterface">
+		<wsdl:operation name="Authenticate">
+			<wsdl:input message="auth:AuthenticationRequestMsg"></wsdl:input>
+			<wsdl:output message="auth:AuthenticationResponseMsg"></wsdl:output>
+			<wsdl:fault name="AuthenticationFault" message="auth:AuthenticationFaultMsg"></wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="LookupUserData">
+			<wsdl:input message="auth:UserDataRequestMsg"></wsdl:input>
+			<wsdl:output message="auth:UserDataResponseMsg"></wsdl:output>
+			<wsdl:fault name="UserDataFault" message="auth:UserDataFaultMsg"></wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="LookupUserDataByName">
+			<wsdl:input message="auth:UserDataByNameRequestMsg"></wsdl:input>
+			<wsdl:output message="auth:UserDataResponseMsg"></wsdl:output>
+			<wsdl:fault name="UserDataFault" message="auth:UserDataFaultMsg"></wsdl:fault>
+		</wsdl:operation>
+	</wsdl:portType>
+	
+	<wsdl:binding name="AuthenticationBinding" type="auth:AuthenticationInterface">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"></soap:binding>
+		
+		<wsdl:operation name="Authenticate">
+			<soap:operation soapAction="http://oculusinfo.com/ncompass/authentication/Authenticate"></soap:operation>
+			<wsdl:input>
+				<soap:body use="literal"></soap:body>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"></soap:body>
+			</wsdl:output>
+			<wsdl:fault name="AuthenticationFault">
+				<soap:fault name="AuthenticationFault" use="literal"></soap:fault>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="LookupUserData">
+			<soap:operation soapAction="http://oculusinfo.com/ncompass/authentication/LookupUserData"></soap:operation>
+			<wsdl:input>
+				<soap:body use="literal"></soap:body>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"></soap:body>
+			</wsdl:output>
+			<wsdl:fault name="UserDataFault">
+				<soap:fault name="UserDataFault" use="literal"></soap:fault>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="LookupUserDataByName">
+			<soap:operation soapAction="http://oculusinfo.com/ncompass/authentication/LookupUserDataByName"></soap:operation>
+			<wsdl:input>
+				<soap:body use="literal"></soap:body>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"></soap:body>
+			</wsdl:output>
+			<wsdl:fault name="UserDataFault">
+				<soap:fault name="UserDataFault" use="literal"></soap:fault>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	
+	<wsdl:service name="AuthenticationService">
+		<wsdl:port name="AuthenticationPort" binding="auth:AuthenticationBinding">
+			<soap:address location="http://ncompass1.oculusinfo.com:80/authentication-2.0.0/auth"></soap:address>
+		</wsdl:port>
+	</wsdl:service>
+	
+</wsdl:definitions>

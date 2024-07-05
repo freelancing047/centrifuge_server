@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flexLibProperties version="1">
+  <includeClasses>
+    <classEntry path="com.adobe.ColdFusion.components.SizeableTitleWindow"/>
+    <classEntry path="com.adobe.DisplayShelf"/>
+    <classEntry path="com.adobe.TiltingPane"/>
+    <classEntry path="com.adobe.ac.mxeffects.CubeRotate"/>
+    <classEntry path="com.adobe.ac.mxeffects.Distortion"/>
+    <classEntry path="com.adobe.ac.mxeffects.DistortionConstants"/>
+    <classEntry path="com.adobe.ac.mxeffects.Door"/>
+    <classEntry path="com.adobe.ac.mxeffects.Flip"/>
+    <classEntry path="com.adobe.ac.mxeffects.Gate"/>
+    <classEntry path="com.adobe.ac.mxeffects.Lighting"/>
+    <classEntry path="com.adobe.ac.mxeffects.Pop"/>
+    <classEntry path="com.adobe.ac.mxeffects.Push"/>
+    <classEntry path="com.adobe.ac.mxeffects.SimpleDistortion"/>
+    <classEntry path="com.adobe.ac.mxeffects.effectClasses.CubeRotateInstance"/>
+    <classEntry path="com.adobe.ac.mxeffects.effectClasses.DistortBaseInstance"/>
+    <classEntry path="com.adobe.ac.mxeffects.effectClasses.DoorInstance"/>
+    <classEntry path="com.adobe.ac.mxeffects.effectClasses.FlipInstance"/>
+    <classEntry path="com.adobe.ac.mxeffects.effectClasses.GateInstance"/>
+    <classEntry path="com.adobe.ac.mxeffects.effectClasses.PopInstance"/>
+    <classEntry path="com.adobe.ac.mxeffects.effectClasses.PushInstance"/>
+    <classEntry path="com.adobe.ac.util.DisplayObjectBounds"/>
+    <classEntry path="com.adobe.ac.util.DisplayObjectBoundsUtil"/>
+    <classEntry path="com.adobe.ac.util.SimpleDisplayObjectBoundsUtil"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>

@@ -1,0 +1,558 @@
+<DataView id="1">
+  <uuid>b6f79583-7006-033a-1143-a4e36e143e20</uuid>
+  <clientProperties id="2">
+    <entry>
+      <string>isValid</string>
+      <boolean>true</boolean>
+    </entry>
+  </clientProperties>
+  <name>REST Alternate Implicit NS</name>
+  <remarks>Similar to REST Implicit NS, but changes the namespace to be different from the default declared in the connection factory</remarks>
+  <createDate>1329502269468</createDate>
+  <lastOpenDate>1329502293921</lastOpenDate>
+  <lastUpdateDate>1329502307593</lastUpdateDate>
+  <meta id="3">
+    <uuid>a0929e8c-c317-3985-9118-a4e36e14d1aa</uuid>
+    <clientProperties id="4">
+      <entry>
+        <string>currentWorksheet</string>
+        <int>0</int>
+      </entry>
+    </clientProperties>
+    <createDate>1329502269359</createDate>
+    <lastOpenDate>1329502269359</lastOpenDate>
+    <lastUpdateDate>1329502294625</lastUpdateDate>
+    <dataSetOps id="5">
+      <DataSetOp id="6">
+        <uuid>524f6a85-59ee-0272-2f94-8c8302c1a36d</uuid>
+        <clientProperties id="7"/>
+        <name>DataSetOp: Custom Query</name>
+        <localId>4934E044-3A16-36F3-EB50-A502C3FDD627</localId>
+        <children id="8"/>
+        <tableDef id="9">
+          <uuid>45e9bba9-896f-01ec-34e2-a502c3fdb340</uuid>
+          <clientProperties id="10"/>
+          <localId>B72BE582-8B13-5BFE-CA7A-A50286E52032</localId>
+          <tableName>Custom Query</tableName>
+          <sqlTable>true</sqlTable>
+          <source id="11">
+            <uuid>b1efd4ff-a1a1-534f-1266-a4e2aedb9f66</uuid>
+            <clientProperties id="12">
+              <entry>
+                <string>color</string>
+                <int>15542048</int>
+              </entry>
+            </clientProperties>
+            <name>Custom JDBC Source</name>
+            <createDate>1329502291187</createDate>
+            <lastOpenDate>0</lastOpenDate>
+            <lastUpdateDate>1329502293109</lastUpdateDate>
+            <ordinal>0</ordinal>
+            <connection id="13">
+              <uuid>a5ad992a-abb4-6e3f-978d-8c82d98e7a49</uuid>
+              <clientProperties id="14"/>
+              <createDate>1329502291187</createDate>
+              <lastOpenDate>0</lastOpenDate>
+              <lastUpdateDate>1329502293109</lastUpdateDate>
+              <type>restconnector</type>
+              <connectString>ws:rest:http://localhost:9090/Centrifuge</connectString>
+              <properties id="15">
+                <uuid>cbb6256b-1caa-98b8-5c8f-8c82d98ee277</uuid>
+                <clientProperties id="16"/>
+                <properties id="17">
+                  <Property id="18">
+                    <uuid>4358a1fe-fd7d-80ff-6214-8c82da88aeb2</uuid>
+                    <clientProperties id="19"/>
+                    <name>csi.params.0</name>
+                    <value>useNamespaces=true</value>
+                  </Property>
+                  <Property id="20">
+                    <uuid>8af59cfc-c362-40e2-4441-8c82da884682</uuid>
+                    <clientProperties id="21"/>
+                    <name>csi.params.1</name>
+                    <value>metaNamespaceURI=urn%3Agov%3Aozone.test.resultset</value>
+                  </Property>
+                </properties>
+              </properties>
+            </connection>
+            <sqlTables id="22">
+              <TableDef id="23">
+                <uuid>aa634d33-4538-6f12-cda2-a502abf16883</uuid>
+                <clientProperties id="24"/>
+                <localId>B72BE582-8B13-5BFE-CA7A-A50286E52032</localId>
+                <tableName>Custom Query</tableName>
+                <sqlTable>true</sqlTable>
+                <customQuery id="25">
+                  <uuid>cd19a969-3197-aa46-adeb-a502abf14960</uuid>
+                  <clientProperties id="26"/>
+                  <createDate>1329502269468</createDate>
+                  <lastOpenDate>1329502269468</lastOpenDate>
+                  <lastUpdateDate>1329502269468</lastUpdateDate>
+                  <queryText>/REST-alt.xml?foo=bar</queryText>
+                  <parameters id="27"/>
+                  <interceptors id="28"/>
+                  <timeout>0</timeout>
+                  <properties id="29">
+                    <uuid>d1e9458e-690b-fecb-681c-a502abf1b952</uuid>
+                    <clientProperties id="30"/>
+                    <properties id="31"/>
+                  </properties>
+                </customQuery>
+                <columns id="32"/>
+              </TableDef>
+            </sqlTables>
+            <query id="33">
+              <uuid>b38c10cd-7190-eefd-f5cf-8c82d98e45cd</uuid>
+              <clientProperties id="34"/>
+              <createDate>1329502291187</createDate>
+              <lastOpenDate>0</lastOpenDate>
+              <lastUpdateDate>1329502293109</lastUpdateDate>
+              <parameters id="35"/>
+              <interceptors id="36"/>
+              <timeout>0</timeout>
+              <properties id="37">
+                <uuid>c9c087d7-0d67-1f8f-dda6-8c82d98eb92c</uuid>
+                <clientProperties id="38"/>
+                <properties id="39"/>
+              </properties>
+            </query>
+            <mergeMap id="40"/>
+            <localId>E56DF720-9691-3F40-E3C4-A4E36E43C673</localId>
+          </source>
+          <customQuery id="41">
+            <uuid>52ddbb76-4808-5941-f87a-a502c3fd79f5</uuid>
+            <clientProperties id="42"/>
+            <createDate>1329502269406</createDate>
+            <lastOpenDate>1329502269406</lastOpenDate>
+            <lastUpdateDate>1329502269406</lastUpdateDate>
+            <queryText>/REST-alt.xml?foo=bar</queryText>
+            <parameters id="43"/>
+            <interceptors id="44"/>
+            <timeout>0</timeout>
+            <properties id="45">
+              <uuid>06b18b05-724a-8138-68b1-a502c3fda3d1</uuid>
+              <clientProperties id="46"/>
+              <properties id="47"/>
+            </properties>
+          </customQuery>
+          <columns id="48">
+            <ColumnDef id="49">
+              <uuid>f7140074-8c52-190b-36c6-8c82eae316b1</uuid>
+              <clientProperties id="50"/>
+              <localId>9AFCB2D4-EBBC-5D89-6D27-8C82EAE3DE4E</localId>
+              <catalogName></catalogName>
+              <schemaName></schemaName>
+              <tableName></tableName>
+              <columnName>CacheTimeStamp</columnName>
+              <dataTypeName>VARCHAR</dataTypeName>
+              <jdbcDataType>12</jdbcDataType>
+              <columnSize>0</columnSize>
+              <decimalDigits>0</decimalDigits>
+              <ordinal>1</ordinal>
+              <csiType>string</csiType>
+              <overrideCsiType>string</overrideCsiType>
+              <selected>true</selected>
+              <columnFilters id="51"/>
+            </ColumnDef>
+            <ColumnDef id="52">
+              <uuid>9573b0b7-13f9-533a-152d-8c82eae36029</uuid>
+              <clientProperties id="53"/>
+              <localId>07C5CEE8-4D11-D3CA-9D7E-8C82EAE30631</localId>
+              <catalogName></catalogName>
+              <schemaName></schemaName>
+              <tableName></tableName>
+              <columnName>URL</columnName>
+              <dataTypeName>VARCHAR</dataTypeName>
+              <jdbcDataType>12</jdbcDataType>
+              <columnSize>0</columnSize>
+              <decimalDigits>0</decimalDigits>
+              <ordinal>2</ordinal>
+              <csiType>string</csiType>
+              <overrideCsiType>string</overrideCsiType>
+              <selected>true</selected>
+              <columnFilters id="54"/>
+            </ColumnDef>
+            <ColumnDef id="55">
+              <uuid>0ebdbc84-f7ba-e9cc-ef0c-8c82eae3e30c</uuid>
+              <clientProperties id="56"/>
+              <localId>6CB1359F-6244-592C-5565-8C82EAE34E44</localId>
+              <catalogName></catalogName>
+              <schemaName></schemaName>
+              <tableName></tableName>
+              <columnName>AColumn</columnName>
+              <dataTypeName>VARCHAR</dataTypeName>
+              <jdbcDataType>12</jdbcDataType>
+              <columnSize>0</columnSize>
+              <decimalDigits>0</decimalDigits>
+              <ordinal>3</ordinal>
+              <csiType>string</csiType>
+              <overrideCsiType>string</overrideCsiType>
+              <selected>true</selected>
+              <columnFilters id="57"/>
+            </ColumnDef>
+            <ColumnDef id="58">
+              <uuid>c1c2de10-158e-03e0-c96c-8c82eae306ae</uuid>
+              <clientProperties id="59"/>
+              <localId>587890B2-193E-9918-8389-8C82EAE387A7</localId>
+              <catalogName></catalogName>
+              <schemaName></schemaName>
+              <tableName></tableName>
+              <columnName>BColumn</columnName>
+              <dataTypeName>VARCHAR</dataTypeName>
+              <jdbcDataType>12</jdbcDataType>
+              <columnSize>0</columnSize>
+              <decimalDigits>0</decimalDigits>
+              <ordinal>4</ordinal>
+              <csiType>string</csiType>
+              <overrideCsiType>string</overrideCsiType>
+              <selected>true</selected>
+              <columnFilters id="60"/>
+            </ColumnDef>
+            <ColumnDef id="61">
+              <uuid>9c663797-6efe-da6f-17d8-8c82eaf38c28</uuid>
+              <clientProperties id="62"/>
+              <localId>0B0CDD4D-F0BA-2350-5F1F-8C82EAF348AD</localId>
+              <catalogName></catalogName>
+              <schemaName></schemaName>
+              <tableName></tableName>
+              <columnName>CColumn</columnName>
+              <dataTypeName>VARCHAR</dataTypeName>
+              <jdbcDataType>12</jdbcDataType>
+              <columnSize>0</columnSize>
+              <decimalDigits>0</decimalDigits>
+              <ordinal>5</ordinal>
+              <csiType>string</csiType>
+              <overrideCsiType>string</overrideCsiType>
+              <selected>true</selected>
+              <columnFilters id="63"/>
+            </ColumnDef>
+          </columns>
+        </tableDef>
+        <mapItems id="64"/>
+        <mapType>JOIN</mapType>
+        <joinType>EQUI_JOIN</joinType>
+        <containsTables>false</containsTables>
+        <appendAll>false</appendAll>
+      </DataSetOp>
+    </dataSetOps>
+    <dataSetParameters id="65"/>
+    <dataSources id="66">
+      <DataSourceDef reference="11"/>
+    </dataSources>
+    <modelDef id="67">
+      <uuid>067e6a07-69d9-d19f-4f61-a4e36e1411e6</uuid>
+      <clientProperties id="68"/>
+      <createDate>1329502269359</createDate>
+      <lastOpenDate>1329502269359</lastOpenDate>
+      <lastUpdateDate>1329502269359</lastUpdateDate>
+      <fieldDefs id="69">
+        <FieldDef id="70">
+          <uuid>52f27274-649e-e537-615d-8c82f2658b6d</uuid>
+          <clientProperties id="71">
+            <entry>
+              <string>catalogName</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>schemaName</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>sourceName</string>
+              <string>Custom JDBC Source</string>
+            </entry>
+            <entry>
+              <string>tableName</string>
+              <string></string>
+            </entry>
+          </clientProperties>
+          <fieldType>COLUMN_REF</fieldType>
+          <fieldName>CacheTimeStamp</fieldName>
+          <dsLocalId>E56DF720-9691-3F40-E3C4-A4E36E43C673</dsLocalId>
+          <tableLocalId>B72BE582-8B13-5BFE-CA7A-A50286E52032</tableLocalId>
+          <columnLocalId>9AFCB2D4-EBBC-5D89-6D27-8C82EAE3DE4E</columnLocalId>
+          <ordinal>0</ordinal>
+          <cacheSize>0</cacheSize>
+          <cacheScale>0</cacheScale>
+          <functionType>CONCAT</functionType>
+          <functions id="72">
+            <ConcatFunction id="73">
+              <uuid>c28649ca-3c99-e21f-86d4-8c82f265d8c6</uuid>
+              <clientProperties id="74"/>
+              <ordinal>0</ordinal>
+              <fields id="75"/>
+              <separator>&amp;#32;</separator>
+            </ConcatFunction>
+          </functions>
+          <valueType>string</valueType>
+        </FieldDef>
+        <FieldDef id="76">
+          <uuid>fef357c1-37fd-abe1-e535-8c82f265eaab</uuid>
+          <clientProperties id="77">
+            <entry>
+              <string>catalogName</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>schemaName</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>sourceName</string>
+              <string>Custom JDBC Source</string>
+            </entry>
+            <entry>
+              <string>tableName</string>
+              <string></string>
+            </entry>
+          </clientProperties>
+          <fieldType>COLUMN_REF</fieldType>
+          <fieldName>URL</fieldName>
+          <dsLocalId>E56DF720-9691-3F40-E3C4-A4E36E43C673</dsLocalId>
+          <tableLocalId>B72BE582-8B13-5BFE-CA7A-A50286E52032</tableLocalId>
+          <columnLocalId>07C5CEE8-4D11-D3CA-9D7E-8C82EAE30631</columnLocalId>
+          <ordinal>1</ordinal>
+          <cacheSize>0</cacheSize>
+          <cacheScale>0</cacheScale>
+          <functionType>CONCAT</functionType>
+          <functions id="78">
+            <ConcatFunction id="79">
+              <uuid>42e8b3be-0639-6548-a24e-8c82f265ab64</uuid>
+              <clientProperties id="80"/>
+              <ordinal>0</ordinal>
+              <fields id="81"/>
+              <separator>&amp;#32;</separator>
+            </ConcatFunction>
+          </functions>
+          <valueType>string</valueType>
+        </FieldDef>
+        <FieldDef id="82">
+          <uuid>90c04ca2-4d0e-9847-a53c-8c82f265395d</uuid>
+          <clientProperties id="83">
+            <entry>
+              <string>catalogName</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>schemaName</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>sourceName</string>
+              <string>Custom JDBC Source</string>
+            </entry>
+            <entry>
+              <string>tableName</string>
+              <string></string>
+            </entry>
+          </clientProperties>
+          <fieldType>COLUMN_REF</fieldType>
+          <fieldName>AColumn</fieldName>
+          <dsLocalId>E56DF720-9691-3F40-E3C4-A4E36E43C673</dsLocalId>
+          <tableLocalId>B72BE582-8B13-5BFE-CA7A-A50286E52032</tableLocalId>
+          <columnLocalId>6CB1359F-6244-592C-5565-8C82EAE34E44</columnLocalId>
+          <ordinal>2</ordinal>
+          <cacheSize>0</cacheSize>
+          <cacheScale>0</cacheScale>
+          <functionType>CONCAT</functionType>
+          <functions id="84">
+            <ConcatFunction id="85">
+              <uuid>191f44c8-5074-dcab-02c2-8c82f2659301</uuid>
+              <clientProperties id="86"/>
+              <ordinal>0</ordinal>
+              <fields id="87"/>
+              <separator>&amp;#32;</separator>
+            </ConcatFunction>
+          </functions>
+          <valueType>string</valueType>
+        </FieldDef>
+        <FieldDef id="88">
+          <uuid>e15d1340-2041-0bd1-22f4-8c82f2652401</uuid>
+          <clientProperties id="89">
+            <entry>
+              <string>catalogName</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>schemaName</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>sourceName</string>
+              <string>Custom JDBC Source</string>
+            </entry>
+            <entry>
+              <string>tableName</string>
+              <string></string>
+            </entry>
+          </clientProperties>
+          <fieldType>COLUMN_REF</fieldType>
+          <fieldName>BColumn</fieldName>
+          <dsLocalId>E56DF720-9691-3F40-E3C4-A4E36E43C673</dsLocalId>
+          <tableLocalId>B72BE582-8B13-5BFE-CA7A-A50286E52032</tableLocalId>
+          <columnLocalId>587890B2-193E-9918-8389-8C82EAE387A7</columnLocalId>
+          <ordinal>3</ordinal>
+          <cacheSize>0</cacheSize>
+          <cacheScale>0</cacheScale>
+          <functionType>CONCAT</functionType>
+          <functions id="90">
+            <ConcatFunction id="91">
+              <uuid>ff2dcdc2-838b-5726-4c11-8c82f265b590</uuid>
+              <clientProperties id="92"/>
+              <ordinal>0</ordinal>
+              <fields id="93"/>
+              <separator>&amp;#32;</separator>
+            </ConcatFunction>
+          </functions>
+          <valueType>string</valueType>
+        </FieldDef>
+        <FieldDef id="94">
+          <uuid>198bec5c-7e2c-254c-1e3a-8c82f265618f</uuid>
+          <clientProperties id="95">
+            <entry>
+              <string>catalogName</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>schemaName</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>sourceName</string>
+              <string>Custom JDBC Source</string>
+            </entry>
+            <entry>
+              <string>tableName</string>
+              <string></string>
+            </entry>
+          </clientProperties>
+          <fieldType>COLUMN_REF</fieldType>
+          <fieldName>CColumn</fieldName>
+          <dsLocalId>E56DF720-9691-3F40-E3C4-A4E36E43C673</dsLocalId>
+          <tableLocalId>B72BE582-8B13-5BFE-CA7A-A50286E52032</tableLocalId>
+          <columnLocalId>0B0CDD4D-F0BA-2350-5F1F-8C82EAF348AD</columnLocalId>
+          <ordinal>4</ordinal>
+          <cacheSize>0</cacheSize>
+          <cacheScale>0</cacheScale>
+          <functionType>CONCAT</functionType>
+          <functions id="96">
+            <ConcatFunction id="97">
+              <uuid>29f73639-af4c-bf9c-45f7-8c82f2651d02</uuid>
+              <clientProperties id="98"/>
+              <ordinal>0</ordinal>
+              <fields id="99"/>
+              <separator>&amp;#32;</separator>
+            </ConcatFunction>
+          </functions>
+          <valueType>string</valueType>
+        </FieldDef>
+      </fieldDefs>
+      <visualizations id="100">
+        <TableViewDef id="101">
+          <uuid>32551264-75b3-4d56-b1c0-8c8332d9848f</uuid>
+          <clientProperties id="102">
+            <entry>
+              <string>vizBox.left</string>
+              <int>402</int>
+            </entry>
+            <entry>
+              <string>vizBox.height</string>
+              <int>300</int>
+            </entry>
+            <entry>
+              <string>vizBox.top</string>
+              <int>10</int>
+            </entry>
+            <entry>
+              <string>vizBox.width</string>
+              <int>600</int>
+            </entry>
+            <entry>
+              <string>vizBox.loadOnStartup</string>
+              <boolean>true</boolean>
+            </entry>
+          </clientProperties>
+          <name>Table</name>
+          <settings id="103">
+            <uuid>1e259d01-9381-dcf5-2255-8c8332d9f807</uuid>
+            <clientProperties id="104"/>
+            <properties id="105"/>
+          </settings>
+          <filterFields id="106"/>
+          <selectionInfo id="107">
+            <uuid>d8ada7b2-f864-55bc-9af7-8c8333e31ff4</uuid>
+            <clientProperties id="108"/>
+            <selectAll>false</selectAll>
+            <selectedItems id="109"/>
+            <deselectedItems id="110"/>
+          </selectionInfo>
+          <type>TABLE</type>
+          <isAttached>false</isAttached>
+          <visibleFields id="111">
+            <VisibleTableField id="112">
+              <uuid>587ee48c-679a-e37e-54f2-8c833cfb89be</uuid>
+              <clientProperties id="113"/>
+              <fieldDef reference="82"/>
+              <ordinal>0</ordinal>
+            </VisibleTableField>
+            <VisibleTableField id="114">
+              <uuid>6d320818-3131-2b67-972b-8c833cfb1541</uuid>
+              <clientProperties id="115"/>
+              <fieldDef reference="88"/>
+              <ordinal>1</ordinal>
+            </VisibleTableField>
+            <VisibleTableField id="116">
+              <uuid>ac5084a2-8f02-34a7-08da-8c833cfbf9af</uuid>
+              <clientProperties id="117"/>
+              <fieldDef reference="70"/>
+              <ordinal>2</ordinal>
+            </VisibleTableField>
+            <VisibleTableField id="118">
+              <uuid>c8c520c1-a013-e1cd-3079-8c833cfb4de5</uuid>
+              <clientProperties id="119"/>
+              <fieldDef reference="94"/>
+              <ordinal>3</ordinal>
+            </VisibleTableField>
+            <VisibleTableField id="120">
+              <uuid>622d2d78-af06-2269-a564-8c833cfbf353</uuid>
+              <clientProperties id="121"/>
+              <fieldDef reference="76"/>
+              <ordinal>4</ordinal>
+            </VisibleTableField>
+          </visibleFields>
+          <sortFields id="122"/>
+          <filters id="123"/>
+          <moreDetailQueries id="124"/>
+          <conditional id="125"/>
+        </TableViewDef>
+      </visualizations>
+      <worksheets id="126">
+        <WorksheetDef id="127">
+          <uuid>603fd5ec-b915-aea4-1448-a4e36e2479f5</uuid>
+          <clientProperties id="128">
+            <entry>
+              <string>worksheet.zOrders0</string>
+              <string>Table</string>
+            </entry>
+            <entry>
+              <string>worksheet.zOrdersLength</string>
+              <int>1</int>
+            </entry>
+          </clientProperties>
+          <visualizations id="129">
+            <TableViewDef reference="101"/>
+          </visualizations>
+          <annotations id="130"/>
+          <worksheetName>Untitled Worksheet</worksheetName>
+        </WorksheetDef>
+      </worksheets>
+      <initialViewIndex>0</initialViewIndex>
+    </modelDef>
+    <extensionConfigs id="131"/>
+    <extensionData id="132"/>
+    <template>false</template>
+  </meta>
+  <type>BASIC</type>
+  <spinoff>false</spinoff>
+  <needsRefresh>false</needsRefresh>
+</DataView>

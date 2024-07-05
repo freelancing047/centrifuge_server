@@ -1,0 +1,82 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+	xmlns:gxtbutton="urn:import:com.sencha.gxt.widget.core.client.button"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
+	xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:gxtform="urn:import:com.sencha.gxt.widget.core.client.form"
+	xmlns:gxtgrid="urn:import:com.sencha.gxt.widget.core.client.grid"
+	xmlns:csiboot="urn:import:csi.client.gwt.widget.boot"
+	xmlns:csibuttons="urn:import:csi.client.gwt.widget.buttons"
+	xmlns:grid="urn:import:csi.client.gwt.widget.gxt.grid"
+	xmlns:gwt="urn:import:csi.client.gwt.widget.ui" xmlns:this="urn:import:csi.client.gwt.viz.shared.filter">
+
+	<ui:style>
+		.filterDetailContainer {
+			border-top: 1px solid #ecf0f1;
+		}
+		
+		.table {
+			padding: 2px;
+		}
+		
+		.addCell {
+			width: 100%;
+		}
+	</ui:style>
+
+	<ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+	
+	
+    <ui:with field="filterTitle" type="java.lang.String" />
+    <ui:with field="sourceLabel" type="java.lang.String" />
+    <ui:with field="typeLabel" type="java.lang.String" />
+    <ui:with field="addButton" type="java.lang.String" />
+    <ui:with field="deleteButton" type="java.lang.String" />
+
+	<csiboot:Dialog title="{filterTitle}" bodyWidth="500px"
+		bodyHeight="250px">
+		<gwt:FullSizeLayoutPanel>
+			<gwt:layer top="0" height="80px">
+				<g:FlowPanel>
+					<boot:FluidRow>
+						<boot:Column size="4" addStyleNames="rightAlignedChild">
+							<boot:Label text="{sourceLabel}"></boot:Label>
+						</boot:Column>
+						<boot:Column size="8" ui:field="sourceTypeContainer" />
+					</boot:FluidRow>
+					<boot:FluidRow>
+						<boot:Column size="4" addStyleNames="rightAlignedChild">
+							<boot:Label text="{typeLabel}"></boot:Label>
+						</boot:Column>
+						<boot:Column size="8" ui:field="typeContainer" />
+					</boot:FluidRow>
+					<boot:Paragraph ui:field="filterMessage"/>
+				</g:FlowPanel>
+			</gwt:layer>
+			<gwt:layer top="80px" bottom="0">
+				<gwt:FullSizeLayoutPanel addStyleNames="{style.filterDetailContainer}">
+					<gwt:layer top="5" height="35px">
+						<g:HTMLPanel>
+							<table class="{style.table}">
+								<tr>
+									<td class="{style.addCell}">
+										<csibuttons:MiniBlueButton ui:field="buttonAdd" text="{addButton}"></csibuttons:MiniBlueButton>
+									</td>
+									<td>
+										<csibuttons:MiniRedButton ui:field="buttonDelete" text="{deleteButton}"></csibuttons:MiniRedButton>
+									</td>
+								</tr>
+							</table>
+						</g:HTMLPanel>
+					</gwt:layer>
+					<gwt:layer top="40px" bottom="0">
+						<grid:GridContainer ui:field="gridContainer"/>
+					</gwt:layer>
+				</gwt:FullSizeLayoutPanel>
+			</gwt:layer>
+		</gwt:FullSizeLayoutPanel>
+
+	</csiboot:Dialog>
+
+</ui:UiBinder>

@@ -1,0 +1,79 @@
+/**
+ * Copies windows version of postgres into the build.
+ */
+
+apply from: 'gradle/properties.gradle'
+
+configurations {
+    postgresWindows
+}
+
+dependencies {
+	postgresWindows 'csi:postgres-windows:9.6.1-1@zip'
+}
+
+task deployWindowsDatabases(group: deployGroup) {
+    dependsOn 'deployBuildNumber', 'genVersionString'
+
+	doFirst {
+
+        println "*** copy from zipTree(configurations.postgresWindows.getSingleFile()) into ${windowsOutput}/cachedb ***"
+        copy {
+            from zipTree(configurations.postgresWindows.getSingleFile())
+            into "${windowsOutput}/cachedb"
+        }
+	}
+
+    doLast {
+
+        def postgresVcredist = "cachedb/pgsql_${releaseVersion}/vcredist"
+		file("${windowsOutput}/cachedb/pgsql").renameTo(file("${windowsOutput}/cachedb/pgsql_${releaseVersion}"))
+
+        println "*** copy from ${postgresVcredist} into ${windowsOutput}/cachedb/pgsql_${releaseVersion}/bin ***"
+		copy {
+            from postgresVcredist
+            into "${windowsOutput}/cachedb/pgsql_${releaseVersion}/bin"
+        }
+
+        println "*** copy from ${postgresVcredist} into ${windowsOutput}/cachedb/pgsql_${releaseVersion}/lib ***"
+        copy {
+            from postgresVcredist
+            into "${windowsOutput}/cachedb/pgsql_${releaseVersion}/lib"
+        }
+
+    }
+}
+
+task copyWindowsDatabaseIntoDevelopment(group: deployGroup) {
+    dependsOn 'deployWindowsDatabases', 'genVersionString'
+
+    doFirst {
+        println "*** delete ${cachedbRuntime}/pgsql_${releaseVersion} ***"
+        delete "${cachedbRuntime}/pgsql_${releaseVersion}"
+    }
+
+    doLast {
+        println "*** copy from ${windowsOutput}/cachedb into ${cachedbRuntime} ***"
+		copy {
+		    from "${windowsOutput}/cachedb"
+		    into cachedbRuntime
+		}
+    }
+}
+
+task copyWindowsDatabaseIntoInstallation(group: deployGroup) {
+    dependsOn 'deployWindowsDatabases', 'genVersionString'
+
+    doFirst {
+		println "*** delete ${cachedbRuntime}/pgsql_${releaseVersion} ***"
+        delete "${cachedbRuntime}/pgsql_${releaseVersion}"
+    }
+
+    doLast {
+		println "*** copy from ${windowsOutput}/cachedb into ${cachedbRuntime} ***"
+		copy {
+		    from "${windowsOutput}/cachedb"
+		    into cachedbRuntime
+		}
+    }
+}

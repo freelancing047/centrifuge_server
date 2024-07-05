@@ -1,0 +1,47 @@
+/**
+ * Copies .sql files into the appropriate place in the build.
+ */
+
+apply from: 'gradle/properties.gradle'
+
+task deployDatabaseDdl {
+    group = deployGroup
+    inputs.dir "cachedb/pgsql"
+    inputs.dir "logdb"
+    outputs.dir configRuntime
+    outputs.dir ddlRuntime
+    outputs.dir logdbRuntime
+
+    doLast {
+        copy {
+            from "cachedb/pgsql/config"
+            into configRuntime
+            include "*.conf"
+        }
+
+        copy {
+            from "cachedb/pgsql/ddl"
+            into ddlRuntime
+            exclude "RebrandUsers.sql"
+            include "*.sql"
+        }
+
+        copy {
+            from "logdb/pgsql/ddl"
+            into "${logdbRuntime}/pgsql/ddl"
+            include "*.sql"
+        }
+
+        copy {
+            from "logdb/mysql/ddl"
+            into "${logdbRuntime}/mysql/ddl"
+            include "*.sql"
+        }
+
+        copy {
+            from "logdb/oracle/ddl"
+            into "${logdbRuntime}/oracle/ddl"
+            include "*.sql"
+        }
+    }
+}

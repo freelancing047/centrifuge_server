@@ -1,0 +1,71 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+        xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:csiboot="urn:import:csi.client.gwt.widget.boot"
+        xmlns:gwtbootstrap="urn:import:com.github.gwtbootstrap.client.ui"
+        xmlns:grid="urn:import:csi.client.gwt.widget.gxt.grid"
+        xmlns:base="urn:import:com.github.gwtbootstrap.client.ui.base"
+        xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes">
+   <ui:style gss="true">
+        .right {
+            float: right;
+            margin-top: 10px;
+            margin-right: 12px;
+            text-decoration: none !important;
+        }
+    </ui:style>
+    
+    
+    <ui:with field="heading" type="java.lang.String" />
+    <ui:with field="newButtonText" type="java.lang.String" />
+    <ui:with field="filterLabel" type="java.lang.String" />
+    <ui:with field="listboxMessage" type="java.lang.String" />
+    
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <csiboot:Dialog ui:field="dialog">
+        <gwtbootstrap:FluidContainer height="240px" width="600px">
+            <gwtbootstrap:FluidRow>
+                <gwtbootstrap:FluidRow>
+                    <gwtbootstrap:Column size="7">
+                        <gwtbootstrap:FluidRow>
+                            <gwtbootstrap:Column size="6">
+                                <gwtbootstrap:Heading size="4" text="{heading}"></gwtbootstrap:Heading>
+                            </gwtbootstrap:Column>
+                            <gwtbootstrap:Column size="5">
+                                <gwtbootstrap:Button ui:field="newButton" text="{newButtonText}" addStyleNames="{style.right}" type="LINK"
+                                                     size="DEFAULT"/>
+                            </gwtbootstrap:Column>
+                        </gwtbootstrap:FluidRow>
+
+
+                    </gwtbootstrap:Column>
+                </gwtbootstrap:FluidRow>
+                <gwtbootstrap:FluidRow>
+                    <gwtbootstrap:Column size="7">
+                        <grid:GridContainer height="200px" width="300px" ui:field="gridContainer"/>
+                    </gwtbootstrap:Column>
+
+                    <gwtbootstrap:Column size="5">
+                        <gwtbootstrap:Form>
+                            <gwtbootstrap:Fieldset>
+                                <gwtbootstrap:ControlGroup>
+                                    <gwtbootstrap:ControlLabel>
+                                        <base:InlineLabel text="{filterLabel}"/>
+                        </gwtbootstrap:ControlLabel>
+                                    <combo:StringComboBox ui:field="filterListBox"/>
+                                </gwtbootstrap:ControlGroup>
+                                <gwtbootstrap:ControlGroup>
+                                    <gwtbootstrap:ControlLabel>
+                                        <base:InlineLabel text="{listboxMessage}"/>
+                                    </gwtbootstrap:ControlLabel>
+                                    <combo:StringComboBox ui:field="visualizationListBox"/>
+                                </gwtbootstrap:ControlGroup>
+                            </gwtbootstrap:Fieldset>
+                        </gwtbootstrap:Form>
+
+                    </gwtbootstrap:Column>
+                </gwtbootstrap:FluidRow>
+            </gwtbootstrap:FluidRow>
+        </gwtbootstrap:FluidContainer>
+    </csiboot:Dialog>
+</ui:UiBinder>

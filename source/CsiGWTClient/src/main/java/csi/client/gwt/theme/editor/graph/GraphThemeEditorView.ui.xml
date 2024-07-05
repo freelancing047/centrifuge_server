@@ -1,0 +1,204 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+			 xmlns:gxtcontainer="urn:import:com.sencha.gxt.widget.core.client.container"
+			 xmlns:g="urn:import:com.google.gwt.user.client.ui"
+			 xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+			 xmlns:dialog="urn:import:csi.client.gwt.widget.boot" xmlns:gwt="urn:import:csi.client.gwt.widget.ui"
+			 xmlns:gwtc="urn:import:com.google.gwt.canvas.client"
+			 xmlns:grid="urn:import:csi.client.gwt.widget.gxt.grid"
+			 xmlns:base="urn:import:com.github.gwtbootstrap.client.ui.base"
+			 xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes" xmlns:csi="urn:import:csi.client.gwt.theme.editor">
+	<ui:style>
+		.noselect{
+			-webkit-touch-callout: none;
+			-webkit-user-select:
+			none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select:
+			none;
+			user-select: none;
+		}
+
+
+		.larger{
+			font-size: 18px;
+			font-weight: bold;
+		}
+
+		.node-label{
+			font-size: 14px;
+			font-weight: bold;
+			text-align: left;
+			width:77px;
+			display: block;
+        }
+
+        .link-label{
+			font-size: 14px;
+			font-weight: bold;
+			text-align: left;
+			display: block;
+			width:75px;
+        }
+
+		.border{
+			border-style:solid;
+			border: 1px;
+			border-color:lightgray;
+		}
+
+        .grid-label{
+        	margin-bottom: -2px;
+		}
+
+        .remove-space{
+            margin-:0px;
+            padding:0px;
+        }
+
+        .combobox-width{
+            width: 200px !important;
+        }
+
+        .margin-label-top{
+            margin-top: 10px;
+        }
+
+        .dialog-dimensions{
+            height:600px;
+            width:550px;
+        }
+
+		.bottomOffset{
+			margin-top: 10px;
+			margin-bottom: 2px !important;
+		}
+
+		/*.inlineBlockIcon*/
+
+
+
+
+
+	</ui:style>
+
+	<ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+	<ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+
+	<dialog:Dialog ui:field="dialog" addStyleNames="{style.dialog-dimensions}">
+		<!-- <boot:ControlLabel title="Graph Theme"> -->
+		<!-- <base:InlineLabel text="Graph Theme" -->
+		<!-- addStyleNames="{style.larger}" /> -->
+		<!-- </boot:ControlLabel> -->
+		<boot:Fieldset>
+			<boot:ControlGroup>
+				<boot:Controls>
+					<!-- Name Row -->
+						<boot:FluidRow>
+							<boot:Column size="6">
+									<boot:ControlLabel for="nameField"  title="{i18n.get.timelineGeneralTabNameField}" addStyleNames="{style.grid-label}, {style.margin-label-top}">
+										<base:InlineLabel text="{i18n.get.timelineGeneralTabNameField}" />
+									</boot:ControlLabel>
+							</boot:Column>
+
+							<boot:Column size="6">
+								<boot:Controls>
+									<boot:TextBox alternateSize="LARGE" width="210px" boot:id="nameField" ui:field="name"  addStyleNames="{style.bottomOffset}"/>
+								</boot:Controls>
+							</boot:Column>
+						</boot:FluidRow>
+
+					<!-- Bundled Node Row -->
+						<boot:FluidRow>
+							<boot:Column size="6">
+								<boot:ControlLabel for="bundleStyle" title="{i18n.get.themeEditor_graph_bundle_style_label}" addStyleNames="{style.grid-label}, {style.margin-label-top}">
+									<base:InlineLabel text="{i18n.get.themeEditor_graph_bundle_style_label}" />
+								</boot:ControlLabel>
+							</boot:Column>
+							<boot:Column size="6">
+									<combo:NodeStyleComboBox ui:field="bundleStyle" width="235px" addStyleNames="{style.bottomOffset}" />
+							</boot:Column>
+						</boot:FluidRow>
+					<!-- Default Shape Row -->
+						<boot:FluidRow>
+							<boot:Column size="6">
+								<boot:ControlLabel for="shapeComboBox" title="{i18n.get.themeEditor_default_shape_label}" addStyleNames="{style.grid-label},{style.margin-label-top}">
+									<base:InlineLabel text="{i18n.get.themeEditor_default_shape_label}" />
+								</boot:ControlLabel>
+							</boot:Column>
+							<boot:Column size="6">
+									<combo:ShapeComboBox  ui:field="shapeComboBox" width="235px" addStyleNames="{style.bottomOffset}" />
+							</boot:Column>
+						</boot:FluidRow>
+
+						<boot:FluidRow height="10px">
+
+
+
+						</boot:FluidRow>
+
+
+						<boot:FluidRow>
+							<boot:Form type="HORIZONTAL" addStyleNames="kml-mapping-form">
+								<!-- Node Style stuff -->
+								<boot:Column size="6">
+									<boot:FluidRow width="90%">
+										<boot:ControlLabel for="addButton" title="{i18n.get.themeEditor_graph_add_node_style_tooltip}" addStyleNames="{style.grid-label}">
+											<g:HorizontalPanel>
+
+												<base:InlineLabel text="{i18n.get.themeEditor_graph_node_style_label}" addStyleNames="{style.node-label}" />
+
+												<boot:Button ui:field="addButton" addStyleNames="{style.remove-space}"/>
+
+											</g:HorizontalPanel>
+										</boot:ControlLabel>
+									</boot:FluidRow>
+
+									<boot:FluidRow width="90%" addStyleNames="{style.bottomOffset}">
+										<boot:Column size="1">
+											<boot:Icon type="SEARCH" size="LARGE" />
+										</boot:Column>
+										<boot:Column size="11">
+											<csi:FilterTextbox height="15px" width="100%" ui:field="nodeFilterTextbox" placeholder="{i18n.get.themeEditor_graph_node_filter_placeholder}"/>
+										</boot:Column>
+									</boot:FluidRow>
+
+									<boot:FluidRow width="95%" height="280px">
+											<grid:GridContainer height="280px" ui:field="nodeGridContainer" addStyleNames="{style.border}"/>
+									</boot:FluidRow>
+								</boot:Column>
+
+
+								<!-- Link Style stuff -->
+								<boot:Column size="6">
+									<boot:FluidRow width="90%">
+										<boot:ControlLabel for="addLinkButton" title="{i18n.get.themeEditor_graph_add_link_style_tooltip}" addStyleNames="{style.grid-label}">
+											<g:HorizontalPanel>
+												<base:InlineLabel text="{i18n.get.themeEditor_graph_add_link_style_label}"  addStyleNames="{style.link-label}" />
+
+												<boot:Button ui:field="addLinkButton" addStyleNames="{style.remove-space}"/>
+											</g:HorizontalPanel>
+										</boot:ControlLabel>
+									</boot:FluidRow>
+
+									<boot:FluidRow width="90%" addStyleNames="{style.bottomOffset}">
+										<boot:Column size="1">
+											<boot:Icon type="SEARCH" size="LARGE" />
+										</boot:Column>
+										<boot:Column size="11">
+											<csi:FilterTextbox height="15px" width="100%" ui:field="linkFilterTextbox" placeholder="{i18n.get.themeEditor_graph_link_filter_placeholder}"/>
+										</boot:Column>
+									</boot:FluidRow>
+
+									<boot:FluidRow width="95%" height="280px">
+										<grid:GridContainer height="280px" ui:field="linkGridContainer" addStyleNames="{style.border}"/>
+									</boot:FluidRow>
+								</boot:Column>
+							</boot:Form>
+						</boot:FluidRow>
+				</boot:Controls>
+			</boot:ControlGroup>
+		</boot:Fieldset>
+	</dialog:Dialog>
+</ui:UiBinder>

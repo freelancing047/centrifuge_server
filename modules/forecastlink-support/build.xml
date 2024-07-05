@@ -1,0 +1,95 @@
+<project name="csi-forecastlink-ext" default="dist">
+
+
+    <property file="build.properties" />
+    
+    <property name="javac.debug" value="${module.javac.debug}" />
+    
+    <path id="compile.classpath">
+        <fileset dir="../../lib/hibernate/3.4/core3.4">
+            <include name="ejb3-persistence.jar" />
+        </fileset>
+        <fileset dir="../../lib">
+            <include name="servlet-api.jar" />
+            <include name="jung/2.0.1/*.jar" />
+<!--         <include name="log4j-1.2.15.jar" /> -->
+         <include name="log4j-api-2.8.2.jar" />
+         <include name="log4j-core-2.8.2.jar" />
+        </fileset>
+        <fileset dir="../../build/jars">
+            <include name="prefuse.jar" />
+            <include name="centrifuge-services.jar" />
+        </fileset>
+    </path>
+
+    <target name="clean">
+        <delete failonerror="false" includeemptydirs="true">
+            <fileset dir="${module.dist.dir}">
+            </fileset>
+        </delete>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${module.classes.dir}" />
+
+        <javac srcdir="${module.src.java.dir}" destdir="${module.classes.dir}" debug="${javac.debug}">
+            <classpath refid="compile.classpath" />
+        </javac>
+        
+        <copy todir="${module.classes.dir}">
+            <fileset dir="${module.src.java.dir}">
+                <include name="**/*.properties" />
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="dist" depends="compile" description="Builds the jar for deployment">
+        <jar destfile="${module.dist.dir}/${module.dist.name}.${module.dist.ext}">
+            <fileset dir="${module.classes.dir}">
+            </fileset>
+        </jar>
+    </target>
+	
+	<!-- Deploys the war application if the application server -->
+    <target name="deploy" depends="dist" description="Builds the jar for deployment">
+		<echo level="info">Deploying the ${module.dist.name}.${module.dist.ext} to: ${module.server.dir}/webapps</echo>
+		<copy todir="${module.server.centrifuge.webinf.lib.dir}" file="${module.dist.dir}/${module.dist.name}.${module.dist.ext}" overwrite="yes" />
+
+    	<echo level="info">Updating the ${module.server.centrifuge.webinf.dir}/web.xml file</echo>
+    	<replaceregexp byline="false" file="${module.server.centrifuge.webinf.dir}/web.xml">
+    		<regexp pattern="${web.xml.regex1.pattern}"/>
+    		<substitution expression="${web.xml.regex1.subst}"/>
+    	</replaceregexp>
+    	<replaceregexp byline="false" file="${module.server.centrifuge.webinf.dir}/web.xml">
+    		<regexp pattern="${web.xml.regex2.pattern}"/>
+    		<substitution expression="${web.xml.regex2.subst}"/>
+    	</replaceregexp>
+    	
+    	<echo level="info">Updating the ${module.server.dir}/conf/context.xml file</echo>
+    	<replaceregexp byline="true" file="${module.server.dir}/conf/context.xml">
+    		<regexp pattern="${context.xml.regex1.pattern}"/>
+    		<substitution expression="${context.xml.regex1.subst}"/>
+    	</replaceregexp>
+    		
+        <echo level="info">Copying the module resource icons to ${module.server.centrifuge.res.icons.dir}</echo>
+    	<copydir dest="${module.server.centrifuge.res.icons.dir}" src="${module.src.web.resources.icons.dir}" forceoverwrite="true"></copydir>
+
+        <echo level="info">Copying the MySQL driver to ${module.server.lib.dir}</echo>
+		<copy todir="${module.server.lib.dir}">
+			<fileset dir="${module.lib.dir}">
+				<include name="mysql-connector-java-5.1.13-bin.jar" />
+			</fileset>
+		</copy>
+    </target>	
+
+	<!-- Cleans the work/Catalina, webapps/forecastlink directories -->
+	<target name="clean.deployment" description="Removes deployment directories">
+    	<delete file="${module.server.centrifuge.webinf.lib.dir}/${module.dist.name}.${module.dist.ext}" />
+		<delete dir="${module.server.centrifuge.res.icons.dir}" />
+		<delete file="${module.server.lib.dir}/mysql-connector-java-5.1.13-bin.jar" />
+	</target>
+		
+	<!-- Clean Deploys the war application on the application server -->
+	<target name="deploy.clean" depends="clean, clean.deployment, deploy" />
+	
+</project>

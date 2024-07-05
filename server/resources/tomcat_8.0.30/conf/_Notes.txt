@@ -1,0 +1,6 @@
+These items have been reviewed for 3.0:
+catalina.policy
+catalina.properties
+contex.xml
+logging.properties
+server.xml

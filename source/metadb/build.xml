@@ -1,0 +1,70 @@
+<project name="metadb" basedir=".">
+
+    <import file="../module-support.xml" />
+
+    <property file="build.properties" />
+
+    <path id="build.classpath">
+    	<pathelement location="${output.classes}"/>
+        <fileset dir="${lib}">
+            <include name="**/*.jar" />
+            <exclude name="google-collect-1.0-rc2.jar" />
+            <exclude name="xstream/xstream-1.2.1/**/*.jar" />
+        </fileset>
+        <fileset dir="${build.jars}">
+        </fileset>
+    </path>
+
+
+    <target name="compile" depends="output:init">
+    	<!--
+        <javac debug="${javac.debug}" optimize="${javac.optimize}" deprecation="${javac.deprecation}" source="${javac.source}" target="${javac.target}" destdir="${output.classes}">
+            <classpath>
+                <path refid="build.classpath" />
+            </classpath>
+
+            <src>
+                <pathelement location="src/main/java" />
+            </src>
+
+        </javac>
+
+        <copy todir="${output.classes}">
+            <fileset dir="${basedir}">
+                <include name="**/*.properties" />
+                <include name="**/*.xml" />
+                <include name="**/*.js" />
+                <exclude name="build.xml" />
+                <exclude name="target" />
+            </fileset>
+        </copy>
+        -->
+    </target>
+    
+    <target name="jar">
+    </target>
+
+    <target name="publish" depends="compile">
+    	<!--
+    	<java classname="centrifuge.GenerateDDL"  fork="false" failonerror="true">
+            <classpath>
+                <path refid="build.classpath" />
+            </classpath>
+    		<arg value="${output}" />
+        </java>
+
+        <copy todir="${build}/resources">
+            <fileset dir="${output}">
+                <include name="*.jdbc" />
+            </fileset>
+        </copy>
+        -->
+    </target>
+    
+    
+    <target name="build" depends="publish">
+        
+    </target>
+
+
+</project>

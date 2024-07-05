@@ -1,0 +1,140 @@
+<?xml version="1.0" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [Centrifuge] %-5p - %m%n" />
+            <!-- param name="ConversionPattern" value="%d [Centrifuge] %-5p %X{application_id} %X{server_ip_address} %X{user_name} %X{session_id} %X{action_uri} %t %l - %m%n" /-->
+        </layout>
+        <filter class="org.apache.log4j.varia.StringMatchFilter">
+            <param name="StringToMatch" value="fail-safe cleanup (collections)" />
+            <param name="AcceptOnMatch" value="false" />
+        </filter>
+    </appender>
+
+    <appender name="file" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="logs/centrifuge.log" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd" />
+        <param name="Append" value="true" />
+        <layout class="org.apache.log4j.PatternLayout">
+	        <param name="ConversionPattern" value="%d [Centrifuge] %-5p - %m%n" />
+            <!-- param name="ConversionPattern" value="%d [Centrifuge] %-5p %X{application_id} %X{server_ip_address} %X{user_name} %X{session_id} %X{action_uri} %t %l - %m%n" /-->
+        </layout>
+        <filter class="org.apache.log4j.varia.StringMatchFilter">
+            <param name="StringToMatch" value="fail-safe cleanup (collections)" />
+            <param name="AcceptOnMatch" value="false" />
+        </filter>
+    </appender>
+
+    <!--
+    Declare an appender variable, which is represented by the class LogDBAppender. Its purpose is to write log messages into a database.
+    To configure appender, please provide the following parameters:
+    url - represents the URL of the DB connection and must be provided
+    user - represents the User of the DB connection. It is an optional parameter because not all databases require a user to get a connection
+    password - represents the password of the DB connection corresponding to the given user. It is an optional parameter because not all databases require a password to get a connection.
+    driver - provide the driver class to be loaded for the db connection. Make sure you include the jar file that contains this class in the lib folder of the project.
+    locationInfo - Can be true/false. Specifies if location info should be included in dispatched messages. Defaults to false.
+    initSqlFile - Provide this param if you want your table to be created by the LogDbAppender. The value of this param should represent the path (absolute or relative to the centrifuge base directory)
+                  to a file that contains sql instructions to create the logging table. If it is not provided, system will assume that the logging table exists.  .
+    drainMaxSize - The maximum number of log events that can be written in db in a single commit. It is an optional parameter, its default value will be set to 500.
+    			drainMaxSize should be greater that drainMinSize, greater than 1 and should not be greater that 1000
+    drainMinSize - The minimum number of log events that needs to be accumulated before writing to db in order to do a batch commit. It is an optional parameter, its default value is 100.
+     			drainMinSize should not be greater that drainMaxSize, greater than 0 and should not be greater that 1000
+    drainTimeOut - The time (milliseconds) to wait for accumulation of events in the buffer. After this time the log events, if any, are written to db, even if there are less than #drainMinSize.
+                   It is an optional parameter, its default value is 3 seconds (3000 ms).
+    bufferSize - Maximum size for the buffer where the events get accumulated if cannot be written to db fast enough.It is an optional parameter, its default value is 10000.
+    			bufferSize should be greater that drainMaxSize and should not be greater that 100000
+    maxConnectionAttempts - When connection to the DBfails there will be other attempts to connect. You can configure max connection attempts here.
+    			Each other attempt sleep time is increased exponentially.
+    insertSql - Stores the insert statement to use when writing logs to db. This parameter is required.
+                This parameter should not contain any other parameters than the ones provided by log4j documentation or MDC.
+        Parameters allowed by log4j are:
+        %c - Used to output the category of the logging event. The category name is printed in full, any precision specifier is ignored.
+        %C - Used to output the fully qualified class name of the caller issuing the logging request.
+            The class name is output in fully qualified form, any precision specifier is ignored.
+        %d - Used to output the date of the logging event. No date format is needed because PreparedStatement is used, which will convert date to a convenient sql date format.
+        %F - Used to output the file name where the logging request was issued.
+            WARNING Generating caller location information is extremely slow and should be avoided unless execution speed is not an issue.
+        %l - Used to output location information of the caller which generated the logging event.
+            The location information depends on the JVM implementation but usually consists of the
+            fully qualified name of the calling method followed by the callers source the file name and line number between parentheses.
+            The location information can be very useful. However, its generation is extremely slow and should be avoided unless execution speed is not an issue.
+        %L - Used to output the line number from where the logging request was issued.
+            WARNING Generating caller location information is extremely slow and should be avoided unless execution speed is not an issue.
+        %m - Used to output the application supplied message associated with the logging event.
+        %M - Used to output the method name where the logging request was issued.
+            WARNING Generating caller location information is extremely slow and should be avoided unless execution speed is not an issue.
+        %p - Used to output the priority of the logging event.
+        %r - Used to output the number of milliseconds elapsed from the construction of the layout until the creation of the logging event.
+        %t - Used to output the name of the thread that generated the logging event.
+        %x - Used to output the NDC (nested diagnostic context) associated with the thread that generated the logging event.
+        %X - Used to output the MDC (mapped diagnostic context) associated with the thread that generated the logging event.
+            The X conversion character must be followed by the key for the map placed between braces, as in %X{clientNumber} where clientNumber is the key.
+            By convention, the name of the MDC property should be the same as the name of the logging table column.
+            The value in the MDC corresponding to the key will be output. See MDC class for more details.
+        % - The sequence %% outputs a single percent sign.
+        Parameters allowed by MDC:
+            - they should be specified like %X{MDC_param} where MDC_param is a property of MDC class.
+            - By convention, the name of the MDC property should be the same as the name of the logging table column.
+    -->
+    <appender name="db" class="csi.log.LogDBAppender">
+        <param name="url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+        <param name="user" value="system"/>
+        <param name="password" value="adminadmin"/>
+        <param name="driver" value="oracle.jdbc.OracleDriver"/>
+        <param name="locationInfo" value="true"/>
+        <param name="initSqlFile" value="logdb/oracle/ddl/CreateLoggingTable.sql"/>
+        <param name="drainMaxSize" value="60"/>
+        <param name="drainMinSize" value="20"/>
+        <param name="drainTimeOut" value="1000"/>
+        <param name="bufferSize" value="1000" />
+        <param name="maxConnectionAttempts" value="5" />
+        <param name="insertSql" value="INSERT INTO logs (log_date,priority,thread_name,location_info,application_id,server_ip_address,action_uri,client_ip_address,user_name,session_id,message) VALUES (%d,%p,%t,%l, %X{application_id},%X{server_ip_address},%X{action_uri},%X{client_ip_address},%X{user_name},%X{session_id},%m)"/>
+    </appender>
+
+    <appender name="backup" class="org.apache.log4j.FileAppender">
+        <param name="File" value="test/java/centrifuge/test/log/resources/oracle/db1.log" />
+        <param name="Append" value="true" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d, %p, %t, %l, %X{application_id}, %X{server_ip_address}, %X{action_uri}, %X{client_ip_address}, %X{user_name}, %X{session_id}, %m%n" />
+        </layout>
+    </appender>
+
+    <category name="centrifuge" additivity="false">
+        <priority value="info" />
+        <appender-ref ref="console" />
+        <appender-ref ref="file" />
+        <appender-ref ref="db" />
+    </category>
+
+    <category name="csi" additivity="false">
+        <priority value="info" />
+        <appender-ref ref="console" />
+        <appender-ref ref="file" />
+        <appender-ref ref="db" />
+    </category>
+
+    <category name="csi.server.business.helper.QueryHelper" additivity="false">
+             <priority value="debug" />
+             <appender-ref ref="console" />
+             <appender-ref ref="file" />
+        <appender-ref ref="db" />
+     </category>
+
+    <category name="prefuse" additivity="false">
+        <priority value="warn" />
+        <appender-ref ref="console" />
+        <appender-ref ref="file" />
+        <appender-ref ref="db" />
+    </category>
+
+    <root>
+        <priority value="warn" />
+        <appender-ref ref="console" />
+        <appender-ref ref="file" />
+        <appender-ref ref="db" />
+    </root>
+
+</log4j:configuration>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    
+	<changeSet author="jdanberg" id="timeline-3-5" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="timelineeventdefinition">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)" />
+            <column name="startfield_uuid" type="varchar(255)" />
+            <column name="endfield_uuid" type="varchar(255)" />
+            <column name="labelfield_uuid" type="varchar(255)" />
+        </createTable>
+    </changeSet>
+    
+	<changeSet author="jdanberg" id="timeline-3-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="timelinesettings_timelineeventdefinition">
+            <column name="events_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="timelinesettings_uuid" type="VARCHAR(255)">
+            </column>
+        </createTable>
+    </changeSet>
+    
+	<changeSet author="jdanberg" id="timeline-3-10" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="timelineeventdefinition_uuid_pkey" tableName="timelineeventdefinition"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-3-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="events_uuid" baseTableName="timelinesettings_timelineeventdefinition" constraintName="timelinesettings_timelineeventdefinition_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="timelineeventdefinition"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-3-4" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="timelinesettings_uuid" baseTableName="timelinesettings_timelineeventdefinition" constraintName="timelinesettings_timelineeventdefinition_timelinesettings_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="timelinesettings"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-3-6" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="startfield_uuid" baseTableName="timelineeventdefinition" constraintName="timelineeventdefinition_startfield_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="timelinetimesetting"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-3-7" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="endfield_uuid" baseTableName="timelineeventdefinition" constraintName="timelineeventdefinition_endfield_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="timelinetimesetting"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-3-8" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="labelfield_uuid" baseTableName="timelineeventdefinition" constraintName="timelineeventdefinition_labelfield_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="fielddef"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-3-9" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="timelineeventdefinition" constraintName="modelobject_timelineeventdefinition_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelobject"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="timeline-3-11">
+        <dropForeignKeyConstraint baseTableName="timelinesettings" constraintName="timelinesettings_startfield_foreignkey"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-3-12">
+        <dropForeignKeyConstraint baseTableName="timelinesettings" constraintName="timelinesettings_endfield_foreignkey"/>
+    </changeSet>
+    
+    
+    
+    <changeSet author="jdanberg" id="timeline-3-13">
+        <dropColumn columnName="startfield_uuid" tableName="timelinesettings"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-3-14">
+        <dropColumn columnName="endfield_uuid" tableName="timelinesettings"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-3-15">
+        <dropForeignKeyConstraint baseTableName="timelinesettings" constraintName="timelinesettings_labelfield_foreignkey"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-3-16">
+        <dropColumn columnName="labelfield_uuid" tableName="timelinesettings"/>
+    </changeSet>
+    
+    
+    <changeSet author="jdanberg" id="timeline-3-17">
+        <addColumn tableName="timelinesettings">
+            <column name="colorbyfield_uuid" type="varchar(255)" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-3-18" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="colorbyfield_uuid" baseTableName="timelinesettings" constraintName="timelinesettings_colorbyfield_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="fielddef"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="timeline-3-19" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="timelinelegenddefinition">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="varchar(255)" />
+            <column name="color" type="INT4" />
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="timeline-3-20" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="timelinesettings_timelinelegenddefinition">
+            <column name="legenditems_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="timelinesettings_uuid" type="VARCHAR(255)">
+            </column>
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="timeline-3-21" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="timelinelegenddefinition_uuid_pkey" tableName="timelinelegenddefinition"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-3-22" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="legenditems_uuid" baseTableName="timelinesettings_timelinelegenddefinition" constraintName="timelinesettings_timelinelegenddefinition_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="timelinelegenddefinition"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-3-23" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="timelinesettings_uuid" baseTableName="timelinesettings_timelinelegenddefinition" constraintName="timelinesettings_timelinelegenddefinition_timelinesettings_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="timelinesettings"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-3-24" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="timelinelegenddefinition" constraintName="modelobject_timelinelegenddefinition_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelobject"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="timeline-3-25">
+        <addColumn tableName="timelinesettings">
+            <column name="dotsize_uuid" type="varchar(255)" />
+        </addColumn>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="timeline-3-sql-1">
+        <sql>
+			DELETE FROM worksheetdef_visualizationdef w
+			    USING timelineviewdef t
+			WHERE w.visualizations_uuid = t.uuid;
+        </sql>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-3-sql-2">
+        <sql>
+            DELETE FROM datamodeldef_visualizationdef w
+                USING timelineviewdef t
+            WHERE w.visualizations_uuid = t.uuid;
+        </sql>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-3-sql-3">
+        <sql>
+            DELETE FROM visualizationworksheetlayout_visualizationlayoutstate w
+                USING visualizationlayoutstate t, timelineviewdef v
+            WHERE w.layouts_uuid = t.uuid AND t.visualizationdef_uuid = v.uuid;
+        </sql>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-3-sql-4">
+        <sql>
+            DELETE FROM visualizationlayoutstate w
+                USING timelineviewdef t
+            WHERE w.visualizationdef_uuid = t.uuid;
+        </sql>
+    </changeSet>
+	<changeSet author="jdanberg" id="timeline-3-sql-5">
+		<sql>
+			DELETE FROM timelinesettings_timelinefield tt
+			USING timelineviewdef v
+			WHERE tt.timelinesettings_uuid = v.timelinesettings_uuid AND NOT EXISTS
+			(SELECT v.uuid
+			FROM datamodeldef_visualizationdef d
+			WHERE d.visualizations_uuid = v.uuid);
+		</sql>
+	</changeSet>
+	<changeSet author="jdanberg" id="timeline-3-sql-6">
+		<sql>
+			DELETE FROM timelinefield tf
+			WHERE NOT EXISTS
+			(SELECT tf.uuid
+			FROM timelinesettings_timelinefield tt
+			WHERE tf.uuid = tt.fieldlist_uuid);
+		</sql>
+	</changeSet>
+	<changeSet author="jdanberg" id="timeline-3-sql-7">
+	    <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">select count(*) from timelineeventdefinition</sqlCheck>
+        </preConditions>
+		<sql>
+		    UPDATE timelinetimesetting tt
+		    SET fielddef_uuid = NULL
+		    FROM timelineeventdefinition e
+		    WHERE NOT EXISTS
+			(SELECT tt.uuid
+			WHERE e.startfield_uuid = tt.uuid)
+			AND NOT EXISTS
+			(SELECT tt.uuid
+			WHERE e.endfield_uuid = tt.uuid);
+		</sql>
+	</changeSet>
+
+	<changeSet author="jdanberg" id="timeline-3-sql-8">
+		<sql>
+			UPDATE timelinesettings s
+			SET groupbyfield_uuid = NULL
+			FROM datamodeldef_visualizationdef d, timelineviewdef v
+			WHERE v.timelinesettings_uuid = s.uuid AND NOT EXISTS
+			(SELECT v.uuid
+			FROM datamodeldef_visualizationdef d
+			WHERE d.visualizations_uuid = v.uuid);
+		</sql>
+	</changeSet>
+	
+	<changeSet author="jdanberg" id="timeline-3-sql-9">
+		<sql>
+		    UPDATE visualizationdef
+		    SET filter_uuid = NULL
+		    WHERE type = 12;
+		</sql>
+	</changeSet>
+	
+	<changeSet author="jdanberg" id="timeline-3-sql-10">
+        <sql>
+            UPDATE timelinetimesetting tt
+            SET fielddef_uuid = NULL 
+            FROM timelineeventdefinition  
+            WHERE tt.uuid NOT IN
+              ( 
+              SELECT startfield_uuid 
+              FROM timelineeventdefinition WHERE startfield_uuid IS NOT NULL
+              UNION 
+              SELECT endfield_uuid 
+              FROM timelineeventdefinition WHERE endfield_uuid IS NOT NULL
+              );
+        </sql>
+    </changeSet>
+    
+	<changeSet author="jdanberg" id="timeline-3-sql-11">
+        <sql>
+            UPDATE timelinetimesetting tt
+            SET fielddef_uuid = NULL 
+            WHERE tt.uuid IN
+              (SELECT uuid
+    FROM timelinetimesetting WHERE uuid NOT IN (SELECT startfield_uuid 
+              FROM timelineeventdefinition WHERE startfield_uuid IS NOT NULL
+              UNION 
+              SELECT endfield_uuid 
+              FROM timelineeventdefinition WHERE endfield_uuid IS NOT NULL
+              UNION SELECT text 'a' AS "varchar"
+               )
+               UNION SELECT text 'a' AS "varchar");
+        </sql>
+    </changeSet>
+    
+</databaseChangeLog>

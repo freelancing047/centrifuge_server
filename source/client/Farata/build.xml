@@ -1,0 +1,27 @@
+<project name="Farata Systems" basedir=".">
+    
+    <property name="output.name" value="com.farata"/>
+    <property name="output.version" value="1.0" />
+    
+    <import file="../flex-common.xml"/>
+    
+    <property name="project.source" value="${basedir}/src" />
+    
+    <fileset id="library.sources" dir="${basedir}/src">
+        <include name="**/*.as" />
+    </fileset>
+    
+    <pathconvert property="library.classes" pathsep=" " dirsep="." refid="library.sources">
+        <mapper>
+         <chainedmapper>
+             <globmapper from="*.as" to="*" />
+             <globmapper from="${project.source}\*" to="*" handledirsep="true"/>
+        </chainedmapper>
+         <chainedmapper>
+             <globmapper from="*.mxml" to="*" />
+             <globmapper from="${project.source}\*" to="*" handledirsep="true"/>
+        </chainedmapper>
+         </mapper>
+    </pathconvert>
+
+</project>

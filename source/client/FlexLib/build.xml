@@ -1,0 +1,12 @@
+<project name="FlexLib" basedir=".">
+
+    <property name="output.name" value="flexlib" />
+    <property name="output.version" value="0.2.4" />
+    <property name="project.source" value="${basedir}/src" />
+
+    <import file="../flex-common.xml" />
+    
+
+    
+
+</project>

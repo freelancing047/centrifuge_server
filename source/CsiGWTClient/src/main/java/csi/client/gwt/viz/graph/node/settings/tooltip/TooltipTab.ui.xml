@@ -1,0 +1,205 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+        xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:g="urn:import:com.google.gwt.user.client.ui"
+        xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+        xmlns:grid="urn:import:csi.client.gwt.widget.gxt.grid"
+        xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes"
+        xmlns:f="urn:import:com.sencha.gxt.widget.core.client.form">
+   <ui:style gss="true">
+        .heading-up {
+            margin-top: -10px;
+            display: inline;
+        }
+
+        .inline-block {
+            display: inline-block;
+            margin-right: 4px;
+        }
+
+        .nopadding {
+            margin: 0px;
+            display: inline;
+        }
+
+        .addButton {
+            float: right;
+            margin-top: 10px;
+        }
+
+        .height250 {
+            height: 250px;
+        }
+
+        .dropText {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+    </ui:style>
+    <ui:with
+            field="i18n"
+            type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <boot:Tab
+            heading="{i18n.get.tooltips}"
+            ui:field="cfTab">
+        <g:LayoutPanel
+                height="100%"
+                width="100%">
+            <g:layer
+                    top="0px"
+                    bottom="0px">
+                <boot:FluidContainer>
+                    <boot:FluidRow>
+                        <boot:Column size="6">
+                            <boot:FluidRow>
+                                <boot:Heading
+                                        addStyleNames="{style.nopadding}"
+                                        size="3"
+                                        text="{i18n.get.tooltipDetails}"/>
+                                <boot:Button
+                                        addStyleNames="{style.addButton}"
+                                        size="SMALL"
+                                        ui:field="addButton"
+                                        icon="PLUS"
+                                        text="{i18n.get.add}"/>
+                            </boot:FluidRow>
+                        </boot:Column>
+                        <boot:Column
+                                size="6"
+                                ui:field="detailsColumn"
+                                visible="false">
+                            <g:Label
+                                    addStyleNames="{style.dropText}"
+                                    text="{i18n.get.tooltipDetails}"/>
+                            <boot:Form height="300px"
+                                    type="HORIZONTAL"
+                                    addStyleNames="node-tooltip-form">
+                                <boot:Fieldset ui:field="detailsFieldset">
+                                    <boot:ControlGroup>
+                                        <boot:ControlLabel>
+                                            <g:InlineLabel
+                                                    text="{i18n.get.name}"/>
+                                        </boot:ControlLabel>
+                                        <boot:Controls>
+                                            <boot:TextBox
+                                                    ui:field="nameTextBox"/>
+                                        </boot:Controls>
+                                    </boot:ControlGroup>
+                                    <boot:ControlGroup>
+                                        <boot:ControlLabel>
+                                            <g:InlineLabel
+                                                    text="{i18n.get.type}"/>
+                                        </boot:ControlLabel>
+                                        <boot:Controls>
+                                            <combo:StringComboBox
+                                                    ui:field="typeListBox"/>
+                                        </boot:Controls>
+                                    </boot:ControlGroup>
+                                    <boot:ControlGroup
+                                            ui:field="valueControlGroup">
+                                        <boot:ControlLabel>
+                                            <g:InlineLabel
+                                                    text="{i18n.get.value}"/>
+                                        </boot:ControlLabel>
+                                        <boot:Controls>
+                                            <boot:TextBox
+                                                    ui:field="valueTextBox"/>
+                                        </boot:Controls>
+                                    </boot:ControlGroup>
+                                    <boot:ControlGroup
+                                            ui:field="fieldControlGroup">
+                                        <boot:ControlLabel>
+                                            <g:InlineLabel
+                                                    text="{i18n.get.field}"/>
+                                        </boot:ControlLabel>
+                                        <boot:Controls>
+                                            <combo:FieldDefComboBox
+                                                    ui:field="fieldFDCB"
+                                                    addStyleNames="bootstrapComboBox"/>
+                                        </boot:Controls>
+                                    </boot:ControlGroup>
+                                    <boot:ControlGroup
+                                            ui:field="functionControlGroup">
+                                        <boot:ControlLabel>
+                                            <g:InlineLabel
+                                                    text="{i18n.get.function}"/>
+                                        </boot:ControlLabel>
+                                        <boot:Controls>
+                                            <f:ComboBox
+                                                    ui:field="functionComboBox"
+                                                    addStyleNames="bootstrapComboBox"/>
+                                        </boot:Controls>
+                                    </boot:ControlGroup>
+                                    <boot:ControlGroup
+                                            ui:field="graphAttributeControlGroup">
+                                        <boot:ControlLabel>
+                                            <g:InlineLabel
+                                                    text="{i18n.get.value}"/>
+                                        </boot:ControlLabel>
+                                        <boot:Controls>
+                                            <f:ComboBox
+                                                    ui:field="graphAttributeComboBox"
+                                                    addStyleNames="bootstrapComboBox"/>
+                                        </boot:Controls>
+                                    </boot:ControlGroup>
+                                    <boot:ControlGroup
+                                            ui:field="optionsControlGroup">
+                                        <boot:ControlLabel>
+                                            <g:InlineLabel
+                                                    text="{i18n.get.options}"/>
+                                        </boot:ControlLabel>
+                                        <boot:Controls>
+                                            <boot:CheckBox
+                                                    ui:field="showAsLinkCB"
+                                                    text="{i18n.get.showAsHyperlink}"/>
+                                            <g:Label
+                                                    text="{i18n.get.hyperLinkAltTextPrompt}"/>
+                                            <boot:RadioButton
+                                                    name="one"
+                                                    addStyleNames="{style.inline-block}"
+                                                    ui:field="fixedLinkRB"
+                                                    enabled="false"
+                                                    text="{i18n.get.fixed}"/>
+                                            <boot:RadioButton
+                                                    name="one"
+                                                    addStyleNames="{style.inline-block}"
+                                                    ui:field="dynamicLinkRB"
+                                                    text="{i18n.get.field}"
+                                                    enabled="false"/>
+                                            <boot:RadioButton
+                                                    name="one"
+                                                    addStyleNames="{style.inline-block}"
+                                                    ui:field="neitherLinkRB"
+                                                    enabled="false"
+                                                    text="{i18n.get.neither}"/>
+                                            <boot:TextBox
+                                                    ui:field="linkTextBox"
+                                                    visible="false"/>
+                                            <combo:FieldDefComboBox
+                                                    ui:field="linkFDCB"
+                                                    addStyleNames="bootstrapComboBox"
+                                                    visible="false"/>
+                                            <!-- <boot:CheckBox>Disable</boot:CheckBox> -->
+                                            <boot:CheckBox
+                                                    ui:field="hideEmptyCheckBox"
+                                                    text="{i18n.get.hideEmptyValues}"/>
+                                        </boot:Controls>
+                                    </boot:ControlGroup>
+                                </boot:Fieldset>
+                            </boot:Form>
+                        </boot:Column>
+                    </boot:FluidRow>
+                </boot:FluidContainer>
+            </g:layer>
+            <g:layer
+                    top="50px"
+                    height="240px"
+                    width="320px"
+                    left="20px">
+                <grid:GridContainer ui:field="gridContainer"/>
+            </g:layer>
+        </g:LayoutPanel>
+    </boot:Tab>
+</ui:UiBinder>

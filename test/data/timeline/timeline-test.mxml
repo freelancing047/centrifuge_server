@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" 
+				xmlns:centrifuge="centrifuge.timeline.*"
+				xmlns:centrifugeView="centrifuge.timeline.view.*"
+				width="100%" height="100%"
+				 >
+
+		<mx:Script>
+          <![CDATA[
+          	
+          	/*
+          	 * Application for testing the timeline control.  It will provide a drop down of the included
+          	 * test files.
+          	 */
+          	import mx.collections.ArrayCollection;
+          	import centrifuge.timeline.TimelineEvent;
+          	import centrifuge.timeline.view.ProgressPopup;
+          	import mx.managers.PopUpManager;
+          	import mx.core.IFlexDisplayObject;
+          	import centrifuge.timeline.placement.InitialPlacement;
+          	
+          	import centrifuge.timeline.placement.IPlacement;
+          	import centrifuge.timeline.placement.SimpleDatePlacement;
+        	import centrifuge.timeline.TimelineEvent;
+        	import mx.rpc.events.ResultEvent;
+        	
+        	[Bindable] public var events:ArrayCollection;
+        	
+        	/*
+        	 * Here is a list of the test files. 
+        	 */
+        	private var fileList:Array =
+  					[	{label:"Select File...", value: "" },
+  						{label:"Phone Calls", value: "/share/csi/dev/Timeline/data/PhoneCalls.xml" },
+  						{label:"News Search Bush", value: "/share/csi/dev/Timeline/data/NewsSearchBush.xml"},
+  						{label:"News Search 598", value: "/share/csi/dev/Timeline/data/NewsSearch598.xml"},
+  						{label:"Example with URLs 698", value: "/share/csi/dev/Timeline/data/TLGuljitForURLS.xml"},
+  						{label:"Few Events", value: "/share/csi/dev/Timeline/data/events3.xml" },
+  						{label:"Casey", value: "/share/csi/dev/Timeline/data/casey.xml" }
+  					];
+  			
+  			private function loadFile(event:Event)
+  			{
+  				eventData.send();	
+  			}
+  			
+  			private function prepData(result:ResultEvent):void
+			{
+				var rawData:XML = result.result as XML;
+					
+					events = new ArrayCollection();  //reset the events so we don't add on to the events that are already there
+								  //from the previous data.
+	            	for each( var e:XML in rawData.holder.event)
+	            	{
+	            		var event:TimelineEvent = new TimelineEvent();
+	            		event.id = e.id;
+	            		//event.description = e.description;
+	            		//event.start = new Date (Date.parse(e.start));
+	            		//event.start = new Date (e.start);
+	            		
+	            		//event.end = new Date (e.end);
+	            		//event.x = e.x;
+	            		//event.y = e.y;
+	            		//event.urls = new Array;
+	            		var i:Number = 0;
+	            		var time:Number;
+	            		for each ( var prop:XML in e.properties.property)
+	            		{
+	            			// Look for the label field
+	            			var name:String = prop.@name;
+	            			switch(name) {
+    							case "Name":
+	            					event.name = prop.toString();
+	            					break;
+	            				case "Start Date":
+	            					time = Date.parse(prop.toString());
+	            					if (time)
+	            						event.start = new Date (time);
+	            					//else 
+	            						//event.start = null;
+	            					break;
+	            				case "End Date":
+	            					time = Date.parse(prop.toString());
+	            					if (time)
+	            						event.end = new Date (time);
+	            					//else // If no end date, set it equal to start
+	            						//event.end = new Date (event.start.time);
+	            					break;
+	            				default:
+	            			}
+	            		}
+	            		events.addItem(event);
+	        		}
+	        		timeline.generateTimeline();
+	        		//timeline.visible = true;
+	        		
+	   		}		
+	        /*
+	         * This is the format that we have been using for test data.
+	         */
+//	        private function prepData(result:ResultEvent):void
+//			{
+//					var rawData:XML = result.result as XML;
+//					events = new ArrayCollection();  //reset the events so we don't add on to the events that are already there
+//								  //from the previous data.
+//	            	for each( var e:XML in rawData.Events.Event)
+//	            	{
+//	            		var event:TimelineEvent = new TimelineEvent();
+//	            		event.name = e.name;
+//	            		event.description = e.description;
+//	            		event.start = new Date (Date.parse(e.start));
+//	            		event.end = new Date (Date.parse(e.end));
+//	            		event.x = e.x;
+//	            		event.y = e.y;
+//	            		event.urls = new Array;
+//	            		var i:Number = 0;
+//	            		for each ( var url:XML in e.url)
+//	            		{
+//	            			event.urls[i++] = url.@link.toString(); 
+//	            		}
+//	            		events.addItem(event);
+//	        		}
+//	        		timeline.generateTimeline();
+//	   		}
+	   		
+	   		/*
+	   		 * parser for the Simile JFK test data
+	   		 */
+	   		private function prepJFK(result:ResultEvent):void
+			{
+					var rawData:XML = result.result as XML;
+	
+	            	for each( var e:XML in rawData.event)
+	            	{
+	            		var event:TimelineEvent = new TimelineEvent();
+	            		event.name = e.@title;
+	            		event.description = e.description;
+	            		event.start = new Date (Date.parse(e.@start));
+	            		event.end = new Date (Date.parse(e.@end));
+	            		events.addItem(event);
+	        		}
+	   		}
+           ]]>
+		</mx:Script>	
+		
+		<mx:VBox width="100%" height="100%" verticalScrollPolicy="off">
+			<mx:HBox>
+				<mx:ComboBox dataProvider="{fileList}" id="filePicker" width="300" 
+	                	selectedIndex="0" change="loadFile(event)"/>	
+			</mx:HBox>
+			<centrifuge:TimelineView id="timeline" events="{events}" />
+		</mx:VBox>
+				
+		<mx:HTTPService id="eventData" url="{filePicker.selectedItem.value}" 
+			resultFormat="e4x" result="prepData(event)"  />	
+			
+</mx:Application>

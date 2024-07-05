@@ -1,0 +1,38 @@
+<project name="csi-jaas-gov-security" default="dist">
+
+
+
+    <path id="compile.classpath">
+
+        <fileset dir="../../lib">
+            <include name="hibernate/3.4/**/*.jar" />
+        </fileset>
+
+        <fileset dir="lib">
+            <include name="*.jar" />
+        </fileset>
+
+        <fileset dir="../../build/jars">
+            <include name="*.jar" />
+        </fileset>
+    </path>
+
+    <target name="clean">
+        <delete failonerror="false" includeemptydirs="true">
+            <fileset dir="target">
+            </fileset>
+        </delete>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="target/classes" />
+        <javac srcdir="src/main/java" destdir="target/classes">
+            <classpath refid="compile.classpath" />
+        </javac>
+    </target>
+
+    <target name="dist" depends="compile">
+        <jar destfile="target/${ant.project.name}.jar" basedir="target/classes">
+        </jar>
+    </target>
+</project>

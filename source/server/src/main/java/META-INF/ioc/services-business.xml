@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+    default-init-method="init" default-destroy-method="destroy">
+
+    <bean class="csi.server.business.service.BroadcastService" />
+    <bean class="csi.server.business.service.chart.ChartActionsServiceUtil" />
+    <bean class="csi.server.business.service.chart.ChartActionsService" />
+    <bean class="csi.server.business.service.chronos.ChronosActionsService" />
+    <bean class="csi.server.business.service.ColorActionsService">
+        <property name="brewerFile" value="classpath:brewer.csv" />
+    </bean>
+    <bean class="csi.server.business.service.DataViewActionsService" />
+    <bean class="csi.server.business.service.DataViewDefActionsService" />
+    <bean class="csi.server.business.service.resources.FileActionsService" />
+    <bean class="csi.server.business.service.filemanager.UploadService" />
+    <bean class="csi.server.business.service.FilterActionsService" />
+    <bean class="csi.server.business.service.GeoSpatialActionsService" />
+    <bean class="csi.server.business.service.GraphActionsService" />
+    <bean class="csi.server.business.service.GraphStatisticsService" />
+    <bean class="csi.server.business.service.GraphTimePlayerService" />
+    <bean class="csi.server.business.service.export.ExportActionsService" />
+    <bean class="csi.server.business.service.pattern.PatternActionsService" />
+    <bean class="csi.server.business.service.matrix.MatrixActionsService" />
+    <bean class="csi.server.business.service.ModelActionService" />
+    <bean class="csi.server.business.service.publish.PublishActionsService" />
+    <bean class="csi.server.business.service.SketchActionService" />
+    <bean class="csi.server.business.service.SysInfoActionsService" />
+    <bean class="csi.server.business.service.TableActionsService" />
+    <bean class="csi.server.business.service.TestActionsService" />
+    <bean class="csi.server.business.service.UserAdministrationService" />
+    <bean class="csi.server.business.service.VisualizationActionsService" />
+    <bean name="csi.server.business.service.InternationalizationService" class="csi.server.business.service.InternationalizationService" />
+    <bean class="csi.server.business.service.MapActionsService" />
+    <bean class="csi.server.business.service.theme.ThemeActionsService" />
+    <bean class="csi.server.business.service.icon.IconActionsService" />
+    <bean class="csi.server.business.service.chronos.TimelineActionsServiceUtil" />
+    <bean class="csi.server.business.service.ViewerActionService" />
+</beans>
+

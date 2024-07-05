@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+    default-init-method="init" default-destroy-method="destroy">
+
+    <bean id="di" class="csi.server.util.DependencyInjector" />
+    <bean class="csi.server.util.sql.impl.SQLFactoryImpl" />
+
+    <bean id="selectionBroadcastCache" class="csi.server.business.selection.cache.SelectionBroadcastCache">
+        <constructor-arg index="0" value="1000"/>
+        <constructor-arg index="1" value="1"/>
+        <constructor-arg index="2" value="HOURS"/>
+    </bean>
+
+    
+    <!-- <bean id="mapCache" class="csi.map.controller.MapCache">
+        <constructor-arg index="0" value="1000"/>
+        <constructor-arg index="1" value="1"/>
+        <constructor-arg index="2" value="HOURS"/>
+    </bean> -->
+
+	<bean id="fileCleaningTracker" class="org.apache.commons.io.FileCleaningTracker" />
+    <bean id="uploadManager" class="csi.server.business.service.filemanager.UserFileActionsService">
+        <property name="fileCleaningTracker" ref="fileCleaningTracker" />
+    </bean>
+
+    <!-- Jogformer start -->
+    <bean id="jogFormerNavigatorFactory" class="csi.server.util.jogformer.NavigatorFactory">
+        <property name="navigators">
+            <list>
+            	<bean class="csi.server.util.jogformer.ArrayTransformer" />
+                <bean class="csi.server.util.jogformer.ListNavigator" />
+                <bean class="csi.server.util.jogformer.SetNavigator" />
+                <bean class="csi.server.util.jogformer.MapNavigator" />
+                <bean class="csi.server.util.jogformer.BeanNavigator" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="preSessionJogformer" class="csi.server.util.jogformer.Jogformer">
+        <property name="transformerFactory">
+            <bean class="csi.server.util.jogformer.TransformerFactory">
+                <property name="transformers">
+                    <list>
+                        <bean class="csi.server.util.jogformer.HibernateCollectionHydrator" />
+                        <bean class="csi.server.util.jogformer.IdentityTransformer" />
+                    </list>
+                </property>
+            </bean>
+        </property>
+        <property name="navigatorFactory" ref="jogFormerNavigatorFactory" />
+    </bean>
+
+    <bean id="postSessionJogformer" class="csi.server.util.jogformer.Jogformer">
+        <property name="transformerFactory">
+            <bean class="csi.server.util.jogformer.TransformerFactory">
+                <property name="transformers">
+                    <list>
+                        <bean class="csi.server.util.jogformer.HibernateTransformer" />
+                        <bean class="csi.server.util.jogformer.HibernateCollectionTransformer" />
+                        <bean class="csi.server.util.jogformer.ModelObjectTransformer" />
+                        <bean class="csi.server.util.jogformer.IdentityTransformer" />
+                    </list>
+                </property>
+            </bean>
+        </property>
+        <property name="navigatorFactory" ref="jogFormerNavigatorFactory" />
+    </bean>
+    <!-- Jogformer end -->
+</beans>
+

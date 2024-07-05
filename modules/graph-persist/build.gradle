@@ -1,0 +1,19 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+def MONGO_VERSION = '2.10.1' //2.12.3
+def GUAVA_VERSION = '20.0'//17.0
+
+dependencies {
+
+    compile group: 'org.ow2.asm', name: 'asm', version: '5.0.3'
+    compile "org.mongodb:mongo-java-driver:$MONGO_VERSION"
+    compile ("com.google.guava:guava:$GUAVA_VERSION") {
+      exclude module: 'asm'
+    }
+    compile 'net.sf.jung:jung-graph-impl:2.0.1'
+    testCompile 'junit:junit:4.11'
+}

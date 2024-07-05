@@ -1,0 +1,115 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+	xmlns:gxtbutton="urn:import:com.sencha.gxt.widget.core.client.button"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
+	xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:gxtform="urn:import:com.sencha.gxt.widget.core.client.form"
+	xmlns:gxtgrid="urn:import:com.sencha.gxt.widget.core.client.grid"
+	xmlns:csiboot="urn:import:csi.client.gwt.widget.boot" xmlns:settings="urn:import:csi.client.gwt.viz.shared.settings"
+	xmlns:this="urn:import:csi.client.gwt.viz.chart.settings" xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes"
+	xmlns:csi="urn:import:csi.client.gwt.viz.shared"
+	xmlns:base="urn:import:com.github.gwtbootstrap.client.ui.base"
+    xmlns:buttons="urn:import:csi.client.gwt.widget.buttons"
+	>
+
+   <ui:style gss="true">
+    .list-box-label {
+    	margin: 0;
+    	text-align: center;
+    }
+    
+    .dialog {
+    	padding: 0 10px;
+    }
+    
+    .colsel {
+    	padding-top: 5px;
+    	padding-bottom: 5px;
+    }
+    
+    .padding {
+    	padding-right:35px
+    }
+    
+    </ui:style>
+
+    <ui:with field="resources"
+        type="csi.client.gwt.resources.ApplicationResources" />
+
+    <ui:with field="i18n"
+        type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+
+    <g:SimpleLayoutPanel width="100%" height="250px">
+        <boot:Form type="HORIZONTAL" width="100%">
+            <boot:Fieldset>
+                <boot:ControlGroup>
+                    <boot:ControlLabel for="nameField"
+                        title="{i18n.get.timelineGeneralTabNameField}">
+                        <base:InlineLabel
+                            text="{i18n.get.timelineGeneralTabNameField}" />
+                    </boot:ControlLabel>
+                    <boot:Controls>
+                        <boot:TextBox alternateSize="LARGE"
+                            boot:id="nameField" ui:field="name" />
+                    </boot:Controls>
+                </boot:ControlGroup>
+                <boot:ControlGroup>
+                    <boot:ControlLabel for="groupByField"
+                        title="{i18n.get.timelineSettingsGroupBy}">
+                        <base:InlineLabel
+                            text="{i18n.get.timelineSettingsGroupBy}" />
+                    </boot:ControlLabel>
+                    <boot:Controls>
+                        <combo:FieldDefComboBox
+                            ui:field="groupByField" addStyleNames="kml-field-list-combo-box" />
+                        <buttons:Button type="LINK" size="MINI"
+                            ui:field="clearGroup" addStyleNames="align-with-combo-box" text="{i18n.get.clear}">
+                        </buttons:Button>
+                    </boot:Controls>
+                </boot:ControlGroup>
+
+                <boot:ControlGroup>
+                    <boot:ControlLabel for="colorByField"
+                        title="{i18n.get.timelineSettingsColorBy}">
+                        <base:InlineLabel
+                            text="{i18n.get.timelineSettingsColorBy}" />
+                    </boot:ControlLabel>
+                    <boot:Controls>
+                        <combo:FieldDefComboBox
+                            ui:field="colorByField" addStyleNames="kml-field-list-combo-box" />
+                        <buttons:Button type="LINK" size="MINI"
+                            ui:field="clearColor" addStyleNames="align-with-combo-box" text="{i18n.get.clear}">
+                        </buttons:Button>
+                    </boot:Controls>
+                </boot:ControlGroup>
+                
+                <boot:ControlGroup>
+                    <boot:ControlLabel for="dotSizeField"
+                        title="{i18n.get.timelineSettingsSizeBy}">
+                        <base:InlineLabel
+                            text="{i18n.get.timelineSettingsSizeBy}" />
+                    </boot:ControlLabel>
+                    <boot:Controls>
+                        <combo:FieldDefComboBox
+                            ui:field="dotSizeField" addStyleNames="kml-field-list-combo-box" />
+                        <buttons:Button type="LINK" size="MINI"
+                            ui:field="clearDotSize" addStyleNames="align-with-combo-box" text="{i18n.get.clear}">
+                        </buttons:Button>
+                    </boot:Controls>
+                </boot:ControlGroup>
+
+
+                <!-- <boot:ControlGroup> -->
+                <!-- <boot:ControlLabel for="dotSizesField">Dot Size</boot:ControlLabel> -->
+                <!-- <boot:Controls> -->
+                <!-- <field:FieldDefComboBox ui:field="dotSizeField" -->
+                <!-- addStyleNames="kml-field-list-combo-box"/> -->
+                <!-- </boot:Controls> -->
+                <!-- </boot:ControlGroup> -->
+
+
+            </boot:Fieldset>
+        </boot:Form>
+    </g:SimpleLayoutPanel>
+</ui:UiBinder>

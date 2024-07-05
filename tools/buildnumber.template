@@ -1,0 +1,2 @@
+release.version=@git.branch@@eval.build.tag@
+build.number=@build.number@

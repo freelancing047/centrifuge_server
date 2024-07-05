@@ -1,0 +1,158 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' 
+	xmlns:boot="urn:import:csi.client.gwt.widget.boot"
+	xmlns:gwtbootstrap="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:buttons="urn:import:csi.client.gwt.widget.buttons" 
+	xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes"
+	xmlns:base="urn:import:com.github.gwtbootstrap.client.ui.base">
+
+	<ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+	<boot:Dialog ui:field="dialog">
+		<gwtbootstrap:FluidContainer
+			addStyleNames="kml-mapping-container">
+			<gwtbootstrap:FluidRow>
+				<gwtbootstrap:Heading size="4" text="{i18n.get.editKmlMappingHeader}">
+				</gwtbootstrap:Heading>
+			</gwtbootstrap:FluidRow>
+			<gwtbootstrap:FluidRow>
+				<gwtbootstrap:Column size="6">
+					<gwtbootstrap:FluidRow>
+						<gwtbootstrap:Form type="HORIZONTAL"
+							addStyleNames="kml-mapping-form">
+							<gwtbootstrap:Fieldset>
+								<gwtbootstrap:ControlGroup>
+									<gwtbootstrap:ControlLabel>
+										<base:InlineLabel text="{i18n.get.editKmlNameLabel}" />
+									</gwtbootstrap:ControlLabel>
+									<gwtbootstrap:Controls>
+										<base:TextBox ui:field="nameTextBox" />
+									</gwtbootstrap:Controls>
+								</gwtbootstrap:ControlGroup>
+								<gwtbootstrap:ControlGroup>
+									<gwtbootstrap:ControlLabel>
+										<base:InlineLabel text="{i18n.get.editKmlLocationLabel}" />
+									</gwtbootstrap:ControlLabel>
+									<gwtbootstrap:Controls>
+										<g:RadioButton name="locationType" ui:field="AddressRadioButton" text="{i18n.get.editKmlAddressRadioLabel}">
+										</g:RadioButton>
+										<g:RadioButton name="locationType" ui:field="LatLongRadioButton"
+											text="{i18n.get.editKmlLatLongLabel}">
+										</g:RadioButton>
+									</gwtbootstrap:Controls>
+								</gwtbootstrap:ControlGroup>
+								<gwtbootstrap:ControlGroup ui:field="LatitudeControlGroup">
+									<gwtbootstrap:ControlLabel>
+										<base:InlineLabel text="{i18n.get.editKmlLatLabel}" />
+										
+									</gwtbootstrap:ControlLabel>
+									<gwtbootstrap:Controls>
+										<combo:FieldDefComboBox ui:field="latFDCB"
+											addStyleNames="kml-field-list-combo-box" />
+									</gwtbootstrap:Controls>
+								</gwtbootstrap:ControlGroup>
+								<gwtbootstrap:ControlGroup ui:field="LongitudeControlGroup">
+									<gwtbootstrap:ControlLabel>
+										<base:InlineLabel text="{i18n.get.editKmlLongLabel}" />
+									</gwtbootstrap:ControlLabel>
+									<gwtbootstrap:Controls>
+										<combo:FieldDefComboBox ui:field="longFDCB"
+											addStyleNames="kml-field-list-combo-box" />
+									</gwtbootstrap:Controls>
+								</gwtbootstrap:ControlGroup>
+								<gwtbootstrap:ControlGroup ui:field="AddressControlGroup">
+									<gwtbootstrap:ControlLabel>
+										<base:InlineLabel text="{i18n.get.editKmlAddressDropdownLabel}" />
+									</gwtbootstrap:ControlLabel>
+									<gwtbootstrap:Controls>
+										<combo:FieldDefComboBox ui:field="addressFDCB"
+											addStyleNames="kml-field-list-combo-box" />
+										<buttons:Button type="LINK" size="MINI"
+											ui:field="multiAddress" text="{i18n.get.useMultipleLabel}">
+										</buttons:Button>
+									</gwtbootstrap:Controls>
+								</gwtbootstrap:ControlGroup>
+								<gwtbootstrap:ControlGroup>
+									<gwtbootstrap:ControlLabel>
+										<base:InlineLabel text="{i18n.get.editKmlLabelLabel}" />
+									</gwtbootstrap:ControlLabel>
+									<gwtbootstrap:Controls>
+										<combo:FieldDefComboBox ui:field="labelFDCB"
+											addStyleNames="kml-field-list-combo-box" />
+										<buttons:Button type="LINK" size="MINI"
+											ui:field="multiLabel"  text="{i18n.get.useMultipleLabel}" >
+										</buttons:Button>
+									</gwtbootstrap:Controls>
+								</gwtbootstrap:ControlGroup>
+								<gwtbootstrap:ControlGroup>
+									<gwtbootstrap:ControlLabel>
+										<base:InlineLabel text="{i18n.get.editKmlDetailsLabel}" />
+									</gwtbootstrap:ControlLabel>
+									<gwtbootstrap:Controls>
+										<combo:FieldDefComboBox ui:field="detailsFDCB"
+											addStyleNames="kml-field-list-combo-box" />
+										<buttons:Button type="LINK" size="MINI"
+											ui:field="multiDetails" text="{i18n.get.useMultipleLabel}" >
+										</buttons:Button>
+									</gwtbootstrap:Controls>
+								</gwtbootstrap:ControlGroup>
+							</gwtbootstrap:Fieldset>
+						</gwtbootstrap:Form>
+					</gwtbootstrap:FluidRow>
+				</gwtbootstrap:Column>
+				<gwtbootstrap:Column size="6">
+					<gwtbootstrap:FluidRow>
+						<gwtbootstrap:Form type="HORIZONTAL"
+							addStyleNames="kml-mapping-form">
+							<gwtbootstrap:Fieldset>
+								<gwtbootstrap:ControlGroup>
+									<gwtbootstrap:ControlLabel>
+										<base:InlineLabel text="{i18n.get.editKmlStartLabel}" />
+									</gwtbootstrap:ControlLabel>
+									<gwtbootstrap:Controls>
+										<combo:FieldDefComboBox addStyleNames="kml-field-list-combo-box"
+											ui:field="startTimeFDCB" />
+									</gwtbootstrap:Controls>
+								</gwtbootstrap:ControlGroup>
+								<gwtbootstrap:ControlGroup>
+									<gwtbootstrap:ControlLabel>
+										<base:InlineLabel text="{i18n.get.editKmlEndLabel}" />
+									</gwtbootstrap:ControlLabel>
+									<gwtbootstrap:Controls>
+										<combo:FieldDefComboBox addStyleNames="kml-field-list-combo-box"
+											ui:field="endTimeFDCB" />
+									</gwtbootstrap:Controls>
+								</gwtbootstrap:ControlGroup>
+								<gwtbootstrap:ControlGroup>
+									<gwtbootstrap:ControlLabel>
+										<base:InlineLabel text="{i18n.get.editKmlDurationLabel}" />
+									</gwtbootstrap:ControlLabel>
+									<gwtbootstrap:Controls>
+										<combo:FieldDefComboBox addStyleNames="kml-field-list-combo-box"
+											ui:field="durationFDCB" />
+									</gwtbootstrap:Controls>
+								</gwtbootstrap:ControlGroup>
+								<gwtbootstrap:ControlGroup>
+									<gwtbootstrap:ControlLabel>
+                                            <base:InlineLabel text="{i18n.get.editKmlFieldIconLabel}" /></gwtbootstrap:ControlLabel>
+									<gwtbootstrap:Controls>
+										<g:RadioButton name="iconType" ui:field="iconFixedRadioButton" text="{i18n.get.editKmlFixedRadioLabel}">
+										</g:RadioButton>
+										<g:RadioButton name="iconType" ui:field="iconFieldRadioButton" text="{i18n.get.editKmlFieldRadioLabel}">
+										</g:RadioButton>
+										<combo:StringComboBox ui:field="iconListBox" />
+										<combo:FieldDefComboBox addStyleNames="kml-field-list-combo-box"
+											ui:field="iconFDCB" visible="false" />
+									</gwtbootstrap:Controls>
+								</gwtbootstrap:ControlGroup>
+							</gwtbootstrap:Fieldset>
+						</gwtbootstrap:Form>
+					</gwtbootstrap:FluidRow>
+					<gwtbootstrap:FluidRow>
+						<gwtbootstrap:Image addStyleNames="kml-icon-preview"
+							ui:field="iconImage" />
+					</gwtbootstrap:FluidRow>
+				</gwtbootstrap:Column>
+			</gwtbootstrap:FluidRow>
+		</gwtbootstrap:FluidContainer>
+	</boot:Dialog>
+</ui:UiBinder>

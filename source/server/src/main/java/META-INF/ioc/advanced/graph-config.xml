@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="graphAdvConfig" class="csi.config.advanced.GraphAdvConfig">
+
+        <property name="defaultLinkColor" ref="graphAdvDefaultLinkColor"/>
+        <property name="defaultNewGenColor" ref="graphAdvDefaultNewGenColor"/>
+        <property name="defaultUpdateGenColor" ref="graphAdvDefaultUpdateGenColor"/>
+        <property name="defaultSelectionColor" ref="graphAdvDefaultSelectionColor"/>
+        <property name="highlightColor" ref="graphAdvDefaultHighlightColor"/>
+        <property name="pathHighlightColor" ref="graphAdvDefaultPathHighlightColor"/>
+        <property name="tooltips" ref="graphAdvTooltips"/>
+        <property name="playerConfig" ref="playerConfig"/>
+        <property name="persistAsync" value="true"/>
+        <property name="saveBeforeLayout" value="false"/>
+        <property name="useConcurrentLayout" value="true"/>
+        <property name="dynamicallyCreatedTooltips" value="true" />
+        <property name="patternConfig" ref="patternConfig"/>
+        <property name="maxLayoutIterations" value="10000"/>
+        <property name="linkTargetingHelp" value="5"/>
+        <property name="defaultTheme" value="Graph-Circular" />
+        <property name="defaultLayoutIterations" value="50" />
+        <property name="defaultHierarchicalLayoutOrientation" value="LEFT_TO_RIGHT" />
+    </bean>
+
+    <bean id="graphAdvDefaultLinkColor" class="java.awt.Color">
+        <constructor-arg index="0" type="int" value="0"/>
+        <constructor-arg index="1" type="int" value="0"/>
+        <constructor-arg index="2" type="int" value="0"/>
+        <constructor-arg index="3" type="int" value="255"/>
+    </bean>
+
+    <bean id="graphAdvDefaultNewGenColor" class="java.awt.Color">
+        <constructor-arg index="0" type="int" value="255"/>
+        <constructor-arg index="1" type="int" value="50"/>
+        <constructor-arg index="2" type="int" value="50"/>
+        <constructor-arg index="3" type="int" value="255"/>
+    </bean>
+
+    <bean id="graphAdvDefaultUpdateGenColor" class="java.awt.Color">
+        <constructor-arg index="0" type="int" value="50"/>
+        <constructor-arg index="1" type="int" value="50"/>
+        <constructor-arg index="2" type="int" value="255"/>
+        <constructor-arg index="3" type="int" value="255"/>
+    </bean>
+
+    <bean id="graphAdvDefaultSelectionColor" class="java.awt.Color">
+        <constructor-arg index="0" type="int" value="255"/>
+        <constructor-arg index="1" type="int" value="133"/>
+        <constructor-arg index="2" type="int" value="10"/>
+        <constructor-arg index="3" type="int" value="200"/>
+    </bean>
+
+    <bean id="graphAdvDefaultHighlightColor" class="java.awt.Color">
+        <constructor-arg index="0" type="int" value="40"/>
+        <constructor-arg index="1" type="int" value="205"/>
+        <constructor-arg index="2" type="int" value="255"/>
+        <constructor-arg index="3" type="int" value="255"/>
+    </bean>
+
+    <bean id="graphAdvDefaultPathHighlightColor" class="java.awt.Color">
+        <constructor-arg index="0" type="int" value="0"/>
+        <constructor-arg index="1" type="int" value="0"/>
+        <constructor-arg index="2" type="int" value="255"/>
+        <constructor-arg index="3" type="int" value="100"/>
+    </bean>
+
+    <bean id="graphAdvTooltips" class="csi.config.advanced.graph.TooltipAdvConfig">
+        <property name="defaultLineBehavior" value="HOVER"/>
+        <property name="minWidth" value="125"/>
+        <property name="maxWidth" value="10000"/>
+        <property name="minHeight" value="75"/>
+        <property name="maxHeight" value="10000"/>
+        <property name="delay_ms" value="1000"/>
+        <property name="dashes">
+            <list>
+                <value>10</value>
+                <value>0</value>
+            </list>
+        </property>
+        <property name="requireSafeURI" value="true"/>
+        <property name="uriSchemeWhiteList">
+            <list>
+            </list>
+        </property>
+        <property name="uriPatternWhiteList">
+            <list>
+            </list>
+        </property>
+    </bean>
+    <bean id="playerConfig" class="csi.config.advanced.graph.PlayerConfig">
+        <property name="controlBarConfig" ref="controlBarConfig"/>
+
+    </bean>
+    <bean id="controlBarConfig" class="csi.config.advanced.graph.ControlBarConfig">
+        <property name="startColor" value="#009D01"/>
+        <property name="endColor" value="#CC4436"/>
+        <property name="positionColor" value="#52A9CC"/>
+    </bean>
+
+    <bean id="patternConfig" class="csi.config.advanced.graph.PatternConfig">
+        <property name="enabled" value="true"/>
+        <property name="startWithServer" value="true"/>
+        <property name="host" value="http://localhost:7474" />
+        <property name="combinationLimit" value="300" />
+        <property name="permutationLimit" value="10000" />
+    </bean>
+</beans>

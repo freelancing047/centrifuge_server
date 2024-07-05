@@ -1,0 +1,30 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+        xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:g="urn:import:com.google.gwt.user.client.ui"
+        xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui">
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <g:HTMLPanel ui:field="panel">
+        <ul
+                class="dropdown-menu"
+                style="display: block;">
+            <boot:NavLink ui:field="selectLink" text="{i18n.get.graphContextMenu_select}"/>
+            <boot:NavLink ui:field="showDetailsLink" text="{i18n.get.graphContextMenu_showDetails}"/>
+            <boot:NavLink ui:field="deselectLink" text="{i18n.get.graphContextMenu_deselect}"/>
+            <boot:NavLink ui:field="bundleLink" text="{i18n.get.graphContextMenu_bundle}"/>
+            <boot:NavLink ui:field="quickUnbundleLink" text="{i18n.get.graphContextMenu_unbundle}"/>
+            <boot:NavLink ui:field="hideSelectionLink" text="{i18n.get.graphContextMenu_hideSelection}"/>
+            <boot:NavLink ui:field="showOnlyLink" text="{i18n.get.graphContextMenu_showOnly}"/>
+            <boot:NavLink ui:field="quickRevealNeighborsLink" text="{i18n.get.graphContextMenu_revealNeighbors}"/>
+            <boot:NavLink ui:field="quickSelectNeighborsLink" text="{i18n.get.graphContextMenu_selectNeighbors}"/>
+            <boot:NavLink ui:field="selectAllLink" text="{i18n.get.graphContextMenu_selectAll}"/>
+            <boot:NavLink ui:field="deselectAllLink" text="{i18n.get.graphContextMenu_deselectAll}"/>
+            <boot:NavLink ui:field="plunkNodeLink" text="{i18n.get.graphContextMenu_addNewNode}"/>
+            <boot:NavLink ui:field="plunkLinkLink" text="{i18n.get.graphContextMenu_addNewLink}"/>
+            <boot:NavLink ui:field="editPlunkedLink" text="{i18n.get.graphContextMenu_edit}"/>
+            <boot:NavLink ui:field="deletePlunkedLink" text="{i18n.get.graphContextMenu_delete}"/>
+            <boot:NavLink ui:field="addAnnotationLink" text="{i18n.get.graphContextMenu_comment}"/>
+            <boot:NavLink ui:field="unhideAll" text="{i18n.get.menuKeyConstants_unhide_all}"/>
+        </ul>
+    </g:HTMLPanel>
+</ui:UiBinder>

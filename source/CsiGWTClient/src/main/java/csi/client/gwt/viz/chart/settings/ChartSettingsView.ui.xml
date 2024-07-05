@@ -1,0 +1,39 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:settings="urn:import:csi.client.gwt.viz.shared.settings"
+	xmlns:csiboot="urn:import:csi.client.gwt.widget.boot"
+	xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:tabs="urn:import:csi.client.gwt.viz.chart.settings">
+
+   <ui:style gss="true">
+    </ui:style>
+
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <ui:with field="dataViewDef" type="csi.server.common.model.dataview.DataViewDef" />
+    <ui:with field="visualizationDef" type="csi.server.common.model.visualization.chart.DrillChartViewDef" />
+
+    <settings:VisualizationSettingsModal ui:field="vizSettings" title="{i18n.get.chartSettingsView_title}"
+        visualizationDef="{visualizationDef}" dataViewDef="{dataViewDef}" bodyWidth="800px" bodyHeight="300px">
+        <csiboot:CsiTabPanel tabPosition="left">
+            <boot:Tab heading="{i18n.get.chartSettingsView_generalTab}">
+                <tabs:ChartGeneralTab ui:field="generalTab" />
+            </boot:Tab>
+            <boot:Tab heading="{i18n.get.chartSettingsView_categoriesTab}">
+                <tabs:ChartCategoriesTab ui:field="tabCategories" />
+            </boot:Tab>
+            <boot:Tab heading="{i18n.get.chartSettingsView_measuresTab}" ui:field="measuresNav">
+                <tabs:ChartMeasuresTab ui:field="tabMeasures" />
+            </boot:Tab>
+            <boot:Tab heading="{i18n.get.chartSettingsView_sortTab}">
+                <tabs:ChartSortTab ui:field="tabSort" />
+            </boot:Tab>
+            <boot:Tab heading="{i18n.get.chartSettingsView_filterTab}" ui:field="tabFilterContainer">
+                <tabs:ChartFilterTab ui:field="tabFilter" />
+            </boot:Tab>
+            <boot:Tab heading="{i18n.get.chartSettingsView_advancedTab}">
+                <tabs:ChartAdvancedTab ui:field="tabAdvanced" />
+            </boot:Tab>
+        </csiboot:CsiTabPanel>
+    </settings:VisualizationSettingsModal>
+
+</ui:UiBinder>

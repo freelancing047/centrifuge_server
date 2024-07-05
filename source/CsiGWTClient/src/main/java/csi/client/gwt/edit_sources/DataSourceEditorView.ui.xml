@@ -1,0 +1,149 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:csiwiz="urn:import:csi.client.gwt.csiwizard.panels"
+             xmlns:csibutton="urn:import:csi.client.gwt.widget.buttons"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:gwt="urn:import:csi.client.gwt.widget.ui"
+             xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+             xmlns:b="urn:import:com.github.gwtbootstrap.client.ui.base">
+
+	<ui:style>
+		.container {
+			background-color: white;
+		}
+
+        .radioButtonPanel {
+            background-color: #F5F5F5;
+            border-top: 1px solid #DDDDDD;
+            box-shadow: 0 1px 0 #FFFFFF inset;
+            padding: 5px 5px 0px 0px;
+            text-align: left;
+        }
+
+        .miniButtonPanel {
+            background-color: #F5F5F5;
+            border-top: 1px solid #DDDDDD;
+            box-shadow: 0 1px 0 #FFFFFF inset;
+            padding: 5px 5px 0px 0px;
+            text-align: right;
+        }
+
+        .buttonPanel {
+            background-color: #F5F5F5;
+            border-top: 1px solid #DDDDDD;
+            box-shadow: 0 1px 0 #FFFFFF inset;
+            padding: 10px 10px 0px 0px;
+            text-align: right;
+        }
+
+        .miniButtonSpace {
+            margin-left: 5px;
+        }
+
+        .buttonSpace {
+            margin-left: 10px;
+        }
+
+		.buttonSpaceLarge {
+			margin-left: 50px;
+		}
+		
+		.leftControls {
+			position: absolute;
+			left: 10px;
+			bottom: 10px;
+		}
+	</ui:style>
+
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <ui:with field="buttonParametersText" type="java.lang.String" />
+    <ui:with field="buttonFieldsText" type="java.lang.String" />
+    <ui:with field="buttonMapText" type="java.lang.String" />
+    <ui:with field="buttonSaveText" type="java.lang.String" />
+    <ui:with field="buttonCancelText" type="java.lang.String" />
+    <ui:with field="buttonPreviousText" type="java.lang.String" />
+    <ui:with field="buttonNextText" type="java.lang.String" />
+    <ui:with field="buttonDeleteText" type="java.lang.String" />
+    <ui:with field="buttonReplaceText" type="java.lang.String" />
+    <ui:with field="buttonEditText" type="java.lang.String" />
+    <ui:with field="eastWidth" type="java.lang.Double" />
+    <ui:with field="westWidth" type="java.lang.Double" />
+    <ui:with field="buttonPropertiesText" type="java.lang.String" />
+
+	<gwt:FullSizeLayoutPanel addStyleNames="{style.container}">
+		<gwt:layer top="0" bottom="50px" left="0" right="5">
+			<g:SplitLayoutPanel ui:field="rootPanel">
+			<!-- TODO: Find a way to dynamically set this -->
+				<g:west size="{westWidth}">
+					<csiwiz:WizardPanelInterfacePanel width="100%" height="100%"
+						ui:field="leftPanel" />
+				</g:west>
+				<g:east size="{eastWidth}">
+                    <gwt:FullSizeLayoutPanel>
+                        <gwt:layer top="0" height="35px" right="0" width="100%">
+                            <b:DivWidget addStyleNames="{style.miniButtonPanel}">
+                                <g:FlowPanel>
+                                    <csibutton:MiniBlueButton ui:field="buttonProperties" addStyleNames="{style.miniButtonSpace}" width="50px" text="{buttonPropertiesText}" />
+                                    <csibutton:MiniButton ui:field="buttonMap" addStyleNames="{style.miniButtonSpace}" width="50px" text="{buttonMapText}" />
+                                    <csibutton:MiniBlueButton ui:field="buttonFields" addStyleNames="{style.miniButtonSpace}" width="50px" text="{buttonFieldsText}" />
+                                    <csibutton:MiniBlueButton ui:field="buttonParameters" addStyleNames="{style.miniButtonSpace}" width="50px" text="{buttonParametersText}" />
+                                </g:FlowPanel>
+                            </b:DivWidget>
+                        </gwt:layer>
+                        <gwt:layer top="35px" bottom="0px" left="0" width="100%">
+                            <g:SimpleLayoutPanel width="100%" height="100%"
+                                ui:field="rightPanel" />
+                        </gwt:layer>
+                    </gwt:FullSizeLayoutPanel>
+				</g:east>
+				<g:center>
+					<gwt:FullSizeLayoutPanel>
+                        <gwt:layer top="0" height="35px" left="0" width="50%">
+                            <b:DivWidget addStyleNames="{style.radioButtonPanel}">
+                                <g:HorizontalPanel>
+                                    <boot:RadioButton name="sizing" ui:field="smallRadioButton" addStyleNames="{style.buttonSpace}" value="false" text="{i18n.get.dataSourceEditor_radioButton_smallDisplay}" />
+                                    <boot:RadioButton name="sizing" ui:field="largeRadioButton" addStyleNames="{style.buttonSpace}" value="true" text="{i18n.get.dataSourceEditor_radioButton_largeDisplay}" />
+                                    <boot:CheckBox ui:field="hideConnectors" addStyleNames="{style.buttonSpace}" checked="false" text="{i18n.get.dataSourceEditor_checkbox_hideConnectors}" />
+                                </g:HorizontalPanel>
+                            </b:DivWidget>
+                        </gwt:layer>
+                        <gwt:layer top="0" height="35px" right="0" width="50%">
+                            <b:DivWidget addStyleNames="{style.miniButtonPanel}">
+                                <g:FlowPanel>
+                                    <csibutton:MiniRedButton ui:field="deleteObject" addStyleNames="{style.miniButtonSpace}" width="50px" text="{buttonDeleteText}" />
+                                    <csibutton:MiniBlueButton ui:field="replaceObject" addStyleNames="{style.miniButtonSpace}" width="50px" text="{buttonReplaceText}" />
+                                </g:FlowPanel>
+                            </b:DivWidget>
+                        </gwt:layer>
+                        <gwt:layer top="35" bottom="30px">
+                            <g:ScrollPanel ui:field="centerPanel" />
+                        </gwt:layer>
+						<gwt:layer bottom="0px" height="25px">
+							<g:HorizontalPanel width="100%">
+								<g:cell horizontalAlignment="ALIGN_CENTER" width="100%">
+                                    <g:Label ui:field="statusLabel" />
+								</g:cell>
+							</g:HorizontalPanel>
+						</gwt:layer>
+					</gwt:FullSizeLayoutPanel>
+				</g:center>
+			</g:SplitLayoutPanel>
+		</gwt:layer>
+		<gwt:layer bottom="0px" height="50px">
+			<b:DivWidget addStyleNames="{style.buttonPanel}">
+				<g:FlowPanel>
+                    <!--
+                    <csibutton:CyanButton ui:field="buttonParameters" addStyleNames="{style.buttonSpace}" width="80px" text="{buttonParametersText}"></csibutton:CyanButton>
+                    <csibutton:CyanButton ui:field="buttonFields" addStyleNames="{style.buttonSpace}" width="80px" text="{buttonFieldsText}"></csibutton:CyanButton>
+                    <csibutton:Button ui:field="buttonMap" type="INFO" addStyleNames="{style.buttonSpace}" width="80px" text="{buttonMapText}"></csibutton:Button>
+                    -->
+                    <csibutton:SimpleButton ui:field="buttonPrevious" addStyleNames="{style.buttonSpaceLarge}" width="80px" text="{buttonPreviousText}"></csibutton:SimpleButton>
+                    <csibutton:BlueButton ui:field="buttonNext" addStyleNames="{style.buttonSpace}" width="80px" text="{buttonNextText}"></csibutton:BlueButton>
+                    <csibutton:GreenButton ui:field="buttonSave" addStyleNames="{style.buttonSpace}" width="80px" text="{buttonSaveText}"></csibutton:GreenButton>
+                    <csibutton:SimpleButton ui:field="buttonCancel" addStyleNames="{style.buttonSpace}" width="80px" text="{buttonCancelText}"></csibutton:SimpleButton>
+				</g:FlowPanel>
+			</b:DivWidget>
+		</gwt:layer>
+	</gwt:FullSizeLayoutPanel>
+
+</ui:UiBinder>

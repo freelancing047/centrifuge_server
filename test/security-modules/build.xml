@@ -1,0 +1,44 @@
+<project name="Module Samples" default="usage">
+	
+	<property file="build.properties" />
+	
+	<property name="server.home" value="c:/git/build/centrifuge-server" />
+	
+	<path id="compile.cp">
+		<fileset dir="${server.home}/lib" />
+		<fileset dir="${server.home}/webapps/Centrifuge/WEB-INF/lib" />
+	</path>
+	
+
+	<target name="usage">
+		<echo>This project contains sample test implementations of modules that can be</echo>
+		<echo>registered with Centrifuge server for security labels/classification testing.</echo>
+		<echo />
+		<echo>Please use ant -projecthelp for a list of the available targets.</echo>
+	</target>
+		
+	<target name="init">
+		<mkdir dir="${basedir}/target" />
+		<mkdir dir="${basedir}/target/classes" />
+	</target>
+	
+	<target name="compile" depends="init" description="complies the test implementations">
+		<javac srcdir="${basedir}/src/java" destdir="${basedir}/target/classes">
+			<classpath refid="compile.cp">
+			</classpath>
+		</javac>
+	</target>
+	
+	<target name="jar" depends="compile" description="build jar file for deployment">
+		<jar file="target/test-module.jar">
+			<fileset dir="${basedir}/target/classes">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+	</target>
+	
+	<target name="clean" description="clean up temporary files">
+	   <delete dir="${basedir}/target" includeemptydirs="true" failonerror="false" />
+	</target>
+	
+</project>

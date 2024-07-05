@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="jkim" id="annotationCard-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="annotationcarddef">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="creatorusername" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="createtime" type="timestamp with time zone">
+                <constraints nullable="false" />
+            </column>
+            <column name="content" type="text">
+                <constraints nullable="false" />
+            </column>
+            <column name="isedited" type="BOOLEAN">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="jkim" id="annotationCard-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+    <createTable tableName="datamodeldef_annotationcarddef">
+        <column name="datamodeldef_uuid" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="annotationcarddefs_uuid" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+        </column>
+    </createTable>
+</changeSet>
+</databaseChangeLog>

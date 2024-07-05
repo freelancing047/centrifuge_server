@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map map_file="../resources/mapchart/maps/usa.swf" zoom="100%" zoom_x="0%" zoom_y="0%">
+  <areas>
+<area mc_name="borders" title="borders" color="#000000" balloon="false" />
+<area mc_name="AL" title="Alabama" />
+<area mc_name="AK" title="Alaska" />
+<area mc_name="AZ" title="Arizona" />
+<area mc_name="AR" title="Arkansas" />
+<area mc_name="CA" title="California" />
+<area mc_name="CO" title="Colorado" />
+<area mc_name="CT" title="Connecticut" />
+<area mc_name="DE" title="Delaware" />
+<area mc_name="DC" title="District of Columbia"/>
+<area mc_name="FL" title="Florida" />
+<area mc_name="GA" title="Georgia" />
+<area mc_name="HI" title="Hawaii" />
+<area mc_name="ID" title="Idaho" />
+<area mc_name="IL" title="Illinois" />
+<area mc_name="IN" title="Indiana" />
+<area mc_name="IA" title="Iowa" />
+<area mc_name="KS" title="Kansas" />
+<area mc_name="KY" title="Kentucky" />
+<area mc_name="LA" title="Louisiana" />
+<area mc_name="ME" title="Maine" />
+<area mc_name="MD" title="Maryland" />
+<area mc_name="MA" title="Massachusetts" />
+<area mc_name="MI" title="Michigan" />
+<area mc_name="MN" title="Minnesota" />
+<area mc_name="MS" title="Mississippi" />
+<area mc_name="MO" title="Missouri" />
+<area mc_name="MT" title="Montana" />
+<area mc_name="NE" title="Nebraska" />
+<area mc_name="NV" title="Nevada" />
+<area mc_name="NH" title="New Hampshire" />
+<area mc_name="NJ" title="New Jersey" />
+<area mc_name="NM" title="New Mexico" />
+<area mc_name="NY" title="New York" />
+<area mc_name="NC" title="North Carolina" />
+<area mc_name="ND" title="North Dakota" />
+<area mc_name="OH" title="Ohio" />
+<area mc_name="OK" title="Oklahoma" />
+<area mc_name="OR" title="Oregon" />
+<area mc_name="PA" title="Pennsylvania" />
+<area mc_name="RI" title="Rhode Island" />
+<area mc_name="SC" title="South Carolina" />
+<area mc_name="SD" title="South Dakota" />
+<area mc_name="TN" title="Tennessee" />
+<area mc_name="TX" title="Texas" />
+<area mc_name="UT" title="Utah" />
+<area mc_name="VT" title="Vermont" />
+<area mc_name="VA" title="Virginia" />
+<area mc_name="WA" title="Washington" />
+<area mc_name="WV" title="West Virginia" />
+<area mc_name="WI" title="Wisconsin" />
+<area mc_name="WY" title="Wyoming" />
+  </areas>
+</map>

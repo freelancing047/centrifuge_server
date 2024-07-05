@@ -1,0 +1,59 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:boot="urn:import:csi.client.gwt.widget.boot"
+             xmlns:gwtbootstrap="urn:import:com.github.gwtbootstrap.client.ui"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:core="urn:import:com.sencha.gxt.widget.core.client"
+             xmlns:csi="urn:import:csi.client.gwt.viz.shared">
+   <ui:style gss="true">
+        .dialog {
+            padding: 0 10px;
+        }
+
+        .list-box-label {
+            margin: 0;
+            text-align: center;
+        }
+        
+        .colsel {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    </ui:style>
+    
+    
+    <ui:with field="header" type="java.lang.String" />
+    <ui:with field="availableLabel" type="java.lang.String" />
+    <ui:with field="selectedLabel" type="java.lang.String" />
+    
+    <boot:Dialog ui:field="dialog">
+        <gwtbootstrap:FluidContainer height="275" width="400px" addStyleNames="{style.dialog}">
+            <gwtbootstrap:FluidRow>
+                <gwtbootstrap:Heading size="4" addStyleNames="{style.list-box-label}" text="{header}">
+                </gwtbootstrap:Heading>
+            </gwtbootstrap:FluidRow>
+            <gwtbootstrap:FluidRow>
+                <gwtbootstrap:Column size="6">
+                    <gwtbootstrap:Heading size="5" addStyleNames="{style.list-box-label}" text="{availableLabel}">
+                    </gwtbootstrap:Heading>
+                </gwtbootstrap:Column>
+                <gwtbootstrap:Column size="6">
+                    <gwtbootstrap:Heading size="5" addStyleNames="{style.list-box-label}" text="{selectedLabel}">
+                    </gwtbootstrap:Heading>
+                </gwtbootstrap:Column>
+            </gwtbootstrap:FluidRow>
+            <!-- <gwtbootstrap:FluidRow ui:field="dualListBoxRow">
+                <gwtbootstrap:Column size="6">
+                    <g:SimplePanel>
+                        <core:ListView ui:field="availableFieldDefListView" height="200px" width="200px"/>
+                    </g:SimplePanel>
+                </gwtbootstrap:Column>
+                <gwtbootstrap:Column size="6">
+                    <g:SimplePanel>
+                        <core:ListView ui:field="selectedFieldDefListView" height="200px" width="200px"/>
+                    </g:SimplePanel>
+                </gwtbootstrap:Column>
+            </gwtbootstrap:FluidRow> -->
+            <csi:CsiDualListField addStyleNames="{style.colsel}" ui:field="dualListField" />
+        </gwtbootstrap:FluidContainer>
+    </boot:Dialog>
+</ui:UiBinder>

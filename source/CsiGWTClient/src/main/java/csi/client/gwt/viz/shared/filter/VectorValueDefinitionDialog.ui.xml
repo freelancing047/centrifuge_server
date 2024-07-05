@@ -1,0 +1,67 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+	xmlns:gxtbutton="urn:import:com.sencha.gxt.widget.core.client.button"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
+	xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+	xmlns:gxtform="urn:import:com.sencha.gxt.widget.core.client.form"
+	xmlns:gxtgrid="urn:import:com.sencha.gxt.widget.core.client.grid"
+	xmlns:csiboot="urn:import:csi.client.gwt.widget.boot" xmlns:settings="urn:import:csi.client.gwt.viz.shared.settings"
+	xmlns:tabs="urn:import:csi.client.gwt.viz.chart.settings" xmlns:gwt="urn:import:csi.client.gwt.widget.ui">
+
+	<ui:style>
+		.selectedValueList {
+			width: 250px;
+		}
+		
+		.table {
+			padding: 3px;
+			width: 100%;
+		}
+		
+		.maxCell {
+			width: 100%;
+		}
+		
+		.deleteCell {
+			width: 100%;
+			text-align: right;
+		}
+	</ui:style>
+
+	<ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+	<ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+
+	<csiboot:Dialog title="Filter expression value"
+		bodyWidth="350px" bodyHeight="300px">
+		<gwt:FullSizeLayoutPanel>
+			<gwt:layer top="0" height="60px">
+				<g:HTMLPanel>
+					<table class="{style.table}">
+						<tr>
+							<td>
+								<g:HorizontalPanel ui:field="fieldContainer" />
+							</td>
+							<td>
+								<boot:Button size="MINI" ui:field="buttonAdd" text="{i18n.get.add}" />
+							</td>
+							<td class="{style.maxCell}"></td>
+						</tr>
+						<tr>
+							<td colspan="3" class="{style.deleteCell}">
+								<boot:Button size="MINI" ui:field="buttonDelete" text="{i18n.get.delete}" />
+							</td>
+						</tr>
+					</table>
+				</g:HTMLPanel>
+			</gwt:layer>
+			<gwt:layer top="60px" bottom="0">
+				<boot:ListBox ui:field="selectedValueList"
+					addStyleNames="{style.selectedValueList}" />
+			</gwt:layer>
+		</gwt:FullSizeLayoutPanel>
+		<csiboot:leftControl>
+			<boot:Button ui:field="buttonPickList" text="{i18n.get.vectorValueDefinitionDialog_picklistPick}" />
+		</csiboot:leftControl>
+	</csiboot:Dialog>
+</ui:UiBinder>

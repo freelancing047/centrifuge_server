@@ -1,0 +1,112 @@
+<project name="auth-api" default="import">
+
+    <path id="jaxws.classpath">
+        <fileset dir="lib">
+            <include name="*.jar" />
+        </fileset>
+        <fileset dir="../../lib/metro1.2">
+            <include name="*.jar" />
+        </fileset>
+    </path>
+
+    <property file="build.properties" />
+
+    <property name="keystore.url" value="${user.home}/.keystore" />
+    <property name="keystore.password" value="changeit" />
+    <property name="truststore.url" value="${keystore.url}" />
+
+    <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+        <classpath refid="jaxws.classpath" />
+    </taskdef>
+
+    <target name="init">
+        <mkdir dir="src/java" />
+        <mkdir dir="target/classes" />
+    </target>
+
+
+    <target name="import" depends="init">
+        <wsimport wsdl="src/wsdl/auth.wsdl"
+                  keep="true"
+                  verbose="true"
+                  fork="true"
+                  wsdlLocation="file:META-INF/services/auth.wsdl"
+                  sourcedestdir="src/java"
+                  destdir="target/classes">
+            <jvmarg value="-Djavax.net.ssl.keyStore=${keystore.url}" />
+            <jvmarg value="-Djavax.net.ssl.keyStorePassword=${keystore.password}" />
+            <jvmarg value="-Djavax.net.ssl.trustStore=${truststore.url}" />
+        </wsimport>
+        <wsimport wsdl="src/wsdl/dias.wsdl"
+                  keep="true"
+                  verbose="true"
+                  fork="true"
+                  wsdlLocation="file:META-INF/services/dias.wsdl"
+                  sourcedestdir="src/java"
+                  destdir="target/classes">
+            <jvmarg value="-Djavax.net.ssl.keyStore=${keystore.url}" />
+            <jvmarg value="-Djavax.net.ssl.keyStorePassword=${keystore.password}" />
+            <jvmarg value="-Djavax.net.ssl.trustStore=${truststore.url}" />
+        </wsimport>
+
+        <wsimport wsdl="src/wsdl/als.wsdl"
+                  keep="true"
+                  verbose="true"
+                  fork="true"
+                  wsdlLocation="file:META-INF/services/als.wsdl"
+                  sourcedestdir="src/java"
+                  destdir="target/classes">
+            <jvmarg value="-Djavax.net.ssl.keyStore=${keystore.url}" />
+            <jvmarg value="-Djavax.net.ssl.keyStorePassword=${keystore.password}" />
+            <jvmarg value="-Djavax.net.ssl.trustStore=${truststore.url}" />
+        </wsimport>
+
+
+    </target>
+
+    <target name="compile">
+        <mkdir dir="target/classes" />
+        <javac srcdir="src/java" destdir="target/classes" debug="true">
+            <classpath>
+                <path refid="jaxws.classpath" />
+                <!--
+                <path location="target/dias-auth-api-1.0.0.jar" />
+                -->
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="clean">
+        <delete includeemptydirs="true">
+            <fileset dir="target">
+                <include name="classes/**/*.class" />
+                <include name="*.jar" />
+            </fileset>
+        </delete>
+
+        <delete dir="target" />
+
+    </target>
+
+    <target name="real.clean" depends="clean">
+        <delete includeemptydirs="true">
+            <fileset dir="src/java">
+            </fileset>
+        </delete>
+    </target>
+
+
+    <target name="jar">
+        <mkdir dir="target/classes/META-INF/services" />
+        <copy todir="target/classes/META-INF/services">
+            <fileset dir="src/wsdl">
+                <include name="*.wsdl" />
+            </fileset>
+        </copy>
+
+        <jar file="target/bridge-api-1.0.0.jar">
+            <fileset dir="target/classes">
+            </fileset>
+        </jar>
+    </target>
+</project>

@@ -1,0 +1,27 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder' xmlns:gxtcontainer="urn:import:com.sencha.gxt.widget.core.client.container"
+    xmlns:gxtbutton="urn:import:com.sencha.gxt.widget.core.client.button" xmlns:g="urn:import:com.google.gwt.user.client.ui"
+    xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client" xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+    xmlns:gxtform="urn:import:com.sencha.gxt.widget.core.client.form" xmlns:gxtgrid="urn:import:com.sencha.gxt.widget.core.client.grid"
+    xmlns:csiboot="urn:import:csi.client.gwt.widget.boot" xmlns:this="urn:import:csi.client.gwt.viz.chart">
+
+   <ui:style gss="true">
+        .drillBrand {
+        	font-size: 16px !important;
+        }
+    </ui:style>
+
+    <ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+	<ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+	
+    <g:SimpleLayoutPanel>
+        <boot:Navbar>
+            <boot:Brand ui:field="heading" addStyleNames="{style.drillBrand}" />
+
+            <boot:Nav alignment="RIGHT">
+                <boot:NavLink ui:field="promoteLink" text="{i18n.get.drillHeader_promote}" />
+            </boot:Nav>
+        </boot:Navbar>
+    </g:SimpleLayoutPanel>
+
+</ui:UiBinder>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="dchang" id="map-6-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="basemap">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="owner" type="VARCHAR(255)" />
+            <column name="url" type="varchar(255)" />
+        </createTable>
+    </changeSet>
+    <changeSet author="dchang" id="map-6-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="basemap_pkey" tableName="basemap"/>
+    </changeSet>
+    <changeSet author="dchang" id="map-6-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="basemap" constraintName="basemap_resource_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelresource"/>
+    </changeSet>
+    <changeSet author="dchang" id="map-6-5" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="mapstorages">
+            <column name="visualizations_uuid" type="VARCHAR(255)">
+            </column>
+            <column name="mapinfo" type="oid">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+	<changeSet author="dchang" id="map-6-6" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="mapplace">
+            <column name="includenulltype" type="boolean" defaultValueBoolean="false" valueBoolean="false" />
+        </addColumn>
+    </changeSet>  
+	<changeSet author="dchang" id="map-6-7" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="mapplace">
+            <column name="usedefaultcolorsetting" type="boolean" defaultValueBoolean="false" valueBoolean="false" />
+        </addColumn>
+    </changeSet>  
+	<changeSet author="dchang" id="map-6-8" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addColumn tableName="mapbundledefinition">
+            <column name="allownulls" type="boolean" defaultValueBoolean="false" valueBoolean="false" />
+        </addColumn>
+    </changeSet>  
+</databaseChangeLog>

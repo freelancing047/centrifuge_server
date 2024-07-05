@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- When updating your version of GWT, you should also update this DTD reference, so that your app can take advantage of 
+    the latest GWT module capabilities. -->
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.5.0//EN"
+  "http://google-web-toolkit.googlecode.com/svn/tags/2.5.0/distro-source/core/src/gwt-module.dtd">
+<module rename-to='csiroot'>
+    <set-configuration-property name="CssResource.enableGss" value="true" />
+    <set-configuration-property name="CssResource.gssDefaultInUiBinder" value="true" />
+    <set-configuration-property name="CssResource.conversionMode" value="strict" />
+    <!-- Inherit the core Web Toolkit stuff. -->
+    <inherits name='com.google.gwt.user.User' />
+    <inherits name="csi.shared.CsiShared"/>
+    <inherits name="csi.server.common.CsiCommon"/>
+    <inherits name="com.google.common.collect.Collect"/>
+    <inherits name="com.google.common.collect.Collect"/>
+    <inherits name="com.google.common.collect.Collect"/>
+    <inherits name="com.google.common.collect.Collect"/>
+    <inherits name="com.google.common.collect.Collect"/>
+    <inherits name="com.google.common.collect.Collect"/>
+    <inherits name="com.google.common.collect.Collect"/>
+    <inherits name="com.google.common.collect.Collect"/>
+    <inherits name="com.google.common.collect.Collect"/>
+    <inherits name="com.google.common.collect.Collect"/>
+    <inherits name="com.google.common.collect.Collect"/>
+    <inherits name="com.google.common.collect.Collect"/>
+    <inherits name="csi.client.CSI"/>
+    <inherits name="csi.client.CSI"/>
+
+    <!-- Other module inherits -->
+
+    <!-- Specify the paths for translatable code -->
+    <source path="server/ws/actions">
+        <include name="PagingInfo.java" />
+        <include name="MergeRequest.java" />
+    </source>
+    <source path="server/ws/rest/services/chart">
+        <include name="ChartRequest.java" />
+        <include name="Dimension.java" />
+    </source>
+    <source path="server/ws/rest/services/drilldown">
+        <include name="DrillDownRequest.java" />
+        <include name="Dimension.java" />
+    </source>
+    <source path="server/business/visualization/legend">
+        <include name="GraphLegendInfo.java" />
+        <include name="GraphLinkLegendItem.java" />
+        <include name="GraphNodeLegendItem.java" />
+        <include name="LegendItem.java" />
+        <include name="MapLegendInfo.java" />
+        <include name="PlaceLegendItem.java" />
+        <include name="CombinedPlaceLegendItem.java" />
+        <include name="AssociationLegendItem.java" />
+        <include name="TrackLegendItem.java" />
+        <include name="NewPlaceLegendItem.java" />
+        <include name="UpdatedPlaceLegendItem.java" />
+    </source>
+    <source path="server/business/visualization/map">
+        <include name="LinkGeometryPlus.java" />
+        <include name="IntegerTreeNode.java" />
+    </source>
+    <source path="server/business/visualization/timeline">
+        <include name="TemporalEvent.java" />
+    </source>
+    <source path="server/business/visualization/graph/base">
+        <include name="GraphLegendNodeSummary.java" />
+        <include name="LinkDirection.java" />
+    </source>
+    <source path="server/business/visualization/graph/base/property">
+        <include name="Property.java" />
+    </source>
+    <source path="security">
+        <include name="AccessControlEntry.java" />
+        <include name="ResourceACLMonitor.java" />
+    </source>
+    <source path="server/business/visualization/graph/player">
+        <include name="TimePlayerConstants.java" />
+    </source>
+    <source path="config/advanced">
+        <include name="GraphAdvConfigGWT.java" />
+        <include name="KmlExportAdvConfig.java" />
+    </source>
+    <source path="config">
+        <include name="AbstractConfigurationSettings.java" />
+        <include name="ConfigurationException.java"/>
+        <include name="ConfigurationSettings.java"/>
+        <include name="FeatureToggleConfiguration.java" />
+        <include name="ClientConfig.java" />
+    </source>
+    <source path="config/advanced/graph"/>
+    <source path="server/util/sql/api" />
+</module>

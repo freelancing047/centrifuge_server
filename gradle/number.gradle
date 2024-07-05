@@ -1,0 +1,42 @@
+/**
+ * Gets the build branch and build number, which is required in the application!
+ */
+apply from: 'gradle/properties.gradle'
+
+def buildNumberProperty = hasProperty('buildNumberOverride') ? buildNumberOverride : null
+def gitDirectoryProperty = hasProperty('gitDirectory') ? gitDirectory : null
+
+task deployBuildNumber(group: deployGroup) {
+    dependsOn 'genVersionString', 'genBuildNumber', 'installCentrifuge'
+    outputs.file "${webappCentrifugeRuntime}/WEB-INF/classes/buildnumber.properties"
+
+    doFirst {
+        def buildNumber = tasks.genBuildNumber.output().split("-")[1]
+
+        file("${webappCentrifugeRuntime}/WEB-INF/classes").mkdirs()
+        File file = file("${webappCentrifugeRuntime}/WEB-INF/classes/buildnumber.properties")
+        file.text = "build.number=${buildNumber}\n"
+    }
+}
+
+task genBuildNumber(type: Exec) {
+
+    doFirst {
+
+        if (buildNumberProperty) {
+            executable = 'echo'
+            args("-${buildNumberProperty}")
+        } else {
+            if (gitDirectoryProperty) {
+
+                workingDir gitDirectoryProperty
+            }
+            executable = 'git'
+            args("describe", "--match", "buildnumber")
+        }
+        standardOutput = new ByteArrayOutputStream()
+        ext.output = {
+            return standardOutput.toString()
+        }
+    }
+}

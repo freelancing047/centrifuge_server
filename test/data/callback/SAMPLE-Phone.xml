@@ -1,0 +1,372 @@
+<?xml version="1.0"?>
+<Root>
+   <DataViews>
+      <DataViewName>SAMPLE-Phone</DataViewName>
+
+      <ConnID>57</ConnID>
+
+      <QueryID>57</QueryID>
+
+      <MetaID>69</MetaID>
+
+      <BundleMode>
+      </BundleMode>
+
+      <Remark>
+      </Remark>
+   </DataViews>
+
+   <Connections>
+      <ConnName>Sample-Phone</ConnName>
+
+      <ConnectString>Provider=Microsoft.Jet.OLEDB.4.0;Data Source=samples/Callback;Extended Properties=Text;Persist Security Info=False</ConnectString>
+
+      <Remark>
+      </Remark>
+
+      <QBGraphicalUI>False</QBGraphicalUI>
+
+      <ConnType>Text</ConnType>
+   </Connections>
+
+   <Queries>
+      <QueryName>Sample Phone</QueryName>
+
+      <QueryText>SELECT * FROM [Phone.txt]</QueryText>
+
+      <HasParams>False</HasParams>
+
+      <UnionAll>
+      </UnionAll>
+
+      <Remark>
+      </Remark>
+
+      <Timeout>30</Timeout>
+
+      <CallbackType>0</CallbackType>
+
+      <TableList>Phone.txt</TableList>
+   </Queries>
+
+   <MetaData>
+      <MetaName>Phone 1 Meta 1</MetaName>
+
+      <OptionsName>Baseline</OptionsName>
+
+      <Remark>
+      </Remark>
+   </MetaData>
+
+   <ObjectSpecs>
+      <ObjectID>Link 1,2</ObjectID>
+
+      <Attribute>Link</Attribute>
+
+      <Priority>1</Priority>
+
+      <Column1>-1</Column1>
+
+      <Column2>-1</Column2>
+
+      <FreeText1>
+      </FreeText1>
+
+      <FreeText2>
+      </FreeText2>
+
+      <Func1>
+      </Func1>
+
+      <Func2>
+      </Func2>
+
+      <Operator>
+      </Operator>
+   </ObjectSpecs>
+
+   <ObjectSpecs>
+      <ObjectID>Node 1</ObjectID>
+
+      <Attribute>Label</Attribute>
+
+      <Priority>1</Priority>
+
+      <Column1>1</Column1>
+
+      <Column2>0</Column2>
+
+      <FreeText1>Phone1</FreeText1>
+
+      <FreeText2>
+      </FreeText2>
+
+      <Func1>
+      </Func1>
+
+      <Func2>
+      </Func2>
+
+      <Operator>
+      </Operator>
+   </ObjectSpecs>
+
+   <ObjectSpecs>
+      <ObjectID>Node 2</ObjectID>
+
+      <Attribute>Label</Attribute>
+
+      <Priority>1</Priority>
+
+      <Column1>4</Column1>
+
+      <Column2>0</Column2>
+
+      <FreeText1>Phone2</FreeText1>
+
+      <FreeText2>
+      </FreeText2>
+
+      <Func1>
+      </Func1>
+
+      <Func2>
+      </Func2>
+
+      <Operator>
+      </Operator>
+   </ObjectSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Timeline Type</ColumnAttribute>
+
+      <ColumnValue>1</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Rel Graph Type</ColumnAttribute>
+
+      <ColumnValue>0</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Node Y Pos</ColumnAttribute>
+
+      <ColumnValue>1 364.00825</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Node Y Pos</ColumnAttribute>
+
+      <ColumnValue>2 364.00825</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Node X Pos</ColumnAttribute>
+
+      <ColumnValue>1 -58.02903</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Node X Pos</ColumnAttribute>
+
+      <ColumnValue>2 427.31531</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Node Unspecified Start</ColumnAttribute>
+
+      <ColumnValue>1 Extreme</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Node Unspecified Start</ColumnAttribute>
+
+      <ColumnValue>2 Extreme</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Node Unspecified End</ColumnAttribute>
+
+      <ColumnValue>1 Extreme</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Node Unspecified End</ColumnAttribute>
+
+      <ColumnValue>2 Extreme</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Node Duration Option</ColumnAttribute>
+
+      <ColumnValue>1 0</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Node Duration Option</ColumnAttribute>
+
+      <ColumnValue>2 0</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Main Map</ColumnAttribute>
+
+      <ColumnValue>1</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Link Unspecified Start</ColumnAttribute>
+
+      <ColumnValue>1,2 Extreme</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Link Unspecified End</ColumnAttribute>
+
+      <ColumnValue>1,2 Extreme</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Link Duration Option</ColumnAttribute>
+
+      <ColumnValue>1,2 0</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Initial View</ColumnAttribute>
+
+      <ColumnValue>0</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Event Order</ColumnAttribute>
+
+      <ColumnValue>0</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Chart Type</ColumnAttribute>
+
+      <ColumnValue>0</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Chart Function</ColumnAttribute>
+
+      <ColumnValue>0</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>0</ColumnID>
+
+      <ColumnAttribute>Chart Cell</ColumnAttribute>
+
+      <ColumnValue>0</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>1</ColumnID>
+
+      <ColumnAttribute>Chart X Axis</ColumnAttribute>
+
+      <ColumnValue>
+      </ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>3</ColumnID>
+
+      <ColumnAttribute>Format</ColumnAttribute>
+
+      <ColumnValue>HH:mm:ss</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>5</ColumnID>
+
+      <ColumnAttribute>Hidden</ColumnAttribute>
+
+      <ColumnValue>
+      </ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>6</ColumnID>
+
+      <ColumnAttribute>Format</ColumnAttribute>
+
+      <ColumnValue>H:mm:ss</ColumnValue>
+   </ColumnSpecs>
+
+   <ColumnSpecs>
+      <ColumnID>9</ColumnID>
+
+      <ColumnAttribute>Hidden</ColumnAttribute>
+
+      <ColumnValue>
+      </ColumnValue>
+   </ColumnSpecs>
+
+   <Callbacks>
+      <MetaID>69</MetaID>
+
+      <Node1ID>-1</Node1ID>
+
+      <Node2ID>0</Node2ID>
+
+      <CallbackType>1</CallbackType>
+
+      <CSMID>93</CSMID>
+
+      <ParamID>1</ParamID>
+
+      <Col>4</Col>
+
+      <Value>
+      </Value>
+
+      <DataViewName>SAMPLE-Phone-Callback</DataViewName>
+   </Callbacks>
+</Root>
+

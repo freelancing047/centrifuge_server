@@ -1,0 +1,62 @@
+<ui:UiBinder
+    xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:csiboot="urn:import:csi.client.gwt.widget.boot"
+    xmlns:csibox="urn:import:csi.client.gwt.widget.input_boxes"
+    xmlns:csibutton="urn:import:csi.client.gwt.widget.buttons"
+    xmlns:gwt="urn:import:csi.client.gwt.widget.ui"      
+    xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"     
+    xmlns:g="urn:import:com.google.gwt.user.client.ui"
+    xmlns:grid="urn:import:csi.client.gwt.widget.gxt.grid" 
+>
+   <ui:style gss="true">
+        .important {
+            font-weight: bold;
+        }
+        .noborder{
+            border-style: none;
+        }
+    </ui:style>
+	<ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+    <csiboot:ValidatingDialog bodyWidth="800px" bodyHeight="500px">
+		<gwt:FullSizeLayoutPanel>
+            <gwt:layer top="20px" bottom="20px" left="512px" right="20px">
+                <boot:TextArea ui:field="instructionTextArea" height="100%" width="97%" addStyleNames="{style.noborder}">
+                </boot:TextArea>
+            </gwt:layer>
+			<gwt:layer top="5px" height="350px" left="20px" right="308px">
+				<boot:Form type="VERTICAL">
+					<boot:Fieldset>
+					   <boot:ControlGroup>
+					       <boot:ControlLabel for="ct1">
+					           <g:InlineHTML text="{i18n.get.customQueryDialog_QueryName}"/>
+					       </boot:ControlLabel>
+					       <boot:Controls>
+					           <csibox:FilteredTextBox ui:field="queryName" width="97%"/>
+					       </boot:Controls>
+					   </boot:ControlGroup>		
+                       <boot:ControlGroup>
+                           <boot:ControlLabel for="ct2">
+                               <g:InlineHTML text="{i18n.get.customQueryDialog_SQLQuery}"/>
+                           </boot:ControlLabel>
+                           <boot:Controls>
+                            <g:SimplePanel ui:field="editorContainer" width="468px" height="250px"/>
+                           </boot:Controls>
+                       </boot:ControlGroup> 	                       
+					</boot:Fieldset>
+				</boot:Form>
+			</gwt:layer>
+            <gwt:layer top="360px" height="20px" left="20px" right="308px">
+                <g:InlineHTML text="{i18n.get.customQueryDialog_QueryInputParameters}"/>
+            </gwt:layer>
+            <gwt:layer top="385px" bottom="0px" left="20px" right="308px">
+                <grid:GridContainer ui:field="gridContainer" />
+            </gwt:layer>
+		</gwt:FullSizeLayoutPanel>
+        <csiboot:leftControl>
+            <csibutton:Button ui:field="inputParametersButton" text="{i18n.get.inputParameters}"/>
+        </csiboot:leftControl>
+		<csiboot:leftControl>
+            <csibutton:Button ui:field="testQueryButton" text="{i18n.get.testQuery}"/>
+		</csiboot:leftControl>
+	</csiboot:ValidatingDialog>
+</ui:UiBinder>

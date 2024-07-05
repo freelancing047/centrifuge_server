@@ -1,0 +1,8178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml>
+  <Document>
+    <LineStyle id="centrifugeLink">
+      <color>7f0000ff</color>
+      <width>4</width>
+    </LineStyle>
+    <Style id="highlightPlacemark">
+      <IconStyle>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/pal2/icon48.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Style id="normalPlacemark">
+      <IconStyle>
+        <Icon>
+          <href>http://maps.google.com/mapfiles/kml/pal3/icon48.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Name>Centrifuge I94</Name>
+
+<Folder>
+      <name>MORGAN DOUG 9/1/1968
+	
+	to
+
+	MIA</name>
+      <Placemark>
+        <name>Person: MORGAN DOUG 9/1/1968
+</name>
+        <description>DOB: 09/01/1968
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 01/10/2001
+	&lt;br&gt; 
+	PORT OF ENTRY: MIA
+	&lt;br&gt; 
+	DPT DATE: 07/07/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: MIA
+	&lt;br&gt; 
+	LATITUDE: 26.27597
+	&lt;br&gt; 
+	LONGITUDE: -80.25264
+	&lt;br&gt; 
+	AIRLINE: AA
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-80.25264,26.27597,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: MIA
+</name>
+        <description>ENTRY-LAT: 25.79306
+	&lt;br&gt; 
+	ENTRY-LON: -80.29028
+	&lt;br&gt; 
+	Flight: 1/10/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-80.29028,25.79306,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-80.25264,26.27597,0 -80.29028,25.79306,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>MUNKVOLD STEVE 4/15/1977
+	
+	to
+
+	MIA</name>
+      <Placemark>
+        <name>Person: MUNKVOLD STEVE 4/15/1977
+</name>
+        <description>DOB: 04/15/1977
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 06/18/2001
+	&lt;br&gt; 
+	AIRLINE: NW
+	&lt;br&gt; 
+	PORT OF ENTRY: MIA
+	&lt;br&gt; 
+	DPT DATE: 07/13/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: ORD
+	&lt;br&gt; 
+	LATITUDE: 27.96673
+	&lt;br&gt; 
+	LONGITUDE: -82.42902
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-82.42902,27.96673,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: MIA
+</name>
+        <description>ENTRY-LAT: 25.79306
+	&lt;br&gt; 
+	ENTRY-LON: -80.29028
+	&lt;br&gt; 
+	Flight: 1/10/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-80.29028,25.79306,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-82.42902,27.96673,0 -80.29028,25.79306,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>CAMP SUE 1/1/1954
+	
+	to
+
+	MIA</name>
+      <Placemark>
+        <name>Person: CAMP SUE 1/1/1954
+</name>
+        <description>DOB: 01/01/1954
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 01/10/2001
+	&lt;br&gt; 
+	AIRLINE: AA
+	&lt;br&gt; 
+	PORT OF ENTRY: MIA
+	&lt;br&gt; 
+	LATITUDE: 35.20703
+	&lt;br&gt; 
+	LONGITUDE: -80.8277
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-80.8277,35.20703,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: MIA
+</name>
+        <description>ENTRY-LAT: 25.79306
+	&lt;br&gt; 
+	ENTRY-LON: -80.29028
+	&lt;br&gt; 
+	Flight: 1/10/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-80.29028,25.79306,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-80.8277,35.20703,0 -80.29028,25.79306,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>RAWLS DONNA 5/11/1975
+	
+	to
+
+	MIA</name>
+      <Placemark>
+        <name>Person: RAWLS DONNA 5/11/1975
+</name>
+        <description>DOB: 05/11/1975
+	&lt;br&gt; 
+	CTZ: LB
+	&lt;br&gt; 
+	ADM DATE: 11/25/2000
+	&lt;br&gt; 
+	PORT OF ENTRY: MIA
+	&lt;br&gt; 
+	DPT DATE: 12/26/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: MIA
+	&lt;br&gt; 
+	LATITUDE: 39.37219
+	&lt;br&gt; 
+	LONGITUDE: -77.23776
+	&lt;br&gt; 
+	AIRLINE: DL
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.23776,39.37219,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: MIA
+</name>
+        <description>ENTRY-LAT: 25.79306
+	&lt;br&gt; 
+	ENTRY-LON: -80.29028
+	&lt;br&gt; 
+	Flight: 1/10/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-80.29028,25.79306,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-77.23776,39.37219,0 -80.29028,25.79306,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>MAJOR PETER 5/9/1978
+	
+	to
+
+	MIA</name>
+      <Placemark>
+        <name>Person: MAJOR PETER 5/9/1978
+</name>
+        <description>DOB: 05/09/1978
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 05/02/2001
+	&lt;br&gt; 
+	AIRLINE: NW
+	&lt;br&gt; 
+	PORT OF ENTRY: MIA
+	&lt;br&gt; 
+	LATITUDE: 39.6219
+	&lt;br&gt; 
+	LONGITUDE: -77.72395
+	&lt;br&gt; 
+	DPT DATE: 04/18/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: MIA
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.72395,39.6219,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: MIA
+</name>
+        <description>ENTRY-LAT: 25.79306
+	&lt;br&gt; 
+	ENTRY-LON: -80.29028
+	&lt;br&gt; 
+	Flight: 1/10/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-80.29028,25.79306,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-77.72395,39.6219,0 -80.29028,25.79306,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>PRICE PAUL 6/23/1976
+	
+	to
+
+	ORL</name>
+      <Placemark>
+        <name>Person: PRICE PAUL 6/23/1976
+</name>
+        <description>DOB: 06/23/1976
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 08/07/2000
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: ORL
+	&lt;br&gt; 
+	LATITUDE: 27.6352
+	&lt;br&gt; 
+	LONGITUDE: -80.38839
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-80.38839,27.6352,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: ORL
+</name>
+        <description>ENTRY-LAT: 28.54556
+	&lt;br&gt; 
+	ENTRY-LON: -81.33306
+	&lt;br&gt; 
+	Flight: SV 55 8/7/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-81.33306,28.54556,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-80.38839,27.6352,0 -81.33306,28.54556,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>LATHAM ALICE 11/22/1981
+	
+	to
+
+	ORL</name>
+      <Placemark>
+        <name>Person: LATHAM ALICE 11/22/1981
+</name>
+        <description>DOB: 11/22/1981
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 07/24/2000
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: ORL
+	&lt;br&gt; 
+	DPT DATE: 12/15/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: JFK
+	&lt;br&gt; 
+	LATITUDE: 28.01255
+	&lt;br&gt; 
+	LONGITUDE: -82.48015
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-82.48015,28.01255,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: ORL
+</name>
+        <description>ENTRY-LAT: 28.54556
+	&lt;br&gt; 
+	ENTRY-LON: -81.33306
+	&lt;br&gt; 
+	Flight: SV 55 8/7/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-81.33306,28.54556,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-82.48015,28.01255,0 -81.33306,28.54556,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>CARVER ALICE 8/23/1977
+	
+	to
+
+	ORL</name>
+      <Placemark>
+        <name>Person: CARVER ALICE 8/23/1977
+</name>
+        <description>DOB: 08/23/1977
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 09/04/2000
+	&lt;br&gt; 
+	AIRLINE: BA
+	&lt;br&gt; 
+	PORT OF ENTRY: ORL
+	&lt;br&gt; 
+	DPT DATE: 11/14/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: MCO
+	&lt;br&gt; 
+	LATITUDE: 28.08077
+	&lt;br&gt; 
+	LONGITUDE: -80.61125
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-80.61125,28.08077,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: ORL
+</name>
+        <description>ENTRY-LAT: 28.54556
+	&lt;br&gt; 
+	ENTRY-LON: -81.33306
+	&lt;br&gt; 
+	Flight: SV 55 8/7/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-81.33306,28.54556,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-80.61125,28.08077,0 -81.33306,28.54556,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>SMART JOHN 9/10/1976
+	
+	to
+
+	ORL</name>
+      <Placemark>
+        <name>Person: SMART JOHN 9/10/1976
+</name>
+        <description>DOB: 09/10/1976
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 06/22/2001
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: ORL
+	&lt;br&gt; 
+	LATITUDE: 28.54099
+	&lt;br&gt; 
+	LONGITUDE: -81.43705
+	&lt;br&gt; 
+	DPT DATE: 11/16/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: JFK
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-81.43705,28.54099,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: ORL
+</name>
+        <description>ENTRY-LAT: 28.54556
+	&lt;br&gt; 
+	ENTRY-LON: -81.33306
+	&lt;br&gt; 
+	Flight: SV 55 8/7/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-81.33306,28.54556,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-81.43705,28.54099,0 -81.33306,28.54556,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>STRICKLAND SUE 8/11/1972
+	
+	to
+
+	HOU</name>
+      <Placemark>
+        <name>Person: STRICKLAND SUE 8/11/1972
+</name>
+        <description>DOB: 08/11/1972
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 06/06/2001
+	&lt;br&gt; 
+	AIRLINE: BA
+	&lt;br&gt; 
+	PORT OF ENTRY: HOU
+	&lt;br&gt; 
+	LATITUDE: 29.76254
+	&lt;br&gt; 
+	LONGITUDE: -95.32279
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-95.32279,29.76254,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: HOU
+</name>
+        <description>ENTRY-LAT: 29.64555
+	&lt;br&gt; 
+	ENTRY-LON: -95.27889
+	&lt;br&gt; 
+	Flight: BA 2025 6/6/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-95.27889,29.64555,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-95.32279,29.76254,0 -95.27889,29.64555,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>RAYBURN PAUL 1/24/1977
+	
+	to
+
+	DAL</name>
+      <Placemark>
+        <name>Person: RAYBURN PAUL 1/24/1977
+</name>
+        <description>DOB: 01/24/1977
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 01/12/2001
+	&lt;br&gt; 
+	AIRLINE: BA
+	&lt;br&gt; 
+	PORT OF ENTRY: DAL
+	&lt;br&gt; 
+	DPT DATE: 07/04/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: PHX
+	&lt;br&gt; 
+	LATITUDE: 32.2416
+	&lt;br&gt; 
+	LONGITUDE: -110.91232
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-110.91232,32.2416,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: DAL
+</name>
+        <description>ENTRY-LAT: 32.89694
+	&lt;br&gt; 
+	ENTRY-LON: -97.0425
+	&lt;br&gt; 
+	Flight: BA 2193 1/12/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-97.0425,32.89694,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-110.91232,32.2416,0 -97.0425,32.89694,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>MORGAN DOUG 9/1/1968
+	
+	to
+
+	ATL</name>
+      <Placemark>
+        <name>Person: MORGAN DOUG 9/1/1968
+</name>
+        <description>DOB: 09/01/1968
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 01/10/2001
+	&lt;br&gt; 
+	PORT OF ENTRY: MIA
+	&lt;br&gt; 
+	DPT DATE: 07/07/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: MIA
+	&lt;br&gt; 
+	LATITUDE: 26.27597
+	&lt;br&gt; 
+	LONGITUDE: -80.25264
+	&lt;br&gt; 
+	AIRLINE: AA
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-80.25264,26.27597,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: ATL
+</name>
+        <description>ENTRY-LAT: 33.64055
+	&lt;br&gt; 
+	ENTRY-LON: -84.42694
+	&lt;br&gt; 
+	Flight: DL 109 7/19/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-84.42694,33.64055,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-76.88882,39.11105,0 -84.42694,33.64055,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>RAWLS DONNA 5/11/1975
+	
+	to
+
+	ATL</name>
+      <Placemark>
+        <name>Person: RAWLS DONNA 5/11/1975
+</name>
+        <description>DOB: 05/11/1975
+	&lt;br&gt; 
+	CTZ: LB
+	&lt;br&gt; 
+	ADM DATE: 11/25/2000
+	&lt;br&gt; 
+	PORT OF ENTRY: MIA
+	&lt;br&gt; 
+	DPT DATE: 12/26/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: MIA
+	&lt;br&gt; 
+	LATITUDE: 39.37219
+	&lt;br&gt; 
+	LONGITUDE: -77.23776
+	&lt;br&gt; 
+	AIRLINE: DL
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.23776,39.37219,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: ATL
+</name>
+        <description>ENTRY-LAT: 33.64055
+	&lt;br&gt; 
+	ENTRY-LON: -84.42694
+	&lt;br&gt; 
+	Flight: DL 109 7/19/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-84.42694,33.64055,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-77.23776,39.37219,0 -84.42694,33.64055,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>BAKER PAUL 4/17/1953
+	
+	to
+
+	LOS</name>
+      <Placemark>
+        <name>Person: BAKER PAUL 4/17/1953
+</name>
+        <description>DOB: 04/17/1953
+	&lt;br&gt; 
+	ADM DATE: 01/21/1995
+	&lt;br&gt; 
+	AIRLINE: MS
+	&lt;br&gt; 
+	PORT OF ENTRY: LOS
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	LATITUDE: 33.69822
+	&lt;br&gt; 
+	LONGITUDE: -117.96105
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-117.96105,33.69822,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: LOS
+</name>
+        <description>ENTRY-LAT: 33.9425
+	&lt;br&gt; 
+	ENTRY-LON: -118.40806
+	&lt;br&gt; 
+	Flight: MS 987 1/21/1995
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-118.40806,33.9425,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-117.96105,33.69822,0 -118.40806,33.9425,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>ZINGARELLI ALICE 11/18/1963
+	
+	to
+
+	LOS</name>
+      <Placemark>
+        <name>Person: ZINGARELLI ALICE 11/18/1963
+</name>
+        <description>DOB: 11/18/1963
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 06/18/2001
+	&lt;br&gt; 
+	AIRLINE: BA
+	&lt;br&gt; 
+	PORT OF ENTRY: LOS
+	&lt;br&gt; 
+	DPT DATE: 08/18/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: LAX
+	&lt;br&gt; 
+	LATITUDE: 34.02413
+	&lt;br&gt; 
+	LONGITUDE: -118.28038
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-118.28038,34.02413,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: LOS
+</name>
+        <description>ENTRY-LAT: 33.9425
+	&lt;br&gt; 
+	ENTRY-LON: -118.40806
+	&lt;br&gt; 
+	Flight: MS 987 1/21/1995
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-118.40806,33.9425,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-118.28038,34.02413,0 -118.40806,33.9425,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>MOXLEY ALICE 3/20/1973
+	
+	to
+
+	LOS</name>
+      <Placemark>
+        <name>Person: MOXLEY ALICE 3/20/1973
+</name>
+        <description>DOB: 03/20/1973
+	&lt;br&gt; 
+	CTZ: AU
+	&lt;br&gt; 
+	ADM DATE: 12/28/2000
+	&lt;br&gt; 
+	AIRLINE: UA
+	&lt;br&gt; 
+	PORT OF ENTRY: LOS
+	&lt;br&gt; 
+	DPT DATE: 02/04/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: LOS
+	&lt;br&gt; 
+	LATITUDE: 34.02868
+	&lt;br&gt; 
+	LONGITUDE: -118.32119
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-118.32119,34.02868,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: LOS
+</name>
+        <description>ENTRY-LAT: 33.9425
+	&lt;br&gt; 
+	ENTRY-LON: -118.40806
+	&lt;br&gt; 
+	Flight: MS 987 1/21/1995
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-118.40806,33.9425,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-118.32119,34.02868,0 -118.40806,33.9425,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>MUNKVOLD PAUL 11/23/1974
+	
+	to
+
+	LOS</name>
+      <Placemark>
+        <name>Person: MUNKVOLD PAUL 11/23/1974
+</name>
+        <description>DOB: 11/23/1974
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 09/02/2000
+	&lt;br&gt; 
+	AIRLINE: LH
+	&lt;br&gt; 
+	PORT OF ENTRY: LOS
+	&lt;br&gt; 
+	LATITUDE: 34.07324
+	&lt;br&gt; 
+	LONGITUDE: -118.17711
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-118.17711,34.07324,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: LOS
+</name>
+        <description>ENTRY-LAT: 33.9425
+	&lt;br&gt; 
+	ENTRY-LON: -118.40806
+	&lt;br&gt; 
+	Flight: MS 987 1/21/1995
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-118.40806,33.9425,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-118.17711,34.07324,0 -118.40806,33.9425,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>SCHEINMAN ALICE 9/3/1979
+	
+	to
+
+	LOS</name>
+      <Placemark>
+        <name>Person: SCHEINMAN ALICE 9/3/1979
+</name>
+        <description>DOB: 09/03/1979
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 02/08/2001
+	&lt;br&gt; 
+	AIRLINE: SR
+	&lt;br&gt; 
+	PORT OF ENTRY: LOS
+	&lt;br&gt; 
+	LATITUDE: 38.44057
+	&lt;br&gt; 
+	LONGITUDE: -75.05375
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-75.05375,38.44057,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: LOS
+</name>
+        <description>ENTRY-LAT: 33.9425
+	&lt;br&gt; 
+	ENTRY-LON: -118.40806
+	&lt;br&gt; 
+	Flight: MS 987 1/21/1995
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-118.40806,33.9425,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-75.05375,38.44057,0 -118.40806,33.9425,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>SMART CINDY 4/19/1982
+	
+	to
+
+	LOS</name>
+      <Placemark>
+        <name>Person: SMART CINDY 4/19/1982
+</name>
+        <description>DOB: 04/19/1982
+	&lt;br&gt; 
+	CTZ: PK
+	&lt;br&gt; 
+	ADM DATE: 09/18/2001
+	&lt;br&gt; 
+	AIRLINE: BA
+	&lt;br&gt; 
+	PORT OF ENTRY: LOS
+	&lt;br&gt; 
+	LATITUDE: 39.63678
+	&lt;br&gt; 
+	LONGITUDE: -78.76455
+	&lt;br&gt; 
+	VISA CLASS: F1
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-78.76455,39.63678,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: LOS
+</name>
+        <description>ENTRY-LAT: 33.9425
+	&lt;br&gt; 
+	ENTRY-LON: -118.40806
+	&lt;br&gt; 
+	Flight: MS 987 1/21/1995
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-118.40806,33.9425,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-78.76455,39.63678,0 -118.40806,33.9425,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>OATMAN JOHN 12/17/1969
+	
+	to
+
+	CLT</name>
+      <Placemark>
+        <name>Person: OATMAN JOHN 12/17/1969
+</name>
+        <description>DOB: 12/17/1969
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 02/10/2001
+	&lt;br&gt; 
+	AIRLINE: BA
+	&lt;br&gt; 
+	PORT OF ENTRY: CLT
+	&lt;br&gt; 
+	LATITUDE: 35.20703
+	&lt;br&gt; 
+	LONGITUDE: -80.8277
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-80.8277,35.20703,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: CLT
+</name>
+        <description>ENTRY-LAT: 35.21417
+	&lt;br&gt; 
+	ENTRY-LON: -80.84306
+	&lt;br&gt; 
+	Flight: BA 2007 2/10/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-80.84306,35.21417,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-80.8277,35.20703,0 -80.84306,35.21417,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>WELLS ALICE 7/2/1974
+	
+	to
+
+	IAD</name>
+      <Placemark>
+        <name>Person: WELLS ALICE 7/2/1974
+</name>
+        <description>DOB: 07/02/1974
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 11/26/2000
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	LATITUDE: 27.78518
+	&lt;br&gt; 
+	LONGITUDE: -82.64304
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-82.64304,27.78518,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: IAD
+</name>
+        <description>ENTRY-LAT: 38.94472
+	&lt;br&gt; 
+	ENTRY-LON: -77.45583
+	&lt;br&gt; 
+	Flight: SV 39 11/26/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.45583,38.94472,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-82.64304,27.78518,0 -77.45583,38.94472,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>PENN DAVE 3/6/1981
+	
+	to
+
+	IAD</name>
+      <Placemark>
+        <name>Person: PENN DAVE 3/6/1981
+</name>
+        <description>DOB: 03/06/1981
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 01/17/2000
+	&lt;br&gt; 
+	AIRLINE: VS
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	DPT DATE: 03/09/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: IAD
+	&lt;br&gt; 
+	LATITUDE: 38.02813
+	&lt;br&gt; 
+	LONGITUDE: -78.50009
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-78.50009,38.02813,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: IAD
+</name>
+        <description>ENTRY-LAT: 38.94472
+	&lt;br&gt; 
+	ENTRY-LON: -77.45583
+	&lt;br&gt; 
+	Flight: SV 39 11/26/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.45583,38.94472,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-78.50009,38.02813,0 -77.45583,38.94472,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>LAMOREAUX DAN 6/5/1973
+	
+	to
+
+	IAD</name>
+      <Placemark>
+        <name>Person: LAMOREAUX DAN 6/5/1973
+</name>
+        <description>DOB: 06/05/1973
+	&lt;br&gt; 
+	CTZ: NG
+	&lt;br&gt; 
+	ADM DATE: 08/17/2000
+	&lt;br&gt; 
+	AIRLINE: SN
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	DPT DATE: 08/20/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: IAD
+	&lt;br&gt; 
+	LATITUDE: 38.26266
+	&lt;br&gt; 
+	LONGITUDE: -76.59462
+	&lt;br&gt; 
+	VISA CLASS: B1
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-76.59462,38.26266,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: IAD
+</name>
+        <description>ENTRY-LAT: 38.94472
+	&lt;br&gt; 
+	ENTRY-LON: -77.45583
+	&lt;br&gt; 
+	Flight: SV 39 11/26/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.45583,38.94472,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-76.59462,38.26266,0 -77.45583,38.94472,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>PETERSON PAUL 6/18/1977
+	
+	to
+
+	IAD</name>
+      <Placemark>
+        <name>Person: PETERSON PAUL 6/18/1977
+</name>
+        <description>DOB: 06/18/1977
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 09/01/2001
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	LATITUDE: 38.84701
+	&lt;br&gt; 
+	LONGITUDE: -77.2905
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.2905,38.84701,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: IAD
+</name>
+        <description>ENTRY-LAT: 38.94472
+	&lt;br&gt; 
+	ENTRY-LON: -77.45583
+	&lt;br&gt; 
+	Flight: SV 39 11/26/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.45583,38.94472,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-77.2905,38.84701,0 -77.45583,38.94472,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>KILLPATRICK ALICE 4/7/1951
+	
+	to
+
+	IAD</name>
+      <Placemark>
+        <name>Person: KILLPATRICK ALICE 4/7/1951
+</name>
+        <description>DOB: 04/07/1951
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 08/21/2001
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	DPT DATE: 10/28/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: IAD
+	&lt;br&gt; 
+	LATITUDE: 38.90033
+	&lt;br&gt; 
+	LONGITUDE: -76.92091
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-76.92091,38.90033,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: IAD
+</name>
+        <description>ENTRY-LAT: 38.94472
+	&lt;br&gt; 
+	ENTRY-LON: -77.45583
+	&lt;br&gt; 
+	Flight: SV 39 11/26/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.45583,38.94472,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-76.92091,38.90033,0 -77.45583,38.94472,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>JOHANSON JIM
+	
+	to
+
+	IAD</name>
+      <Placemark>
+        <name>Person: JOHANSON JIM
+</name>
+        <description>CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 08/24/2001
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	LATITUDE: 38.90052
+	&lt;br&gt; 
+	LONGITUDE: -77.2723
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.2723,38.90052,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: IAD
+</name>
+        <description>ENTRY-LAT: 38.94472
+	&lt;br&gt; 
+	ENTRY-LON: -77.45583
+	&lt;br&gt; 
+	Flight: SV 39 11/26/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.45583,38.94472,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-77.2723,38.90052,0 -77.45583,38.94472,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>LATHAM DAVE 11/26/1973
+	
+	to
+
+	IAD</name>
+      <Placemark>
+        <name>Person: LATHAM DAVE 11/26/1973
+</name>
+        <description>DOB: 11/26/1973
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 11/13/2001
+	&lt;br&gt; 
+	AIRLINE: BA
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	LATITUDE: 38.90676
+	&lt;br&gt; 
+	LONGITUDE: -77.06281
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.06281,38.90676,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: IAD
+</name>
+        <description>ENTRY-LAT: 38.94472
+	&lt;br&gt; 
+	ENTRY-LON: -77.45583
+	&lt;br&gt; 
+	Flight: SV 39 11/26/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.45583,38.94472,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-77.06281,38.90676,0 -77.45583,38.94472,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>LINDSEY STEVE 12/18/1975
+	
+	to
+
+	IAD</name>
+      <Placemark>
+        <name>Person: LINDSEY STEVE 12/18/1975
+</name>
+        <description>DOB: 12/18/1975
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 08/13/2000
+	&lt;br&gt; 
+	AIRLINE: AF
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	LATITUDE: 38.92287
+	&lt;br&gt; 
+	LONGITUDE: -76.98192
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-76.98192,38.92287,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: IAD
+</name>
+        <description>ENTRY-LAT: 38.94472
+	&lt;br&gt; 
+	ENTRY-LON: -77.45583
+	&lt;br&gt; 
+	Flight: SV 39 11/26/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.45583,38.94472,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-76.98192,38.92287,0 -77.45583,38.94472,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>SYMES FRED 9/23/1968
+	
+	to
+
+	IAD</name>
+      <Placemark>
+        <name>Person: SYMES FRED 9/23/1968
+</name>
+        <description>DOB: 09/23/1968
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 06/03/2001
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	LATITUDE: 38.95881
+	&lt;br&gt; 
+	LONGITUDE: -77.33846
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.33846,38.95881,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: IAD
+</name>
+        <description>ENTRY-LAT: 38.94472
+	&lt;br&gt; 
+	ENTRY-LON: -77.45583
+	&lt;br&gt; 
+	Flight: SV 39 11/26/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.45583,38.94472,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-77.33846,38.95881,0 -77.45583,38.94472,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>HELLAND TIM 9/8/1979
+	
+	to
+
+	IAD</name>
+      <Placemark>
+        <name>Person: HELLAND TIM 9/8/1979
+</name>
+        <description>DOB: 09/08/1979
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 02/07/1991
+	&lt;br&gt; 
+	AIRLINE: PA
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	VISA CLASS: A2
+	&lt;br&gt; 
+	DPT DATE: 02/22/1991
+	&lt;br&gt; 
+	PORT OF DEPARTURE: CIN
+	&lt;br&gt; 
+	LATITUDE: 38.98091
+	&lt;br&gt; 
+	LONGITUDE: -77.08128
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.08128,38.98091,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: IAD
+</name>
+        <description>ENTRY-LAT: 38.94472
+	&lt;br&gt; 
+	ENTRY-LON: -77.45583
+	&lt;br&gt; 
+	Flight: SV 39 11/26/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.45583,38.94472,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-77.08128,38.98091,0 -77.45583,38.94472,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>KILLPATRICK JOHN 7/1/1970
+	
+	to
+
+	IAD</name>
+      <Placemark>
+        <name>Person: KILLPATRICK JOHN 7/1/1970
+</name>
+        <description>DOB: 07/01/1970
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 07/17/2001
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	LATITUDE: 39.05952
+	&lt;br&gt; 
+	LONGITUDE: -77.12183
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.12183,39.05952,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: IAD
+</name>
+        <description>ENTRY-LAT: 38.94472
+	&lt;br&gt; 
+	ENTRY-LON: -77.45583
+	&lt;br&gt; 
+	Flight: SV 39 11/26/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.45583,38.94472,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-77.12183,39.05952,0 -77.45583,38.94472,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>CONNOR PAUL 9/26/1969
+	
+	to
+
+	IAD</name>
+      <Placemark>
+        <name>Person: CONNOR PAUL 9/26/1969
+</name>
+        <description>DOB: 09/26/1969
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 07/13/2000
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	DPT DATE: 08/03/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: IAD
+	&lt;br&gt; 
+	LATITUDE: 39.13014
+	&lt;br&gt; 
+	LONGITUDE: -76.54034
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-76.54034,39.13014,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: IAD
+</name>
+        <description>ENTRY-LAT: 38.94472
+	&lt;br&gt; 
+	ENTRY-LON: -77.45583
+	&lt;br&gt; 
+	Flight: SV 39 11/26/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.45583,38.94472,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-76.54034,39.13014,0 -77.45583,38.94472,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>MILLER SUE 10/22/1969
+	
+	to
+
+	IAD</name>
+      <Placemark>
+        <name>Person: MILLER SUE 10/22/1969
+</name>
+        <description>DOB: 10/22/1969
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 09/20/2000
+	&lt;br&gt; 
+	AIRLINE: LH
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	DPT DATE: 11/22/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: IAD
+	&lt;br&gt; 
+	LATITUDE: 39.1397
+	&lt;br&gt; 
+	LONGITUDE: -77.19004
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.19004,39.1397,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: IAD
+</name>
+        <description>ENTRY-LAT: 38.94472
+	&lt;br&gt; 
+	ENTRY-LON: -77.45583
+	&lt;br&gt; 
+	Flight: SV 39 11/26/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.45583,38.94472,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-77.19004,39.1397,0 -77.45583,38.94472,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>SMART TED 8/1/1955
+	
+	to
+
+	IAD</name>
+      <Placemark>
+        <name>Person: SMART TED 8/1/1955
+</name>
+        <description>DOB: 08/01/1955
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 05/22/1989
+	&lt;br&gt; 
+	AIRLINE: PA
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	VISA CLASS: A2
+	&lt;br&gt; 
+	LATITUDE: 39.4524
+	&lt;br&gt; 
+	LONGITUDE: -77.38066
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.38066,39.4524,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: IAD
+</name>
+        <description>ENTRY-LAT: 38.94472
+	&lt;br&gt; 
+	ENTRY-LON: -77.45583
+	&lt;br&gt; 
+	Flight: SV 39 11/26/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.45583,38.94472,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-77.38066,39.4524,0 -77.45583,38.94472,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>LAMOREAUX JIM 10/28/1964
+	
+	to
+
+	IAD</name>
+      <Placemark>
+        <name>Person: LAMOREAUX JIM 10/28/1964
+</name>
+        <description>DOB: 10/28/1964
+	&lt;br&gt; 
+	CTZ: PK
+	&lt;br&gt; 
+	ADM DATE: 05/30/1993
+	&lt;br&gt; 
+	AIRLINE: UA
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	LATITUDE: 42.3037
+	&lt;br&gt; 
+	LONGITUDE: -71.78055
+	&lt;br&gt; 
+	DPT DATE: 01/01/1990
+	&lt;br&gt; 
+	PORT OF DEPARTURE: NYC
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-71.78055,42.3037,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: IAD
+</name>
+        <description>ENTRY-LAT: 38.94472
+	&lt;br&gt; 
+	ENTRY-LON: -77.45583
+	&lt;br&gt; 
+	Flight: SV 39 11/26/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.45583,38.94472,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-71.78055,42.3037,0 -77.45583,38.94472,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>STRICKLAND FRED 9/7/1969
+	
+	to
+
+	IAD</name>
+      <Placemark>
+        <name>Person: STRICKLAND FRED 9/7/1969
+</name>
+        <description>DOB: 09/07/1969
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 08/27/2000
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	DPT DATE: 06/24/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: JFK
+	&lt;br&gt; 
+	LATITUDE: 44.92948
+	&lt;br&gt; 
+	LONGITUDE: -93.3276
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-93.3276,44.92948,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: IAD
+</name>
+        <description>ENTRY-LAT: 38.94472
+	&lt;br&gt; 
+	ENTRY-LON: -77.45583
+	&lt;br&gt; 
+	Flight: SV 39 11/26/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.45583,38.94472,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-93.3276,44.92948,0 -77.45583,38.94472,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>OATMAN DAVE 5/19/1978
+	
+	to
+
+	IAD</name>
+      <Placemark>
+        <name>Person: OATMAN DAVE 5/19/1978
+</name>
+        <description>DOB: 05/19/1978
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 01/06/2001
+	&lt;br&gt; 
+	AIRLINE: LH
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	LATITUDE: 45.4213
+	&lt;br&gt; 
+	LONGITUDE: -122.66752
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-122.66752,45.4213,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: IAD
+</name>
+        <description>ENTRY-LAT: 38.94472
+	&lt;br&gt; 
+	ENTRY-LON: -77.45583
+	&lt;br&gt; 
+	Flight: SV 39 11/26/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.45583,38.94472,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-122.66752,45.4213,0 -77.45583,38.94472,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>SHARMAN STEVE 12/23/1974
+	
+	to
+
+	IAD</name>
+      <Placemark>
+        <name>Person: SHARMAN STEVE 12/23/1974
+</name>
+        <description>DOB: 12/23/1974
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 07/06/2001
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	LATITUDE: 47.56329
+	&lt;br&gt; 
+	LONGITUDE: -122.32663
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-122.32663,47.56329,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: IAD
+</name>
+        <description>ENTRY-LAT: 38.94472
+	&lt;br&gt; 
+	ENTRY-LON: -77.45583
+	&lt;br&gt; 
+	Flight: SV 39 11/26/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.45583,38.94472,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-122.32663,47.56329,0 -77.45583,38.94472,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>RISSER ALICE 8/23/1971
+	
+	to
+
+	CIN</name>
+      <Placemark>
+        <name>Person: RISSER ALICE 8/23/1971
+</name>
+        <description>DOB: 08/23/1971
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 09/08/2000
+	&lt;br&gt; 
+	AIRLINE: DL
+	&lt;br&gt; 
+	PORT OF ENTRY: CIN
+	&lt;br&gt; 
+	DPT DATE: 10/01/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: CVG
+	&lt;br&gt; 
+	LATITUDE: 34.69371
+	&lt;br&gt; 
+	LONGITUDE: -86.75466
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-86.75466,34.69371,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: CIN
+</name>
+        <description>ENTRY-LAT: 39.24667
+	&lt;br&gt; 
+	ENTRY-LON: -84.38889
+	&lt;br&gt; 
+	Flight: DL 43 9/8/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-84.38889,39.24667,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-86.75466,34.69371,0 -84.38889,39.24667,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>RISSER PAUL 4/24/1977
+	
+	to
+
+	DEN</name>
+      <Placemark>
+        <name>Person: RISSER PAUL 4/24/1977
+</name>
+        <description>DOB: 04/24/1977
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 01/10/2000
+	&lt;br&gt; 
+	AIRLINE: BA
+	&lt;br&gt; 
+	PORT OF ENTRY: DEN
+	&lt;br&gt; 
+	LATITUDE: 32.2416
+	&lt;br&gt; 
+	LONGITUDE: -110.91232
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-110.91232,32.2416,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: DEN
+</name>
+        <description>ENTRY-LAT: 39.85833
+	&lt;br&gt; 
+	ENTRY-LON: -104.00027
+	&lt;br&gt; 
+	Flight: BA 2019 1/10/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-104.00027,39.85833,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-110.91232,32.2416,0 -104.00027,39.85833,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>LUADERS DAVE 2/16/1977
+	
+	to
+
+	DEN</name>
+      <Placemark>
+        <name>Person: LUADERS DAVE 2/16/1977
+</name>
+        <description>DOB: 02/16/1977
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 08/23/2001
+	&lt;br&gt; 
+	AIRLINE: LH
+	&lt;br&gt; 
+	PORT OF ENTRY: DEN
+	&lt;br&gt; 
+	LATITUDE: 39.16245
+	&lt;br&gt; 
+	LONGITUDE: -86.52099
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-86.52099,39.16245,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: DEN
+</name>
+        <description>ENTRY-LAT: 39.85833
+	&lt;br&gt; 
+	ENTRY-LON: -104.00027
+	&lt;br&gt; 
+	Flight: BA 2019 1/10/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-104.00027,39.85833,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-86.52099,39.16245,0 -104.00027,39.85833,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>BOHN JOHN 3/3/1976
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: BOHN JOHN 3/3/1976
+</name>
+        <description>DOB: 03/03/1976
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 07/17/2000
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	DPT DATE: 09/04/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: MCO
+	&lt;br&gt; 
+	LATITUDE: 27.65081
+	&lt;br&gt; 
+	LONGITUDE: -80.39491
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-80.39491,27.65081,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-80.39491,27.65081,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>EDWARDS ALICE 5/23/1980
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: EDWARDS ALICE 5/23/1980
+</name>
+        <description>DOB: 05/23/1980
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 04/21/2000
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	LATITUDE: 27.79469
+	&lt;br&gt; 
+	LONGITUDE: -82.68565
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-82.68565,27.79469,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-82.68565,27.79469,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>LATHAM ALICE 11/22/1981
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: LATHAM ALICE 11/22/1981
+</name>
+        <description>DOB: 11/22/1981
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 07/24/2000
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: ORL
+	&lt;br&gt; 
+	DPT DATE: 12/15/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: JFK
+	&lt;br&gt; 
+	LATITUDE: 28.01255
+	&lt;br&gt; 
+	LONGITUDE: -82.48015
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-82.48015,28.01255,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-82.41355,28.02521,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>MCCLELLAN ROD 2/13/1967
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: MCCLELLAN ROD 2/13/1967
+</name>
+        <description>DOB: 02/13/1967
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 08/04/2000
+	&lt;br&gt; 
+	AIRLINE: MS
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	LATITUDE: 28.52253
+	&lt;br&gt; 
+	LONGITUDE: -81.35951
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-81.35951,28.52253,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-81.35951,28.52253,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>ROSS ALICE 5/6/1972
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: ROSS ALICE 5/6/1972
+</name>
+        <description>DOB: 05/06/1972
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 10/28/2001
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	LATITUDE: 29.28059
+	&lt;br&gt; 
+	LONGITUDE: -94.87053
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-94.87053,29.28059,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-94.87053,29.28059,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>BAIN BOB 4/30/1976
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: BAIN BOB 4/30/1976
+</name>
+        <description>DOB: 04/30/1976
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 08/04/2000
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	DPT DATE: 12/08/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: JFK
+	&lt;br&gt; 
+	LATITUDE: 29.43733
+	&lt;br&gt; 
+	LONGITUDE: -98.56359
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-98.56359,29.43733,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-98.56359,29.43733,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>JOKI JOHN 5/30/1952
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: JOKI JOHN 5/30/1952
+</name>
+        <description>DOB: 05/30/1952
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 05/14/1993
+	&lt;br&gt; 
+	AIRLINE: MS
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: B1
+	&lt;br&gt; 
+	DPT DATE: 05/28/1993
+	&lt;br&gt; 
+	PORT OF DEPARTURE: NYC
+	&lt;br&gt; 
+	LATITUDE: 29.44847
+	&lt;br&gt; 
+	LONGITUDE: -98.4447
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-98.4447,29.44847,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-98.4447,29.44847,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>PENNINGTON DAVE 2/19/1957
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: PENNINGTON DAVE 2/19/1957
+</name>
+        <description>DOB: 02/19/1957
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 06/13/1999
+	&lt;br&gt; 
+	AIRLINE: MS
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: B1
+	&lt;br&gt; 
+	DPT DATE: 06/26/1999
+	&lt;br&gt; 
+	PORT OF DEPARTURE: LOS
+	&lt;br&gt; 
+	LATITUDE: 29.67072
+	&lt;br&gt; 
+	LONGITUDE: -95.3633
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-95.3633,29.67072,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-95.3633,29.67072,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>MCGOVERN PATRICIA 8/17/1979
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: MCGOVERN PATRICIA 8/17/1979
+</name>
+        <description>DOB: 08/17/1979
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 03/13/1994
+	&lt;br&gt; 
+	AIRLINE: MS
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: B1
+	&lt;br&gt; 
+	DPT DATE: 03/26/1994
+	&lt;br&gt; 
+	PORT OF DEPARTURE: NYC
+	&lt;br&gt; 
+	LATITUDE: 29.81052
+	&lt;br&gt; 
+	LONGITUDE: -95.40814
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-95.40814,29.81052,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-95.40814,29.81052,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>SCHEINMAN STEVE 2/12/1974
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: SCHEINMAN STEVE 2/12/1974
+</name>
+        <description>DOB: 02/12/1974
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 01/23/2001
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	LATITUDE: 30.41927
+	&lt;br&gt; 
+	LONGITUDE: -87.24903
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.24903,30.41927,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-87.24903,30.41927,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>PHILLIPS ALICE 12/31/1959
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: PHILLIPS ALICE 12/31/1959
+</name>
+        <description>DOB: 12/31/1959
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 05/13/2001
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	DPT DATE: 05/25/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: JFK
+	&lt;br&gt; 
+	LATITUDE: 32.44968
+	&lt;br&gt; 
+	LONGITUDE: -111.2084
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-111.2084,32.44968,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-111.2084,32.44968,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>NAAS STEVE 1/28/1977
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: NAAS STEVE 1/28/1977
+</name>
+        <description>DOB: 01/28/1977
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 08/02/2000
+	&lt;br&gt; 
+	AIRLINE: TW
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	DPT DATE: 09/01/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: JFK
+	&lt;br&gt; 
+	LATITUDE: 34.02607
+	&lt;br&gt; 
+	LONGITUDE: -118.27737
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-118.27737,34.02607,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-118.27737,34.02607,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>SMART JOHN 9/10/1976
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: SMART JOHN 9/10/1976
+</name>
+        <description>DOB: 09/10/1976
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 06/22/2001
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: ORL
+	&lt;br&gt; 
+	LATITUDE: 28.54099
+	&lt;br&gt; 
+	LONGITUDE: -81.43705
+	&lt;br&gt; 
+	DPT DATE: 11/16/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: JFK
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-81.43705,28.54099,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-86.62231,34.72871,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>JOKI TED 1/3/1966
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: JOKI TED 1/3/1966
+</name>
+        <description>DOB: 01/03/1966
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 06/26/1988
+	&lt;br&gt; 
+	AIRLINE: MS
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	DPT DATE: 06/27/1988
+	&lt;br&gt; 
+	PORT OF DEPARTURE: MIA
+	&lt;br&gt; 
+	LATITUDE: 35.31801
+	&lt;br&gt; 
+	LONGITUDE: -118.91733
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-118.91733,35.31801,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-118.91733,35.31801,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>PICCOLA JOHN 2/28/1950
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: PICCOLA JOHN 2/28/1950
+</name>
+        <description>DOB: 02/28/1950
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 10/01/1996
+	&lt;br&gt; 
+	AIRLINE: MS
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: B1
+	&lt;br&gt; 
+	DPT DATE: 10/20/1996
+	&lt;br&gt; 
+	PORT OF DEPARTURE: NYC
+	&lt;br&gt; 
+	LATITUDE: 35.5297
+	&lt;br&gt; 
+	LONGITUDE: -83.03624
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-83.03624,35.5297,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-83.03624,35.5297,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>RUPPERT ROD 9/13/1976
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: RUPPERT ROD 9/13/1976
+</name>
+        <description>DOB: 09/13/1976
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 07/03/1998
+	&lt;br&gt; 
+	AIRLINE: MS
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	DPT DATE: 08/02/1998
+	&lt;br&gt; 
+	PORT OF DEPARTURE: JFK
+	&lt;br&gt; 
+	LATITUDE: 35.98938
+	&lt;br&gt; 
+	LONGITUDE: -78.88059
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-78.88059,35.98938,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-78.88059,35.98938,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>NAAS PAUL 9/2/1970
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: NAAS PAUL 9/2/1970
+</name>
+        <description>DOB: 09/02/1970
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 01/09/2001
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	LATITUDE: 36.85175
+	&lt;br&gt; 
+	LONGITUDE: -76.26827
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-76.26827,36.85175,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-76.26827,36.85175,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>HELLAND TIM 9/8/1979
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: HELLAND TIM 9/8/1979
+</name>
+        <description>DOB: 09/08/1979
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 02/07/1991
+	&lt;br&gt; 
+	AIRLINE: PA
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	VISA CLASS: A2
+	&lt;br&gt; 
+	DPT DATE: 02/22/1991
+	&lt;br&gt; 
+	PORT OF DEPARTURE: CIN
+	&lt;br&gt; 
+	LATITUDE: 38.98091
+	&lt;br&gt; 
+	LONGITUDE: -77.08128
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.08128,38.98091,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-76.28299,36.87847,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>PHILLIPS JIM 9/24/1968
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: PHILLIPS JIM 9/24/1968
+</name>
+        <description>DOB: 09/24/1968
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 04/30/2000
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	DPT DATE: 05/25/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: JFK
+	&lt;br&gt; 
+	LATITUDE: 37.65806
+	&lt;br&gt; 
+	LONGITUDE: -92.64284
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-92.64284,37.65806,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-92.64284,37.65806,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>SMART CINDY 4/19/1982
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: SMART CINDY 4/19/1982
+</name>
+        <description>DOB: 04/19/1982
+	&lt;br&gt; 
+	CTZ: PK
+	&lt;br&gt; 
+	ADM DATE: 09/18/2001
+	&lt;br&gt; 
+	AIRLINE: BA
+	&lt;br&gt; 
+	PORT OF ENTRY: LOS
+	&lt;br&gt; 
+	LATITUDE: 39.63678
+	&lt;br&gt; 
+	LONGITUDE: -78.76455
+	&lt;br&gt; 
+	VISA CLASS: F1
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-78.76455,39.63678,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-75.05561,38.42733,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>CATHCART JIM 7/10/1953
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: CATHCART JIM 7/10/1953
+</name>
+        <description>DOB: 07/10/1953
+	&lt;br&gt; 
+	CTZ: NG
+	&lt;br&gt; 
+	ADM DATE: 03/08/1987
+	&lt;br&gt; 
+	AIRLINE: AF
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: C3
+	&lt;br&gt; 
+	DPT DATE: 03/08/1987
+	&lt;br&gt; 
+	PORT OF DEPARTURE: NYC
+	&lt;br&gt; 
+	LATITUDE: 38.4386
+	&lt;br&gt; 
+	LONGITUDE: -75.05289
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-75.05289,38.4386,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-75.05289,38.4386,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>ROSS ALICE 5/30/1963
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: ROSS ALICE 5/30/1963
+</name>
+        <description>DOB: 05/30/1963
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 08/16/2001
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	DPT DATE: 09/04/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: JFK
+	&lt;br&gt; 
+	LATITUDE: 38.44057
+	&lt;br&gt; 
+	LONGITUDE: -75.05375
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-75.05375,38.44057,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-75.05375,38.44057,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>MACDONALD CINDY 11/25/1955
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: MACDONALD CINDY 11/25/1955
+</name>
+        <description>DOB: 11/25/1955
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 08/05/1994
+	&lt;br&gt; 
+	AIRLINE: MS
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	DPT DATE: 09/16/1994
+	&lt;br&gt; 
+	PORT OF DEPARTURE: NYC
+	&lt;br&gt; 
+	LATITUDE: 38.91106
+	&lt;br&gt; 
+	LONGITUDE: -77.04122
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.04122,38.91106,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-77.04122,38.91106,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>OSAK TANYA 4/30/1976
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: OSAK TANYA 4/30/1976
+</name>
+        <description>DOB: 04/30/1976
+	&lt;br&gt; 
+	CTZ: DZ
+	&lt;br&gt; 
+	ADM DATE: 09/17/2000
+	&lt;br&gt; 
+	AIRLINE: AF
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	DPT DATE: 09/19/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: EWR
+	&lt;br&gt; 
+	LATITUDE: 39.04249
+	&lt;br&gt; 
+	LONGITUDE: -76.44834
+	&lt;br&gt; 
+	VISA CLASS: A1
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-76.44834,39.04249,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-76.44834,39.04249,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>SCHMITT TED 4/24/1957
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: SCHMITT TED 4/24/1957
+</name>
+        <description>DOB: 04/24/1957
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 06/10/1990
+	&lt;br&gt; 
+	AIRLINE: MS
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: A2
+	&lt;br&gt; 
+	DPT DATE: 06/11/1991
+	&lt;br&gt; 
+	PORT OF DEPARTURE: NYC
+	&lt;br&gt; 
+	LATITUDE: 39.05731
+	&lt;br&gt; 
+	LONGITUDE: -76.6456
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-76.6456,39.05731,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-76.6456,39.05731,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>LEVINE ALICE 10/20/1979
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: LEVINE ALICE 10/20/1979
+</name>
+        <description>DOB: 10/20/1979
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 07/13/2000
+	&lt;br&gt; 
+	AIRLINE: SU
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	DPT DATE: 10/16/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: ORD
+	&lt;br&gt; 
+	LATITUDE: 39.08955
+	&lt;br&gt; 
+	LONGITUDE: -94.53455
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-94.53455,39.08955,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-94.53455,39.08955,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>RICHIE FRED 10/16/1966
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: RICHIE FRED 10/16/1966
+</name>
+        <description>DOB: 10/16/1966
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 06/15/2001
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	DPT DATE: 06/21/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: JFK
+	&lt;br&gt; 
+	LATITUDE: 39.14202
+	&lt;br&gt; 
+	LONGITUDE: -76.54305
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-76.54305,39.14202,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-76.54305,39.14202,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>AARON CORA 5/1/1977
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: AARON CORA 5/1/1977
+</name>
+        <description>DOB: 05/01/1977
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 01/21/2000
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	DPT DATE: 07/04/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: MCO
+	&lt;br&gt; 
+	LATITUDE: 39.28233
+	&lt;br&gt; 
+	LONGITUDE: -76.52593
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-76.52593,39.28233,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-76.52593,39.28233,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>JORDAN CINDY 10/29/1945
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: JORDAN CINDY 10/29/1945
+</name>
+        <description>DOB: 10/29/1945
+	&lt;br&gt; 
+	CTZ: NG
+	&lt;br&gt; 
+	ADM DATE: 04/19/1987
+	&lt;br&gt; 
+	AIRLINE: BR
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: J1
+	&lt;br&gt; 
+	DPT DATE: 04/30/1987
+	&lt;br&gt; 
+	PORT OF DEPARTURE: NYC
+	&lt;br&gt; 
+	LATITUDE: 39.28823
+	&lt;br&gt; 
+	LONGITUDE: -76.64653
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-76.64653,39.28823,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-76.64653,39.28823,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>GIBBS DAVE 1/1/1963
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: GIBBS DAVE 1/1/1963
+</name>
+        <description>DOB: 01/01/1963
+	&lt;br&gt; 
+	CTZ: LB
+	&lt;br&gt; 
+	ADM DATE: 06/21/1988
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: J1
+	&lt;br&gt; 
+	LATITUDE: 39.29692
+	&lt;br&gt; 
+	LONGITUDE: -76.6074
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-76.6074,39.29692,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-76.6074,39.29692,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>DEWOLF CINDY 11/28/1945
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: DEWOLF CINDY 11/28/1945
+</name>
+        <description>DOB: 11/28/1945
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 02/27/1993
+	&lt;br&gt; 
+	AIRLINE: KL
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: B1
+	&lt;br&gt; 
+	DPT DATE: 03/12/1993
+	&lt;br&gt; 
+	PORT OF DEPARTURE: ATL
+	&lt;br&gt; 
+	LATITUDE: 39.39931
+	&lt;br&gt; 
+	LONGITUDE: -75.0317
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-75.0317,39.39931,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-75.0317,39.39931,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>CARVER JACK 8/22/1971
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: CARVER JACK 8/22/1971
+</name>
+        <description>DOB: 08/22/1971
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 11/03/2001
+	&lt;br&gt; 
+	AIRLINE: AZ
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	LATITUDE: 39.61765
+	&lt;br&gt; 
+	LONGITUDE: -79.94933
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-79.94933,39.61765,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-79.94933,39.61765,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>EDWARDS CAROL 8/9/1973
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: EDWARDS CAROL 8/9/1973
+</name>
+        <description>DOB: 08/09/1973
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 06/16/1996
+	&lt;br&gt; 
+	AIRLINE: TW
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	DPT DATE: 10/30/1996
+	&lt;br&gt; 
+	PORT OF DEPARTURE: NYC
+	&lt;br&gt; 
+	LATITUDE: 39.63678
+	&lt;br&gt; 
+	LONGITUDE: -78.76455
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-78.76455,39.63678,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-78.76455,39.63678,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>MAJOR PETER 5/9/1978
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: MAJOR PETER 5/9/1978
+</name>
+        <description>DOB: 05/09/1978
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 05/02/2001
+	&lt;br&gt; 
+	AIRLINE: NW
+	&lt;br&gt; 
+	PORT OF ENTRY: MIA
+	&lt;br&gt; 
+	LATITUDE: 39.6219
+	&lt;br&gt; 
+	LONGITUDE: -77.72395
+	&lt;br&gt; 
+	DPT DATE: 04/18/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: MIA
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.72395,39.6219,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-78.79108,39.64867,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>COWLISHAW JACK 8/22/1971
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: COWLISHAW JACK 8/22/1971
+</name>
+        <description>DOB: 08/22/1971
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 03/23/2001
+	&lt;br&gt; 
+	AIRLINE: TW
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	DPT DATE: 10/19/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: JFK
+	&lt;br&gt; 
+	LATITUDE: 39.65307
+	&lt;br&gt; 
+	LONGITUDE: -79.96989
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-79.96989,39.65307,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-79.96989,39.65307,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>LAMOREAUX DAN 6/5/1973
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: LAMOREAUX DAN 6/5/1973
+</name>
+        <description>DOB: 06/05/1973
+	&lt;br&gt; 
+	CTZ: NG
+	&lt;br&gt; 
+	ADM DATE: 08/17/2000
+	&lt;br&gt; 
+	AIRLINE: SN
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	DPT DATE: 08/20/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: IAD
+	&lt;br&gt; 
+	LATITUDE: 38.26266
+	&lt;br&gt; 
+	LONGITUDE: -76.59462
+	&lt;br&gt; 
+	VISA CLASS: B1
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-76.59462,38.26266,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-75.23567,39.96136,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>ARMSTRONG MARTY 2/25/1979
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: ARMSTRONG MARTY 2/25/1979
+</name>
+        <description>DOB: 02/25/1979
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 12/29/2000
+	&lt;br&gt; 
+	AIRLINE: SA
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	LATITUDE: 39.97448
+	&lt;br&gt; 
+	LONGITUDE: -82.97201
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-82.97201,39.97448,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-82.97201,39.97448,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>PICCOLA ROD 1/6/1978
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: PICCOLA ROD 1/6/1978
+</name>
+        <description>DOB: 01/06/1978
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 06/29/2001
+	&lt;br&gt; 
+	AIRLINE: MS
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	DPT DATE: 07/24/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: JFK
+	&lt;br&gt; 
+	LATITUDE: 40.58002
+	&lt;br&gt; 
+	LONGITUDE: -73.93901
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.93901,40.58002,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-73.93901,40.58002,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>MCCLELLAN TED 1/3/1966
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: MCCLELLAN TED 1/3/1966
+</name>
+        <description>DOB: 01/03/1966
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 08/21/1988
+	&lt;br&gt; 
+	AIRLINE: LA
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	DPT DATE: 08/23/1988
+	&lt;br&gt; 
+	PORT OF DEPARTURE: NYC
+	&lt;br&gt; 
+	LATITUDE: 40.63181
+	&lt;br&gt; 
+	LONGITUDE: -74.10176
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-74.10176,40.63181,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-74.10176,40.63181,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>JACKSON ALICE 5/18/1964
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: JACKSON ALICE 5/18/1964
+</name>
+        <description>DOB: 05/18/1964
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 11/10/2001
+	&lt;br&gt; 
+	AIRLINE: MS
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	LATITUDE: 40.64417
+	&lt;br&gt; 
+	LONGITUDE: -73.95562
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.95562,40.64417,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-73.95562,40.64417,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>KOTTEK JACK 2/9/1981
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: KOTTEK JACK 2/9/1981
+</name>
+        <description>DOB: 02/09/1981
+	&lt;br&gt; 
+	CTZ: FR
+	&lt;br&gt; 
+	ADM DATE: 07/10/1999
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: WT
+	&lt;br&gt; 
+	LATITUDE: 40.68347
+	&lt;br&gt; 
+	LONGITUDE: -73.89515
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.89515,40.68347,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-73.89515,40.68347,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>GIBBS JACK 2/9/1981
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: GIBBS JACK 2/9/1981
+</name>
+        <description>DOB: 02/09/1981
+	&lt;br&gt; 
+	CTZ: FR
+	&lt;br&gt; 
+	ADM DATE: 07/07/2000
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: CP
+	&lt;br&gt; 
+	LATITUDE: 40.74841
+	&lt;br&gt; 
+	LONGITUDE: -73.86091
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.86091,40.74841,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-73.86091,40.74841,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>CARNAHAN JACK 11/1/1957
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: CARNAHAN JACK 11/1/1957
+</name>
+        <description>DOB: 11/01/1957
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 06/23/1996
+	&lt;br&gt; 
+	AIRLINE: TW
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: B1
+	&lt;br&gt; 
+	DPT DATE: 07/01/1996
+	&lt;br&gt; 
+	PORT OF DEPARTURE: NYC
+	&lt;br&gt; 
+	LATITUDE: 41.11386
+	&lt;br&gt; 
+	LONGITUDE: -85.13523
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-85.13523,41.11386,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-85.13523,41.11386,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>STILES PAUL 10/3/1977
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: STILES PAUL 10/3/1977
+</name>
+        <description>DOB: 10/03/1977
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 02/24/2000
+	&lt;br&gt; 
+	AIRLINE: KL
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	LATITUDE: 41.27354
+	&lt;br&gt; 
+	LONGITUDE: -72.95699
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-72.95699,41.27354,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-72.95699,41.27354,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>BOKOVOY ALICE 11/14/1952
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: BOKOVOY ALICE 11/14/1952
+</name>
+        <description>DOB: 11/14/1952
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 06/24/1999
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: H1
+	&lt;br&gt; 
+	LATITUDE: 41.65539
+	&lt;br&gt; 
+	LONGITUDE: -91.51963
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-91.51963,41.65539,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-91.51963,41.65539,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>RUPPERT JACK 1/22/1963
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: RUPPERT JACK 1/22/1963
+</name>
+        <description>DOB: 01/22/1963
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 12/29/1995
+	&lt;br&gt; 
+	AIRLINE: TW
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: A2
+	&lt;br&gt; 
+	LATITUDE: 41.90856
+	&lt;br&gt; 
+	LONGITUDE: -87.63016
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.63016,41.90856,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-87.63016,41.90856,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>JACKSON JIM 10/28/1964
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: JACKSON JIM 10/28/1964
+</name>
+        <description>DOB: 10/28/1964
+	&lt;br&gt; 
+	CTZ: PK
+	&lt;br&gt; 
+	ADM DATE: 06/05/1991
+	&lt;br&gt; 
+	AIRLINE: PA
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	DPT DATE: 06/20/1991
+	&lt;br&gt; 
+	PORT OF DEPARTURE: IAD
+	&lt;br&gt; 
+	LATITUDE: 42.25915
+	&lt;br&gt; 
+	LONGITUDE: -71.81141
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-71.81141,42.25915,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-71.81141,42.25915,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>LAMOREAUX JIM 10/28/1964
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: LAMOREAUX JIM 10/28/1964
+</name>
+        <description>DOB: 10/28/1964
+	&lt;br&gt; 
+	CTZ: PK
+	&lt;br&gt; 
+	ADM DATE: 05/30/1993
+	&lt;br&gt; 
+	AIRLINE: UA
+	&lt;br&gt; 
+	PORT OF ENTRY: IAD
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	LATITUDE: 42.3037
+	&lt;br&gt; 
+	LONGITUDE: -71.78055
+	&lt;br&gt; 
+	DPT DATE: 01/01/1990
+	&lt;br&gt; 
+	PORT OF DEPARTURE: NYC
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-71.78055,42.3037,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-71.81141,42.25915,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>PENN JIM 8/11/1955
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: PENN JIM 8/11/1955
+</name>
+        <description>DOB: 08/11/1955
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 02/16/1989
+	&lt;br&gt; 
+	AIRLINE: KL
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: H1
+	&lt;br&gt; 
+	LATITUDE: 42.29735
+	&lt;br&gt; 
+	LONGITUDE: -71.0695
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-71.0695,42.29735,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-71.0695,42.29735,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>EDWARDS JOHN 9/13/1974
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: EDWARDS JOHN 9/13/1974
+</name>
+        <description>DOB: 09/13/1974
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 06/05/2000
+	&lt;br&gt; 
+	AIRLINE: TW
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	DPT DATE: 08/28/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: JFK
+	&lt;br&gt; 
+	LATITUDE: 42.35246
+	&lt;br&gt; 
+	LONGITUDE: -71.05991
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-71.05991,42.35246,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-71.05991,42.35246,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>SEELY STEVE 3/27/1952
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: SEELY STEVE 3/27/1952
+</name>
+        <description>DOB: 03/27/1952
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 09/06/2001
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	DPT DATE: 10/18/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: JFK
+	&lt;br&gt; 
+	LATITUDE: 42.35605
+	&lt;br&gt; 
+	LONGITUDE: -83.22327
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-83.22327,42.35605,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-83.22327,42.35605,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>RISSER ALICE 1/1/1955
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: RISSER ALICE 1/1/1955
+</name>
+        <description>DOB: 01/01/1955
+	&lt;br&gt; 
+	CTZ: YE
+	&lt;br&gt; 
+	ADM DATE: 12/14/1991
+	&lt;br&gt; 
+	AIRLINE: MS
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	LATITUDE: 42.61792
+	&lt;br&gt; 
+	LONGITUDE: -73.82895
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.82895,42.61792,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-73.82895,42.61792,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>RAYBURN STEVE 12/18/1978
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: RAYBURN STEVE 12/18/1978
+</name>
+        <description>DOB: 12/18/1978
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 03/16/2001
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	LATITUDE: 44.02638
+	&lt;br&gt; 
+	LONGITUDE: -92.44217
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-92.44217,44.02638,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-92.44217,44.02638,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>CARLSON JOHN 7/8/1977
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: CARLSON JOHN 7/8/1977
+</name>
+        <description>DOB: 07/08/1977
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 06/07/2001
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	DPT DATE: 07/31/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: JFK
+	&lt;br&gt; 
+	LATITUDE: 44.03744
+	&lt;br&gt; 
+	LONGITUDE: -92.47717
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-92.47717,44.03744,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-92.47717,44.03744,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>MOSLEY ROD 12/9/1953
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: MOSLEY ROD 12/9/1953
+</name>
+        <description>DOB: 12/09/1953
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 06/20/1989
+	&lt;br&gt; 
+	AIRLINE: MS
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: J1
+	&lt;br&gt; 
+	DPT DATE: 11/26/1989
+	&lt;br&gt; 
+	PORT OF DEPARTURE: NYC
+	&lt;br&gt; 
+	LATITUDE: 44.99493
+	&lt;br&gt; 
+	LONGITUDE: -93.2592
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-93.2592,44.99493,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-93.2592,44.99493,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>BURKE JOHN 8/15/1954
+	
+	to
+
+	NYC</name>
+      <Placemark>
+        <name>Person: BURKE JOHN 8/15/1954
+</name>
+        <description>DOB: 08/15/1954
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 09/18/1994
+	&lt;br&gt; 
+	AIRLINE: TW
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	VISA CLASS: B1
+	&lt;br&gt; 
+	DPT DATE: 09/26/1994
+	&lt;br&gt; 
+	PORT OF DEPARTURE: NYC
+	&lt;br&gt; 
+	LATITUDE: 47.66797
+	&lt;br&gt; 
+	LONGITUDE: -117.42965
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-117.42965,47.66797,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NYC
+</name>
+        <description>ENTRY-LAT: 40.63972
+	&lt;br&gt; 
+	ENTRY-LON: -73.77889
+	&lt;br&gt; 
+	Flight: SV 35 7/17/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-73.77889,40.63972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-117.42965,47.66797,0 -73.77889,40.63972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>RAWLS DONNA 5/11/1975
+	
+	to
+
+	NEW</name>
+      <Placemark>
+        <name>Person: RAWLS DONNA 5/11/1975
+</name>
+        <description>DOB: 05/11/1975
+	&lt;br&gt; 
+	CTZ: LB
+	&lt;br&gt; 
+	ADM DATE: 11/25/2000
+	&lt;br&gt; 
+	PORT OF ENTRY: MIA
+	&lt;br&gt; 
+	DPT DATE: 12/26/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: MIA
+	&lt;br&gt; 
+	LATITUDE: 39.37219
+	&lt;br&gt; 
+	LONGITUDE: -77.23776
+	&lt;br&gt; 
+	AIRLINE: DL
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.23776,39.37219,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NEW
+</name>
+        <description>ENTRY-LAT: 40.69306
+	&lt;br&gt; 
+	ENTRY-LON: -74.16833
+	&lt;br&gt; 
+	Flight: CO 37 8/5/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-74.16833,40.69306,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-75.05596,38.42536,0 -74.16833,40.69306,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>OSAK TANYA 4/30/1976
+	
+	to
+
+	NEW</name>
+      <Placemark>
+        <name>Person: OSAK TANYA 4/30/1976
+</name>
+        <description>DOB: 04/30/1976
+	&lt;br&gt; 
+	CTZ: DZ
+	&lt;br&gt; 
+	ADM DATE: 09/17/2000
+	&lt;br&gt; 
+	AIRLINE: AF
+	&lt;br&gt; 
+	PORT OF ENTRY: NYC
+	&lt;br&gt; 
+	DPT DATE: 09/19/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: EWR
+	&lt;br&gt; 
+	LATITUDE: 39.04249
+	&lt;br&gt; 
+	LONGITUDE: -76.44834
+	&lt;br&gt; 
+	VISA CLASS: A1
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-76.44834,39.04249,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NEW
+</name>
+        <description>ENTRY-LAT: 40.69306
+	&lt;br&gt; 
+	ENTRY-LON: -74.16833
+	&lt;br&gt; 
+	Flight: CO 37 8/5/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-74.16833,40.69306,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-76.44834,39.04249,0 -74.16833,40.69306,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>MAYER JIM 9/5/1970
+	
+	to
+
+	NEW</name>
+      <Placemark>
+        <name>Person: MAYER JIM 9/5/1970
+</name>
+        <description>DOB: 09/05/1970
+	&lt;br&gt; 
+	CTZ: LB
+	&lt;br&gt; 
+	ADM DATE: 12/25/1992
+	&lt;br&gt; 
+	AIRLINE: CO
+	&lt;br&gt; 
+	PORT OF ENTRY: NEW
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	DPT DATE: 01/09/1993
+	&lt;br&gt; 
+	PORT OF DEPARTURE: NEW
+	&lt;br&gt; 
+	LATITUDE: 42.13104
+	&lt;br&gt; 
+	LONGITUDE: -72.58871
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-72.58871,42.13104,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: NEW
+</name>
+        <description>ENTRY-LAT: 40.69306
+	&lt;br&gt; 
+	ENTRY-LON: -74.16833
+	&lt;br&gt; 
+	Flight: CO 37 8/5/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-74.16833,40.69306,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-72.58871,42.13104,0 -74.16833,40.69306,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>RISSER SUE 8/7/1975
+	
+	to
+
+	CHI</name>
+      <Placemark>
+        <name>Person: RISSER SUE 8/7/1975
+</name>
+        <description>DOB: 08/07/1975
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 08/22/2001
+	&lt;br&gt; 
+	AIRLINE: BA
+	&lt;br&gt; 
+	PORT OF ENTRY: CHI
+	&lt;br&gt; 
+	LATITUDE: 31.32214
+	&lt;br&gt; 
+	LONGITUDE: -89.32273
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-89.32273,31.32214,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: CHI
+</name>
+        <description>ENTRY-LAT: 41.97972
+	&lt;br&gt; 
+	ENTRY-LON: -87.96444
+	&lt;br&gt; 
+	Flight: BA 297 8/22/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.96444,41.97972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-89.32273,31.32214,0 -87.96444,41.97972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>BAKER ROGER 1/23/1978
+	
+	to
+
+	CHI</name>
+      <Placemark>
+        <name>Person: BAKER ROGER 1/23/1978
+</name>
+        <description>DOB: 01/23/1978
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 01/14/2000
+	&lt;br&gt; 
+	AIRLINE: UA
+	&lt;br&gt; 
+	PORT OF ENTRY: CHI
+	&lt;br&gt; 
+	LATITUDE: 32.12671
+	&lt;br&gt; 
+	LONGITUDE: -111.03574
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-111.03574,32.12671,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: CHI
+</name>
+        <description>ENTRY-LAT: 41.97972
+	&lt;br&gt; 
+	ENTRY-LON: -87.96444
+	&lt;br&gt; 
+	Flight: BA 297 8/22/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.96444,41.97972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-111.03574,32.12671,0 -87.96444,41.97972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>MERZENICH DAVE 2/16/1977
+	
+	to
+
+	CHI</name>
+      <Placemark>
+        <name>Person: MERZENICH DAVE 2/16/1977
+</name>
+        <description>DOB: 02/16/1977
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 01/14/2000
+	&lt;br&gt; 
+	AIRLINE: UA
+	&lt;br&gt; 
+	PORT OF ENTRY: CHI
+	&lt;br&gt; 
+	LATITUDE: 32.38386
+	&lt;br&gt; 
+	LONGITUDE: -111.00801
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-111.00801,32.38386,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: CHI
+</name>
+        <description>ENTRY-LAT: 41.97972
+	&lt;br&gt; 
+	ENTRY-LON: -87.96444
+	&lt;br&gt; 
+	Flight: BA 297 8/22/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.96444,41.97972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-111.00801,32.38386,0 -87.96444,41.97972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>NAAS JOHN 10/21/1982
+	
+	to
+
+	CHI</name>
+      <Placemark>
+        <name>Person: NAAS JOHN 10/21/1982
+</name>
+        <description>DOB: 10/21/1982
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 08/12/2000
+	&lt;br&gt; 
+	AIRLINE: LH
+	&lt;br&gt; 
+	PORT OF ENTRY: CHI
+	&lt;br&gt; 
+	DPT DATE: 12/17/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: IAD
+	&lt;br&gt; 
+	LATITUDE: 33.39621
+	&lt;br&gt; 
+	LONGITUDE: -111.92944
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-111.92944,33.39621,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: CHI
+</name>
+        <description>ENTRY-LAT: 41.97972
+	&lt;br&gt; 
+	ENTRY-LON: -87.96444
+	&lt;br&gt; 
+	Flight: BA 297 8/22/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.96444,41.97972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-111.92944,33.39621,0 -87.96444,41.97972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>SMART JOHN 9/10/1976
+	
+	to
+
+	CHI</name>
+      <Placemark>
+        <name>Person: SMART JOHN 9/10/1976
+</name>
+        <description>DOB: 09/10/1976
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 06/22/2001
+	&lt;br&gt; 
+	AIRLINE: SV
+	&lt;br&gt; 
+	PORT OF ENTRY: ORL
+	&lt;br&gt; 
+	LATITUDE: 28.54099
+	&lt;br&gt; 
+	LONGITUDE: -81.43705
+	&lt;br&gt; 
+	DPT DATE: 11/16/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: JFK
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-81.43705,28.54099,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: CHI
+</name>
+        <description>ENTRY-LAT: 41.97972
+	&lt;br&gt; 
+	ENTRY-LON: -87.96444
+	&lt;br&gt; 
+	Flight: BA 297 8/22/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.96444,41.97972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-86.62231,34.72871,0 -87.96444,41.97972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>MILLER ALICE 11/28/1979
+	
+	to
+
+	CHI</name>
+      <Placemark>
+        <name>Person: MILLER ALICE 11/28/1979
+</name>
+        <description>DOB: 11/28/1979
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 01/11/2000
+	&lt;br&gt; 
+	AIRLINE: UA
+	&lt;br&gt; 
+	PORT OF ENTRY: CHI
+	&lt;br&gt; 
+	DPT DATE: 07/04/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: ORD
+	&lt;br&gt; 
+	LATITUDE: 39.13641
+	&lt;br&gt; 
+	LONGITUDE: -76.54813
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-76.54813,39.13641,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: CHI
+</name>
+        <description>ENTRY-LAT: 41.97972
+	&lt;br&gt; 
+	ENTRY-LON: -87.96444
+	&lt;br&gt; 
+	Flight: BA 297 8/22/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.96444,41.97972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-76.54813,39.13641,0 -87.96444,41.97972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>PETTY JOHN 8/1/1981
+	
+	to
+
+	CHI</name>
+      <Placemark>
+        <name>Person: PETTY JOHN 8/1/1981
+</name>
+        <description>DOB: 08/01/1981
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 01/13/2001
+	&lt;br&gt; 
+	AIRLINE: UA
+	&lt;br&gt; 
+	PORT OF ENTRY: CHI
+	&lt;br&gt; 
+	LATITUDE: 39.6219
+	&lt;br&gt; 
+	LONGITUDE: -77.72395
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.72395,39.6219,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: CHI
+</name>
+        <description>ENTRY-LAT: 41.97972
+	&lt;br&gt; 
+	ENTRY-LON: -87.96444
+	&lt;br&gt; 
+	Flight: BA 297 8/22/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.96444,41.97972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-77.72395,39.6219,0 -87.96444,41.97972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>ANDERSON BILL 2/25/1973
+	
+	to
+
+	CHI</name>
+      <Placemark>
+        <name>Person: ANDERSON BILL 2/25/1973
+</name>
+        <description>DOB: 02/25/1973
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 01/28/1997
+	&lt;br&gt; 
+	AIRLINE: NW
+	&lt;br&gt; 
+	PORT OF ENTRY: CHI
+	&lt;br&gt; 
+	VISA CLASS: B1
+	&lt;br&gt; 
+	LATITUDE: 39.64867
+	&lt;br&gt; 
+	LONGITUDE: -78.79108
+	&lt;br&gt; 
+	DPT DATE: 02/04/1996
+	&lt;br&gt; 
+	PORT OF DEPARTURE: CHI
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-78.79108,39.64867,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: CHI
+</name>
+        <description>ENTRY-LAT: 41.97972
+	&lt;br&gt; 
+	ENTRY-LON: -87.96444
+	&lt;br&gt; 
+	Flight: BA 297 8/22/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.96444,41.97972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-78.79108,39.64867,0 -87.96444,41.97972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>BAKER DAVE 6/25/1963
+	
+	to
+
+	CHI</name>
+      <Placemark>
+        <name>Person: BAKER DAVE 6/25/1963
+</name>
+        <description>DOB: 06/25/1963
+	&lt;br&gt; 
+	CTZ: EG
+	&lt;br&gt; 
+	ADM DATE: 08/11/1999
+	&lt;br&gt; 
+	AIRLINE: AZ
+	&lt;br&gt; 
+	PORT OF ENTRY: CHI
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	DPT DATE: 08/18/1999
+	&lt;br&gt; 
+	PORT OF DEPARTURE: ORD
+	&lt;br&gt; 
+	LATITUDE: 41.51878
+	&lt;br&gt; 
+	LONGITUDE: -87.71607
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.71607,41.51878,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: CHI
+</name>
+        <description>ENTRY-LAT: 41.97972
+	&lt;br&gt; 
+	ENTRY-LON: -87.96444
+	&lt;br&gt; 
+	Flight: BA 297 8/22/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.96444,41.97972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-87.71607,41.51878,0 -87.96444,41.97972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>GRANT DAVE 6/2/1958
+	
+	to
+
+	CHI</name>
+      <Placemark>
+        <name>Person: GRANT DAVE 6/2/1958
+</name>
+        <description>DOB: 06/02/1958
+	&lt;br&gt; 
+	CTZ: SY
+	&lt;br&gt; 
+	ADM DATE: 07/12/1990
+	&lt;br&gt; 
+	AIRLINE: SR
+	&lt;br&gt; 
+	PORT OF ENTRY: CHI
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	DPT DATE: 09/08/1990
+	&lt;br&gt; 
+	PORT OF DEPARTURE: CHI
+	&lt;br&gt; 
+	LATITUDE: 41.87871
+	&lt;br&gt; 
+	LONGITUDE: -87.63374
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.63374,41.87871,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: CHI
+</name>
+        <description>ENTRY-LAT: 41.97972
+	&lt;br&gt; 
+	ENTRY-LON: -87.96444
+	&lt;br&gt; 
+	Flight: BA 297 8/22/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.96444,41.97972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-87.63374,41.87871,0 -87.96444,41.97972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>HALE JOHN 6/1/1965
+	
+	to
+
+	CHI</name>
+      <Placemark>
+        <name>Person: HALE JOHN 6/1/1965
+</name>
+        <description>DOB: 06/01/1965
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 08/11/2001
+	&lt;br&gt; 
+	AIRLINE: KL
+	&lt;br&gt; 
+	PORT OF ENTRY: CHI
+	&lt;br&gt; 
+	DPT DATE: 08/19/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: JFK
+	&lt;br&gt; 
+	LATITUDE: 42.14446
+	&lt;br&gt; 
+	LONGITUDE: -88.12999
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-88.12999,42.14446,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: CHI
+</name>
+        <description>ENTRY-LAT: 41.97972
+	&lt;br&gt; 
+	ENTRY-LON: -87.96444
+	&lt;br&gt; 
+	Flight: BA 297 8/22/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.96444,41.97972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-88.12999,42.14446,0 -87.96444,41.97972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>MOXLEY PAUL 5/29/1967
+	
+	to
+
+	CHI</name>
+      <Placemark>
+        <name>Person: MOXLEY PAUL 5/29/1967
+</name>
+        <description>DOB: 05/29/1967
+	&lt;br&gt; 
+	CTZ: DZ
+	&lt;br&gt; 
+	ADM DATE: 09/12/1996
+	&lt;br&gt; 
+	AIRLINE: BA
+	&lt;br&gt; 
+	PORT OF ENTRY: CHI
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	DPT DATE: 09/24/1996
+	&lt;br&gt; 
+	PORT OF DEPARTURE: CHI
+	&lt;br&gt; 
+	LATITUDE: 43.00481
+	&lt;br&gt; 
+	LONGITUDE: -87.98278
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.98278,43.00481,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: CHI
+</name>
+        <description>ENTRY-LAT: 41.97972
+	&lt;br&gt; 
+	ENTRY-LON: -87.96444
+	&lt;br&gt; 
+	Flight: BA 297 8/22/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.96444,41.97972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-87.98278,43.00481,0 -87.96444,41.97972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>CATHCART DAVE 1/31/1955
+	
+	to
+
+	CHI</name>
+      <Placemark>
+        <name>Person: CATHCART DAVE 1/31/1955
+</name>
+        <description>DOB: 01/31/1955
+	&lt;br&gt; 
+	CTZ: IR
+	&lt;br&gt; 
+	ADM DATE: 06/07/1991
+	&lt;br&gt; 
+	AIRLINE: BA
+	&lt;br&gt; 
+	PORT OF ENTRY: CHI
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	DPT DATE: 07/07/1991
+	&lt;br&gt; 
+	PORT OF DEPARTURE: CHI
+	&lt;br&gt; 
+	LATITUDE: 43.05277
+	&lt;br&gt; 
+	LONGITUDE: -88.13039
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-88.13039,43.05277,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: CHI
+</name>
+        <description>ENTRY-LAT: 41.97972
+	&lt;br&gt; 
+	ENTRY-LON: -87.96444
+	&lt;br&gt; 
+	Flight: BA 297 8/22/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.96444,41.97972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-88.13039,43.05277,0 -87.96444,41.97972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>MARTIN DAVE 4/27/1977
+	
+	to
+
+	CHI</name>
+      <Placemark>
+        <name>Person: MARTIN DAVE 4/27/1977
+</name>
+        <description>DOB: 04/27/1977
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 01/17/2000
+	&lt;br&gt; 
+	AIRLINE: UA
+	&lt;br&gt; 
+	PORT OF ENTRY: CHI
+	&lt;br&gt; 
+	DPT DATE: 04/16/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: IAD
+	&lt;br&gt; 
+	LATITUDE: 43.16428
+	&lt;br&gt; 
+	LONGITUDE: -77.59642
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-77.59642,43.16428,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: CHI
+</name>
+        <description>ENTRY-LAT: 41.97972
+	&lt;br&gt; 
+	ENTRY-LON: -87.96444
+	&lt;br&gt; 
+	Flight: BA 297 8/22/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.96444,41.97972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-77.59642,43.16428,0 -87.96444,41.97972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>CAMP JIM 10/7/1980
+	
+	to
+
+	CHI</name>
+      <Placemark>
+        <name>Person: CAMP JIM 10/7/1980
+</name>
+        <description>DOB: 10/07/1980
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 07/04/2001
+	&lt;br&gt; 
+	AIRLINE: AA
+	&lt;br&gt; 
+	PORT OF ENTRY: CHI
+	&lt;br&gt; 
+	LATITUDE: 43.99843
+	&lt;br&gt; 
+	LONGITUDE: -92.43018
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-92.43018,43.99843,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: CHI
+</name>
+        <description>ENTRY-LAT: 41.97972
+	&lt;br&gt; 
+	ENTRY-LON: -87.96444
+	&lt;br&gt; 
+	Flight: BA 297 8/22/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.96444,41.97972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-92.43018,43.99843,0 -87.96444,41.97972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>DAWKINS DAWN 3/3/1970
+	
+	to
+
+	CHI</name>
+      <Placemark>
+        <name>Person: DAWKINS DAWN 3/3/1970
+</name>
+        <description>DOB: 03/03/1970
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 05/31/2000
+	&lt;br&gt; 
+	AIRLINE: AA
+	&lt;br&gt; 
+	PORT OF ENTRY: CHI
+	&lt;br&gt; 
+	DPT DATE: 09/01/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: SPM
+	&lt;br&gt; 
+	LATITUDE: 45.00999
+	&lt;br&gt; 
+	LONGITUDE: -93.33758
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-93.33758,45.00999,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: CHI
+</name>
+        <description>ENTRY-LAT: 41.97972
+	&lt;br&gt; 
+	ENTRY-LON: -87.96444
+	&lt;br&gt; 
+	Flight: BA 297 8/22/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.96444,41.97972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-93.33758,45.00999,0 -87.96444,41.97972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>OBERT DAVE 5/19/1978
+	
+	to
+
+	CHI</name>
+      <Placemark>
+        <name>Person: OBERT DAVE 5/19/1978
+</name>
+        <description>DOB: 05/19/1978
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 09/19/2000
+	&lt;br&gt; 
+	AIRLINE: LH
+	&lt;br&gt; 
+	PORT OF ENTRY: CHI
+	&lt;br&gt; 
+	LATITUDE: 45.4213
+	&lt;br&gt; 
+	LONGITUDE: -122.66752
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-122.66752,45.4213,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: CHI
+</name>
+        <description>ENTRY-LAT: 41.97972
+	&lt;br&gt; 
+	ENTRY-LON: -87.96444
+	&lt;br&gt; 
+	Flight: BA 297 8/22/2001
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-87.96444,41.97972,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-122.66752,45.4213,0 -87.96444,41.97972,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>PENNINGTON JACK 3/24/1952
+	
+	to
+
+	DET</name>
+      <Placemark>
+        <name>Person: PENNINGTON JACK 3/24/1952
+</name>
+        <description>DOB: 03/24/1952
+	&lt;br&gt; 
+	CTZ: SY
+	&lt;br&gt; 
+	ADM DATE: 07/24/1997
+	&lt;br&gt; 
+	PORT OF ENTRY: DET
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	DPT DATE: 08/24/1997
+	&lt;br&gt; 
+	PORT OF DEPARTURE: DET
+	&lt;br&gt; 
+	LATITUDE: 32.84083
+	&lt;br&gt; 
+	LONGITUDE: -85.59876
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-85.59876,32.84083,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: DET
+</name>
+        <description>ENTRY-LAT: 42.21194
+	&lt;br&gt; 
+	ENTRY-LON: -83.34889
+	&lt;br&gt; 
+	Flight: 67 7/24/1997
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-83.34889,42.21194,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-85.59876,32.84083,0 -83.34889,42.21194,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>DAWKINS DAWN 3/3/1970
+	
+	to
+
+	DET</name>
+      <Placemark>
+        <name>Person: DAWKINS DAWN 3/3/1970
+</name>
+        <description>DOB: 03/03/1970
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 05/31/2000
+	&lt;br&gt; 
+	AIRLINE: AA
+	&lt;br&gt; 
+	PORT OF ENTRY: CHI
+	&lt;br&gt; 
+	DPT DATE: 09/01/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: SPM
+	&lt;br&gt; 
+	LATITUDE: 45.00999
+	&lt;br&gt; 
+	LONGITUDE: -93.33758
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-93.33758,45.00999,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: DET
+</name>
+        <description>ENTRY-LAT: 42.21194
+	&lt;br&gt; 
+	ENTRY-LON: -83.34889
+	&lt;br&gt; 
+	Flight: 67 7/24/1997
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-83.34889,42.21194,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-94.92999,39.30745,0 -83.34889,42.21194,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>MOXLEY JIM 11/16/1948
+	
+	to
+
+	BOS</name>
+      <Placemark>
+        <name>Person: MOXLEY JIM 11/16/1948
+</name>
+        <description>DOB: 11/16/1948
+	&lt;br&gt; 
+	CTZ: IR
+	&lt;br&gt; 
+	ADM DATE: 10/09/1985
+	&lt;br&gt; 
+	PORT OF ENTRY: BOS
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	LATITUDE: 39.54259
+	&lt;br&gt; 
+	LONGITUDE: -76.30247
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-76.30247,39.54259,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: BOS
+</name>
+        <description>ENTRY-LAT: 42.36444
+	&lt;br&gt; 
+	ENTRY-LON: -71.00528
+	&lt;br&gt; 
+	Flight: 10/9/1985
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-71.00528,42.36444,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-76.30247,39.54259,0 -71.00528,42.36444,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>ANDERSON BILL 2/25/1973
+	
+	to
+
+	BOS</name>
+      <Placemark>
+        <name>Person: ANDERSON BILL 2/25/1973
+</name>
+        <description>DOB: 02/25/1973
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 01/28/1997
+	&lt;br&gt; 
+	AIRLINE: NW
+	&lt;br&gt; 
+	PORT OF ENTRY: CHI
+	&lt;br&gt; 
+	VISA CLASS: B1
+	&lt;br&gt; 
+	LATITUDE: 39.64867
+	&lt;br&gt; 
+	LONGITUDE: -78.79108
+	&lt;br&gt; 
+	DPT DATE: 02/04/1996
+	&lt;br&gt; 
+	PORT OF DEPARTURE: CHI
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-78.79108,39.64867,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: BOS
+</name>
+        <description>ENTRY-LAT: 42.36444
+	&lt;br&gt; 
+	ENTRY-LON: -71.00528
+	&lt;br&gt; 
+	Flight: 10/9/1985
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-71.00528,42.36444,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-78.79108,39.64867,0 -71.00528,42.36444,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>MAYER JIM 9/5/1970
+	
+	to
+
+	BOS</name>
+      <Placemark>
+        <name>Person: MAYER JIM 9/5/1970
+</name>
+        <description>DOB: 09/05/1970
+	&lt;br&gt; 
+	CTZ: LB
+	&lt;br&gt; 
+	ADM DATE: 12/25/1992
+	&lt;br&gt; 
+	AIRLINE: CO
+	&lt;br&gt; 
+	PORT OF ENTRY: NEW
+	&lt;br&gt; 
+	VISA CLASS: B2
+	&lt;br&gt; 
+	DPT DATE: 01/09/1993
+	&lt;br&gt; 
+	PORT OF DEPARTURE: NEW
+	&lt;br&gt; 
+	LATITUDE: 42.13104
+	&lt;br&gt; 
+	LONGITUDE: -72.58871
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-72.58871,42.13104,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: BOS
+</name>
+        <description>ENTRY-LAT: 42.36444
+	&lt;br&gt; 
+	ENTRY-LON: -71.00528
+	&lt;br&gt; 
+	Flight: 10/9/1985
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-71.00528,42.36444,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-72.54052,42.07953,0 -71.00528,42.36444,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>PENNINGTON DAVE 6/9/1982
+	
+	to
+
+	BOS</name>
+      <Placemark>
+        <name>Person: PENNINGTON DAVE 6/9/1982
+</name>
+        <description>DOB: 06/09/1982
+	&lt;br&gt; 
+	CTZ: UK
+	&lt;br&gt; 
+	ADM DATE: 07/17/2000
+	&lt;br&gt; 
+	AIRLINE: VS
+	&lt;br&gt; 
+	PORT OF ENTRY: BOS
+	&lt;br&gt; 
+	VISA CLASS: CP
+	&lt;br&gt; 
+	LATITUDE: 42.35333
+	&lt;br&gt; 
+	LONGITUDE: -71.15945
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-71.15945,42.35333,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: BOS
+</name>
+        <description>ENTRY-LAT: 42.36444
+	&lt;br&gt; 
+	ENTRY-LON: -71.00528
+	&lt;br&gt; 
+	Flight: 10/9/1985
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-71.00528,42.36444,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-71.15945,42.35333,0 -71.00528,42.36444,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>SYMES ALICE 9/1/1970
+	
+	to
+
+	BOS</name>
+      <Placemark>
+        <name>Person: SYMES ALICE 9/1/1970
+</name>
+        <description>DOB: 09/01/1970
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 06/08/2001
+	&lt;br&gt; 
+	AIRLINE: BA
+	&lt;br&gt; 
+	PORT OF ENTRY: BOS
+	&lt;br&gt; 
+	LATITUDE: 42.36027
+	&lt;br&gt; 
+	LONGITUDE: -71.06666
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-71.06666,42.36027,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: BOS
+</name>
+        <description>ENTRY-LAT: 42.36444
+	&lt;br&gt; 
+	ENTRY-LON: -71.00528
+	&lt;br&gt; 
+	Flight: 10/9/1985
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-71.00528,42.36444,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-71.06666,42.36027,0 -71.00528,42.36444,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>ZINGARELLI FRED 10/25/1965
+	
+	to
+
+	BOS</name>
+      <Placemark>
+        <name>Person: ZINGARELLI FRED 10/25/1965
+</name>
+        <description>DOB: 10/25/1965
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 08/26/2001
+	&lt;br&gt; 
+	AIRLINE: LH
+	&lt;br&gt; 
+	PORT OF ENTRY: BOS
+	&lt;br&gt; 
+	DPT DATE: 08/31/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: BOS
+	&lt;br&gt; 
+	LATITUDE: 42.36027
+	&lt;br&gt; 
+	LONGITUDE: -71.06666
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-71.06666,42.36027,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: BOS
+</name>
+        <description>ENTRY-LAT: 42.36444
+	&lt;br&gt; 
+	ENTRY-LON: -71.00528
+	&lt;br&gt; 
+	Flight: 10/9/1985
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-71.00528,42.36444,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-71.06666,42.36027,0 -71.00528,42.36444,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>PIQUETT SUE 12/2/1952
+	
+	to
+
+	BOS</name>
+      <Placemark>
+        <name>Person: PIQUETT SUE 12/2/1952
+</name>
+        <description>DOB: 12/02/1952
+	&lt;br&gt; 
+	CTZ: AE
+	&lt;br&gt; 
+	ADM DATE: 08/19/2001
+	&lt;br&gt; 
+	AIRLINE: NW
+	&lt;br&gt; 
+	PORT OF ENTRY: BOS
+	&lt;br&gt; 
+	DPT DATE: 10/03/2001
+	&lt;br&gt; 
+	PORT OF DEPARTURE: BOS
+	&lt;br&gt; 
+	LATITUDE: 42.36686
+	&lt;br&gt; 
+	LONGITUDE: -71.0577
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-71.0577,42.36686,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: BOS
+</name>
+        <description>ENTRY-LAT: 42.36444
+	&lt;br&gt; 
+	ENTRY-LON: -71.00528
+	&lt;br&gt; 
+	Flight: 10/9/1985
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-71.00528,42.36444,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-71.0577,42.36686,0 -71.00528,42.36444,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>RAYBURN ALICE 5/18/1971
+	
+	to
+
+	TOR</name>
+      <Placemark>
+        <name>Person: RAYBURN ALICE 5/18/1971
+</name>
+        <description>DOB: 05/18/1971
+	&lt;br&gt; 
+	CTZ: SA
+	&lt;br&gt; 
+	ADM DATE: 11/02/2000
+	&lt;br&gt; 
+	AIRLINE: AC
+	&lt;br&gt; 
+	PORT OF ENTRY: TOR
+	&lt;br&gt; 
+	DPT DATE: 11/09/2000
+	&lt;br&gt; 
+	PORT OF DEPARTURE: SEA
+	&lt;br&gt; 
+	LATITUDE: 47.66574
+	&lt;br&gt; 
+	LONGITUDE: -122.35721
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#normalPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-122.35721,47.66574,0</coordinates>
+        </Point>
+      </Placemark>
+	to
+	
+	<Placemark>
+        <name>PORT OF ENTRY: TOR
+</name>
+        <description>ENTRY-LAT: 43.65
+	&lt;br&gt; 
+	ENTRY-LON: -79.38
+	&lt;br&gt; 
+	Flight: AC 697 11/2/2000
+	&lt;br&gt; 
+	</description>
+        <styleUrl>
+	#highlightPlacemark
+	</styleUrl>
+        <Point>
+          <coordinates>-79.38,43.65,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name/>
+        <description/>
+        <styleUrl>#centrifugeLink</styleUrl>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>-122.35721,47.66574,0 -79.38,43.65,0 </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

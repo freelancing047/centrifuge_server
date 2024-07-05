@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <bean id="postgresDriver" class="csi.server.connector.config.JdbcDriver">
+        <property name="name" value="PostgreSQL"/>
+        <property name="key" value="postgresql"/>
+        <property name="baseUrl" value="jdbc:postgresql:"/>
+        <property name="jdbcFactory"><null/></property>
+        <property name="tableNameQualifier"><null/></property>
+        <property name="factory" value="csi.server.connector.jdbc.PostgreSQLConnectionFactory"/>
+        <property name="driverClass" value="org.postgresql.Driver"/>
+        <property name="driverAccessRole"><null/></property>
+        <property name="sourceEditRole"><null/></property>
+        <property name="connectionEditRole"><null/></property>
+        <property name="queryEditRole"><null/></property>
+        <property name="dataViewingRole"><null/></property>
+        <property name="escapeChar" value="'"/>
+        <property name="selectNullString"><null/></property>
+        <property name="sortOrder"><null/></property>
+		<property name="castNulls" value="false"/>
+		<property name="remarks" value="This driver may be used to load data from a PostgreSQL database into either an Installed Data Source or a DataView."/>
+        <property name="tableAliasMap">
+            <map>
+            </map>
+        </property>
+        <property name="capcoColumnMap">
+            <map>
+            </map>
+        </property>
+        <property name="authErrorCodes">
+            <list>
+            </list>
+        </property>
+        <property name="authSqlStates">
+            <list>
+                <value>08004</value>
+            </list>
+        </property>
+        <property name="defaultProperties">
+            <props>
+                <prop key="distinctSources">false</prop>
+            </props>
+        </property>
+        <property name="hiddenProperties">
+            <props>
+            </props>
+        </property>
+        <property name="tableFilters">
+            <props>
+                <prop key="schema">public</prop>
+                <prop key="table_type">TABLE|VIEW</prop>
+            </props>
+        </property>
+        <property name="typeMapping">
+            <props>
+            </props>
+        </property>
+        <property name="castMapping">
+            <props>
+                <prop key="String">CAST(% AS TEXT)</prop>
+                <prop key="Boolean">CAST(% AS BOOLEAN)</prop>
+                <prop key="Integer">CAST(% AS BIGINT)</prop>
+                <prop key="Float">CAST(% AS DOUBLE PRECISION)</prop>
+                <prop key="Date-Time">CAST(% AS TIMESTAMP)</prop>
+                <prop key="Date">CAST(% AS DATE)</prop>
+                <prop key="Time">CAST(% AS TIME)</prop>
+                <prop key="Unsupported">%</prop>
+            </props>
+        </property>
+        <property name="uiConnectionConfig" ref="postgresConnectionConfig"/>
+    </bean>
+
+    <bean id="postgresConnectionConfig" class="csi.server.common.dto.config.connection.DriverConfigInfo">
+        <property name="configItems" ref="postgresConfigItemList">
+        </property>
+    </bean>
+
+    <util:list id="postgresConfigItemList" value-type="csi.server.common.dto.config.connection.ConfigItem">
+        <ref bean="postgresFileConfigItem1" />
+        <ref bean="postgresFileConfigItem2" />
+        <ref bean="postgresFileConfigItem3" />
+        <ref bean="postgresFileConfigItem4" />
+        <ref bean="postgresFileConfigItem5" />
+        <ref bean="postgresFileConfigItem6" />
+        <ref bean="postgresFileConfigItem7" />
+    </util:list>
+
+    <bean id="postgresFileConfigItem1" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the name of the server hosting the the PostgreSQL server software or its IP address."/>
+        <property name="label" value="Enter the host name or IP address for the PostgreSQL server."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="true"/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.hostname"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="postgresFileConfigItem2" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the port number being used by the the PostgreSQL server software."/>
+        <property name="label" value="Enter the PostgreSQL server port number."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.port"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations" ref="postgresPortValidationOptions">
+        </property>
+    </bean>
+
+    <util:list id="postgresPortValidationOptions" value-type="csi.server.common.dto.KeyValueItem">
+        <ref bean="postgresPortValidationKeyValue1" />
+        <ref bean="postgresPortValidationKeyValue2" />
+        <ref bean="postgresPortValidationKeyValue3" />
+    </util:list>
+
+    <bean id="postgresPortValidationKeyValue1" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="minValue"/>
+        <property name="value" value="1"/>
+    </bean>
+
+    <bean id="postgresPortValidationKeyValue2" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="maxValue"/>
+        <property name="value" value="65535"/>
+    </bean>
+
+    <bean id="postgresPortValidationKeyValue3" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="isNumber"/>
+        <property name="value" value="true"/>
+    </bean>
+
+    <bean id="postgresFileConfigItem3" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the name of the database to be accessed within the Postgrethe PostgreSQL server."/>
+        <property name="label" value="Enter the database name."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="true"/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.databaseName"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="postgresFileConfigItem4" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the username for accessing the PostgreSQL server. If both a valid username and password are entered here they will be used anytime the DataView is refreshed from the database. If not the user will be prompted for a username and password."/>
+        <property name="label" value="Enter the username for accessing the PostgreSQL server."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.username"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="postgresFileConfigItem5" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the password for accessing the PostgreSQL server. If both a valid username and password are entered here they will be used anytime the DataView is refreshed from the database. If not the user will be prompted for a username and password."/>
+        <property name="label" value="Enter the password for accessing the PostgreSQL server."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="password"/>
+        <property name="key" value="csi.password"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="postgresFileConfigItem6" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter any extra parameters which are required by the driver to make a proper connection."/>
+        <property name="label" value="Enter any extra parameters."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="csiParmsTable"/>
+        <property name="key" value="csi.params"/>
+        <property name="isAdvancedOption" value="true"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="postgresFileConfigItem7" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter commands that must re run before and/or after retrieving data via the connection. An example would be commands that first created and then destroyed either a view or a temporary table."/>
+        <property name="label" value="Enter required Pre/Post-Query Commands."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="csiQueryCommands"/>
+        <property name="key" value="csiQueryCommands"/>
+        <property name="isAdvancedOption" value="true"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+</beans>

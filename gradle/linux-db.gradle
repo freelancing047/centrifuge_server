@@ -1,0 +1,56 @@
+/**
+ * Copies linux version of postgres and neo4j into the build.
+ */
+apply from: 'gradle/properties.gradle'
+
+configurations {
+    postgresLinux
+}
+
+dependencies {
+    postgresLinux 'csi:postgres-linux:9.6.1-1@tar.gz'
+}
+
+task deployLinuxDatabases(group: deployGroup) {
+    dependsOn 'deployBuildNumber', 'genVersionString'
+
+    doFirst {
+		println "*** Extract csi:postgres-linux:9.6.1-1@tar.gz into ${linuxOutput}/cachedb. ***"
+	    copy {
+	        from tarTree(configurations.postgresLinux.getSingleFile())
+	        into "${linuxOutput}/cachedb"
+	    }
+    }
+
+    doLast {
+		println "*** Rename pgsql to pgsql_${releaseVersion} in ${linuxOutput}/cachedb. ***"
+		file("${linuxOutput}/cachedb/pgsql").renameTo(file("${linuxOutput}/cachedb/pgsql_${releaseVersion}"))
+    }
+}
+
+task copyLinuxDatabaseIntoDevelopment(group: deployGroup) {
+    dependsOn 'deployLinuxDatabases', 'genVersionString'
+
+    doFirst {
+		println "*** Delete pgsql_${releaseVersion} from ${cachedbRuntime}. ***"
+        delete "${cachedbRuntime}/pgsql_${releaseVersion}"
+    }
+
+    doLast {
+		println "*** Copy pgsql_${releaseVersion} from ${linuxOutput}/cachedb to ${cachedbRuntime}. ***"
+	    copy {
+		    from "${linuxOutput}/cachedb"
+		    into cachedbRuntime
+            include "*"
+	    }
+    }
+}
+
+task copyLinuxDatabaseIntoInstallation(group: deployGroup) {
+    dependsOn 'copyLinuxJresIntoInstallerFolder'
+
+    doLast {
+		println "*** Copy pgsql tar file into ${cachedbRuntime}. ***"
+        ant.gunzip(src: configurations.postgresLinux.getSingleFile(), dest: "${buildRuntime}/cachedb/pgsql.tar")
+    }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder' xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui" xmlns:csiboot="urn:import:csi.client.gwt.widget.boot" xmlns:settings="urn:import:csi.client.gwt.viz.shared.settings" xmlns:tabs="urn:import:csi.client.gwt.viz.map.settings" xmlns:trackTabs="urn:import:csi.client.gwt.viz.map.track.settings">
+
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+    <ui:with field="dataViewDef" type="csi.server.common.model.dataview.DataViewDef" />
+    <ui:with field="visualizationDef" type="csi.server.common.model.visualization.map.MapViewDef" />
+
+    <settings:VisualizationSettingsModal ui:field="vizSettings" title="{i18n.get.mapSettingsView_title}" visualizationDef="{visualizationDef}" dataViewDef="{dataViewDef}" bodyWidth="800px" bodyHeight="300px">
+        <csiboot:CsiTabPanel tabPosition="left" ui:field="tabPanel">
+            <boot:Tab heading="{i18n.get.mapSettingsView_generalTab}" ui:field="bootGeneralTab">
+                <tabs:MapGeneralTab ui:field="generalTab" />
+            </boot:Tab>
+            <boot:Tab heading="{i18n.get.mapSettingsView_placesTab}" ui:field="bootPlacesTab">
+                <tabs:MapPlacesTab ui:field="placesTab" />
+            </boot:Tab>
+            <boot:Tab heading="{i18n.get.mapSettingsView_layersTab}" ui:field="bootLayersTab">
+                <tabs:MapLayersTab ui:field="layersTab" />
+            </boot:Tab>
+            <boot:Tab heading="{i18n.get.mapSettingsView_associationsTab}" ui:field="bootAssociationsTab">
+                <tabs:MapAssociationsTab ui:field="associationsTab" />
+            </boot:Tab>
+            <boot:Tab heading="{i18n.get.mapSettingsView_heatmapTab}" ui:field="bootHeatmapTab">
+                <tabs:MapHeatmapTab ui:field="heatmapTab" />
+            </boot:Tab>
+            <boot:Tab heading="{i18n.get.mapSettingsView_bundleTab}" ui:field="bootBundleTab">
+                <tabs:MapBundleTab ui:field="bundleTab" />
+            </boot:Tab>
+            <boot:Tab heading="{i18n.get.mapSettingsView_tracksTab}" ui:field="bootTracksTab">
+                <trackTabs:AppearanceTab ui:field="tracksTab" />
+            </boot:Tab>
+        </csiboot:CsiTabPanel>
+    </settings:VisualizationSettingsModal>
+</ui:UiBinder>

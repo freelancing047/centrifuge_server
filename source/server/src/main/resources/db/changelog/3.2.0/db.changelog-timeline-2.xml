@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet author="jdanberg" id="timeline-2-1">
+        <addColumn tableName="timelinesettings">
+            <column name="labelfield_uuid" type="varchar(255)" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-2-2">
+        <addColumn tableName="timelinesettings">
+            <column name="groupbyfield_uuid" type="varchar(255)" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-2-3">
+        <addColumn tableName="timelinesettings">
+            <column name="startfield_uuid" type="varchar(255)" />
+        </addColumn>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-2-4">
+        <addColumn tableName="timelinesettings">
+            <column name="endfield_uuid" type="varchar(255)" />
+        </addColumn>
+    </changeSet>
+        
+    <changeSet author="jdanberg" id="timeline-2-9" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="timelinetimesetting">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fielddef_uuid" type="varchar(255)" />
+            <column name="durationunit" type="VARCHAR(255)"/>
+            <column name="type" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="timeline-2-5" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="labelfield_uuid" baseTableName="timelinesettings" constraintName="timelinesettings_labelfield_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="fielddef"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-2-6" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="groupbyfield_uuid" baseTableName="timelinesettings" constraintName="timelinesettings_groupbyfield_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="fielddef"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-2-12" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="timelinetimesetting_uuid_pkey" tableName="timelinetimesetting"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-2-7" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="startfield_uuid" baseTableName="timelinesettings" constraintName="timelinesettings_startfield_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="timelinetimesetting"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-2-8" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="endfield_uuid" baseTableName="timelinesettings" constraintName="timelinesettings_endfield_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="timelinetimesetting"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-2-10" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="timelinetimesetting" constraintName="modelobject_timelinetimesettings_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelobject"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-2-11" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="fielddef_uuid" baseTableName="timelinetimesetting" constraintName="timelinetimesetting_fielddef_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="fielddef"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="timeline-2-14" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="timelinefield">
+            <column name="uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fielddef_uuid" type="varchar(255)" />
+        </createTable>
+    </changeSet>
+    
+    
+    <changeSet author="jdanberg" id="timeline-2-15" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="uuid" constraintName="timelinefield_uuid_pkey" tableName="timelinefield"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-2-17" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="uuid" baseTableName="timelinefield" constraintName="modelobject_timelinefield_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="modelobject"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-2-16" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="fielddef_uuid" baseTableName="timelinefield" constraintName="timelinefield_fielddef_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="fielddef"/>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="timeline-2-18" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="timelinesettings_timelinefield">
+            <column name="fieldlist_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="timelinesettings_uuid" type="VARCHAR(255)">
+            </column>
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="timeline-2-19" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="fieldlist_uuid" baseTableName="timelinesettings_timelinefield" constraintName="timelinesettings_timelinefield_fieldlist_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="timelinefield"/>
+    </changeSet>
+    <changeSet author="jdanberg" id="timeline-2-20" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="timelinesettings_uuid" baseTableName="timelinesettings_timelinefield" constraintName="timelinesettings_timelinefield_timelinesettings_foreignkey" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="timelinesettings"/>
+    </changeSet>
+    
+    
+</databaseChangeLog>

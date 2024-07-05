@@ -1,0 +1,80 @@
+/*Mixin for user-select property*/
+
+.user-select(@select-type) {
+  -moz-user-select: @select-type;
+  -ms-user-select: @select-type;
+  -o-user-select: @select-type;
+  -webkit-user-select: @select-type;
+  /*Property without prefix is always last to override the other if it is supported by the browser */
+  user-select: @select-type;
+}
+
+.criterionGridItem {
+  .user-select(none);
+  cursor: pointer;
+}
+
+.criterionGridItem :hover {
+  background-color: #a6d7ff;
+  cursor: pointer;
+
+}
+
+.pattern-type-grid .row-fluid {
+  .user-select(none);
+  background-color: #FEFEFE;
+  cursor: pointer;
+  border: 1px solid #DDDDDD;
+  padding: 8px 0 0 8px;
+  font-size: 12px;
+  div a {
+    margin-top: -4px;
+  }
+}
+
+.pattern-type-grid :hover {
+  background-color: #a6d7ff;
+  cursor: pointer;
+
+}
+
+.pattern-type-grid-image {
+  margin: -3px 5px 0 0;
+}
+
+.pattern-dialog {
+  i :hover, a :hover {
+    text-decoration: none !important;
+  }
+}
+
+.pattern-dialog .btn-link {
+  text-decoration: none !important;
+}
+
+.pattern-list-column {
+  border-right: solid 1px #BBBBBB;
+}
+
+.delete-pattern-button {
+  font-size: 24px;
+}
+
+.pattern-color-palette {
+  background: white;
+  border: 1px solid #999999;
+  position: absolute;
+  left: 92px;
+  width: 112px;
+  a, td, em {
+    padding: 0;
+    border: none ! important;
+    text-decoration: none;
+  }
+
+  span {
+    border: 1px solid white;
+    height: 12px;
+    width: 12px;
+  }
+}

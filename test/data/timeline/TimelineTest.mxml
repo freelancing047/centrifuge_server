@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" 
+				xmlns:centrifuge="centrifuge.timeline.*"
+				xmlns:centrifugeView="centrifuge.timeline.view.*"
+				width="100%" height="100%"
+				creationComplete="onCreationComplete()"
+				 >
+
+		<mx:Script>
+          <![CDATA[
+          	import centrifuge.timeline.EventParser;
+          	
+          	/*
+          	 * Application for testing the timeline control.  It will provide a drop down of the included
+          	 * test files.
+          	 */
+          	import mx.collections.ArrayCollection;
+          	import centrifuge.timeline.TimelineEvent;
+          	import mx.managers.PopUpManager;
+          	import mx.core.IFlexDisplayObject;
+          	import centrifuge.timeline.placement.InitialPlacement;
+          	
+          	import centrifuge.timeline.placement.IPlacement;
+          	import centrifuge.timeline.placement.SimpleDatePlacement;
+        	import centrifuge.timeline.TimelineEvent;
+        	import mx.rpc.events.ResultEvent;
+        	
+        	[Bindable] public var events:ArrayCollection;
+        	private var fileRef:FileReference = new FileReference();
+        	
+        	/*****
+        	 * Flex will not give us the whole path to the file as this would be at odds
+        	 * with browser security.  So, need to specify the path to the test files here.
+        	 ******/
+  			
+  			private function onCreationComplete():void
+  			{
+  				fileRef.addEventListener(Event.SELECT, fileSelected );
+  			}
+  			
+  			private function loadFile(event:Event)
+  			{
+  				eventData.send();	
+  			}
+  			
+			private function prepData(result:ResultEvent):void
+			{	
+				var rawData:XML = result.result as XML;
+				//reset the events so we don't add on to the events that are already there
+				//from the previous data.
+				events = EventParser.parse(rawData);
+        		timeline.generateTimeline();
+        		timeline.visible = true;	
+	   		}
+
+	   		/*
+	   		 * parser for the Simile JFK test data
+	   		 */
+	   		private function prepJFK(result:ResultEvent):void
+			{
+					var rawData:XML = result.result as XML;
+	
+	            	for each( var e:XML in rawData.event)
+	            	{
+	            		var event:TimelineEvent = new TimelineEvent();
+	            		event.name = e.@title;
+	            		event.description = e.description;
+	            		event.start = new Date (Date.parse(e.@start));
+	            		event.end = new Date (Date.parse(e.@end));
+	            		events.addItem(event);
+	        		}
+	   		}
+	   		
+	   		private function onFileOpen():void
+	   		{
+	   			
+	   			fileRef.browse();
+	   		}
+	   		
+	   		private function fileSelected(event:Event):void
+	   		{
+	   			eventData.url = filePrefix.text + fileRef.name;
+	   			eventData.send();
+	   		}
+           ]]>
+		</mx:Script>	
+		
+		<mx:VBox width="100%" height="100%" verticalScrollPolicy="off">
+			<mx:HBox>
+				<mx:Label text="Directory" />
+				<mx:TextInput id="filePrefix"  width="200"  text="c:/dev/trunk/test/data/timeline/"/>
+	            <mx:Button label="Open File..." click="onFileOpen()" />
+			</mx:HBox>
+			<centrifuge:TimelineView id="timeline" events="{events}" />
+		</mx:VBox>
+				
+		<mx:HTTPService id="eventData"  
+			resultFormat="e4x" result="prepData(event)"  />	
+			
+</mx:Application>

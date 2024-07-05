@@ -1,0 +1,106 @@
+<Driver>
+                <name>ANX</name>
+                <key>anx</key>
+                <factory>csi.server.connector.jdbc.jstels.JStelsXMLConnectionFactory
+                </factory>
+                <driverClass>jstels.jdbc.xml.XMLDriver2</driverClass>
+                <baseUrl>jdbc:jstels:xml:</baseUrl>
+                <escapeChar>\\</escapeChar>
+                <defaultProperties>
+                    <property name="caching" value="false"/>
+                    <property name="readOnlySubMode" value="true"/>
+                    <property name="maxSwapStringSize" value="60"/>  
+                    <property name="maxRecordsInMemoryPerTable" value="5000"/> 
+                    <property name="maxScanRows" value="10" />
+                    <property name="readAPI" value="XOM" />
+                    <property name="dateFormat"
+                        value="MM/dd/yyyy KK:mm:ssaa | yyyy-MM-dd HH:mm:ss.SSS | yyyy-MM-dd HH:mm:ss | yyyy-MM-dd |  HH:mm:ss.SSS |  HH:mm:ss | MM/dd/yyyy" />
+                  
+                </defaultProperties>
+                <hiddenProperties>
+                
+                      <property name="csi.schema.tableName" value="ANX"/>
+                    <property name="csi.schema.xpath" value="/Chart/ChartItemCollection/ChartItem"/>
+                     <property name="csi.schema.columns.Label" value="0|string|@Label"/>
+                      <property name="csi.schema.columns.X" value="1|string|End/@X"/>
+                           <property name="csi.schema.columns.Y" value="2|string|End/@Y"/>
+                                    <property name="csi.schema.columns.EntityId" value="3|string|End/Entity/@EntityId"/>
+                                    <property name="csi.schema.columns.Identity" value="4|string|End/Entity/@Identity"/>
+                                    <property name="csi.schema.columns.LabelIsIdentity" value="5|string|End/Entity/@LabelIsIdentity"/>
+                                    <property name="csi.schema.columns.Type" value="6|string|End/Entity/Icon/IconStyle/@Type"/>
+                                    <property name="csi.schema.columns.End1Id" value="7|string|Link/@End1Id"/>
+                                    <property name="csi.schema.columns.End2Id" value="8|string|Link/@End2Id"/>
+                </hiddenProperties>
+                <uiConnectionConfig>
+                    <hasTest>true</hasTest>
+                    <configItems>
+                        <connUiConfigItem>
+                            <label>File</label>
+                            <type>file</type>
+                            <key>csi.file</key>
+                            <required>true</required>
+                            <helpText>Choose an ANX file.</helpText>
+                            <defaultValues>
+                                <keyValueItem>
+                                    <key>filePickerDescription</key>
+                                    <value>ANX Files (*.anx)</value>
+                                </keyValueItem>
+                            </defaultValues>
+                            <validationOperations>
+                                <keyValueItem>
+                                    <key>fileType</key>
+                                    <value>.anx</value>
+                                </keyValueItem>
+                            </validationOperations>   
+                        </connUiConfigItem>
+                        
+                        <connUiSelectListConfigItem>
+                            <label>Date Format</label>
+                            <type>selectList</type>
+                            <key>csi.schema.dateFormat</key>
+                            <allowMultiSelection>false</allowMultiSelection>
+                            <helpText>Select a date format.</helpText>
+                            <allowCustomValue>true</allowCustomValue>
+                            <defaultValues>
+                                <keyValueItem>
+                                    <key>csi.schema.dateFormat</key>
+                                    <value>yyyy-MM-dd HH:mm:ss</value>
+                                </keyValueItem>
+                            </defaultValues>
+                            <listItemValues>
+                                <listItem>
+                                    <label>MM/dd/yyyy KK:mm:ssaa</label>
+                                    <value>MM/dd/yyyy KK:mm:ssaa</value>
+                                </listItem>
+                                <listItem>
+                                    <label>yyyy-MM-dd HH:mm:ss.SSS</label>
+                                    <value>yyyy-MM-dd HH:mm:ss.SSS</value>
+                                </listItem>
+                                <listItem>
+                                    <label>yyyy-MM-dd HH:mm:ss</label>
+                                    <value>yyyy-MM-dd HH:mm:ss</value>
+                                </listItem>
+                                <listItem>
+                                    <label>yyyy-MM-dd</label>
+                                    <value>yyyy-MM-dd</value>
+                                </listItem>
+                                <listItem>
+                                    <label>HH:mm:ss.SSS</label>
+                                    <value>HH:mm:ss.SSS</value>
+                                </listItem>
+                                <listItem>
+                                    <label>HH:mm:ss</label>
+                                    <value>HH:mm:ss</value>
+                                </listItem>
+                                <listItem>
+                                    <label>MM/dd/yyyy</label>
+                                    <value>MM/dd/yyyy</value>
+                                </listItem>
+                            </listItemValues>
+                        </connUiSelectListConfigItem>
+                       
+                         
+                      
+                    </configItems>
+                </uiConnectionConfig>
+            </Driver>

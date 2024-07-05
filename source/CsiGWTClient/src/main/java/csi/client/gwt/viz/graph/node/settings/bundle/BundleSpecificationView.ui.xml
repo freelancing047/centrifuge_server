@@ -1,0 +1,23 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:gwtbootstrap="urn:import:com.github.gwtbootstrap.client.ui"
+             xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes"
+        >
+   <ui:style gss="true">
+        .float-right {
+            float: right;
+        }
+    </ui:style>
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <gwtbootstrap:FluidRow ui:field="rowThatWrapsEverything">
+        <gwtbootstrap:Column size="4">
+            <g:InlineLabel text="" addStyleNames="{style.float-right}" ui:field="label"/>
+        </gwtbootstrap:Column>
+        <gwtbootstrap:Column size="5">
+            <combo:FieldDefComboBox addStyleNames="node-edit-bundle-field-list" ui:field="groupByFieldDefComboBox"/>
+        </gwtbootstrap:Column>
+        <gwtbootstrap:Column size="3">
+            <gwtbootstrap:Button icon="REMOVE" text="{i18n.get.remove}" ui:field="remove"/>
+        </gwtbootstrap:Column>
+    </gwtbootstrap:FluidRow>
+</ui:UiBinder>

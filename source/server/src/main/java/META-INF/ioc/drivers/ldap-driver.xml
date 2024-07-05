@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <bean id="ldapDriver" class="csi.server.connector.config.JdbcDriver">
+        <property name="name" value="LDAP"/>
+        <property name="key" value="ldap"/>
+        <property name="baseUrl" value="jdbc:ldap://"/>
+        <property name="jdbcFactory"><null/></property>
+        <property name="tableNameQualifier"><null/></property>
+        <property name="factory" value="csi.server.connector.jdbc.LdapConnectionFactory"/>
+        <property name="driverClass" value="com.novell.sql.LDAPDriver"/>
+        <property name="driverAccessRole"><null/></property>
+        <property name="sourceEditRole"><null/></property>
+        <property name="connectionEditRole"><null/></property>
+        <property name="queryEditRole"><null/></property>
+        <property name="dataViewingRole"><null/></property>
+        <property name="escapeChar" value="&quot;"/>
+        <property name="selectNullString"><null/></property>
+        <property name="sortOrder"><null/></property>
+		<property name="castNulls" value="false"/>
+		<property name="remarks" value="This driver may be used to load data from an LDAP provider into either an Installed Data Source or a DataView."/>
+        <property name="tableAliasMap">
+            <map>
+            </map>
+        </property>
+        <property name="capcoColumnMap">
+            <map>
+            </map>
+        </property>
+        <property name="authErrorCodes">
+            <list>
+            </list>
+        </property>
+        <property name="authSqlStates">
+            <list>
+            </list>
+        </property>
+        <property name="defaultProperties">
+            <props>
+                <prop key="distinctSources">true</prop>
+            </props>
+        </property>
+        <property name="typeMapping">
+            <props>
+            </props>
+        </property>
+        <property name="uiConnectionConfig" ref="ldapConnectionConfig"/>
+    </bean>
+
+    <bean id="ldapConnectionConfig" class="csi.server.common.dto.config.connection.DriverConfigInfo">
+        <property name="configItems" ref="ldapConfigItemList" />
+    </bean>
+
+    <util:list id="ldapConfigItemList" value-type="csi.server.common.dto.config.connection.ConfigItem">
+        <ref bean="ldapConfigItem1" />
+        <ref bean="ldapConfigItem2" />
+        <ref bean="ldapConfigItem3" />
+        <ref bean="ldapConfigItem4" />
+        <ref bean="ldapConfigItem5" />
+        <ref bean="ldapConfigItem6" />
+    </util:list>
+
+    <bean id="ldapConfigItem1" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the name of the server hosting the LDAP server software or its IP address."/>
+        <property name="label" value="Enter the host name or IP address for the LDAP server."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="true"/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.hostname"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="ldapConfigItem2" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the port number being used by the LDAP server software."/>
+        <property name="label" value="Enter the LDAP server port number."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.port"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations" ref="ldapPortValidationOptions">
+        </property>
+    </bean>
+
+    <util:list id="ldapPortValidationOptions" value-type="csi.server.common.dto.KeyValueItem">
+        <ref bean="ldapPortValidationKeyValue1" />
+        <ref bean="ldapPortValidationKeyValue2" />
+        <ref bean="ldapPortValidationKeyValue3" />
+    </util:list>
+
+    <bean id="ldapPortValidationKeyValue1" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="minValue"/>
+        <property name="value" value="1"/>
+    </bean>
+
+    <bean id="ldapPortValidationKeyValue2" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="maxValue"/>
+        <property name="value" value="65535"/>
+    </bean>
+
+    <bean id="ldapPortValidationKeyValue3" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="isNumber"/>
+        <property name="value" value="true"/>
+    </bean>
+
+    <bean id="ldapConfigItem3" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the base Distinguished Name (DN). For example 'dc=yourcompany,dc=com'"/>
+        <property name="label" value="Enter the base Distinguished Name (DN)."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.ldap.baseDN"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="ldapConfigItem4" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the username for accessing the LDAP server. If both a valid username and password are entered here they will be used anytime the DataView is refreshed from the database. If not the user will be prompted for a username and password."/>
+        <property name="label" value="Enter the LDAP server username."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="true"/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.username"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="ldapConfigItem5" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the password for accessing the LDAP server. If both a valid username and password are entered here they will be used anytime the DataView is refreshed from the database. If not the user will be prompted for a username and password."/>
+        <property name="label" value="Enter the LDAP server password."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="password"/>
+        <property name="key" value="csi.password"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+   <bean id="ldapConfigItem6" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter the maximum number of results to return per a query."/>
+        <property name="label" value="Enter the maximum number of results to return."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.ldap.resultsLimit"/>
+        <property name="isAdvancedOption" value="false"/>
+        <property name="defaultValues" ref="ldapDefaultValues" />
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <util:list id="ldapDefaultValues" value-type="csi.server.common.dto.KeyValueItem">
+        <ref bean="ldapDefaultKeyValue" />
+    </util:list>
+
+    <bean id="ldapDefaultKeyValue" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="csi.ldap.resultsLimit"/>
+        <property name="value" value="1000"/>
+    </bean>
+
+</beans>

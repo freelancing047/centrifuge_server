@@ -1,0 +1,62 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+    xmlns:bootbase="urn:import:com.github.gwtbootstrap.client.ui.base"
+    xmlns:csigwt="urn:import:csi.client.gwt.widget.ui"
+    xmlns:csiboot="urn:import:csi.client.gwt.widget.boot"
+    xmlns:csipanel="urn:import:csi.client.gwt.csiwizard.panels">
+	<ui:style>
+		.noborder{
+		    border-style: none;
+		}
+  		.rpad15 {
+   			padding-right:15px;
+		}
+	</ui:style>
+
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+
+    <csiboot:Dialog ui:field="dialog" bodyHeight="350px" bodyWidth="800px">
+		<csigwt:FullSizeLayoutPanel ui:field="controlPanel">
+            <csigwt:layer top="0px" height="20px" left="30px" width="120px">
+                <bootbase:InlineLabel text="{i18n.get.export_DisplayList}"></bootbase:InlineLabel>
+            </csigwt:layer>
+            <csigwt:layer top="0px" height="20px" left="130px" width="100px">
+                <boot:RadioButton name="resourceType" ui:field="dataviewRadioButton" text="{i18n.get.export_DataViews}" addStyleNames="{style.rpad15}"></boot:RadioButton>
+            </csigwt:layer>
+            <csigwt:layer top="0px" height="20px" left="250px" width="100px">
+                <boot:RadioButton name="resourceType" ui:field="templateRadioButton" text="{i18n.get.export_Templates}" addStyleNames="{style.rpad15}"></boot:RadioButton>
+            </csigwt:layer>
+            <csigwt:layer top="0px" height="20px" left="370px" width="100px">
+                <boot:RadioButton name="resourceType" ui:field="themeRadioButton" text="{i18n.get.export_Themes}" addStyleNames="{style.rpad15}"></boot:RadioButton>
+            </csigwt:layer>
+            <csigwt:layer top="20px" height="320px" left="20px" width="472px">
+	 			<csipanel:ResourceSelectorPanel ui:field="selectorWidget" height="310" width="470"/>
+            </csigwt:layer>
+            <csigwt:layer top="0px" height="340px" left="512px" right="20px">
+                <boot:TextArea ui:field="instructionTextArea" width="268px" height="150px" addStyleNames="{style.noborder}"></boot:TextArea>
+            </csigwt:layer>
+            <csigwt:layer bottom="0px" height="20px" left="30px" width="50px">
+                <bootbase:InlineLabel text="{i18n.get.export_Include}"></bootbase:InlineLabel>
+            </csigwt:layer>
+            <csigwt:layer bottom="0px" height="20px" left="85px" width="120px">
+                <boot:CheckBox ui:field="mapsCheckBox" text="{i18n.get.export_RequiredMaps}" addStyleNames="{style.rpad15}"></boot:CheckBox>
+            </csigwt:layer>
+            <csigwt:layer bottom="0px" height="20px" left="205px" width="120px">
+                <boot:CheckBox ui:field="iconsCheckBox" text="{i18n.get.export_RequiredIcons}" addStyleNames="{style.rpad15}"></boot:CheckBox>
+            </csigwt:layer>
+            <csigwt:layer bottom="0px" height="20px" left="325px" width="160px">
+                <boot:CheckBox ui:field="themesCheckBox" text="{i18n.get.export_RequiredThemes}" addStyleNames="{style.rpad15}"></boot:CheckBox>
+            </csigwt:layer>
+            <csigwt:layer bottom="0px" height="20px" left="520px" width="50px">
+                <bootbase:InlineLabel text="{i18n.get.export_Support}"></bootbase:InlineLabel>
+            </csigwt:layer>
+            <csigwt:layer bottom="0px" height="20px" left="572px" width="115px">
+                <boot:CheckBox ui:field="multiCheckBox" text="{i18n.get.export_MultiSelection}" addStyleNames="{style.rpad15}"></boot:CheckBox>
+            </csigwt:layer>
+            <csigwt:layer bottom="0px" height="20px" left="687px" width="110px">
+                <boot:CheckBox ui:field="rawXmlCheckBox" text="{i18n.get.export_Raw_XML_out}" addStyleNames="{style.rpad15}"></boot:CheckBox>
+            </csigwt:layer>
+        </csigwt:FullSizeLayoutPanel>
+    </csiboot:Dialog>
+</ui:UiBinder>

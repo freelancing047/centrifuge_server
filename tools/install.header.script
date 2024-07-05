@@ -1,0 +1,815 @@
+EOF
+
+getDirectory() {
+    confirmed=0
+    while [ $confirmed != 1 ]; do
+        echo
+        printf "> Please specify a directory in which to install Centrifuge [$PWD]: "
+        read reply leftover
+        if [ "$reply" != "" ]; then
+                installPath=$reply;
+        else
+                installPath=$PWD;
+        fi
+        echo
+        printf "> You specified $installPath : Is this correct? [y/N] "
+        read reply leftover
+        nogo=0
+        case $reply in
+            [yY] | [yY][eE][sS])
+                confirmed=1
+                ;;
+            [nN] | [nN][oO] | "")
+                confirmed=0
+                ;;
+        esac
+    done
+}
+
+ipTestExpression='(^(25[0-5]|2[0-4][[:digit:]]|1[[:digit:]][[:digit:]]|[1-9]?[[:digit:]])\.(25[0-5]|2[0-4][[:digit:]]|1[[:digit:]][[:digit:]]|[1-9]?[[:digit:]])\.(25[0-5]|2[0-4][[:digit:]]|1[[:digit:]][[:digit:]]|[1-9]?[[:digit:]])\.(25[0-5]|2[0-4][[:digit:]]|1[[:digit:]][[:digit:]]|[1-9]?[[:digit:]])$|^$)'
+digitTestExpression='((^[[:digit:]]*)$|^$)'
+
+mvIfExist() {
+  backupPath=$1
+  newDirName=$2
+  item=$3
+  samePath=${4:-"not set"}
+  
+  if [[ "${samePath}" = "not set" ]]; then
+    fromDir="${backupPath}"
+    toDir="${newDirName}"
+  else
+    fromDir="${backupPath}/${samePath}"
+    toDir="${newDirName}/${samePath}"
+  fi
+
+  if [[ $item = "*" ]]; then
+    if [ -e "${fromDir}" ]; then
+      createIfDontExist ${toDir}
+      mv "${fromDir}/${item}" "${toDir}/"
+    fi
+  else
+    if [ -e "${fromDir}/${item}" ]; then
+      createIfDontExist ${toDir}
+      mv "${fromDir}/${item}" "${toDir}/"
+    fi
+  fi
+}
+
+replace() {
+  backupPath=$1
+  newDirName=$2
+  item=$3
+  samePath=${4:-"not set"}
+
+  if [[ "${samePath}" = "not set" ]]; then
+    fromDir="${backupPath}"
+    toDir="${newDirName}"
+  else
+    fromDir="${backupPath}/${samePath}"
+    toDir="${newDirName}/${samePath}"
+  fi
+
+  if [ -e "${fromDir}/${item}" ]; then
+    if [ -e "${toDir}/${item}" ]; then
+      rm -rf "${toDir}/${item}"
+    fi
+    mvIfExist $1 $2 $3 $4 
+  fi
+}
+
+createIfDontExist() {
+  if [ ! -d $1 ]; then
+    mkdir -p $1
+  fi
+}
+
+getUserValue() {
+  promptOrigValue=$1
+  promptEnterValue=$2
+  promptError=$3
+  testExpression=$4
+  doRepeat=0
+  if [[ ! $promptOrigValue = "" ]]; then
+    echo "$promptOrigValue"
+  fi
+  echo "$promptEnterValue"
+  read reply leftover
+  while [[ $doRepeat -eq 0 ]]; do
+    if [[ $reply =~ $testExpression ]]; then
+      doRepeat=1
+    else
+      echo "$promptError: $reply"
+      echo "$promptEnterValue"
+      read reply leftover
+    fi
+  done
+  eval "$5=$reply"
+}
+
+backupDefault="backup/${version}"
+backupPre="backup/pre_${version}"
+
+replaceString() {
+  local -n OLDArr=${1}
+  local -n NEWArr=${2}
+  SIZE=${3}
+  DPATH="${4}${5}"
+  BPATH="${backupDefault}/${4}"
+  DOBACKUP=${6}
+  TFILE="out.tmp.$$"
+  [ ! -d $BPATH ] && mkdir -p $BPATH || :
+    if [ -f $DPATH -a -r $DPATH ]; then
+      if [[ DOBACKUP -eq 1 ]]; then
+        /bin/cp -f $DPATH $BPATH
+      fi
+      i=0
+      while [[ $i -lt $SIZE ]]; do
+        a=${OLDArr[i]}
+        b=${NEWArr[i]}
+        if [[ $i -eq 0 ]]; then
+          sedCommand='s/'${a%$'\r'}'/'${b%$'\r'}'/g'
+        else
+          sedCommand=$sedCommand';s/'${a%$'\r'}'/'${b%$'\r'}'/g'
+        fi
+        i=$i+1
+      done
+      sed "$sedCommand" "$DPATH" > $TFILE
+      mv $TFILE "$DPATH"
+      return 1
+    else
+      echo "Error: Cannot set file $DPATH to have property $NEW"
+      return 0
+    fi
+}
+
+setMemory() {
+  #chmod 777 bin
+  #cd bin
+  #chmod 777 *.sh
+  chmod 777 bin/*.sh
+  doRepeat=0
+  while [[ $doRepeat -eq 0 ]]; do
+    echo
+    printf "> Do you wish to specify an amount of memory to allocate for your JVM? [y/n] "
+    read reply leftover
+    case $reply in
+      [yY] | [yY][eE][sS])
+        phymem=$(free|awk '/^Mem:/{print $2}')
+        filePath="bin/"
+        fileName="setenv.sh"
+        oldPhyMem=$(cat "$filePath$fileName" | awk '/-Xmx/{print $4}' | sed -e 's/-Xmx//g;s/\"//g')
+        getUserValue "Current Free Memory: $phymem" "> Enter your amount (Examples: 2048m, 4g, etc) [${oldPhyMem}]: " "Error: Incorrect memory input" '(^[[:digit:]]*)(m|g)$' newPhyMem
+        OLD[0]="-Xmx$oldPhyMem"
+        NEW[0]="-Xmx$newPhyMem"
+        replaceString OLD NEW 1 $filePath $fileName 1
+        doRepeat=$?
+        ;;
+      [nN] | [nN][oO])
+        doRepeat=2
+        ;;
+    esac
+  done
+  #chmod 755 *
+  chmod 755 bin/*
+  #cd ..
+  #chmod 755 bin
+}
+
+ips[0]='127.0.0.1'
+ipsSize=1
+
+isInIps() {
+  i=0
+  while [[ $i -lt $ipsSize ]]; do
+    if [[ ${ips[i]} = $1 ]]; then
+      return 1
+    fi
+    i=$i+1
+  done
+  return 0
+}
+
+getIps() {
+  TFILE="getips.out.tmp.$$"
+  ifconfig | grep "inet " | sed -e 's/^.*inet //' -e 's/ *netmask.*//' > $TFILE
+  while read ip
+  do
+    isInIps $ip
+    isIn=$?
+    if [[ $isIn -eq 0 ]]; then
+      ips[ipsSize]=$ip
+      ipsSize=$ipsSize+1
+    fi
+  done < $TFILE
+  rm $TFILE
+}
+
+promptForDrillDown() {
+  update=0
+  while [[ $update -eq 0 ]]; do
+    printf "> Do you wish to examine/update $1 values? [y/N] "
+    read reply leftover
+    case $reply in
+      [yY] | [yY][eE][sS])
+        update=1
+        ;;
+      [nN] | [nN][oO] | "")
+        update=2
+        ;;
+    esac
+  done
+  return $update
+}
+
+queryWizard() {
+  valueToChange=$1
+  defaultValue=$2
+  testExpression=$3
+  retVal=""
+  doRepeat=0
+  while [[ $doRepeat -eq 0 ]]; do
+    printf "> Do you wish to specify %s (%s)? [y/N] " "${valueToChange%$'\r'}" "${defaultValue%$'\r'}"
+    read reply leftover
+    case $reply in
+      [yY] | [yY][eE][sS])
+        getUserValue "" "> Enter your ${valueToChange} [${defaultValue%$'\r'}]: " "Error: Incorrect ${valueToChange} input" "${testExpression}" retVal
+        doRepeat=1
+        ;;
+      [nN] | [nN][oO] | "")
+        doRepeat=2
+        ;;
+    esac
+  done
+  if [[ ! $retVal = "" ]]; then
+    eval "$4=${retVal}"
+  fi
+}
+
+verifyIpChanged() {
+  if [[ ! -z "$2" ]]; then
+    isInIps $2
+    isIn=$?
+    if [[ ! $isIn -eq 1 ]]; then
+      return 1
+    fi
+  fi
+  return 0
+}
+
+verifyChanged() {
+  if [[ ! -z "$2" ]]; then
+    if [[ $1 != $2 ]]; then
+      return 1
+    fi
+  fi
+  return 0
+}
+
+setCachedbPort() {
+  promptForDrillDown "cachedb"
+  if [[ $? -eq 2 ]]; then
+    return 0
+  fi
+
+  ip="127.0.0.1"
+  queryWizard "cachedb ip" "${ip}" "${ipTestExpression}" newIp
+  verifyIpChanged "${ip}" "${newIp}"
+  ipChanged=$?
+
+  filePath="cachedb/config/"
+  fileName="postgresql.conf"
+  dbPort=$(cat "$filePath$fileName" | awk '/^port = /{print $3}')
+  queryWizard "cachedb port" "${dbPort}" "${digitTestExpression}" newDbPort
+  verifyChanged "${dbPort}" "${newDbPort}"
+  dbPortChanged=$?
+
+  if [[ $ipChanged -eq 1 ]]; then
+    SIZE=0
+    OLD[SIZE]="jdbc:postgresql:\/\/$ip:$dbPort\/cachedb?prepareThreshold=1"
+    if [[ $dbPortChanged -eq 1 ]]; then
+      NEW[SIZE]="jdbc:postgresql:\/\/$newIp:$newDbPort\/cachedb?prepareThreshold=1"
+    else
+      NEW[SIZE]="jdbc:postgresql:\/\/$newIp:$dbPort\/cachedb?prepareThreshold=1"
+    fi
+    SIZE=$SIZE+1
+    filePath="conf/"
+    fileName="context.xml"
+    replaceString OLD NEW $SIZE $filePath $fileName 1
+
+    SIZE=0
+    OLD[SIZE]="<prop key=\"csi.hostname\">$ip<\/prop>"
+    NEW[SIZE]="<prop key=\"csi.hostname\">$newIp<\/prop>"
+    SIZE=$SIZE+1
+    if [[ $dbPortChanged -eq 1 ]]; then
+      OLD[SIZE]="<prop key=\"csi.port\">$dbPort<\/prop>"
+      NEW[SIZE]="<prop key=\"csi.port\">$newDbPort<\/prop>"
+      SIZE=$SIZE+1
+    fi
+    filePath="conf/centrifuge/META-INF/ioc/drivers/"
+    fileName="data-cache-driver.xml"
+    replaceString OLD NEW $SIZE $filePath $fileName 1
+    fileName="installed-table-driver.xml"
+    replaceString OLD NEW $SIZE $filePath $fileName 1
+    filePath="conf/centrifuge/META-INF/sample/ioc/drivers/"
+    fileName="data-cache-driver.xml"
+    replaceString OLD NEW $SIZE $filePath $fileName 1
+    fileName="installed-table-driver.xml"
+    replaceString OLD NEW $SIZE $filePath $fileName 1
+  else
+    if [[ $dbPortChanged -eq 1 ]]; then
+      SIZE=0
+      OLD[SIZE]="^port = $dbPort"
+      NEW[SIZE]="port = $newDbPort"
+      SIZE=$SIZE+1
+      replaceString OLD NEW $SIZE $filePath $fileName 1
+
+      SIZE=0
+      OLD[SIZE]="jdbc:postgresql:\/\/$ip:$dbPort\/cachedb?prepareThreshold=1"
+      NEW[SIZE]="jdbc:postgresql:\/\/$ip:$newDbPort\/cachedb?prepareThreshold=1"
+      SIZE=$SIZE+1
+      filePath="conf/"
+      fileName="context.xml"
+      replaceString OLD NEW $SIZE $filePath $fileName 1
+
+      SIZE=0
+      OLD[SIZE]="<prop key=\"csi.port\">$dbPort<\/prop>"
+      NEW[SIZE]="<prop key=\"csi.port\">$newDbPort<\/prop>"
+      SIZE=$SIZE+1
+      filePath="conf/centrifuge/META-INF/ioc/drivers/"
+      fileName="data-cache-driver.xml"
+      replaceString OLD NEW $SIZE $filePath $fileName 1
+      fileName="installed-table-driver.xml"
+      replaceString OLD NEW $SIZE $filePath $fileName 1
+      filePath="conf/centrifuge/META-INF/sample/ioc/drivers/"
+      fileName="data-cache-driver.xml"
+      replaceString OLD NEW $SIZE $filePath $fileName 1
+      fileName="installed-table-driver.xml"
+      replaceString OLD NEW $SIZE $filePath $fileName 1
+    fi
+  fi
+}
+
+setMetadbPort() {
+  promptForDrillDown "metadb"
+  if [[ $? -eq 2 ]]; then
+    return 0
+  fi
+
+  ip="127.0.0.1"
+  queryWizard "metadb ip" "${ip}" "${ipTestExpression}" newIp
+  verifyIpChanged "${ip}" "${newIp}"
+  ipChanged=$?
+
+  filePath="cachedb/metadb/"
+  fileName="postgresql.conf"
+  dbPort=$(cat "$filePath$fileName" | awk '/^port = /{print $3}')
+  queryWizard "metadb port" "${dbPort}" "${digitTestExpression}" newDbPort
+  verifyChanged "${dbPort}" "${newDbPort}"
+  dbPortChanged=$?
+
+  if [[ $ipChanged -eq 1 ]]; then
+    SIZE=0
+    OLD[SIZE]="jdbc:postgresql:\/\/$ip:$dbPort\/metadb?prepareThreshold=1"
+    if [[ $dbPortChanged -eq 1 ]]; then
+      NEW[SIZE]="jdbc:postgresql:\/\/$newIp:$newDbPort\/metadb?prepareThreshold=1"
+    else
+      NEW[SIZE]="jdbc:postgresql:\/\/$newIp:$dbPort\/metadb?prepareThreshold=1"
+    fi
+    SIZE=$SIZE+1
+    filePath="conf/"
+    fileName="context.xml"
+    replaceString OLD NEW $SIZE $filePath $fileName 0
+
+    SIZE=0
+    OLD[SIZE]="<prop key=\"csi.hostname\">$ip<\/prop>"
+    NEW[SIZE]="<prop key=\"csi.hostname\">$newIp<\/prop>"
+    SIZE=$SIZE+1
+    if [[ $dbPortChanged -eq 1 ]]; then
+      OLD[SIZE]="<prop key=\"csi.port\">$dbPort<\/prop>"
+      NEW[SIZE]="<prop key=\"csi.port\">$newDbPort<\/prop>"
+      SIZE=$SIZE+1
+    fi
+    filePath="conf/centrifuge/META-INF/ioc/drivers/"
+    fileName="admin-tools-driver.xml"
+    replaceString OLD NEW $SIZE $filePath $fileName 1
+    fileName="remote-table-driver.xml"
+    replaceString OLD NEW $SIZE $filePath $fileName 1
+    filePath="conf/centrifuge/META-INF/sample/ioc/drivers/"
+    fileName="admin-tools-driver.xml"
+    replaceString OLD NEW $SIZE $filePath $fileName 1
+    fileName="remote-table-driver.xml"
+    replaceString OLD NEW $SIZE $filePath $fileName 1
+  else
+    if [[ $dbPortChanged -eq 1 ]]; then
+      SIZE=0
+      OLD[SIZE]="^port = $dbPort"
+      NEW[SIZE]="port = $newDbPort"
+      SIZE=$SIZE+1
+      replaceString OLD NEW $SIZE $filePath $fileName 1
+
+      SIZE=0
+      OLD[SIZE]="jdbc:postgresql:\/\/$ip:$dbPort\/metadb?prepareThreshold=1"
+      NEW[SIZE]="jdbc:postgresql:\/\/$ip:$newDbPort\/metadb?prepareThreshold=1"
+      SIZE=$SIZE+1
+      filePath="conf/"
+      fileName="context.xml"
+      replaceString OLD NEW $SIZE $filePath $fileName 0
+
+      SIZE=0
+      OLD[SIZE]="<prop key=\"csi.port\">$dbPort<\/prop>"
+      NEW[SIZE]="<prop key=\"csi.port\">$newDbPort<\/prop>"
+      SIZE=$SIZE+1
+      filePath="conf/centrifuge/META-INF/ioc/drivers/"
+      fileName="admin-tools-driver.xml"
+      replaceString OLD NEW $SIZE $filePath $fileName 1
+      fileName="remote-table-driver.xml"
+      replaceString OLD NEW $SIZE $filePath $fileName 1
+      filePath="conf/centrifuge/META-INF/sample/ioc/drivers/"
+      fileName="admin-tools-driver.xml"
+      replaceString OLD NEW $SIZE $filePath $fileName 1
+      fileName="remote-table-driver.xml"
+      replaceString OLD NEW $SIZE $filePath $fileName 1
+    fi
+  fi
+}
+
+setNeo4jPorts() {
+  promptForDrillDown "neo4j"
+  if [[ $? -eq 2 ]]; then
+    return 0
+  fi
+
+  ip="localhost"
+  queryWizard "neo4j ip" "${ip}" "${ipTestExpression}" newIp
+  verifyIpChanged "${ip}" "${newIp}"
+  ipChanged=$?
+
+  useSSL=0
+  if [[ $ipChanged -eq 1 ]]; then
+    while [[ $useSSL -eq 0 ]]; do
+      echo
+      printf "> Are you connecting to neo4j through SSL? [y/n] "
+      read reply leftover
+      case $reply in
+        [yY] | [yY][eE][sS])
+          useSSL=1
+          ;;
+        [nN] | [nN][oO])
+          useSSL=2
+          ;;
+      esac
+    done
+  fi
+
+  filePath="cachedb/neo4j/conf/"
+  fileName="neo4j-server.properties"
+  if [[ $useSSL -eq 0 || $useSSL -eq 1 ]]; then
+    sslPort=$(cat "$filePath$fileName" | awk -F'=' '/^org.neo4j.server.webserver.https.port=/{print $2}')
+    queryWizard "neo4j SSL port" "${sslPort}" "${digitTestExpression}" newSslPort
+    verifyChanged "${sslPort}" "${newSslPort}"
+    sslPortChanged=$?
+  else
+    sslPortChanged=0
+  fi
+  if [[ $useSSL -eq 0 || $useSSL -eq 2 ]]; then
+    nonSslPort=$(cat "$filePath$fileName" | awk -F'=' '/^org.neo4j.server.webserver.port=/{print $2}')
+    queryWizard "neo4j non-SSL port" "${nonSslPort}" "${digitTestExpression}" newNonSslPort
+    verifyChanged "${nonSslPort}" "${newNonSslPort}"
+    nonSslPortChanged=$?
+  else
+    nonSslPortChanged=0
+  fi
+
+  if [[ $ipChanged -eq 0 ]]; then
+    if [[ $nonSslPortChanged -eq 1 || $sslPortChanged -eq 1 ]]; then
+      SIZE=0
+      if [[ $nonSslPortChanged -eq 1 ]]; then
+        OLD[SIZE]="org.neo4j.server.webserver.port=$nonSslPort"
+        NEW[SIZE]="org.neo4j.server.webserver.port=$newNonSslPort"
+        SIZE=$SIZE+1
+      fi
+      if [[ $sslPortChanged -eq 1 ]]; then
+        OLD[SIZE]="org.neo4j.server.webserver.https.port=$sslPort"
+        NEW[SIZE]="org.neo4j.server.webserver.https.port=$newSslPort"
+        SIZE=$SIZE+1
+      fi
+      replaceString OLD NEW $SIZE $filePath $fileName 1
+    fi
+  fi
+
+  if [[ $ipChanged -eq 1 ]]; then
+    SIZE=0
+    OLD[SIZE]="startWithServer\" value=\"true\""
+    NEW[SIZE]="startWithServer\" value=\"false\""
+    SIZE=$SIZE+1
+    if [[ $nonSslPortChanged -eq 1 ]]; then
+      OLD[SIZE]="$ip:$nonSslPort"
+      NEW[SIZE]="$newIp:$newNonSslPort"
+      SIZE=$SIZE+1
+      OLD[SIZE]="$ip:$sslPort"
+      NEW[SIZE]="$newIp:$newNonSslPort"
+      SIZE=$SIZE+1
+    else
+      OLD[SIZE]="$ip:$nonSslPort"
+      NEW[SIZE]="$newIp:$nonSslPort"
+      SIZE=$SIZE+1
+      OLD[SIZE]="$ip:$sslPort"
+      NEW[SIZE]="$newIp:$nonSslPort"
+      SIZE=$SIZE+1
+    fi
+    if [[ $sslPortChanged -eq 1 ]]; then
+      OLD[SIZE]="$ip:$nonSslPort"
+      NEW[SIZE]="$newIp:$newSslPort"
+      SIZE=$SIZE+1
+      OLD[SIZE]="$ip:$sslPort"
+      NEW[SIZE]="$newIp:$newSslPort"
+      SIZE=$SIZE+1
+    else
+      OLD[SIZE]="$ip:$nonSslPort"
+      NEW[SIZE]="$newIp:$sslPort"
+      SIZE=$SIZE+1
+      OLD[SIZE]="$ip:$sslPort"
+      NEW[SIZE]="$newIp:$sslPort"
+      SIZE=$SIZE+1
+    fi
+  else
+    SIZE=0
+    OLD[SIZE]="startWithServer\" value=\"false\""
+    NEW[SIZE]="startWithServer\" value=\"true\""
+    SIZE=$SIZE+1
+    if [[ $nonSslPortChanged -eq 1 ]]; then
+      OLD[SIZE]="$ip:$nonSslPort"
+      NEW[SIZE]="$ip:$newNonSslPort"
+      SIZE=$SIZE+1
+      OLD[SIZE]="$ip:$sslPort"
+      NEW[SIZE]="$ip:$newNonSslPort"
+      SIZE=$SIZE+1
+    fi
+    if [[ $sslPortChanged -eq 1 ]]; then
+      OLD[SIZE]="$ip:$nonSslPort"
+      NEW[SIZE]="$ip:$newSslPort"
+      SIZE=$SIZE+1
+      OLD[SIZE]="$ip:$sslPort"
+      NEW[SIZE]="$ip:$newSslPort"
+      SIZE=$SIZE+1
+    fi
+  fi
+  filePath="conf/centrifuge/META-INF/ioc/advanced/"
+  fileName="graph-config.xml"
+  replaceString OLD NEW $SIZE $filePath $fileName 1
+  filePath="conf/centrifuge/META-INF/sample/ioc/advanced/"
+  replaceString OLD NEW $SIZE $filePath $fileName 1
+}
+
+setTomcatPort() {
+  promptForDrillDown "tomcat"
+  if [[ $? -eq 2 ]]; then
+    return 0
+  fi
+
+  filePath="conf/"
+  fileName="server.xml"
+  shutdownPort=$(cat "$filePath$fileName" | awk -F'"' '/shutdown/{print $2}')
+  queryWizard "tomcat shutdown port" "${shutdownPort}" "${digitTestExpression}" newShutdownPort
+  verifyChanged "${shutdownPort}" "${newShutdownPort}"
+  shutdownPortChanged=$?
+
+  sslPort=$(cat "$filePath$fileName" | awk -F'"' '/redirectPort="/{print $2}' | grep -v "$shutdownPort")
+  queryWizard "tomcat SSL port" "${sslPort}" "${digitTestExpression}" newSslPort
+  verifyChanged "${sslPort}" "${newSslPort}"
+  sslPortChanged=$?
+
+  nonSslPort=$(cat "$filePath$fileName" | awk -F'"' '/port="/{print $2}' | grep -v "$shutdownPort" | grep -v "$sslPort")
+  queryWizard "tomcat non-SSL port" "${nonSslPort}" "${digitTestExpression}" newNonSslPort
+  verifyChanged "${nonSslPort}" "${newNonSslPort}"
+  nonSslPortChanged=$?
+
+  if [[ $shutdownPortChanged -eq 1 || $sslPortChanged -eq 1 || $nonSslPortChanged -eq 1 ]]; then
+    SIZE=0
+    if [[ $shutdownPortChanged -eq 1 ]]; then
+      OLD[SIZE]="port=\"$shutdownPort\""
+      NEW[SIZE]="port=\"$newShutdownPort\""
+      SIZE=$SIZE+1
+    fi
+    if [[ $sslPortChanged -eq 1 ]]; then
+      OLD[SIZE]="port=\"$sslPort\""
+      NEW[SIZE]="port=\"$newSslPort\""
+      SIZE=$SIZE+1
+      OLD[SIZE]="redirectPort=\"$sslPort\""
+      NEW[SIZE]="redirectPort=\"$newSslPort\""
+      SIZE=$SIZE+1
+    fi
+    if [[ $nonSslPortChanged -eq 1 ]]; then
+      OLD[SIZE]="port=\"$nonSslPort\""
+      NEW[SIZE]="port=\"$newNonSslPort\""
+      SIZE=$SIZE+1
+    fi
+    replaceString OLD NEW $SIZE $filePath $fileName 1
+
+    if [[ $nonSslPortChanged -eq 1 ]]; then
+      SIZE=0
+      OLD[SIZE]="localhost:$nonSslPort"
+      NEW[SIZE]="localhost:$newNonSslPort"
+      SIZE=$SIZE+1
+      filePath="webapps/Centrifuge/admin1/"
+      fileName="index.html"
+      replaceString OLD NEW $SIZE $filePath $fileName 1
+      fileName="index2.html"
+      replaceString OLD NEW $SIZE $filePath $fileName 1
+    fi
+  fi
+}
+
+    agreed=
+    while [ -z "$agreed" ]; do
+        echo
+        printf "> Do you agree to the above license terms? [y/n] "
+        read reply leftover
+        case $reply in
+            [yY] | [yY][eE][sS])
+                agreed=1
+                ;;
+            [nN] | [nN][oO])
+                echo "! If you do not agree to the license terms you cannot install this software.";
+                exit 1
+                ;;
+        esac
+    done
+
+isPathValid=0
+
+echo "! WARNING: RUNNING AN INSTALLATION WITH LOW DISK SPACE CAN RESULT IN ERROR"
+while [ $isPathValid -ne 1 ]; do
+
+        getDirectory
+
+        if [ -e $installPath ]; then
+                if [ -d $installPath ]; then
+                        if [ -w $installPath ]; then
+                                isPathValid=1
+                        else
+                                echo "! The specified directory cannot be written.  Please make the directory writable or specify a different directory."
+                        fi
+                else
+                        echo "! The specified directory refers to a file, not a directory.  Please specify a writable directory or a directory that can be created."
+                fi
+        else
+                mkdir -p $installPath
+
+                if [ $? -eq 0 ]; then
+                        isPathValid=1
+                else
+                        echo "! The specified directory cannot be created.  Please make the directory writable or specify a different directory."
+                fi
+        fi
+done
+
+centrifugePath="$installPath"/centrifuge-server
+backupPath="not set"
+if [ -e $centrifugePath ]; then
+        if [ `ps -ef | grep $centrifugePath | grep start | wc -l` -ne 0 ]; then
+                echo "An existing copy of Centrifuge is running. Please stop Centrifuge and try again."
+                read reply
+        fi
+        now="$(date +'%Y%m%d%h%s')"
+        backupPath="$installPath"/centrifuge-server-backup"$now"
+        mv $centrifugePath $backupPath
+fi
+
+originalPath=$PWD
+cd "$installPath"
+
+echo
+echo "# Installing files into the specified directory [$installPath]. Please wait ..."
+
+#
+# Find the line where the tar archive starts.
+#
+TAG_LINE=`grep --binary-files=text -n END-OF-SCRIPT "$originalPath/$0"  | tail -1 | sed -e 's/:END-OF-SCRIPT//'`
+TAR_START_LINE=`expr $TAG_LINE + 1`
+
+#
+# Take the archive portion of this file and pipe it to tar.
+#
+if tail  -n +${TAR_START_LINE} "$originalPath/$0" | tar xz
+then
+  chmod 777 "$centrifugePath"
+  cd "$centrifugePath"
+  tar -xf jre.tar -C jre
+  rm jre.tar
+  chmod 777 cachedb
+  cd cachedb
+  tar -xf neo4j.tar
+  mv neo4j-community-2.1.5 neo4j
+  chmod 777 neo4j
+  chmod 777 neo4j/plugins
+  mv plugins/neo4j-plugin.jar neo4j/plugins/neo4j-plugin.jar
+  chmod 755 neo4j/plugins
+  chmod 755 neo4j
+  rm -rf plugins
+  rm neo4j.tar
+  mkdir temp_install
+  chmod 777 temp_install
+  tar -xf pgsql.tar -C temp_install
+  mkdir $newpgsql
+  mv temp_install/pgsql/* $newpgsql
+  chmod 777 $newpgsql
+  chmod 777 $newpgsql/bin
+  chmod 755 $newpgsql/bin/*
+  chmod 755 $newpgsql/bin
+  rm -rf temp_install
+  rm pgsql.tar
+  echo "echo \"Begin database migration using the command:\"" > migrate.sh
+  echo "echo \"./$newpgsql/bin/pg_upgrade -d metadb -D new_metadb -b pgsql/bin -B $newpgsql/bin -p \$1 -P \$1\"" >> migrate.sh
+  echo "cd cachedb" >> migrate.sh
+  echo "./$newpgsql/bin/pg_upgrade -d metadb -D new_metadb -b pgsql/bin -B $newpgsql/bin -p \$1 -P \$1" >> migrate.sh
+  chmod uga+rx migrate.sh
+  cd ..
+  chmod 755 cachedb
+
+  if [ "${backupPath}" != "not set" ]; then
+    if [ -e $backupPath ]; then
+      replace ${backupPath} ${centrifugePath} "license.txt"
+      newDirName="${centrifugePath}/${backupPre}"
+      createIfDontExist ${newDirName}
+      mvIfExist ${backupPath} ${newDirName} "conf"
+      mvIfExist ${backupPath} ${newDirName} "Shutdown.vmoptions" "bin"
+      mvIfExist ${backupPath} ${newDirName} "Start.vmoptions" "bin"
+      mvIfExist ${backupPath} ${newDirName} "setenv.sh" "bin"
+      mvIfExist ${backupPath} ${newDirName} "shutdown.sh" "bin"
+      mvIfExist ${backupPath} ${newDirName} "startup.sh" "bin"
+      mvIfExist ${backupPath} ${newDirName} "web.xml" "webapps/Centrifuge/WEB-INF"
+      mvIfExist ${backupPath} ${newDirName} "ehcache.xml" "webapps/Centrifuge/WEB-INF/classes"
+      mvIfExist ${backupPath} ${newDirName} "log4j.out.xml" "webapps/Centrifuge/WEB-INF/classes"
+      mvIfExist ${backupPath} ${newDirName} "log4j.xml" "webapps/Centrifuge/WEB-INF/classes"
+      mvIfExist ${backupPath} ${newDirName} "logging.properties" "webapps/Centrifuge/WEB-INF/classes"
+      mvIfExist ${backupPath} ${newDirName} "log4j2.xml" "webapps/Centrifuge/WEB-INF/classes"
+      mvIfExist ${backupPath} ${newDirName} "config" "cachedb"
+      mvIfExist ${backupPath} ${newDirName} "conf" "cachedb/neo4j"
+      replace ${backupPath} ${centrifugePath} "logs"
+      replace ${backupPath} ${centrifugePath} "logdb"
+      replace ${backupPath} ${centrifugePath} "userfiles"
+      replace ${backupPath} ${centrifugePath} "pgsql" "cachedb"
+      mvIfExist ${backupPath} ${centrifugePath} "metadb" "cachedb"
+      rm -rf $backupPath
+    fi
+  fi
+
+  setMemory
+
+  agreed=0
+  while [[ $agreed -eq 0 ]]; do
+    echo
+    printf "> Do you want to use default ip/port settings? [Y/n] "
+    read reply leftover
+    case $reply in
+      [yY] | [yY][eE][sS])
+        agreed=1
+        ;;
+      [nN] | [nN][oO])
+        getIps
+        setCachedbPort
+        setMetadbPort
+        setNeo4jPorts
+        setTomcatPort
+        agreed=1
+        ;;
+      * )
+        agreed=1
+        ;;
+    esac
+  done
+
+  cd "${centrifugePath}/conf/centrifuge/META-INF/ioc"
+  chmod 444 *.xml
+  cd advanced
+  chmod 444 *.xml
+  cd ../drivers
+  chmod 444 *.xml
+  chmod 755 "$centrifugePath"
+
+  echo
+  echo "# Installation completed successfully."  
+  echo "# Review the README.txt file in the $centrifugePath directory to get started."
+  echo
+else
+  echo
+  echo "*** Installation ended due to errors. ***"
+  echo
+  echo "This is sometimes caused by a corrupted installer file or incorrect file"
+  echo "permissions.  Before retrying, verify the integrity of this installer file"
+  echo "and make sure the current directory is writable."
+  echo
+  
+  if [ "${backupPath}" != "not set" ]; then
+	  if [ -e $backupPath ]; then
+	  	mv $backupPath $centrifugePath
+	  fi
+  fi
+fi
+
+cd "$originalPath"
+
+exit 0
+END-OF-SCRIPT

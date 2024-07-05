@@ -1,0 +1,63 @@
+<style type="text/css">
+	#Centrifuge {
+		width:100%;
+		height:600px;
+		border: 1px dashed black;
+	}
+	pre {
+		width:100%;
+	}
+</style>
+<script type="text/javascript">
+	var template = new DataviewTemplate("1e5ec4aa-329b-4c82-83c3-69c1261cbdba", "Dataview From Template Example", "Centrifuge");
+	
+	function createDV() {
+		$('#dataview').html('<img src="resources/ajax-loader.gif" /> Loading Template...');
+		template.createDvFromTemplate(function(){launchDV();});
+	}
+	
+	function launchDV() {
+		template.launch();
+	}
+	
+	function onGraphLoadSuccess() {
+		$('#dataview').html('<img src="resources/Ok-icon.png" /> Template has been successfully loaded');
+	}
+</script>
+<h2>Create Dataview from Template</h2>
+<div id='overview'>
+	<h2>Overview</h2>
+	<p>The Dataview API provides the ability to create a new Data View from a Template.  After the Data View has been created, you may then launch and embed an entire worksheet in an external HTML page.</p>
+	<p>Below you will see all of the code necessary to embed a Centrifuge worksheet into a custom application of your own.</p>
+</div>
+<div id='code'>
+	<h2>Sample Code</h2>
+	<pre class="prettyprint" width="100%">
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;script type=&quot;text/javascript&quot; src=&quot;/Centrifuge/javascript/jquery.js&quot;&gt;&lt;/script&gt;
+		&lt;script type=&quot;text/javascript&quot; src=&quot;/Centrifuge/javascript/centrifuge-widget.js&quot;&gt;&lt;/script&gt;
+		&lt;script type=&quot;text/javascript&quot;&gt;
+			var dv = new DataviewTemplate(&quot;&lt;templateUuid&gt;&quot;, &quot;Dataview From Template Example&quot;, &quot;Centrifuge&quot;); // replace templateUuid with the uuid of the template to be opened
+			
+			function createDV() {
+				dv.createDvFromTemplate(function(){launchDV();});
+			}
+			
+			function launchDV() {
+				dv.launch();
+			}
+		&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;button onClick=&quot;createDV()&quot;&gt;Click to Create Dataview from Template&lt;/button&gt;
+		&lt;div id='Centrifuge'&gt;&lt;/div&gt;
+	&lt;body&gt;
+&lt;/html&gt;
+	</pre>
+</div>
+<div id='sample'>
+	<h2>Sample</h2>
+	<button onClick="createDV()">Click to Create Dataview from Template</button> <span id="dataview"></span>
+	<div id='Centrifuge'></div>
+</div>

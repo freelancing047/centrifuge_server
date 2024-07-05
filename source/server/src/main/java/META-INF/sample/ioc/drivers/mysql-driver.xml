@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <bean id="mysqlDriver" class="csi.server.connector.config.JdbcDriver">
+        <property name="name" value="MySQL Driver"/>
+        <property name="key" value="mysql"/>
+        <property name="baseUrl" value="jdbc:mysql://"/>
+        <property name="tableNameQualifier" value="`"/>
+        <property name="factory" value="csi.server.connector.jdbc.MySQLConnectionFactory"/>
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="escapeChar" value="'"/>
+		<property name="castNulls" value="false"/>
+		<property name="remarks" value="This driver may be used to load data from a MySQL database into either an Installed Data Source or a DataView.
+		To make use of this driver, the bean id, &quot;mysqlDriver&quot;, must be added to the &quot;driver-list.xml&quot; file; and this file must be
+		added to the list in the &quot;spring-main.xml&quot; file."/>
+        <property name="authErrorCodes">
+            <list>
+                <value>1044</value>
+                <value>1045</value>
+            </list>
+        </property>
+        <property name="authSqlStates">
+            <list>
+            </list>
+        </property>
+        <property name="defaultProperties">
+            <props>
+                <prop key="clobberStreamingResults">true</prop>
+            </props>
+        </property>
+        <property name="hiddenProperties">
+            <props>
+            </props>
+        </property>
+        <property name="tableFilters">
+            <props>
+                <prop key="table_type">TABLE|VIEW</prop>
+            </props>
+        </property>
+        <property name="typeMapping">
+            <props>
+            </props>
+        </property>
+        <property name="castMapping">
+            <props>
+                <prop key="String">CAST(% AS TEXT)</prop>
+                <prop key="Boolean">CAST(% AS BOOLEAN)</prop>
+                <prop key="Integer">CAST(% AS BIGINT)</prop>
+                <prop key="Float">CAST(% AS DOUBLE)</prop>
+                <prop key="Date-Time">CAST(% AS DATETIME)</prop>
+                <prop key="Date">CAST(% AS DATE)</prop>
+                <prop key="Time">CAST(% AS TIME)</prop>
+                <prop key="Unsupported">%</prop>
+            </props>
+        </property>
+        <property name="uiConnectionConfig" ref="mysqlConnectionConfig"/>
+    </bean>
+    <bean id="mysqlConnectionConfig" class="csi.server.common.dto.config.connection.DriverConfigInfo">
+        <property name="configItems" ref="mysqlConfigItemList">
+        </property>
+    </bean>
+    <bean id="mysqlConfigItem1" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="label" value="Host"/>
+        <property name="helpText" value="Enter a hostname."/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.hostname"/>
+        <property name="required" value="true"/>
+    </bean>
+    <bean id="mysqlConfigItem2" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="label" value="Port"/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.port"/>
+        <property name="helpText" value="Port for MySQL server."/>
+        <property name="required" value="true"/>
+        <property name="validationOperations">
+            <list>
+                <ref bean="mysqlPortValidationKeyValue1"/>
+                <ref bean="mysqlPortValidationKeyValue2"/>
+                <ref bean="mysqlPortValidationKeyValue3"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="mysqlPortValidationKeyValue1" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="minValue"/>
+        <property name="value" value="1"/>
+    </bean>
+
+    <bean id="mysqlPortValidationKeyValue2" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="maxValue"/>
+        <property name="value" value="65535"/>
+    </bean>
+
+    <bean id="mysqlPortValidationKeyValue3" class="csi.server.common.dto.KeyValueItem">
+        <property name="key" value="isNumber"/>
+        <property name="value" value="true"/>
+    </bean>
+
+    <bean id="mysqlConfigItem3" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="label" value="Username"/>
+        <property name="helpText" value="Enter a username."/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.username"/>
+    </bean>
+
+    <bean id="mysqlConfigItem4" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="label" value="Password"/>
+        <property name="helpText" value="Enter a password."/>
+        <property name="type" value="password"/>
+        <property name="key" value="csi.password"/>
+    </bean>
+
+
+    <bean id="mysqlConfigItem5" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="label" value="Database Name"/>
+        <property name="helpText" value="Enter a database name."/>
+        <property name="type" value="string"/>
+        <property name="key" value="csi.databaseName"/>
+    </bean>
+
+    <bean id="mysqlConfigItem6" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="label" value="Extra Parameters"/>
+        <property name="helpText" value="Extra parameters table"/>
+        <property name="type" value="csiParmsTable"/>
+        <property name="key" value="csi.params"/>
+        <property name="isAdvancedOption" value="true"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+    </bean>
+
+    <bean id="mysqlConfigItem7" class="csi.server.common.dto.config.connection.ConfigItem">
+        <property name="helpText" value="Enter commands that must re run before and/or after retrieving data via the connection. An example would be commands that first created and then destroyed either a view or a temporary table."/>
+        <property name="label" value="Enter required Pre/Post-Query Commands."/>
+        <property name="isMultiline" value="false"/>
+        <property name="allowCustomValue" value="false"/>
+        <property name="required" value="false"/>
+        <property name="type" value="csiQueryCommands"/>
+        <property name="key" value="csiQueryCommands"/>
+        <property name="isAdvancedOption" value="true"/>
+        <property name="defaultValues">
+            <list>
+            </list>
+        </property>
+        <property name="validationOperations">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <util:list id="mysqlConfigItemList" value-type="csi.server.common.dto.config.connection.ConfigItem">
+        <ref bean="mysqlConfigItem1"/>
+        <ref bean="mysqlConfigItem2"/>
+        <ref bean="mysqlConfigItem3"/>
+        <ref bean="mysqlConfigItem4"/>
+        <ref bean="mysqlConfigItem5"/>
+        <ref bean="mysqlConfigItem6"/>
+        <ref bean="mysqlConfigItem7"/>
+    </util:list>
+</beans>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <preConditions>
+        <dbms type="postgresql" />
+    </preConditions>
+    
+    <changeSet author="jdanberg" id="triggers-1-0" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            CREATE EXTENSION lo;
+         </sql>
+    </changeSet>
+    
+    
+    <changeSet author="jdanberg" id="triggers-1-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            DROP TRIGGER IF EXISTS t_graphstorage_graph_info ON graphstorages;
+                
+            CREATE TRIGGER t_graphstorage_graph_info BEFORE UPDATE OR DELETE ON graphstorages
+                FOR EACH ROW EXECUTE PROCEDURE lo_manage(graph_info);
+         </sql>
+        <rollback>
+            DROP TRIGGER t_graphstorage_graph_info ON graphstorages;
+        </rollback>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="triggers-1-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            DROP TRIGGER IF EXISTS t_selection_linkkeys ON selectionmodel;
+                
+            CREATE TRIGGER t_selection_linkkeys BEFORE UPDATE OR DELETE ON selectionmodel
+                FOR EACH ROW EXECUTE PROCEDURE lo_manage(linkkeys);
+         </sql>
+        <rollback>
+            DROP TRIGGER t_selection_linkkeys ON selectionmodel;
+        </rollback>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="triggers-1-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            DROP TRIGGER IF EXISTS t_selection_nodekeys ON selectionmodel;
+                
+            CREATE TRIGGER t_selection_nodekeys BEFORE UPDATE OR DELETE ON selectionmodel
+                FOR EACH ROW EXECUTE PROCEDURE lo_manage(nodekeys);
+         </sql>
+        <rollback>
+            DROP TRIGGER t_selection_nodekeys ON selectionmodel;
+        </rollback>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="triggers-1-4" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            DROP TRIGGER IF EXISTS t_selection_links ON selectionmodel;
+                
+            CREATE TRIGGER t_selection_links BEFORE UPDATE OR DELETE ON selectionmodel
+                FOR EACH ROW EXECUTE PROCEDURE lo_manage(links);
+         </sql>
+        <rollback>
+            DROP TRIGGER t_selection_links ON selectionmodel;
+        </rollback>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="triggers-1-5" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            DROP TRIGGER IF EXISTS t_selection_nodes ON selectionmodel;
+                
+            CREATE TRIGGER t_selection_nodes BEFORE UPDATE OR DELETE ON selectionmodel
+                FOR EACH ROW EXECUTE PROCEDURE lo_manage(nodes);
+         </sql>
+        <rollback>
+            DROP TRIGGER t_selection_nodes ON selectionmodel;
+        </rollback>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="triggers-1-6" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            DROP TRIGGER IF EXISTS t_columnfilter_staticvalues ON columnfilter;
+                
+            CREATE TRIGGER t_columnfilter_staticvalues BEFORE UPDATE OR DELETE ON columnfilter
+                FOR EACH ROW EXECUTE PROCEDURE lo_manage(staticvalues);
+         </sql>
+        <rollback>
+            DROP TRIGGER t_columnfilter_staticvalues ON columnfilter;
+        </rollback>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="triggers-1-7" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            DROP TRIGGER IF EXISTS t_directiondef_forwardvalues ON directiondef;
+                
+            CREATE TRIGGER t_directiondef_forwardvalues BEFORE UPDATE OR DELETE ON directiondef
+                FOR EACH ROW EXECUTE PROCEDURE lo_manage(forwardvalues);
+         </sql>
+        <rollback>
+            DROP TRIGGER t_directiondef_forwardvalues ON directiondef;
+        </rollback>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="triggers-1-8" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            DROP TRIGGER IF EXISTS t_directiondef_reversevalues ON directiondef;
+                
+            CREATE TRIGGER t_directiondef_reversevalues BEFORE UPDATE OR DELETE ON directiondef
+                FOR EACH ROW EXECUTE PROCEDURE lo_manage(reversevalues);
+         </sql>
+        <rollback>
+            DROP TRIGGER t_directiondef_reversevalues ON directiondef;
+        </rollback>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="triggers-1-9" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            DROP TRIGGER IF EXISTS t_drillcategory_categories ON drillcategory;
+                
+            CREATE TRIGGER t_drillcategory_categories BEFORE UPDATE OR DELETE ON drillcategory
+                FOR EACH ROW EXECUTE PROCEDURE lo_manage(categories);
+         </sql>
+        <rollback>
+            DROP TRIGGER t_drillcategory_categories ON drillcategory;
+        </rollback>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="triggers-1-10" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            DROP TRIGGER IF EXISTS t_modelobject_clientproperties ON modelobject;
+                
+            CREATE TRIGGER t_modelobject_clientproperties BEFORE UPDATE OR DELETE ON modelobject
+                FOR EACH ROW EXECUTE PROCEDURE lo_manage(clientproperties);
+         </sql>
+        <rollback>
+            DROP TRIGGER t_modelobject_clientproperties ON modelobject;
+        </rollback>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="triggers-1-11" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            DROP TRIGGER IF EXISTS t_queryparameterdef_defaultvalues ON queryparameterdef;
+                
+            CREATE TRIGGER t_queryparameterdef_defaultvalues BEFORE UPDATE OR DELETE ON queryparameterdef
+                FOR EACH ROW EXECUTE PROCEDURE lo_manage(defaultvalues);
+         </sql>
+        <rollback>
+            DROP TRIGGER t_queryparameterdef_defaultvalues ON queryparameterdef;
+        </rollback>
+    </changeSet>
+    
+    <changeSet author="jdanberg" id="triggers-1-12" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <sql>
+            DROP TRIGGER IF EXISTS t_queryparameterdef_values ON queryparameterdef;
+                
+            CREATE TRIGGER t_queryparameterdef_values BEFORE UPDATE OR DELETE ON queryparameterdef
+                FOR EACH ROW EXECUTE PROCEDURE lo_manage(values);
+         </sql>
+        <rollback>
+            DROP TRIGGER t_queryparameterdef_values ON queryparameterdef;
+        </rollback>
+    </changeSet>
+    
+</databaseChangeLog>

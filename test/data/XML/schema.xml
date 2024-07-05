@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<schema>
+
+  <table name="icon" file ="xml_export.xml" path="/ROOT/CHART/CHARTITEMS/ENDS/ENTITIES/ICONS/ICON">
+
+    <column name="identity" type="string" path="IDENTITY"/>
+    <column name="id" type="STRING" path="ID"/>
+    <column name="label" type="string" path="LABEL"/>
+    <column name="description" type="string" path="DESCRIPTION" size="2048"/>
+
+  </table>  
+
+</schema>

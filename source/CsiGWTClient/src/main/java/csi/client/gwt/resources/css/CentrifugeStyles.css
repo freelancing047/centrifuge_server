@@ -1,0 +1,20 @@
+.text {
+  font-size: 11px; 
+}
+
+.textLarge {
+  font-size: 14px; 
+}
+
+.paddedText {
+  font-size: 11px;
+  padding: 5px; 
+}
+
+.applicationToolbarBackground {
+	background: url('img/application-toolbar-background.gif');
+}
+
+@sprite .grayMaskBackground {
+	gwt-image: 'grayMask';
+}

@@ -1,0 +1,45 @@
+/**
+ * Copies documentation into the build.
+ */
+
+apply from: 'gradle/properties.gradle'
+
+def eulaFile = "Centrifuge EULA.txt"
+def licenseFile = 'Centrifuge License Agreement.txt'
+
+def tutorialFileFullname = "Centrifuge-Analytics-Basic-Tutorial.pdf"
+def tutorialFile = "Centrifuge Analytics Basic Tutorial.pdf"
+def gettingStartedFileFullname = "Centrifuge-Analytics-Getting-Started-Guide.pdf"
+def gettingStartedFile = 'Centrifuge Analytics Getting Started Guide.pdf'
+def jsonDriverDOCX = 'JSON_DataSourceDriverPropertiesOverview.docx'
+def jsonDriverPDF = 'JSON_DataSourceDriverPropertiesOverview.pdf'
+
+task deployDocs {
+    group = deployGroup
+    inputs.dir 'docs'
+    outputs.file "$buildRuntime/$licenseFile"
+    outputs.file "$buildRuntime/docs/$gettingStartedFile"
+    outputs.file "$buildRuntime/docs/$jsonDriverDOCX"
+    outputs.file "$buildRuntime/docs/$jsonDriverPDF"
+
+    doLast{
+        copy {
+            from 'docs'
+            into buildRuntime
+            include eulaFile
+            rename (eulaFile, licenseFile)
+        }
+        copy {
+            from 'docs'
+            into "$buildRuntime/docs"
+            include gettingStartedFileFullname, jsonDriverPDF, jsonDriverDOCX
+            rename (gettingStartedFileFullname, gettingStartedFile)
+        }
+        copy {
+            from 'docs'
+            into "$buildRuntime/docs"
+            include tutorialFileFullname, jsonDriverPDF, jsonDriverDOCX
+            rename (tutorialFileFullname, tutorialFile)
+        }
+    }
+}

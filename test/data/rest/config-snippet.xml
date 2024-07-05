@@ -1,0 +1,32 @@
+
+            <Driver>
+                <name>REST Connector</name>
+                <key>restconnector</key>
+                <factory>csi.server.connector.rest.RestServiceConnectionFactoryFort</factory>
+                <jdbcFactory>false</jdbcFactory>
+                <baseUrl>ws:rest:</baseUrl>
+                <uiConnectionConfig>
+                    <hasTest>true</hasTest>
+                    <configItems>
+                        <connUiConfigItem>
+                            <label>Connection String</label>
+                            <type>csiLegacyConnectionString</type>
+                            <key>csiLegacyConnectionString</key>
+                            <required>true</required>
+                            <helpText>Example: jdbc:oracle:thin:[user]/[password]@[hostname]:[port]:XE</helpText>
+                        </connUiConfigItem>   
+                        <connUiConfigItem>
+                            <label>Extra Parameters</label>
+                            <type>csiParmsTable</type>
+                            <key>csi.params</key>
+                            <helpText>Extra parameters table.</helpText>
+                        </connUiConfigItem>
+                        <connUiConfigItem>
+                            <label>Pre/Post-Query Commands</label>
+                            <type>csiQueryCommands</type>
+                            <key>csiQueryCommands</key>
+                            <helpText>Commands that are run before and/or after data is retrieved.</helpText>                            
+                        </connUiConfigItem>
+                    </configItems>                    
+                </uiConnectionConfig>
+            </Driver>			

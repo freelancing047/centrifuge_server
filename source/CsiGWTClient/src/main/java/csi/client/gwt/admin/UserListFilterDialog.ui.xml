@@ -1,0 +1,98 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+             xmlns:csiboot="urn:import:csi.client.gwt.widget.boot"
+             xmlns:csibox="urn:import:csi.client.gwt.widget.input_boxes"
+             xmlns:base="urn:import:com.github.gwtbootstrap.client.ui.base"
+             xmlns:csilistbox="urn:import:csi.client.gwt.widget.list_boxes"
+             xmlns:csigwt="urn:import:csi.client.gwt.widget.ui"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+        .noresize {
+            resize: none;
+        }
+        .leftpad {
+            padding-left: 20px;
+        }
+        .noborder{
+            border-style: none;
+        }
+	</ui:style>
+
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+
+    <csiboot:ValidatingDialog bodyWidth="800px" bodyHeight="280px">
+        <csigwt:FullSizeLayoutPanel ui:field="topLevelPanel">
+
+            <csigwt:layer top="0px" height="20px" left="20px" right="560px">
+                <base:InlineLabel text="{i18n.get.doMatchPattern}" />
+            </csigwt:layer>
+            <csigwt:layer top="20px" height="30px" left="20px" right="560px">
+                <csibox:FilteredTextBox width="206px" ui:field="matchTextBox1" />
+            </csigwt:layer>
+            <csigwt:layer top="0px" height="20px" left="260px" right="320px">
+                <base:InlineLabel text="{i18n.get.doNotMatchPattern}" />
+            </csigwt:layer>
+            <csigwt:layer top="20px" height="30px" left="260px" right="320px">
+                <csibox:FilteredTextBox width="206px" ui:field="rejectTextBox1" />
+            </csigwt:layer>
+            <csigwt:layer top="50px" height="20px" left="20px" right="320px">
+                <g:HorizontalPanel>
+                    <boot:CheckBox ui:field="userName1" text="username" value="false" />
+                    <boot:CheckBox ui:field="firstName1" text="first name" value="false" styleName="{style.leftpad}" />
+                    <boot:CheckBox ui:field="lastName1" text="last name" value="false" styleName="{style.leftpad}" />
+                    <boot:CheckBox ui:field="email1" text="email" value="false" styleName="{style.leftpad}" />
+                </g:HorizontalPanel>
+            </csigwt:layer>
+
+            <csigwt:layer top="90px" height="20px" left="20px" right="560px">
+                <base:InlineLabel text="{i18n.get.doMatchPattern}" />
+            </csigwt:layer>
+            <csigwt:layer top="110px" height="30px" left="20px" right="560px">
+                <csibox:FilteredTextBox width="206px" ui:field="matchTextBox2" />
+            </csigwt:layer>
+            <csigwt:layer top="90px" height="20px" left="260px" right="320px">
+                <base:InlineLabel text="{i18n.get.doNotMatchPattern}" />
+            </csigwt:layer>
+            <csigwt:layer top="110px" height="30px" left="260px" right="320px">
+                <csibox:FilteredTextBox width="206px" ui:field="rejectTextBox2" />
+            </csigwt:layer>
+            <csigwt:layer top="140px" height="20px" left="20px" right="320px">
+                <g:HorizontalPanel>
+                    <boot:CheckBox ui:field="userName2" text="username" value="false" />
+                    <boot:CheckBox ui:field="firstName2" text="first name" value="false" styleName="{style.leftpad}" />
+                    <boot:CheckBox ui:field="lastName2" text="last name" value="false" styleName="{style.leftpad}" />
+                    <boot:CheckBox ui:field="email2" text="email" value="false" styleName="{style.leftpad}" />
+                </g:HorizontalPanel>
+            </csigwt:layer>
+
+            <csigwt:layer top="180px" height="20px" left="20px" right="560px">
+                <base:InlineLabel text="{i18n.get.sortBy}" />
+            </csigwt:layer>
+            <csigwt:layer top="200px" height="30px" left="20px" right="560px">
+                <csilistbox:SortListBox ui:field="firstSort" width="230px" />
+            </csigwt:layer>
+            <csigwt:layer top="180px" height="20px" left="260px" right="320px">
+                <base:InlineLabel text="{i18n.get.thenBy}" />
+            </csigwt:layer>
+            <csigwt:layer top="200px" height="30px" left="260px" right="320px">
+                <csilistbox:SortListBox ui:field="secondSort" width="230px" />
+            </csigwt:layer>
+            <csigwt:layer top="230px" height="20px" left="20px" right="560px">
+                <base:InlineLabel text="{i18n.get.thenBy}" />
+            </csigwt:layer>
+            <csigwt:layer top="250px" height="30px" left="20px" right="560px">
+                <csilistbox:SortListBox ui:field="thirdSort" width="230px" />
+            </csigwt:layer>
+            <csigwt:layer top="230px" height="20px" left="260px" right="320px">
+                <base:InlineLabel text="{i18n.get.thenBy}" />
+            </csigwt:layer>
+            <csigwt:layer top="250px" height="30px" left="260px" right="320px">
+                <csilistbox:SortListBox ui:field="fourthSort" width="230px" />
+            </csigwt:layer>
+            <csigwt:layer top="20px" bottom="20px" left="512px" right="20px">
+                <csiboot:DialogInfoTextArea ui:field="instructionTextArea" height="100%" width="97%" addStyleNames="{style.noborder}" />
+            </csigwt:layer>
+        </csigwt:FullSizeLayoutPanel>
+    </csiboot:ValidatingDialog>
+</ui:UiBinder> 

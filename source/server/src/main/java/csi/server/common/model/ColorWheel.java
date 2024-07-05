@@ -1,0 +1,16 @@
+package csi.server.common.model;
+
+public class ColorWheel {
+
+    private static int[] colors = { 0x0000FF, 0xFF6633, 0x00CC99, 0x800080, 0x003399, 0xCC99FF, 0x00CCFF, 0x00FF00, 0xFF00FF, 0xFFCC00, 0x663399, 0x99CCFF, 0x008080, 0x99FFFF,
+            0x0066FF, 0x808080, 0xFFFF00, 0x008000, 0x000080, 0xCCFFCC, 0x996666, 0x0099FF, 0xFF99CC, 0xCCCC33, 0x669933, 0xC0C0C0, 0xFF0000, 0xFFFFCC, 0x808000, 0xFFCC99 };
+
+    private static int index = 0;
+
+    public static int next() {
+        int color = colors[index++];
+        index = index % colors.length;
+        return color;
+    }
+
+}

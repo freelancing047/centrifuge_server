@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+             xmlns:csiboot="urn:import:csi.client.gwt.widget.boot"
+             xmlns:csibox="urn:import:csi.client.gwt.widget.input_boxes"
+             xmlns:csidrop="urn:import:csi.client.gwt.widget.list_boxes"
+             xmlns:csipanel="urn:import:csi.client.gwt.csiwizard.panels"
+             xmlns:csigwt="urn:import:csi.client.gwt.widget.ui">
+    <ui:with
+            field="i18n"
+            type="csi.client.gwt.i18n.CentrifugeConstantsLocator" />
+
+   <ui:style gss="true">
+        .panel {
+            background-color: ivory;
+        }
+        .colsel {
+            padding-top:5px;
+            padding-bottom:5px;
+        }
+        .noborder{
+            border-style: none;
+        }
+    </ui:style>
+
+    <csiboot:ValidatingDialog bodyWidth="760px" bodyHeight="440px">
+        <csigwt:FullSizeLayoutPanel ui:field="topLevelPanel">
+            <csigwt:layer top="0px" height="440px" left="20px" right="20px">
+                <csigwt:FullSizeLayoutPanel ui:field="layoutPanel">
+                    <csigwt:layer top="5px" height="25px" left="0px" width="90px">
+                        <g:Label text="{i18n.get.securityInfoPopup_ClearanceLabel}" />
+                    </csigwt:layer>
+                    <csigwt:layer top="0px" height="30px" left="90px" width="310px">
+                        <csibox:FilteredTrimmedTextBox width="285px" ui:field="infoGroupNameTextBox"/>
+                    </csigwt:layer>
+                    <csigwt:layer top="45px" height="25px" left="0px" width="90px">
+                        <g:Label text="{i18n.get.securityInfoPopup_RemarksLabel}" />
+                    </csigwt:layer>
+                    <csigwt:layer top="40px" height="30px" left="90px" width="310px">
+                        <boot:TextBox width="285px" ui:field="infoRemarksTextBox"/>
+                    </csigwt:layer>
+
+                    <csigwt:layer top="80px" height="85px" left="0px" width="400px">
+                        <csigwt:FullSizeLayoutPanel ui:field="capcoPanel">
+                            <csigwt:layer top="5px" height="25px" left="0px" width="90px">
+                                <g:Label text="{i18n.get.securityInfoPopup_CAPCOSectionLabel}" />
+                            </csigwt:layer>
+                            <csigwt:layer top="0px" height="30px" left="90px" width="310px">
+                                <csidrop:CsiStringListBox width="300px" ui:field="capcoListBox" />
+                            </csigwt:layer>
+                            <csigwt:layer top="45px" height="25px" left="0px" width="90px">
+                                <g:Label text="{i18n.get.securityInfoPopup_PortionTextLabel}" />
+                            </csigwt:layer>
+                            <csigwt:layer top="40px" height="30px" left="90px" width="310px">
+                                <csibox:FilteredTextBox width="285px" ui:field="portionTextBox"/>
+                            </csigwt:layer>
+                        </csigwt:FullSizeLayoutPanel>
+                    </csigwt:layer>
+
+                    <csigwt:layer top="165px" height="275px" left="0px" width="400px">
+                        <csigwt:FullSizeLayoutPanel ui:field="impliedClearancePanel">
+                            <csigwt:layer top="0px" height="25px" left="0px" width="400px">
+                                <g:Label ui:field="pairedListLabel" />
+                            </csigwt:layer>
+                            <csigwt:layer top="25px" height="225px" left="0px" width="400px">
+                                <csipanel:PairedListPanel ui:field="pairedListWidget" height="225" width="400"/>
+                            </csigwt:layer>
+                            <csigwt:layer top="250px" height="25px" left="0px" width="190px">
+                                <boot:CheckBox ui:field="askRealm" text="{i18n.get.administrationDialogs_AskRealm}" />
+                            </csigwt:layer>
+                        </csigwt:FullSizeLayoutPanel>
+                    </csigwt:layer>
+
+                    <csigwt:layer top="0px" height="440px" left="420px" width="300px">
+                        <csigwt:FullSizeLayoutPanel ui:field="infoPanel">
+                            <csigwt:layer top="0px" height="440px" left="0px" width="300px">
+                                <csiboot:DialogInfoTextArea ui:field="instructionTextArea"
+                                                            height="100%" width="97%" addStyleNames="{style.noborder}" />
+                            </csigwt:layer>
+                        </csigwt:FullSizeLayoutPanel>
+                    </csigwt:layer>
+                </csigwt:FullSizeLayoutPanel>
+            </csigwt:layer>
+        </csigwt:FullSizeLayoutPanel>
+    </csiboot:ValidatingDialog>
+</ui:UiBinder>

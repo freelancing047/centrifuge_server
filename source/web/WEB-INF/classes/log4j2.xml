@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+  <Properties>
+    <Property name="centrifuge_layout">%d [Centrifuge] %-5p - %m%n</Property>
+    <Property name="fail_safe_filter_regex">.*(fail-safe cleanup \(collections\)).*</Property>
+  </Properties>
+
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="${centrifuge_layout}" />
+      <RegexFilter regex="${fail_safe_filter_regex}" onMatch="DENY" onMismatch="ACCEPT" />
+    </Console>
+
+    <RollingFile name="RollingFileAppender" fileName="logs/centrifuge.log"
+                 filePattern="logs/$${date:yyyy-MM}/centrifuge-%d{MM-dd-yyyy}-%i.log.gz">
+      <PatternLayout pattern="${centrifuge_layout}" />
+      <RegexFilter regex="${fail_safe_filter_regex}" onMatch="DENY" onMismatch="ACCEPT" />
+      <Policies>
+        <OnStartupTriggeringPolicy />
+        <TimeBasedTriggeringPolicy />
+        <SizeBasedTriggeringPolicy size="50 MB" />
+      </Policies>
+      <DefaultRolloverStrategy max="20" />
+    </RollingFile>
+
+    <!-- Table and sequence creation script: logdb/pgsql/ddl/CreateLoggingTable.sql -->
+<!--     <JDBC name="JDBCAppender" tableName="logs" bufferSize="10000"> -->
+           <!-- Source: server/server/tomcat_8.0.30/conf/context.xml <Resource name="jdbc/MetaDB" /> -->
+           <!-- Deployed: centrifuge-server/conf/context.xml <Resource name="jdbc/MetaDB" /> -->
+<!--       <DataSource jndiName="java:/comp/env/jdbc/MetaDB" /> --> <!-- Source: server/server/tomcat_8.0.30/conf/context.xml -->
+<!--       <Column name="id" literal="logs_sequence.NEXTVAL" isUnicode="false" /> -->
+<!--       <Column name="log_date" isEventTimestamp="true" isUnicode="false" /> -->
+<!--       <Column name="priority" pattern="%p" isUnicode="false" /> -->
+<!--       <Column name="thread_name" pattern="%t" isUnicode="false" /> -->
+<!--       <Column name="location_info" pattern="%l" isUnicode="false" /> -->
+<!--       <Column name="application_id" pattern="%X{application_id}" isUnicode="false" /> -->
+<!--       <Column name="server_ip_address" pattern="%X{server_ip_address}" isUnicode="false" /> -->
+<!--       <Column name="action_uri" pattern="%X{action_uri}" isUnicode="false" /> -->
+<!--       <Column name="client_ip_address" pattern="%X{client_ip_address}" isUnicode="false" /> -->
+<!--       <Column name="user_name" pattern="%X{user_name}" isUnicode="false" /> -->
+<!--       <Column name="session_id" pattern="%X{session_id}" isUnicode="false" /> -->
+<!--       <Column name="message" pattern="%.4000m" isUnicode="false" /> -->
+<!--       <RegexFilter regex="${fail_safe_filter_regex}" onMatch="DENY" onMismatch="ACCEPT" /> -->
+<!--     </JDBC> -->
+
+    <!-- Table and sequence creation script: logdb/mysql/ddl/CreateLoggingTable.sql -->
+<!--     <JDBC name="FailoverJDBCAppender" tableName="logs" bufferSize="10000"> -->
+           <!-- Source: server/server/tomcat_8.0.30/conf/context.xml <Resource name="jdbc/xxx" /> -->
+           <!-- Deployed: centrifuge-server/conf/context.xml <Resource name="jdbc/xxx" /> -->
+<!-- <!- -      <DataSource jndiName="java:/comp/env/jdbc/xxx" />  WRONG and TODO: create db config in context.xml - -> -->
+<!--       <Column name="id" literal="logs_sequence.NEXTVAL" isUnicode="false" /> -->
+<!--       <Column name="log_date" isEventTimestamp="true" isUnicode="false" /> -->
+<!--       <Column name="priority" pattern="%p" isUnicode="false" /> -->
+<!--       <Column name="thread_name" pattern="%t" isUnicode="false" /> -->
+<!--       <Column name="location_info" pattern="%l" isUnicode="false" /> -->
+<!--       <Column name="application_id" pattern="%X{application_id}" isUnicode="false" /> -->
+<!--       <Column name="server_ip_address" pattern="%X{server_ip_address}" isUnicode="false" /> -->
+<!--       <Column name="action_uri" pattern="%X{action_uri}" isUnicode="false" /> -->
+<!--       <Column name="client_ip_address" pattern="%X{client_ip_address}" isUnicode="false" /> -->
+<!--       <Column name="user_name" pattern="%X{user_name}" isUnicode="false" /> -->
+<!--       <Column name="session_id" pattern="%X{session_id}" isUnicode="false" /> -->
+<!--       <Column name="message" pattern="%.4000m" isUnicode="false" /> -->
+<!--       <RegexFilter regex="${fail_safe_filter_regex}" onMatch="DENY" onMismatch="ACCEPT" /> -->
+<!--     </JDBC> -->
+
+<!--     <RollingFile name="FailoverRollingDBFileAppender" fileName="logs/db.log" -->
+<!--                  filePattern="logs/$${date:yyyy-MM}/db-%d{MM-dd-yyyy}-%i.log.gz"> -->
+<!--       <PatternLayout pattern="%d, -->
+<!--         %p, %t, %l, %X{application_id}, %X{server_ip_address}, %X{action_uri}, %X{client_ip_address}, %X{user_name}, %X{session_id}, -->
+<!--         %.4000m%n" /> -->
+<!--       <RegexFilter regex="${fail_safe_filter_regex}" onMatch="DENY" onMismatch="ACCEPT" /> -->
+<!--       <Policies> -->
+<!--         <OnStartupTriggeringPolicy /> -->
+<!--         <TimeBasedTriggeringPolicy /> -->
+<!--         <SizeBasedTriggeringPolicy size="50 MB" /> -->
+<!--       </Policies> -->
+<!--       <DefaultRolloverStrategy max="20" /> -->
+<!--     </RollingFile> -->
+
+<!--     <Failover name="JDBCWithFailoverAppender" primary="JDBCAppender"> -->
+<!--       <Failovers> -->
+<!--         <AppenderRef ref="FailoverJDBCAppender" /> -->
+<!--         <AppenderRef ref="FailoverRollingDBFileAppender" /> -->
+<!--       </Failovers> -->
+<!--     </Failover> -->
+
+    <RollingFile name="LicenseUsageAppender" fileName="logs/centrifuge-license-usage.log"
+                 filePattern="logs/$${date:yyyy-MM}/centrifuge-license-usage-%d{MM-yyyy}-%i.log.gz">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss},%m%n" />
+      <Policies>
+        <TimeBasedTriggeringPolicy />
+      </Policies>
+    </RollingFile>
+  </Appenders>
+
+  <Loggers>
+    <Logger name="centrifuge" level="WARN" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+
+    <Logger name="com.csi" level="WARN" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+
+    <Logger name="csi" level="WARN" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+
+    <Logger name="csi.license.model.AbstractLicense" level="INFO" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+
+    <Logger name="csi.license.model.AbstractLicense_usage" level="INFO" additivity="false">
+      <AppenderRef ref="LicenseUsageAppender" />
+    </Logger>
+
+    <Logger name="csi.license.model.NamedLicense" level="INFO" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+
+    <Logger name="csi.license.model.LicenseFactory" level="INFO" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+
+    <Logger name="csi.license.persist.reader.DigestLicenseReader" level="INFO" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+
+    <Logger name="csi.log.LogThreadContextCometFilter" level="INFO" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+    
+<Logger name="csi.security.queries.Users" level="INFO" additivity="false">
+  <AppenderRef ref="Console" />
+  <AppenderRef ref="RollingFileAppender" />
+</Logger>
+    
+    <Logger name="csi.server.business.cachedb.dataset.DataSetProcessor" level="WARN" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+
+    <Logger name="csi.server.business.helper.DataCacheHelper" level="INFO" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+    
+    <Logger name="csi.server.business.helper.QueryHelper" level="WARN" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+    
+    <Logger name="csi.server.business.service.DataViewActionsService" level="WARN" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+    
+    <Logger name="csi.server.common.model.ModelObject" level="WARN" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+    
+    <Logger name="csi.server.connector.jdbc.JdbcConnectionFactory" level="WARN" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+
+    <Logger name="csi.server.util.FieldReferenceValidator" level="WARN" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+        
+    <Logger name="csi.server.util.PerfTimer" level="WARN" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+    
+    <Logger name="csi.startup.AbstractCacheInitializer" level="INFO" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+    
+    <Logger name="csi.startup.Bootstrap" level="INFO" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+
+    <Logger name="csi.startup.CleanUpThread" level="DEBUG" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+
+    <Logger name="csi.startup.Product" level="INFO" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+    
+    <Logger name="csi.tools.DataMover" level="INFO" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+    
+    <Logger name="csi.tools.EnhanceIcons" level="INFO" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+    
+    <Logger name="csi.tools.TraceLinkupSecurity" level="INFO" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+
+<!--     <Logger name="DatabaseLogger" level="INFO" additivity="false"> -->
+<!--       <AppenderRef ref="JDBCWithFailoverAppender" /> -->
+<!--     </Logger> -->
+
+    <Logger name="liquibase" level="ERROR" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+
+<!--     <Logger name="org.hibernate" level="ALL" additivity="false"> -->
+<!--       <AppenderRef ref="RollingFileAppender" /> -->
+<!--     </Logger> -->
+
+<!--     <Logger name="org.hibernate.SQL" level="WARN" additivity="false"> -->
+<!--       <AppenderRef ref="RollingFileAppender" /> -->
+<!--     </Logger> -->
+    
+    <Logger name="org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory" level="ERROR" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+    
+    <Logger name="prefuse" level="WARN" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Logger>
+
+    <Root level="OFF">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="RollingFileAppender" />
+    </Root>
+  </Loggers>
+</Configuration>

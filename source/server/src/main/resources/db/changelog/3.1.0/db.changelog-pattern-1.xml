@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="Admin (generated)" id="1421954716802-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="graphpatterns">
+            <column name="pattern_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="owner" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="graphpatterns_patternlinks">
+            <column name="pattern_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="patternlink_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="graphpatterns_patternnodes">
+            <column name="pattern_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="patternnode_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-4" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="patternlinks">
+            <column name="patternlink_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-5" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="patternlinks_criteria">
+            <column name="patternlink_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="criterion" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-6" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="patternlinks_patternnodes">
+            <column name="patternlink_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="patternnode_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-7" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="patternnodes">
+            <column name="patternnode_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="drawx" type="FLOAT8"/>
+            <column name="drawy" type="FLOAT8"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-8" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="patternnodes_criteria">
+            <column name="patternnode_uuid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="criterion" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-10" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="pattern_uuid, patternlink_uuid" constraintName="graphpatterns_patternlinks_pkey" tableName="graphpatterns_patternlinks"/>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-11" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="pattern_uuid, patternnode_uuid" constraintName="graphpatterns_patternnodes_pkey" tableName="graphpatterns_patternnodes"/>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-12" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="pattern_uuid" constraintName="graphpatterns_pkey" tableName="graphpatterns"/>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-13" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="patternlink_uuid" constraintName="patternlinks_pkey" tableName="patternlinks"/>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-14" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey columnNames="patternnode_uuid" constraintName="patternnodes_pkey" tableName="patternnodes"/>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-15" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addUniqueConstraint columnNames="patternlink_uuid" constraintName="graphpatterns_patternlinks_patternlink_uuid_key" deferrable="false" disabled="false" initiallyDeferred="false" tableName="graphpatterns_patternlinks"/>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-16" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addUniqueConstraint columnNames="patternnode_uuid" constraintName="graphpatterns_patternnodes_patternnode_uuid_key" deferrable="false" disabled="false" initiallyDeferred="false" tableName="graphpatterns_patternnodes"/>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-19" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="patternlink_uuid" baseTableName="patternlinks_criteria" constraintName="fk4ac4d0b5edeed641" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="patternlink_uuid" referencedTableName="patternlinks"/>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-20" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="patternnode_uuid" baseTableName="patternlinks_patternnodes" constraintName="fk8b757fd66a845b41" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="patternnode_uuid" referencedTableName="patternnodes"/>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-21" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="patternlink_uuid" baseTableName="patternlinks_patternnodes" constraintName="fk8b757fd6edeed641" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="patternlink_uuid" referencedTableName="patternlinks"/>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-22" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="pattern_uuid" baseTableName="graphpatterns_patternlinks" constraintName="fk8f7e45778fa3161" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="pattern_uuid" referencedTableName="graphpatterns"/>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-23" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="patternlink_uuid" baseTableName="graphpatterns_patternlinks" constraintName="fk8f7e4577edeed641" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="patternlink_uuid" referencedTableName="patternlinks"/>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-24" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="patternnode_uuid" baseTableName="graphpatterns_patternnodes" constraintName="fk8f9d086f6a845b41" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="patternnode_uuid" referencedTableName="patternnodes"/>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-25" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="pattern_uuid" baseTableName="graphpatterns_patternnodes" constraintName="fk8f9d086f8fa3161" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="pattern_uuid" referencedTableName="graphpatterns"/>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-28" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addForeignKeyConstraint baseColumnNames="patternnode_uuid" baseTableName="patternnodes_criteria" constraintName="fkdb45e4bd6a845b41" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="patternnode_uuid" referencedTableName="patternnodes"/>
+    </changeSet>
+    <changeSet author="Admin (generated)" id="1421954716802-34" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addNotNullConstraint columnDataType="bool" columnName="prompt" tableName="linkupmapdef"/>
+    </changeSet>
+</databaseChangeLog>

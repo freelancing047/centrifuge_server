@@ -1,0 +1,144 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+        xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:g="urn:import:com.google.gwt.user.client.ui"
+        xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
+        xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+        xmlns:grid="urn:import:com.sencha.gxt.widget.core.client.grid"
+        xmlns:b="urn:import:csi.client.gwt.widget.boot"
+        xmlns:gwt="urn:import:csi.client.gwt.widget.ui"
+        xmlns:path="urn:import:csi.client.gwt.viz.graph.tab.path"
+        xmlns:base="urn:import:com.github.gwtbootstrap.client.ui.base">
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <b:Dialog
+            ui:field="searchDialog"
+            title="Path Search"
+            bodyWidth="500px"
+            bodyHeight="320px">
+        <gwt:FullSizeLayoutPanel>
+            <gwt:layer
+                    top="0px"
+                    bottom="0px">
+                <boot:FluidContainer>
+                    <boot:FluidRow>
+                        <boot:Column size="6">
+                            <boot:Form>
+                                <boot:Fieldset>
+                                    <boot:ControlGroup>
+                                        <boot:Controls>
+                                            <boot:ControlLabel
+                                                    for="input01">
+                                                <base:InlineLabel text="{i18n.get.pathSettings_pathsMatchingNodes}"/>
+                                            </boot:ControlLabel>
+                                            <g:HorizontalPanel
+                                                    width="220px">
+                                                <g:cell horizontalAlignment="ALIGN_CENTER">
+                                                    <gxt:Slider
+                                                            minValue="0"
+                                                            maxValue="12"
+                                                            value="0"
+                                                            ui:field="pathsMatchNodes"
+                                                            increment="1"
+                                                            width="180px"/>
+                                                </g:cell>
+                                                <path:SliderTextField ui:field="pathsMatchingText"
+                                                                      width="25px"/>
+                                            </g:HorizontalPanel>
+                                        </boot:Controls>
+                                        <boot:Controls>
+                                        </boot:Controls>
+                                        <boot:Controls>
+                                            <boot:ControlLabel
+                                                    for="maxPathLen">
+                                                <base:InlineLabel text="{i18n.get.pathSettings_maximumPathLength}"/>
+                                            </boot:ControlLabel>
+                                            <g:HorizontalPanel
+                                                    width="220px">
+                                                <g:cell horizontalAlignment="ALIGN_CENTER">
+                                                    <gxt:Slider
+                                                            minValue="0"
+                                                            maxValue="9"
+                                                            value="0"
+                                                            ui:field="maximumLength"
+                                                            increment="1"
+                                                            width="180px"/>
+                                                </g:cell>
+                                                <path:SliderTextField ui:field="maximumLengthText"
+                                                                      width="25px"/>
+                                            </g:HorizontalPanel>
+                                        </boot:Controls>
+                                        <boot:Controls>
+                                            <boot:CheckBox
+                                                    ui:field="includeDirection"
+                                                    text="{i18n.get.pathSettings_includeDirection}">
+                                            </boot:CheckBox>
+                                        </boot:Controls>
+                                    </boot:ControlGroup>
+                                </boot:Fieldset>
+                            </boot:Form>
+                        </boot:Column>
+                        <boot:Column size="6">
+                            <boot:Form>
+                                <boot:Fieldset>
+                                    <boot:ControlGroup>
+                                        <boot:Controls>
+                                            <boot:ControlLabel
+                                                    for="minPathLen">
+                                                <base:InlineLabel text="{i18n.get.pathSettings_minimumPathLength}"/>
+                                            </boot:ControlLabel>
+                                            <g:HorizontalPanel
+                                                    width="220px">
+                                                <g:cell horizontalAlignment="ALIGN_CENTER">
+                                                    <gxt:Slider
+                                                            minValue="0"
+                                                            maxValue="20"
+                                                            value="0"
+                                                            ui:field="minimumLength"
+                                                            increment="1"
+                                                            width="180px"/>
+                                                </g:cell>
+                                                <path:SliderTextField ui:field="minimumLengthText"
+                                                                      width="25px"/>
+                                            </g:HorizontalPanel>
+                                        </boot:Controls>
+                                        <boot:Controls>
+                                            <boot:ControlLabel
+                                                    for="maxPaths">
+                                                <base:InlineLabel text="{i18n.get.pathSettings_limitPathsReturned}"/>
+                                            </boot:ControlLabel>
+                                            <g:HorizontalPanel
+                                                    width="220px">
+                                                <g:cell horizontalAlignment="ALIGN_CENTER">
+                                                    <gxt:Slider
+                                                            minValue="0"
+                                                            maxValue="99"
+                                                            value="0"
+                                                            ui:field="maximumPaths"
+                                                            increment="1"
+                                                            width="180px"/>
+                                                </g:cell>
+                                                <path:SliderTextField ui:field="maximumPathsText"
+                                                                      width="25px"/>
+                                            </g:HorizontalPanel>
+                                        </boot:Controls>
+                                    </boot:ControlGroup>
+                                </boot:Fieldset>
+                            </boot:Form>
+                        </boot:Column>
+                    </boot:FluidRow>
+                    <boot:FluidRow>
+                        <boot:Column size="12">
+                            <boot:Controls>
+                                <boot:ControlLabel
+                                        for="input01">
+                                    <g:InlineLabel text="{i18n.get.pathSettings_currentlySelectedNodes}"/>
+                                </boot:ControlLabel>
+                                <grid:Grid ui:field="nodesGrid"/>
+                            </boot:Controls>
+                        </boot:Column>
+                    </boot:FluidRow>
+                </boot:FluidContainer>
+            </gwt:layer>
+        </gwt:FullSizeLayoutPanel>
+    </b:Dialog>
+</ui:UiBinder>

@@ -1,0 +1,75 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+	xmlns:gxtbutton="urn:import:com.sencha.gxt.widget.core.client.button"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
+	xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+    xmlns:base="urn:import:com.github.gwtbootstrap.client.ui.base"
+	xmlns:gxtform="urn:import:com.sencha.gxt.widget.core.client.form"
+	xmlns:gxtgrid="urn:import:com.sencha.gxt.widget.core.client.grid"
+	xmlns:csiboot="urn:import:csi.client.gwt.widget.boot" xmlns:grid="urn:import:csi.client.gwt.widget.gxt.grid"
+	xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes" xmlns:csigwt="urn:import:csi.client.gwt.widget.ui">
+
+	<ui:style>
+		.addDeleteControl {
+			text-align: right;
+		}
+		
+		.table {
+			padding: 5px;
+			width: 100%;
+		}
+		
+		.deleteCell {
+			text-align: right;
+			width: 100%;
+		}
+	</ui:style>
+
+	<ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+	<ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+
+	<csiboot:Dialog title="" bodyWidth="700px" bodyHeight="300px">
+		<csigwt:FullSizeLayoutPanel>
+			<csigwt:layer top="0" height="72px">
+				<g:HTMLPanel>
+					<div class="vizFilter">
+						<boot:Form type="HORIZONTAL">
+							<boot:Fieldset>
+								<boot:ControlGroup>
+									<boot:ControlLabel for="filterNameInput"><base:InlineLabel text="{i18n.get.name} "/></boot:ControlLabel>
+									<boot:Controls>
+										<boot:TextBox boot:id="filterNameInput"
+											placeholder="Filter name" ui:field="filterNameField" />
+									</boot:Controls>
+								</boot:ControlGroup>
+							</boot:Fieldset>
+						</boot:Form>
+					</div>
+					<table class="{style.table}">
+						<tr>
+							<td>
+								<g:InlineLabel text="{i18n.get.select}" />
+							</td>
+							<td>
+								<combo:FieldDefComboBox ui:field="fieldList"
+									addStyleNames="string-combo-style" />
+							</td>
+							<td>
+								<boot:Button ui:field="buttonAdd" title="{i18n.get.createEditFilterDialog_addButtonTitle}"/>
+							</td>
+							<td class="{style.deleteCell}">
+								<boot:Button size="MINI" ui:field="buttonDelete" title="{i18n.get.createEditFilterDialog_deleteButtonTitle}" text="{i18n.get.delete}" />
+							</td>
+						</tr>
+					</table>
+				</g:HTMLPanel>
+			</csigwt:layer>
+
+			<csigwt:layer top="72px" bottom="0">
+				<grid:GridContainer ui:field="gridContainer" />
+			</csigwt:layer>
+		</csigwt:FullSizeLayoutPanel>
+	</csiboot:Dialog>
+
+</ui:UiBinder>

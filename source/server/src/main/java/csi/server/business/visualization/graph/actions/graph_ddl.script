@@ -1,0 +1,108 @@
+DROP TABLE IF EXISTS Nodes_{0} CASCADE;
+DROP TABLE IF EXISTS NodesXWalk_{0} CASCADE;
+DROP TABLE IF EXISTS NodeAttrs_{0} CASCADE;
+DROP TABLE IF EXISTS NodePos_{0} CASCADE;
+DROP TABLE IF EXISTS Links_{0} CASCADE;
+DROP TABLE IF EXISTS LinksXWalk_{0} CASCADE;
+DROP TABLE IF EXISTS LinkAttrs_{0} CASCADE;
+DROP TABLE IF EXISTS GraphNodes_{0} CASCADE;
+DROP TABLE IF EXISTS GraphLinks_{0} CASCADE;
+DROP SEQUENCE IF EXISTS nseq_{0} CASCADE;
+DROP SEQUENCE IF EXISTS lseq_{0} CASCADE;
+
+CREATE LOCAL TEMPORARY TABLE tNodes
+    (
+    user_node_id text, 
+    definition_id text,
+    row_id integer
+    )
+ON COMMIT DROP;
+
+CREATE LOCAL TEMPORARY TABLE tLinks
+    (
+    source_id integer,
+    target_id integer,
+    definition_id text,
+    row_id integer
+    )
+ON COMMIT DROP;
+
+CREATE TABLE Nodes_{0} 
+    (
+    node_id integer,
+    node_key text,
+    subgraph_id numeric DEFAULT -1,
+    hidden boolean,
+    position point
+    );
+
+CREATE TABLE NodesXWalk_{0} 
+    (
+    node_id integer,
+    definition_id text,
+    row_id integer
+    );
+
+CREATE TABLE Links_{0}
+    (
+    link_id integer,
+    source_id integer,
+    target_id integer,
+    hidden boolean
+    );
+
+CREATE TABLE LinksXWalk_{0}
+    (
+    link_id integer,
+    definition_id text,
+    row_id integer
+    );
+
+CREATE TABLE GraphNodes_{0}
+    (
+    graph_id integer,
+    node_id integer
+    );
+
+CREATE TABLE GraphLinks_{0}
+    (
+    graph_id integer,
+    link_id integer
+    );
+
+-- Shadow table for attributes of nodes and links !exist in the cache data
+CREATE TABLE NodeAttrs_{0}
+    (
+    node_id integer,
+    row_id integer,
+    name text,
+    value text,
+    type text
+    );
+
+CREATE TABLE NodePos_{0}
+    (
+    node_id integer,
+    layout text,
+    x real,
+    y real,
+    z real DEFAULT 0.0
+    );
+
+CREATE TABLE LinkAttrs_{0}
+    (
+    link_id integer,
+    row_id integer,
+    name text,
+    value text,
+    type text
+    );
+
+CREATE SEQUENCE nseq_{0} MINVALUE 0 START 0 OWNED BY Nodes_{0}.node_id;
+CREATE SEQUENCE lseq_{0} MINVALUE 0 START 0 OWNED BY Links_{0}.link_id;
+ALTER TABLE Nodes_{0} ALTER COLUMN node_id SET DEFAULT nextval(''nseq_{0}'');
+ALTER TABLE Links_{0} ALTER COLUMN link_id SET DEFAULT nextval(''lseq_{0}'');
+
+
+
+

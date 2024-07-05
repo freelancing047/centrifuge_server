@@ -1,0 +1,47 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder' xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+    xmlns:gxtbutton="urn:import:com.sencha.gxt.widget.core.client.button" xmlns:g="urn:import:com.google.gwt.user.client.ui"
+    xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client" xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+    xmlns:gxtform="urn:import:com.sencha.gxt.widget.core.client.form" xmlns:gxtgrid="urn:import:com.sencha.gxt.widget.core.client.grid"
+    xmlns:csiboot="urn:import:csi.client.gwt.widget.boot" xmlns:settings="urn:import:csi.client.gwt.viz.shared.settings"
+    xmlns:tabs="urn:import:csi.client.gwt.viz.matrix.settings">
+
+   <ui:style gss="true">
+        
+    </ui:style>
+
+    <ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <ui:with field="dataViewDef" type="csi.server.common.model.dataview.DataViewDef" />
+    <ui:with field="visualizationDef" type="csi.server.common.model.visualization.matrix.MatrixViewDef" />
+
+    <settings:VisualizationSettingsModal ui:field="vizSettings" title="{i18n.get.matrixSettingsTitle}"
+        visualizationDef="{visualizationDef}" dataViewDef="{dataViewDef}" bodyWidth="800px" bodyHeight="300px">
+
+        <csiboot:CsiTabPanel tabPosition="left">
+            <boot:Tab heading="{i18n.get.matrixSettingsGeneralHeading}">
+                <tabs:MatrixGeneralTab ui:field="generalTab"/>
+            </boot:Tab>
+            <boot:Tab heading="{i18n.get.matrixSettingsAxisHeading}">
+                <tabs:MatrixCategoriesTab ui:field="tabCategories" />
+            </boot:Tab>
+            <boot:Tab heading="{i18n.get.matrixSettingsMeasureHeading}">
+                <tabs:MatrixMeasuresTab ui:field="tabMeasure" />
+            </boot:Tab>
+            <boot:Tab heading="{i18n.get.matrixSettingsSortHeading}">
+                <tabs:MatrixSortTab ui:field="tabSort"/>
+            </boot:Tab>
+            <boot:Tab heading="{i18n.get.chartSettingsView_filterTab}">
+                <tabs:MatrixFilterTab ui:field="tabFilter"/>
+            </boot:Tab>
+            <boot:Tab heading="{i18n.get.matrixSettingsColorsHeading}">
+                <tabs:ColorsTab ui:field="tabColors"/>
+            </boot:Tab>
+        </csiboot:CsiTabPanel>
+
+        <settings:leftControl>
+        </settings:leftControl>
+    </settings:VisualizationSettingsModal>
+
+</ui:UiBinder>

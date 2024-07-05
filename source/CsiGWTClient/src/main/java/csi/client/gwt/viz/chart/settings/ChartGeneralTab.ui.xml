@@ -1,0 +1,38 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder' xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+    xmlns:gxtbutton="urn:import:com.sencha.gxt.widget.core.client.button" xmlns:g="urn:import:com.google.gwt.user.client.ui"
+    xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client" xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui"
+    xmlns:gxtform="urn:import:com.sencha.gxt.widget.core.client.form" xmlns:gxtgrid="urn:import:com.sencha.gxt.widget.core.client.grid"
+    xmlns:csiboot="urn:import:csi.client.gwt.widget.boot" xmlns:base="urn:import:com.github.gwtbootstrap.client.ui.base"
+	xmlns:settings="urn:import:csi.client.gwt.viz.shared.settings" xmlns:this="urn:import:csi.client.gwt.viz.chart.settings"
+    xmlns:combo="urn:import:csi.client.gwt.widget.combo_boxes">
+
+   <ui:style gss="true">
+        
+    </ui:style>
+
+    <ui:with field="resources" type="csi.client.gwt.resources.ApplicationResources" />
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+
+    <g:SimpleLayoutPanel width="100%" height="100%">
+        <boot:Form type="HORIZONTAL">
+            <boot:Fieldset>
+                <boot:ControlGroup>
+                    <boot:ControlLabel for="nameField"><base:InlineLabel text="{i18n.get.name}"/></boot:ControlLabel>
+                    <boot:Controls>
+                        <boot:TextBox alternateSize="XLARGE" boot:id="nameField" ui:field="chartName" />
+                    </boot:Controls>
+                </boot:ControlGroup>
+                <boot:ControlGroup>
+                    <boot:ControlLabel for="chartDisplay">
+                        <base:InlineLabel text="{i18n.get.chartGeneralTab_displayOnLoad}"/>
+                    </boot:ControlLabel>
+                    <boot:Controls>
+                        <boot:RadioButton ui:field="chartDisplay" name="chartDisplayTypeRadio" text="{i18n.get.chartGeneralTab_chartDisplay}"></boot:RadioButton>
+                        <boot:RadioButton ui:field="tableDisplay" name="chartDisplayTypeRadio" text="{i18n.get.chartGeneralTab_tableDisplay}"></boot:RadioButton>
+                    </boot:Controls>
+                </boot:ControlGroup>
+            </boot:Fieldset>
+        </boot:Form>
+    </g:SimpleLayoutPanel>
+</ui:UiBinder>

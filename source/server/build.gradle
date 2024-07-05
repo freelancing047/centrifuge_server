@@ -1,0 +1,228 @@
+/*
+plugins {
+  id "org.sonarqube" version "2.7"
+}
+*/
+
+apply plugin: 'java'
+
+repositories {
+    maven {
+        url "http://10.11.10.3:8081/nexus/content/repositories/Installer"
+    }
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDir 'src/main/java'
+            include '**/*.properties'
+            include '**/*.sql'
+            include '**/*.xml'
+            include '**/*.js'
+            include '**/*.script'
+            exclude 'META-INF/ioc/'
+            exclude 'META-INF/override/'
+        }
+    }
+}
+
+def ASPECTJ_VERSION = '1.6.2'//1.8.2
+def BATIK_VERSION = '1.7'
+def CGLIB_VERSION = '2.2'//3.1
+def COMMONS_BEANUTILS_VERSION = '1.7.0'//1.8.3
+def COMMONS_DIGESTER_VERSION = '1.7'//2.1
+def COMMONS_FILEUPLOAD_VERSION = '1.3'//1.3.1
+def COMMONS_LANG_VERSION = '2.6'
+def DISRUPTOR_VERSION = '3.4.2'
+def EMPIRE_DB_VERSION = '2.4.0'//2.4.3
+def GSON_VERSION = '2.8.2'//2.3
+def GUAVA_GWT_VERSION = '20.0'//18.0
+def GUAVA_VERSION = '20.0'//17.0
+def GUICE_VERSION = '4.0'
+def GWT_VERSION = "2.8.1"//2.6.1
+def GXT_VERSION = '4.0.2'
+def HIBERNATE_CORE_VERSION = '5.1.4.Centrifuge'//4.3.6.Final
+def HIBERNATE_VALIDATOR_VERSION = '4.3.2.Final'//5.1.2.Final
+def HIBERNATE_VERSION = '5.1.4.Final'//4.3.6.Final -- upgraded from 3.4.0.GA
+def HTTPCLIENT_VERSION = '4.0'//4.3.5
+def HTTPCORE_VERSION = '4.0.1'//4.3.2
+def HTTPMIME_VERSION = '4.0'//4.3.5
+def ITEXT_VERSION = '2.1.3'//4.2.1
+def JACKSON_CORE_ASL_VERSION = '1.8.8'//1.9.13
+def JACKSON_JAXRS_VERSION = '1.8.5'//1.9.13
+def JACKSON_MAPPER_ASL_VERSION = '1.8.5'//1.9.13
+def JACKSON_XC_VERSION = '1.8.5'//1.9.13
+def JAXB_IMPL_VERSION = '2.2.4'//2.2.7
+def JAXRS_VERSION = '2.3.4.Final'//3.0.8.Final
+def JUNG_VERSION = '2.0.1'
+def KRYO_VERSION = '2.21'//2.24.0
+def LIQUIBASE_VERSION = '3.4.1'
+def LOG4J_VERSION = '2.8.2'
+def LOMBOK_VERSION = '1.16.6'//1.14.4
+def MONGO_VERSION = '2.10.1' //2.12.3
+def POSTGRES_DRIVER_VERSION = '42.0.0.jre6'//'9.3-1100-jdbc4'//9.3-1102-jdbc4 (also 9.3-1102-jdbc41)
+def ROME_VERSION = '0.9'//1.0
+def SPRING_VERISON = '4.2.1.RELEASE'//4.0.6.RELEASE
+def XSTREAM_VERSION = '1.4.3'//1.4.7
+
+
+dependencies {
+
+    //Project dependencies
+    compile project(':modules:csi-shared')
+    compile project(':modules:graph-persist')
+    compile project(':modules:pluggable-datasource')
+    compile project(':source:prefuse')
+    compile project(':source:jaas')
+    compile project(':source:tomcat-extensions')
+
+    compile fileTree(dir: '../../lib', includes: ['commons-collections-3.2.2.jar'])
+    compile fileTree(dir: '../../lib', includes: ['license-persistence-1.0.0-jar-with-dependencies.jar'])
+
+    //Can we find these in maven somewhere??
+    compile fileTree(dir: '../../lib/metro1.2', includes: ['*.jar'])
+    compile fileTree(dir: '../../lib/tomcat-8.0.30', includes: ['*.jar'])
+    compile fileTree(dir: '../../lib', includes: ['centrifuge-sf.jar'])
+    compile fileTree(dir: '../../lib', includes: ['com.objectplanet.image.PngEncoder.jar'])
+    compile fileTree(dir: '../../lib/jdbc/oracle/10g2', includes: ['ojdbc14.jar'])
+    compile fileTree(dir: '../../lib', includes: ['log4j-*.jar'])
+    compile fileTree(dir: '../../lib', includes: ['disruptor-*.jar'])
+    
+    compile "de.micromata.jak:JavaAPIforKml:2.2.0"
+    compile "org.projectlombok:lombok:$LOMBOK_VERSION"
+    compile "commons-beanutils:commons-beanutils-core:$COMMONS_BEANUTILS_VERSION"
+    compile "commons-digester:commons-digester:$COMMONS_DIGESTER_VERSION"
+    compile "commons-fileupload:commons-fileupload:$COMMONS_FILEUPLOAD_VERSION"
+    compile 'commons-io:commons-io:2.5'
+    compile "commons-lang:commons-lang:$COMMONS_LANG_VERSION"
+    compile "org.apache.httpcomponents:httpclient:$HTTPCLIENT_VERSION"
+    compile "org.apache.httpcomponents:httpcore:$HTTPCORE_VERSION"
+    compile "org.apache.httpcomponents:httpcore-nio:$HTTPCORE_VERSION"
+    compile "org.apache.httpcomponents:httpmime:$HTTPMIME_VERSION"
+    compile ('org.apache.ddlutils:ddlutils:1.0'){
+      exclude module: 'xerces'
+    }
+    //Updated this dependency from 1.0-RC1
+    compile "com.google.guava:guava:$GUAVA_VERSION"
+    compile "com.lowagie:itext:$ITEXT_VERSION"
+    compile "org.postgresql:postgresql:$POSTGRES_DRIVER_VERSION"
+    compile "net.sf.jung:jung-algorithms:$JUNG_VERSION"
+    compile "net.sf.jung:jung-graph-impl:$JUNG_VERSION"
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: "$LOG4J_VERSION"
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: "$LOG4J_VERSION"
+    compile group: 'org.apache.logging.log4j', name: 'log4j-1.2-api', version: "$LOG4J_VERSION"
+    compile group: 'org.apache.logging.log4j', name: 'log4j-web', version: "$LOG4J_VERSION"
+    compile group: 'com.lmax', name: 'disruptor', version: "$DISRUPTOR_VERSION"
+
+    compile "rome:rome:$ROME_VERSION"
+    compile 'aopalliance:aopalliance:1.0'
+    compile "org.aspectj:aspectjrt:$ASPECTJ_VERSION"
+    compile "org.aspectj:aspectjweaver:$ASPECTJ_VERSION"
+    compile "cglib:cglib-nodep:$CGLIB_VERSION"
+    compile "org.springframework:spring-aop:$SPRING_VERISON"
+    compile "org.springframework:spring-beans:$SPRING_VERISON"
+    compile "org.springframework:spring-context:$SPRING_VERISON"
+    compile "org.springframework:spring-core:$SPRING_VERISON"
+    compile "org.springframework:spring-expression:$SPRING_VERISON"
+    compile "org.springframework:spring-jdbc:$SPRING_VERISON"
+    compile "org.springframework:spring-tx:$SPRING_VERISON"
+    compile "org.springframework:spring-web:$SPRING_VERISON"
+    compile "org.springframework:spring-webmvc:$SPRING_VERISON"
+
+    compile "com.thoughtworks.xstream:xstream:$XSTREAM_VERSION"
+    //Missing a lot from xstream folder
+
+    compile ('net.sf.scannotation:scannotation:1.0.2'){
+        exclude group: 'javassist'
+    }
+    compile "org.mongodb:mongo-java-driver:$MONGO_VERSION"
+    compile "org.codehaus.jackson:jackson-core-asl:$JACKSON_CORE_ASL_VERSION"
+    compile "org.codehaus.jackson:jackson-jaxrs:$JACKSON_JAXRS_VERSION"
+    compile "org.codehaus.jackson:jackson-xc:$JACKSON_XC_VERSION"
+    compile "org.codehaus.jackson:jackson-mapper-asl:$JACKSON_MAPPER_ASL_VERSION"
+    compile "com.fasterxml.jackson.core:jackson-databind:2.5.0"
+    //Missing a lot form charting/jackson
+
+    compile "com.google.inject:guice:$GUICE_VERSION"
+    compile "com.google.inject.extensions:guice-multibindings:$GUICE_VERSION"
+    compile "com.google.inject.extensions:guice-servlet:$GUICE_VERSION"
+    compile "com.google.inject.extensions:guice-assistedinject:$GUICE_VERSION"
+//    compile "com.google.guava:guava-gwt:$GUAVA_GWT_VERSION"
+    compile group: 'com.google.guava', name: 'guava-gwt', version: "$GUAVA_GWT_VERSION"
+
+    //Missing a lot from guice
+
+    //Have to exclude slf4j because later versions of it are not compatible with Hibernate 3.5
+    
+    compile("net.sf.ehcache:ehcache:2.10.0"){
+        exclude group:"org.slf4j"
+    }
+    compile("net.sf.ehcache:ehcache-core:2.6.10"){
+        exclude group:"org.slf4j"
+    }
+    compile("org.hibernate:hibernate-ehcache:$HIBERNATE_VERSION"){
+        exclude group:"org.slf4j"
+        exclude group:"org.hibernate"
+    }
+    compile ("org.hibernate:hibernate-entitymanager:$HIBERNATE_VERSION") {
+      exclude group:"org.hibernate"
+    }
+    compile ("org.hibernate:hibernate-validator:$HIBERNATE_VALIDATOR_VERSION") {
+      exclude group:"org.hibernate"
+    }
+
+    //These are the dependencies of hibernte-core-5.1.4.Final
+    compile group: 'com.fasterxml', name: 'classmate', version: '1.3.0'
+    compile group: 'antlr', name: 'antlr', version: '2.7.7'
+    compile group: 'dom4j', name: 'dom4j', version: '1.6.1'
+    compile group: 'org.apache.geronimo.specs', name: 'geronimo-jta_1.1_spec', version: '1.1.1'
+    compile group: 'org.hibernate.common', name: 'hibernate-commons-annotations', version: '5.0.1.Final'
+    compile group: 'org.javassist', name: 'javassist', version: '3.20.0-GA'
+    compile group: 'org.jboss', name: 'jandex', version: '2.0.3.Final'
+    compile group: 'org.jboss.logging', name: 'jboss-logging', version: '3.3.0.Final'
+    compile "org.hibernate:hibernate-core:$HIBERNATE_CORE_VERSION"
+
+    //Missing a lot from hibernate
+
+    compile 'com.googlecode.gentyref:gentyref:1.1.0'
+    compile 'javax.inject:javax.inject:1'
+    compile ("com.esotericsoftware.kryo:kryo:$KRYO_VERSION"){
+      exclude module: 'asm'
+    }
+    compile 'net.sf.opencsv:opencsv:2.3'
+    compile "com.google.code.gson:gson:$GSON_VERSION"
+    compile "org.apache.xmlgraphics:batik-transcoder:$BATIK_VERSION"
+    //Missing a lot from batik
+
+    compile "org.jboss.resteasy:jaxrs-api:$JAXRS_VERSION"
+    compile "com.sun.xml.bind:jaxb-impl:$JAXB_IMPL_VERSION"
+
+    compile "org.apache.empire-db:empire-db:$EMPIRE_DB_VERSION"
+
+    //Patterns - Neo4j
+    compile 'com.sun.jersey:jersey-client:1.18.3'
+//    compile group: 'org.glassfish.jersey.core', name: 'jersey-client', version: '2.25.1'
+
+    compile 'net.jcip:jcip-annotations:1.0'
+
+    compile fileTree(dir: '../../lib/GWT', includes: ["gxt-$GXT_VERSION" + ".jar"])
+//    compile fileTree(dir: '../../lib/GWT', includes: ["gxt-theme-neptune-$GXT_VERSION" + ".jar"])
+//    compile "com.sencha.gxt:gxt:$GXT_VERSION" //3.1.0 is upgraded from the snapshot build we currently have.
+    compile "com.google.gwt:gwt-user:${GWT_VERSION}"
+    compile "org.liquibase:liquibase-maven-plugin:${LIQUIBASE_VERSION}"
+    
+    compile 'com.ibm.icu:icu4j:51.2'
+
+    testCompile 'com.h2database:h2:1.4.181'
+    testCompile 'junit:junit:4.11'
+    testCompile "org.springframework:spring-test:$SPRING_VERISON"
+}
+
+jar{
+    baseName = "centrifuge-services"
+    metaInf{
+        from 'java/META-INF/persistence.xml'
+    }
+}

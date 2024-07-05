@@ -1,0 +1,20 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+        xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:g="urn:import:com.google.gwt.user.client.ui"
+        xmlns:boot="urn:import:com.github.gwtbootstrap.client.ui">
+    <ui:with field="i18n" type="csi.client.gwt.i18n.CentrifugeConstantsLocator"/>
+    <g:HTMLPanel ui:field="panel">
+        <ul
+                class="dropdown-menu"
+                style="display: block;">
+
+            <boot:NavLink ui:field="selectCell" text="{i18n.get.matrixContextMenu_selectCell}"/>
+            <boot:NavLink ui:field="selectAll" text="{i18n.get.menuKeyConstants_select_all}"/>
+            <boot:NavLink ui:field="deselectAll" text="{i18n.get.menuKeyConstants_deselect_all}"/>
+            <boot:NavLink ui:field="selectRow" text="{i18n.get.matrixContextMenu_selectRow}"/>
+            <boot:NavLink ui:field="selectColumn" text="{i18n.get.matrixContextMenu_selectColumn}"/>
+            <boot:NavLink ui:field="selectXY" text="{i18n.get.matrixContextMenu_selectIntersection}"/>
+        </ul>
+    </g:HTMLPanel>
+</ui:UiBinder>

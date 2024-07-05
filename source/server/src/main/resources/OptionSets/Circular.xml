@@ -1,0 +1,1728 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OptionSet>
+	<Version>1</Version>
+	<DrawColorInIconPicker>1</DrawColorInIconPicker>
+	<IconRoot>Circular</IconRoot>
+	<IconScale>1.08</IconScale>
+	<Shapes>
+		<Shape>Circle</Shape>
+	</Shapes>
+	<BundleNode
+    	icon="Communications/Package.png"
+    	color="6710886"
+    	shape="Circle"
+    	overlayScale=".25"/>
+
+
+
+	<Comment>
+		Banking Fraud Example's Icons:
+		ALERT TYPE
+		ALERT NAME
+		NAME
+		CUSTOMER ID
+		BRANCH NAME
+		ACCOUNT OFFICER NAME
+		Cyber Network Example's Icons:
+		-SOURCE ORGANIZATION
+		-SOURCE ADDRESS
+		-DESTINATION ORGANIZATION
+		-DESTINATION ADDRESS
+	</Comment>
+
+
+	<!-- LINK TYPES -->
+
+	<LinkType
+    linktype="Unspecified Type"
+    style="Solid"
+    color="000"
+    width="1"
+    subtype="" />
+<LinkType
+    width="1"
+    linktype="CircularLink"
+    style="Solid"
+    color="5263440"
+    subtype="" />
+
+
+	<!-- NODE TYPES -->
+
+	<NodeType nodetype="ALERT TYPE" icon="Danger/Warning.png"
+		color="16724787" shape="Circle" subtype="" />
+	<NodeType nodetype="ALERT NAME" icon="Communications/Information.png"
+		color="16750899" shape="Circle" subtype="" />
+	<NodeType nodetype="NAME" icon="People/Man.png" color="26316"
+		shape="Circle" subtype="" />
+	<NodeType nodetype="CUSTOMER ID" icon="People/Man.png" color="26316"
+		shape="Circle" subtype="" />
+	<NodeType nodetype="BRANCH NAME" icon="Buildings/Bank.png"
+		color="39168" shape="Circle" subtype="" />
+	<NodeType nodetype="ACCOUNT OFFICER NAME" icon="People/Man.png"
+		color="52224" shape="Circle" subtype="" />
+	<NodeType nodetype="SOURCE ADDRESS" icon="Communications/Network.png"
+		color="16733525" shape="Circle" subtype="" />
+	<NodeType nodetype="DESTINATION ADDRESS" icon="Communications/Network.png"
+		color="5592575" shape="Circle" subtype="" />
+	<NodeType nodetype="SOURCE ORGANIZATION" icon="Communications/Router.png"
+		color="16711680" shape="Circle" subtype="" />
+	<NodeType nodetype="DESTINATION ORGANIZATION" icon="Communications/Router.png"
+		color="255" shape="Circle" subtype="" />
+
+
+	<!-- COUNTRY FLAGS -->
+
+	<NodeType nodetype="AF" icon="Flags/AF.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AFG" icon="Flags/AF.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AFGHANISTAN" icon="Flags/AF.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AL" icon="Flags/AL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ALB" icon="Flags/AL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ALBANIA" icon="Flags/AL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="DZ" icon="Flags/DZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="DZA" icon="Flags/DZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ALGERIA" icon="Flags/DZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AS" icon="Flags/AS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ASM" icon="Flags/AS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AMERICAN SAMOA" icon="Flags/AS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AC" icon="Flags/AC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ASCENSION ISLAND" icon="Flags/AC.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="AD" icon="Flags/AD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AND" icon="Flags/AD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ANDORRA" icon="Flags/AD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ANDORA" icon="Flags/AD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AO" icon="Flags/AO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AGO" icon="Flags/AO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ANGOLA" icon="Flags/AO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AI" icon="Flags/AI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AIA" icon="Flags/AI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ANGUILLA" icon="Flags/AI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AQ" icon="Flags/AQ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ATA" icon="Flags/AQ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ANTARCTICA" icon="Flags/AQ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AG" icon="Flags/AG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ATG" icon="Flags/AG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ANTIGUA AND BARBUDA" icon="Flags/AG.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="ANTIGUA BARBUDA" icon="Flags/AG.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="ARAB LEAGUE" icon="Flags/Arab League.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="AR" icon="Flags/AR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ARG" icon="Flags/AR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ARGENTINA" icon="Flags/AR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AM" icon="Flags/AM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ARM" icon="Flags/AM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ARMENIA" icon="Flags/AM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AW" icon="Flags/AW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ABW" icon="Flags/AW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ARUBA" icon="Flags/AW.png" color="16711680"
+		shape="none" subtype="" />
+
+	<NodeType nodetype="AU" icon="Flags/AU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AUS" icon="Flags/AU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AUSTRALIA" icon="Flags/AU.png" color="16711680"
+		shape="none" subtype="" />
+
+	<NodeType nodetype="AT" icon="Flags/AT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AUT" icon="Flags/AT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AUSTRIA" icon="Flags/AT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ALAND ISLANDS" icon="Flags/AX.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AX" icon="Flags/AX.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AZ" icon="Flags/AZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AZE" icon="Flags/AZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AZERBAIJAN" icon="Flags/AZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BS" icon="Flags/BS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BHS" icon="Flags/BS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BAHAMAS" icon="Flags/BS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BH" icon="Flags/BH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BHR" icon="Flags/BH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BAHRAIN" icon="Flags/BH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BD" icon="Flags/BD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BGD" icon="Flags/BD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BANGLADESH" icon="Flags/BD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BB" icon="Flags/BB.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BRB" icon="Flags/BB.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BARBADOS" icon="Flags/BB.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BY" icon="Flags/BY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BLR" icon="Flags/BY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BELARUS" icon="Flags/BY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BE" icon="Flags/BE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BEL" icon="Flags/BE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BELGIUM" icon="Flags/BE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BELGUIM" icon="Flags/BE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BZ" icon="Flags/BZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BLZ" icon="Flags/BZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BELIZE" icon="Flags/BZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BJ" icon="Flags/BJ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BEN" icon="Flags/BJ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BENIN" icon="Flags/BJ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BM" icon="Flags/BM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BMU" icon="Flags/BM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BERMUDA" icon="Flags/BM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BT" icon="Flags/BT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BTN" icon="Flags/BT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BHUTAN" icon="Flags/BT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BO" icon="Flags/BO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BOL" icon="Flags/BO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BOLIVIA" icon="Flags/BO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BA" icon="Flags/BA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BIH" icon="Flags/BA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BOSNIA AND HERZEGOWINA" icon="Flags/BA.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="BOSNIA" icon="Flags/BA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BOSNIA HERZEGOWINA" icon="Flags/BA.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="BW" icon="Flags/BW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BWA" icon="Flags/BW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BOTSWANA" icon="Flags/BW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BV" icon="Flags/BV.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BVT" icon="Flags/BV.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BOUVET ISLAND" icon="Flags/BV.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BR" icon="Flags/BR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BRA" icon="Flags/BR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BRAZIL" icon="Flags/BR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="IO" icon="Flags/IO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="IOT" icon="Flags/IO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BRITISH INDIAN OCEAN TERRITORY" icon="Flags/IO.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="BRITISH INDIAN OCEAN" icon="Flags/IO.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="BN" icon="Flags/BN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BRN" icon="Flags/BN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BRUNEI DARUSSALAM" icon="Flags/BN.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="BG" icon="Flags/BG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BGR" icon="Flags/BG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BULGARIA" icon="Flags/BG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BF" icon="Flags/BF.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BFA" icon="Flags/BF.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BURKINA FASO" icon="Flags/BF.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BU" icon="Flags/BU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BRM" icon="Flags/BU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BURMA" icon="Flags/BU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BI" icon="Flags/BI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BDI" icon="Flags/BI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="BURUNDI" icon="Flags/BI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KH" icon="Flags/KH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KHM" icon="Flags/KH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CAMBODIA" icon="Flags/KH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CM" icon="Flags/CM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CMR" icon="Flags/CM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CAMEROON" icon="Flags/CM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CA" icon="Flags/CA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CAN" icon="Flags/CA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CANADA" icon="Flags/CA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CV" icon="Flags/CV.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CPV" icon="Flags/CV.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CAPE VERDE" icon="Flags/CV.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KY" icon="Flags/KY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CYM" icon="Flags/KY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CAYMAN ISLANDS" icon="Flags/KY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CF" icon="Flags/CF.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CAF" icon="Flags/CF.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CENTRAL AFRICAN REPUBLIC" icon="Flags/CF.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="CHECKERED" icon="Flags/Checkered.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="TD" icon="Flags/TD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TCD" icon="Flags/TD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CHAD" icon="Flags/TD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CL" icon="Flags/CL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CHL" icon="Flags/CL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CHILE" icon="Flags/CL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CN" icon="Flags/CN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CHN" icon="Flags/CN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CHINA" icon="Flags/CN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CX" icon="Flags/CX.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CXR" icon="Flags/CX.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CHRISTMAS ISLAND" icon="Flags/CX.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="CC" icon="Flags/CC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CCK" icon="Flags/CC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="COCOS (KEELING) ISLANDS" icon="Flags/CC.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="COCOS ISLANDS" icon="Flags/CC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KEELING ISLANDS" icon="Flags/CC.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="CO" icon="Flags/CO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="COL" icon="Flags/CO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="COLOMBIA" icon="Flags/CO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KM" icon="Flags/KM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="COM" icon="Flags/KM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="COMOROS" icon="Flags/KM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CG" icon="Flags/CG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="COG" icon="Flags/CG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CONGO" icon="Flags/CG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CD" icon="Flags/CD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="COD" icon="Flags/CD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CONGO, THE DRC" icon="Flags/CD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CONGO DEMOCRATIC REPUBLIC" icon="Flags/CD.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="CONGO REPUBLIC" icon="Flags/Congo Republic.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="CK" icon="Flags/CK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="COK" icon="Flags/CK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="COOK ISLANDS" icon="Flags/CK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CR" icon="Flags/CR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CRI" icon="Flags/CR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="COSTA RICA" icon="Flags/CR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CI" icon="Flags/CI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CIV" icon="Flags/CI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="COTE D'IVOIRE" icon="Flags/CI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="COTE DIVOIRE" icon="Flags/CI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="IVORY COAST" icon="Flags/CI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HR" icon="Flags/HR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HRV" icon="Flags/HR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CROATIA" icon="Flags/HR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HRVATSKA" icon="Flags/HR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CS" icon="Flags/CS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CZECHOSLOVAKIA" icon="Flags/CS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CU" icon="Flags/CU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CUB" icon="Flags/CU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CUBA" icon="Flags/CU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CY" icon="Flags/CY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CYP" icon="Flags/CY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CYPRUS" icon="Flags/CY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CZ" icon="Flags/CZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CZE" icon="Flags/CZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CZECH REPUBLIC" icon="Flags/CZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="DK" icon="Flags/DK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="DNK" icon="Flags/DK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="DENMARK" icon="Flags/DK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="DJ" icon="Flags/DJ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="DJI" icon="Flags/DJ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="DJIBOUTI" icon="Flags/DJ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="DM" icon="Flags/DM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="DMA" icon="Flags/DM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="DOMINICA" icon="Flags/DM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="DO" icon="Flags/DO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="DOM" icon="Flags/DO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="DOMINICAN REPUBLIC" icon="Flags/DO.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="TL" icon="Flags/TL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TLS" icon="Flags/TL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="EAST TIMOR" icon="Flags/TL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="EC" icon="Flags/EC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ECU" icon="Flags/EC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ECUADOR" icon="Flags/EC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="EG" icon="Flags/EG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="EGY" icon="Flags/EG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="EGYPT" icon="Flags/EG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SV" icon="Flags/SV.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SLV" icon="Flags/SV.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="EL SALVADOR" icon="Flags/SV.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GQ" icon="Flags/GQ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GNQ" icon="Flags/GQ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="EQUATORIAL GUINEA" icon="Flags/GQ.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="ER" icon="Flags/ER.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ERI" icon="Flags/ER.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ERITREA" icon="Flags/ER.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="EE" icon="Flags/EE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="EST" icon="Flags/EE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ESTONIA" icon="Flags/EE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ET" icon="Flags/ET.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ETH" icon="Flags/ET.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ETHIOPIA" icon="Flags/ET.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FK" icon="Flags/FK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FLK" icon="Flags/FK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FALKLAND ISLANDS (MALVINAS)" icon="Flags/FK.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="FALKLAND ISLANDS" icon="Flags/FK.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="MALVINAS" icon="Flags/FK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FO" icon="Flags/FO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FRO" icon="Flags/FO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FAROE ISLANDS" icon="Flags/FO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FJ" icon="Flags/FJ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FJI" icon="Flags/FJ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FIJI" icon="Flags/FJ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FI" icon="Flags/FI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FIN" icon="Flags/FI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FINLAND" icon="Flags/FI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FR" icon="Flags/FR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FRA" icon="Flags/FR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FRANCE" icon="Flags/FR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FRANCE, METROPOLITAN" icon="Flags/FR.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="FX" icon="Flags/FX.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FXX" icon="Flags/FX.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FRANCE, METROPOLITAN" icon="Flags/FX.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="GF" icon="Flags/FX.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GUF" icon="Flags/FX.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FRENCH GUIANA" icon="Flags/FX.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PF" icon="Flags/PF.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PYF" icon="Flags/PF.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FRENCH POLYNESIA" icon="Flags/PF.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="TF" icon="Flags/TF.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ATF" icon="Flags/TF.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FRENCH SOUTHERN TERRITORIES" icon="Flags/TF.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="GA" icon="Flags/GA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GAB" icon="Flags/GA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GABON" icon="Flags/GA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GM" icon="Flags/GM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GMB" icon="Flags/GM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GAMBIA" icon="Flags/GM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GE" icon="Flags/GE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GEO" icon="Flags/GE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GEORGIA" icon="Flags/GE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GG" icon="Flags/GG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GUERNSEY" icon="Flags/GG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="DE" icon="Flags/DE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="DEU" icon="Flags/DE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GERMANY" icon="Flags/DE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GH" icon="Flags/GH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GHA" icon="Flags/GH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GHANA" icon="Flags/GH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GI" icon="Flags/GI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GIB" icon="Flags/GI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GIBRALTAR" icon="Flags/GI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GR" icon="Flags/GR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GRC" icon="Flags/GR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GREECE" icon="Flags/GR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GL" icon="Flags/GL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GRL" icon="Flags/GL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GREENLAND" icon="Flags/GL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GD" icon="Flags/GD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GRD" icon="Flags/GD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GRENADA" icon="Flags/GD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GP" icon="Flags/GP.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GLP" icon="Flags/GP.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GUADELOUPE" icon="Flags/GP.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GU" icon="Flags/GU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GUM" icon="Flags/GU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GUAM" icon="Flags/GU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GT" icon="Flags/GT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GTM" icon="Flags/GT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GUATEMALA" icon="Flags/GT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GN" icon="Flags/GN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GIN" icon="Flags/GN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GUINEA" icon="Flags/GN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GW" icon="Flags/GW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GNB" icon="Flags/GW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GUINEA-BISSAU" icon="Flags/GW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GY" icon="Flags/GY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GUY" icon="Flags/GY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GUYANA" icon="Flags/GY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HT" icon="Flags/HT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HTI" icon="Flags/HT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HAITI" icon="Flags/HT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HM" icon="Flags/HM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HMD" icon="Flags/HM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HEARD AND MC DONALD ISLANDS" icon="Flags/HM.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="VA" icon="Flags/VA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="VAT" icon="Flags/VA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HOLY SEE (VATICAN CITY STATE)" icon="Flags/VA.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="VATICAN CITY STATE (HOLY SEE)" icon="Flags/VA.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="VATICAN CITY STATE" icon="Flags/VA.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="HOLY SEE" icon="Flags/VA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HN" icon="Flags/HN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HND" icon="Flags/HN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HONDURAS" icon="Flags/HN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HK" icon="Flags/HK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HKG" icon="Flags/HK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HONG KONG" icon="Flags/HK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HONGKONG CHINA" icon="Flags/HK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HU" icon="Flags/HU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HUN" icon="Flags/HU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="HUNGARY" icon="Flags/HU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="IS" icon="Flags/IS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ISL" icon="Flags/IS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ICELAND" icon="Flags/IS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="IM" icon="Flags/IM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ISLE OF MEN" icon="Flags/IM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="IN" icon="Flags/IN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="IND" icon="Flags/IN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="INDIA" icon="Flags/IN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ID" icon="Flags/ID.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="IDN" icon="Flags/ID.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="INDONESIA" icon="Flags/ID.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="IR" icon="Flags/IR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="IRN" icon="Flags/IR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="IRAN (ISLAMIC REPUBLIC OF)" icon="Flags/IR.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="IRAN" icon="Flags/IR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="IQ" icon="Flags/IQ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="IRQ" icon="Flags/IQ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="IRAQ" icon="Flags/IQ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="IE" icon="Flags/IE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="IRL" icon="Flags/IE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="IRELAND" icon="Flags/IE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="IL" icon="Flags/IL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ISR" icon="Flags/IL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ISRAEL" icon="Flags/IL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="IT" icon="Flags/IT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ITA" icon="Flags/IT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ITALY" icon="Flags/IT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="JE" icon="Flags/JE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="JER" icon="Flags/JE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="JERSEY" icon="Flags/JE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="JM" icon="Flags/JM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="JAM" icon="Flags/JM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="JAMAICA" icon="Flags/JM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="JP" icon="Flags/JP.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="JPN" icon="Flags/JP.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="JAPAN" icon="Flags/JP.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="JO" icon="Flags/JO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="JOR" icon="Flags/JO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="JORDAN" icon="Flags/JO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KZ" icon="Flags/KZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KAZ" icon="Flags/KZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KAZAKHSTAN" icon="Flags/KZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KE" icon="Flags/KE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KEN" icon="Flags/KE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KENYA" icon="Flags/KE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KI" icon="Flags/KI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KIR" icon="Flags/KI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KIRIBATI" icon="Flags/KI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KP" icon="Flags/KP.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PRK" icon="Flags/KP.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KOREA, D.P.R.O." icon="Flags/KP.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="KOREA NORTH" icon="Flags/KP.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NORTH KOREA" icon="Flags/KP.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KR" icon="Flags/KR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KOR" icon="Flags/KR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KOREA, REPUBLIC OF" icon="Flags/KR.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="KOREA SOUTH" icon="Flags/KR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SOUTH KOREA" icon="Flags/KR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="XK" icon="Flags/XK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KOSOVO" icon="Flags/XK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KW" icon="Flags/KW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KWT" icon="Flags/KW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KUWAIT" icon="Flags/KW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KG" icon="Flags/KG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KGZ" icon="Flags/KG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KYRGYZSTAN" icon="Flags/KG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LA" icon="Flags/LA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LAO" icon="Flags/LA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LAOS" icon="Flags/LA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LV" icon="Flags/LV.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LVA" icon="Flags/LV.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LATVIA" icon="Flags/LV.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LB" icon="Flags/LB.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LBN" icon="Flags/LB.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LEBANON" icon="Flags/LB.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LS" icon="Flags/LS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LSO" icon="Flags/LS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LESOTHO" icon="Flags/LS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LR" icon="Flags/LR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LBR" icon="Flags/LR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LIBERIA" icon="Flags/LR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LY" icon="Flags/LY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LBY" icon="Flags/LY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LIBYA" icon="Flags/LY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LIBYAN ARAB JAMAHIRIYA" icon="Flags/LY.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="LI" icon="Flags/LI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LIE" icon="Flags/LI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LIECHTENSTEIN" icon="Flags/LI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LT" icon="Flags/LT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LTU" icon="Flags/LT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LITHUANIA" icon="Flags/LT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LU" icon="Flags/LU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LUX" icon="Flags/LU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LUXEMBOURG" icon="Flags/LU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LUXEMBURG" icon="Flags/LU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MO" icon="Flags/MO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MAC" icon="Flags/MO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MACAU" icon="Flags/MO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MK" icon="Flags/MK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MKD" icon="Flags/MK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MACEDONIA" icon="Flags/MK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="F.Y.R.O.M" icon="Flags/MK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="F.Y.R.O.M." icon="Flags/MK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="F.Y.R.O.M (MACEDONIA)" icon="Flags/MK.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="MG" icon="Flags/MG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MDG" icon="Flags/MG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MADAGASCAR" icon="Flags/MG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MW" icon="Flags/MW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MWI" icon="Flags/MW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MALAWI" icon="Flags/MW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MY" icon="Flags/MY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MYS" icon="Flags/MY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MALAYSIA" icon="Flags/MY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MV" icon="Flags/MV.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MDV" icon="Flags/MV.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MALDIVES" icon="Flags/MV.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ML" icon="Flags/ML.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MLI" icon="Flags/ML.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MALI" icon="Flags/ML.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MT" icon="Flags/MT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MLT" icon="Flags/MT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MALTA" icon="Flags/MT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ME" icon="Flags/ME.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MONTENEGRO" icon="Flags/ME.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MH" icon="Flags/MH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MHL" icon="Flags/MH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MARSHALL ISLANDS" icon="Flags/MH.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="MQ" icon="Flags/MQ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MTQ" icon="Flags/MQ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MARTINIQUE" icon="Flags/MQ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MR" icon="Flags/MR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MRT" icon="Flags/MR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MAURITANIA" icon="Flags/MR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MU" icon="Flags/MU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MUS" icon="Flags/MU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MAURITIUS" icon="Flags/MU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="YT" icon="Flags/YT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MYT" icon="Flags/YT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MAYOTTE" icon="Flags/YT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MX" icon="Flags/MX.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MEX" icon="Flags/MX.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MEXICO" icon="Flags/MX.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FM" icon="Flags/FM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="FSM" icon="Flags/FM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MICRONESIA, FEDERATED STATES OF" icon="Flags/FM.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="MICRONESIA" icon="Flags/FM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MD" icon="Flags/MD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MDA" icon="Flags/MD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MOLDOVA, REPUBLIC OF" icon="Flags/MD.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="MOLDOVA" icon="Flags/MD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MC" icon="Flags/MC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MCO" icon="Flags/MC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MONACO" icon="Flags/MC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MN" icon="Flags/MN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MNG" icon="Flags/MN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MONGOLIA" icon="Flags/MN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MS" icon="Flags/MS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MSR" icon="Flags/MS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MONTSERRAT" icon="Flags/MS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MA" icon="Flags/MA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MAR" icon="Flags/MA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MOROCCO" icon="Flags/MA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MZ" icon="Flags/MZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MOZ" icon="Flags/MZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MOZAMBIQUE" icon="Flags/MZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MM" icon="Flags/MM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MMR" icon="Flags/MM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MYANMAR (Burma)" icon="Flags/MM.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="BURMA" icon="Flags/MM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MYANMAR" icon="Flags/MM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NA" icon="Flags/NA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NAM" icon="Flags/NA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NAMIBIA" icon="Flags/NA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NATO" icon="Flags/NATO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NR" icon="Flags/NR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NRU" icon="Flags/NR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NAURU" icon="Flags/NR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NAURA" icon="Flags/Naura.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NP" icon="Flags/NP.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NPL" icon="Flags/NP.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NEPAL" icon="Flags/NP.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NT" icon="Flags/NT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NEUTRAL ZONE" icon="Flags/NT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NTZ" icon="Flags/NT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NL" icon="Flags/NL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NLD" icon="Flags/NL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NETHERLANDS" icon="Flags/NL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AN" icon="Flags/AN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ANT" icon="Flags/AN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NETHERLANDS ANTILLES" icon="Flags/AN.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="NC" icon="Flags/NC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NCL" icon="Flags/NC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NEW CALEDONIA" icon="Flags/NC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NZ" icon="Flags/NZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NZL" icon="Flags/NZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NEW ZEALAND" icon="Flags/NZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NEW ZEALAND (AOTEAROA)" icon="Flags/NZ.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="AOTEAROA" icon="Flags/NZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NI" icon="Flags/NI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NIC" icon="Flags/NI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NICARAGUA" icon="Flags/NI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NE" icon="Flags/NE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NER" icon="Flags/NE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NIGER" icon="Flags/NE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NG" icon="Flags/NG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NGA" icon="Flags/NG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NIGERIA" icon="Flags/NG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NU" icon="Flags/NU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NIU" icon="Flags/NU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NIUE" icon="Flags/NU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NF" icon="Flags/NF.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NFK" icon="Flags/NF.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NORFOLK ISLAND" icon="Flags/NF.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MP" icon="Flags/MP.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="MNP" icon="Flags/MP.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NORTHERN MARIANA ISLANDS" icon="Flags/MP.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="NO" icon="Flags/NO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NOR" icon="Flags/NO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="NORWAY" icon="Flags/NO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="OM" icon="Flags/OM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="OMN" icon="Flags/OM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="OMAN" icon="Flags/OM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PK" icon="Flags/PK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PAK" icon="Flags/PK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PAKISTAN" icon="Flags/PK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PW" icon="Flags/PW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PLW" icon="Flags/PW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PALAU" icon="Flags/PW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PALESTINE" icon="Flags/PS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PS" icon="Flags/PS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PALESTINE TERRITORY" icon="Flags/PS.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="ORG OF AFRICAN UNITY" icon="Flags/Org of African Unity.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="PA" icon="Flags/PA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PAN" icon="Flags/PA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PANAMA" icon="Flags/PA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PG" icon="Flags/PG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PNG" icon="Flags/PG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PAPUA NEW GUINEA" icon="Flags/PG.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="PY" icon="Flags/PY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PRY" icon="Flags/PY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PARAGUAY" icon="Flags/PY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PE" icon="Flags/PE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PER" icon="Flags/PE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PERU" icon="Flags/PE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PH" icon="Flags/PH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PHL" icon="Flags/PH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PHILIPPINES" icon="Flags/PH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PIRATE" icon="Flags/Pirate.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PN" icon="Flags/PN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PCN" icon="Flags/PN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PITCAIRN" icon="Flags/PN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PL" icon="Flags/PL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="POL" icon="Flags/PL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="POLAND" icon="Flags/PL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PT" icon="Flags/PT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PRT" icon="Flags/PT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PORTUGAL" icon="Flags/PT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PR" icon="Flags/PR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PRI" icon="Flags/PR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PUERTO RICO" icon="Flags/PR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="QA" icon="Flags/QA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="QAT" icon="Flags/QA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="QATAR" icon="Flags/QA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="RE" icon="Flags/RE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="REU" icon="Flags/RE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="REUNION" icon="Flags/RE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="RO" icon="Flags/RO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ROM" icon="Flags/RO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ROMANIA" icon="Flags/RO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="RS" icon="Flags/RS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SERBIA" icon="Flags/RS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="RU" icon="Flags/RU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="RUS" icon="Flags/RU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="RUSSIA" icon="Flags/RU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="RUSSIAN FEDERATION" icon="Flags/RU.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="RW" icon="Flags/RW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="RWA" icon="Flags/RW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="RWANDA" icon="Flags/RW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KN" icon="Flags/KN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="KNA" icon="Flags/KN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SAINT KITTS AND NEVIS" icon="Flags/KN.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="LC" icon="Flags/LC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LCA" icon="Flags/LC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SAINT LUCIA" icon="Flags/LC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="VC" icon="Flags/VC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="VCT" icon="Flags/VC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SAINT VINCENT AND THE GRENADINES" icon="Flags/VC.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="SAINT VINCENT" icon="Flags/VC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="WS" icon="Flags/WS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="WSM" icon="Flags/WS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SAMOA" icon="Flags/WS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SM" icon="Flags/SM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SMR" icon="Flags/SM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SAN MARINO" icon="Flags/SM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ST" icon="Flags/ST.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="STP" icon="Flags/ST.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SAO TOME AND PRINCIPE" icon="Flags/ST.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="SA" icon="Flags/SA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SAU" icon="Flags/SA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SAUDI ARABIA" icon="Flags/SA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SN" icon="Flags/SN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SEN" icon="Flags/SN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SENEGAL" icon="Flags/SN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SC" icon="Flags/SC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SYC" icon="Flags/SC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SEYCHELLES" icon="Flags/SC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SL" icon="Flags/SL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SLE" icon="Flags/SL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SIERRA LEONE" icon="Flags/SL.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SG" icon="Flags/SG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SGP" icon="Flags/SG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SINGAPORE" icon="Flags/SG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SK" icon="Flags/SK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SVK" icon="Flags/SK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SLOVAKIA (Slovak Republic)" icon="Flags/SK.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="SLOVAK REPUBLLIC" icon="Flags/SK.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="SLOVAKIA" icon="Flags/SK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SKULL AND CROSSBONES" icon="Flags/Skull and Crossbones.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="SI" icon="Flags/SI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SVN" icon="Flags/SI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SLOVENIA" icon="Flags/SI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SB" icon="Flags/SB.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SLB" icon="Flags/SB.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SOLOMON ISLANDS" icon="Flags/SB.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="SOLOMON ISLS." icon="Flags/SB.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SOLOMON ISLS" icon="Flags/SB.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SO" icon="Flags/SO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SOM" icon="Flags/SO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SOMALIA" icon="Flags/SO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ZA" icon="Flags/ZA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ZAF" icon="Flags/ZA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SOUTH AFRICA" icon="Flags/ZA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GS" icon="Flags/GS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SGS" icon="Flags/GS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SOUTH GEORGIA AND SOUTH S.S." icon="Flags/GS.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="SOUTH GEORGIA" icon="Flags/GS.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="S. GEORGIA AND S. SANDWICH ISLS" icon="Flags/GS.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="S. GEORGIA AND S. SANDWICH ISLS." icon="Flags/GS.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="ES" icon="Flags/ES.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ESP" icon="Flags/ES.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SPAIN" icon="Flags/ES.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="EU" icon="Flags/EU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="EUROPEAN UNION" icon="Flags/EU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LK" icon="Flags/LK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="LKA" icon="Flags/LK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SRI LANKA" icon="Flags/LK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SH" icon="Flags/SH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SHN" icon="Flags/SH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ST. HELENA" icon="Flags/SH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ST HELENA" icon="Flags/SH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="PM" icon="Flags/PM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SPM" icon="Flags/PM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ST. PIERRE AND MIQUELON" icon="Flags/PM.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="ST PIERRE AND MIQUELON" icon="Flags/PM.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="SD" icon="Flags/SD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SDN" icon="Flags/SD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SUDAN" icon="Flags/SD.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SR" icon="Flags/SR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SUR" icon="Flags/SR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SURINAME" icon="Flags/SR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SU" icon="Flags/SU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="USSR FORMER" icon="Flags/SU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="USSR" icon="Flags/SU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="USSR (FORMER)" icon="Flags/SU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SJ" icon="Flags/SJ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SJM" icon="Flags/SJ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SVALBARD AND JAN MAYEN ISLANDS" icon="Flags/SJ.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="SZ" icon="Flags/SZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SWZ" icon="Flags/SZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SWAZILAND" icon="Flags/SZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SE" icon="Flags/SE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SWE" icon="Flags/SE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SWEDEN" icon="Flags/SE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CH" icon="Flags/CH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="CHE" icon="Flags/CH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SWITZERLAND" icon="Flags/CH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SY" icon="Flags/SY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SYR" icon="Flags/SY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SYRIAN ARAB REPUBLIC" icon="Flags/SY.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="SYRIA" icon="Flags/SY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TW" icon="Flags/TW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TWN" icon="Flags/TW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TAIWAN, PROVINCE OF CHINA" icon="Flags/TW.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="TAIWAN" icon="Flags/TW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TJ" icon="Flags/TJ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TJK" icon="Flags/TJ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TAJIKISTAN" icon="Flags/TJ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TZ" icon="Flags/TZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TZA" icon="Flags/TZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TANZANIA, UNITED REPUBLIC OF" icon="Flags/TZ.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="TANZANIA" icon="Flags/TZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TH" icon="Flags/TH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="THA" icon="Flags/TH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="THAILAND" icon="Flags/TH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TG" icon="Flags/TG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TGO" icon="Flags/TG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TOGO" icon="Flags/TG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TK" icon="Flags/TK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TKL" icon="Flags/TK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TOKELAU" icon="Flags/TK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TO" icon="Flags/TO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TON" icon="Flags/TO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TONGA" icon="Flags/TO.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TT" icon="Flags/TT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TTO" icon="Flags/TT.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TRINIDAD AND TOBAGO" icon="Flags/TT.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="TN" icon="Flags/TN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TUN" icon="Flags/TN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TUNISIA" icon="Flags/TN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TR" icon="Flags/TR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TUR" icon="Flags/TR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TURKEY" icon="Flags/TR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TM" icon="Flags/TM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TKM" icon="Flags/TM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TURKMENISTAN" icon="Flags/TM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TC" icon="Flags/TC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TCA" icon="Flags/TC.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TURKS AND CAICOS ISLANDS" icon="Flags/TC.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="TV" icon="Flags/TV.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TUV" icon="Flags/TV.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="TUVALU" icon="Flags/TV.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="UG" icon="Flags/UG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="UGA" icon="Flags/UG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="UGANDA" icon="Flags/UG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="UA" icon="Flags/UA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="UKR" icon="Flags/UA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="UKRAINE" icon="Flags/UA.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="AE" icon="Flags/AE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ARE" icon="Flags/AE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="UNITED ARAB EMIRATES" icon="Flags/AE.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="GB" icon="Flags/UK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GBR" icon="Flags/UK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="UNITED KINGDOM" icon="Flags/UK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GREAT BRITAIN" icon="Flags/UK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="GREAT BRITAIN (UK)" icon="Flags/UK.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="UK" icon="Flags/UK.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="US" icon="Flags/US.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="USA" icon="Flags/US.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="UNITED STATES" icon="Flags/US.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="UNITED STATES OF AMERICA" icon="Flags/US.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="UM" icon="Flags/UM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="UMI" icon="Flags/UM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="U.S. MINOR ISLANDS" icon="Flags/UM.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="US MINOR ISLANDS" icon="Flags/UM.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="US MINOR OUTLYING ISLANDS" icon="Flags/UM.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="UNITED NATIONS ORG" icon="Flags/United Nations Org.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="UY" icon="Flags/UY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="URY" icon="Flags/UY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="URUGUAY" icon="Flags/UY.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="UZ" icon="Flags/UZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="UZB" icon="Flags/UZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="UZBEKISTAN" icon="Flags/UZ.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="VU" icon="Flags/VU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="VUT" icon="Flags/VU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="VANUATU" icon="Flags/VU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="VE" icon="Flags/VE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="VEN" icon="Flags/VE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="VENEZUELA" icon="Flags/VE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="VN" icon="Flags/VN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="VNM" icon="Flags/VN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="VIET NAM" icon="Flags/VN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="VIETNAM" icon="Flags/VN.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="VG" icon="Flags/VG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="VGB" icon="Flags/VG.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="VIRGIN ISLANDS (BRITISH)" icon="Flags/VG.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="VIRGIN ISLANDS BRITISH" icon="Flags/VG.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="BRITISH VIRGIN ISLANDS" icon="Flags/VG.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="VI" icon="Flags/VI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="VIR" icon="Flags/VI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="VIRGIN ISLANDS" icon="Flags/VI.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="VIRGIN ISLANDS (U.S.)" icon="Flags/VI.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="VIRGIN ISLANDS US" icon="Flags/VI.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="WF" icon="Flags/WF.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="WLF" icon="Flags/WF.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="WALLIS AND FUTUNA ISLANDS" icon="Flags/WF.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="EH" icon="Flags/EH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ESH" icon="Flags/EH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="WESTERN SAHARA" icon="Flags/EH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="SAHARA" icon="Flags/EH.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="YE" icon="Flags/YE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="YEM" icon="Flags/YE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="YEMEN" icon="Flags/YE.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="YU" icon="Flags/YU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="YUG" icon="Flags/YU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="Yugoslavia (Serbia and Montenegro)" icon="Flags/YU.png"
+		color="16711680" shape="none" subtype="" />
+	<NodeType nodetype="YUGOSLAVIA" icon="Flags/YU.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ZR" icon="Flags/ZR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ZAIRE" icon="Flags/ZR.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ZM" icon="Flags/ZM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ZMB" icon="Flags/ZM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ZAMBIA" icon="Flags/ZM.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ZW" icon="Flags/ZW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ZWE" icon="Flags/ZW.png" color="16711680"
+		shape="none" subtype="" />
+	<NodeType nodetype="ZIMBABWE" icon="Flags/ZW.png" color="16711680"
+		shape="none" subtype="" />
+
+
+</OptionSet>

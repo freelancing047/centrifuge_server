@@ -1,0 +1,101 @@
+<project name="Web Services" default="usage">
+	<property name="ant.build.clonevm" value="true" />
+	
+
+	<property name="working" value="${basedir}/temp" />
+	<property name="service.properties" value="${working}/service.properties" />
+	
+	<property file="${service.properties}" />
+	<available property="no.load" file="${service.properties}" />
+	
+	<property name="service.wsdl" value="${working}/service.wsdl" />
+	<property name="orig.wsdl" value="${working}/orig.wsdl" />
+	<property name="name" value="test" />
+	<property name="pass" value="test" />
+	<property name="verbose" value="false" />
+	<property name="baseName" value="serviceImpl" />
+	<property name="jar.file" value="${basedir}/webservice.jar" />
+	
+	<property name="centrifuge.home" value="${basedir}/.." />
+
+	<path id="jaxws.classpath">
+		<fileset dir="${centrifuge.home}/webapps/Centrifuge/WEB-INF/lib">
+			<include name="webservice*.jar" />
+		</fileset>
+	</path>
+	
+	
+	
+	
+	
+	<taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+		<classpath refid="jaxws.classpath" />
+	</taskdef>
+
+	<target name="usage">
+		<echo>
+This script provides several utilities to package and deploy
+web services for use by Centrifuge Server.
+			
+The following commands are available:
+		download  -- Retrieves the document located at the provided URL
+		generate  -- Performs updates to the local copies of schemas referenced by the WSDL 
+		             and generates all required artifacts
+		jar       -- Packages all the resources together into a single archive file for 
+		             deployment to Centrifuge Server 
+		clean     -- Removes all locally generated artifacts
+		    
+		</echo>
+	</target>
+
+	<target name="init">
+		<echo>${centrifuge.home}</echo>
+		<mkdir dir="${working}" />
+	</target>
+	
+	<target name='download' depends='init'>
+		<input message="Please provide the location of the WSDL file" addproperty="wsdl.orig.location" />
+		
+		<get src="${wsdl.orig.location}" dest="${orig.wsdl}" verbose="true" usetimestamp="true" />
+	</target>
+	
+	<target name="transform" unless="skip.transform">
+		<property name="styleSheet" value="${basedir}/dropInvalid.xslt" />
+		<xslt style="${styleSheet}" in="${orig.wsdl}" out="${service.wsdl}" >
+			
+		</xslt>
+	</target>
+
+	<target name='generate' depends="transform">
+		<input message="Please provide the runtime, cached location of the WSDL file: " addproperty="wsdl.runtime.location" defaultvalue="service.wsdl" />
+		
+		<echo>WSDL to be placed at ${wsdl.runtime.location}</echo>
+		<move file="${service.wsdl}" tofile="${working}/${wsdl.runtime.location}" />
+		<wsimport wsdl="${working}/${wsdl.runtime.location}" 
+			destdir="${working}"
+			verbose="${verbose}"
+			extension="true"
+			xendorsed="true"
+			keep="true"
+			wsdllocation="${wsdl.runtime.location}"
+			
+		>
+		</wsimport>
+	</target>
+		
+	<target name="jar" >
+		<jar destfile="${jar.file}">
+			<fileset dir="${working}">
+				<exclude name="orig.wsdl" />
+				<exclude name="**/*.java" />
+			</fileset>
+		</jar>
+	</target>
+
+	<target name='deploy'>
+	</target>
+
+	<target name='clean'>
+		<delete dir="${working}" failonerror="false" />
+	</target>
+</project>

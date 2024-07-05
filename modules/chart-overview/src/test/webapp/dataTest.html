@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+	<select id="operationSelector">
+		<option value="/summary">Summary</option>
+		<option value="/data">Data</option>
+		<option value="/image?asynch=true">Image</option>
+	</select>
+	<textarea id="payload" rows="10" width="100%">{
+		"drill" : [ ]
+	}</textarea>
+
+	<button id="sendit">Get Data</button>
+	<button id="manual">Manual</button>
+	
+	<div>
+	<p id="results">
+	</div>
+	
+	<div>
+		<img id="imageResults" src=""/>
+	</div>
+	
+	<div id="manualHolder">
+	</div>
+
+	<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+	<script>
+	
+	var uuid = '29b3e631-4b29-662b-acf6-3dcdf3345fa5';
+		$(document).ready(function() {
+
+			var manualUrl;
+			
+			$('#sendit').click(function(event) {
+				var text = $('#payload').val();
+				var payload = $.parseJSON(text);
+				payload = JSON.stringify(payload);
+				
+				var segment = $("#operationSelector").val();
+				var url = "/Centrifuge/charting/"+uuid+segment;
+				var verb = "POST";
+				
+				if( verb == "GET" ) {
+					payload = null;
+				}
+				
+				$.ajax( {
+					type: verb,
+					url: url,
+					dataType: 'json',
+					contentType: 'application/json',
+					data: payload,
+					processData: false,
+					success: function(data,status,jqXhr) {
+						if( data == null && jqXhr.getResponseHeader("Location") != null) {
+							var jobUrl = jqXhr.getResponseHeader("Location");
+							manualUrl = jobUrl;
+							jobUrl = jobUrl + "?nowait";
+						//	$("#imageResults").attr("src", jobUrl);
+						} else {
+							var text = JSON.stringify(data);
+							$('#results').text(text);
+						}
+
+					}
+				});
+			});
+			
+			$("#manual").click(function(event) {
+				imageFetch( manualUrl, 500, "HEAD" );
+			});
+			
+			function imageFetch(url, timeout, option) {
+				var tempUrl = url +"?nowait";
+
+				$.ajax( {
+					type: option,
+					url : tempUrl,
+					processData: false,
+					success: function(data,status,jqXhr) {
+						if( jqXhr.status == 202 ) {
+							resend( url, timeout,  "HEAD");
+						} else if( jqXhr.status == 200) {
+							var $img = $("<img />");
+							$img.attr( {
+								src: url+"?wait=1000",
+								alt: "Overview"
+							});
+							
+							$("#manualHolder").append($img);
+						}
+					}
+				});
+				
+			}
+			
+			function resend(url, timeout, option) {
+				var nextTimeout = Math.min( 5000, timeout*2);
+				setTimeout( imageFetch, timeout, url, nextTimeout, option);
+			}
+		});
+	</script>
+
+</body>
+</html>
